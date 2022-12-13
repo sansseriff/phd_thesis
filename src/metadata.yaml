@@ -1,27 +1,25 @@
 ---
-title: The Molecular Biophysics of Evolutionary and Physiological Adaptation
+title: The Computational Empowerment of Single Photon Detectors
 author: Griffin Daniel Chure
 copyyear: 2020
 defense: June 1, 2020
 orcid: 0000-0002-2216-2057
 degree: 
     Doctor of Philosophy in  
-    Biochemistry and Molecular Biophysics
+    Applied Physics
 rights_statement: |
     Some rights reserved. This thesis is distributed under a
     Creative Commons Attribution License CC-BY 4.0. All software used in the
-    analysis and generation of figures is distributed under an MIT license and
+    analysis and generation of figures is distributed under an MIT license. and
     is available on a GitHub repository
-    \href{http://github.com/gchure/phd}{http://github.com/gchure/phd} (DOI: 10.5281/zenodo.3815061).
-    All data used in figure generation are available via the CaltechDATA
-    research data repository via \href{http://dx.doi.org/10.22002/D1.1426}{DOI:10.22002/D1.1426} A digital version of this thesis can be accessed via
-    \href{http://gchure.github.io/phd}{http://gchure.github.io/phd}
+    \href{https://github.com/sansseriff/phd_thesis}{https://github.com/sansseriff/phd_thesis}
+    
 logo: true
 bibliography: references.bib
 csl: styles/cell.csl
 ownpubs: published.md
 acknowledgements: acknowledgements.md
 abstract: abstract.md
-degree_title: Biochemistry and Molecular Biophysics
+degree_title: Applied Physics
 indent: true
 ---
