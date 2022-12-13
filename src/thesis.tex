@@ -27,6 +27,15 @@
             bookmarks=false,
             bookmarksopen=false,
             ]{hyperref}
+            
+% \usepackage[style=chicago-authordate]{biblatex}
+\usepackage[
+    backend=biber,natbib,
+    % IMPORTANT: load a style suitable for your discipline
+    style=ieee
+]{biblatex}
+
+\addbibresource{references.bib}
 
 \defaultbibliographystyle{plainnat}
 \renewcommand{\bibsection}{\section*{\refname}}
@@ -42,7 +51,7 @@
 \university{California Institute of Technology}    
 \address{Pasadena, California}                     
 \unilogo{caltech.png}                                 
-\copyyear{2020}  
+\copyyear{2022}  
 \defenddate{XXX 2022}   
 
 
@@ -12753,5 +12762,8 @@ Sequence (5' \(\rightarrow\) 3')
 \textbf{\texttt{ctccct}}\texttt{atgaagccgacaaccataagtctaacaaa} \\
 \bottomrule()
 \end{longtable}
+
+\printbibliography
+
 
 \end{document}
