@@ -8,7 +8,7 @@ tex:
 	pandoc metadata.yaml \
 	chapter*/*.md \
 	ref_heading.md \
-	-o ../dst/thesis.tex \
+	-o thesis.tex \
 	--default-image-extension=.pdf \
 	--template=styles/template.tex \
 	--filter pandoc-crossref \
