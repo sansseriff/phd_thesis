@@ -12,6 +12,8 @@ tex:
 	--default-image-extension=.pdf \
 	--template=styles/template.tex \
 	--filter pandoc-crossref \
+	-M "crossrefYaml=ref_formatting.yaml" \
+	--biblatex \
 	--bibliography=references.bib \
 	--lua-filter=frontmatter/short-captions.lua \
 	--top-level-division chapter \
