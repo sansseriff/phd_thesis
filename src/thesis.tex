@@ -27,7 +27,13 @@
             bookmarks=false,
             bookmarksopen=false,
             ]{hyperref}
-
+\usepackage[
+            backend=biber,natbib,
+            % IMPORTANT: load a style suitable for your discipline
+            style=ieee
+        ]{biblatex}
+            
+\addbibresource{references.bib}
 \defaultbibliographystyle{plainnat}
 \renewcommand{\bibsection}{\section*{\refname}}
 \usepackage{memhfixc}
@@ -12754,4 +12760,5 @@ Sequence (5' \(\rightarrow\) 3')
 \bottomrule()
 \end{longtable}
 
+\printbibliography
 \end{document}

@@ -27,7 +27,13 @@
             bookmarks=false,
             bookmarksopen=false,
             ]{hyperref}
-
+\usepackage[
+            backend=biber,natbib,
+            % IMPORTANT: load a style suitable for your discipline
+            style=ieee
+        ]{biblatex}
+            
+\addbibresource{references.bib}
 \defaultbibliographystyle{plainnat}
 \renewcommand{\bibsection}{\section*{\refname}}
 \usepackage{memhfixc}
@@ -96,4 +102,5 @@ $endif$
 
 $body$
 
+\printbibliography
 \end{document}
