@@ -1,0 +1,99 @@
+\documentclass[12pt]{caltech_thesis}
+\usepackage[hyphens]{url}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{todonotes}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathpazo}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{csquotes}
+\usepackage{bibunits}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{longtable}
+\usepackage{xcolor}
+\usepackage{indentfirst} 
+\definecolor{CaltechOrange}{HTML}{FF6C0C}
+\usepackage[hidelinks=true,
+            colorlinks=true, 
+            linkcolor=black,
+            urlcolor=CaltechOrange, 
+            linkbordercolor=white,
+            backref=false,
+            pagebackref=false,
+            hyperindex=false,
+            breaklinks=true,
+            bookmarks=false,
+            bookmarksopen=false,
+            ]{hyperref}
+
+\defaultbibliographystyle{plainnat}
+\renewcommand{\bibsection}{\section*{\refname}}
+\usepackage{memhfixc}
+\linespread{1.5}
+
+$if(csl-refs)$
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newenvironment{cslreferences}%
+  {$if(csl-hanging-indent)$\setlength{\parindent}{0pt}%
+  \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces$endif$}%
+  {\par}
+$endif$
+
+\begin{document}
+
+\title{$if(title)$$title$$else$Your Title Here$endif$}
+\author{$if(author)$$author$$else$Your Name Here$endif$}
+\degreeaward{$if(degree)$$degree$$else$Your Degree Title$endif$}                 
+\university{California Institute of Technology}    
+\address{Pasadena, California}                     
+\unilogo{caltech.png}                                 
+\copyyear{$if(copyyear)$$copyyear$$else$Year$endif$}  
+\defenddate{$if(defense)$$defense$$else$Defense Date$endif$}   
+$if(orcid)$       
+\orcid{$orcid$}
+$endif$
+
+$if(dedication)$
+\clearpage
+\begin{displayquote}
+$dedication$
+\end{displayquote}
+$endif$
+
+\rightsstatement{$if(rights_statement)$$rights_statement$$else$Select a rights statement$endif$}
+
+\maketitle[logo]
+
+$if(acknowledgements)$
+\begin{acknowledgements}   
+    \input{frontmatter/$acknowledgements$}
+\end{acknowledgements}
+$else$
+$endif$
+
+$if(abstract)$
+\begin{abstract}
+  \input{frontmatter/$abstract$} 
+\end{abstract}
+$endif$
+
+\extrachapter{Published Content and Contributions}
+$if(ownpubs)$
+\begin{publishedcontent}
+\input{frontmatter/$ownpubs$}
+\end{publishedcontent}
+$else$
+$endif$
+
+\tableofcontents
+\listoffigures
+\listoftables
+\printnomenclature
+\mainmatter
+
+$body$
+
+\end{document}

@@ -1,0 +1,27 @@
+PY=python
+PANDOC=pandoc
+
+
+
+tex:
+	cd src && \
+	pandoc metadata.yaml \
+	chapter*/*.md \
+	ref_heading.md \
+	-o ../dst/thesis.tex \
+	--default-image-extension=.pdf \
+	--template=styles/template.tex \
+	--filter pandoc-crossref \
+	--bibliography=references.bib \
+	--lua-filter=frontmatter/short-captions.lua \
+	--top-level-division chapter \
+	--resource-path='.:chapter_01/figs:chapter_02/figs:chapter_03/figs:chapter_04/figs:chapter_05/figs:chapter_06/figs:chapter_07/figs:chapter_08/figs:chapter_09/figs:' \
+	&& cd - \
+
+html:	
+	JEKYLL_ENV=production bundle exec jekyll build --destination docs;\
+	sh copyfigs.sh ;\
+
+
+	
+
