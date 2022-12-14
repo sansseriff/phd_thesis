@@ -35,13 +35,15 @@ the powerful mathematical privilege to say that the probability of a given state
 of the system $P_\text{state}$ follows a Boltzmann distribution,
 $$
 P_\text{state} = \frac{e^{-\frac{\epsilon_\text{state}}{k_BT}}}{\mathcal{Z}},
-$${#eq:boltzmann}
+$$
+{#eq:boltzmann}
 where $\epsilon_\text{state}$ is the energy of that state, $k_B$ is the Boltzmann constant,
 and $T$ is the system temperature. The denominator $\mathcal{Z}$ is the
 partition function of the system and is the sum 
 $$
 \mathcal{Z} = \sum\limits_{i \in \text{states}} e^{-\frac{\epsilon_i}{k_BT}},
-$${#eq:partition_function_def}
+$$
+{#eq:partition_function_def}
 ensuring that the distribution is normalized. Therefore, if we are interested in computing
 the probability of a given allosteric protein being in the active state, we
 merely  have to enumerate all of the Boltzmann weights (given by the numerator in @Eq:boltzmann)
@@ -49,7 +51,8 @@ and compute
 $$
 P_\text{active}  = \frac{\text{sum over all possible active states}}{\text{sum
 over all possible states}}.
-$${#eq:verbal_pact}
+$$
+{#eq:verbal_pact}
 This probability, defined as a function of the inducer concentration, is shown
 schematically in @Fig:allostery (B). While we have passed over some of the more
 subtle details of this calculation, the plot in @Fig:allostery (B) presents a
@@ -86,7 +89,7 @@ experimental dissection [@vilar2003; @buchler2003; @bintu2005; @garcia2011;
 sense had yet to be explored experimentally.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At the beginning of 2016, Manuel Razo-Mejia,
-Stephanie Barnes, Nathan Belliveau, Tal Einav, and I joined forces and
+Stephanie Barnes, Nathan Belliveau, expressionTal Einav, and I joined forces and
 set out to build a complete theoretical model for allosteric transcriptional
 regulation coupled with a thorough experimental dissection. This was no small
 task and would have likely taken a full Ph.D.'s worth of effort for a single
