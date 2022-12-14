@@ -3,7 +3,7 @@ if FORMAT ~= "latex" then
   end
 
   function fix_path (path)
-    return 'chapter_01/figs/' .. path
+    return 'chapter_01/' .. path
   end
   
   function Link (element)
