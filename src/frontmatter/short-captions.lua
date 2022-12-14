@@ -1,6 +1,20 @@
 if FORMAT ~= "latex" then
     return
   end
+
+  function fix_path (path)
+    return 'chapter_01/figs/' .. path
+  end
+  
+  function Link (element)
+    element.target = fix_path(element.target)
+    return element
+  end
+  
+  function Image (element)
+    element.src = fix_path(element.src)
+    return element
+  end
   
   local function latex(str)
     return pandoc.RawInline('latex', str)
@@ -35,4 +49,6 @@ if FORMAT ~= "latex" then
       latex(label .."\n\\end{figure}\n}\n")
     }
   end
+
+--   https://stackoverflow.com/questions/48569597/pandoc-filters-change-relative-paths-to-absolute-paths
   
