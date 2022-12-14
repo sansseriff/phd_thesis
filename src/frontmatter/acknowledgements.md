@@ -1,1 +1,18 @@
 
+"In composing this section of the thesis, I am faced with the daunting task of attempting to properly acknowledge the numerous individuals who have contributed to my intellectual and emotional development over the past six years. It is with a sense of deep humility and gratitude that I attempt to recognize these individuals, though I fear that I may inadvertently omit someone who has played a crucial role in my growth.
+
+First and foremost, I must express my profound thanks to Boris Korzh, who has acted as a true mentor to me during my early years in academia. His unwavering commitment to knowledge and his insatiable desire to tackle the most challenging scientific problems have been an inspiration to me. I am also deeply grateful to Emma Wollman, who has been a constant source of support and guidance throughout my research. Her dedication and reliability have been crucial to my success.
+
+I am also indebted to Eddy Ramirez, who has been a consistent source of encouragement and humility. His kindness and generosity have been a constant reminder of the many blessings that I have been fortunate to receive. I must also thank Sahil Patel, who has been the best lab partner and friend anyone could ask for. Our conversations about life and research have provided me with much needed perspective and levity.
+
+I am also grateful to Samantha Davis, who has been an invaluable source of knowledge and scientific rigor. Her expertise in quantum mechanics has been a constant source of inspiration to me. I am also thankful for Jamie Luskin, who has brought a much-needed element of candor and humor to our group. Her wit and intelligence have been a constant source of entertainment and enlightenment.
+
+I must also express my deep gratitude to Neil Sinclair, who has been a dependable advisor and a source of great knowledge in the field of quantum optics. His friendship and expertise have been invaluable to me. I am also grateful to Cristian Peña, who introduced me to the world of teleportation and quantum optics. His dedication and expertise have been an inspiration to me.
+
+I must also thank Ioana Craiciu, who has always been a bright presence in my life. Her passion for science and her keen intellect have provided me with much needed stimulation and inspiration. I am also grateful to Gregor Taylor, who has been an excellent climber and paper reviewer. His expertise and friendship have been invaluable to me.
+
+Lastly, I must express my deep gratitude to Maria Spiropulu, who has been a daring and passionate mentor. Her ability to get things done has been an inspiration to me. I am also grateful to Matt Shaw, who has been an extremely friendly and supportive boss. His positivity and honesty have been crucial to my development.
+
+In addition to these individuals, I must also acknowledge the contributions of Jason Trevor, Alex Walter, Andrew Beyer, and Hannah Rana. Their expertise and support have been crucial to my success.
+
+As I reflect on the privilege that I have enjoyed throughout my life, I am reminded of the words of Stephen Jay Gould: "I am, somehow, less interested in the weight and convolutions of Einstein’s brain than in the near certainty that people of equal talent have lived and died in cotton fields and sweatshops." I am aware that the physical, emotional, and intellectual security that I have been so fortunate to have comes, at some level, at the cost of others. This is a debt that can never be repaid, but I hope that I can at least give to the future a fraction of what these individuals have given to me."
