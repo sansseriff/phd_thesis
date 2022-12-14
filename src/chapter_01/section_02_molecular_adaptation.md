@@ -33,6 +33,9 @@ many other processes in the cell, it is fair to make the approximation that
 molecular binding is in equilibrium. Under this assumption, we are granted
 the powerful mathematical privilege to say that the probability of a given state
 of the system $P_\text{state}$ follows a Boltzmann distribution,
+<!-- This is a comment to myself -->
+<!-- This is 
+a multiline comment to myself -->
 $$
 P_\text{state} = \frac{e^{-\frac{\epsilon_\text{state}}{k_BT}}}{\mathcal{Z}},
 $$
