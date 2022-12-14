@@ -88,7 +88,7 @@ contribution to science, the nature of allosteric transitions [@loison2013;
 remainder of this thesis.
 
 ![**The caption heading** And I think the rest of this is the caption ](figs/fridge.PNG){#fig:custom_figure
-short-caption="A shorter Caption."}
+short-caption="The first short caption."}
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The diauxic growth transitions shown in
 @Fig:diauxie_fig illustrate adaptive processes across the biological scales,
@@ -108,9 +108,10 @@ signals. Finally, the precision with which these genes are regulated is
 determined by their sensitivity to physiological states, capturing the level
 of *physiological adaptation*.
 
-![**The caption heading** This is a test of an svg ](figs/test.svg)
+![**The caption heading** This is a test of an svg ](figs/
+test.svg)
 {#fig:custom_figure_2
-short-caption="A shorter Caption."}
+short-caption="This is the short caption."}
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The central aim of this dissertation is to
 explore the biophysical mechanisms by which these levels of adaptation --
