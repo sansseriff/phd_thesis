@@ -87,22 +87,8 @@ contribution to science, the nature of allosteric transitions [@loison2013;
 @monod1963; @monod1965], a topic that will feature prominently in the
 remainder of this thesis.
 
-![**The phenomenon of enzymatic adaptation revealed in bacterial growth
-curves.** (A) Optical density measurements of *Bacillus subtilis* cultures
-grown in a mixture of sucrose and either glucose (blue points) or arabinose
-(green points). Biphasic growth can be observed in the sucrose/arabinose
-mixture where the pause in growth (white shaded region) corresponds to
-enzymatic adaptation. Data digitized from @monod1941. (B) Diauxic growth
-curves of *Escherichia coli* cells grown on a mixture of glucose and sorbitol
-in different proportions. Data digitized from @monod1947. Periods of
-enzymatic adaptation are highlighted by white vertical lines. In both plots,
-a univariate spline interpolation was used to draw lines to reflect data
-presentation of original literature. The [Python code
-(`ch1_fig2.py`)](https://github.com/gchure/phd/blob/master/src/chapter_01/code/ch1_fig2.py)
-used to generate this figure can be accessed via the thesis [GitHub
-repository](https://github.com/gchure/phd).](figs/fridge.PNG){#fig:diauxie_fig
-short-caption="The phenomenon of enzymatic adaptation revealed in bacterial
-growth curves."}
+![**The caption heading** And I think the rest of this is the caption ](figs/fridge.PNG){#fig:custom_figure
+short-caption="A shorter Caption."}
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The diauxic growth transitions shown in
 @Fig:diauxie_fig illustrate adaptive processes across the biological scales,

@@ -32,6 +32,16 @@
             % IMPORTANT: load a style suitable for your discipline
             style=ieee
         ]{biblatex}
+
+\hypersetup{
+  colorlinks = true,
+  linkcolor = red
+}
+
+\makeatletter
+\let\@mycite\@cite
+\def\@cite#1#2{{\hypersetup{linkcolor=red!60!black}[{#1\if@tempswa , #2\fi}]}}
+\makeatother
             
 \addbibresource{references.bib}
 \defaultbibliographystyle{plainnat}
@@ -191,28 +201,13 @@ become (in his opinion) his greatest contribution to science, the nature
 of allosteric transitions \autocite{loison2013,monod1963,monod1965}, a
 topic that will feature prominently in the remainder of this thesis.
 
-\hypertarget{fig:diauxie_fig}{%
+\hypertarget{fig:custom_figure}{%
 \begin{figure}
 \centering
 \includegraphics{figs/fridge.PNG}
-\caption[{The phenomenon of enzymatic adaptation revealed in bacterial
-growth curves.}]{\textbf{The phenomenon of enzymatic adaptation revealed
-in bacterial growth curves.} (A) Optical density measurements of
-\emph{Bacillus subtilis} cultures grown in a mixture of sucrose and
-either glucose (blue points) or arabinose (green points). Biphasic
-growth can be observed in the sucrose/arabinose mixture where the pause
-in growth (white shaded region) corresponds to enzymatic adaptation.
-Data digitized from \textcite{monod1941}. (B) Diauxic growth curves of
-\emph{Escherichia coli} cells grown on a mixture of glucose and sorbitol
-in different proportions. Data digitized from \textcite{monod1947}.
-Periods of enzymatic adaptation are highlighted by white vertical lines.
-In both plots, a univariate spline interpolation was used to draw lines
-to reflect data presentation of original literature. The
-\href{https://github.com/gchure/phd/blob/master/src/chapter_01/code/ch1_fig2.py}{Python
-code (\texttt{ch1\_fig2.py})} used to generate this figure can be
-accessed via the thesis \href{https://github.com/gchure/phd}{GitHub
-repository}.}
-\label{fig:diauxie_fig}
+\caption[{A shorter Caption.}]{\textbf{The caption heading} And I think
+the rest of this is the caption}
+\label{fig:custom_figure}
 \end{figure}
 }
 
