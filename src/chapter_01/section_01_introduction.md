@@ -109,7 +109,7 @@ determined by their sensitivity to physiological states, capturing the level
 of *physiological adaptation*.
 
 ![**The caption heading** This is a test of an svg ](figs/test.svg)
-{#fig:custom_figure
+{#fig:custom_figure_2
 short-caption="A shorter Caption."}
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The central aim of this dissertation is to
