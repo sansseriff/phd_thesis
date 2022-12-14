@@ -88,7 +88,8 @@ contribution to science, the nature of allosteric transitions [@loison2013;
 remainder of this thesis.
 
 ![**The caption heading** And I think the rest of this is the caption ](figs/Figure_Data_Sept_2022.pdf){#fig:custom_figure
-short-caption="The second first caption."}
+short-caption="The second first caption."
+width=30}
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The diauxic growth transitions shown in
 @Fig:diauxie_fig illustrate adaptive processes across the biological scales,
