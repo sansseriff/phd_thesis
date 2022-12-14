@@ -1,5 +1,5 @@
 
-"In composing this section of the thesis, I am faced with the daunting task of attempting to properly acknowledge the numerous individuals who have contributed to my intellectual and emotional development over the past six years. It is with a sense of deep humility and gratitude that I attempt to recognize these individuals, though I fear that I may inadvertently omit someone who has played a crucial role in my growth.
+In composing this section of the thesis, I am faced with the daunting task of attempting to properly acknowledge the numerous individuals who have contributed to my intellectual and emotional development over the past six years. It is with a sense of deep humility and gratitude that I attempt to recognize these individuals, though I fear that I may inadvertently omit someone who has played a crucial role in my growth.
 
 First and foremost, I must express my profound thanks to Boris Korzh, who has acted as a true mentor to me during my early years in academia. His unwavering commitment to knowledge and his insatiable desire to tackle the most challenging scientific problems have been an inspiration to me. I am also deeply grateful to Emma Wollman, who has been a constant source of support and guidance throughout my research. Her dedication and reliability have been crucial to my success.
 
