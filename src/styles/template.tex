@@ -32,6 +32,16 @@
             % IMPORTANT: load a style suitable for your discipline
             style=ieee
         ]{biblatex}
+
+\hypersetup{
+  colorlinks = true,
+  linkcolor = red
+}
+
+\makeatletter
+\let\@mycite\@cite
+\def\@cite#1#2{{\hypersetup{linkcolor=red!60!black}[{#1\if@tempswa , #2\fi}]}}
+\makeatother
             
 \addbibresource{references.bib}
 \defaultbibliographystyle{plainnat}
