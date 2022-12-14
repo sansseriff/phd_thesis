@@ -19,6 +19,7 @@ into a simple cartoon representation (bottom) with an active (red) and
 inactive (purple) state, both of which possess binding pockets
 (semicircular notches) for an inducer molecule (orange).
 
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Much as we can reduce the complexity of allosteric molecules schematically,
 we can enumerate simple mathematical models that describe their behavior.
 Thermodynamic models built on an assumption of quasi-equilibrium are
@@ -126,7 +127,7 @@ repressor captured the underlying physics of the system.
 ![**Experimental dissection of the inducible simple repression input-output
 function.** (A) Schematic diagram of the inducible simple repression motif.
 (B) Schematic diagram of the input-output function as derived in Chapter
-2. (C) Experimental measurements of the fold-change in gene expression using
+1. (C) Experimental measurements of the fold-change in gene expression using
 the
 *lac* repressor from *E coli*. Different rows correspond to different operator
 sequences and therefore different values for the DNA affinity parameter, $\Delta\varepsilon_{RA}$.
