@@ -108,6 +108,10 @@ signals. Finally, the precision with which these genes are regulated is
 determined by their sensitivity to physiological states, capturing the level
 of *physiological adaptation*.
 
+![**The caption heading** This is a test of an svg ](figs/test.svg)
+{#fig:custom_figure
+short-caption="A shorter Caption."}
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The central aim of this dissertation is to
 explore the biophysical mechanisms by which these levels of adaptation --
 molecular, physiological, and evolutionary -- are interconnected. Furthermore, in the spirit of
