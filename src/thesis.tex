@@ -47,12 +47,12 @@
 
 \hypersetup{
   colorlinks = true,
-  linkcolor = red
+  linkcolor = black
 }
 
 \makeatletter
 \let\@mycite\@cite
-\def\@cite#1#2{{\hypersetup{linkcolor=red!60!black}[{#1\if@tempswa , #2\fi}]}}
+\def\@cite#1#2{{\hypersetup{linkcolor=black!60!black}[{#1\if@tempswa , #2\fi}]}}
 \makeatother
             
 \addbibresource{references.bib}
