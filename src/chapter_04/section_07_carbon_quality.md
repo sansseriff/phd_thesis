@@ -14,19 +14,29 @@ the metabolite and protein composition of the cytosol
 these thermodynamic parameters as quantitative traits in the study of
 growth-condition dependent gene expression.
 
+my equation 
+$$
+y = mx + b
+$$
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We have shown in the preceding chapters that
 @Eq:foldchange_simple can be rewritten into a Fermi function of the form
+
 $$
 \text{fold-change} = \frac{1}{1 + e^{-F / k_BT}},
-$${#eq:growth_fermi} 
+$$
+{#eq:growth_fermi} 
+
 where $F$ is the effective free energy difference between the repressor bound
 and unbound states of the promoter as described in Chapters 2 and 3.
 For the case of an allosteric simple repression architecture, and given knowledge of the
 values of the biophysical parameters, $F$ can be directly calculated as
+
 $$
 F = k_BT \left[-\log\left(1 + e^{-\Delta\varepsilon_{AI} / k_BT}\right)^{-1} -
 \log\frac{R}{N_{NS}} + \frac{\Delta\varepsilon_{RA}}{k_BT}\right].
-$${#eq:growth_bohr_parameter}
+$$
+{#eq:growth_bohr_parameter}
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We have recently interrogated how this
 formalism can be used to map mutations within the repressor to

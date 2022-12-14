@@ -35,7 +35,7 @@
 
 \hypersetup{
   colorlinks = true,
-  linkcolor = black
+  linkcolor = red
 }
 
 \makeatletter
@@ -230,8 +230,15 @@ Finally, the precision with which these genes are regulated is
 determined by their sensitivity to physiological states, capturing the
 level of \emph{physiological adaptation}.
 
-\includegraphics{figs/ test.svg} \{\#fig:custom\_figure\_2
-short-caption=``This is the short caption.''\}
+\hypertarget{fig:custom_second_figure}{%
+\begin{figure}
+\centering
+\includegraphics{figs/fridge.PNG}
+\caption[{The second first caption.}]{\textbf{The caption heading} And I
+think the rest of this is the caption}
+\label{fig:custom_second_figure}
+\end{figure}
+}
 
 ~~~~~The central aim of this dissertation is to explore the biophysical
 mechanisms by which these levels of adaptation -- molecular,
@@ -4039,15 +4046,24 @@ the metabolite and protein composition of the cytosol
 utility of these thermodynamic parameters as quantitative traits in the
 study of growth-condition dependent gene expression.
 
+my equation \[
+y = mx + b
+\]
+
 ~~~~~We have shown in the preceding chapters that
 Eq.~\ref{eq:foldchange_simple} can be rewritten into a Fermi function of
-the form \begin{equation}\protect\hypertarget{eq:growth_fermi}{}{
+the form
+
+\begin{equation}\protect\hypertarget{eq:growth_fermi}{}{
 \text{fold-change} = \frac{1}{1 + e^{-F / k_BT}},
-}\label{eq:growth_fermi}\end{equation} where \(F\) is the effective free
-energy difference between the repressor bound and unbound states of the
-promoter as described in Chapters 2 and 3. For the case of an allosteric
-simple repression architecture, and given knowledge of the values of the
-biophysical parameters, \(F\) can be directly calculated as
+}\label{eq:growth_fermi}\end{equation}
+
+where \(F\) is the effective free energy difference between the
+repressor bound and unbound states of the promoter as described in
+Chapters 2 and 3. For the case of an allosteric simple repression
+architecture, and given knowledge of the values of the biophysical
+parameters, \(F\) can be directly calculated as
+
 \begin{equation}\protect\hypertarget{eq:growth_bohr_parameter}{}{
 F = k_BT \left[-\log\left(1 + e^{-\Delta\varepsilon_{AI} / k_BT}\right)^{-1} -
 \log\frac{R}{N_{NS}} + \frac{\Delta\varepsilon_{RA}}{k_BT}\right].

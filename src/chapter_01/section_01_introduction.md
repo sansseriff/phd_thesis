@@ -108,10 +108,8 @@ signals. Finally, the precision with which these genes are regulated is
 determined by their sensitivity to physiological states, capturing the level
 of *physiological adaptation*.
 
-![**The caption heading** This is a test of an svg ](figs/
-test.svg)
-{#fig:custom_figure_2
-short-caption="This is the short caption."}
+![**The caption heading** And I think the rest of this is the caption ](figs/fridge.PNG){#fig:custom_second_figure
+short-caption="The second first caption."}
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The central aim of this dissertation is to
 explore the biophysical mechanisms by which these levels of adaptation --
