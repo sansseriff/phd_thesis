@@ -124,6 +124,8 @@ inferred parameters to our model and drew predictions for all other experimental
 remarkably predictive, suggesting that our "toy" model of an allosteric
 repressor captured the underlying physics of the system.
 
+### This is a sub sub heading
+
 ![**Experimental dissection of the inducible simple repression input-output
 function.** (A) Schematic diagram of the inducible simple repression motif.
 (B) Schematic diagram of the input-output function as derived in Chapter

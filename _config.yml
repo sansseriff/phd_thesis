@@ -4,17 +4,14 @@ doks:
     color_theme:  grey # Available themes: blue (default), green, purple, red and yellow
     header:
         logo:
-            text: Griffin D. Chure | PhD Thesis
+            text: Andrew S. Mueller | PhD Thesis
             image:
     footer:
         content:
             logo:
-                text: Griffin D. Chure | PhD Thesis
+                text: Andrew S. Mueller | PhD Thesis
                 image:
-            copyright: Copyright &copy; 2020. - Griffin D. Chure <br>All rights reserved.
-        social_list:
-            - network_name: twitter
-              profile_url: 'https://twitter.com/gdchure'
+            copyright: Copyright &copy; 2020. - Andrew S. Mueller <br>All rights reserved.
     google_analytics:
         tracking_code: UA-109526846-4 
     comments:
