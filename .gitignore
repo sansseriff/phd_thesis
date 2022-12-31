@@ -18,6 +18,9 @@ src/data/*
 site/
 mkdocs/
 
+# stuff from the origin griffin chure thesis
+old/ 
+
 # ---------------
 # Compiled assets
 # ---------------
