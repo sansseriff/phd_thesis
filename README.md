@@ -6,7 +6,7 @@
 
 ## Contact
 
-Related to the organization and technical features of this repository, direct questions to the original architect, [Griffin Chure](https://github.com/gchure/phd/issues) and I 
+Related to the organization and technical features of this repository, direct questions to the original architect, [Griffin Chure](https://github.com/gchure/phd/issues) or me, Andrew Mueller
 
 
 ## About
