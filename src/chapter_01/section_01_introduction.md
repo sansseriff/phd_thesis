@@ -10,6 +10,8 @@ continually engaged in a dialogue that demands the ability to adapt. Over the
 past 3.5 billion years of evolution, life has evolved myriad clever ways to
 combat (and exploit) environmental fluctuations to amplify reproductive
 success. The mechanisms behind this adaptation are diverse and traverse the
+
+wheee
 biological scales, ranging from nanosecond-scale conformational switching of
 proteins (@Fig:adaptation_levels (A)), to reconfiguration of metabolic
 networks to consume different sugars (@Fig:adaptation_levels (B)), to
