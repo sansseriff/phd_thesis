@@ -1,0 +1,69 @@
+site_name: Computational Methods for SNSPDs
+dev_addr: 127.0.0.1:9254
+site_dir: site
+docs_dir: src
+  
+theme:
+  name: material
+  logo: ./site_images/logo.svg
+  favicon: ./site_images/favicon.png
+  palette: 
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate 
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  # custom_dir: overrides
+  features:
+    - navigation.indexes
+        
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.snippets:
+      check_paths: true
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences
+  - footnotes
+
+
+plugins:
+  - search
+  - bibtex:
+      bib_file: "./src/references.bib"
+      # csl_file: "../src/styles/ieee.csl"
+# markdown_extensions:
+#   - footnotes
+
+# extra:
+#   analytics:
+#     provider: google
+#     property: G-95QS2HZSZW
+#     # 3565859434
+
+    
+
+
+# nav:
+#   - index.md
+  # - High Rate Entanglement:
+  #   - hre/index.md
+  #   - April 2022: hre/hre_april_2022.md
+  #   - May 2022: hre/hre_may_2022.md
+  #   - Ultra Long Distance Demos: hre/hre_ultra.md
+  #   - Fast Entanglement Scans: hre/fast_ent_scans.md
+  #   - Action Framework: hre/action_framework.md
+  # - DDAQ Software: ddaq.md
+
+
+
+  
+
+extra_javascript:
+  # - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

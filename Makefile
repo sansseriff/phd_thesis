@@ -65,8 +65,11 @@ overleaf_clean:
 	&& git push overleaf master
 
 html:	
-	JEKYLL_ENV=production bundle exec jekyll build --destination docs;\
-	sh copyfigs.sh ;\
+	# JEKYLL_ENV=production bundle exec jekyll build --destination docs;\
+	cd src && \
+	cp -r chapter_01 ../mkdocs/docs/chapter_01
+	cd .. \
+	# sh copyfigs.sh ;\
 
 
 	

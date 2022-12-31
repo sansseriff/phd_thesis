@@ -90,7 +90,7 @@ contribution to science, the nature of allosteric transitions [@loison2013;
 @monod1963; @monod1965], a topic that will feature prominently in the
 remainder of this thesis.
 
-![**The caption heading** And I think the rest of this is the caption ](figs/Figure_Data_Sept_2022.pdf){#fig:custom_figure
+![**The caption heading** And I think the rest of this is the caption ](./figs/Figure_Data_Sept_2022.svg){#fig:custom_figure
 short-caption="The second first caption."
 width=70%}
 
