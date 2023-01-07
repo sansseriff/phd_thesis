@@ -1,118 +1,49 @@
 ## Introduction
 
-From archaea thriving in hydrothermal vents on the ocean floor to aspen trees
-dominating a Coloradan mountainside, all forms of life are unified in their
-obedience to (and influence on) their environment. Whether it be the
-stochastic events that can trigger mass extinctions [@jablonski2001] or the
-rapid "terraforming" of environments by their inhabitants (such as the
-rusting of the oceans [@luo2018]), organisms and their environments are
-continually engaged in a dialogue that demands the ability to adapt. Over the
-past 3.5 billion years of evolution, life has evolved myriad clever ways to
-combat (and exploit) environmental fluctuations to amplify reproductive
-success. The mechanisms behind this adaptation are diverse and traverse the
+Time-resolved photon detection with low dark counts is a vital technology in fields such as quantum information processing, classical communication, quantum communication, and laser ranging. Increasingly, research in these fields employs superconducting nanowire single photon detectors (SNSPDs), which have been demonstrated with system detection efficiency ($\eta$) of more than 90% [@Reddy2020], timing jitter ($\Delta t$) as low as 2.6 ps [@Korzh2020] and intrinsic dark count rates ($D$) in the milli- to  micro-hertz range [@Hochberg2019]. However, quantum communication applications require detection systems with performance optimized across all three metrics simultaneously. The dimensionless figure of merit  $H$ specifies this application-specific performance as $H = \frac{\eta}{(\Delta t D)}$  [@Hadfield2009]. 
 
-wheee
-biological scales, ranging from nanosecond-scale conformational switching of
-proteins (@Fig:adaptation_levels (A)), to reconfiguration of metabolic
-networks to consume different sugars (@Fig:adaptation_levels (B)), to
-evolutionary trajectories that only become visible over many generations
-(@Fig:adaptation_levels (C)). While "adaptation" is typically only associated
-with organisms (at least colloquially), one can use the same language to
-describe the microscopic operations of molecules.
+Here, we focus on lowering the Dark Count Rate (DCR) of a telecom-band SNSPD system by filtering thermal photons, without sacrificing efficiency or jitter. We demonstrate a free-space coupled SNSPD with sub-0.1 Hz DCR, 14 ps timing jitter, and 72% total system detection efficiency (SDE) by using a differential single-pixel SNSPD [@Colangelo2021] to image a single-mode fiber through an optimized free-space filter stack.
+
+%HARDWARE
+\begin{figure}[htbp]
+\centering\includegraphics[width=\linewidth]{Hardware and Filters Squashed 2.pdf}
+\caption{\small a) System hardware. ASPH: aspheric lens, %(Edmund Optics \#47-729)
+SP1 \& SP2: custom short-pass filters, BP: band-pass filter, %(Semrock NIR01-1550/3-25),
+BK7: glass windows, SMF: Single-mode fiber, PEL: Peltier element, LC: Liquid cooling block. b) Transmission spectra for the three filters utilized. c) Absorption spectrum for the SNSPD efficiency-enhancing optical stack.}
+\label{fig:setup}
+\end{figure}
+%We compare performance with a fiber-coupled configuration using the same detector. 
+
+The highest system detection efficiencies have been achieved using self-aligned fiber coupling where dark counts can be reduced using cryogenic fiber looping [@Cohen2015] or spliced narrow-band filters [@Boaron2018secure]. But it is difficult to achieve strong filtering without losses at the target wavelength. Low-loss, high-rejection filters are typically available as free-space components, so some of the highest reported H-values were achieved with cryogenic, fiber to free-space to fiber coupling, but exhibit an SDE of only a few percent  [@Shibata2015]. The filtering method presented here takes advantage of commercially-available filters, achieves a high free-space coupling efficiency using a cryogenic lens, and is compatible with both fiber and free-space optical inputs.
 
 
-### This is another sub sub heading
+In this work, a single mode fiber is imaged onto the detector using two f = 18.75  mm lenses. One lens collimates light from an optical fiber face outside the cryostat (Photon Spot), and the other focuses light onto the detector inside  [@Bellei:16]. In the collimated region between, the beam passes though a series of short-pass filters and one band-pass filter mounted at 4 K (Fig. \ref{fig:setup}a). One of the short-pass filters is angled to avoid ghosting effects. The 40 K radiation shield and outer cryostat housing are fitted with anti-reflection coated BK7 windows. The filters are spring loaded to prevent cracking at low temperatures. To minimize effects of stray light, the interior of the 4 K shield was painted with mid-IR absorbing paint (Aeroglaze Z306)  [@Persky1999], while gaps between filters and the windows were covered with metal tape. 
 
-![**The spatial, temporal, and mechanistic scales of adaptation.** (A)
-Molecular adaptation in this work is defined through the lens of allostery
-where the activity of a protein complex is modulated the reversible binding
-of a small molecule. These binding and unbinding events lead to rapid changes
-in protein conformation whose behavior (both energetic and temporal) is
-comparable to that of thermal motion. (B) Physiological adaptation here is
-defined as the rewiring of biochemical reaction networks that lead to changes
-in cellular behavior (such as chemotaxis) or metabolic capacity (such as
-aerobic to fermentative metabolism). (C) Evolutionary adaptation is recorded
-in the variation in the genetic sequence of regulatory molecules. Variations
-in sequence influence the function of the proteins and RNAs they encode which
-ultimately define cellular fitness.](ch1_fig1){#fig:adaptation_levels
-short-caption="The spatial, temporal, and mechanistic scales of adaptation."}
+The system is based on 1-inch optics, although the f = 18.75 mm lenses lead to a $1/e^2$ intensity diameter of about 5 mm in the collimated region. To reduce the larger-than-required numerical aperture of the system, painted 8 mm apertures (Acktar Spectral Black) were added in the collimated region. These are large enough to allow minor alignment adjustments --- by translating the exterior collimating lens --- without vignetting. 
+
+\begin{figure}[htbp]
+\centering
+\centering\includegraphics[width=\linewidth]{DataFigure_6.pdf}
+\caption{ \small a) Simulated photon flux at various temperatures with and without the 1550 nm bandpass filter (BP). b) Normalized photon count rate (PCR) and jitter measurements c) DCR, and calculated figure of merit $H$ versus bias current for both fiber-coupled and free space coupled configurations.}
+\label{fig:false-color}
+\end{figure}
+
+We use four custom cryogenic short-pass filters, with pass-bands below $1.6 \ \mathrm{\mu m}$ and $1.9 \ \mathrm{\mu m}$ (Andover Corp.), both with transmission at 1550 nm of 98.8 ± 0.3\%. They reject wavelengths shorter than 3 {\textmu}m through reflective optical coatings, and attenuate longer wavelengths through material absorption in the 12.7 mm-thick N-BK7 glass substrate. While the bandpass filter (FWHM = 7 nm) was found to blue-shift by about 2 nm at cryogenic temperatures, the passband was wide enough such that significant attenuation was not observed at the original target wavelength of 1550 nm. This filter is also sufficiently wide to avoid Fourier-limited broadening of ultra-short laser pulses. 
+
+The filtering of the optical stack was modeled by assuming a black-body emitter at 298 K and a field of view defined by the 18.75 mm focal length of the cryogenic lens and the 8 mm diameter of the apertures. The resulting spectrum was multiplied by the transmission of the filters (Fig. \ref{fig:setup}b) and detector optical stack (Fig. \ref{fig:setup}c). The model showed that two each of the 1.6 {\textmu}m and 1.9 {\textmu}m short pass filters were necessary to suppress mid-infrared light to where it was no longer the dominant source of dark counts. With the inclusion of the four shortpass filters, the dominant source of dark counts is the spectral region near 1550 nm as shown in Fig. \ref{fig:false-color}a, which also illustrates the effect of the bandpass filter. Also evident in Fig. \ref{fig:false-color}a is the strong dependence of DCR on the temperature of the final surface outside the cryostat emitting thermal radiation. This motivated the exterior cooling apparatus shown at the bottom of Fig. \ref{fig:setup}a. The bulkhead holding the fiber connector is cooled to around -2$^\circ$C using a Peltier element and liquid cooling block. This addition reduced the system DCR from 0.4 Hz to below 0.1 Hz. While dark counts from multiple spatial modes are present in this system — modes that would not be present in a purely fiber based approach — the external cooling technique works to minimize their effect.
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The idea of molecular adaption is not novel and
-demands a brief foray into the history of bacterial growth and the dawn of
-regulatory biology. In the late 1890s, Emilé Duclaux and his graduate
-student Frédéric Diénert performed a series of experiments illustrating that
-the common yeast could only consume galactose after an incubation period with
-the sugar. This led to a general conclusion that "the production of diastases
-[enzymes] depends on the manner of nutrition" in which the cultures were
-grown [@loison2013], a phenomenon later coined *enzymatic adaptation*. This
-is one of the first observations of the fact that, while an organism may
-be able to digest a certain sugar, it may not *always* be able to do so.
-Rather, there seemed to be certain conditions in which the production or
-formation of these enzymes could occur. In his doctoral thesis in 1900,
-Diénert proposed two mechanisms for the origin of enzymatic adaptation
-observed for galactozymase in *S. cerevisiae* [@loison2013]. Either (a) the
-presence of galactose *directly* transformed enzymes already present in the
-cell into galactozymase or (b) that the galactose activated the production of
-galactozymase *de novo* [@dienert1900; @loison2013].
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nearly half a century later, Jacques Monod
-would rediscover the phenomenon of enzymatic adaptation, this time in the
-context of bacterial growth. In his 1941 work, Monod for the first time
-reported on the phenomenon of diauxic or biphasic growth, shown in @Fig:diauxie_fig (A).
-He noted that for some mixtures of carbon sources, the culture grew
-"kinetically normal" meaning they grew exponentially to saturation (blue
-points, @Fig:diauxie_fig (A)). However, some mixtures (such as sucrose and
-arabinose) led to biphasic growth where the culture would grow exponentially,
-undergo a period where growth had ceased (lasting typically 20 - 60 minutes),
-followed again by another round of exponential growth (green points,
-@Fig:diauxie_fig (A)). Additionally, Monod showed that the onset of this
-diauxic shift could be tuned by varying the relative concentrations of the
-carbon sources, revealing a controllable chemical basis for the adaptation
-(@Fig:diauxie_fig (B)).
+This work used a low-jitter, differential SNSPD \cite{Colangelo2021}, with an active area of 22 $\times$ 15 {\textmu}m, formed by a meander of 100 nm-wide and 5-nm-thick niobium nitride (NbN) nanowires on a 500 nm pitch. A more conventional single-ended readout SNSPD of similar area would also achieve low DCR in this coupling system, but would likely achieve a lower performance metric $H$ from correspondingly higher jitter. The nanowire is embedded in an efficiency-enhancing optical stack made of alternating layers of TiO$_2$ and SiO$_2$ and a gold mirror layer. As shown in Fig. \ref{fig:false-color}b and c, when fiber coupled (without any fiber-based filtering methods applied), this detector achieved a saturated SDE of $84\% \pm 4.4 \%$ and a DCR of 20 Hz at a bias current of 16 {\textmu}A. 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Monod immediately made the connection
-between diauxic growth and enzymatic adaptation [@loison2013]. Despite his
-work appearing 40 years after the pioneering work of Ducleaux and Diénért,
-there had been little progress towards a mechanistic, needless to say
-quantitative, explanation for the phenomenon. In
-fact, Monod was particularly disappointed by the teleological explanations
-where the cells simply changed  their behavior to
-perform only the chemical reactions that were "needed" [@loison2013]. The
-teleological approach to much of biology during this time period, especially
-in the French scientific community, severely bothered Monod. To him, this
-kind of approach belonged to a pre-scientific era and lacked the "postulate of
-objectivity" that other fields of science (particularly physics) had adopted [@loison2013]. Near the middle of the 20th century, Monod
-published a 60-page treatise on the phenomenon of enzymatic adaptation
-with the level of quantitative rigor he thought it deserved [@monod1947]. In
-this work, he set out to progressively deconstruct and invalidate a series of
-hypotheses for the phenomenon of enzymatic adaptation. In doing so, he laid
-the groundwork for what would become (in his opinion) his greatest
-contribution to science, the nature of allosteric transitions [@loison2013;
-@monod1963; @monod1965], a topic that will feature prominently in the
-remainder of this thesis.
+
+As also shown in Fig. \ref{fig:false-color}b, the free-space coupling system achieves up to $72 \% \pm 3.7 \%$ SDE as measured from the fiber outside the cryostat. The reduction in efficiency is likely due to surface reflections in the free-space optics, and potential misalignment in the optical baffles. The minimum DCR (Fig. \ref{fig:false-color}c) at $72 \%$ SDE is about 0.1 Hz, with a bias current of 16 {\textmu}A. These metrics, with the jitter measurements shown in Fig. \ref{fig:false-color}b, give a maximum H value of $5 \times 10^{11}$ (Fig. \ref{fig:false-color}c). Values as high as $1.8 \times 10^{12}$ have been reported before, but at 1.5\% system detection efficiency \cite{Shibata2015}. Our system shows a low DCR can be achieved without severe reduction of SDE or usable target wavelength bandwidth. This is paramount for the future of terrestrial and space-to-ground quantum communication, since it increases success rate with finite statistics \cite{Boaron2018secure}. The same techniques can be applied to emerging SNSPD applications at longer wavelengths, such as laser ranging \cite{Taylor2019}, where fiber filtering is impractical. Beyond single-mode applications, our work paves the way to scalable, low-DCR, multi-mode coupling to SNSPD arrays \cite{Wollman2019}.
 
 ![**The caption heading** And I think the rest of this is the caption ](./figs/Figure_Data_Sept_2022.svg){#fig:custom_figure
 short-caption="The second first caption."
 width=70%}
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The diauxic growth transitions shown in
-@Fig:diauxie_fig illustrate adaptive processes across the biological scales,
-as were schematized in @Fig:adaptation_levels. While it was not known to
-Monod at the time, we now know that many cases of enzymatic adaptation are
-driven by the regulation of gene expression. As the bacterial culture
-approaches the auxic shift, the presence or absence of the substrate is
-sensed by regulatory molecules that control whether the genes encoding the
-enzymes for metabolism of the substrate are expressed. This represents the
-level of *molecular adaptation* where, given binding or unbinding of the
-substrate molecule, the activity of the regulatory protein is modulated. The
-amino acid sequence of these proteinaceous regulators are the product of
-billions of years of evolution with regions of the protein (such as the
-DNA-binding and inducer-binding domains) undergoing *evolutionary
-adaptation* that define how the regulatory molecule senses and responds to these
-signals. Finally, the precision with which these genes are regulated is
-determined by their sensitivity to physiological states, capturing the level
-of *physiological adaptation*.
+
 
 ![**The caption heading** And I think the rest of this is the caption ](figs/test){#fig:custom_second_figure
 short-caption="The second first caption."}
