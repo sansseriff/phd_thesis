@@ -1,0 +1,2330 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../section_07_DBL_mutants/">
+      
+      
+        <link rel="next" href="../section_09_methods/">
+      
+      <link rel="icon" href="../../site_images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
+    
+    
+      
+        <title>Section 08 discussion - Computational Methods for SNSPDs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f56500e0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#discussion" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Computational Methods for SNSPDs" class="md-header__button md-logo" aria-label="Computational Methods for SNSPDs" data-md-component="logo">
+      
+  <img src="../../site_images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Computational Methods for SNSPDs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Section 08 discussion
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Computational Methods for SNSPDs" class="md-nav__button md-logo" aria-label="Computational Methods for SNSPDs" data-md-component="logo">
+      
+  <img src="../../site_images/logo.svg" alt="logo">
+
+    </a>
+    Computational Methods for SNSPDs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Computational Methods for SNSPDs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref_heading/" class="md-nav__link">
+        References
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Chapter 01
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 01" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 01
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_00_title/" class="md-nav__link">
+        The Phenomenon of Adaptation Across Scales
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_01_introduction/" class="md-nav__link">
+        Section 01 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_02_molecular_adaptation/" class="md-nav__link">
+        Section 02 molecular adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_03_evolutionary_adaptation/" class="md-nav__link">
+        Section 03 evolutionary adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_04_physiological_adaptation/" class="md-nav__link">
+        Section 04 physiological adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_05_survival/" class="md-nav__link">
+        Section 05 survival
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_06_conclusion/" class="md-nav__link">
+        Section 06 conclusion
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Chapter 02
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 02" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 02
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_00_title/" class="md-nav__link">
+        Through the Intramolecular Grapevine: Signal Processing Via Allosteric Transcription Factors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_04_model/" class="md-nav__link">
+        Section 04 model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_05_results/" class="md-nav__link">
+        Section 05 results
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_06_discussion/" class="md-nav__link">
+        Section 06 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_07_methods/" class="md-nav__link">
+        Section 07 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Chapter 03
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 03" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 03
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_00_title/" class="md-nav__link">
+        Unknown Knowns, Known Unknowns, and Unforeseen Consequences: Using Free Energy Shifts To Predict Mutant Phenotypes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_04_model/" class="md-nav__link">
+        Section 04 model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_05_DNA_mutants/" class="md-nav__link">
+        section 05 DNA mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_06_IND_mutants/" class="md-nav__link">
+        section 06 IND mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_07_DBL_mutants/" class="md-nav__link">
+        section 07 DBL mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Section 08 discussion
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Section 08 discussion
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#discussion" class="md-nav__link">
+    Discussion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_09_methods/" class="md-nav__link">
+        Section 09 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Chapter 04
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 04" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 04
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_00_title/" class="md-nav__link">
+        On The Physiological Adaptability of a Simple Genetic Circuit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_04_model/" class="md-nav__link">
+        Section 04 model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_05_experimental_design/" class="md-nav__link">
+        Section 05 experimental design
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_06_scaling/" class="md-nav__link">
+        Section 06 scaling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_07_carbon_quality/" class="md-nav__link">
+        Section 07 carbon quality
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_08_temperature/" class="md-nav__link">
+        Section 08 temperature
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_09_discussion/" class="md-nav__link">
+        Section 09 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_10_methods/" class="md-nav__link">
+        Section 10 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Chapter 05
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 05" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 05
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_00_title/" class="md-nav__link">
+        'Water, Water Everywhere, Yet Not A Drop to Drink': How Bacteria Adapt To Changes in Osmolarity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_04_results/" class="md-nav__link">
+        Section 04 results
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_05_discussion/" class="md-nav__link">
+        Section 05 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_06_methods/" class="md-nav__link">
+        Section 06 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Chapter 06
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 06" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 06
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_00_title/" class="md-nav__link">
+        Supplemental Information For Chapter 2: Signal Processing Via Allosteric Transcription Factors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_02_epAI/" class="md-nav__link">
+        section 02 epAI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_03_fugacity/" class="md-nav__link">
+        Section 03 fugacity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_04_flow/" class="md-nav__link">
+        Section 04 flow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_05_microscopy/" class="md-nav__link">
+        Section 05 microscopy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_06_sensitivity/" class="md-nav__link">
+        Section 06 sensitivity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_07_global_fit/" class="md-nav__link">
+        Section 07 global fit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_08_Oid/" class="md-nav__link">
+        section 08 Oid
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_09_comparison/" class="md-nav__link">
+        Section 09 comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_10_properties/" class="md-nav__link">
+        Section 10 properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_11_applications/" class="md-nav__link">
+        Section 11 applications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_12_tables/" class="md-nav__link">
+        Section 12 tables
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Chapter 07
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 07" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 07
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_00_title/" class="md-nav__link">
+        Supplemental Information for Chapter 3: Predictive Shifts in Free Energy Couple Mutations to Their Phenotypic Consequences
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_02_nonmonotonicity/" class="md-nav__link">
+        Section 02 nonmonotonicity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_03_DNA_epRA_inference/" class="md-nav__link">
+        section 03 DNA epRA inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_04_delta_F_inference/" class="md-nav__link">
+        section 04 delta F inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_05_DNA_mutants/" class="md-nav__link">
+        section 05 DNA mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_06_IND_inference/" class="md-nav__link">
+        section 06 IND inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_07_IND_mutants/" class="md-nav__link">
+        section 07 IND mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_08_param_comparison/" class="md-nav__link">
+        Section 08 param comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_09_global_fit/" class="md-nav__link">
+        Section 09 global fit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_10_generality/" class="md-nav__link">
+        Section 10 generality
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_11_strains/" class="md-nav__link">
+        Section 11 strains
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Chapter 08
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 08" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 08
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_00_title/" class="md-nav__link">
+        Supplemental Information for Chapter 4: The Physiological Adaptability of a Simple Genetic Circuit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_02_growth_rates/" class="md-nav__link">
+        Section 02 growth rates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_03_cell_volume/" class="md-nav__link">
+        Section 03 cell volume
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_04_counting_repressors/" class="md-nav__link">
+        Section 04 counting repressors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_05_carbon_inference/" class="md-nav__link">
+        Section 05 carbon inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_06_entropy/" class="md-nav__link">
+        Section 06 entropy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_07_strains_recipes/" class="md-nav__link">
+        Section 07 strains recipes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_11">
+          Chapter 09
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 09" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 09
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_00_title/" class="md-nav__link">
+        Supplemental Information For Chapter 5: How Bacteria Adapt To Changes in Osmolarity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_02_electrophysiology/" class="md-nav__link">
+        Section 02 electrophysiology
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_03_cal_factor_derivation/" class="md-nav__link">
+        Section 03 cal factor derivation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_04_survival_classification/" class="md-nav__link">
+        Section 04 survival classification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_05_logistic_regression/" class="md-nav__link">
+        Section 05 logistic regression
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_06_shock_classification/" class="md-nav__link">
+        Section 06 shock classification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_07_vandenberg_comparison/" class="md-nav__link">
+        Section 07 vandenberg comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_08_strains/" class="md-nav__link">
+        Section 08 strains
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_12">
+          Frontmatter
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Frontmatter" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Frontmatter
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/abstract/" class="md-nav__link">
+        Abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements/" class="md-nav__link">
+        Acknowledgements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements_prompt/" class="md-nav__link">
+        Acknowledgements prompt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements_prompt_2/" class="md-nav__link">
+        Acknowledgements prompt 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements_results_general/" class="md-nav__link">
+        Acknowledgements results general
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/published/" class="md-nav__link">
+        Published
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#discussion" class="md-nav__link">
+    Discussion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Section 08 discussion</h1>
+
+<h2 id="discussion">Discussion</h2>
+<p>Allosteric regulation is often couched as “biological action at a distance."
+Despite extensive knowledge of protein structure and function, it remains
+difficult to translate the coordinates of the atomic constituents of a
+protein to the precise parameter values which define the functional response,
+making each mutant its own intellectual adventure. Bioinformatic approaches
+to understanding the sequence-structure relationship have permitted us to
+examine how the residues of allosteric proteins evolve, revealing conserved
+regions which hint to their function. Co-evolving residues reveal sectors of
+conserved interactions which traverse the protein that act as the allosteric
+communication channel between domains [@suel2003; @mclaughlinjr2012;
+@reynolds2011]. Elucidating these sectors has advanced our understanding of
+how distinct domains "talk" to one another and has permitted direct
+engineering of allosteric responses into non-allosteric enzymes <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. Even so, we are left without a quantitative
+understanding of how these admittedly complex networks set the energetic
+difference between active and inactive states or how a given mutation
+influences binding affinity. In this context, a biophysical model in which
+the various parameters are intimately connected to the molecular details can
+be of use and can lead to quantitative predictions of the interplay between
+amino-acid identity and system-level response.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By considering how each parameter contributes
+to the observed change in free energy, we are able to tease out different
+classes of parameter perturbations which result in stereotyped responses to
+changing inducer concentration. These characteristic changes to the free
+energy can be used as a diagnostic tool to classify mutational effects. For
+example, we show in @Fig:deltaF_theory that modulating the inducer binding
+constants <span class="arithmatex">\(K_A\)</span> and <span class="arithmatex">\(K_I\)</span> results in non-monotonic free energy changes that
+are dependent on the inducer concentration, a feature observed in the inducer
+binding mutants examined in this work. Simply looking at the inferred <span class="arithmatex">\(\Delta
+F\)</span> as a function of inducer concentration, which requires no fitting of the
+biophysical parameters, indicates that <span class="arithmatex">\(K_A\)</span> and <span class="arithmatex">\(K_I\)</span> must be modified
+considering those are the only parameters which can generate such a response.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Another key observation is that a perturbation
+to only <span class="arithmatex">\(K_A\)</span> and <span class="arithmatex">\(K_I\)</span> requires that the <span class="arithmatex">\(\Delta F = 0\, k_BT\)</span> at <span class="arithmatex">\(c = 0\)</span>.
+Deviations from this condition imply that more than the inducer binding
+constants must have changed. If this shift in <span class="arithmatex">\(\Delta F\)</span> off of <span class="arithmatex">\(0\, k_BT\)</span> at
+<span class="arithmatex">\(c = 0\)</span> is not constant across all inducer concentrations, we can surmise
+that the energy difference between the allosteric states
+<span class="arithmatex">\(\Delta\varepsilon_{AI}\)</span> must also be modified. We again see this effect for
+all of our inducer mutants. By examining the inferred <span class="arithmatex">\(\Delta F\)</span>, we can
+immediately say that in addition to <span class="arithmatex">\(K_A\)</span> and <span class="arithmatex">\(K_I\)</span>, <span class="arithmatex">\(\Delta\varepsilon_{AI}\)</span>
+must decrease relative to the wild-type value as <span class="arithmatex">\(\Delta F &gt; 0\)</span> at <span class="arithmatex">\(c = 0\)</span>.
+When the allosteric parameters are fit to the induction profiles, we indeed
+see that this is the case, with all four mutations decreasing the energy gap
+between the active and inactive states. Two of these mutations, Q291R and
+Q291K, make the inactive state of the repressor <em>more</em> stable than the active
+state, which is not the case for the wild-type repressor <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Our formulation of <span class="arithmatex">\(\Delta F\)</span> indicates that
+shifts away from <span class="arithmatex">\(0\, k_BT\)</span> that are independent of the inducer concentration
+can only arise from changes to the repressor copy number and/or DNA binding
+specificity, indicating that the allosteric parameters are untouched. We see
+that for three mutations in the DNA binding domain, <span class="arithmatex">\(\Delta F\)</span> is the same
+irrespective of the inducer concentration. Measurements of <span class="arithmatex">\(\Delta F\)</span> for
+these mutants with repressor copy numbers across three orders of magnitude
+yield approximately the same value, revealing that <span class="arithmatex">\(\Delta\varepsilon_{RA}\)</span>
+is the sole parameter altered via the mutations.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We note that the conclusions stated above can
+be qualitatively drawn without resorting to fitting various parameters and
+measuring the goodness-of-fit. Rather, the distinct behavior of <span class="arithmatex">\(\Delta F\)</span> is
+sufficient to determine which parameters are changing. Here, these
+conclusions are quantitatively confirmed by fitting these parameters to the
+induction profile, which results in accurate predictions of the fold-change
+and <span class="arithmatex">\(\Delta F\)</span> for nearly every strain across different mutations, repressor
+copy numbers, and operator sequence, all at different inducer concentrations.
+With a collection of evidence as to what parameters are changing for single
+mutations, we put our model to the test and drew predictions of how double
+mutants would behave both in terms of the titration curve and free energy
+profile.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A hypothesis that arises from our formulation
+of <span class="arithmatex">\(\Delta F\)</span> is that a simple summation of the energetic contribution of
+each mutation should be sufficient to predict the double mutants (as long as
+they are in separate domains). We find that such a calculation permits
+precise and accurate predictions of the double mutant phenotypes, indicating
+that there are no epistatic interactions between the mutations examined in
+this work. With an expectation of what the free energy differences should be,
+epistatic interactions could be understood by looking at how the measurements
+deviate from the prediction. For example, if epistatic interactions exist
+which appear as a systematic shift from the predicted <span class="arithmatex">\(\Delta F\)</span> independent
+of inducer concentration, one could conclude that DNA binding energy is not
+equal to that of the single mutation in the DNA binding domain alone.
+Similarly, systematic shifts that are dependent on the inducer concentration
+(i.e. not constant) indicate that the allosteric parameters must be
+influenced. If the expected difference in free energy is equal to <span class="arithmatex">\(0\, k_BT\)</span>
+when <span class="arithmatex">\(c=0\)</span>, one could surmise that the modified parameter must not be
+<span class="arithmatex">\(\Delta\varepsilon_{AI}\)</span> nor <span class="arithmatex">\(\Delta\varepsilon_{RA}\)</span> as these would both
+result in a shift in leakiness, indicating that <span class="arithmatex">\(K_A\)</span> and <span class="arithmatex">\(K_I\)</span> are further
+modified.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ultimately, we present this work as a
+proof-of-principle for using biophysical models to investigate how mutations
+influence the response of allosteric systems. We emphasize that such a
+treatment allows one to boil down the complex phenotypic responses of these
+systems to a single-parameter description which is easily interpretable as a
+free energy. The general utility of this approach is illustrated in
+@Fig:all_data_collapse where gene expression data from previous work along
+with all of the measurements presented in this work collapse onto the master
+curve defined by @Eq:mut_collapse. While our model coarse grains many of the
+intricate details of transcriptional regulation into two states (one in which
+the repressor is bound to the promoter and one where it is not), it is
+sufficient to describe a swath of regulatory scenarios. As discussed in the
+supplemental Chapter 7, any architecture in which the transcription-factor
+bound and transcriptionally active states of the promoter can be separated
+into two distinct coarse-grained states can be subjected to such an analysis.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Given enough parametric knowledge of the
+system, it becomes possible to examine how modifications to the parameters
+move the physiological response along this reduced one-dimensional parameter
+space. This approach offers a glimpse at how mutational effects can be
+described in terms of energy rather than Hill coefficients and arbitrary
+prefactors. While we have explored a very small region of sequence space in
+this work, coupling of this approach with high-throughput sequencing-based
+methods to query a library of mutations within the protein will shed light on
+the phenotypic landscape centered at the wild-type sequence. Furthermore,
+pairing libraries of protein and operator sequence mutants will provide
+insight as to how the protein and regulatory sequence coevolve, a topic rich
+with opportunity for a dialogue between theory and experiment.</p>
+<p><img alt="**Data collapse of the simple repression regulatory architecture.** All
+data are means of biological replicates. Where present, error bars
+correspond to the standard error of the mean of five to fifteen
+biological replicates. Red triangles indicate data from @garcia2011
+obtained by colorimetric assays. Blue squares are data from
+@brewster2014 acquired from video microscopy. Green circles are data
+from @razo-mejia2018.  obtained via flow cytometry. All other symbols
+correspond to the work presented here. An interactive version of this
+figure can be found on the website associated with the
+publication of this chapter where the
+different data sets can be viewed in more
+detail. The Python code
+(klzzwxh:0073)
+used to generate this figure can be found on the thesis GitHub
+repository." src="ch3_fig6" />{#fig:all_data_collapse short-caption="Data collapse of the
+simple repression regulatory architecture. All data are means of biological
+replicates."}</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Frank J. Poelwijk, Philip D. Heyning, Marjon GJ de Vos, Daniel J. Kiviet, and Sander J. Tans. Optimality and evolution of transcriptionally regulated gene expression. <em>BMC Systems Biology</em>, 5:128, August 2011. <a href="https://doi.org/10.1186/1752-0509-5-128">doi:10.1186/1752-0509-5-128</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Arjun S. Raman, K. Ian White, and Rama Ranganathan. Origins of allostery and evolvability in proteins: A case study. <em>Cell</em>, 166(2):468–480, July 2016. <a href="https://doi.org/10.1016/j.cell.2016.05.047">doi:10.1016/j.cell.2016.05.047</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>Manuel Razo-Mejia, Stephanie L. Barnes, Nathan M. Belliveau, Griffin Chure, Tal Einav, Mitchell Lewis, and Rob Phillips. Tuning transcriptional regulation through signaling: A predictive theory of allosteric induction. <em>Cell Systems</em>, 6(4):456&ndash;469.e10, April 2018. <a href="https://doi.org/10.1016/j.cels.2018.02.004">doi:10.1016/j.cels.2018.02.004</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes"], "search": "../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5cf534bf.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

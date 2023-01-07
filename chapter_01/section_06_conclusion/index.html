@@ -1,0 +1,2322 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../section_05_survival/">
+      
+      
+        <link rel="next" href="../../chapter_02/section_00_title/">
+      
+      <link rel="icon" href="../../site_images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
+    
+    
+      
+        <title>Section 06 conclusion - Computational Methods for SNSPDs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f56500e0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#on-molecular-biophysics-and-evolutionary-dynamics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Computational Methods for SNSPDs" class="md-header__button md-logo" aria-label="Computational Methods for SNSPDs" data-md-component="logo">
+      
+  <img src="../../site_images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Computational Methods for SNSPDs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Section 06 conclusion
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Computational Methods for SNSPDs" class="md-nav__button md-logo" aria-label="Computational Methods for SNSPDs" data-md-component="logo">
+      
+  <img src="../../site_images/logo.svg" alt="logo">
+
+    </a>
+    Computational Methods for SNSPDs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Computational Methods for SNSPDs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref_heading/" class="md-nav__link">
+        References
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Chapter 01
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 01" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 01
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_00_title/" class="md-nav__link">
+        The Phenomenon of Adaptation Across Scales
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_01_introduction/" class="md-nav__link">
+        Section 01 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_02_molecular_adaptation/" class="md-nav__link">
+        Section 02 molecular adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_03_evolutionary_adaptation/" class="md-nav__link">
+        Section 03 evolutionary adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_04_physiological_adaptation/" class="md-nav__link">
+        Section 04 physiological adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_05_survival/" class="md-nav__link">
+        Section 05 survival
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Section 06 conclusion
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Section 06 conclusion
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#on-molecular-biophysics-and-evolutionary-dynamics" class="md-nav__link">
+    On Molecular Biophysics and Evolutionary Dynamics
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Chapter 02
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 02" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 02
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_00_title/" class="md-nav__link">
+        Through the Intramolecular Grapevine: Signal Processing Via Allosteric Transcription Factors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_04_model/" class="md-nav__link">
+        Section 04 model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_05_results/" class="md-nav__link">
+        Section 05 results
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_06_discussion/" class="md-nav__link">
+        Section 06 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_07_methods/" class="md-nav__link">
+        Section 07 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Chapter 03
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 03" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 03
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_00_title/" class="md-nav__link">
+        Unknown Knowns, Known Unknowns, and Unforeseen Consequences: Using Free Energy Shifts To Predict Mutant Phenotypes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_04_model/" class="md-nav__link">
+        Section 04 model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_05_DNA_mutants/" class="md-nav__link">
+        section 05 DNA mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_06_IND_mutants/" class="md-nav__link">
+        section 06 IND mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_07_DBL_mutants/" class="md-nav__link">
+        section 07 DBL mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_08_discussion/" class="md-nav__link">
+        Section 08 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_09_methods/" class="md-nav__link">
+        Section 09 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Chapter 04
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 04" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 04
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_00_title/" class="md-nav__link">
+        On The Physiological Adaptability of a Simple Genetic Circuit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_04_model/" class="md-nav__link">
+        Section 04 model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_05_experimental_design/" class="md-nav__link">
+        Section 05 experimental design
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_06_scaling/" class="md-nav__link">
+        Section 06 scaling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_07_carbon_quality/" class="md-nav__link">
+        Section 07 carbon quality
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_08_temperature/" class="md-nav__link">
+        Section 08 temperature
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_09_discussion/" class="md-nav__link">
+        Section 09 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_10_methods/" class="md-nav__link">
+        Section 10 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Chapter 05
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 05" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 05
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_00_title/" class="md-nav__link">
+        'Water, Water Everywhere, Yet Not A Drop to Drink': How Bacteria Adapt To Changes in Osmolarity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_04_results/" class="md-nav__link">
+        Section 04 results
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_05_discussion/" class="md-nav__link">
+        Section 05 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_06_methods/" class="md-nav__link">
+        Section 06 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Chapter 06
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 06" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 06
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_00_title/" class="md-nav__link">
+        Supplemental Information For Chapter 2: Signal Processing Via Allosteric Transcription Factors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_02_epAI/" class="md-nav__link">
+        section 02 epAI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_03_fugacity/" class="md-nav__link">
+        Section 03 fugacity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_04_flow/" class="md-nav__link">
+        Section 04 flow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_05_microscopy/" class="md-nav__link">
+        Section 05 microscopy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_06_sensitivity/" class="md-nav__link">
+        Section 06 sensitivity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_07_global_fit/" class="md-nav__link">
+        Section 07 global fit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_08_Oid/" class="md-nav__link">
+        section 08 Oid
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_09_comparison/" class="md-nav__link">
+        Section 09 comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_10_properties/" class="md-nav__link">
+        Section 10 properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_11_applications/" class="md-nav__link">
+        Section 11 applications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_12_tables/" class="md-nav__link">
+        Section 12 tables
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Chapter 07
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 07" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 07
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_00_title/" class="md-nav__link">
+        Supplemental Information for Chapter 3: Predictive Shifts in Free Energy Couple Mutations to Their Phenotypic Consequences
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_02_nonmonotonicity/" class="md-nav__link">
+        Section 02 nonmonotonicity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_03_DNA_epRA_inference/" class="md-nav__link">
+        section 03 DNA epRA inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_04_delta_F_inference/" class="md-nav__link">
+        section 04 delta F inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_05_DNA_mutants/" class="md-nav__link">
+        section 05 DNA mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_06_IND_inference/" class="md-nav__link">
+        section 06 IND inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_07_IND_mutants/" class="md-nav__link">
+        section 07 IND mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_08_param_comparison/" class="md-nav__link">
+        Section 08 param comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_09_global_fit/" class="md-nav__link">
+        Section 09 global fit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_10_generality/" class="md-nav__link">
+        Section 10 generality
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_11_strains/" class="md-nav__link">
+        Section 11 strains
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Chapter 08
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 08" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 08
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_00_title/" class="md-nav__link">
+        Supplemental Information for Chapter 4: The Physiological Adaptability of a Simple Genetic Circuit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_02_growth_rates/" class="md-nav__link">
+        Section 02 growth rates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_03_cell_volume/" class="md-nav__link">
+        Section 03 cell volume
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_04_counting_repressors/" class="md-nav__link">
+        Section 04 counting repressors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_05_carbon_inference/" class="md-nav__link">
+        Section 05 carbon inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_06_entropy/" class="md-nav__link">
+        Section 06 entropy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_07_strains_recipes/" class="md-nav__link">
+        Section 07 strains recipes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_11">
+          Chapter 09
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 09" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 09
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_00_title/" class="md-nav__link">
+        Supplemental Information For Chapter 5: How Bacteria Adapt To Changes in Osmolarity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_02_electrophysiology/" class="md-nav__link">
+        Section 02 electrophysiology
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_03_cal_factor_derivation/" class="md-nav__link">
+        Section 03 cal factor derivation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_04_survival_classification/" class="md-nav__link">
+        Section 04 survival classification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_05_logistic_regression/" class="md-nav__link">
+        Section 05 logistic regression
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_06_shock_classification/" class="md-nav__link">
+        Section 06 shock classification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_07_vandenberg_comparison/" class="md-nav__link">
+        Section 07 vandenberg comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_08_strains/" class="md-nav__link">
+        Section 08 strains
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_12">
+          Frontmatter
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Frontmatter" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Frontmatter
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/abstract/" class="md-nav__link">
+        Abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements/" class="md-nav__link">
+        Acknowledgements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements_prompt/" class="md-nav__link">
+        Acknowledgements prompt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements_prompt_2/" class="md-nav__link">
+        Acknowledgements prompt 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements_results_general/" class="md-nav__link">
+        Acknowledgements results general
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/published/" class="md-nav__link">
+        Published
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#on-molecular-biophysics-and-evolutionary-dynamics" class="md-nav__link">
+    On Molecular Biophysics and Evolutionary Dynamics
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Section 06 conclusion</h1>
+
+<h2 id="on-molecular-biophysics-and-evolutionary-dynamics">On Molecular Biophysics and Evolutionary Dynamics</h2>
+<p>This thesis as a whole presents an attempt to understand how adaptive
+processes operate in biological systems at a mechanistic level beyond
+qualitative description. The thermodynamic model derived and explored in
+Chapter 2 presents a concrete theoretical framework through which we can
+understand how mutations and environmental perturbations influence the output
+of a simple genetic circuit with quantitative precision. While the work here
+specifically explores the <em>mean</em> level of gene expression of a population,
+I have had the privilege to be involved in several projects which explore the
+complete distribution of gene expression of various regulatory motifs using
+non-equilibrium models <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. Both
+equilibrium and non-equilibrium approaches, while differing in their
+fundamental assumptions of the system, can be used to understand how the
+regulation of gene expression occurs <em>in vivo</em> and should be viewed as
+complimentary rather than adversarial approaches.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A combination of these types of approaches will be necessary to attack what I
+believe is the next great frontier of biological physics -- predicting
+evolution. While this thesis is  primarily focused 
+on a single type of regulatory architecture regulating a single
+promoter via a single species of transcription factor, it is worth remembering
+that systems-level phenotypes are often complex and result from the concerted
+action of an array of biological processes. As was mentioned in our discussion
+on physiological adaptation, it has been known for nearly a century that the
+bacterial growth rate is directly correlated to the total protein content of
+the cell, with recent works illustrating rich phenomenology in the structure of
+the bacterial proteome as a whole [@li2014; @schmidt2016; @hui2015;
+@scott2010; @klumpp2014]. </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In collaboration again with Nathan M.
+Belliveau, we have begun to explore how the composition of the bacterial
+proteome is structured at the single-protein level. @Fig:proteomics (A) shows
+data compiled from several independent proteomic data sets (using either
+quantitative mass spectrometry <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup><sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup><sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup> or
+ribosomal profiling <sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup>) where the abundance of different molecular
+constituents of the bacterial proteome is plotted as a function of the
+growth rate. These components, broken down by their functional designation
+according to their Cluster of Orthologous Groups (COG) annotation
+<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup>, reveal varied dependencies on the growth rate. Of note are
+the COG classes "cellular processes and signaling," "metabolism," and
+"information storage and processing" which all appear to have a 
+correlation between the cellular growth rate and the total mass of that
+proteome sector. However, when plotted as the total
+<em>mass fraction</em> of the proteome instead of the total mass, a striking result
+is observed. @Fig:proteomics (B) reveals a very strong, negative correlation
+between the mass fraction of the proteome dedicated to information storage
+and processing (including ribosomal and transcriptional machinery) and the
+proteome fraction dedicated to metabolism. This direct competition for
+resources between the proteins involved in translation (ribosomes, elongation
+factors, etc.) and metabolic networks has been shown previously [@klumpp2008;
+@scott2010; @hui2015] and suggests a strong evolutionary constraint on how
+resources can be optimally partitioned.</p>
+<p><img alt="**Allocation of cellular resources induces compositional structure in the *E.
+coli* proteome.** (A) The total proteome mass of the five major annotated COG
+categories is shown as a function of the experimental growth rate. Different
+marker shapes represent different data sets. (B) The fraction by mass of the
+proteome dedicated to metabolic machinery plotted as a function of the total
+proteome mass dedicated to the processes of the central dogma. Different shapes
+correspond to the different data sets shown in (A). Color indicates increasing
+growth rate from yellow to dark blue. Data shown in this figure come from
+@peebo2015 (inverted triangles),  @li2014 (triangles), @schmidt2016 (circles),
+and @valgepea2013 (diamonds). The Python code
+(klzzwxh:0020)
+used to generate this figure can be accessed via the thesis GitHub
+repository. " src="ch1_fig13" />{#fig:proteomics
+short-caption="Allocation of cellular resources induces compositional structure
+in the <em>E. coli</em> proteome."}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; As of this writing, our understanding of the
+cellular resource allocation visible in @Fig:proteomics remains largely
+phenomenological <sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup>. This is in part due to the tremendously
+high-dimensional nature of systems-level organization. Our understanding of
+systems with such huge numbers of degrees-of-freedom have classically benefited enormously
+from the application of statistical mechanics as this thesis shows in the
+context of transcriptional regulation. The quantitative framework derived and
+carefully dissected in this thesis, I believe, lays the groundwork to understand
+how phenomena such as that shown in @Fig:proteomics (B) arise, and perhaps more
+importantly, evolve. A recent work from Michael Lässig, Ville
+Mustonen, and Aleksandra Walczak entitled <em>Predicting evolution</em> <sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup>
+describes what the future of evolutionary theory may look like given these types
+of models. Recent technological advancements in sequencing, microscopy, and
+computation coupled with theoretical advancements in the biophysics of gene
+regulation present an opportunity for a rich theoretical dialogue between
+molecular biophysics and evolutionary dynamics coupled with experimental
+dissection (@Fig:molbiophys_evoldynam).</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The first 20 years of the 21<span class="arithmatex">\(^\text{st}\)</span> century
+brought a paradigm shift in our
+understanding of noise in biological networks, illustrating how
+cross-disciplinary approaches to scientific discovery can solve and
+even create new fields of biological inquiry <sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup><sup id="fnref:11"><a class="footnote-ref" href="#fn:11">11</a></sup>. I hope that
+some of the material described in the coming chapters can help contribute to
+a systems-biology approach to evolution.</p>
+<p><img alt="**The coming interplay between molecular biophysics and evolutionary
+dynamics.** (A) Recent progress in our understanding of the structure and function of
+biological networks has resulted in many examples where high-dimensional
+biological phenomena can be boiled down to effective phenomena. Future work will
+draw from our understanding of these networks to place them in an evolutionary
+perspective (B) where the connection between perturbations at the level of
+nodes in biological networks can be drawn to fitness and evolutionary
+trajectories can be predicted." src="ch1_fig14" />{#fig:molbiophys_evoldynam
+short-caption="The coming interplay between molecular biophysics and
+evolutionary dynamics."}</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Manuel Razo-Mejia, Sarah Marzen, Griffin Chure, Muir Morrison, Rachel Taubman, and Rob Phillips. First-principles prediction of the information processing capacity of a simple genetic circuit. <em>arXiv</em>, 2020.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Kathrin S Laxhuber, Muir Morrison, Griffin Chure, Nathan M Belliveau, Charlotte Strandkvist, Kyle Naughton, and Rob Phillips. Theoretical investigation of a genetic switch for metabolic adaptation. <em>PLOS ONE</em>, 2020.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>Alexander Schmidt, Karl Kochanowski, Silke Vedelaar, Erik Ahrné, Benjamin Volkmer, Luciano Callipo, Kèvin Knoops, Manuel Bauer, Ruedi Aebersold, and Matthias Heinemann. The quantitative and condition-dependent \emph Escherichia coli proteome. <em>Nature Biotechnology</em>, 34(1):104–110, January 2016. <a href="https://doi.org/10.1038/nbt.3418">doi:10.1038/nbt.3418</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Karl Peebo, Kaspar Valgepea, Andres Maser, Ranno Nahku, Kaarel Adamberg, and Raivo Vilu. Proteome reallocation in \emph Escherichia coli with increasing specific growth rate. <em>Molecular BioSystems</em>, 11(4):1184–1193, 2015. <a href="https://doi.org/10.1039/C4MB00721B">doi:10.1039/C4MB00721B</a>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>Kaspar Valgepea, Kaarel Adamberg, Andrus Seiman, and Raivo Vilu. Escherichia coli achieves faster growth by increasing catalytic and translation rates of proteins. <em>Molecular BioSystems</em>, 9(9):2344–2358, July 2013. <a href="https://doi.org/10.1039/C3MB70119K">doi:10.1039/C3MB70119K</a>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p>Gene-Wei Li, David Burkhardt, Carol Gross, and Jonathan S. Weissman. Quantifying absolute protein synthesis rates reveals principles underlying allocation of cellular resources. <em>Cell</em>, 157(3):624–635, April 2014. <a href="https://doi.org/10.1016/j.cell.2014.02.033">doi:10.1016/j.cell.2014.02.033</a>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p>Michael Y. Galperin, Kira S. Makarova, Yuri I. Wolf, and Eugene V. Koonin. Expanded microbial genome coverage and improved protein family annotation in the COG database. <em>Nucleic Acids Research</em>, 43(D1):D261&ndash;D269, January 2015. <a href="https://doi.org/10.1093/nar/gku1223">doi:10.1093/nar/gku1223</a>.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p>M. Scott, S. Klumpp, E. M. Mateescu, and T. Hwa. Emergence of robust growth laws from optimal regulation of ribosome synthesis. <em>Molecular Systems Biology</em>, 10(8):747–747, August 2014. <a href="https://doi.org/10.15252/msb.20145379">doi:10.15252/msb.20145379</a>.&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p>Michael Lässig, Ville Mustonen, and Aleksandra M. Walczak. Predicting evolution. <em>Nature Ecology &amp; Evolution</em>, 1(3):0077, February 2017. <a href="https://doi.org/10.1038/s41559-017-0077">doi:10.1038/s41559-017-0077</a>.&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:10">
+<p>Marta Ciechonska, Alice Grob, and Mark Isalan. From noise to synthetic nucleoli: can synthetic biology achieve new insights? <em>Integrative Biology</em>, 8(4):383–393, April 2016. <a href="https://doi.org/10.1039/c5ib00271k">doi:10.1039/c5ib00271k</a>.&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:11">
+<p>Avigdor Eldar and Michael B. Elowitz. Functional roles for noise in genetic circuits. <em>Nature</em>, 467(7312):167–173, September 2010. <a href="https://doi.org/10.1038/nature09326">doi:10.1038/nature09326</a>.&#160;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes"], "search": "../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5cf534bf.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

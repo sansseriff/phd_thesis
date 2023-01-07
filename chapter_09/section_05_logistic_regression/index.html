@@ -1,0 +1,2534 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../section_04_survival_classification/">
+      
+      
+        <link rel="next" href="../section_06_shock_classification/">
+      
+      <link rel="icon" href="../../site_images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
+    
+    
+      
+        <title>Section 05 logistic regression - Computational Methods for SNSPDs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f56500e0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#logistic-regression" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Computational Methods for SNSPDs" class="md-header__button md-logo" aria-label="Computational Methods for SNSPDs" data-md-component="logo">
+      
+  <img src="../../site_images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Computational Methods for SNSPDs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Section 05 logistic regression
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Computational Methods for SNSPDs" class="md-nav__button md-logo" aria-label="Computational Methods for SNSPDs" data-md-component="logo">
+      
+  <img src="../../site_images/logo.svg" alt="logo">
+
+    </a>
+    Computational Methods for SNSPDs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Computational Methods for SNSPDs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref_heading/" class="md-nav__link">
+        References
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Chapter 01
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 01" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 01
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_00_title/" class="md-nav__link">
+        The Phenomenon of Adaptation Across Scales
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_01_introduction/" class="md-nav__link">
+        Section 01 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_02_molecular_adaptation/" class="md-nav__link">
+        Section 02 molecular adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_03_evolutionary_adaptation/" class="md-nav__link">
+        Section 03 evolutionary adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_04_physiological_adaptation/" class="md-nav__link">
+        Section 04 physiological adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_05_survival/" class="md-nav__link">
+        Section 05 survival
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_06_conclusion/" class="md-nav__link">
+        Section 06 conclusion
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Chapter 02
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 02" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 02
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_00_title/" class="md-nav__link">
+        Through the Intramolecular Grapevine: Signal Processing Via Allosteric Transcription Factors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_04_model/" class="md-nav__link">
+        Section 04 model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_05_results/" class="md-nav__link">
+        Section 05 results
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_06_discussion/" class="md-nav__link">
+        Section 06 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_07_methods/" class="md-nav__link">
+        Section 07 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Chapter 03
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 03" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 03
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_00_title/" class="md-nav__link">
+        Unknown Knowns, Known Unknowns, and Unforeseen Consequences: Using Free Energy Shifts To Predict Mutant Phenotypes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_04_model/" class="md-nav__link">
+        Section 04 model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_05_DNA_mutants/" class="md-nav__link">
+        section 05 DNA mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_06_IND_mutants/" class="md-nav__link">
+        section 06 IND mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_07_DBL_mutants/" class="md-nav__link">
+        section 07 DBL mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_08_discussion/" class="md-nav__link">
+        Section 08 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_09_methods/" class="md-nav__link">
+        Section 09 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Chapter 04
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 04" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 04
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_00_title/" class="md-nav__link">
+        On The Physiological Adaptability of a Simple Genetic Circuit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_04_model/" class="md-nav__link">
+        Section 04 model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_05_experimental_design/" class="md-nav__link">
+        Section 05 experimental design
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_06_scaling/" class="md-nav__link">
+        Section 06 scaling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_07_carbon_quality/" class="md-nav__link">
+        Section 07 carbon quality
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_08_temperature/" class="md-nav__link">
+        Section 08 temperature
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_09_discussion/" class="md-nav__link">
+        Section 09 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_10_methods/" class="md-nav__link">
+        Section 10 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Chapter 05
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 05" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 05
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_00_title/" class="md-nav__link">
+        'Water, Water Everywhere, Yet Not A Drop to Drink': How Bacteria Adapt To Changes in Osmolarity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_04_results/" class="md-nav__link">
+        Section 04 results
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_05_discussion/" class="md-nav__link">
+        Section 05 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_06_methods/" class="md-nav__link">
+        Section 06 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Chapter 06
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 06" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 06
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_00_title/" class="md-nav__link">
+        Supplemental Information For Chapter 2: Signal Processing Via Allosteric Transcription Factors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_02_epAI/" class="md-nav__link">
+        section 02 epAI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_03_fugacity/" class="md-nav__link">
+        Section 03 fugacity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_04_flow/" class="md-nav__link">
+        Section 04 flow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_05_microscopy/" class="md-nav__link">
+        Section 05 microscopy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_06_sensitivity/" class="md-nav__link">
+        Section 06 sensitivity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_07_global_fit/" class="md-nav__link">
+        Section 07 global fit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_08_Oid/" class="md-nav__link">
+        section 08 Oid
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_09_comparison/" class="md-nav__link">
+        Section 09 comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_10_properties/" class="md-nav__link">
+        Section 10 properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_11_applications/" class="md-nav__link">
+        Section 11 applications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_12_tables/" class="md-nav__link">
+        Section 12 tables
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Chapter 07
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 07" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 07
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_00_title/" class="md-nav__link">
+        Supplemental Information for Chapter 3: Predictive Shifts in Free Energy Couple Mutations to Their Phenotypic Consequences
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_02_nonmonotonicity/" class="md-nav__link">
+        Section 02 nonmonotonicity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_03_DNA_epRA_inference/" class="md-nav__link">
+        section 03 DNA epRA inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_04_delta_F_inference/" class="md-nav__link">
+        section 04 delta F inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_05_DNA_mutants/" class="md-nav__link">
+        section 05 DNA mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_06_IND_inference/" class="md-nav__link">
+        section 06 IND inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_07_IND_mutants/" class="md-nav__link">
+        section 07 IND mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_08_param_comparison/" class="md-nav__link">
+        Section 08 param comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_09_global_fit/" class="md-nav__link">
+        Section 09 global fit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_10_generality/" class="md-nav__link">
+        Section 10 generality
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_11_strains/" class="md-nav__link">
+        Section 11 strains
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Chapter 08
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 08" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 08
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_00_title/" class="md-nav__link">
+        Supplemental Information for Chapter 4: The Physiological Adaptability of a Simple Genetic Circuit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_02_growth_rates/" class="md-nav__link">
+        Section 02 growth rates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_03_cell_volume/" class="md-nav__link">
+        Section 03 cell volume
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_04_counting_repressors/" class="md-nav__link">
+        Section 04 counting repressors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_05_carbon_inference/" class="md-nav__link">
+        Section 05 carbon inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_06_entropy/" class="md-nav__link">
+        Section 06 entropy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_07_strains_recipes/" class="md-nav__link">
+        Section 07 strains recipes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_11">
+          Chapter 09
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 09" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 09
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_00_title/" class="md-nav__link">
+        Supplemental Information For Chapter 5: How Bacteria Adapt To Changes in Osmolarity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_02_electrophysiology/" class="md-nav__link">
+        Section 02 electrophysiology
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_03_cal_factor_derivation/" class="md-nav__link">
+        Section 03 cal factor derivation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_04_survival_classification/" class="md-nav__link">
+        Section 04 survival classification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Section 05 logistic regression
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Section 05 logistic regression
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#logistic-regression" class="md-nav__link">
+    Logistic Regression
+  </a>
+  
+    <nav class="md-nav" aria-label="Logistic Regression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bayesian-parameter-estimation-of-beta_0-and-beta_1" class="md-nav__link">
+    Bayesian Parameter Estimation of \(\beta_0\) and \(\beta_1\)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-bayesian-interpretation-of-beta_0-and-beta_1" class="md-nav__link">
+    A Bayesian interpretation of \(\beta_0\) and \(\beta_1\)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-properties-as-predictor-variables" class="md-nav__link">
+    Other Properties as Predictor Variables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_06_shock_classification/" class="md-nav__link">
+        Section 06 shock classification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_07_vandenberg_comparison/" class="md-nav__link">
+        Section 07 vandenberg comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_08_strains/" class="md-nav__link">
+        Section 08 strains
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_12">
+          Frontmatter
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Frontmatter" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Frontmatter
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/abstract/" class="md-nav__link">
+        Abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements/" class="md-nav__link">
+        Acknowledgements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements_prompt/" class="md-nav__link">
+        Acknowledgements prompt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements_prompt_2/" class="md-nav__link">
+        Acknowledgements prompt 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements_results_general/" class="md-nav__link">
+        Acknowledgements results general
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/published/" class="md-nav__link">
+        Published
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#logistic-regression" class="md-nav__link">
+    Logistic Regression
+  </a>
+  
+    <nav class="md-nav" aria-label="Logistic Regression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bayesian-parameter-estimation-of-beta_0-and-beta_1" class="md-nav__link">
+    Bayesian Parameter Estimation of \(\beta_0\) and \(\beta_1\)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-bayesian-interpretation-of-beta_0-and-beta_1" class="md-nav__link">
+    A Bayesian interpretation of \(\beta_0\) and \(\beta_1\)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-properties-as-predictor-variables" class="md-nav__link">
+    Other Properties as Predictor Variables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Section 05 logistic regression</h1>
+
+<h2 id="logistic-regression">Logistic Regression</h2>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;In this work, we were interested in computing the
+survival probability under a large hypo-osmotic shock as a function of MscL
+channel number. As the channel copy number distributions for each
+Shine-Dalgarno sequence mutant were broad and overlapping, we chose to
+calculate the survival probability through logistic regression -- a method
+that requires no binning of the data providing the least biased estimate of
+survival probability. Logistic regression is a technique that has been used
+in medical statistics since the late 1950's to describe diverse phenomena
+such as dose response curves, criminal recidivism, and survival probabilities
+for patients after treatment <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. It
+has also found much use in machine learning to tune a binary or categorical
+response given a continuous input <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup><sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;In this section, we derive a statistical model for
+estimating the most-likely values for the coefficients <span class="arithmatex">\(\beta_0\)</span> and
+<span class="arithmatex">\(\beta_1\)</span>, and use Bayes' theorem to provide an interpretation for the
+statistical meaning.</p>
+<h3 id="bayesian-parameter-estimation-of-beta_0-and-beta_1">Bayesian Parameter Estimation of <span class="arithmatex">\(\beta_0\)</span> and <span class="arithmatex">\(\beta_1\)</span></h3>
+<p>The central challenge of this work is to estimate the
+probability of survival <span class="arithmatex">\(p_s\)</span> given only a measure of the total number of
+MscL channels in that cell. In other words, for a given measurement of <span class="arithmatex">\(N_c\)</span>
+channels, we want to know the likelihood that a cell would survive an osmotic
+shock. Using Bayes' theorem, we can write a statistical model for the
+survival probability as
+$$
+g(p_s\,\vert\, N_c) = {f(N_c\,\vert\, p_s)g(p_s) \over f(N_c)},
+$${#eq:bayes_surv_prob}</p>
+<p>where <span class="arithmatex">\(g\)</span> and <span class="arithmatex">\(f\)</span> represent probability density functions over parameters and
+data, respectively. The posterior probability distribution <span class="arithmatex">\(g(p_s\,\vert\,
+N_c)\)</span> describes the probability of <span class="arithmatex">\(p_s\)</span> given a specific number of channels
+<span class="arithmatex">\(N_c\)</span>. This distribution is dependent on the likelihood of observing <span class="arithmatex">\(N_c\)</span>
+channels assuming a value of <span class="arithmatex">\(p_s\)</span> multiplied by all prior knowledge we have
+about knowing nothing about the data, <span class="arithmatex">\(g(s)\)</span>. The denominator <span class="arithmatex">\(f(N_c)\)</span> in
+@Eq:bayes_surv_prob captures all knowledge we have about the available
+values of <span class="arithmatex">\(N_c\)</span>, knowing nothing about the true survival probability. As this
+term acts as a normalization constant, we will neglect it in the following
+calculations for convenience.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;To begin, we must come up with a statistical model
+that describes the experimental measurable in our experiment -- survival or
+death. As this is a binary response, we can consider each measurement as a
+Bernoulli trial with a probability of success matching our probability of
+survival <span class="arithmatex">\(p_s\)</span>, $$ f(s\, \vert\, p_s) = p_s^s(1 - p_s)^{1-s},
+$${#eq:bernoulli} where <span class="arithmatex">\(s\)</span> is the binary response of <span class="arithmatex">\(1\)</span> or <span class="arithmatex">\(0\)</span> for survival
+and death, respectively. As is stated in the introduction to this section, we
+decided to use a logistic function to describe the survival probability. We
+assume that the log-odds of survival is linear with respect to the effective
+channel copy number <span class="arithmatex">\(N_c\)</span> as $$ \log{p_s \over 1 - p_s} = \beta_0 + \beta_1
+N_c, $${#eq:logit} where <span class="arithmatex">\(\beta_0\)</span> and <span class="arithmatex">\(\beta_1\)</span> are coefficients which
+describe the survival probability in the absence of channels and the increase
+in log-odds of survival conveyed by a single channel. The rationale behind
+this interpretation is presented in the following section, <em>A Bayesian
+interpretation of <span class="arithmatex">\(\beta_0\)</span> and <span class="arithmatex">\(\beta_1\)</span></em>. Using this assumption, we can
+solve for the survival probability <span class="arithmatex">\(p_s\)</span> as, $$ p_s = {1 \over 1 +
+e^{-\beta_0 -\beta_1 N_c}}. $${#eq:logistic_prob}</p>
+<p>With a functional form for the survival probability, the likelihood stated in
+@Eq:bayes_surv_prob can be restated as
+$$
+f(N_c, s\,\vert\,\beta_0,\beta_1) = \left({1 \over 1 + e^{-\beta_0 - \beta_1 N_c}}\right)^s\left(1 - {1 \over 1 + e^{-\beta_0 - \beta_1 N_c}}\right)^{1 - s}.
+$${#eq:bernoulli_likelihood}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As we have now introduced two parameters, <span class="arithmatex">\(\beta_0\)</span>, and <span class="arithmatex">\(\beta_1\)</span>, we must
+provide some description of our prior knowledge regarding their values. As is
+typically the case, we know nothing about the values for <span class="arithmatex">\(\beta_0\)</span> and
+<span class="arithmatex">\(\beta_1\)</span>. These parameters are allowed to take any value, so long as it is a
+real number. Since all values are allowable, we can assume a flat
+distribution where any value has an equally likely probability. This value of
+this constant probability is not necessary for our calculation and is
+ignored. For a set of <span class="arithmatex">\(k\)</span> single-cell measurements, we can write the
+posterior probability distribution stated in @Eq:bayes_surv_prob as
+$$
+g(\beta_0, \beta_1\,\vert\, N_c, s) = \prod\limits_{i=1}^n\left({1 \over 1 + e^{-\beta_0 - \beta_1 N_c^{(i)}}}\right)^{s^{(i)}}\left(1 - {1 \over 1 + e^{-\beta_0 - \beta_1 N_c^{(i)}}}\right)^{1 - s^{(i)}}.
+$${#eq:known_nc_post}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Implicitly stated in @Eq:known_nc_post is absolute
+knowledge of the channel copy number <span class="arithmatex">\(N_c\)</span>. However, as is described in the
+previous sections, we must convert from a measured areal sfGFP
+intensity <span class="arithmatex">\(I_A\)</span> to a effective channel copy number,
+$$
+N_c = {I_A \tilde{\langle A \rangle} \over \tilde{\alpha}},
+$${#eq:standard_candle}
+where <span class="arithmatex">\(\tilde{\langle A \rangle}\)</span> is the average cell area of the standard
+candle strain and <span class="arithmatex">\(\tilde{\alpha}\)</span> is the most-likely value for the
+calibration factor between arbitrary units and protein copy number. In
+<em>Standard Candle Calibration</em>, we detailed a process for generating an
+estimate for the most-likely value of <span class="arithmatex">\(\tilde{\langle A \rangle}\)</span> and
+<span class="arithmatex">\(\tilde{\alpha}\)</span>. Given these estimates, we can include an informative prior
+for each value. From the Markov chain Monte Carlo samples shown in
+@Fig:logistic_posterior_distributions, the posterior distribution for each parameter is
+approximately Gaussian. By approximating them as Gaussian distributions, we
+can assign an informative prior for each as
+$$
+g(\alpha\,\vert\,\tilde{\alpha}, \tilde{\sigma}<em>\alpha) \propto {1 \over \tilde{\sigma}</em>\alpha^k}\prod\limits_{i=1}^k\exp\left[-{(\alpha_i - \tilde{\alpha})^2 \over  2\tilde{\sigma}<em A="A" _langle="\langle" _rangle="\rangle">\alpha^2}\right]
+$${#eq:alpha_prior}
+for the calibration factor for each cell and 
+$$
+g(\langle A \rangle\,\vert\,\tilde{\langle A \rangle},\tilde{\sigma}</em>) = {1 \over \tilde{\sigma}<em i="1">{\langle A \rangle}^k}\prod\limits</em>^k\exp\left[-{(\langle A \rangle_i - \tilde{\langle A \rangle})^2 \over 2\tilde{\sigma}_{\langle A \rangle}^2}\right],
+$${#eq:area_prior}
+where <span class="arithmatex">\(\tilde{\sigma}_\alpha\)</span> and <span class="arithmatex">\(\tilde{\sigma}_{\langle A \rangle}\)</span>
+represent the variance from approximating each posterior as a Gaussian. The
+proportionality for each prior arises from the neglecting of normalization
+constants for notational convenience.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Given [@Eq:bernoulli_likelihood] through
+[@Eq:area_prior], the complete posterior distribution for estimating the most
+likely values of <span class="arithmatex">\(\beta_0\)</span> and <span class="arithmatex">\(\beta_1\)</span> can be written as
+$$
+\begin{aligned}
+g(\beta_0, &amp;\beta_1\,\vert\,[I_A, s],\tilde{\langle A \rangle}, \tilde{\sigma}<em>{\langle A \rangle}, \tilde{\alpha}, \tilde{\sigma}</em>\alpha) \propto{1 \over (\tilde{\sigma}<em A="A" _langle="\langle" _rangle="\rangle">\alpha\tilde{\sigma}</em>)^k}\prod\limits_{i=1}^k\left(1 + \exp\left[-\beta_0 - \beta_1 { {I_A}<em A="A" _langle="\langle" _rangle="\rangle">i \langle A \rangle_i \over \alpha_i}\right]\right)^{-s_i}\,\times\,\
+&amp;\left(1 - \left(1 + \exp\left[-\beta_0 - \beta_1 { {I_A}_i\langle A \rangle_i \over \alpha_i}\right]\right)^{-1}\right)^{1 - s_i}
+\exp\left[-{(\langle A \rangle_i - \tilde{\langle A \rangle})^2 \over 2\tilde{\sigma}</em>} - {(\alpha_i - \tilde{\alpha})^2\over 2\tilde{\sigma}_\alpha^2}\right]
+\end{aligned}.
+$${#eq:logistic_posterior}</p>
+<p>As this posterior distribution is not solvable analytically, we used Markov
+chain Monte Carlo to draw samples out of this distribution, using the log of
+the effective channel number as described in the main text. The posterior
+distributions for <span class="arithmatex">\(\beta_0\)</span> and <span class="arithmatex">\(\beta_1\)</span> for both slow and fast shock rate
+data can be seen in @Fig:logistic_posterior_distributions.</p>
+<p><img alt="**Posterior distributions for logistic regression coefficients evaluated for
+fast and slow shock rates.** (A) Kernel density estimates of the posterior
+distribution for \(\beta_0\) for fast (blue) and slow (purple) shock rates. (B)
+Kernel density estimates of posterior distribution for
+\(\beta_1\). The Python code (klzzwxh:0082)
+used to generate this figure can be found on the thesis GitHub
+repository. " src="ch9_figS8" />{#fig:logistic_posterior_distributions
+short-caption="Posterior distributions for logistic regression coefficients
+evaluated for fast and slow shock rates."}</p>
+<h3 id="a-bayesian-interpretation-of-beta_0-and-beta_1">A Bayesian interpretation of <span class="arithmatex">\(\beta_0\)</span> and <span class="arithmatex">\(\beta_1\)</span></h3>
+<p>The assumption of a linear relationship between the log-odds of survival and
+the predictor variable <span class="arithmatex">\(N_c\)</span> appears to be arbitrary and is presented without
+justification. However, this relationship is directly connected to the manner
+in which Bayes' theorem updates the posterior probability distribution upon
+the observation of new data. In the following section, we will demonstrate this
+connection using the relationship between survival and channel copy number.
+However, this description is general and can be applied to any logistic
+regression model so long as the response variable is binary. This connection
+was shown briefly by Allen Downey in 2014 and has been expanded upon in this
+work <sup id="fnref:8"><a class="footnote-ref" href="#fn:8">6</a></sup>.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The probability of observing a survival event <span class="arithmatex">\(s\)</span>
+given a measurement of <span class="arithmatex">\(N_c\)</span> channels can be stated using Bayes' theorem as
+$$
+g(s\,\vert\, N_c) = {f(N_c\,\vert\, s)g(s) \over f(N_c)},
+$${#eq:survival_bayes}
+where <span class="arithmatex">\(g\)</span> and <span class="arithmatex">\(f\)</span> represent probability density functions over parameters and
+data, respectively. The posterior distribution <span class="arithmatex">\(g(s\,\vert\, N_c)\)</span> is the
+quantity of interest and is implicitly related to the probability of survival.
+The likelihood <span class="arithmatex">\(g(N_c\,\vert\, s)\)</span> tells us the probability of observing <span class="arithmatex">\(N_c\)</span>
+channels in this cell given that it survives. The quantity <span class="arithmatex">\(g(s)\)</span> captures all
+<em>a priori</em> knowledge we have regarding the probability of this cell surviving
+and the denominator <span class="arithmatex">\(f(N_c)\)</span> tells us the converse -- the probability of
+observing <span class="arithmatex">\(N_c\)</span> cells irrespective of the survival outcome.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Proper calculation of [@Eq:survival_bayes] requires
+that we have knowledge of <span class="arithmatex">\(f(N_c)\)</span>, which is difficult to estimate. While we
+are able to give appropriate bounds on this term, such as a requirement of
+positivity and some knowledge of the maximum membrane packing density, it is
+not so obvious to determine the distribution between these bounds. Given this
+difficulty, it is easier to compute the odds of survival
+<span class="arithmatex">\(\mathcal{O}(s\,\vert\, N_c)\)</span>, the probability of survival <span class="arithmatex">\(s\)</span> relative to
+death <span class="arithmatex">\(d\)</span>,
+$$
+\mathcal{O}(s\,\vert\, N_c) = {g(s\,\vert\,N_c) \over g(d\,\vert\, N_c)} = {f(N_c\,\vert\, s)g(s) \over f(N_c\,\vert\,d)g(d)},
+$${#eq:odds_definition}
+where <span class="arithmatex">\(f(N_c)\)</span> is cancelled. The only stipulation on the possible value of
+the odds is that it must be a positive value. As we would like to equally
+weigh odds less than one as those of several hundred or thousand, it is more
+convenient to compute the log-odds, given as
+$$
+\log \mathcal{O}(s\,\vert\,N_c)= \log {g(s) \over g(d)} + \log {f(N_c \,\vert\, s )\over f(N_c\,\vert\, d)}.
+$${#eq:log_odds}
+Computing the log-transform reveals two interesting quantities. The first
+term is the ratio of the priors and tells us the <em>a priori</em> knowledge of the
+odds of survival irrespective of the number of channels. As we have no reason
+to think that survival is more likely than death, this ratio goes to unity.
+The second term is the log likelihood ratio and tells us how likely we are to
+observe a given channel copy number <span class="arithmatex">\(N_c\)</span> given the cell survives relative to
+when it dies.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;For each channel copy number, we can evaluate
+@Eq:log_odds to measure the log-odds of survival. If we start with zero
+channels per cell, we can write the log-odds of survival as
+$$
+\log \mathcal{O}(s\,\vert\,N_c=0) = \log {g(s) \over g(d)} + \log {f(N_c=0\,\vert\, s) \over f(N_c=0\,\vert\, d)}.
+$${#eq:nc_0}
+For a channel copy number of one, the odds of survival is
+$$
+\log \mathcal{O}(s\,\vert\,N_c=1) = \log{g(s) \over g(d)} + \log{f(N_c=1\,\vert\, s) \over f(N_c=1\,\vert\, d)}.
+$${#eq:nc_1}
+In both @Eq:nc_0 and @Eq:nc_1, the log of our <em>a priori</em> knowledge of
+survival versus death remains. The only factor that is changing is log
+likelihood ratio. We can be more general in our language and say that the
+log-odds of survival is increased by the difference in the log-odds conveyed
+by addition of a single channel. We can rewrite the log likelihood ratio in a
+more general form as
+$$
+\log {f(N_c\, \vert\, s) \over f(N_c\,\vert\, d)} = \log{f(N_c = 0\,\vert\,s) \over f(N_c=0\,\vert\, d)} + N_c \left[\log{f(N_c=1 \,\vert\,s) \over f(N_c=1\,\vert\, d)} - \log{f(N_c=0\,\vert\, s) \over f(N_c=0\,\vert\, d)}\right],
+$${#eq:generalized_LLR}
+where we are now only considering the case in which <span class="arithmatex">\(N_c \in [0, 1]\)</span>.
+The bracketed term in @Eq:generalized_LLR is the log of the odds of survival given a single channel relative to the odds of survival given no channels. Mathematically, this odds-ratio can be expressed as
+$$
+\log\mathcal{OR}_{N_c}(s) = \log{ {f(N_c=1\,\vert\,s)g(s)\over f(N_c=1\,\vert\,d)g(d)}\over {f(N_c=0\,\vert\,s)g(s)\over f(N_c=0\,\vert\,d)g(d)}} = \log{f(N_c=1\,\vert\,s) \over f(N_c=1\,\vert\,d)} - \log{f(N_c=0\,\vert\,s)\over f(N_c=0\,\vert\,d)} .
+$${#eq:odds_ratio}
+@Eq:odds_ratio is mathematically equivalent to the bracketed term shown in @Eq:generalized_LLR. </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;We can now begin to staple these pieces together to
+arrive at an expression for the log odds of survival. Combining
+@Eq:generalized_LLR with @Eq:log_odds yields
+$$
+\log \mathcal{O}(s\,\vert\,N_c) = \log{g(s) \over g(d)} + \log {f(N_c=0\,\vert\, s) \over f(N_c=0\,\vert\, d)} + N_c\left[{f(N_c=1\,\vert\,s)\over f(N_c=1\,\vert\,d)} - \log{f(N_c=0\,\vert\,s) \over f(N_c=0\,\vert\,d)}\right].
+$${#eq:combined_v1}
+Using our knowledge that the bracketed term is the log odds-ratio and the
+first two times represents the log-odds of survival with <span class="arithmatex">\(N_c=0\)</span>, we conclude
+with
+$$
+\log\mathcal{O}(s\,\vert\,N_c) = \log \mathcal{O}(s\,\vert\,N_c=0) + N_c \log \mathcal{OR}_{N_c}(s).
+$${#eq:bayesian_logit}
+This result can be directly compared to Eq. 1 presented in the main text,
+$$
+\log {p_s \over 1 - p_s} = \beta_0 + \beta_1 N_c,
+<span class="arithmatex">\(<span class="arithmatex">({#eq:}
+which allows for an interpretation of the seemingly arbitrary coefficients
+<span class="arithmatex">\(\beta_0\)</span> and <span class="arithmatex">\(\beta_1\)</span>. The intercept term, <span class="arithmatex">\(\beta_0\)</span>, captures the log-odds
+of survival with no MscL channels. The slope, <span class="arithmatex">\(\beta_1\)</span>, describes the log
+odds-ratio of survival which a single channel relative to the odds of
+survival with no channels at all. While we have examined this considering
+only two possible channel copy numbers (\)</span>1\)</span> and <span class="arithmatex">\(0\)</span>), the relationship
+between them is linear. We can therefore generalize this for any MscL copy
+number as the increase in the log-odds of survival is constant for the addition
+of a single channel.</p>
+<h3 id="other-properties-as-predictor-variables">Other Properties as Predictor Variables</h3>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; The previous two sections discuss in detail the
+logic and practice behind the application of logistic regression to cell
+survival data using only the effective channel copy number as the predictor
+of survival. However, there are a variety of properties that could rightly be
+used as predictor variables, such as cell area and shock rate. As is
+stipulated in our standard candle calibration, there should be no correlation
+between survival and cell area. @Fig:alternative_predictor_variables (A) and (B)
+show the logistic regression performed on the cell area. We see for both slow
+and fast shock groups, there is little change in survival probability with
+changing cell area, and the wide credible regions allow for both positive and
+negative correlation between survival and area. The appearance of a bottle
+neck in the notably wide credible regions is a result of a large fraction of
+the measurements being tightly distributed about a mean value.
+@Fig:alternative_predictor_variables (C) shows the predicted survival
+probability as a function of the shock rate. There is a slight decrease
+in survivability as a function of increasing shock rate, however the width of
+the credible region allows for slightly positive or slightly negative
+correlation. While we have presented logistic regression in this section as a
+one-dimensional method, [@Eq:logit] can be generalized to <span class="arithmatex">\(n\)</span> predictor
+variables <span class="arithmatex">\(x\)</span> as
+$$
+\log {p_s \over 1 - p_s} = \beta_0 + \sum\limits_{i}^n \beta_ix_i.
+$${#eq:generalized_logit}
+Using this generalization, we can use both shock rate and the effective
+channel copy number as predictor variables. The resulting two-dimensional
+surface of survival probability is shown in
+@Fig:alternative_predictor_variables (D). As is suggested by
+@Fig:alternative_predictor_variables (C), the magnitude of change in
+survivability as the shock rate is increased is smaller than that along
+the increasing channel copy number, supporting our conclusion that for MscL
+alone, the copy number is the most important variable in determining
+survival.</p>
+<p><img alt="**Survival probability estimation using alternative predictor variables.** (A)
+Estimated survival probability as a function of cell area for the slow shock
+group. (B) Estimated survival probability as a function of cell area for the
+fast shock group. (C) Estimated survival probability as a function shock
+rate. Black points at top and bottom of plots represent single-cell
+measurements of cells that survived and perished, respectively. Shaded regions
+in (A) -- (C) represent the 95\% credible region. (D) Surface of estimated
+survival probability using both shock rate and effective channel number as
+predictor variables. Black points at left and right of plot represent
+single-cell measurements of cells which survived and died, respectively,
+sorted by shock rate. Points at top and bottom of plot represent survival and
+death sorted by their effective channel copy number. Labeled contours
+correspond to the survival probability. The Python code (klzzwxh:0142)
+used to generate this figure can be found on the thesis GitHub
+repository.
+" src="ch9_figS9" />{#fig:alternative_predictor_variables short-caption="Survival
+probability estimation using alternative predictor variables."}</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Richard P Anderson, Ruyun Jin, and Gary L Grunkemeier. Understanding logistic regression analysis in clinical reports: An introduction. <em>The Annals of Thoracic Surgery</em>, 75(3):753–757, March 2003. <a href="https://doi.org/10.1016/S0003-4975(02)04683-0">doi:10.1016/S0003-4975(02)04683-0</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Vikas Mishra, Maciej Skotak, Heather Schuetz, Abi Heller, James Haorah, and Namas Chandra. Primary blast causes mild, moderate, severe and lethal TBI with increasing blast overpressures: Experimental rat injury model. <em>Scientific Reports</em>, 6:26992, June 2016. <a href="https://doi.org/10.1038/srep26992">doi:10.1038/srep26992</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>Gerald J. Stahler, Jeremy Mennis, Steven Belenko, Wayne N. Welsh, Matthew L. Hiller, and Gary Zajac. Predicting recidivism for released state prison offenders. <em>Criminal justice and behavior</em>, 40(6):690–711, June 2013. <a href="https://doi.org/10.1177/0093854812469609">doi:10.1177/0093854812469609</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Weiwei Cheng and Eyke Hüllermeier. Combining instance-based learning and logistic regression for multilabel classification. <em>Machine Learning</em>, 76(2-3):211–225, September 2009. <a href="https://doi.org/10.1007/s10994-009-5127-5">doi:10.1007/s10994-009-5127-5</a>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>Stephan Dreiseitl and Lucila Ohno-Machado. Logistic regression and artificial neural network classification models: A methodology review. <em>Journal of Biomedical Informatics</em>, 35(5):352–359, October 2002. <a href="https://doi.org/10.1016/S1532-0464(03)00034-0">doi:10.1016/S1532-0464(03)00034-0</a>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p>Allen Downey. Probably Overthinking It: Bayes's theorem and logistic regression. April 2014.&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes"], "search": "../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5cf534bf.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

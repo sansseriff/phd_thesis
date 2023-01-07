@@ -1,0 +1,2738 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../section_02_nonmonotonicity/">
+      
+      
+        <link rel="next" href="../section_04_delta_F_inference/">
+      
+      <link rel="icon" href="../../site_images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
+    
+    
+      
+        <title>section 03 DNA epRA inference - Computational Methods for SNSPDs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f56500e0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bayesian-parameter-estimation-for-dna-binding-mutants" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Computational Methods for SNSPDs" class="md-header__button md-logo" aria-label="Computational Methods for SNSPDs" data-md-component="logo">
+      
+  <img src="../../site_images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Computational Methods for SNSPDs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              section 03 DNA epRA inference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Computational Methods for SNSPDs" class="md-nav__button md-logo" aria-label="Computational Methods for SNSPDs" data-md-component="logo">
+      
+  <img src="../../site_images/logo.svg" alt="logo">
+
+    </a>
+    Computational Methods for SNSPDs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Computational Methods for SNSPDs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref_heading/" class="md-nav__link">
+        References
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Chapter 01
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 01" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 01
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_00_title/" class="md-nav__link">
+        The Phenomenon of Adaptation Across Scales
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_01_introduction/" class="md-nav__link">
+        Section 01 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_02_molecular_adaptation/" class="md-nav__link">
+        Section 02 molecular adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_03_evolutionary_adaptation/" class="md-nav__link">
+        Section 03 evolutionary adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_04_physiological_adaptation/" class="md-nav__link">
+        Section 04 physiological adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_05_survival/" class="md-nav__link">
+        Section 05 survival
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_06_conclusion/" class="md-nav__link">
+        Section 06 conclusion
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Chapter 02
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 02" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 02
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_00_title/" class="md-nav__link">
+        Through the Intramolecular Grapevine: Signal Processing Via Allosteric Transcription Factors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_04_model/" class="md-nav__link">
+        Section 04 model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_05_results/" class="md-nav__link">
+        Section 05 results
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_06_discussion/" class="md-nav__link">
+        Section 06 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_07_methods/" class="md-nav__link">
+        Section 07 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Chapter 03
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 03" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 03
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_00_title/" class="md-nav__link">
+        Unknown Knowns, Known Unknowns, and Unforeseen Consequences: Using Free Energy Shifts To Predict Mutant Phenotypes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_04_model/" class="md-nav__link">
+        Section 04 model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_05_DNA_mutants/" class="md-nav__link">
+        section 05 DNA mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_06_IND_mutants/" class="md-nav__link">
+        section 06 IND mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_07_DBL_mutants/" class="md-nav__link">
+        section 07 DBL mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_08_discussion/" class="md-nav__link">
+        Section 08 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_09_methods/" class="md-nav__link">
+        Section 09 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Chapter 04
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 04" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 04
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_00_title/" class="md-nav__link">
+        On The Physiological Adaptability of a Simple Genetic Circuit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_04_model/" class="md-nav__link">
+        Section 04 model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_05_experimental_design/" class="md-nav__link">
+        Section 05 experimental design
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_06_scaling/" class="md-nav__link">
+        Section 06 scaling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_07_carbon_quality/" class="md-nav__link">
+        Section 07 carbon quality
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_08_temperature/" class="md-nav__link">
+        Section 08 temperature
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_09_discussion/" class="md-nav__link">
+        Section 09 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_10_methods/" class="md-nav__link">
+        Section 10 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Chapter 05
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 05" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 05
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_00_title/" class="md-nav__link">
+        'Water, Water Everywhere, Yet Not A Drop to Drink': How Bacteria Adapt To Changes in Osmolarity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_04_results/" class="md-nav__link">
+        Section 04 results
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_05_discussion/" class="md-nav__link">
+        Section 05 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_06_methods/" class="md-nav__link">
+        Section 06 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Chapter 06
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 06" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 06
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_00_title/" class="md-nav__link">
+        Supplemental Information For Chapter 2: Signal Processing Via Allosteric Transcription Factors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_02_epAI/" class="md-nav__link">
+        section 02 epAI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_03_fugacity/" class="md-nav__link">
+        Section 03 fugacity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_04_flow/" class="md-nav__link">
+        Section 04 flow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_05_microscopy/" class="md-nav__link">
+        Section 05 microscopy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_06_sensitivity/" class="md-nav__link">
+        Section 06 sensitivity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_07_global_fit/" class="md-nav__link">
+        Section 07 global fit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_08_Oid/" class="md-nav__link">
+        section 08 Oid
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_09_comparison/" class="md-nav__link">
+        Section 09 comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_10_properties/" class="md-nav__link">
+        Section 10 properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_11_applications/" class="md-nav__link">
+        Section 11 applications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_12_tables/" class="md-nav__link">
+        Section 12 tables
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Chapter 07
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 07" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 07
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_00_title/" class="md-nav__link">
+        Supplemental Information for Chapter 3: Predictive Shifts in Free Energy Couple Mutations to Their Phenotypic Consequences
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_02_nonmonotonicity/" class="md-nav__link">
+        Section 02 nonmonotonicity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          section 03 DNA epRA inference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        section 03 DNA epRA inference
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bayesian-parameter-estimation-for-dna-binding-mutants" class="md-nav__link">
+    Bayesian Parameter Estimation for DNA Binding Mutants
+  </a>
+  
+    <nav class="md-nav" aria-label="Bayesian Parameter Estimation for DNA Binding Mutants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calculation-of-the-fold-change-in-gene-expression" class="md-nav__link">
+    Calculation of the Fold-Change in Gene Expression
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-a-generative-statistical-model" class="md-nav__link">
+    Building a Generative Statistical Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prior-predictive-checks" class="md-nav__link">
+    Prior Predictive Checks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensitivity-analysis-and-simulation-based-calibration" class="md-nav__link">
+    Sensitivity Analysis and Simulation Based Calibration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameter-estimation-and-posterior-predictive-checks" class="md-nav__link">
+    Parameter Estimation and Posterior Predictive Checks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_04_delta_F_inference/" class="md-nav__link">
+        section 04 delta F inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_05_DNA_mutants/" class="md-nav__link">
+        section 05 DNA mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_06_IND_inference/" class="md-nav__link">
+        section 06 IND inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_07_IND_mutants/" class="md-nav__link">
+        section 07 IND mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_08_param_comparison/" class="md-nav__link">
+        Section 08 param comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_09_global_fit/" class="md-nav__link">
+        Section 09 global fit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_10_generality/" class="md-nav__link">
+        Section 10 generality
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_11_strains/" class="md-nav__link">
+        Section 11 strains
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Chapter 08
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 08" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 08
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_00_title/" class="md-nav__link">
+        Supplemental Information for Chapter 4: The Physiological Adaptability of a Simple Genetic Circuit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_02_growth_rates/" class="md-nav__link">
+        Section 02 growth rates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_03_cell_volume/" class="md-nav__link">
+        Section 03 cell volume
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_04_counting_repressors/" class="md-nav__link">
+        Section 04 counting repressors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_05_carbon_inference/" class="md-nav__link">
+        Section 05 carbon inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_06_entropy/" class="md-nav__link">
+        Section 06 entropy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_07_strains_recipes/" class="md-nav__link">
+        Section 07 strains recipes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_11">
+          Chapter 09
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 09" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 09
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_00_title/" class="md-nav__link">
+        Supplemental Information For Chapter 5: How Bacteria Adapt To Changes in Osmolarity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_02_electrophysiology/" class="md-nav__link">
+        Section 02 electrophysiology
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_03_cal_factor_derivation/" class="md-nav__link">
+        Section 03 cal factor derivation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_04_survival_classification/" class="md-nav__link">
+        Section 04 survival classification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_05_logistic_regression/" class="md-nav__link">
+        Section 05 logistic regression
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_06_shock_classification/" class="md-nav__link">
+        Section 06 shock classification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_07_vandenberg_comparison/" class="md-nav__link">
+        Section 07 vandenberg comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_08_strains/" class="md-nav__link">
+        Section 08 strains
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_12">
+          Frontmatter
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Frontmatter" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Frontmatter
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/abstract/" class="md-nav__link">
+        Abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements/" class="md-nav__link">
+        Acknowledgements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements_prompt/" class="md-nav__link">
+        Acknowledgements prompt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements_prompt_2/" class="md-nav__link">
+        Acknowledgements prompt 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements_results_general/" class="md-nav__link">
+        Acknowledgements results general
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/published/" class="md-nav__link">
+        Published
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bayesian-parameter-estimation-for-dna-binding-mutants" class="md-nav__link">
+    Bayesian Parameter Estimation for DNA Binding Mutants
+  </a>
+  
+    <nav class="md-nav" aria-label="Bayesian Parameter Estimation for DNA Binding Mutants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calculation-of-the-fold-change-in-gene-expression" class="md-nav__link">
+    Calculation of the Fold-Change in Gene Expression
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-a-generative-statistical-model" class="md-nav__link">
+    Building a Generative Statistical Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prior-predictive-checks" class="md-nav__link">
+    Prior Predictive Checks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensitivity-analysis-and-simulation-based-calibration" class="md-nav__link">
+    Sensitivity Analysis and Simulation Based Calibration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameter-estimation-and-posterior-predictive-checks" class="md-nav__link">
+    Parameter Estimation and Posterior Predictive Checks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>section 03 DNA epRA inference</h1>
+
+<h2 id="bayesian-parameter-estimation-for-dna-binding-mutants">Bayesian Parameter Estimation for DNA Binding Mutants</h2>
+<p>In this section, we outline the statistical model used in this work to
+estimate the DNA binding energy for a given mutation in the DNA binding
+domain. The methodology presented here is similar to that performed in
+Chapter 2 and outlined in accompanying Chapter 6. In the following text, we
+take a very detailed approach to vetting the robustness of our statistical
+inference machinery as determination of parameter values is critical to
+assessing the effects of mutations. Similarly to what is presented in Chapter
+6, we begin with a derivation of our statistical model using Bayes' theorem
+and then perform a series of principled steps to validate our choices of
+priors, ensure computational feasibility, and assess the validity of the
+model given the collected data. This work follows the analysis pipeline
+outlined by Michael Betancourt in his case-study entitled <a href="https://betanalpha.github.io/assets/case_studies/principled_bayesian_workflow.html">"Towards A
+Principled Bayesian Workflow."
+</a></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The second subsection <em>Building a Generative
+Statistical Model</em> lays out the statistical model used in this work to
+estimate the DNA binding energy and the error term <span class="arithmatex">\(\sigma\)</span>. The subsequent
+subsections -- <em>Prior Predictive Checks</em>, <em>Simulation Based Calibration</em>, and
+<em>Posterior Predictive Checks</em> -- define and summarize a series of
+tests that ensure that the parameters of the statistical model can be
+identified and are computationally tractable. To understand how we defined
+our statistical model, only the second subsection is needed.</p>
+<h3 id="calculation-of-the-fold-change-in-gene-expression">Calculation of the Fold-Change in Gene Expression</h3>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We appreciate the subtleties of the efficiency
+of photon detection in the flow cytometer, fluorophore maturation and
+folding, and autofluorescence correction, and we understand the importance in
+modeling the effects that these processes have on the reported value of the
+fold-change. However, in order to be consistent with the methods used in the
+literature, we took a more simplistic approach to calculate the fold-change.
+Given a set of fluorescence measurements of the constitutive expression
+control (<span class="arithmatex">\(R = 0\)</span>), an autofluorescence control (no YFP), and the experimental
+strain (<span class="arithmatex">\(R &gt; 0\)</span>), we calculate the fold-change as
+$$
+\text{fold-change} = {\langle I_\text{cell}(R &gt; 0)\rangle - \langle I_\text{autofluorescence}\rangle \over \langle I_\text{cell}(R = 0) \rangle - \langle I_\text{autofluorescence}\rangle}.
+$${#eq:experimental_foldchange} 
+It is important to note here that for a given biological replicate, we
+consider only a point estimate of the mean fluorescence for each sample and
+perform a simple subtraction to adjust for background fluorescence. For the
+analysis going forward, all mentions of measured fold-change are determined
+by this calculation.</p>
+<h3 id="building-a-generative-statistical-model">Building a Generative Statistical Model</h3>
+<p>To identify the minimal parameter set affected by a mutation, we assume
+that mutations in the DNA binding domain of the repressor alters only
+the DNA binding energy <span class="arithmatex">\(\Delta\varepsilon_{RA}\)</span>, while the other
+parameters of the repressor are left unperturbed from their wild-type
+values. As a first approach, we can assume that all of the other
+parameters are known without error and can be taken as constants in our
+physical model. Ultimately, we want to know how probable a particular
+value of <span class="arithmatex">\(\Delta\varepsilon_{RA}\)</span> is given a set of experimental
+measurements <span class="arithmatex">\(y\)</span>. Bayes' theorem computes this distribution, termed the
+<em>posterior distribution</em> as
+$$
+g(\Delta\varepsilon_{RA}\,\vert\, y) = {f(y\,\vert\,
+ \Delta\varepsilon_{RA}) g(\Delta\varepsilon_{RA}) \over f(y)}
+$${#eq:simple_bayes_DNA}
+where we have used <span class="arithmatex">\(g\)</span> and <span class="arithmatex">\(f\)</span> to represent probability densities over
+parameters and data, respectively. The expression <span class="arithmatex">\(f(y\,\vert
+\Delta\varepsilon_{RA})\)</span> captures the likelihood of observing our data set
+<span class="arithmatex">\(y\)</span> given a value for the DNA binding energy under our physical model. All
+knowledge we have of what the DNA binding energy <em>could</em> be, while remaining
+completely ignorant of the experimental measurements, is defined in
+<span class="arithmatex">\(g(\Delta\varepsilon_{RA})\)</span>, referred to as the <em>prior distribution</em>.
+Finally, the likelihood that we would observe the data set <span class="arithmatex">\(y\)</span> while being
+ignorant of our physical model is defined by the denominator <span class="arithmatex">\(f(y)\)</span>. In this
+work, this term serves only as a normalization factor and as a result will be
+treated as a constant. We can therefore say that the posterior distribution
+of <span class="arithmatex">\(\Delta\varepsilon_{RA}\)</span> is proportional to the joint distribution between
+the likelihood and the prior,
+$$
+g(\Delta\varepsilon_{RA}\,\vert\, y) \propto f(y\,\vert\,\Delta\varepsilon_{RA})g(\Delta\varepsilon_{RA}).
+$${#eq:epRA_post_prop}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We are now tasked with translating this
+generic notation into a concrete functional form. Our physical model derived
+in Chapter 2 computes the average fold-change in gene expression.
+Speaking practically, we make several replicate measurements of the
+fold-change to reduce the effects of random errors. As each replicate is
+independent of the others, it is reasonable to expect that these measurements
+will be normally distributed about the theoretical value of the fold-change
+<span class="arithmatex">\(\mu\)</span>, computed for a given <span class="arithmatex">\(\Delta\varepsilon_{RA}\)</span>. We can write this
+mathematically for each measurement as 
+$$
+f(y\,\vert\, \Delta\varepsilon_{RA}) = {1 \over
+    (2\pi\sigma^2)^{N/2}}\prod\limits_{i}^N \exp\left[-(y_i -
+    \mu(\Delta\varepsilon_{RA}))^2 \over 2\sigma^2\right],
+$${#eq:likelihood_DNA_explicit} 
+where <span class="arithmatex">\(N\)</span> is the number of measurements in <span class="arithmatex">\(y\)</span> and <span class="arithmatex">\(y_i\)</span> is the <span class="arithmatex">\(i^\text{th}\)</span>
+experimental fold-change measurement. We can write this likelihood in
+shorthand as
+$$
+f(y\,\vert\,\Delta\varepsilon_{RA}) = \text{Normal}{\mu(\Delta\varepsilon_{RA}),
+\sigma}\, 
+$${#eq:likelihood_DNA_short}
+which we will use for the remainder of this section.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using a normal distribution for our likelihood
+has introduced a new parameter <span class="arithmatex">\(\sigma\)</span> which describes the spread of our
+measurements about the true value. We must therefore include it in our
+parameter estimation and assign an appropriate prior distribution such that
+the posterior distribution becomes
+$$
+g(\Delta\varepsilon_{RA}, \sigma\,\vert y) \propto f(y\,\vert\,
+\Delta\varepsilon_{RA}, \sigma)g(\Delta\varepsilon_{RA})g(\sigma).
+$${#eq:full_post_sig_prior} 
+We are now tasked with assigning functional forms to the priors <span class="arithmatex">\(g(\Delta\varepsilon_{RA})\)</span> and
+<span class="arithmatex">\(g(\sigma)\)</span>. Though one hopes that the result of the inference is not
+too dependent on the choice of prior, it is important to choose one that
+is in agreement with our physical and physiological intuition of the
+system.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We can impose physically reasonable bounds on the possible values of the
+DNA binding energy <span class="arithmatex">\(\Delta\varepsilon_{RA}\)</span>. We can say that it is
+unlikely that any given mutation in the DNA binding domain will result
+in an affinity greater than that of biotin to streptavidin (<span class="arithmatex">\(1\,
+\mathrm{fM} \approx -35\, \mathrm{k_BT}\)</span>, BNID 107139 <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>), one
+of the strongest known non-covalent bonds. Similarly, it is unlikely that
+a given mutation will result in a large, positive binding energy,
+indicating that non-specific binding is preferable to specific binding
+(<span class="arithmatex">\(\sim 1\)</span> to <span class="arithmatex">\(10\,\mathrm{k_BT}\)</span>). While it is unlikely for the DNA
+binding energy to exceed these bounds, it is not impossible, meaning we
+should not impose these limits as hard boundaries. Rather, we can define
+a weakly informative prior as a normal distribution with a mean and
+standard deviation as the average of these bounds,
+$$
+g(\Delta\varepsilon_{RA}) \sim \text{Normal}{-12, 12}
+$${#eq:epRA_prior}
+whose probability density function in shown in @Fig:epRA_prior_pred (A).</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By definition, fold-change is restricted to the
+bounds <span class="arithmatex">\([0, 1]\)</span>. Measurement noise and fluctuations in autofluorescence
+background subtraction means that experimental measurements of fold-change
+can extend beyond these bounds, though not substantially. By definition, the
+scale parameter <span class="arithmatex">\(\sigma\)</span> must be positive and greater than zero. We also know
+that for the measurements to be of any use, the error should be less than the
+available range of fold-change, <span class="arithmatex">\(1.0\)</span>. We can choose such a prior as a half
+normal distribution
+$$
+g(\sigma) = {1 \over \phi}\sqrt{2 \over \pi}\exp\left[-{\sigma^2 \over
+2\phi^2}\right];\, \forall\, \sigma \geq 0
+$${#eq:sig_hn_explicit}
+where <span class="arithmatex">\(\phi\)</span> is the standard deviation. By choosing <span class="arithmatex">\(\phi = 0.1\)</span>, it is
+unlikely that <span class="arithmatex">\(\sigma \geq 1\)</span>, yet not impossible, permitting the occasional
+measurement significantly outside of the theoretical bounds. The probability
+density function for this prior is shown in @Fig:epRA_prior_pred (B).</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;While these choices for the priors seem
+reasonable, we can check their appropriateness by using them to simulate a
+data set and checking that the hypothetical fold-change measurements obey our
+physical and physiological intuition.</p>
+<p><img alt="**Prior distributions and prior predictive check for estimation of the DNA
+binding energy.** (A) Prior probability density function for DNA binding energy
+\(\Delta\varepsilon_{RA}\) as \(\sim\) Normal(\(-12, 12\)). (B) Prior probability
+density function for the standard deviation in measurement noise \(\sigma \sim\)
+HalfNormal(\(0, 0.1\)). (C) Percentiles of values drawn from the likelihood
+distribution given draws from prior distributions given \(R=260\), \(K_A=139
+\,\mu\)M, \(K_I=0.53\,\mu\)M, and \(\Delta\varepsilon_{AI} = 4.5\,k_BT\), which match
+the parameters used in @razo-mejia2018. Black points at top of (A) and (B)
+represent draws used to generate fold-change measurements from the likelihood
+distribution. Percentiles in (C) generated from 800 draws from the prior
+distributions. For each draw from the prior distributions, a data set of 70
+measurements over 12 IPTG concentrations (ranging from \(0\) to \(5000\,\mu\)M) were
+generated from the likelihood. The Python code (klzzwxh:0081)
+used to generate this figure can be found on the thesis GitHub
+repository." src="ch7_figS2" />{#fig:epRA_prior_pred
+short-caption="Prior distributions and prior predictive check for estimation of
+the DNA binding energy."}</p>
+<h3 id="prior-predictive-checks">Prior Predictive Checks</h3>
+<p>If our choice of prior distribution for each parameter is appropriate,
+we should be able to simulate data sets using these priors that match
+our expectations. In essence, we would hope that these prior choices
+would generate some data sets with fold-change measurements above 1 or
+below zero, but they should be infrequent. If we end up getting
+primarily negative values for fold-change, for example, then we can
+surmise that there is something wrong in our definition of the prior
+distribution. This method, coined a <em>prior predictive check</em>, was first
+put forward in @good1950 and has received newfound attention in computational statistics.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We perform the simulation in the following
+manner. We first draw a random value for <span class="arithmatex">\(\Delta\varepsilon_{RA}\)</span> out of its
+prior distribution stated in @Eq:epRA_prior and calculate what the mean
+fold-change should be given our physical model. With this in hand, we draw a
+random value for <span class="arithmatex">\(\sigma\)</span> from its prior distribution, specified in
+@Eq:sig_hn_explicit. We then generate a simulated data set by drawing
+<span class="arithmatex">\(\approx\)</span> 70 fold-change values across twelve inducer concentrations from the
+likelihood distribution which we defined in @Eq:likelihood_DNA_short. This
+roughly matches the number of measurements made for each mutant in this work.
+We repeat this procedure for 800 draws from the prior distributions, which is
+enough to observe the occasional extreme fold-change value from the
+likelihood. As the DNA binding energy is the only parameter of our physical
+model that we are estimating, we had to choose values for the others. We kept
+the values of the inducer binding constants <span class="arithmatex">\(K_A\)</span> and <span class="arithmatex">\(K_I\)</span> the same as the
+wild-type repressor (<span class="arithmatex">\(139\,\mu\)</span>M and <span class="arithmatex">\(0.53\,\mu\)</span>M, respectively). We chose to
+use <span class="arithmatex">\(R=260\)</span> repressors per cell as this is the repressor copy number we used
+in the main text to estimate the DNA binding energies of the three mutants.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The draws from the priors are shown in
+@Fig:epRA_prior_pred (A) and (B) as black points above the corresponding
+distribution. To display the results, we computed the percentiles of the
+simulated data sets at each inducer concentration. These percentiles are
+shown as red shaded regions in @Fig:epRA_prior_pred (C). The 5<span class="arithmatex">\(\text{th}\)</span>
+percentile (dark purple band) has the characteristic profile of an induction
+curve. Given that the prior distribution for <span class="arithmatex">\(\Delta\varepsilon_{RA}\)</span> is
+centered at <span class="arithmatex">\(-12\, k_BT\)</span> and we chose <span class="arithmatex">\(R = 260\)</span>, we expect the generated data
+sets to cluster about the induction profile defined by these values. More
+importantly, approximately 95\% of the generated data sets fall between
+fold-change values of -0.1 and 1.1, which is within the realm of possibility
+given the systematic and biological noise in our experiments. The
+99<span class="arithmatex">\(^\text{th}\)</span> percentile maximum is approximately <span class="arithmatex">\(1.3\)</span> and the minimum
+approximately <span class="arithmatex">\(-0.3\)</span>. While we could tune our choice of prior further to
+minimize draws this far from the theoretical bounds, we err on the side of
+caution and accept these values as it is possible that fold-change
+measurements this high or low can be observed, albeit rarely.
+Through these prior predictive checks, we feel confident that these
+choices of priors are appropriate for the parameters we wish to
+estimate. We can now move forward and make sure that the statistical
+model as a whole is valid and computationally tractable.</p>
+<h3 id="sensitivity-analysis-and-simulation-based-calibration">Sensitivity Analysis and Simulation Based Calibration</h3>
+<p>Satisfied with our choice of prior distributions, we can proceed to
+check other properties of the statistical model and root out any
+pathologies lurking in our model assumptions.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To build trust in our model, we could generate
+a data set <span class="arithmatex">\(\tilde{y}\)</span> with a <em>known</em> value for <span class="arithmatex">\(\sigma\)</span> and
+<span class="arithmatex">\(\Delta\varepsilon_{RA}\)</span>, estimate the posterior distribution
+<span class="arithmatex">\(g(\Delta\varepsilon_{RA}, \sigma\,\vert\,\tilde{y})\)</span>, and determine how well
+we were able to retrieve the true value of the parameters. However, running
+this once or twice for handpicked values of <span class="arithmatex">\(\sigma\)</span> and
+<span class="arithmatex">\(\Delta\varepsilon_{RA}\)</span> will not reveal edge-cases in which the inference
+fails, some of which may exist in our data. Rather than performing this
+operation once, we can run this process over a variety of data sets where the
+ground truth parameter value is drawn from the prior distribution (as we did
+for the prior predictive checks). For an arbitrary parameter <span class="arithmatex">\(\theta\)</span>, the
+joint distribution between the ground truth value <span class="arithmatex">\(\tilde\theta\)</span>, the
+inferred value <span class="arithmatex">\(\theta\)</span>, and the simulated data set <span class="arithmatex">\(\tilde y\)</span> can be written
+as
+$$
+\pi(\theta, \tilde{y}, \tilde{\theta}) =
+g(\theta\,\vert\,\tilde{y})f(\tilde{y}\,\vert\,\tilde{\theta})g(\tilde{\theta}).
+$${#eq:bayesian_joint_dist}
+If this process is run for a large number of simulations,
+@Eq:bayesian_joint_dist can be marginalized over all data
+sets <span class="arithmatex">\(\tilde{y}\)</span> and all ground truth values <span class="arithmatex">\(\tilde{\theta}\)</span> to yield
+the original prior distribution,
+$$
+\int d\tilde{\theta}\int d\tilde{y} \pi(\theta,\tilde{y}, \tilde{\theta}) =
+g(\theta).
+$${#eq:self_consistency_relation}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This result, described by @talts2018, holds true for <em>any</em> statistical model
+and is a natural self consistency property of Bayesian inference. Any
+deviation between the distribution of our inferred values for <span class="arithmatex">\(\theta\)</span> and
+the original prior distribution <span class="arithmatex">\(g(\theta)\)</span> indicates that either our
+statistical model is malformed or the computational method is not behaving as
+expected. There are a variety of ways we can ensure that this condition is
+satisfied, which we outline below.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Using the data set generated for the prior predictive checks (shown in
+@Fig:epRA_prior_pred (C)), we sampled the posterior
+distribution and compute <span class="arithmatex">\(\Delta\varepsilon_{RA}\)</span> and <span class="arithmatex">\(\sigma\)</span> for each
+simulation and checked that they matched the original prior
+distribution. To perform the inference, we use Markov chain Monte Carlo
+(MCMC) to sample the posterior distribution. Specifically, we use the
+Hamiltonian Monte Carlo algorithm implemented in the Stan probabilistic
+programming language <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. The specific code files can be
+accessed through the <a href="http://rpgroup.caltech.edu/mwc_mutants">paper website</a> or
+the associated <a href="https://github.com/rpgroup-pboc/mwc_mutants">GitHub repository</a>.
+The original prior distribution and the distribution of inferred parameter
+values can be seen in @Fig:epRA_sbc (A) and (B). For both <span class="arithmatex">\(\Delta\varepsilon_{RA}\)</span>
+and <span class="arithmatex">\(\sigma\)</span>, we can accurately recover the ground truth distribution
+(purple) via sampling with MCMC (orange). For <span class="arithmatex">\(\Delta\varepsilon_{RA}\)</span>, there
+appears to be an upper and lower limit past which we are unable to
+accurately infer the binding energy. This can be seen in both the
+histogram [@Fig:epRA_sbc(A)] and the empirical cumulative distribution
+[@Fig:epRA_sbc (B)] as deviations from the ground truth when
+DNA binding is below <span class="arithmatex">\(\approx -25\,k_BT\)</span> or above <span class="arithmatex">\(\approx -5\,k_BT\)</span>.
+These limits hinder our ability to comment on exceptionally strong or
+weak binding affinities. However, as all mutants queried in this work
+exhibited binding energies between these limits, we surmise that the
+inferential scheme permits us to draw conclusions about the inferred DNA
+binding strengths.</p>
+<p><img alt="**Comparison of averaged posterior and prior distributions for
+\(\Delta\varepsilon_{RA}\) and \(\sigma\).** (A) Distribution of the average
+values for the DNA binding energy \(\Delta\varepsilon_{RA}\) (orange)
+overlaid with the ground truth distribution (purple). (B) Data averaged
+posterior (orange) for the standard deviation of fold-change measurements
+overlaid with the ground truth distribution (purple). Top and bottom show
+the same data with different
+visualizations. The Python code (klzzwxh:0163)
+used to generate this figure can be found on the thesis GitHub
+repository." src="ch7_figS3" />{#fig:epRA_sbc short-caption="Comparison of averaged
+posterior and prior distributions for DNA binding energy and homoscedastic error."}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rather than examining the agreement of the
+data-averaged posterior and the ground truth prior distribution solely by
+eye, we can compute summary statistics using the mean <span class="arithmatex">\(\mu\)</span> and standard
+deviation <span class="arithmatex">\(\sigma\)</span> of the posterior and prior distributions which permit
+easier identification of pathologies in the inference. One such quantity is
+the posterior <span class="arithmatex">\(z\)</span>-score, which is defined as
+$$
+z = {\mu_\text{posterior} - \tilde\theta \over \sigma_\text{posterior}}.
+$${#eq:zscore}
+This statistic summarizes how accurately the posterior recovers the ground
+truth value beyond simply reporting the mean, median, or mode of the
+posterior distribution. <span class="arithmatex">\(Z\)</span>-scores around <span class="arithmatex">\(0\)</span> indicate that the posterior is
+concentrating tightly about the true value of the parameter whereas large
+values (either positive or negative) indicate that the posterior is
+concentrating elsewhere. A useful feature of this metric is that the width of
+the posterior is also considered. It is possible that the posterior could
+have a mean very close to the ground truth value, but have an incredibly
+narrow distribution/spread such that it does not overlap with the
+ground-truth. Only comparing the mean value to the ground truth would suggest
+that the inference "worked." However with a small standard deviation
+generates a very large <span class="arithmatex">\(z\)</span>-score, telling us that something has gone awry.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If our inferential model is behaving properly, the width of the
+posterior distribution should be significantly smaller than the width of
+the prior, meaning that the posterior is being informed by the data. The
+level to which the posterior is being informed by the data can be easily
+calculated given knowledge of both the prior and posterior distribution.
+This quantity, aptly named the shrinkage <span class="arithmatex">\(s\)</span>, can be computed as
+$$
+s = 1 - {\sigma^2_\text{posterior} \over \sigma^2_\text{prior}}.
+$${#eq:shrinkage}
+When the shrinkage is close to zero, the variance of the posterior is
+approximately the same as the variance of the prior, and the model is not being
+properly informed by the data. When <span class="arithmatex">\(s\approx 1\)</span>, the variance of the
+posterior is much smaller than the variance of the prior, indicating that 
+it is being highly informed by the data. A shrinkage less than 0 indicates
+that the posterior is wider than the prior distribution, revealing a severe
+pathology in either the model itself or the implementation.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In @Fig:epRA_sbc_sensitivity, we compute these summary
+statistics for each parameter. For both <span class="arithmatex">\(\Delta\varepsilon_{RA}\)</span> and
+<span class="arithmatex">\(\sigma\)</span>, we see clustering of the <span class="arithmatex">\(z\)</span>-score about 0 with the extrema
+reaching <span class="arithmatex">\(\approx \pm 3\)</span>. This suggests that for the vast majority of
+our simulated data sets, the posterior distribution concentrated about
+the ground truth value. We also see that for both parameters, the
+posterior shrinkage <span class="arithmatex">\(s\)</span> is <span class="arithmatex">\(\approx 1\)</span>, indicating that the posterior is
+being highly informed by the data. There is a second distribution
+centered <span class="arithmatex">\(\approx\)</span> 0.8 for <span class="arithmatex">\(\Delta\varepsilon_{RA}\)</span>, indicating that for
+a subset of the data sets, the posterior is only <span class="arithmatex">\(\approx 80\)</span>\% narrower
+than the prior distribution. These samples are those that were drawn
+outside of the limits of <span class="arithmatex">\(\approx -25\)</span> to <span class="arithmatex">\(-5\, k_BT\)</span> where the
+inferential power is limited. Nevertheless, the posterior still
+significantly shrank, indicating that the data strongly informs the
+posterior.</p>
+<p><img alt="**Inferential sensitivity for estimation of \(\Delta\varepsilon_{RA}\) and
+\(\sigma\)**. The posterior \(z\)-score for each posterior distribution
+inferred from a simulated data set is plotted against the shrinkage for
+(A) the DNA binding energy \(\Delta\varepsilon_{RA}\) and (B) the standard
+deviation of fold-change measurements
+\(\sigma\). The Python code (klzzwxh:0204)
+used to generate this figure can be found on the thesis GitHub
+repository. " src="ch7_figS4" />{#fig:epRA_sbc_sensitivity short-caption="Inferential
+sensitivity for estimation of the DNA binding energy and homoscedastic error."}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The general self-consistency condition given by
+@Eq:self_consistency_relation provides another route to
+ensure that the model is computationally tractable. Say that we draw a
+value for the DNA binding energy from the prior distribution, simulate a
+data set, and sample the posterior using MCMC. The result of this
+sampling is a collection of <span class="arithmatex">\(N\)</span> values of the parameter which may be
+above, below, or equal to the ground-truth value. From this set of
+values, we select <span class="arithmatex">\(L\)</span> of them and rank order them by their value. @talts2018 
+derived a general theorem which states that the number of samples less than the ground truth value of the parameter
+(termed the rank statistic) is uniformly distributed over the interval
+<span class="arithmatex">\([0, L]\)</span>. As @Eq:self_consistency_relation <em>must</em> hold true for any
+statistical model, deviations from uniformity signal that there is a
+problem in the implementation of the statistical model. How the
+distribution deviates is also informative as different types of failures
+result in different distributions. The nature of these deviations, along
+with a more formal proof of the uniform distribution of rank statistics
+can be found in @talts2018 where it was originally derived.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Given the sampling statistics for each of the
+simulated data sets, we took 800 of the MCMC samples of the posterior
+distribution for each of the 800 simulated data sets and computed the rank
+statistic. The distributions are shown in 
+@Fig:epRA_sbc_rank as both histograms and ECDFs for the DNA
+binding energy and standard deviation. The distribution of rank
+statistics for both parameters appears to be uniform. The purple band
+overlaying the histograms (top row) as well as the purple envelopes
+overlaying the ECDFs (bottom row) represent the <span class="arithmatex">\(99^\text{th}\)</span>
+percentile expected from a true uniform distribution. The uniformity of
+this distribution, along with the well-behaved <span class="arithmatex">\(z\)</span>-scores and shrinkage
+for each parameter, tells us that there are no underlying pathologies in
+our statistical model and that it is computationally tractable. However,
+this does not mean that it is correct. Whether this model is valid for
+the actual observed data is the topic of the next section.</p>
+<p><img alt="**Rank distribution of the posterior samples from simulated data.** Top
+row shows a histogram of the rank distribution with \(n=20\) bins. Bottom
+row is the cumulative distribution for the same data. Purple bands
+correspond to the 99th percentile of expected variation from a uniform
+distribution. (A) Distribution for the DNA binding energy
+\(\Delta\varepsilon_{RA}\) and (B) for the standard deviation
+\(\sigma\). The Python code (klzzwxh:0229)
+used to generate this figure can be found on the thesis GitHub
+repository. " src="ch7_figS5" />{#fig:epRA_sbc_rank short-caption="Rank distribution of the
+posterior samples from simulated data for the DNA binding energy and
+homoscedastic error."}</p>
+<h3 id="parameter-estimation-and-posterior-predictive-checks">Parameter Estimation and Posterior Predictive Checks</h3>
+<p>We now turn to applying our vetted statistical model to experimental
+measurements. While the same statistical model was applied to all three
+DNA binding mutants, here we only focus on the mutant Q18M for brevity.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using a single induction profile, we sampled the posterior distribution
+over both the DNA binding energy <span class="arithmatex">\(\Delta\varepsilon_{RA}\)</span> and the
+standard deviation <span class="arithmatex">\(\sigma\)</span> using MCMC implemented in the Stan
+programming language. The output of this process is a set of 4000
+samples of both parameters along with the value of their log posterior
+probabilities, which serves as an approximate measure of the probability
+of each value. The individual samples are shown in @Fig:epRA_ppc. The joint distribution between
+<span class="arithmatex">\(\Delta\varepsilon_{RA}\)</span> and <span class="arithmatex">\(\sigma\)</span> is shown in the lower left hand
+corner, and the marginal distributions for each parameter are shown
+above and to the right of the joint distribution, respectively. The
+joint distribution is color coded by the value of the log posterior,
+with bright orange and dark purple corresponding to high and low probability,
+respectively. The symmetric shape of the joint distribution is a telling
+sign that there is no correlation between the two parameters. The marginal
+distributions for each parameter are also relatively narrow, with the
+DNA binding energy covering a range of <span class="arithmatex">\(\approx 0.6\, k_BT\)</span> and <span class="arithmatex">\(\sigma\)</span>
+spanning <span class="arithmatex">\(\approx 0.02\)</span>. To more precisely quantify the uncertainty, we
+computed the shortest interval of the marginal distribution for each
+parameter that contains 95\% of the probability. The bounds of this interval,
+coined the Bayesian credible region, can accommodate asymmetry in the
+marginal distribution since the upper and lower bounds of the estimate
+are reported. In the main text, we reported the DNA binding energy
+estimated from these data to be <span class="arithmatex">\(15.43^{+0.06}_{-0.06}\, k_BT\)</span>, where
+the first value is the median of the distribution and the super- and
+subscripts correspond to the upper and lower bounds of the credible
+region, respectively.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;While looking at the shape of the posterior
+distribution can be illuminating, it is not enough to tell us if the
+parameter values extracted make sense or accurately describe the data on
+which they were conditioned. To assess the validity of the statistical model
+in describing actual data, we again turn to simulation, this time using the
+posterior distributions for each parameter rather than the prior
+distributions. The likelihood of our statistical model assumes that across
+the entire induction profile, the observed fold-change is normally
+distributed about the theoretical prediction with a standard deviation
+<span class="arithmatex">\(\sigma\)</span>. If this is an accurate depiction of the generative process, we
+should be able to draw values from the likelihood using the sampled values
+for <span class="arithmatex">\(\Delta\varepsilon_{RA}\)</span> and <span class="arithmatex">\(\sigma\)</span> that are indistinguishable from the
+actual experimental measurements. This process is known as a <em>posterior
+predictive check</em> and is a Bayesian method of assessing goodness-of-fit.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For each sample from the posterior, we computed the theoretical mean
+fold-change given the sampled value for <span class="arithmatex">\(\Delta\varepsilon_{RA}\)</span>. With this mean in hand, we used the
+corresponding sample for <span class="arithmatex">\(\sigma\)</span> and drew a data set from the
+likelihood distribution the same size as the real data set used for the
+inference. As we did this for every sample of our MCMC output (a total
+of <span class="arithmatex">\(\approx 4000\)</span>), it is more instructive to compute the percentiles of
+the generated data than to show the entire output. In 
+@Fig:epRA_ppc (B), the percentiles of the generated data sets
+are shown overlaid with the data used for the inference. We see that all
+of the data points fall within the 99<span class="arithmatex">\(^\text{th}\)</span> percentile of
+simulated data sets with the <span class="arithmatex">\(5^\text{th}\)</span> percentile tracking the mean
+of the data at each inducer concentration. As there are no systematic
+deviations or experimental observations that fall far outside those
+generated from the statistical model, we can safely say that the
+statistical model derived here accurately describes the observed data.</p>
+<p><img alt="**Markov Chain Monte Carlo (MCMC) samples and posterior predictive check
+for DNA binding mutant Q18M.** (A) Marginal and joint sampling
+distributions for DNA binding energy \(\Delta\varepsilon_{RA}\) and
+\(\sigma\). Each point in the joint distribution is a single sample.
+Marginal distributions for each parameter are shown adjacent to joint
+distribution. Color in the joint distribution corresponds to the value
+of the log posterior with the progression of dark purple to bright orange
+corresponding to increasing probability. (B) The posterior predictive
+check of the model. The measurements of the fold-change in gene expression
+are shown as black open-faced circles. The percentiles are shown as
+colored bands and indicate the fraction of simulated data drawn from the
+likelihood that fall within the shaded region. The Python code (klzzwxh:0268)
+used to generate this figure can be found on the thesis GitHub
+repository." src="ch7_figS6" />{#fig:epRA_ppc short-caption="Markov chain Monte Carlo samples and
+posterior predictive check for DNA binding mutant Q18M."}</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Ron Milo, Paul Jorgensen, Uri Moran, Griffin Weber, and Michael Springer. BioNumbers—the database of key numbers in molecular and cell biology. <em>Nucleic Acids Research</em>, 38(suppl_1):D750&ndash;D753, January 2010. <a href="https://doi.org/10.1093/nar/gkp889">doi:10.1093/nar/gkp889</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Bob Carpenter, Andrew Gelman, Matthew D. Hoffman, Daniel Lee, Ben Goodrich, Michael Betancourt, Marcus Brubaker, Jiqiang Guo, Peter Li, and Allen Riddell. Stan: A probabilistic programming language. <em>Journal of Statistical Software</em>, 76(1):1–32, January 2017. <a href="https://doi.org/10.18637/jss.v076.i01">doi:10.18637/jss.v076.i01</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes"], "search": "../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5cf534bf.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

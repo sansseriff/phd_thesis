@@ -1,0 +1,2726 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../section_04_model/">
+      
+      
+        <link rel="next" href="../section_06_discussion/">
+      
+      <link rel="icon" href="../../site_images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
+    
+    
+      
+        <title>Section 05 results - Computational Methods for SNSPDs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f56500e0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#results" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Computational Methods for SNSPDs" class="md-header__button md-logo" aria-label="Computational Methods for SNSPDs" data-md-component="logo">
+      
+  <img src="../../site_images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Computational Methods for SNSPDs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Section 05 results
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Computational Methods for SNSPDs" class="md-nav__button md-logo" aria-label="Computational Methods for SNSPDs" data-md-component="logo">
+      
+  <img src="../../site_images/logo.svg" alt="logo">
+
+    </a>
+    Computational Methods for SNSPDs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Computational Methods for SNSPDs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref_heading/" class="md-nav__link">
+        References
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Chapter 01
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 01" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 01
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_00_title/" class="md-nav__link">
+        The Phenomenon of Adaptation Across Scales
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_01_introduction/" class="md-nav__link">
+        Section 01 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_02_molecular_adaptation/" class="md-nav__link">
+        Section 02 molecular adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_03_evolutionary_adaptation/" class="md-nav__link">
+        Section 03 evolutionary adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_04_physiological_adaptation/" class="md-nav__link">
+        Section 04 physiological adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_05_survival/" class="md-nav__link">
+        Section 05 survival
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_06_conclusion/" class="md-nav__link">
+        Section 06 conclusion
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Chapter 02
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 02" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 02
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_00_title/" class="md-nav__link">
+        Through the Intramolecular Grapevine: Signal Processing Via Allosteric Transcription Factors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_04_model/" class="md-nav__link">
+        Section 04 model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Section 05 results
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Section 05 results
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    Results
+  </a>
+  
+    <nav class="md-nav" aria-label="Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#experimental-design" class="md-nav__link">
+    Experimental Design
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#determination-of-the-in-vivo-mwc-parameters" class="md-nav__link">
+    Determination of the in vivo MWC Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-of-experimental-measurements-with-theoretical-predictions" class="md-nav__link">
+    Comparison of Experimental Measurements with Theoretical Predictions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predicting-the-phenotypic-traits-of-the-induction-response" class="md-nav__link">
+    Predicting the Phenotypic Traits of the Induction Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-collapse-of-induction-profiles" class="md-nav__link">
+    Data Collapse of Induction Profiles
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_06_discussion/" class="md-nav__link">
+        Section 06 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_07_methods/" class="md-nav__link">
+        Section 07 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Chapter 03
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 03" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 03
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_00_title/" class="md-nav__link">
+        Unknown Knowns, Known Unknowns, and Unforeseen Consequences: Using Free Energy Shifts To Predict Mutant Phenotypes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_04_model/" class="md-nav__link">
+        Section 04 model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_05_DNA_mutants/" class="md-nav__link">
+        section 05 DNA mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_06_IND_mutants/" class="md-nav__link">
+        section 06 IND mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_07_DBL_mutants/" class="md-nav__link">
+        section 07 DBL mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_08_discussion/" class="md-nav__link">
+        Section 08 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_09_methods/" class="md-nav__link">
+        Section 09 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Chapter 04
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 04" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 04
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_00_title/" class="md-nav__link">
+        On The Physiological Adaptability of a Simple Genetic Circuit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_04_model/" class="md-nav__link">
+        Section 04 model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_05_experimental_design/" class="md-nav__link">
+        Section 05 experimental design
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_06_scaling/" class="md-nav__link">
+        Section 06 scaling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_07_carbon_quality/" class="md-nav__link">
+        Section 07 carbon quality
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_08_temperature/" class="md-nav__link">
+        Section 08 temperature
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_09_discussion/" class="md-nav__link">
+        Section 09 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_10_methods/" class="md-nav__link">
+        Section 10 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Chapter 05
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 05" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 05
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_00_title/" class="md-nav__link">
+        'Water, Water Everywhere, Yet Not A Drop to Drink': How Bacteria Adapt To Changes in Osmolarity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_04_results/" class="md-nav__link">
+        Section 04 results
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_05_discussion/" class="md-nav__link">
+        Section 05 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_06_methods/" class="md-nav__link">
+        Section 06 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Chapter 06
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 06" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 06
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_00_title/" class="md-nav__link">
+        Supplemental Information For Chapter 2: Signal Processing Via Allosteric Transcription Factors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_02_epAI/" class="md-nav__link">
+        section 02 epAI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_03_fugacity/" class="md-nav__link">
+        Section 03 fugacity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_04_flow/" class="md-nav__link">
+        Section 04 flow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_05_microscopy/" class="md-nav__link">
+        Section 05 microscopy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_06_sensitivity/" class="md-nav__link">
+        Section 06 sensitivity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_07_global_fit/" class="md-nav__link">
+        Section 07 global fit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_08_Oid/" class="md-nav__link">
+        section 08 Oid
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_09_comparison/" class="md-nav__link">
+        Section 09 comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_10_properties/" class="md-nav__link">
+        Section 10 properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_11_applications/" class="md-nav__link">
+        Section 11 applications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_12_tables/" class="md-nav__link">
+        Section 12 tables
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Chapter 07
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 07" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 07
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_00_title/" class="md-nav__link">
+        Supplemental Information for Chapter 3: Predictive Shifts in Free Energy Couple Mutations to Their Phenotypic Consequences
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_02_nonmonotonicity/" class="md-nav__link">
+        Section 02 nonmonotonicity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_03_DNA_epRA_inference/" class="md-nav__link">
+        section 03 DNA epRA inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_04_delta_F_inference/" class="md-nav__link">
+        section 04 delta F inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_05_DNA_mutants/" class="md-nav__link">
+        section 05 DNA mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_06_IND_inference/" class="md-nav__link">
+        section 06 IND inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_07_IND_mutants/" class="md-nav__link">
+        section 07 IND mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_08_param_comparison/" class="md-nav__link">
+        Section 08 param comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_09_global_fit/" class="md-nav__link">
+        Section 09 global fit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_10_generality/" class="md-nav__link">
+        Section 10 generality
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_11_strains/" class="md-nav__link">
+        Section 11 strains
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Chapter 08
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 08" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 08
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_00_title/" class="md-nav__link">
+        Supplemental Information for Chapter 4: The Physiological Adaptability of a Simple Genetic Circuit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_02_growth_rates/" class="md-nav__link">
+        Section 02 growth rates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_03_cell_volume/" class="md-nav__link">
+        Section 03 cell volume
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_04_counting_repressors/" class="md-nav__link">
+        Section 04 counting repressors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_05_carbon_inference/" class="md-nav__link">
+        Section 05 carbon inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_06_entropy/" class="md-nav__link">
+        Section 06 entropy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_07_strains_recipes/" class="md-nav__link">
+        Section 07 strains recipes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_11">
+          Chapter 09
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 09" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 09
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_00_title/" class="md-nav__link">
+        Supplemental Information For Chapter 5: How Bacteria Adapt To Changes in Osmolarity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_02_electrophysiology/" class="md-nav__link">
+        Section 02 electrophysiology
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_03_cal_factor_derivation/" class="md-nav__link">
+        Section 03 cal factor derivation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_04_survival_classification/" class="md-nav__link">
+        Section 04 survival classification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_05_logistic_regression/" class="md-nav__link">
+        Section 05 logistic regression
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_06_shock_classification/" class="md-nav__link">
+        Section 06 shock classification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_07_vandenberg_comparison/" class="md-nav__link">
+        Section 07 vandenberg comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_08_strains/" class="md-nav__link">
+        Section 08 strains
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_12">
+          Frontmatter
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Frontmatter" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Frontmatter
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/abstract/" class="md-nav__link">
+        Abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements/" class="md-nav__link">
+        Acknowledgements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements_prompt/" class="md-nav__link">
+        Acknowledgements prompt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements_prompt_2/" class="md-nav__link">
+        Acknowledgements prompt 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements_results_general/" class="md-nav__link">
+        Acknowledgements results general
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/published/" class="md-nav__link">
+        Published
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    Results
+  </a>
+  
+    <nav class="md-nav" aria-label="Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#experimental-design" class="md-nav__link">
+    Experimental Design
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#determination-of-the-in-vivo-mwc-parameters" class="md-nav__link">
+    Determination of the in vivo MWC Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-of-experimental-measurements-with-theoretical-predictions" class="md-nav__link">
+    Comparison of Experimental Measurements with Theoretical Predictions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predicting-the-phenotypic-traits-of-the-induction-response" class="md-nav__link">
+    Predicting the Phenotypic Traits of the Induction Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-collapse-of-induction-profiles" class="md-nav__link">
+    Data Collapse of Induction Profiles
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Section 05 results</h1>
+
+<h2 id="results">Results</h2>
+<h3 id="experimental-design">Experimental Design</h3>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We test our model by predicting the induction
+profiles for an array of strains that could be made using previously
+characterized repressor copy numbers and DNA binding energies. Our approach
+contrasts with previous studies that have parameterized induction curves of
+simple repression motifs, as these have relied on expression systems where
+proteins are expressed from plasmids, resulting in highly variable and
+unconstrained copy numbers [@murphy2007; @daber2009a;
+@daber2011; @sochor2014]. Instead, our approach relies on a foundation of
+previous work as depicted in @Fig:inducible_types (C). This includes work
+from our laboratory that used
+<em>E. coli</em> constructs based on components of the <em>lac</em> system to demonstrate
+how the Lac repressor (LacI) copy number <span class="arithmatex">\(R\)</span> and operator binding energy
+<span class="arithmatex">\(\Delta\varepsilon_{RA}\)</span> affect gene expression in the absence of inducer
+<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. @rydenfelt2014b extended the theory used in that work to the
+case of multiple promoters competing for a given transcription factor, which
+was validated experimentally by @brewster2014, who modified this system to
+consider expression from multiple-copy plasmids as well as the presence of
+competing repressor binding sites.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The present study extends this body of work by introducing three additional
+biophysical parameters – <span class="arithmatex">\(\Delta\varepsilon_{AI}\)</span>, <span class="arithmatex">\(K_A\)</span>, and <span class="arithmatex">\(K_I\)</span> – which
+capture the allosteric nature of the transcription factor and complement the
+results shown by @garcia2011 and @brewster2014. Although the current work
+focuses on systems with a single site of repression, in the Materials \&amp;
+Methods, we utilize data from @brewster2014, in which multiple sites of
+repression are explored, to characterize the allosteric free energy
+difference <span class="arithmatex">\(\Delta\varepsilon_{AI}\)</span> between the repressor’s active and
+inactive states. This additional data set is critical because multiple
+degenerate sets of parameters can characterize an induction curve equally
+well, with the <span class="arithmatex">\(\Delta\varepsilon_{AI}\)</span> parameter compensated by the inducer
+dissociation constants <span class="arithmatex">\(K_A\)</span> and <span class="arithmatex">\(K_I\)</span> (see supplemental Chapter 6). After fixing <span class="arithmatex">\(\Delta\varepsilon_{AI}\)</span> as described in the
+Materials \&amp; Methods, we can use data from single-site simple repression
+systems to determine the values of <span class="arithmatex">\(K_A\)</span> and <span class="arithmatex">\(K_I\)</span>.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;We determine the values of <span class="arithmatex">\(K_A\)</span> and <span class="arithmatex">\(K_I\)</span> by fitting to a single induction
+profile using Bayesian inferential methods <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. We then use
+@Eq:fold_change_full to predict gene expression for any concentration of
+inducer, repressor copy number, and DNA binding energy, and compare these
+predictions against experimental measurements. To obtain induction profiles
+for a set of strains with varying repressor copy numbers, we used modified
+<em>lacI</em> ribosomal binding sites from @garcia2011 to generate strains with 
+repressor copy number of <span class="arithmatex">\(R = 22 \pm 4\)</span>, <span class="arithmatex">\(60 \pm 20\)</span>, <span class="arithmatex">\(124 \pm 30\)</span>,
+<span class="arithmatex">\(260 \pm 40\)</span>, <span class="arithmatex">\(1220 \pm 160\)</span>, and <span class="arithmatex">\(1740 \pm 340\)</span> per cell on average, where the error denotes
+standard deviation of at least three replicates as measured by @garcia2011.
+We note that <span class="arithmatex">\(R\)</span> refers to the number of repressor dimers in the cell, which
+is twice the number of repressor tetramers reported by @garcia2011; since
+both heads of the repressor are assumed to always be either specifically or
+non-specifically bound to the genome, the two repressor dimers in each LacI
+tetramer can be considered independently. Gene expression was measured using
+a Yellow Fluorescent Protein (YFP) gene, driven by a <em>lacUV5</em> promoter. Each
+of the six repressor copy number variants were paired with the native O1, O2,
+or O3 <em>lac</em> operator <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> placed at the YFP transcription start
+site, thereby generating eighteen unique strains. The repressor-operator
+binding energies (O1 <span class="arithmatex">\(\Delta\varepsilon_{RA} = -15.3 \pm 0.2~k_BT\)</span>, O2
+<span class="arithmatex">\(\Delta\varepsilon_{RA} = -13.9~k_BT \pm 0.2\)</span>, and O3 <span class="arithmatex">\(\Delta\varepsilon_{RA}
+= -9.7 \pm 0.1~k_BT\)</span>) were previously inferred by measuring the fold-change
+of the <em>lac</em> system at different repressor copy numbers, where the error
+arises from model fitting <sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. Additionally, we were able to obtain
+the value <span class="arithmatex">\(\Delta \varepsilon_{AI} = 4.5\, k_BT\)</span> by fitting to previous data
+as discussed in the Materials \&amp; Methods. We measure fold-change over a
+range of known IPTG concentrations <span class="arithmatex">\(c\)</span>, using <span class="arithmatex">\(n=2\)</span> inducer binding sites per
+LacI dimer and approximating the number of non-specific binding sites as the
+length in base-pairs of the <em>E. coli</em> genome, <span class="arithmatex">\(N_{NS} = 4.6 \times 10^6\)</span>.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Our experimental pipeline for determining fold-change using flow cytometry is
+shown in @Fig:flowchart. Briefly, cells were grown to exponential phase, in
+which gene expression reaches steady state [@scott2010a], under
+concentrations of the inducer IPTG ranging between 0 and <span class="arithmatex">\(5000\, \mu\)</span>M. We
+measure YFP fluorescence using flow cytometry and automatically gate the data
+to include only single-cell measurements (see Materials \&amp; Methods). To
+validate the use of flow cytometry, we also measured the fold-change of a
+subset of strains using the established method of single-cell microscopy (see
+supplemental Chapter 6). We found that the fold-change measurements obtained
+from microscopy were indistinguishable from that of flow-cytometry and
+yielded values for the inducer binding constants <span class="arithmatex">\(K_A\)</span> and <span class="arithmatex">\(K_I\)</span> that were
+within error.</p>
+<p><img alt="**An experimental pipeline for high-throughput fold-change measurements.**
+Cells are grown to exponential steady state and their fluorescence is
+measured using flow cytometry. Automatic gating methods using forward- and
+side-scattering are used to ensure that all measurements come from single
+cells (see Materials \&amp; Methods). Mean expression is then quantified at
+different IPTG concentrations (top, blue histograms) and for a strain without
+repressor (bottom, green histograms), which shows no response to IPTG as
+expected. Fold-change is computed by dividing the mean fluorescence in the
+presence of repressor by the mean fluorescence in the absence of repressor.
+The Python code (klzzwxh:0059)
+used to generate this figure can be found on the thesis GitHub
+repository." src="ch2_fig3" />{#fig:flowchart
+short-caption="An experimental pipeline for high-throughput fold-change
+measurements."}</p>
+<h3 id="determination-of-the-in-vivo-mwc-parameters">Determination of the <em>in vivo</em> MWC Parameters</h3>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The three parameters that we tune experimentally
+are shown in @Fig:induction_predictions (A), leaving the
+three allosteric parameters (<span class="arithmatex">\(\Delta \varepsilon_{AI}\)</span>, <span class="arithmatex">\(K_A\)</span>, and <span class="arithmatex">\(K_I\)</span>) to
+be determined by fitting. We used previous LacI fold-change data
+<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">4</a></sup> to infer that <span class="arithmatex">\(\Delta\varepsilon_{AI} = 4.5\, k_BT\)</span> (see
+Materials \&amp; Methods). Rather than fitting <span class="arithmatex">\(K_A\)</span> and <span class="arithmatex">\(K_I\)</span> to our entire data
+set of eighteen unique constructs, we performed Bayesian parameter estimation
+on data from a single strain with <span class="arithmatex">\(R=260\)</span> and an O2 operator
+(<span class="arithmatex">\(\Delta\varepsilon_{RA}=-13.9\,k_BT\)</span> <sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup>) shown in 
+<a href="D, white-faced points">@Fig:induction_predictions</a>. Using Markov Chain Monte
+Carlo, we determine the most likely parameter values to be
+<span class="arithmatex">\(K_A=139^{+29}_{-22}\, \mu\)</span>M and
+<span class="arithmatex">\(K_I=0.53^{+0.04}_{-0.04}\, \mu\)</span>M, which are the modes of
+their respective distributions, where the superscripts and subscripts
+represent the upper and lower bounds of the <span class="arithmatex">\(95^\text{th}\)</span> percentile of the
+parameter value distributions (see  [@Fig:induction_predictions] (B)).
+Unfortunately, we are not able to make a meaningful value-for-value
+comparison of our parameters to those of earlier studies [@daber2009a;
+@daber2011] because of uncertainties in both gene copy number and
+transcription factor copy numbers in these studies, as illustrated in
+supplemental Chapter 6. We then predicted the fold-change for the remaining
+seventeen strains with no further fitting (see 
+@Fig:induction_predictions (C -- E)) together with the specific phenotypic
+properties described in @Fig:inducible_types(B) and discussed in detail below (see 
+(@Fig:induction_predictions (F -- J)). The shaded regions in 
+@Fig:induction_predictions (C -- E) denote the 95% credible regions. Factors
+determining the width of the credible regions are explored in the supplemental
+Chapter 6.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We stress that the entire suite of predictions in
+@Fig:induction_predictions (C -- J) is based upon the induction
+profile of a single strain. Our ability to make such a broad range of
+predictions stems from the fact that our parameters of interest -- such as the
+repressor copy number and DNA binding energy -- appear as distinct physical
+parameters within our model. While the single data set in 
+@Fig:induction_predictions could also be fit using a Hill function, such an
+analysis would be unable to predict any of the other curves in the figure. Phenomenological expressions such as the Hill
+function can describe data, but lack predictive power and are thus unable to
+build our intuition, help us design <em>de novo</em> input-output functions, or
+guide future experiments <sup id="fnref:7"><a class="footnote-ref" href="#fn:7">5</a></sup><sup id="fnref:8"><a class="footnote-ref" href="#fn:8">6</a></sup>.</p>
+<p><img alt="**Predicting induction profiles for different biological control
+parameters.** (A) Schematic representation of experimentally accessible
+variables. Repressor copy number \(R\) is tuned by changing the sequence of the
+ribosomal binding site (RBS), DNA binding energy \(\Delta\varepsilon_{RA}\) is
+controlled via the squence of the operator, and the inducer concentration \(c\)
+is controlled via a dilution series. (B) Markov Chain Monte Carlo (MCMC)
+sampling of the posterior distribution of \(K_A\) and \(K_I\). Each point
+corresponds to a single MCMC sample. Distribution on top and right represent
+the marginal posterior probability distribution over \(K_A\) and \(K_I\),
+respectively. (C) Predicted induction profiles for strains with various
+repressor copy numbers and DNA binding energies. White-faced points represent
+those to which the inducer binding constants \(K_A\) and \(K_I\) were determined.
+(D) Predicted properties of the induction profiles in (C) using parameter
+values known *a priori*. The shaded regions denote the 95% credible region.
+Region between 0 and \(10^{-2}\, \mu\)M is scaled linearly with log scaling
+elsewhere. The Python code
+(klzzwxh:0091)
+used to generate this figure can be found on the thesis GitHub
+repository.
+" src="ch2_fig4.png" />{#fig:induction_predictions short-caption="Predicting
+induction profiles for different biological control parameters."}</p>
+<h3 id="comparison-of-experimental-measurements-with-theoretical-predictions">Comparison of Experimental Measurements with Theoretical Predictions</h3>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;We tested the predictions shown in @Fig:induction_predictions by measuring
+fold-change induction profiles in strains with a broad range of repressor
+copy numbers and repressor binding energies as characterized in @garcia2011.
+With a few notable exceptions, the results shown in
+@Fig:induction_experiments demonstrate agreement between theory and
+experiment. We note that there was an apparently systematic shift in the O3
+<span class="arithmatex">\(\Delta\varepsilon_{RA} = -9.7\ k_BT\)</span> strains [ @Fig:induction_experiments
+(C)] and all of the <span class="arithmatex">\(R=1220\)</span> and <span class="arithmatex">\(R =1740\)</span> strains. This may be partially due
+to imprecise previous determinations of their <span class="arithmatex">\(\Delta\varepsilon_{RA}\)</span> and
+<span class="arithmatex">\(R\)</span> values. By performing a global fit where we infer all parameters
+including the repressor copy number <span class="arithmatex">\(R\)</span> and the binding energy
+<span class="arithmatex">\(\Delta\varepsilon_{RA}\)</span>, we found better agreement for these strains,
+although a discrepancy in the steepness of the response for all O3 strains
+remains (see supplemental Chapter 6). We considered a number of hypotheses to
+explain these discrepancies such as including other states (e.g.
+non-negligible binding of the inactive repressor), relaxing the weak promoter
+approximation, and accounting for variations in gene and repressor copy
+number throughout the cell cycle, but none explained the observed
+discrepancies. As an additional test of our model, we considered strains
+using the synthetic Oid operator which exhibits an especially strong binding
+energy of <span class="arithmatex">\(\Delta\varepsilon_{RA}=-17\,k_B T\)</span> <sup id="fnref4:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. The global fit
+agrees well with the Oid microscopy data, though it asserts a stronger Oid
+binding energy of <span class="arithmatex">\(\Delta\varepsilon_{RA}=-17.7\,k_B T\)</span> (see supplemental
+Chapter 6).</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;To ensure that the agreement between our predictions and data is not an
+accident of the strain we used to perform our fitting, we also inferred <span class="arithmatex">\(K_A\)</span>
+and <span class="arithmatex">\(K_I\)</span> from each of the other strains. As discussed in supplemental Chapter 6
+ and @Fig:induction_predictions, the inferred values of <span class="arithmatex">\(K_A\)</span> and
+<span class="arithmatex">\(K_I\)</span> depend minimally upon which strain is chosen, indicating that these
+parameter values are highly robust. We also performed a global fit using the
+data from all eighteen strains in which we fitted for the inducer
+dissociation constants <span class="arithmatex">\(K_A\)</span> and <span class="arithmatex">\(K_I\)</span>, the repressor copy number <span class="arithmatex">\(R\)</span>, and
+the repressor DNA binding energy <span class="arithmatex">\(\Delta\varepsilon_{RA}\)</span> (see supplemental
+Chapter 6). The resulting parameter values were nearly identical to those
+fitted from any single strain. For the remainder of this chapter, we continue
+using parameters inferred from the strain with <span class="arithmatex">\(R=260\)</span> repressors and an O2
+operator.</p>
+<p><img alt="**Comparison of predictions against measured and inferred data.** Flow
+cytometry measurements of fold-change over a range of IPTG
+concentrations for O1, O2, and O3 strains at varying repressor copy
+numbers, overlaid on the predicted responses. Error bars for the
+experimental data show the standard error of the mean (eight or more
+replicates). As discussed in  @Fig:induction_predictions, all of the predicted induction curves
+were generated prior to measurement by inferring the MWC parameters
+using a single data set (O2 \(R=260\), shown by white circles in Panel
+(B). The predictions may therefore depend upon which strain is used to
+infer the parameters. The inferred parameter values of the dissociation
+constants \(K_A\) and \(K_I\) using any of the eighteen strains instead
+of the O2 \(R=260\) strain. Nearly identical parameter values are
+inferred from each strain, demonstrating that the same set of induction
+profiles would have been predicted regardless of which strain was
+chosen. The points show the mode, and the error bars denote the \(95\)\%
+credible region of the parameter value distribution. Error bars not
+visible are smaller than the size of the
+marker. The Python code
+(klzzwxh:0132)
+used to generate this figure can be found on the thesis GitHub
+repository." id="fig:induction_experiments" short-caption="Comparison of predictions against measured and inferred data." src="ch2_fig5" /></p>
+<h3 id="predicting-the-phenotypic-traits-of-the-induction-response">Predicting the Phenotypic Traits of the Induction Response</h3>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The properties shown in  @Fig:inducible_types (i.e. the leakiness, saturation,
+dynamic range, <span class="arithmatex">\([EC_{50}]\)</span>, and effective Hill coefficient) are of
+significant interest to synthetic biology. For example, synthetic
+biology is often focused on generating large responses (i.e. a large
+dynamic range) or finding a strong binding partner (i.e. a small
+<span class="arithmatex">\([EC_{50}]\)</span>) <sup id="fnref:9"><a class="footnote-ref" href="#fn:9">7</a></sup><sup id="fnref:10"><a class="footnote-ref" href="#fn:10">8</a></sup>. While these properties are all individually
+informative and when taken together, they capture the essential features of
+the induction response. We reiterate that a Hill function approach
+cannot predict these features <em>a priori</em> and furthermore requires
+fitting each curve individually. The MWC model, on the other hand,
+enables us to quantify how each trait depends upon a single set of
+physical parameters as shown by  @Fig:induction_predictions (F -- J).</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;We define these five phenotypic traits using expressions derived from the
+model presented in  @Eq:fold_change_full. These results build upon
+extensive work by @martins2011, who computed many such properties for
+ligand-receptor binding within the MWC model. We begin by analyzing the
+leakiness, which is the minimum fold-change observed in the absence of
+ligand, given by
+$$
+\text{leakiness} = \text{fold-change}(c=0) \
+= \left(
+1+\frac{1}{1+e^{-\beta \Delta \varepsilon_{AI} }}\frac{R}{N_{NS}}e^{-\beta
+\Delta\varepsilon_{RA}} \right)^{-1},
+$${#eq:leakiness}
+and the saturation, which is the maximum fold change observed in the
+presence of saturating ligand,
+$$
+\begin{aligned}
+\text{saturation} &amp;= \text{fold-change}(c \to \infty) \
+&amp;= \left(
+1+\frac{1}{1+e^{-\beta \Delta \varepsilon_{AI} } \left(\frac{K_A}{K_I}\right)^n
+}\frac{R}{N_{NS}}e^{-\beta \Delta\varepsilon_{RA} } \right)^{-1}.
+\end{aligned}
+$${#eq:saturation}
+Systems that minimize leakiness repress strongly in the absence of
+effector while systems that maximize saturation have high expression in
+the presence of effector. Together, these two properties determine the
+dynamic range of a system’s response, which is given by the difference
+$$
+\text{dynamic range} = \text{saturation} - \text{leakiness}.
+$${#eq:dynamic_range}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;These three properties are shown in
+@Fig:induction_predictions (F-H). We discuss these properties in greater
+detail in supplemental Chapter 6. @Fig:properties_experiment shows that the
+measurements of these three properties, derived from the fold-change data in
+the absence of IPTG and the presence of saturating IPTG, closely match the
+predictions for all three operators.</p>
+<p><img alt="**Predictions and experimental measurements of key properties of
+induction profiles.** Data for the leakiness, saturation, and dynamic
+range are obtained from fold-change measurements in the absence of
+IPTG and at saturating concentrations of IPTG. The three
+repressor-operator binding energies in the legend correspond to the O1
+operator (\(-15.3~k_B T\)), O2 operator (\(-13.9~k_B T\)), and O3
+operator (\(-9.7~k_B T\)). Both the \([EC_{50}]\) and effective Hill
+coefficient are inferred by individually fitting each operator-repressor
+pairing in @Fig:induction_experiments (C -- E) separately in order to smoothly interpolate between the
+data points. Error bars for (A -- C) represent the standard error of the mean
+for eight or more replicates; error bars for (D -- E) represent the 95%
+credible region for the parameter found by propagating the credible
+region of our estimates of \(K_A\) and \(K_I\) into  @Eq:fold_change_full. The Python code
+(klzzwxh:0162)
+used to generate this figure can be found on the thesis GitHub
+repository. " src="ch2_fig6" />{#fig:properties_experiment short-caption="Predictions and experimental measurements of key properties of
+induction profiles."}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Two additional properties of induction profiles are the <span class="arithmatex">\([EC_{50}]\)</span>
+and effective Hill coefficient, which determine the range of inducer
+concentration in which the system’s output goes from its minimum to
+maximum value. The <span class="arithmatex">\([EC_{50}]\)</span> denotes the inducer concentration
+required to generate a system response halfway between its minimum and
+maximum value, 
+$$
+\text{fold-change}(c = [EC_{50}]) = \frac{\text{leakiness} +
+\text{saturation}}{2}.
+$${#eq:ec50}</p>
+<p>The effective Hill coefficient <span class="arithmatex">\(h\)</span>, which quantifies the steepness of
+the curve at the <span class="arithmatex">\([EC_{50}]\)</span> , is given by 
+$$
+h = \left( 2 \frac{d}{d \log c} \left[ \log \left( \frac{ \text{fold-change}(c)
+- \text{leakiness}}{\text{dynamic range}} \right) \right] \right)<em 50="50">{c =
+[EC</em>]}.
+$${#eq:effective_hill}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @Fig:properties_experiment (D--E) shows how
+the <span class="arithmatex">\([EC_{50}]\)</span> and effective Hill coefficient depend on the repressor copy
+number. In supplemental Chapter 6, we discuss the analytic forms of these two
+properties as well as their dependence on the repressor-DNA binding energy.
+@Fig:properties_experiment (D-E) shows the estimated values of the
+<span class="arithmatex">\([EC_{50}]\)</span> and the effective Hill coefficient overlaid on the theoretical
+predictions. Both properties were obtained by fitting to each individual
+titration curve and computing the <span class="arithmatex">\([EC_{50}]\)</span> and effective Hill coefficient.
+We find that the predictions made with the single strain closely match
+those made for each of the strains with O1 and O2 operators, but the
+predictions for the O3 operator are markedly off. In the supplemental Chapter
+6, we show that the large, asymmetric error bars for the O3 <span class="arithmatex">\(R=22\)</span> strain
+arise from its nearly flat response, where the lack of dynamic range makes it
+impossible to determine the value of the inducer dissociation constants <span class="arithmatex">\(K_A\)</span>
+and <span class="arithmatex">\(K_I\)</span>, as can be seen in the uncertainty of both the <span class="arithmatex">\([EC_{50}]\)</span> and
+effective Hill coefficient. Discrepancies between theory and data for O3 are
+improved, but not fully resolved, by performing a global fit or fitting the
+MWC model individually to each curve (see supplemental Chapter 6). It remains
+an open question how to account for discrepancies in O3, in particular
+regarding the significant mismatch between the predicted and fitted effective
+Hill coefficients.</p>
+<h3 id="data-collapse-of-induction-profiles">Data Collapse of Induction Profiles</h3>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our primary interest heretofore was to determine the system response at a
+specific inducer concentration, repressor copy number, and repressor-DNA binding
+energy. However, the cell does not necessarily "care about" the precise number
+of repressors in the system or the binding energy of an individual operator. The
+relevant quantity for cellular function is the fold-change enacted by the
+regulatory system. This raises the question: given a specific value of the
+fold-change, what combination of parameters will give rise to this desired
+response? In other words, what trade-offs between the parameters of the system
+will give rise to the same mean cellular output? These are key questions both
+for understanding how the system is governed and, as will become evident in the
+following chapters of this dissertation, can provide insight as to what parameters may
+be changing in response to a physiological or environmental perturbation. To
+address these questions, we follow the data collapse strategy used in a number
+of previous studies <sup id="fnref:11"><a class="footnote-ref" href="#fn:11">9</a></sup><sup id="fnref:12"><a class="footnote-ref" href="#fn:12">10</a></sup><sup id="fnref:13"><a class="footnote-ref" href="#fn:13">11</a></sup>. </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The equilibrium states and statistical weights outlined in
+@Fig:states_weights (A) can be further coarse grained into two
+possible states -- one state being where the promoter is occupied by the
+repressor and another being where the promoter is <em>not</em> occupied by the
+repressor (@Fig:collapse_coarse_graining (A)). As the transcriptionally active state
+and the states in which the repressor is bound are mutually exclusive, we can
+compute the probability of the repressor not being bound <span class="arithmatex">\(p_{\neg r}\)</span> to the promoter as 
+$$
+p_{\neg r} = \frac{\neg r}{r + \neg r}.
+$${#eq:not_r_bound}
+We can now take a similar approach as in @Eq:fold_change_definition and
+define the fold-change as the probability of the repressor not being bound
+when repressor is expressed <span class="arithmatex">\(p_{\neg r}(R &gt; 0)\)</span> relative to the probability
+when no repressor is expressed <span class="arithmatex">\(p_{\neg r}(R = 0)\)</span>. As the later term is
+equal to 1, the fold-change in gene expression is directly equivalent to
+<span class="arithmatex">\(p_{\neg r}\)</span> expressed in @Eq:not_r_bound. This form can be algebraically
+manipulated to the form 
+$$
+\text{fold-change} = \frac{1}{1 + \frac{r}{\neg r}} = \frac{1}{1 + e^{-\beta F}}
+$${#eq:two_state_not_r}
+where <span class="arithmatex">\(F\)</span> can be interpreted as the difference in free energy between the
+repressor bound and repressor not bound states,
+$$
+F = k_BT \left[\log \neg r - \log r\right].
+$${#eq:not_r_bohr}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As @Fig:states_weights provides mathematical forms for <span class="arithmatex">\(r\)</span> and <span class="arithmatex">\(\neg r\)</span>, <span class="arithmatex">\(F\)</span> can
+be directly computed as 
+$$
+F = \frac{\Delta\varepsilon_{RA}}{k_BT} - \log
+\frac{\left(1+\frac{c}{K_A}\right)^n}{\left(1+\frac{c}{K_A}\right)^n+e^{-\beta
+\Delta\varepsilon_{AI} }\left(1+\frac{c}{K_I}\right)^n} - \log
+\frac{R}{N_{NS}}.
+$${#eq:induction_bohr_definition}</p>
+<p><img alt="**Coarse graining of promoter occupancy states to a two-state system.** (A)
+The promoter occupancy states shown in @Fig:states_weights(A) can be
+further reduced to a two-state system; one in which the repressor is bound to
+the promoter (\(r\)) and one in which it is not (\(\neg r\)). (B) The fold-change in gene
+expression can then be evaluated as the probability of the repressor unbound
+state \(\neg r\) which has the form of a Fermi function (top). The energetic
+parameter \(F\) denotes the effective free energy difference between the repressor
+bound and unbound states and can be directly computed (bottom) using the
+statistical weights in @Fig:states_weights." src="ch2_fig7" />{#fig:collapse_coarse_graining short-caption="Coarse graining of
+promoter occupancy states to a two-state system."}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The first term in <span class="arithmatex">\(F\)</span> denotes the repressor-operator binding energy, the second
+the contribution from the inducer concentration, and the last
+the effect of the repressor copy number. We note that elsewhere, this free energy
+has been dubbed the Bohr parameter since such families of curves are analogous
+to the shifts in hemoglobin binding curves at different pHs, known as the Bohr
+effect <sup id="fnref:14"><a class="footnote-ref" href="#fn:14">12</a></sup><sup id="fnref:15"><a class="footnote-ref" href="#fn:15">13</a></sup><sup id="fnref:16"><a class="footnote-ref" href="#fn:16">14</a></sup>.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Instead of analyzing each induction curve individually, the free energy provides
+a natural means to simultaneously characterize the diversity in our eighteen
+induction profiles. @Fig:induction_collapse (A) demonstrates how the
+various induction curves from @Fig:induction_predictions (C-E) all
+collapse onto a single master curve, where points from every induction profile
+that yield the same fold-change are mapped onto the same free energy.
+@Fig:induction_collapse (B) reveals complete data collapse for the 216 data
+points in @Fig:induction_experiments (A -- C), demonstrating the
+close match between the theoretical predictions and experimental measurements
+across all eighteen strains.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;There are many different combinations of parameter values that can result in the
+same free energy as defined in @Eq:induction_bohr_definition. For
+example, suppose a system originally has a fold-change of 0.2 at a specific
+inducer concentration, and then operator mutations increase the
+<span class="arithmatex">\(\Delta\varepsilon_{RA}\)</span> binding energy <sup id="fnref5:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. While this serves to
+initially increase both the free energy and the fold-change, a subsequent
+increase in the repressor copy number could bring the cell back to the original
+fold-change level. Such trade-offs hint that there need not be a single set of
+parameters that evoke a specific cellular response, but rather that the cell
+explores a large but degenerate space of parameters with multiple, equally valid
+paths.</p>
+<p><img alt="**Collapse of fold-change measurements as a function of the free energy.**
+(A) Any combination of parameters can be mapped to a single physiological
+response (i.e. fold-change) via the free energy, which encompasses the
+parametric details of the model. (B) Experimental data from
+@Fig:induction_experiments collapse onto a single master curve as a function
+of the free energy. The free energy for each strain was calculated from
+@Eq:induction_bohr_definition. using \(n=2\), \(\Delta\varepsilon_{AI}=4.5~k_BT\), 
+\(K_A=139, \mu\text{M}\), \(K_I=0.53 \mu\text{M}\), and the strain-specific \(R\) and
+\(\Delta\varepsilon_{RA}\). All data points represent the mean, and error bars
+are the standard error of the mean for eight or more
+replicates. The Python code
+(klzzwxh:0245)
+used to generate this figure can be found on the thesis GitHub
+repository." src="ch2_fig8" />{#fig:induction_collapse short-caption="Collapse of
+fold-change measurements as a function of the free energy."}</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>H. G. Garcia and R. Phillips. Quantitative dissection of the simple repression input-output function. <em>Proceedings of the National Academy of Sciences</em>, 108(29):12173–12178, July 2011. <a href="https://doi.org/10.1073/pnas.1015616108">doi:10.1073/pnas.1015616108</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Devinderjit Sivia and John Skilling. <em>Data Analysis: A Bayesian Tutorial</em>. OUP Oxford, June 2006. ISBN 978-0-19-154670-9.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>S. Oehler, M. Amouyal, P. Kolkhof, B. von Wilcken-Bergmann, and B. Müller-Hill. Quality and position of the three lac operators of \emph E. coli define efficiency of repression. <em>The EMBO journal</em>, 13(14):3348–3355, July 1994.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>Robert C. Brewster, Franz M. Weinert, Hernan G. Garcia, Dan Song, Mattias Rydenfelt, and Rob Phillips. The Transcription factor titration effect dictates the level of gene expression. <em>Cell</em>, 156(6):1312–1323, March 2014. <a href="https://doi.org/10.1016/j.cell.2014.02.022">doi:10.1016/j.cell.2014.02.022</a>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p>T. Kuhlman, Z. Zhang, M. H. Saier, and T. Hwa. Combinatorial transcriptional control of the lactose operon of \emph Escherichia coli. <em>Proceedings of the National Academy of Sciences</em>, 104(14):6043–6048, April 2007. <a href="https://doi.org/10.1073/pnas.0606717104">doi:10.1073/pnas.0606717104</a>.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p>Kevin F. Murphy, Gábor Balázsi, and James J. Collins. Combinatorial promoter design for engineering noisy gene expression. <em>Proceedings of the National Academy of Sciences</em>, 104(31):12726–12731, July 2007. <a href="https://doi.org/10.1073/pnas.0608451104">doi:10.1073/pnas.0608451104</a>.&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p>Jennifer A. N. Brophy and Christopher A. Voigt. Principles of genetic circuit design. <em>Nature Methods</em>, 11(5):508–520, May 2014. <a href="https://doi.org/10.1038/nmeth.2926">doi:10.1038/nmeth.2926</a>.&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:10">
+<p>David L. Shis, Faiza Hussain, Sarah Meinhardt, Liskin Swint-Kruse, and Matthew R. Bennett. Modular, multi-input transcriptional logic gating with orthogonal LacI/GalR family chimeras. <em>ACS Synthetic Biology</em>, 3(9):645–651, September 2014. <a href="https://doi.org/10.1021/sb500262f">doi:10.1021/sb500262f</a>.&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:11">
+<p>V. Sourjik and H. C. Berg. Receptor sensitivity in bacterial chemotaxis. <em>Proceedings of the National Academy of Sciences</em>, 99(1):123–127, January 2002. <a href="https://doi.org/10.1073/pnas.011589998">doi:10.1073/pnas.011589998</a>.&#160;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:12">
+<p>Juan E. Keymer, Robert G. Endres, Monica Skoge, Yigal Meir, and Ned S. Wingreen. Chemosensing in \emph Escherichia coli: Two regimes of two-state receptors. <em>Proceedings of the National Academy of Sciences</em>, 103(6):1786–1791, February 2006. <a href="https://doi.org/10.1073/pnas.0507438103">doi:10.1073/pnas.0507438103</a>.&#160;<a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:13">
+<p>Lee R. Swem, Danielle L. Swem, Ned S. Wingreen, and Bonnie L. Bassler. Deducing receptor signaling parameters from \emph in vivo analysis: LuxN/AI-1 quorum sensing in \emph Vibrio harveyi. <em>Cell</em>, 134(3):461–473, August 2008. <a href="https://doi.org/10.1016/j.cell.2008.06.023">doi:10.1016/j.cell.2008.06.023</a>.&#160;<a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:14">
+<p>Leonid A. Mirny. Nucleosome-mediated cooperativity between transcription factors. <em>Proceedings of the National Academy of Sciences</em>, 107(52):22534–22539, December 2010. <a href="https://doi.org/10.1073/pnas.0913805107">doi:10.1073/pnas.0913805107</a>.&#160;<a class="footnote-backref" href="#fnref:14" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn:15">
+<p>Rob Phillips. Napoleon is in equilibrium. <em>Annual Review of Condensed Matter Physics</em>, 6(1):85–111, 2015. <a href="https://doi.org/10.1146/annurev-conmatphys-031214-014558">doi:10.1146/annurev-conmatphys-031214-014558</a>.&#160;<a class="footnote-backref" href="#fnref:15" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+</li>
+<li id="fn:16">
+<p>Tal Einav, Linas Mazutis, and Rob Phillips. Statistical mechanics of allosteric enzymes. <em>The Journal of Physical Chemistry B</em>, 120(26):6021–6037, July 2016. <a href="https://doi.org/10.1021/acs.jpcb.6b01911">doi:10.1021/acs.jpcb.6b01911</a>.&#160;<a class="footnote-backref" href="#fnref:16" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes"], "search": "../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5cf534bf.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

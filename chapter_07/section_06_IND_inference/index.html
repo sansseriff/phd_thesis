@@ -1,0 +1,2480 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../section_05_DNA_mutants/">
+      
+      
+        <link rel="next" href="../section_07_IND_mutants/">
+      
+      <link rel="icon" href="../../site_images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
+    
+    
+      
+        <title>section 06 IND inference - Computational Methods for SNSPDs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f56500e0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bayesian-parameter-estimation-for-inducer-binding-domain-mutants" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Computational Methods for SNSPDs" class="md-header__button md-logo" aria-label="Computational Methods for SNSPDs" data-md-component="logo">
+      
+  <img src="../../site_images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Computational Methods for SNSPDs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              section 06 IND inference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Computational Methods for SNSPDs" class="md-nav__button md-logo" aria-label="Computational Methods for SNSPDs" data-md-component="logo">
+      
+  <img src="../../site_images/logo.svg" alt="logo">
+
+    </a>
+    Computational Methods for SNSPDs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Computational Methods for SNSPDs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref_heading/" class="md-nav__link">
+        References
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Chapter 01
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 01" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 01
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_00_title/" class="md-nav__link">
+        The Phenomenon of Adaptation Across Scales
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_01_introduction/" class="md-nav__link">
+        Section 01 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_02_molecular_adaptation/" class="md-nav__link">
+        Section 02 molecular adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_03_evolutionary_adaptation/" class="md-nav__link">
+        Section 03 evolutionary adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_04_physiological_adaptation/" class="md-nav__link">
+        Section 04 physiological adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_05_survival/" class="md-nav__link">
+        Section 05 survival
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_06_conclusion/" class="md-nav__link">
+        Section 06 conclusion
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Chapter 02
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 02" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 02
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_00_title/" class="md-nav__link">
+        Through the Intramolecular Grapevine: Signal Processing Via Allosteric Transcription Factors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_04_model/" class="md-nav__link">
+        Section 04 model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_05_results/" class="md-nav__link">
+        Section 05 results
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_06_discussion/" class="md-nav__link">
+        Section 06 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_07_methods/" class="md-nav__link">
+        Section 07 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Chapter 03
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 03" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 03
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_00_title/" class="md-nav__link">
+        Unknown Knowns, Known Unknowns, and Unforeseen Consequences: Using Free Energy Shifts To Predict Mutant Phenotypes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_04_model/" class="md-nav__link">
+        Section 04 model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_05_DNA_mutants/" class="md-nav__link">
+        section 05 DNA mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_06_IND_mutants/" class="md-nav__link">
+        section 06 IND mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_07_DBL_mutants/" class="md-nav__link">
+        section 07 DBL mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_08_discussion/" class="md-nav__link">
+        Section 08 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_09_methods/" class="md-nav__link">
+        Section 09 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Chapter 04
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 04" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 04
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_00_title/" class="md-nav__link">
+        On The Physiological Adaptability of a Simple Genetic Circuit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_04_model/" class="md-nav__link">
+        Section 04 model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_05_experimental_design/" class="md-nav__link">
+        Section 05 experimental design
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_06_scaling/" class="md-nav__link">
+        Section 06 scaling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_07_carbon_quality/" class="md-nav__link">
+        Section 07 carbon quality
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_08_temperature/" class="md-nav__link">
+        Section 08 temperature
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_09_discussion/" class="md-nav__link">
+        Section 09 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_10_methods/" class="md-nav__link">
+        Section 10 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Chapter 05
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 05" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 05
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_00_title/" class="md-nav__link">
+        'Water, Water Everywhere, Yet Not A Drop to Drink': How Bacteria Adapt To Changes in Osmolarity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_04_results/" class="md-nav__link">
+        Section 04 results
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_05_discussion/" class="md-nav__link">
+        Section 05 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_06_methods/" class="md-nav__link">
+        Section 06 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Chapter 06
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 06" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 06
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_00_title/" class="md-nav__link">
+        Supplemental Information For Chapter 2: Signal Processing Via Allosteric Transcription Factors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_02_epAI/" class="md-nav__link">
+        section 02 epAI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_03_fugacity/" class="md-nav__link">
+        Section 03 fugacity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_04_flow/" class="md-nav__link">
+        Section 04 flow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_05_microscopy/" class="md-nav__link">
+        Section 05 microscopy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_06_sensitivity/" class="md-nav__link">
+        Section 06 sensitivity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_07_global_fit/" class="md-nav__link">
+        Section 07 global fit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_08_Oid/" class="md-nav__link">
+        section 08 Oid
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_09_comparison/" class="md-nav__link">
+        Section 09 comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_10_properties/" class="md-nav__link">
+        Section 10 properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_11_applications/" class="md-nav__link">
+        Section 11 applications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_12_tables/" class="md-nav__link">
+        Section 12 tables
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Chapter 07
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 07" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 07
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_00_title/" class="md-nav__link">
+        Supplemental Information for Chapter 3: Predictive Shifts in Free Energy Couple Mutations to Their Phenotypic Consequences
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_02_nonmonotonicity/" class="md-nav__link">
+        Section 02 nonmonotonicity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_03_DNA_epRA_inference/" class="md-nav__link">
+        section 03 DNA epRA inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_04_delta_F_inference/" class="md-nav__link">
+        section 04 delta F inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_05_DNA_mutants/" class="md-nav__link">
+        section 05 DNA mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          section 06 IND inference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        section 06 IND inference
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bayesian-parameter-estimation-for-inducer-binding-domain-mutants" class="md-nav__link">
+    Bayesian Parameter Estimation for Inducer Binding Domain Mutants
+  </a>
+  
+    <nav class="md-nav" aria-label="Bayesian Parameter Estimation for Inducer Binding Domain Mutants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-a-generative-statistical-model" class="md-nav__link">
+    Building a Generative Statistical Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prior-predictive-checks" class="md-nav__link">
+    Prior Predictive Checks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulation-based-calibration" class="md-nav__link">
+    Simulation Based Calibration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posterior-predictive-checks" class="md-nav__link">
+    Posterior Predictive Checks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_07_IND_mutants/" class="md-nav__link">
+        section 07 IND mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_08_param_comparison/" class="md-nav__link">
+        Section 08 param comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_09_global_fit/" class="md-nav__link">
+        Section 09 global fit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_10_generality/" class="md-nav__link">
+        Section 10 generality
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_11_strains/" class="md-nav__link">
+        Section 11 strains
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Chapter 08
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 08" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 08
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_00_title/" class="md-nav__link">
+        Supplemental Information for Chapter 4: The Physiological Adaptability of a Simple Genetic Circuit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_02_growth_rates/" class="md-nav__link">
+        Section 02 growth rates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_03_cell_volume/" class="md-nav__link">
+        Section 03 cell volume
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_04_counting_repressors/" class="md-nav__link">
+        Section 04 counting repressors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_05_carbon_inference/" class="md-nav__link">
+        Section 05 carbon inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_06_entropy/" class="md-nav__link">
+        Section 06 entropy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_07_strains_recipes/" class="md-nav__link">
+        Section 07 strains recipes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_11">
+          Chapter 09
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 09" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 09
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_00_title/" class="md-nav__link">
+        Supplemental Information For Chapter 5: How Bacteria Adapt To Changes in Osmolarity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_02_electrophysiology/" class="md-nav__link">
+        Section 02 electrophysiology
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_03_cal_factor_derivation/" class="md-nav__link">
+        Section 03 cal factor derivation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_04_survival_classification/" class="md-nav__link">
+        Section 04 survival classification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_05_logistic_regression/" class="md-nav__link">
+        Section 05 logistic regression
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_06_shock_classification/" class="md-nav__link">
+        Section 06 shock classification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_07_vandenberg_comparison/" class="md-nav__link">
+        Section 07 vandenberg comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_08_strains/" class="md-nav__link">
+        Section 08 strains
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_12">
+          Frontmatter
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Frontmatter" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Frontmatter
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/abstract/" class="md-nav__link">
+        Abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements/" class="md-nav__link">
+        Acknowledgements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements_prompt/" class="md-nav__link">
+        Acknowledgements prompt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements_prompt_2/" class="md-nav__link">
+        Acknowledgements prompt 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements_results_general/" class="md-nav__link">
+        Acknowledgements results general
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/published/" class="md-nav__link">
+        Published
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bayesian-parameter-estimation-for-inducer-binding-domain-mutants" class="md-nav__link">
+    Bayesian Parameter Estimation for Inducer Binding Domain Mutants
+  </a>
+  
+    <nav class="md-nav" aria-label="Bayesian Parameter Estimation for Inducer Binding Domain Mutants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-a-generative-statistical-model" class="md-nav__link">
+    Building a Generative Statistical Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prior-predictive-checks" class="md-nav__link">
+    Prior Predictive Checks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulation-based-calibration" class="md-nav__link">
+    Simulation Based Calibration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posterior-predictive-checks" class="md-nav__link">
+    Posterior Predictive Checks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>section 06 IND inference</h1>
+
+<h2 id="bayesian-parameter-estimation-for-inducer-binding-domain-mutants">Bayesian Parameter Estimation for Inducer Binding Domain Mutants</h2>
+<p>In Chapter 3, we put forward two naïve hypotheses for which parameters of our
+fold-change equation are affected by mutations in the inducer binding domain
+of the repressor. The first hypothesis was that only the inducer dissociation
+constants, <span class="arithmatex">\(K_A\)</span> and <span class="arithmatex">\(K_I\)</span>, were perturbed from their wild-type values.
+Another hypothesis was that the inducer dissociation constants were affected
+in addition to the energetic difference between the active and inactive
+states of the repressor, <span class="arithmatex">\(\Delta\varepsilon_{AI}\)</span>.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In this section, we first derive the
+statistical model for each hypothesis and then perform a series of diagnostic
+tests that expose the inferential limitations of each model. With well-calibrated statistical models, we then apply each to an induction profile of
+the inducer binding mutant Q291K and assess the validity of each hypothesis.
+To understand the statistical models for each hypothesis, only the subsection
+<em>Building A Generative Statistical Model</em> is necessary.</p>
+<h3 id="building-a-generative-statistical-model">Building a Generative Statistical Model</h3>
+<p>For both hypotheses, we assume that the underlying physical model is the same
+while a subset of the parameters are modified. As the fold-change
+measurements for each biological replicate are statistically independent, we
+can assume that they are normally distributed about the theoretical
+fold-change value. Thus, for each model, we must include a parameter <span class="arithmatex">\(\sigma\)</span>
+which is the standard deviation of the distribution of fold-change
+measurements. For the first hypothesis, in which only <span class="arithmatex">\(K_A\)</span> and <span class="arithmatex">\(K_I\)</span> are
+changed, we are interested in sampling the posterior distribution 
+$$
+g(K_A,K_I, \sigma\,\vert\, y) \propto f(y\,\vert\, K_A, K_I,
+\sigma)g(K_A)g(K_I)g(\sigma),
+$${#eq:hyp1_generic_bayes}
+where <span class="arithmatex">\(y\)</span> corresponds to the set of fold-change measurements. In the above
+model, we have assumed that the priors for <span class="arithmatex">\(K_A\)</span> and <span class="arithmatex">\(K_I\)</span> are independent.
+It is possible that it is more appropriate to assume that they are dependent
+and that a single prior distribution captures both parameters, <span class="arithmatex">\(g(K_A, K_I)\)</span>.
+However, assigning this prior is more difficult and requires strong knowledge
+<em>a priori</em> about the relationship between them. Therefore, we continue under
+the assumption that the priors are independent.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The generic posterior given in @Eq:hyp1_generic_bayes can be extended to 
+evaluate the second hypothesis in which <span class="arithmatex">\(\Delta\varepsilon_{AI}\)</span> is also modified,
+$$
+g(K_A, K_I, \Delta\varepsilon_{AI}, \sigma\,\vert\,y) \propto f(y\,\vert\, K_A, K_I, \Delta\varepsilon_{AI}, \sigma)g(K_A)g(K_I)g(\Delta\varepsilon_{AI})g(\sigma)
+$${#eq:hyp2_generic_bayes}
+where we have included <span class="arithmatex">\(\Delta\varepsilon_{AI}\)</span> as an estimated parameter and
+assigned a prior distribution.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As we have assumed that the fold-change
+measurements across replicates are independent and normally distributed, the
+likelihoods for each hypothesis can be written as
+$$
+f(y\,\vert\, K_A, K_I, \sigma) \sim \text{Normal}{\mu(K_A, K_I), \sigma},
+$${#eq:hyp1_likelihood} for the first hypothesis and
+$$
+f(y\,\vert\, K_A, K_I, \Delta\varepsilon_{AI}, \sigma) \sim \text{Normal}{\mu(K_A, K_I, \Delta\varepsilon_{AI}), \sigma},
+$${#eq:hyp2_likelihood} for the second. Here, we have assigned
+<span class="arithmatex">\(\mu(\dots)\)</span> as the mean of the normal distribution as a function of the
+parameters defined by our fold-change equation.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With a likelihood distribution in hand, we now
+turn toward assigning functional forms to each prior distribution. As we have
+used in the previous sections of this chapter, we can assign a half-normal prior for
+<span class="arithmatex">\(\sigma\)</span> with a standard deviation of 0.1, namely,
+$$
+g(\sigma)\sim \text{HalfNormal}{0, 0.1}.
+$${#eq:IND_halfnorm_sigma} 
+It is important to note that the inducer dissociation constants <span class="arithmatex">\(K_A\)</span> and <span class="arithmatex">\(K_I\)</span> are scale
+invariant, meaning that a change from <span class="arithmatex">\(0.1\,\mu\)</span>M to <span class="arithmatex">\(1\,\mu\)</span>M yields a
+decrease in affinity equal to a change from <span class="arithmatex">\(10\,\mu\)</span>M to <span class="arithmatex">\(100\,\mu\)</span>M.
+As such, it is better to sample the dissociation constants on a
+logarithmic scale. We can assign a log normal prior for each
+dissociation constant as
+$$
+g(K_A) = {1 \over K_A\sqrt{2\pi\phi^2}}\exp\left[-{(\log {K_A \over 1\,\mu\text{M}} - \mu_{K_A})^2 \over 2\phi^2}\right],
+$${#eq:lognormal_explicit} 
+or with the short-hand notion of
+$$
+g(K_A) \sim \text{LogNormal}{\mu_{K_A}, \phi}.
+$${#eq:lognormal_shorthand}
+For <span class="arithmatex">\(K_A\)</span>, we assigned a mean <span class="arithmatex">\(\mu_{K_A} = 2\)</span> and a standard deviation
+<span class="arithmatex">\(\phi=2\)</span>. For <span class="arithmatex">\(K_I\)</span>, we chose a mean of <span class="arithmatex">\(\mu_{K_I} = 0\)</span> and <span class="arithmatex">\(\phi = 2\)</span>,
+capturing our prior knowledge that <span class="arithmatex">\(K_A &gt; K_I\)</span> for the wild-type LacI. While
+the prior distributions are centered differently, they both show extensive
+overlap, permitting mutations in which <span class="arithmatex">\(K_A &lt; K_I\)</span>. For
+<span class="arithmatex">\(\Delta\varepsilon_{AI}\)</span>, we assign a normal distribution of the prior
+centered at 0 with a standard deviation of <span class="arithmatex">\(5\, k_BT\)</span>,
+$$
+g(\Delta\varepsilon_{AI}) \sim \text{Normal}{0, 5}.
+$${#eq:epAI_prior} 
+This permits values of <span class="arithmatex">\(\Delta\varepsilon_{AI}\)</span> that are above or below zero, meaning that the
+inactive state of the repressor can be either more or less energetically
+favorable to the active state. A standard deviation of <span class="arithmatex">\(5\,k_BT\)</span> permits
+a wide range of energies with <span class="arithmatex">\(+5\,k_BT\)</span> and <span class="arithmatex">\(-5\,k_BT\)</span> corresponding to
+<span class="arithmatex">\(\approx 99.5\%\)</span> and <span class="arithmatex">\(\approx 0.5\%\)</span> of the repressors being active in
+the absence of inducer, respectively.</p>
+<h3 id="prior-predictive-checks">Prior Predictive Checks</h3>
+<p>To ensure that these choices of prior distributions are appropriate, we
+performed prior predictive checks for each hypothesis as previously
+described in the second section of this chapter. We drew 1000 values from the prior
+distributions shown in @Fig:ind_prior_predictive (A) for <span class="arithmatex">\(K_A\)</span>, <span class="arithmatex">\(K_I\)</span>, and
+<span class="arithmatex">\(\Delta\varepsilon_{AI}\)</span>. Using the draws from the <span class="arithmatex">\(K_A\)</span>, and <span class="arithmatex">\(K_I\)</span>
+priors alone, we generated data sets of <span class="arithmatex">\(\approx 70\)</span> measurements. The
+percentiles of the fold-change values drawn for the 1000 simulations is
+shown in the top panel of @Fig:ind_prior_predictive (B).</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It can be seen that in the absence of inducer, the fold-change values
+are close to zero and are distributed about the leakiness value due
+to <span class="arithmatex">\(\sigma\)</span>. This is in contrast to the data sets generated when
+<span class="arithmatex">\(\Delta\varepsilon_{AI}\)</span> is permitted to vary along with <span class="arithmatex">\(K_A\)</span> and
+<span class="arithmatex">\(K_I\)</span>. In the bottom panel of @Fig:ind_prior_predictive (B), the fold-change when <span class="arithmatex">\(c = 0\)</span>
+can extend above 1.0 which is possible only when
+<span class="arithmatex">\(\Delta\varepsilon_{AI}\)</span> is included, which sets what fraction of the
+repressors is active. Under both hypotheses, the 99<span class="arithmatex">\(^\text{th}\)</span>
+percentile of the fold-change extends to just above 1 or just below 0,
+which matches our intuition of how the data should behave. Given these
+results, we are satisfied with these choices of priors and continue onto
+the next level of calibration of our model.</p>
+<p><img alt="**Prior predictive checks for two hypotheses of inducer binding domain
+mutants.** (A) Probability density functions for \(K_A\), \(K_I\),
+\(\Delta\varepsilon_{AI}\), and \(\sigma\). Black points correspond to draws
+from the distributions used for prior predictive checks. (B) Percentiles
+of the simulated data sets using draws from the \(K_A\) and \(K_I\)
+distributions only (top, purple bands) and using draws from \(K_A\), \(K_I\),
+and \(\Delta\varepsilon_{AI}\) (bottom, orange 
+bands). The Python code (klzzwxh:0086)
+used to generate this figure can be found on the thesis GitHub
+repository." src="ch7_figS13" />{#fig:ind_prior_predictive short-caption="Prior predictive
+checks for two hypotheses of inducer binding domain mutants."}</p>
+<h3 id="simulation-based-calibration">Simulation Based Calibration</h3>
+<p>With an appropriate choice of priors, we turn to simulation based
+calibration to root out any pathologies lurking in the model itself or
+the implementation through MCMC. For each parameter under each model, we
+compute the <span class="arithmatex">\(z\)</span>-score and shrinkage of each inference, shown in @Fig:ind_sbc.
+Under the first hypothesis in which <span class="arithmatex">\(K_A\)</span> and
+<span class="arithmatex">\(K_I\)</span> are the only perturbed parameters [@Fig:ind_sbc(A)], we see that all parameters have <span class="arithmatex">\(z-\)</span>scores
+clustered around 0, indicating that the value of the ground-truth is
+being accurately estimated through the inference. While the shrinkage
+for <span class="arithmatex">\(\sigma\)</span> is close to 1 (indicating the prior is being informed by
+the data), the shrinkage for <span class="arithmatex">\(K_A\)</span> and <span class="arithmatex">\(K_I\)</span> is heavily tailed with some
+values approaching zero. This is true for both statistical models,
+indicating that for some values of <span class="arithmatex">\(K_A\)</span> and <span class="arithmatex">\(K_I\)</span>, the parameters are
+difficult to pin down with high certainty. In the application of these
+models to data, this will be revealed as large credible regions in the
+reported parameters. Under the second hypothesis in which all allosteric
+parameters are allowed to change, we see moderate shrinkage for
+<span class="arithmatex">\(\Delta\varepsilon_{AI}\)</span> [purple points in @Fig:ind_sbc(B)] with the minimum shrinkage being around
+0.5. The samples resulting in low shrinkage correspond to values of
+<span class="arithmatex">\(\Delta\varepsilon_{AI}\)</span> that are highly positive or highly negative, in
+which small changes in the active fraction of repressors cannot be
+accurately measured through our model. However, the median shrinkage for
+<span class="arithmatex">\(\Delta\varepsilon_{AI}\)</span> is approximately 0.92, meaning that the
+data highly informed the prior distributions for the majority of the
+inferences. The rank distributions for all parameters under each model
+appear to be highly uniform, indicating that both statistical models are
+computationally tractable.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With knowledge of the caveats of
+estimating <span class="arithmatex">\(K_A\)</span> and <span class="arithmatex">\(K_I\)</span> for both models, we proceed with our analysis and
+examine how accurately these models can capture the phenomenology of the data.</p>
+<p><img alt="**Simulation based calibration of statistical models for inducer binding
+domain mutants.** (A) Sensitivity statistics and rank distribution for a
+statistical model in which \(K_A\) and \(K_I\) are the only parameters
+permitted to vary. (B) Sensitivity statistics and rank distribution for
+a model in which all allosteric parameters \(K_A\), \(K_I\), and
+\(\Delta\varepsilon_{AI}\) are allowed to be modified by the mutation.
+Gray envelope in the bottom plots correspond to the 99\(^\text{th}\)
+percentile of variation expected from a true uniform
+distribution. The Python code (klzzwxh:0119)
+used to generate this figure can be found on the thesis GitHub
+repository." src="ch7_figS14" />{#fig:ind_sbc short-caption="Simulation based
+calibration of statistical models for inducer binding domain mutants."}</p>
+<h3 id="posterior-predictive-checks">Posterior Predictive Checks</h3>
+<p>With a properly calibrated statistical model for each hypothesis, we now
+apply it to a representative dataset. While each model was applied to
+each inducer binding domain mutant, we only show the application to the
+mutant Q291K with 260 repressors per cell paired with the native <em>lac</em>
+operator O2.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The results from applying the statistical model in which only <span class="arithmatex">\(K_A\)</span> and
+<span class="arithmatex">\(K_I\)</span> can change is shown in @Fig:kaki_post_predictive. The joint and marginal
+distributions for each parameter (@Fig:kaki_post_predictive (A)) reveal a strong correlation
+between <span class="arithmatex">\(K_A\)</span> and <span class="arithmatex">\(K_I\)</span> whereas all other parameters are symmetric and
+independent. While the joint and marginal distributions look well-behaved, the percentiles of the posterior predictive checks
+(@Fig:kaki_post_predictive (B)) are more suspect. While all
+data falls within the 95<span class="arithmatex">\(^\text{th}\)</span> percentile, the overall trend of
+the data is not well predicted. Furthermore, the percentiles expand far
+below zero, indicating that the sampling of <span class="arithmatex">\(\sigma\)</span> is compensating for
+the leakiness in the data being larger than it should be if only <span class="arithmatex">\(K_A\)</span>
+and <span class="arithmatex">\(K_I\)</span> were the changing parameters.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We see significant improvement when <span class="arithmatex">\(\Delta\varepsilon_{AI}\)</span> is
+permitted to vary in addition to <span class="arithmatex">\(K_A\)</span> and <span class="arithmatex">\(K_I\)</span>. @Fig:kaki_epai_post_predictive
+(A) shows the joint and marginal distributions between all parameters from the MCMC sampling. We
+still see correlation between <span class="arithmatex">\(K_A\)</span> and <span class="arithmatex">\(K_I\)</span>, although it is not as
+strong as in the case where they are the only parameters allowed to
+change due to the mutation. We also see that the marginal distribution
+for <span class="arithmatex">\(\sigma\)</span> has shrunk significantly compared to the marginal
+distribution in @Fig:kaki_post_predictive (A). The percentiles of the
+posterior predictive checks, shown in @Fig:kaki_epai_post_predictive (B)
+are much more in line with the experimental measurements, with the 5<span class="arithmatex">\(\text{th}\)</span> percentile
+following the data for the entire induction profile.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In this section, we have presented two hypotheses for the minimal
+parameter set needed to describe the inducer binding mutations, derived
+a statistical model for each, thoroughly calibrated its behavior, and
+applied it to a representative data set. The posterior predictive checks
+(@Fig:kaki_post_predictive and @Fig:kaki_epai_post_predictive) help us understand which
+hypothesis is more appropriate for that particular mutant. The
+incredibly wide percentiles and significant change in the leakiness that
+result from a model in which only <span class="arithmatex">\(K_A\)</span> and <span class="arithmatex">\(K_I\)</span> are perturbed suggests
+that more than those two parameters should be changing. We see
+significant improvement in the description of the data when
+<span class="arithmatex">\(\Delta\varepsilon_{AI}\)</span> is altered, indicating that it is the more
+appropriate hypothesis of the two.</p>
+<p><img alt="**Posterior predictive checks for inducer binding domain mutants where
+only \(K_A\) and \(K_I\) are changed.** (A) MCMC sampling output for each
+parameter. Joint distributions are colored by the value of the log
+posterior with increasing probability corresponding to transition from
+blue to yellow. (B) Percentiles of the data generated from the
+likelihood distribution for each sample of \(K_A\), \(K_I\), and \(\sigma\).
+Overlaid points are the experimentally observed
+measurements. The Python code (klzzwxh:0163)
+used to generate this figure can be found on the thesis GitHub
+repository." src="ch7_figS15" />{#fig:kaki_post_predictive short-caption="Posterior
+predictive checks for inducer binding domain mutants where only <span class="arithmatex">\(K_A\)</span> and <span class="arithmatex">\(K_I\)</span>
+are changed."}</p>
+<p><img alt="**Posterior predictive checks for inducer binding domain mutants where
+all allosteric parameters can change.** (A) MCMC sampling output for all
+parameters. Joint distributions are colored by the value of the log
+posterior with increasing probability corresponding to the transition
+from blue to yellow. Marginal distributions are shown adjacent to each
+joint distribution. (B) Percentiles of the data generated from the
+likelihood for each sample of \(K_A\), \(K_I\), \(\Delta\varepsilon_{AI}\),
+and \(\sigma\). The corresponding experimental data for Q291K are shown as
+black open-faced circles. The Python code (klzzwxh:0174)
+used to generate this figure can be found on the thesis GitHub
+repository." src="ch7_figS16" />{#fig:kaki_epai_post_predictive
+short-caption="Posterior predictive checks for inducer binding domain mutants
+where all allosteric parameter can change."}</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes"], "search": "../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5cf534bf.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

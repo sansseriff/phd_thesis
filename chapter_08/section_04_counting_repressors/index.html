@@ -1,0 +1,2865 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../section_03_cell_volume/">
+      
+      
+        <link rel="next" href="../section_05_carbon_inference/">
+      
+      <link rel="icon" href="../../site_images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
+    
+    
+      
+        <title>Section 04 counting repressors - Computational Methods for SNSPDs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f56500e0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#counting-repressors" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Computational Methods for SNSPDs" class="md-header__button md-logo" aria-label="Computational Methods for SNSPDs" data-md-component="logo">
+      
+  <img src="../../site_images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Computational Methods for SNSPDs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Section 04 counting repressors
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Computational Methods for SNSPDs" class="md-nav__button md-logo" aria-label="Computational Methods for SNSPDs" data-md-component="logo">
+      
+  <img src="../../site_images/logo.svg" alt="logo">
+
+    </a>
+    Computational Methods for SNSPDs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Computational Methods for SNSPDs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref_heading/" class="md-nav__link">
+        References
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Chapter 01
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 01" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 01
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_00_title/" class="md-nav__link">
+        The Phenomenon of Adaptation Across Scales
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_01_introduction/" class="md-nav__link">
+        Section 01 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_02_molecular_adaptation/" class="md-nav__link">
+        Section 02 molecular adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_03_evolutionary_adaptation/" class="md-nav__link">
+        Section 03 evolutionary adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_04_physiological_adaptation/" class="md-nav__link">
+        Section 04 physiological adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_05_survival/" class="md-nav__link">
+        Section 05 survival
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_06_conclusion/" class="md-nav__link">
+        Section 06 conclusion
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Chapter 02
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 02" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 02
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_00_title/" class="md-nav__link">
+        Through the Intramolecular Grapevine: Signal Processing Via Allosteric Transcription Factors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_04_model/" class="md-nav__link">
+        Section 04 model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_05_results/" class="md-nav__link">
+        Section 05 results
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_06_discussion/" class="md-nav__link">
+        Section 06 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_07_methods/" class="md-nav__link">
+        Section 07 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Chapter 03
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 03" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 03
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_00_title/" class="md-nav__link">
+        Unknown Knowns, Known Unknowns, and Unforeseen Consequences: Using Free Energy Shifts To Predict Mutant Phenotypes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_04_model/" class="md-nav__link">
+        Section 04 model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_05_DNA_mutants/" class="md-nav__link">
+        section 05 DNA mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_06_IND_mutants/" class="md-nav__link">
+        section 06 IND mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_07_DBL_mutants/" class="md-nav__link">
+        section 07 DBL mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_08_discussion/" class="md-nav__link">
+        Section 08 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_09_methods/" class="md-nav__link">
+        Section 09 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Chapter 04
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 04" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 04
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_00_title/" class="md-nav__link">
+        On The Physiological Adaptability of a Simple Genetic Circuit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_04_model/" class="md-nav__link">
+        Section 04 model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_05_experimental_design/" class="md-nav__link">
+        Section 05 experimental design
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_06_scaling/" class="md-nav__link">
+        Section 06 scaling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_07_carbon_quality/" class="md-nav__link">
+        Section 07 carbon quality
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_08_temperature/" class="md-nav__link">
+        Section 08 temperature
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_09_discussion/" class="md-nav__link">
+        Section 09 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_10_methods/" class="md-nav__link">
+        Section 10 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Chapter 05
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 05" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 05
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_00_title/" class="md-nav__link">
+        'Water, Water Everywhere, Yet Not A Drop to Drink': How Bacteria Adapt To Changes in Osmolarity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_04_results/" class="md-nav__link">
+        Section 04 results
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_05_discussion/" class="md-nav__link">
+        Section 05 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_06_methods/" class="md-nav__link">
+        Section 06 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Chapter 06
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 06" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 06
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_00_title/" class="md-nav__link">
+        Supplemental Information For Chapter 2: Signal Processing Via Allosteric Transcription Factors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_02_epAI/" class="md-nav__link">
+        section 02 epAI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_03_fugacity/" class="md-nav__link">
+        Section 03 fugacity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_04_flow/" class="md-nav__link">
+        Section 04 flow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_05_microscopy/" class="md-nav__link">
+        Section 05 microscopy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_06_sensitivity/" class="md-nav__link">
+        Section 06 sensitivity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_07_global_fit/" class="md-nav__link">
+        Section 07 global fit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_08_Oid/" class="md-nav__link">
+        section 08 Oid
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_09_comparison/" class="md-nav__link">
+        Section 09 comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_10_properties/" class="md-nav__link">
+        Section 10 properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_11_applications/" class="md-nav__link">
+        Section 11 applications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_12_tables/" class="md-nav__link">
+        Section 12 tables
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Chapter 07
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 07" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 07
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_00_title/" class="md-nav__link">
+        Supplemental Information for Chapter 3: Predictive Shifts in Free Energy Couple Mutations to Their Phenotypic Consequences
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_02_nonmonotonicity/" class="md-nav__link">
+        Section 02 nonmonotonicity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_03_DNA_epRA_inference/" class="md-nav__link">
+        section 03 DNA epRA inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_04_delta_F_inference/" class="md-nav__link">
+        section 04 delta F inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_05_DNA_mutants/" class="md-nav__link">
+        section 05 DNA mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_06_IND_inference/" class="md-nav__link">
+        section 06 IND inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_07_IND_mutants/" class="md-nav__link">
+        section 07 IND mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_08_param_comparison/" class="md-nav__link">
+        Section 08 param comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_09_global_fit/" class="md-nav__link">
+        Section 09 global fit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_10_generality/" class="md-nav__link">
+        Section 10 generality
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_11_strains/" class="md-nav__link">
+        Section 11 strains
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Chapter 08
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 08" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 08
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_00_title/" class="md-nav__link">
+        Supplemental Information for Chapter 4: The Physiological Adaptability of a Simple Genetic Circuit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_02_growth_rates/" class="md-nav__link">
+        Section 02 growth rates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_03_cell_volume/" class="md-nav__link">
+        Section 03 cell volume
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Section 04 counting repressors
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Section 04 counting repressors
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#counting-repressors" class="md-nav__link">
+    Counting Repressors
+  </a>
+  
+    <nav class="md-nav" aria-label="Counting Repressors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sec:cal_factor" class="md-nav__link">
+    Theoretical Background of the Binomial Partitioning Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cell-husbandry-and-time-lapse-microscopy" class="md-nav__link">
+    Cell Husbandry and Time-Lapse Microscopy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lineage-tracking-and-fluorescence-quantification" class="md-nav__link">
+    Lineage Tracking and Fluorescence Quantification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#statistical-inference-of-the-fluorescence-calibration-factor" class="md-nav__link">
+    Statistical Inference of the Fluorescence Calibration Factor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#correcting-for-systematic-experimental-error" class="md-nav__link">
+    Correcting for Systematic Experimental Error
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_05_carbon_inference/" class="md-nav__link">
+        Section 05 carbon inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_06_entropy/" class="md-nav__link">
+        Section 06 entropy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_07_strains_recipes/" class="md-nav__link">
+        Section 07 strains recipes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_11">
+          Chapter 09
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 09" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 09
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_00_title/" class="md-nav__link">
+        Supplemental Information For Chapter 5: How Bacteria Adapt To Changes in Osmolarity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_02_electrophysiology/" class="md-nav__link">
+        Section 02 electrophysiology
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_03_cal_factor_derivation/" class="md-nav__link">
+        Section 03 cal factor derivation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_04_survival_classification/" class="md-nav__link">
+        Section 04 survival classification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_05_logistic_regression/" class="md-nav__link">
+        Section 05 logistic regression
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_06_shock_classification/" class="md-nav__link">
+        Section 06 shock classification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_07_vandenberg_comparison/" class="md-nav__link">
+        Section 07 vandenberg comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_08_strains/" class="md-nav__link">
+        Section 08 strains
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_12">
+          Frontmatter
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Frontmatter" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Frontmatter
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/abstract/" class="md-nav__link">
+        Abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements/" class="md-nav__link">
+        Acknowledgements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements_prompt/" class="md-nav__link">
+        Acknowledgements prompt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements_prompt_2/" class="md-nav__link">
+        Acknowledgements prompt 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements_results_general/" class="md-nav__link">
+        Acknowledgements results general
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/published/" class="md-nav__link">
+        Published
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#counting-repressors" class="md-nav__link">
+    Counting Repressors
+  </a>
+  
+    <nav class="md-nav" aria-label="Counting Repressors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sec:cal_factor" class="md-nav__link">
+    Theoretical Background of the Binomial Partitioning Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cell-husbandry-and-time-lapse-microscopy" class="md-nav__link">
+    Cell Husbandry and Time-Lapse Microscopy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lineage-tracking-and-fluorescence-quantification" class="md-nav__link">
+    Lineage Tracking and Fluorescence Quantification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#statistical-inference-of-the-fluorescence-calibration-factor" class="md-nav__link">
+    Statistical Inference of the Fluorescence Calibration Factor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#correcting-for-systematic-experimental-error" class="md-nav__link">
+    Correcting for Systematic Experimental Error
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Section 04 counting repressors</h1>
+
+<h2 id="counting-repressors">Counting Repressors</h2>
+<p>In this section, we expand upon the theoretical and experimental
+implementation of the fluorescence calibration method derived in 
+@rosenfeld2005. We cover several experimental data validation steps as
+well as details regarding the parameter inference. Finally, we comment
+on the presence of a systematic error in the repressor counts due to
+continued asynchronous division between sample preparation and imaging.</p>
+<h3 id="sec:cal_factor">Theoretical Background of the Binomial Partitioning Method</h3>
+<p>A key component of this work is the direct measurement of the repressor copy
+number in each growth condition using fluorescence microscopy. To translate
+between absolute fluorescence and protein copy number, we must be able to
+estimate the average brightness of a single fluorophore or, in other words,
+determine a calibration factor <span class="arithmatex">\(\alpha\)</span> that permits translation from copy
+number to intensity or vice versa. Several methods have been used over the
+past decade to estimate this factor, such as measuring single-molecule
+photobleaching steps <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>, measurement of <em>in
+vivo</em> photobleaching rates <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup><sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>, and through measuring the
+partitioning of fluorescent molecules between sibling cells after cell
+division <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup><sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup><sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup>. In this work, we
+used the latter method to estimate the brightness of a single LacI-mCherry
+dimer. Here, we derive a simple expression which allows the determination of
+<span class="arithmatex">\(\alpha\)</span> from measurements of the fluorescence intensities of a collection of
+sibling cells.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the absence of measurement error, the fluorescence intensity of a
+given cell is proportional to the total number of fluorescent proteins
+<span class="arithmatex">\(N_\text{prot}\)</span> by some factor <span class="arithmatex">\(\alpha\)</span>,
+$$
+I_\text{cell} = \alpha N_\text{prot}.
+$${#eq:growth_si_ian}
+Assuming that no fluorophores are produced or
+degraded over the course of the cell cycle, the fluorescent proteins
+will be partitioned into the two siblings cells such that the intensity
+of each sibling can be computed as
+$$
+I_1 = \alpha N_1\, ;\, I_2 = \alpha (N_\text{ tot} - N_1),
+$${#eq:ian_division} 
+where <span class="arithmatex">\(N_\text{ tot}\)</span> is the total
+number of proteins in the parent cell and <span class="arithmatex">\(N_1\)</span> and <span class="arithmatex">\(N_2\)</span> correspond to
+the number of proteins in sibling cells 1 and 2, respectively. This
+explicitly states that fluorescence is conserved upon a division,
+$$
+I_{tot} = I_1 + I_2.
+$${#eq:fluo_cons}
+As the observed intensity is directly
+proportional to the number of proteins per cell, measuring the variance
+in intensity between sibling cells provides some information as to how
+many proteins were there to begin with. We can compute these
+fluctuations as the squared intensity difference between the two
+siblings as
+$$
+\langle \left(I_1 - I_2\right)^2 \rangle = \langle \left(2I_1 -
+    I_\text{ tot}\right)^2\rangle.
+$${#eq:step1}
+We can relate @Eq:step1 in terms of the number of proteins using @Eq:growth_si_ian
+as
+$$
+\langle \left(I_1 - I_2\right)^2 \rangle = 4\alpha^2 \langle N_1^2
+    \rangle - 4\alpha^2\langle N_1 \rangle N_\text{ tot} +
+    \alpha^2N_\text{ tot}^2,
+$${#eq:step2}
+where the squared fluctuations are now cast in
+terms of the first and second moment of the probability distribution for
+<span class="arithmatex">\(N_1\)</span>.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Without any active partitioning of the proteins into the sibling cells,
+one can model the probability distribution <span class="arithmatex">\(g(N_1)\)</span> of finding <span class="arithmatex">\(N_1\)</span>
+proteins in sibling cell 1 as a binomial distribution,
+$$
+g(N_1\vert\, N_\text{ tot}, p) = \frac{N_\text{
+    tot}!}{N_1!(N_\text{ tot} - N_1)!}p^{N_1}(1 - p)^{N_\text{
+    tot} - N_1},
+$${#eq:growth_si_binomial}
+where <span class="arithmatex">\(p\)</span> is the probability of a protein
+being partitioned into one sibling over the other. With a probability
+distribution for <span class="arithmatex">\(N_1\)</span> in hand, we can begin to simplify 
+@Eq:step2. Recall that the mean and variance of a binomial distribution are
+$$
+\langle N_{1} \rangle = N_\text{ tot} p,
+$${#eq:binomial_mean}
+and
+$$
+\langle N_1^2 \rangle - \langle N_1\rangle^2 = N_\text{ tot}p(1-p),
+$${#eq:binom_variance}
+respectively. With knowledge of the mean and variance, we can solve for the
+second moment as
+$$
+\langle N_1^2 \rangle = N_\text{ tot}p(1 - p) + N_\text{
+tot}^2p^2 = N_\text{ tot}p\left(1 - p + N_\text{
+tot}p\right).
+$${#eq:binomial_mom2}
+By plugging @Eq:binomial_mean and @Eq:binomial_mom2 into our expression for the fluctuations
+(@Eq:step2), we arrive at
+$$
+\langle \left( I_1 - I_2\right)^2 \rangle =
+    4\alpha^2\left[(N_\text{ tot}p[1 - p - N_\text{ tot}p]) -
+    N_\text{ tot}^2\left(p + \frac{1}{4}\right)\right],
+$${#eq:p_agnostic_result}
+which is now defined in terms of the total number of proteins present in the parent cell. Assuming that the
+proteins are equally partitioned <span class="arithmatex">\(p=1/2\)</span>, @Eq:p_agnostic_result reduces to
+$$
+\langle \left(I_1 - I_2\right)^2\rangle = \alpha^2N_\text{ tot} =
+    \alpha I_\text{ tot}.
+$${#eq:fluct_Itot}
+Invoking our assertion that fluorescence is
+conserved (@Eq:fluo_cons), <span class="arithmatex">\(I_{tot}\)</span> is equivalent to the sum total
+fluorescence of the siblings,
+$$
+\langle \left(I_1 - I_2\right)^2 \rangle = \alpha (I_1 + I_2).
+$${#eq:dilution}
+Thus, given snapshots of cell intensities and
+information of their lineage, one can compute how many arbitrary
+fluorescence units correspond to a single fluorescent protein.</p>
+<h3 id="cell-husbandry-and-time-lapse-microscopy">Cell Husbandry and Time-Lapse Microscopy</h3>
+<p>The fluorescence calibration method  was first described and implemented by
+@rosenfeld2005 followed by a more in-depth approach on the statistical
+inference of the calibration factor in @rosenfeld2006. In both of
+these works, the partitioning of a fluorescent protein was tracked
+across many generations from a single parent cell, permitting inference
+of a calibration factor from a single lineage. @brewster2014
+applied this method in a slightly different manner by
+quantifying the fluorescence across a large number of <em>single</em> division
+events. Thus, rather than examining the partitioning of fluorescence
+down many branches of a single family tree, it was estimated from an
+array of single division events where the fluorescence intensity of the
+parent cell was variable. In the present work, we take a similar
+approach to that of @brewster2014, and examine the partitioning of
+fluorescence among a large number of independent cell divisions.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A typical experimental work-flow is shown in
+@Fig:growth_si_microscopy_workflow. For each experiment, the strains were
+grown in varying concentrations of ATC to tune the expression of the
+repressor. Once the cells had reached exponential phase growth (OD<span class="arithmatex">\(_{600nm}
+\approx 0.3\)</span>), the cells were harvested and prepared for imaging. This
+involved two separate sample handling procedures, one for preparing samples
+for lineage tracking and estimation of the calibration factor and another for
+taking snapshots of cells from each ATC induction condition for the
+calculation of fold-change.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To prepare cells for the calibration factor
+measurement, a 100 <span class="arithmatex">\(\mu\)</span>L aliquot of each ATC induction condition was
+combined and mixed in a 1.5 mL centrifuge tube. This cell mixture was then
+pelleted at 13000<span class="arithmatex">\(\times g\)</span> for 1 -- 2 minutes. The supernatant containing
+ATC was then aspirated and the pellet was resuspended in an equal volume of
+sterile growth media without ATC. This washing procedure was repeated three
+times to ensure that any residual ATC had been removed from the culture and
+that expression of LacI-mCherry had ceased. Once washed and resuspended, the
+cells were diluted ten fold into sterile M9 medium and then imaged on a rigid
+agarose substrate. Depending on the precise growth condition, a variety of
+positions were imaged for 1.5 to 4 hours with a phase contrast image acquired
+every 5 to 15 minutes to facilitate lineage tracking. On the final image of
+the experiment, an mCherry fluorescence image was acquired of every position.
+The experiments were then transferred to a computing cluster and the images
+were computationally analyzed, as described in the next section.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;During the washing steps, the remaining ATC
+induced samples were prepared for snapshot imaging to determine the repressor
+copy number and fold-change in gene expression for each ATC induction
+condition. Without mixing the induction conditions together, each ATC induced
+sample was diluted 1:10 into sterile M9 minimal medium and vigorously mixed.
+Once mixed, a small aliquot of the samples were deposited onto rigid agarose
+substrates for later imaging. While this step of the experiment was
+relatively simple, the total preparation procedure typically lasted between
+30 and 60 minutes. As is discussed later, the continued growth of the
+asynchronously growing culture upon dilution into the sterile medium results
+in a systematic error in the calculation of the repressor copy number.</p>
+<p><img alt="**An experimental workflow for time-lapse imaging.** (A) The series of steps
+followed in a given experiment. Cells are grown in various concentrations of ATC
+(shaded red cultures) to an OD\(_{600nm} \approx 0.3\). Equal aliquots of each
+ATC-induced culture are mixed into a single eppendorf tube and pelleted via
+centrifugation. The supernatant containing ATC is aspirated and replaced with an
+equal volume of sterile, ATC-free growth medium. This washing procedure is
+repeated three times to ensure that residual ATC is removed from the culture and
+expression of the LacI-mCherry fusion is ceased. After a final resuspension in
+sterile ATC-free medium, the cell mixture is diluted 10 fold to reduce cell
+density. A small aliquot of this mixture is then mounted and imaged at 100x
+magnification until at least one cell division has occurred. (B) Two
+representative microcolonies from a time-lapse growth experiment. The time point
+is provided above each image. After at least one division has occurred, a final
+mCherry fluorescence image is acquired and
+quantified." src="ch8_figS3" />{#fig:growth_si_microscopy_workflow short-caption="An experimental
+workflow for determination of a fluorescence calibration factor."}</p>
+<h3 id="lineage-tracking-and-fluorescence-quantification">Lineage Tracking and Fluorescence Quantification</h3>
+<p>Segmentation and lineage tracking of both the fluorescence snap shots
+and time-lapse growth images were performed using the SuperSegger
+<code>v1.03</code> <sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup> software using MATLAB R2017B (MathWorks,
+Inc). The result of this segmentation is a list of matrices for each
+unique imaged position with identifying data for each segmented cell
+such as an assigned ID number, the ID of the sibling cell, the ID of the
+parent cell, and various statistics. These files were then analyzed
+using Python 3.7. All scripts and software used to perform this analysis
+can be found on the <a href="https://www.rpgroup.caltech.edu/mwc_growth">associated paper website</a> and <a href="https://github.com/rpgroup-pboc/mwc_growth">GitHub
+repository</a>.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using the ID numbers assigned to each cell in a
+given position, we matched all sibling pairs present in the last frame of the
+growth movie when the final mCherry fluorescence image was acquired. These
+cells were then filtered to exclude segmentation artifacts (such as
+exceptionally large or small cells) as well as any cells which the
+SuperSegger software identified as having an error in segmentation. Given the
+large number of cells tracked in a given experiment, we could not manually
+correct these segmentation artifacts, even though it is possible using the
+software. To err on the side of caution, we did not consider these edge cases
+in our analysis.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With sibling cells identified, we performed a
+series of validation checks on the data to ensure that both the experiment
+and analysis behaved as expected. Three validation checks are illustrated in
+@Fig:sanity_check. To make sure that the computational pairing of sibling
+cells was correct, we examined the intensity distributions of each sibling
+pair. If siblings were being paired solely on their lineage history and not
+by other features (such as size, fluorescence, etc), one would expect the
+fluorescence distributions between the two sibling cells to be identical.
+@Fig:sanity_check(A) shows the nearly identical intensity distributions of
+all siblings from a single experiment, indicating that the pairing of
+siblings is independent of their fluorescence.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Furthermore, we examined the partitioning of the fluorescence between
+the siblings. In @Eq:binomial_mean, we defined the mean number of proteins
+inherited by one sibling. This can be easily translated into the
+language of intensity as
+$$
+\langle I_1 \rangle = \alpha \left(I_1 + I_2\right)p,
+$${#eq:binom_mean_int}
+where we assume that fluorescence is conserved during a division event such that
+<span class="arithmatex">\(I_\text{ tot} = I_1 + I_2\)</span>. As described previously, 
+we make the simplifying assumption that partitioning of the fluorophores
+between the two sibling cells is fair, meaning that <span class="arithmatex">\(p = 0.5\)</span>. We can
+see if this approximation is valid by computing the fractional intensity
+of each sibling cell as
+$$
+p = \frac{\langle I_1 \rangle}{\langle I_1 + I_2 \rangle}.
+$${#eq:frac_intensity}
+@Fig:sanity_check(B) shows the distribution of the
+fractional intensity for each sibling pair. The distribution is
+approximately symmetric about 0.5, indicating that siblings are
+correctly paired and that the partitioning of fluorescence is
+approximately equal between siblings. Furthermore, we see no correlation
+between the cell volume immediately after division and the observed
+fractional intensity. This suggests that the probability of partitioning
+to one sibling or the other is not dependent on the cell size. An
+assumption (backed by experimental measurements
+<sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup><sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup>) in our thermodynamic model is that all
+repressors in a given cell are bound to the chromosome, either
+specifically or nonspecifically. As the chromosome is duplicated and
+partitioned into the two siblings without fail, our assumption of
+repressor adsorption implies that partitioning should be independent of
+the size of the respective sibling. The collection of these validation
+statistics give us confidence that both the experimentation and the
+analysis are properly implemented and are not introducing bias into our
+estimation of the calibration factor.</p>
+<p><img alt="**Experimental sanity checks and inference of a fluorescence calibration
+factor.** (A) Intensity distributions of sibling cells after division.
+Arbitrarily labeled &quot;sibling 1&quot; and &quot;sibling 2&quot; distributions are shown in
+purple and orange, respectively. Similarity of the distributions illustrates
+lack of intensity bias on sibling pair assignment. (B) The fractional intensity
+of sibling 1 upon division. For each sibling pair, the fractional intensity is
+computed as the intensity of sibling 1 \(I_2\) divided by the summed intensities
+of both siblings \(I_1 + I_2\). (C) Partitioning intensity as a function of cell
+volume. The fractional intensity of every sibling cell is plotted against its
+estimated newborn volume. The Python code (klzzwxh:0076)
+used to generate this figure can be found on the thesis GitHub
+repository." src="ch8_figS4" />{#fig:sanity_check
+short-caption="Experimental sanity checks and inference of a fluorescence
+calibration factor."}</p>
+<h3 id="statistical-inference-of-the-fluorescence-calibration-factor">Statistical Inference of the Fluorescence Calibration Factor</h3>
+<p>As is outlined in the Materials \&amp; Methods section of the Chapter 4, we
+took a Bayesian approach towards our inference of the calibration factor
+given fluorescence measurements of sibling cells. Here, we expand in
+detail on this statistical model and its implementation.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To estimate the calibration factor <span class="arithmatex">\(\alpha\)</span> from a set of lineage
+measurements, we assume that fluctuations in intensity resulting from
+measurement noise is negligible compared to that resulting from binomial
+partitioning of the repressors upon cell division. In the absence of
+measurement noise, the intensity of a given cell <span class="arithmatex">\(I_{cell}\)</span> can be
+directly related to the total number of fluorophores <span class="arithmatex">\(N\)</span> through a
+scaling factor <span class="arithmatex">\(\alpha\)</span>, such that 
+$$
+I_{cell} = \alpha N.
+$${#eq:no_err}
+Assuming no fluorophores are produced or degraded over the course of a
+division cycle, the fluorescence of the parent cell before division is equal
+to the sum of the intensities of the sibling cells,
+$$
+I_{parent} = I_1 + I_2 = \alpha\left(N_1 + N_2\right),
+$${#eq:conservation_law}
+where subscripts <span class="arithmatex">\(1\)</span> and <span class="arithmatex">\(2\)</span> correspond to arbitrary labels of the two sibling
+cells. We are ultimately interested in knowing the probability of a given value
+of <span class="arithmatex">\(\alpha\)</span> which, using Bayes' theorem, can be written as
+$$
+g(\alpha\, \vert\, I_1, I_2) = \frac{f(I_1, I_2\, \vert\, \alpha) g(\alpha)}
+    {f(I_1, I_2)},
+$${#eq:app_bayes_generic}
+where we have used <span class="arithmatex">\(g\)</span> and <span class="arithmatex">\(f\)</span> to denote probability densities over parameters and data, respectively. The
+first quantity in the numerator <span class="arithmatex">\(f(I_1, I_2\,\vert\, \alpha)\)</span> describes
+the likelihood of observing the data <span class="arithmatex">\(I_1, I_2\)</span> given a value for the
+calibration factor <span class="arithmatex">\(\alpha\)</span>. The term <span class="arithmatex">\(g(\alpha)\)</span> captures all prior
+knowledge we have about what the calibration factor could be, remaining
+ignorant of the collected data. The denominator <span class="arithmatex">\(f(I_1, I_2)\)</span> is the
+likelihood of observing our data <span class="arithmatex">\(I_1, I_2\)</span> irrespective of the
+calibration factor and is a loose measure of how well our statistical
+model describes the data. As it is difficult to assign a functional form
+to this term and serves as a multiplicative constant, it can be
+neglected for the purposes of this work.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Knowing that the two observed sibling cell
+intensities are related, conditional probability allows us to rewrite the
+likelihood as
+$$
+f(I_1\,I_2\,\vert\,\alpha) = f(I_1\,\vert\,I_2, \alpha)f(I_2\,\vert\,\alpha),
+$${#eq:arb_unlabeled_eq}
+where <span class="arithmatex">\(f(I_2\,\vert\, \alpha)\)</span> describes the likelihood of observing
+<span class="arithmatex">\(I_2\)</span> given a value of <span class="arithmatex">\(\alpha\)</span>. As <span class="arithmatex">\(I_2\)</span> can take any value with equal
+probability, this term can be treated as a constant. Through change of
+variables and noting that <span class="arithmatex">\(I_2 = \alpha N_2\)</span>, we can cast the likelihood
+<span class="arithmatex">\(f(I_1\,\vert\,I_2, \alpha)\)</span> in terms of the number of proteins <span class="arithmatex">\(N_1\)</span>
+and <span class="arithmatex">\(N_2\)</span> as
+$$
+f(I_1\,\vert\, I_2, \alpha) = f(N_1\,\vert\,N_2, \alpha)\bigg\vert {d N_1
+\over dI_1}\bigg\vert= \frac{1}{\alpha}f(N_1\,\vert\,N_2,\alpha).
+$${#eq:change_of_var}
+Given that the proteins are binomially
+distributed between the sibling cells with a probability <span class="arithmatex">\(p\)</span> and that
+the intensity is proportional to the number of fluorophores, this
+likelihood becomes
+$$
+f(I_1\,\vert\,I_2, \alpha, p) = \frac{1}{\alpha}{\left(\frac{I_1 +
+I_2}{
+\alpha}\right)! \over \left({I_1 \over \alpha}\right)!\left({I_2 \over
+\alpha}\right)!}p^{{I_1 \over \alpha}}(1 - p)^{I_2 \over \alpha}.
+$${#eq:binom_like}
+However, the quantity <span class="arithmatex">\(I / \alpha\)</span> is not
+exact, making calculation of its factorial undefined. These factorials
+can therefore be approximated by a gamma function as
+<span class="arithmatex">\(n! = \Gamma(n + 1)\)</span>.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Assuming that partitioning of a protein between
+the two sibling cells is a fair process (<span class="arithmatex">\(p = 1/2\)</span>), @Eq:binom_like can be generalized to a set of lineage
+measurements <span class="arithmatex">\([I_1, I_2]\)</span> as
+$$
+f([I_1]\,\vert\,[I_2], \alpha) = {1 \over \alpha^k}
+\prod\limits_{i}^k {\Gamma\left({I_1 + I_2 \over \alpha} + 1\right) \over
+\Gamma\left({I_1 \over \alpha} + 1\right)\Gamma\left({I_2 \over \alpha} + 1
+\right)}2^{-{I_1 + I_2 \over \alpha}}, 
+$${#eq:full_likelihood}
+where <span class="arithmatex">\(k\)</span> is the number of division events observed.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With a likelihood in place, we can now assign a
+functional form to the prior distribution for the calibration factor
+<span class="arithmatex">\(g(\alpha)\)</span>. Though ignorant of data, the experimental design is such that
+imaging of a typical highly-expressing cell will occupy 2/3 of the dynamic
+range of the camera. We can assume that it is more likely that the calibration
+factor will be closer to 0 a.u. than the bit depth of the camera (4095 a.u.)
+or larger. We also know that it is physically impossible for the fluorophore
+to be less than 0 a.u., providing a hard lower-bound on its value. We can
+therefore impose a weakly informative prior distribution as a half normal
+distribution,
+$$
+g(\alpha) = \sqrt{2 \over \pi\sigma^2}\exp\left[{-\alpha^2 \over
+   2\sigma^2}\right]\,;\, \forall \alpha &gt; 0, 
+<span class="arithmatex">\(<span class="arithmatex">({#eq:growth_alpha_prior}
+where the standard deviation is large, for example, <span class="arithmatex">\(\sigma = 500\)</span> a.u.
+/ fluorophore. We evaluated the posterior distribution using Markov
+chain Monte Carlo (MCMC) as is implemented in the Stan probabilistic
+programming language <sup id="fnref:11"><a class="footnote-ref" href="#fn:11">11</a></sup>. The <code>.stan</code> file associated with
+this model along with the Python code used to execute it can be accessed
+on the [paper website](https://www.rpgroup.caltech.edu/mwc_growth) and
+   [GitHub repository](https://github.com/rpgroup-pboc/mwc_growth).
+@Fig:cal_factor_posts  shows the posterior probability
+distributions of the calibration factor estimated for several biological
+replicates of the glucose growth condition at 37\)</span>^\circ\)</span> C. For each
+posterior distribution, the mean and standard deviation was used as the
+calibration factor and uncertainty for the corresponding data set.</p>
+<p><img alt="**Representative posterior distributions for the calibration factor.** (A)
+Empirical cumulative distribution functions and (B) histograms of the posterior
+distribution for the calibration factor \(\alpha\) for several biological
+replicates. Different colors indicate different biological replicates of
+experiments performed in glucose supplemented medium at 37\(^\circ\) C.
+The Python code (klzzwxh:0136)
+used to generate this figure can be found on the thesis GitHub
+repository. " src="ch8_figS5" />{#fig:cal_factor_posts short-caption="Representative posterior distributions
+for inference of the fluorescence calibration factor."}</p>
+<h3 id="correcting-for-systematic-experimental-error">Correcting for Systematic Experimental Error</h3>
+<p>While determination of the calibration factor relies on time-resolved
+measurement of fluorescence partitioning, we computed the repressor copy
+number and fold-change in gene expression from still snapshots of each
+ATC induction condition and two control samples, as is illustrated in
+@Fig:growth_si_microscopy_workflow.
+Given these snapshots, individual cells were segmented again using the SuperSegger software in MATLAB
+R2017b. The result of this analysis is an array of single-cell
+measurements of the YFP and mCherry fluorescence intensities. With these
+values and a calibration factor estimated by @Eq:full_likelihood 
+and @Eq:growth_alpha_prior, we can compute the estimated number of
+repressors per cell in every condition.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;However, as outlined previously
+and in @Fig:growth_si_microscopy_workflow, the sample preparation steps for
+these experiments involve several steps which require careful manual
+labor. This results in an approximately 30 to 60 minute delay from when
+production of the LacI-mCherry construct is halted by removal of ATC to
+actual imaging on the microscope. During this time, the diluted cultures
+are asynchronously growing, meaning that the cells of the culture are at
+different steps in the cell cycle. Thus, at any point in time, a subset
+of cells will be on the precipice of undergoing division, partitioning
+the cytosolic milieu between the two progeny. As LacI-mCherry is no
+longer being produced, the cells that divided during the dwell time from
+cell harvesting to imaging will have reduced the number of repressors by
+a factor of 2 on average. This principle of continued cell division is
+shown @Fig:correction_origin.</p>
+<p><img alt="**Continued division results in a systematic error in repressor counts.**
+During the sample preparation steps, the asynchronous culture continues to
+divide though the length of the sample preparation step is less than a cell
+doubling time. Because production of LacI-mCherry is halted, cells that complete
+a division cycle during this time will partition their repressors between the
+progeny. The total number of repressors in parent cells just before division is,
+on average, twice that of the newborn cells." src="ch8_figS6" />{#fig:correction_origin
+short-caption="Origin of a systematic error in repressor counting due to
+continued growth."}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How does this partitioning affect our
+calculation and interpretation of the fold-change in gene expression? Like
+the LacI-mCherry fusion, the YFP reporter proteins are also partitioned
+between the progeny after a division event such that, on average, the total
+YFP signal of the newborn cells is one-half that of the parent cell. As the
+maturation time of the mCherry and YFP variants used in this work are
+relatively long in <em>E. coli</em> <sup id="fnref:12"><a class="footnote-ref" href="#fn:12">12</a></sup><sup id="fnref:13"><a class="footnote-ref" href="#fn:13">13</a></sup>, we can make the
+assumption that any newly-expressed YFP molecules after cells have divided are not
+yet visible in our experiments. Thus, the fold-change in gene expression of
+the average parent cell can be calculated given knowledge of the average
+expression of the progeny.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The fold-change in gene expression is a relative measurement to a
+control which is constitutively expressing YFP. As the latter control
+sample is also asynchronously dividing, the measured YFP intensity of
+the newborn constitutively expressing cells is on average 1/2 that of
+the parent cell. Therefore, the fold-change in gene expression can be
+calculated as 
+$$
+\langle \text{ fold-change}<em>{parent}\rangle =
+\frac{2 \times \langle I^\text{(YFP)}</em>\text{ newborn}(R &gt; 0) \rangle}{2
+\times \langle I^\text{(YFP)}<em>\text{ newborn}(R = 0)\rangle} =
+\frac{\langle I^\text{(YFP)}</em>\text{ newborn}(R &gt; 0) \rangle}{\langle
+I^\text{(YFP)}_\text{ newborn}(R = 0)\rangle}.
+$${#eq:fc_correction}
+Thus, when calculating the fold-change in gene expression one does not
+need to correct for any cell division that occurs between sample
+harvesting and imaging as it is a relative measurement. However, the
+determination of the repressor copy number is a <em>direct</em> measurement and
+requires a consideration of unknown division events.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To address this source of systematic
+experimental error, we examined the cell length distributions of all
+segmented cells from the snapshots as well as the distribution of newborn
+cell lengths from the time-lapse measurements. @Fig:length_distributions
+shows that a significant portion of the cells from the snapshots (colored distributions) overlap with the
+distribution of newborn cell lengths (grey distributions). For each
+condition, we partitioned the cells from the snapshots into three bins
+based on their lengths -- "small" cells had a cell length less than
+2.5 <span class="arithmatex">\(\mu\)</span>m, "medium" cells had lengths between 2.5 <span class="arithmatex">\(\mu\)</span>m and 3.5
+<span class="arithmatex">\(\mu\)</span>m, and "large" cells being longer than 3.5 <span class="arithmatex">\(\mu\)</span>m. These
+thresholds were chosen manually by examining the newborn cell-size
+distributions and are shown as red vertical lines in @Fig:length_distributions. 
+Under this partitioning, we consider all "small" cells to have divided between cessation of
+LacI-mCherry production and imaging, "medium"-length cells to have a
+mixture of long newborn cells (from the tail of the newborn cell length
+distribution) and cells that have not divided, and cells in the \"long\"
+group to be composed entirely of cells which did not undergo a division
+over the course of sample preparation.</p>
+<p><img alt="**Cell length distributions of fluorescence snapshots and newborn cells.** Top
+row shows the distribution of cell lengths (pole-to-pole, colored distributions)
+off cells imaged for calculation of the repressor copy number and fold-change in
+gene expression. The distribution of newborn cell lengths for that given
+condition is shown in grey. The vertical red lines correspond to the cell length
+threshold of 2.5\(\mu\)m and 3.5\(\mu\)m, from left to right, respectively. Cels to
+the left of the first vertical line were identified as &quot;small,&quot; cells in between
+the two vertical lines to be &quot;medium&quot; sized, and &quot;long&quot; cells to the right of
+the second vertical line. Cells below the 2.4\(\mu\)m threshold were treated as
+cells who divided after production of lacI-mCherry had been halted. Bottom row
+shows the same data as the top row, but as the empirical cumulative
+distribution. The Python code (klzzwxh:0173)
+used to generate this figure can be found on the thesis GitHub
+repository." src="ch8_figS7" />{#fig:length_distributions short-caption="Cell length
+distributions of fluorescence snapshots and newborn cells."}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Given this coarse delineation of cell age by
+length, we examined how correction factors could be applied to correct for
+the undesired systematic error due to dilution of repressors. We took the
+data collected in this work and compared the results to the fold-change in
+gene expression reported in the literature for the same regulatory
+architecture. Without correcting for undesired cell division, the observed
+fold-change in gene expression falls below the prediction and does not
+overlap with data from the literature (@Fig:correction_factor(A), light
+purple). Using the uncorrected measurements, we estimated the DNA binding
+energy to be <span class="arithmatex">\(\Delta\varepsilon_R \approx -15\, k_BT\)</span> which does not agree
+with the value for the O2 operator reported in @garcia2011 or with the
+inferred DNA binding energies from the other data sources (@Fig:correction_factor (B)).</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;These results emphasize the need to correct for undesired dilution of
+repressors through cell division during the sample preparation period,
+and we now consider several different manners of applying this
+correction. We first consider the extreme case where all cells of the
+culture underwent an undesired division after LacI-mCherry production
+was halted. This means that the average repressor copy number measured
+from all cells is off by a factor of 2. The result of applying a factor
+of 2 correction to all measurements can be seen in @Fig:correction_factor
+as dark red points. Upon applying
+this correction, we find that the observed fold-change in gene
+expression agrees with the prediction and data from other sources in the
+literature. The estimated DNA binding energy <span class="arithmatex">\(\Delta\varepsilon_R\)</span> from
+these data is also in agreement with other data sources
+(@Fig:correction_factor(B), dark red). 
+This result suggests
+that over the course of sample preparation, a non-negligible fraction of
+the diluted culture undergoes a division event before being imaged.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We now begin to relax assumptions as to what fraction of the measured
+cells underwent a division event before imaging. As described above, in
+drawing distinctions between "small," "medium," and "large" cells,
+we assume the latter represent cells which <em>did not</em> undergo a division
+between the harvesting and imaging of the samples. Thus, the repressor
+counts of these cells should require no correction. The white-faced
+points in @Fig:correction_factor(A) shows the fold-change in gene
+expression of <em>only</em> the large cell fraction, which falls within error
+of the theoretical prediction. Furthermore, the inferred DNA binding
+energy falls within error of that inferred from data of @garcia2011
+and that inferred from data assuming all
+cells underwent a division event [@Fig:correction_factor(B)], though it does not fall within
+error of the binding energy reported in @garcia2011.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The most realistic approach that can be taken
+to avoid using only the "large" bin of cells is to assume that all cells
+with a length <span class="arithmatex">\(\ell &lt; 2.5\, \mu\)</span>m have undergone a division, requiring a
+two-fold correction to their average repressor copy number. The result of
+this approach can be seen in @Fig:correction_factor as purple points. The
+inferred DNA binding energy from this correction approach falls within error
+of that inferred from only the large cells [white-faced points in
+@Fig:correction_factor(B)] as well as overlapping with the estimate treating
+all cells as having undergone a division (red).</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;There are several experimental techniques that
+could be implemented to avoid needing to apply a correction factor as
+described here. In @brewster2014, the fold-change in gene expression was
+measured by tracking the production rate of a YFP reporter before and after a
+single cell division event coupled with direct measurement of the repressor
+copy number using the same binomial partitioning method. This implementation
+required an extensive degree of manual curation of segmentation as well as
+correcting for photobleaching of the reporter, which in itself is a
+non-trivial correction <sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. The experimental approach presented
+here sacrifices a direct measure of the repressor copy number for each cell
+via the binomial partitioning method, but permits the much higher throughput
+needed to assay the variety of environmental conditions. Ultimately, the
+inferred DNA binding energy for all of the scenarios described above agree
+within <span class="arithmatex">\(1\, k_BT\)</span>, a value smaller than the natural variation in the DNA
+binding energies of the three native <em>lacO</em>, which is <span class="arithmatex">\(\approx 6\, k_BT\)</span>. For
+the purposes of this work, we erred on the side of caution and only used the
+cells deemed "large" for the measurements reported in Chapter 4 and the
+remaining sections of this chapter. </p>
+<p><img alt="**Influence of a correction factor on fold-change and the DNA binding energy.**
+(A) Fold-change in gene expression measurements from [@brewster2014;
+@garcia2011; @razo-mejia2018] along with data from this work. Data from this work
+shown are with no correction (purple), correcting for small cells only (dark
+purple), using only the large cell fraction (black faced point), and treating
+all cells as newborn cells (red). Where visible, errors correspond to the
+standard error of 5 to 10 biological replicates. (B) Estimated DNA binding
+energy from each data set. Points are the median of the posterior distribution
+over the DNA binding energy. Horizontal lines indicate the width of the
+95\%
+credible region of the posterior distribution. Grey lines in (A) and (B)
+correspond to the theoretical prediction and estimated binding energy from
+@garcia2011, respectively. The Python code (klzzwxh:0215)
+used to generate this figure can be found on the thesis GitHub
+repository. " src="ch8_figS8" />{#fig:correction_factor
+short-caption="Influence of a correction factor on fold-change and the DNA
+binding energy."}</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Hernan G. Garcia, Heun Jin Lee, James Q. Boedicker, and Rob Phillips. Comparison and calibration of different reporters for quantitative analysis of gene expression. <em>Biophysical Journal</em>, 101(3):535–544, August 2011. <a href="https://doi.org/10.1016/j.bpj.2011.06.026">doi:10.1016/j.bpj.2011.06.026</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Maja Bialecka-Fornal, Heun Jin Lee, Hannah A. DeBerg, Chris S. Gandhi, and Rob Phillips. Single-cell census of mechanosensitive channels in living bacteria. <em>PLOS ONE</em>, 7(3):e33077, March 2012. <a href="https://doi.org/10.1371/journal.pone.0033077">doi:10.1371/journal.pone.0033077</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>Chitra R. Nayak and Andrew D. Rutenberg. Quantification of fluorophore copy number from intrinsic fluctuations during fluorescence photobleaching. <em>Biophysical Journal</em>, 101(9):2284–2293, November 2011. <a href="https://doi.org/10.1016/j.bpj.2011.09.032">doi:10.1016/j.bpj.2011.09.032</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Neil H. Kim, Gloria Lee, Nicholas A. Sherer, K. Michael Martini, Nigel Goldenfeld, and Thomas E. Kuhlman. Real-time transposable element activity in individual live cells. <em>Proceedings of the National Academy of Sciences</em>, 113(26):7278–7283, June 2016. <a href="https://doi.org/10.1073/pnas.1601833113">doi:10.1073/pnas.1601833113</a>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>Nitzan Rosenfeld, Jonathan W. Young, Uri Alon, Peter S. Swain, and Michael B. Elowitz. Gene regulation at the single-cell level. <em>Science</em>, 307(5717):1962–1965, March 2005. <a href="https://doi.org/10.1126/science.1106914">doi:10.1126/science.1106914</a>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p>Nitzan Rosenfeld, Theodore J. Perkins, Uri Alon, Michael B. Elowitz, and Peter S. Swain. A fluctuation method to quantify \emph in vivo fluorescence data. <em>Biophysical Journal</em>, 91(2):759–766, July 2006. <a href="https://doi.org/10.1529/biophysj.105.073098">doi:10.1529/biophysj.105.073098</a>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p>Robert C. Brewster, Franz M. Weinert, Hernan G. Garcia, Dan Song, Mattias Rydenfelt, and Rob Phillips. The Transcription factor titration effect dictates the level of gene expression. <em>Cell</em>, 156(6):1312–1323, March 2014. <a href="https://doi.org/10.1016/j.cell.2014.02.022">doi:10.1016/j.cell.2014.02.022</a>.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p>Stella Stylianidou, Connor Brennan, Silas B. Nissen, Nathan J. Kuwada, and Paul A. Wiggins. SuperSegger: robust image segmentation, analysis and lineage tracking of bacterial cells. <em>Molecular Microbiology</em>, 102(4):690–700, 2016. <a href="https://doi.org/10.1111/mmi.13486">doi:10.1111/mmi.13486</a>.&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p>H. G. Garcia and R. Phillips. Quantitative dissection of the simple repression input-output function. <em>Proceedings of the National Academy of Sciences</em>, 108(29):12173–12178, July 2011. <a href="https://doi.org/10.1073/pnas.1015616108">doi:10.1073/pnas.1015616108</a>.&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:10">
+<p>Rob Phillips, Nathan M. Belliveau, Griffin Chure, Hernan G. Garcia, Manuel Razo-Mejia, and Clarissa Scholes. Figure 1 theory meets figure 2 experiments in the study of gene expression. <em>Annual Review of Biophysics</em>, 48(1):121–163, May 2019. <a href="https://doi.org/10.1146/annurev-biophys-052118-115525">doi:10.1146/annurev-biophys-052118-115525</a>.&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:11">
+<p>Bob Carpenter, Andrew Gelman, Matthew D. Hoffman, Daniel Lee, Ben Goodrich, Michael Betancourt, Marcus Brubaker, Jiqiang Guo, Peter Li, and Allen Riddell. Stan: A probabilistic programming language. <em>Journal of Statistical Software</em>, 76(1):1–32, January 2017. <a href="https://doi.org/10.18637/jss.v076.i01">doi:10.18637/jss.v076.i01</a>.&#160;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:12">
+<p>Enrique Balleza, J. Mark Kim, and Philippe Cluzel. Systematic characterization of maturation time of fluorescent proteins in living cells. <em>Nature Methods</em>, 15(1):47–51, January 2018. <a href="https://doi.org/10.1038/nmeth.4509">doi:10.1038/nmeth.4509</a>.&#160;<a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn:13">
+<p>Takeharu Nagai, Keiji Ibata, Eun Sun Park, Mie Kubota, Katsuhiko Mikoshiba, and Atsushi Miyawaki. A variant of yellow fluorescent protein with fast and efficient maturation for cell-biological applications. <em>Nature Biotechnology</em>, 20(1):87–90, January 2002. <a href="https://doi.org/10.1038/nbt0102-87">doi:10.1038/nbt0102-87</a>.&#160;<a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes"], "search": "../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5cf534bf.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

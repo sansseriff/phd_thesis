@@ -1,0 +1,2581 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../section_05_discussion/">
+      
+      
+        <link rel="next" href="../../chapter_06/section_00_title/">
+      
+      <link rel="icon" href="../../site_images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
+    
+    
+      
+        <title>Section 06 methods - Computational Methods for SNSPDs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f56500e0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#materials-methods" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Computational Methods for SNSPDs" class="md-header__button md-logo" aria-label="Computational Methods for SNSPDs" data-md-component="logo">
+      
+  <img src="../../site_images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Computational Methods for SNSPDs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Section 06 methods
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Computational Methods for SNSPDs" class="md-nav__button md-logo" aria-label="Computational Methods for SNSPDs" data-md-component="logo">
+      
+  <img src="../../site_images/logo.svg" alt="logo">
+
+    </a>
+    Computational Methods for SNSPDs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Computational Methods for SNSPDs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref_heading/" class="md-nav__link">
+        References
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Chapter 01
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 01" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 01
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_00_title/" class="md-nav__link">
+        The Phenomenon of Adaptation Across Scales
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_01_introduction/" class="md-nav__link">
+        Section 01 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_02_molecular_adaptation/" class="md-nav__link">
+        Section 02 molecular adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_03_evolutionary_adaptation/" class="md-nav__link">
+        Section 03 evolutionary adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_04_physiological_adaptation/" class="md-nav__link">
+        Section 04 physiological adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_05_survival/" class="md-nav__link">
+        Section 05 survival
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_06_conclusion/" class="md-nav__link">
+        Section 06 conclusion
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Chapter 02
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 02" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 02
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_00_title/" class="md-nav__link">
+        Through the Intramolecular Grapevine: Signal Processing Via Allosteric Transcription Factors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_04_model/" class="md-nav__link">
+        Section 04 model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_05_results/" class="md-nav__link">
+        Section 05 results
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_06_discussion/" class="md-nav__link">
+        Section 06 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_07_methods/" class="md-nav__link">
+        Section 07 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Chapter 03
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 03" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 03
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_00_title/" class="md-nav__link">
+        Unknown Knowns, Known Unknowns, and Unforeseen Consequences: Using Free Energy Shifts To Predict Mutant Phenotypes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_04_model/" class="md-nav__link">
+        Section 04 model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_05_DNA_mutants/" class="md-nav__link">
+        section 05 DNA mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_06_IND_mutants/" class="md-nav__link">
+        section 06 IND mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_07_DBL_mutants/" class="md-nav__link">
+        section 07 DBL mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_08_discussion/" class="md-nav__link">
+        Section 08 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_09_methods/" class="md-nav__link">
+        Section 09 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Chapter 04
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 04" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 04
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_00_title/" class="md-nav__link">
+        On The Physiological Adaptability of a Simple Genetic Circuit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_04_model/" class="md-nav__link">
+        Section 04 model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_05_experimental_design/" class="md-nav__link">
+        Section 05 experimental design
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_06_scaling/" class="md-nav__link">
+        Section 06 scaling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_07_carbon_quality/" class="md-nav__link">
+        Section 07 carbon quality
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_08_temperature/" class="md-nav__link">
+        Section 08 temperature
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_09_discussion/" class="md-nav__link">
+        Section 09 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_10_methods/" class="md-nav__link">
+        Section 10 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Chapter 05
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 05" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 05
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_00_title/" class="md-nav__link">
+        'Water, Water Everywhere, Yet Not A Drop to Drink': How Bacteria Adapt To Changes in Osmolarity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_04_results/" class="md-nav__link">
+        Section 04 results
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_05_discussion/" class="md-nav__link">
+        Section 05 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Section 06 methods
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Section 06 methods
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#materials-methods" class="md-nav__link">
+    Materials &amp; Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Materials &amp; Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bacterial-strains-and-growth-conditions" class="md-nav__link">
+    Bacterial Strains and Growth Conditions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flow-cell" class="md-nav__link">
+    Flow Cell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imaging-conditions" class="md-nav__link">
+    Imaging Conditions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-processing" class="md-nav__link">
+    Image Processing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculation-of-effective-channel-copy-number" class="md-nav__link">
+    Calculation of Effective Channel Copy Number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logistic-regression" class="md-nav__link">
+    Logistic Regression
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculation-of-survival-probability-error" class="md-nav__link">
+    Calculation of Survival Probability Error
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-and-software-availability" class="md-nav__link">
+    Data and Software Availability
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Chapter 06
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 06" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 06
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_00_title/" class="md-nav__link">
+        Supplemental Information For Chapter 2: Signal Processing Via Allosteric Transcription Factors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_02_epAI/" class="md-nav__link">
+        section 02 epAI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_03_fugacity/" class="md-nav__link">
+        Section 03 fugacity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_04_flow/" class="md-nav__link">
+        Section 04 flow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_05_microscopy/" class="md-nav__link">
+        Section 05 microscopy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_06_sensitivity/" class="md-nav__link">
+        Section 06 sensitivity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_07_global_fit/" class="md-nav__link">
+        Section 07 global fit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_08_Oid/" class="md-nav__link">
+        section 08 Oid
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_09_comparison/" class="md-nav__link">
+        Section 09 comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_10_properties/" class="md-nav__link">
+        Section 10 properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_11_applications/" class="md-nav__link">
+        Section 11 applications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_12_tables/" class="md-nav__link">
+        Section 12 tables
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Chapter 07
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 07" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 07
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_00_title/" class="md-nav__link">
+        Supplemental Information for Chapter 3: Predictive Shifts in Free Energy Couple Mutations to Their Phenotypic Consequences
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_02_nonmonotonicity/" class="md-nav__link">
+        Section 02 nonmonotonicity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_03_DNA_epRA_inference/" class="md-nav__link">
+        section 03 DNA epRA inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_04_delta_F_inference/" class="md-nav__link">
+        section 04 delta F inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_05_DNA_mutants/" class="md-nav__link">
+        section 05 DNA mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_06_IND_inference/" class="md-nav__link">
+        section 06 IND inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_07_IND_mutants/" class="md-nav__link">
+        section 07 IND mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_08_param_comparison/" class="md-nav__link">
+        Section 08 param comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_09_global_fit/" class="md-nav__link">
+        Section 09 global fit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_10_generality/" class="md-nav__link">
+        Section 10 generality
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_11_strains/" class="md-nav__link">
+        Section 11 strains
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Chapter 08
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 08" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 08
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_00_title/" class="md-nav__link">
+        Supplemental Information for Chapter 4: The Physiological Adaptability of a Simple Genetic Circuit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_02_growth_rates/" class="md-nav__link">
+        Section 02 growth rates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_03_cell_volume/" class="md-nav__link">
+        Section 03 cell volume
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_04_counting_repressors/" class="md-nav__link">
+        Section 04 counting repressors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_05_carbon_inference/" class="md-nav__link">
+        Section 05 carbon inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_06_entropy/" class="md-nav__link">
+        Section 06 entropy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_07_strains_recipes/" class="md-nav__link">
+        Section 07 strains recipes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_11">
+          Chapter 09
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 09" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 09
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_00_title/" class="md-nav__link">
+        Supplemental Information For Chapter 5: How Bacteria Adapt To Changes in Osmolarity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_02_electrophysiology/" class="md-nav__link">
+        Section 02 electrophysiology
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_03_cal_factor_derivation/" class="md-nav__link">
+        Section 03 cal factor derivation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_04_survival_classification/" class="md-nav__link">
+        Section 04 survival classification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_05_logistic_regression/" class="md-nav__link">
+        Section 05 logistic regression
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_06_shock_classification/" class="md-nav__link">
+        Section 06 shock classification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_07_vandenberg_comparison/" class="md-nav__link">
+        Section 07 vandenberg comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_08_strains/" class="md-nav__link">
+        Section 08 strains
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_12">
+          Frontmatter
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Frontmatter" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Frontmatter
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/abstract/" class="md-nav__link">
+        Abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements/" class="md-nav__link">
+        Acknowledgements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements_prompt/" class="md-nav__link">
+        Acknowledgements prompt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements_prompt_2/" class="md-nav__link">
+        Acknowledgements prompt 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements_results_general/" class="md-nav__link">
+        Acknowledgements results general
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/published/" class="md-nav__link">
+        Published
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#materials-methods" class="md-nav__link">
+    Materials &amp; Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Materials &amp; Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bacterial-strains-and-growth-conditions" class="md-nav__link">
+    Bacterial Strains and Growth Conditions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flow-cell" class="md-nav__link">
+    Flow Cell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imaging-conditions" class="md-nav__link">
+    Imaging Conditions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-processing" class="md-nav__link">
+    Image Processing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculation-of-effective-channel-copy-number" class="md-nav__link">
+    Calculation of Effective Channel Copy Number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logistic-regression" class="md-nav__link">
+    Logistic Regression
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculation-of-survival-probability-error" class="md-nav__link">
+    Calculation of Survival Probability Error
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-and-software-availability" class="md-nav__link">
+    Data and Software Availability
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Section 06 methods</h1>
+
+<h2 id="materials-methods">Materials &amp; Methods</h2>
+<h3 id="bacterial-strains-and-growth-conditions">Bacterial Strains and Growth Conditions</h3>
+<p>The bacterial strains are described in Table 9.1. The parent strain for the
+mutants used in this study was MJF641 <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, a strain which had all seven
+mechanosensitive channels deleted. The MscL-sfGFP coding region from MLG910
+<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> was integrated into MJF641 by P1 transduction, creating the strain
+D6LG-Tn10. Selection pressure for MscL integration was created by
+incorporating an osmotic shock into the transduction protocol, which favored
+the survival of MscL-expressing stains relative to MJF641 by ~100-fold.
+Screening for integration candidates was based on fluorescence expression of
+plated colonies. Successful integration was verified by sequencing. Attempts
+to transduce RBS-modified MscL-sfGFP coding regions became increasingly
+inefficient as the targeted expression level of MscL was reduced. This was
+due to the decreasing fluorescence levels and survival rates of the
+integration candidates. Consequently, Shine-Dalgarno sequence modifications were made by
+inserting DNA oligos with lambda Red-mediated homologous recombination, i.e.,
+recombineering <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. The oligos had a designed mutation (Fig. @fig:mscl_boxplot)
+flanked by ~25 base pairs that matched the targeted MscL region (Table S2). A
+two-step recombineering process of selection followed by counter selection
+using a <em>tetA-sacB</em> gene fusion cassette <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup> was chosen because of its
+capabilities to integrate with efficiencies comparable to P1 transduction and
+not leave antibiotic resistance markers or scar sequences in the final
+strain. </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To prepare the strain D6LG-Tn10 for this scheme, the Tn10 transposon
+containing the <em>tetA</em> gene needed to be removed to avoid interference with the
+<em>tetA-sacB</em> cassette. Tn10 was removed from the middle of the <em>ycjM</em> gene with
+the primer Tn10delR (Table S2) by recombineering, creating the strain D6LG
+(SD0). Counter selection against the <em>tetA</em> gene was promoted by using agar
+media with fusaric acid <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup><sup id="fnref2:4"><a class="footnote-ref" href="#fn:4">4</a></sup>. The <em>tetA-sacB</em> cassette was
+PCR amplified out of the strain XTL298 using primers MscLSPSac and MscLSPSacR
+(Table S2). The cassette was integrated in place of the spacer region in front
+of the MscL start codon of D6LG (SD0) by recombineering, creating the
+intermediate strain D6LTetSac. Positive selection for cassette integration
+was provided by agar media with tetracycline. Finally, the RBS modifying
+oligos were integrated into place by replacing the <em>tetA-sacB</em> cassette by
+recombineering. Counter selection against both <em>tetA</em> and <em>sacB</em> was ensured by
+using agar media with fusaric acid and sucrose <sup id="fnref3:4"><a class="footnote-ref" href="#fn:4">4</a></sup>, creating the Shine-Dalgarno
+mutant strains used in this work.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Strain cultures were grown in 5 mL of LB-Lennox media with antibiotic
+(apramycin) overnight at 37<span class="arithmatex">\(^\circ\)</span>C. The next day, 50 <span class="arithmatex">\(\mu\)</span>L of overnight culture was
+inoculated into 5 mL of LB-Lenox with antibiotic and the culture was grown to
+OD<span class="arithmatex">\(_\text{600nm} \sim .25\)</span>. Subsequently, 500 <span class="arithmatex">\(\mu\)</span>L of that culture was inoculated into 5 mL of
+LB-Lennox supplemented with 500mM of NaCl and the culture was regrown to OD<span class="arithmatex">\(_\text{600nm}\)</span>
+~0.25. A 1 mL aliquot was taken and used to load the flow cell.</p>
+<h3 id="flow-cell">Flow Cell</h3>
+<p>All experiments were conducted in a home-made
+flow cell as is shown in @Fig:flow_cell(A). This flow cell has two inlets which allow
+media of different osmolarity to be exchanged over the course of the
+experiment. The imaging region is approximately 10 mm wide and 100 <span class="arithmatex">\(\mu\)</span>m deep. All imaging took place within 1 – 2 cm of the outlet to avoid imaging
+cells within a non-uniform gradient of osmolarity. The interior of the flow
+cell was functionalized with a 1:400 dilution of polyethylenimine prior to
+addition of cells with the excess washed away with water. A dilute cell
+suspension in LB Lennox with 500 mM NaCl was loaded into one inlet while the
+other was connected to a vial of LB medium with no NaCl. This hypotonic
+medium was clamped during the loading of the cells.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Once the cells had adhered to the polyethylenimine
+coated surface, the excess cells were washed away with the 500 mM NaCl growth
+medium followed by a small (\~20 <span class="arithmatex">\(\mu\)</span>L) air bubble. This air bubble forced
+the cells to lay flat against the imaging surface, improving the time-lapse
+imaging. Over the observation period, cells not exposed to an osmotic shock
+were able to grow for 4 – 6 divisions, showing that the flow cell does not
+directly impede cell growth.</p>
+<h3 id="imaging-conditions">Imaging Conditions</h3>
+<p>All imaging was performed in a flow cell held at
+30<span class="arithmatex">\(^\circ\)</span>C on a Nikon Ti-Eclipse microscope outfitted with a Perfect Focus system
+enclosed in a Haison environmental chamber (approximately 1<span class="arithmatex">\(^\circ\)</span>C regulation
+efficiency). The microscope was equipped with a 488 nm laser excitation
+source (CrystaLaser) and a 520/35 laser optimized filter set (Semrock). The
+images were collected on an Andor iXon EM+ 897 EMCCD camera and all microscope
+and acquisition operations were controlled via the open source <span class="arithmatex">\(\mu\)</span>Manager
+microscope control software <sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup>. Once cells were securely mounted onto the
+surface of the glass coverslip, between 15 and 20 positions containing 5 to
+10 cells were marked and the coordinates recorded. At each position, a phase
+contrast and GFP fluorescence image was acquired for segmentation and
+subsequent measurement of channel copy number. To perform the osmotic shock,
+LB media containing no NaCl was pulled into the flow cell through a syringe
+pump. To monitor the media exchange, both the high salt and no salt LB media
+were supplemented with a low-affinity version of the calcium-sensitive dye
+Rhod-2 (250 nM; TEF Labs) which fluoresces when bound to Ca^2+^. The no salt
+medium was also supplemented with 1<span class="arithmatex">\(\mu\)</span>M CaCl<span class="arithmatex">\(_2\)</span> to make the media mildly
+fluorescent and the exchange rate was calculated by measuring the
+fluorescence increase across an illuminated section of one of the positions.
+These images were collected in real time for the duration of the shock. The
+difference in measured fluorescence between the pre-shock images and those at
+the end of the shock set the scale of a 500 mM NaCl downshock. The rate was
+calculated by fitting a line to the middle region of this trace. Further
+details regarding this procedure can be found in @bialecka-fornal2015.</p>
+<h3 id="image-processing">Image Processing</h3>
+<p>Images were processed using a combination of
+automated and manual methods. First, expression of MscL was measured via
+segmenting individual cells or small clusters of cells in phase contrast and
+computing the mean pixel value of the fluorescence image for each segmented
+object. The fluorescence images were passed through several filtering
+operations which reduced high-frequency noise as well as corrected for uneven
+illumination of the excitation wavelength.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Survival or death classification was performed
+manually using the CellProfiler plugin for ImageJ software (NIH). A survivor
+was defined as a cell which was able to undergo at least two division events
+after the osmotic downshock. Cell death was recognized by stark changes in
+cell morphology including loss of phase contrast through ejection of
+cytoplasmic material, structural decomposition of the cell wall and membrane,
+and the inability to divide. To confirm that these morphological cues
+corresponded with cell death, we probed cell viability on a subset of our
+strains after osmotic shock through staining with propidium iodide, a DNA
+intercalating dye commonly used to identifying dead cells (LIVE/DEAD BacLight
+Bacterial Cell Viability Assay, Thermo Fisher). We found that our
+classification based on morphology alone agreed with our classification based off of staining
+to within 1%. More information regarding these experiments can be found in 
+Chapter 9. Cells which detached from the surface during the post-shock
+growth phase or those which became indistinguishable from other cells due to
+clustering were not counted as survival or death and were removed from the
+dataset completely. A region of the cell was manually marked with 1.0
+(survival) or 0.0 (death) by clicking on the image. The <code>xy</code> coordinates of
+the click as well as the assigned value were saved as an <code>.xml</code> file for that
+position.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The connection between the segmented cells and
+their corresponding manual markers was automated. As the manual markings were
+made on the first phase contrast image after the osmotic shock, small shifts
+in the positions of the cell made one-to-one mapping with the segmentation
+mask non-trivial. The linkages between segmented cell and manual marker were
+made by computing all pairwise distances between the manual marker and the
+segmented cell centroid, taking the shortest distance as the true pairing.
+The linkages were then inspected manually and incorrect mappings were
+corrected as necessary.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All relevant statistics about the segmented
+objects as well as the sample identity, date of acquisition, osmotic shock
+rate, and camera exposure time were saved as <code>.csv</code> files for each individual
+experiment. A more in-depth description of the segmentation procedure as well
+as the relevant code can be accessed as a Jupyter Notebook at
+(<code>http://rpgroup.caltech.edu/mscl_survival</code>).</p>
+<h3 id="calculation-of-effective-channel-copy-number">Calculation of Effective Channel Copy Number</h3>
+<p>To compute the MscL channel copy number, we relied
+on measuring the fluorescence level of a bacterial strain in which the mean
+MscL channel copy number was known via fluorescence microscopy
+<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. <em>E. coli</em> strain MLG910, which expresses the MscL-sfGFP fusion
+protein from the wild-type SD sequence, was grown under identical conditions
+to those described in <sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup> in LB Miller medium (BD Medical
+Sciences) to an OD~600nm~ of ~0.3. The cells were then diluted ten-fold,
+immobilized on a rigid 2% agarose substrate,
+placed onto a glass bottom petri dish, and imaged in the same conditions
+as described previously.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Images were taken of six biological replicates
+of MLG910 and were processed identically to those in the osmotic shock
+experiments. A calibration factor between the average cell fluorescence level
+and mean MscL copy number was then computed. We assumed that all measured
+fluorescence (after filtering and background subtraction) was derived from
+the MscL-sfGFP fusion, $$ \langle I_\text{tot}\rangle = \alpha \langle N
+\rangle, $${#eq:ian} in which <span class="arithmatex">\(\alpha\)</span> is the calibration factor and <span class="arithmatex">\(\langle
+N \rangle\)</span> is the mean cellular MscL-sfGFP copy number as reported in
+@bialecka-fornal2012. To correct for errors in segmentation, the intensity
+was computed as an areal density <span class="arithmatex">\(\langle I_A \rangle\)</span> and was multiplied by
+the average cell area <span class="arithmatex">\(\langle A \rangle\)</span> of the population. The calibration
+factor was therefore computed as $$ \alpha = {\langle I_A \rangle \langle A
+\rangle \over \langle N \rangle}. $${#eq:calibration_factor}
+We used Bayesian inferential methods to compute this
+calibration factor taking measurement error and replicate-to-replicate
+variation into account. The resulting average cell area and calibration
+factor was used to convert the measured cell intensities from the osmotic
+shock experiments to cell copy number. The details of this inference are
+described in depth in the supplemental Chapter 9.</p>
+<h3 id="logistic-regression">Logistic Regression</h3>
+<p>We used Bayesian inferential methods to find the
+most probable values of the coefficients <span class="arithmatex">\(\beta_0\)</span> and <span class="arithmatex">\(\beta_1\)</span> and the
+appropriate credible regions, the procedure of which is described in detail in
+the supplemental Chapter 9. Briefly, we used Markov chain Monte Carlo (MCMC) to sample from the log
+posterior distribution and took the most probable value as the mean of the
+samples for each parameter. The MCMC was performed using the Stan
+probabilistic programming language <sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup> and all models can be
+found on the <a href="http://github.com/rpgroup-pboc/mscl_survival">GitHub repository</a>.</p>
+<h3 id="calculation-of-survival-probability-error">Calculation of Survival Probability Error</h3>
+<p>The vertical error bars for the points shown in @Fig:survival represent
+our uncertainty in the survival probability given our measurement of <span class="arithmatex">\(n\)</span>
+survivors out of a total <span class="arithmatex">\(N\)</span> single-cell measurements. The probability
+distribution of the survival probability <span class="arithmatex">\(p_s\)</span> given these measurements can
+be written using Bayes' theorem as
+$$
+g(p_s\,\vert\, n, N) = {f(n\,\vert\,p_s, N)g(p_s) \over f(n\,\vert\, N)},
+$${#eq:probability_bayes}</p>
+<p>where <span class="arithmatex">\(g\)</span> and <span class="arithmatex">\(f\)</span> represent probability density functions over parameters and
+data, respectively. The likelihood <span class="arithmatex">\(f(n\,\vert p_s, N)\)</span> represents the
+probability of measuring <span class="arithmatex">\(n\)</span> survival events, given a total of <span class="arithmatex">\(N\)</span>
+measurements each with a probability of survival <span class="arithmatex">\(p_s\)</span>. This matches the
+story for the Binomial distribution and can be written as
+$$
+f(n\,\vert\,p_s, N) = {N! \over n!(N - n)!}p_s^n(1 - p_s)^{N - n}.
+$${#eq:binomial}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To maintain maximal ignorance, we can assume that any value for <span class="arithmatex">\(p_s\)</span> is
+valid, such that is in the range [0, 1]. This prior knowledge, represented by
+<span class="arithmatex">\(g(p_s)\)</span>, can be written as
+$$
+g(p_s) = \begin{cases}1 &amp; 0\leq p_s\leq 1 \
+0 &amp; \text{otherwise} \end{cases}.
+$${#eq:uniform_prob}
+We can also assume maximal ignorance for the total number of survival events
+we could measure given <span class="arithmatex">\(N\)</span> observations, <span class="arithmatex">\(f(n\, \vert\, N)\)</span>. Assuming all
+observations are equally likely, this can be written as
+$$
+f(n\,\vert\, N) = {1 \over N + 1}
+$${#eq:evidence}</p>
+<p>where the addition of one comes from the possibility of observing zero
+survival events. Combining @Eq:binomial, @Eq:uniform_prob, and @Eq:evidence, the
+posterior distribution <span class="arithmatex">\(g(p_s\,\vert\, n, N)\)</span> is
+$$
+g(p_s\,\vert\, n, N) = {(N+1)! \over n!(N - n)!}p_s^{n}(1 - p_s)^{N - n}.
+$${#eq:probability_posterior}</p>
+<p>The most probable value of <span class="arithmatex">\(p_s\)</span>, where the posterior probability
+distribution given by @Eq:probability_posterior is maximized, can be
+found by computing the point at which derivative of the log posterior with
+respect to <span class="arithmatex">\(p_s\)</span> goes to zero,
+$$
+{d\log g(p_s\,\vert\,n, N) \over d p_s} = {n \over p_s} - {N - n  \over 1 - p_s} = 0.
+$${#eq:deriv_ps}
+Solving @Eq:deriv_ps for <span class="arithmatex">\(p_s\)</span> gives the most likely value for the
+probability,
+$$
+p_s^* = {n \over N}.
+$${#eq:most_prob_prob}</p>
+<p>So long as <span class="arithmatex">\(N &gt;&gt; np_s^*\)</span>, @Eq:probability_posterior can be approximated as
+a Gaussian distribution with a mean <span class="arithmatex">\(p_s^*\)</span> and a variance <span class="arithmatex">\(\sigma_{p_s}^2\)</span>.
+By definition, the variance of a Gaussian distribution is computed as the
+negative reciprocal of the second derivative of the log posterior evaluated
+at <span class="arithmatex">\(p_s = p_s^*\)</span>,
+$$
+\sigma_{p_s}^2 = - \left({d^2 \log g(p_s\,\vert\, n, N) \over
+dp_s^2}\Bigg\vert_{p_s=p_s^*}\right)^{-1}.
+$${#eq:variance_def}</p>
+<p>Evaluating @Eq:variance_def yields
+$$
+\sigma_{p_s}^2 = {n(N-n)\over N^3}.
+$${#eq:prob_variance}</p>
+<p>Given @Eq:most_prob_prob and @Eq:prob_variance, the most-likely
+survival probability and estimate of the uncertainty can be expressed as
+$$
+p_s = p_s^* \pm \sigma_{p_s}.
+$${#eq:}</p>
+<h3 id="data-and-software-availability">Data and Software Availability</h3>
+<p>All raw image data is freely available and is stored on the CaltechDATA
+Research Data Repository. The raw Markov chain Monte Carlo
+samples are stored as <code>.csv</code> files on CaltechDATA. All processed
+experimental data, Python, and Stan code used in this work are freely
+available through the  paper <a href="http://github.com/rpgroup-pboc/mscl_survival">GitHub repository</a> accessible
+through DOI: 10.5281/zenodo.1252524. The scientific community is invited to
+fork our repository and open constructive issues.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>M. D. Edwards, S. Black, T. Rasmussen, A. Rasmussen, N. R. Stokes, T. L. Stephen, S. Miller, and I. R. Booth. Characterization of three novel mechanosensitive channel activities in \emph Escherichia coli. <em>Channels (Austin)</em>, 6:272–81, 2012. <a href="https://doi.org/10.4161/chan.20998\%002020998\%0020[pii]">doi:10.4161/chan.20998\\%002020998\\%0020[pii]</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Maja Bialecka-Fornal, Heun Jin Lee, Hannah A. DeBerg, Chris S. Gandhi, and Rob Phillips. Single-cell census of mechanosensitive channels in living bacteria. <em>PLOS ONE</em>, 7(3):e33077, March 2012. <a href="https://doi.org/10.1371/journal.pone.0033077">doi:10.1371/journal.pone.0033077</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>S. K. Sharan, L. C. Thomason, S. G. Kuznetsov, and D. L. Court. Recombineering: A homologous recombination-based method of genetic engineering. <em>Nature Protocols</em>, 4:206–23, 2009. <a href="https://doi.org/nprot.2008.227\%0020[pii]\%002010.1038/nprot.2008.227">doi:nprot.2008.227\\%0020[pii]\\%002010.1038/nprot.2008.227</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Xin-tian Li, Lynn C. Thomason, James A. Sawitzke, Nina Costantino, and Donald L. Court. Positive and negative selection using the tetA-sacB cassette: Recombineering and P1 transduction in \emph Escherichia coli. <em>Nucleic acids research</em>, 41(22):e204&ndash;e204, 2013.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>Barry R. Bochner, Hui-Chuan Huang, GARY L. Schieven, and BRUCE N. Ames. Positive selection for loss of tetracycline resistance. <em>Journal of bacteriology</em>, 143(2):926–933, 1980.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p>Arthur D Edelstein, Mark A Tsuchida, Nenad Amodaj, Henry Pinkard, Ronald D Vale, and Nico Stuurman. Advanced methods of microscope control using µManager software. <em>Journal of Biological Methods</em>, 1(2):10, November 2014. <a href="https://doi.org/10.14440/jbm.2014.36">doi:10.14440/jbm.2014.36</a>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p>Maja Bialecka-Fornal, Heun Jin Lee, and Rob Phillips. The rate of osmotic downshock determines the survival probability of bacterial mechanosensitive channel mutants. <em>Journal of Bacteriology</em>, 197(1):231–237, January 2015. <a href="https://doi.org/10.1128/JB.02175-14">doi:10.1128/JB.02175-14</a>.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p>Bob Carpenter, Andrew Gelman, Matthew D. Hoffman, Daniel Lee, Ben Goodrich, Michael Betancourt, Marcus Brubaker, Jiqiang Guo, Peter Li, and Allen Riddell. Stan: A probabilistic programming language. <em>Journal of Statistical Software</em>, 76(1):1–32, January 2017. <a href="https://doi.org/10.18637/jss.v076.i01">doi:10.18637/jss.v076.i01</a>.&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes"], "search": "../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5cf534bf.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

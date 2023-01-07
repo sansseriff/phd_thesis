@@ -1,0 +1,2541 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../section_06_discussion/">
+      
+      
+        <link rel="next" href="../../chapter_03/section_00_title/">
+      
+      <link rel="icon" href="../../site_images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
+    
+    
+      
+        <title>Section 07 methods - Computational Methods for SNSPDs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f56500e0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#materials-methods" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Computational Methods for SNSPDs" class="md-header__button md-logo" aria-label="Computational Methods for SNSPDs" data-md-component="logo">
+      
+  <img src="../../site_images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Computational Methods for SNSPDs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Section 07 methods
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Computational Methods for SNSPDs" class="md-nav__button md-logo" aria-label="Computational Methods for SNSPDs" data-md-component="logo">
+      
+  <img src="../../site_images/logo.svg" alt="logo">
+
+    </a>
+    Computational Methods for SNSPDs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Computational Methods for SNSPDs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref_heading/" class="md-nav__link">
+        References
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Chapter 01
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 01" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 01
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_00_title/" class="md-nav__link">
+        The Phenomenon of Adaptation Across Scales
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_01_introduction/" class="md-nav__link">
+        Section 01 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_02_molecular_adaptation/" class="md-nav__link">
+        Section 02 molecular adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_03_evolutionary_adaptation/" class="md-nav__link">
+        Section 03 evolutionary adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_04_physiological_adaptation/" class="md-nav__link">
+        Section 04 physiological adaptation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_05_survival/" class="md-nav__link">
+        Section 05 survival
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_06_conclusion/" class="md-nav__link">
+        Section 06 conclusion
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Chapter 02
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 02" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 02
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_00_title/" class="md-nav__link">
+        Through the Intramolecular Grapevine: Signal Processing Via Allosteric Transcription Factors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_04_model/" class="md-nav__link">
+        Section 04 model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_05_results/" class="md-nav__link">
+        Section 05 results
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_06_discussion/" class="md-nav__link">
+        Section 06 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Section 07 methods
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Section 07 methods
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#materials-methods" class="md-nav__link">
+    Materials \&amp; Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Materials \&amp; Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bacterial-strains-and-dna-constructs" class="md-nav__link">
+    Bacterial Strains and DNA Constructs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#growth-conditions-for-flow-cytometry-measurements" class="md-nav__link">
+    Growth Conditions for Flow Cytometry Measurements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flow-cytometry" class="md-nav__link">
+    Flow Cytometry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unsupervised-gating-of-flow-cytometry-data" class="md-nav__link">
+    Unsupervised Gating of Flow Cytometry Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experimental-determination-of-fold-change" class="md-nav__link">
+    Experimental Determination of Fold-Change
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bayesian-parameter-estimation" class="md-nav__link">
+    Bayesian Parameter Estimation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-curation" class="md-nav__link">
+    Data Curation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Chapter 03
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 03" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 03
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_00_title/" class="md-nav__link">
+        Unknown Knowns, Known Unknowns, and Unforeseen Consequences: Using Free Energy Shifts To Predict Mutant Phenotypes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_04_model/" class="md-nav__link">
+        Section 04 model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_05_DNA_mutants/" class="md-nav__link">
+        section 05 DNA mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_06_IND_mutants/" class="md-nav__link">
+        section 06 IND mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_07_DBL_mutants/" class="md-nav__link">
+        section 07 DBL mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_08_discussion/" class="md-nav__link">
+        Section 08 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_03/section_09_methods/" class="md-nav__link">
+        Section 09 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Chapter 04
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 04" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 04
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_00_title/" class="md-nav__link">
+        On The Physiological Adaptability of a Simple Genetic Circuit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_04_model/" class="md-nav__link">
+        Section 04 model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_05_experimental_design/" class="md-nav__link">
+        Section 05 experimental design
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_06_scaling/" class="md-nav__link">
+        Section 06 scaling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_07_carbon_quality/" class="md-nav__link">
+        Section 07 carbon quality
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_08_temperature/" class="md-nav__link">
+        Section 08 temperature
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_09_discussion/" class="md-nav__link">
+        Section 09 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_10_methods/" class="md-nav__link">
+        Section 10 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Chapter 05
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 05" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 05
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_00_title/" class="md-nav__link">
+        'Water, Water Everywhere, Yet Not A Drop to Drink': How Bacteria Adapt To Changes in Osmolarity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_02_abstract/" class="md-nav__link">
+        Section 02 abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_03_introduction/" class="md-nav__link">
+        Section 03 introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_04_results/" class="md-nav__link">
+        Section 04 results
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_05_discussion/" class="md-nav__link">
+        Section 05 discussion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_06_methods/" class="md-nav__link">
+        Section 06 methods
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Chapter 06
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 06" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 06
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_00_title/" class="md-nav__link">
+        Supplemental Information For Chapter 2: Signal Processing Via Allosteric Transcription Factors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_02_epAI/" class="md-nav__link">
+        section 02 epAI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_03_fugacity/" class="md-nav__link">
+        Section 03 fugacity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_04_flow/" class="md-nav__link">
+        Section 04 flow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_05_microscopy/" class="md-nav__link">
+        Section 05 microscopy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_06_sensitivity/" class="md-nav__link">
+        Section 06 sensitivity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_07_global_fit/" class="md-nav__link">
+        Section 07 global fit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_08_Oid/" class="md-nav__link">
+        section 08 Oid
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_09_comparison/" class="md-nav__link">
+        Section 09 comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_10_properties/" class="md-nav__link">
+        Section 10 properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_11_applications/" class="md-nav__link">
+        Section 11 applications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_12_tables/" class="md-nav__link">
+        Section 12 tables
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Chapter 07
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 07" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 07
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_00_title/" class="md-nav__link">
+        Supplemental Information for Chapter 3: Predictive Shifts in Free Energy Couple Mutations to Their Phenotypic Consequences
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_02_nonmonotonicity/" class="md-nav__link">
+        Section 02 nonmonotonicity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_03_DNA_epRA_inference/" class="md-nav__link">
+        section 03 DNA epRA inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_04_delta_F_inference/" class="md-nav__link">
+        section 04 delta F inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_05_DNA_mutants/" class="md-nav__link">
+        section 05 DNA mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_06_IND_inference/" class="md-nav__link">
+        section 06 IND inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_07_IND_mutants/" class="md-nav__link">
+        section 07 IND mutants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_08_param_comparison/" class="md-nav__link">
+        Section 08 param comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_09_global_fit/" class="md-nav__link">
+        Section 09 global fit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_10_generality/" class="md-nav__link">
+        Section 10 generality
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_07/section_11_strains/" class="md-nav__link">
+        Section 11 strains
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Chapter 08
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 08" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 08
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_00_title/" class="md-nav__link">
+        Supplemental Information for Chapter 4: The Physiological Adaptability of a Simple Genetic Circuit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_02_growth_rates/" class="md-nav__link">
+        Section 02 growth rates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_03_cell_volume/" class="md-nav__link">
+        Section 03 cell volume
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_04_counting_repressors/" class="md-nav__link">
+        Section 04 counting repressors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_05_carbon_inference/" class="md-nav__link">
+        Section 05 carbon inference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_06_entropy/" class="md-nav__link">
+        Section 06 entropy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_07_strains_recipes/" class="md-nav__link">
+        Section 07 strains recipes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_11">
+          Chapter 09
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 09" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 09
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_00_title/" class="md-nav__link">
+        Supplemental Information For Chapter 5: How Bacteria Adapt To Changes in Osmolarity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_01_header/" class="md-nav__link">
+        Section 01 header
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_02_electrophysiology/" class="md-nav__link">
+        Section 02 electrophysiology
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_03_cal_factor_derivation/" class="md-nav__link">
+        Section 03 cal factor derivation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_04_survival_classification/" class="md-nav__link">
+        Section 04 survival classification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_05_logistic_regression/" class="md-nav__link">
+        Section 05 logistic regression
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_06_shock_classification/" class="md-nav__link">
+        Section 06 shock classification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_07_vandenberg_comparison/" class="md-nav__link">
+        Section 07 vandenberg comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_09/section_08_strains/" class="md-nav__link">
+        Section 08 strains
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_12">
+          Frontmatter
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Frontmatter" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Frontmatter
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/abstract/" class="md-nav__link">
+        Abstract
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements/" class="md-nav__link">
+        Acknowledgements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements_prompt/" class="md-nav__link">
+        Acknowledgements prompt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements_prompt_2/" class="md-nav__link">
+        Acknowledgements prompt 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/acknowledgements_results_general/" class="md-nav__link">
+        Acknowledgements results general
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontmatter/published/" class="md-nav__link">
+        Published
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#materials-methods" class="md-nav__link">
+    Materials \&amp; Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Materials \&amp; Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bacterial-strains-and-dna-constructs" class="md-nav__link">
+    Bacterial Strains and DNA Constructs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#growth-conditions-for-flow-cytometry-measurements" class="md-nav__link">
+    Growth Conditions for Flow Cytometry Measurements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flow-cytometry" class="md-nav__link">
+    Flow Cytometry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unsupervised-gating-of-flow-cytometry-data" class="md-nav__link">
+    Unsupervised Gating of Flow Cytometry Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experimental-determination-of-fold-change" class="md-nav__link">
+    Experimental Determination of Fold-Change
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bayesian-parameter-estimation" class="md-nav__link">
+    Bayesian Parameter Estimation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-curation" class="md-nav__link">
+    Data Curation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Section 07 methods</h1>
+
+<h2 id="materials-methods">Materials \&amp; Methods</h2>
+<h3 id="bacterial-strains-and-dna-constructs">Bacterial Strains and DNA Constructs</h3>
+<p>All strains used in these experiments were derived from <em>E. coli</em> K12
+MG1655 with the <em>lac</em> operon removed, adapted from those created and
+described in @garcia2011. Briefly, the operator variants and YFP reporter gene were
+cloned into a pZS25 background which contains a <em>lacUV5</em> promoter that
+drives expression as is shown schematically in  @Fig:states_weights. These constructs
+carried a kanamycin resistance gene and were integrated into the <em>galK</em>
+locus of the chromosome using <span class="arithmatex">\(\lambda\)</span> Red recombineering <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. The
+<em>lacI</em> gene was constitutively expressed via a
+P<span class="arithmatex">\(_\text{LtetO-1}\)</span> promoter <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>, with ribosomal binding site
+mutations made to vary the LacI copy number as described in @salis2009a using
+site-directed mutagenesis (Quickchange II; Stratagene), with further
+details in @garcia2011. These <em>lacI</em> constructs carried a
+chloramphenicol resistance gene and were integrated into the <em>ybcN</em>
+locus of the chromosome. Final strain construction was achieved by
+performing repeated P1 transduction <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>  of the different operator and
+<em>lacI</em> constructs to generate each combination used in this work.
+Integration was confirmed by PCR amplification of the replaced
+chromosomal region and by sequencing. Primers and final strain genotypes
+are listed in supplemental Chapter 6.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It is important to note that the rest of the <em>lac</em> operon (<em>lacZYA</em>) was
+never expressed. The LacY protein is a transmembrane protein which
+actively transports lactose as well as IPTG into the cell. As LacY was
+never produced in our strains, we assume that the extracellular and
+intracellular IPTG concentration was approximately equal due to
+diffusion across the membrane into the cell as is suggested by previous
+work <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To make this theory applicable to transcription factors with any number
+of DNA binding domains, we used a different definition for repressor
+copy number than has been used previously. We define the LacI copy
+number as the average number of repressor dimers per cell, whereas in @garcia2011,
+the copy number is defined as the average number of repressor tetramers
+in each cell. To motivate this decision, we consider the fact that the
+LacI repressor molecule exists as a tetramer in <em>E. coli</em>  <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup> in which a
+single DNA binding domain is formed from dimerization of LacI proteins,
+so that wild-type LacI might be described as dimer of dimers. Since each
+dimer is allosterically independent (i.e. either dimer can be
+allosterically active or inactive, independent of the configuration of
+the other dimer) <sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup>, a single LacI tetramer can be treated as two
+functional repressors. Therefore, we have simply multiplied the number
+of repressors reported in @garcia2011 by a factor of two. </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A subset of strains in these experiments were measured using fluorescence
+microscopy for validation of the flow cytometry data and results. To aid in
+the high-fidelity segmentation of individual cells, the strains were modified
+to constitutively express an mCherry fluorophore. This reporter was cloned
+into a pZS4*1 backbone <sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup> in which mCherry is driven by the
+<em>lacUV5</em> promoter. All microscopy and flow cytometry experiments were
+performed using these strains.</p>
+<h3 id="growth-conditions-for-flow-cytometry-measurements">Growth Conditions for Flow Cytometry Measurements</h3>
+<p>All measurements were performed with <em>E. coli</em> cells grown to
+mid-exponential phase in standard M9 minimal media (M9 5X Salts,
+Sigma-Aldrich M6030; <span class="arithmatex">\(2\,\text{mM}\)</span> magnesium sulfate, Mallinckrodt
+Chemicals 6066-04; <span class="arithmatex">\(100\,\mu\text{M}\)</span> calcium chloride, Fisher
+Chemicals C79-500) supplemented with 0.5% (w/v) glucose. Briefly,
+<span class="arithmatex">\(500\,\mu\text{L}\)</span> cultures of <em>E. coli</em> were inoculated into Lysogeny
+Broth (LB Miller Powder, BD Medical) from a 50% glycerol frozen stock
+(-80<span class="arithmatex">\(^\circ\)</span>C) and were grown overnight in a <span class="arithmatex">\(2\,\text{mL}\)</span>
+96-deep-well plate sealed with a breathable nylon cover (Lab Pak - Nitex
+Nylon, Sefar America Inc. Cat. No. 241205) with rapid agitation for
+proper aeration. After approximately <span class="arithmatex">\(12\)</span> to <span class="arithmatex">\(15\)</span> hours, the
+cultures had reached saturation and were diluted 1000-fold into a second
+<span class="arithmatex">\(2\,\text{mL}\)</span> 96-deep-well plate where each well contained
+<span class="arithmatex">\(500\,\mu\text{L}\)</span> of M9 minimal media supplemented with 0.5% w/v
+glucose (anhydrous D-Glucose, Macron Chemicals) and the appropriate
+concentration of IPTG (Isopropyl <span class="arithmatex">\(\beta\)</span>-D-1 thiogalactopyranoside
+Dioxane Free, Research Products International). These were sealed with a
+breathable cover and were allowed to grow for approximately eight hours.
+Cells were then diluted ten-fold into a round-bottom 96-well plate
+(Corning Cat. No. 3365) containing <span class="arithmatex">\(90\,\mu\text{L}\)</span> of M9 minimal
+media supplemented with 0.5% w/v glucose along with the corresponding
+IPTG concentrations. For each IPTG concentration, a stock of 100-fold
+concentrated IPTG in double distilled water was prepared and partitioned
+into <span class="arithmatex">\(100\,\mu\text{L}\)</span> aliquots. The same parent stock was used for
+all experiments described in this work.</p>
+<h3 id="flow-cytometry">Flow Cytometry</h3>
+<p>All fold-change measurements were collected
+on a Miltenyi Biotec MACSquant Analyzer 10 Flow Cytometer graciously
+provided by the Pamela Björkman lab at Caltech. Detailed information
+regarding the voltage settings of the photo-multiplier detectors can be
+found in the supplemental Chapter 6. </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Prior to each
+day’s experiments, the analyzer was calibrated using MACSQuant
+Calibration Beads (Cat. No. 130-093-607) such that day-to-day
+experiments would be comparable. All YFP fluorescence measurements were
+collected via <span class="arithmatex">\(488\,\text{nm}\)</span> laser excitation coupled with a
+525/<span class="arithmatex">\(50\,\text{nm}\)</span> emission filter. Unless otherwise specified, all
+measurements were taken over the course of two to three hours using
+automated sampling from a 96-well plate kept at approximately
+<span class="arithmatex">\(4^\circ \, \hbox{-} \,
+10^\circ\)</span>C on a MACS Chill 96 Rack (Cat. No. 130-094-459). Cells were
+diluted to a final concentration of approximately <span class="arithmatex">\(4\times 10^{4}\)</span>
+cells per <span class="arithmatex">\(\mu\text{L}\)</span> which corresponded to a flow rate of
+2,000-6,000 measurements per second, and acquisition for each well was
+halted after 100,000 events were detected. Once completed, the data were
+extracted and immediately processed using the following methods.</p>
+<h3 id="unsupervised-gating-of-flow-cytometry-data">Unsupervised Gating of Flow Cytometry Data</h3>
+<p>Flow cytometry data will frequently include a number of spurious events
+or other undesirable data points such as cell doublets and debris. The
+process of restricting the collected data set to those data determined
+to be “real” is commonly referred to as gating. These gates are
+typically drawn manually  and restrict the data set to those points
+which display a high degree of linear correlation between their
+forward-scatter (FSC) and side-scatter (SSC). The development of
+unbiased and unsupervised methods of drawing these gates is an active
+area of research <sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup><sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup>. For our purposes, we assume that the fluorescence
+level of the population should be log-normally distributed about some
+mean value. With this assumption in place, we developed a method that
+allows us to restrict the data used to compute the mean fluorescence
+intensity of the population to the smallest two-dimensional region of
+the <span class="arithmatex">\(\log(\mathrm{FSC})\)</span> vs. <span class="arithmatex">\(\log(\mathrm{SSC})\)</span> space in which 40%
+of the data is found. This was performed by fitting a bivariate Gaussian
+distribution and restricting the data used for calculation to those that
+reside within the 40th percentile. This procedure is described in more
+detail in the supplemental Chapter 6.</p>
+<h3 id="experimental-determination-of-fold-change">Experimental Determination of Fold-Change</h3>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For each strain and IPTG concentration, the fold-change in gene
+expression was calculated by taking the ratio of the population mean YFP
+expression in the presence of LacI repressor to that of the population
+mean in the absence of LacI repressor. However, the measured
+fluorescence intensity of each cell also includes the autofluorescence
+contributed by the weak excitation of the myriad protein and small
+molecules within the cell. To correct for this background, we computed
+the fold change as
+$$
+\text{fold-change} = \frac{\langle I_{R &gt; 0} \rangle - \langle
+I_\text{auto}\rangle}{\langle I_{R = 0} \rangle - \langle I_\text{auto}\rangle},
+$${#eq:induction_image_def}
+where <span class="arithmatex">\(\langle I_{R &gt; 0}\rangle\)</span> is the average cell YFP intensity in
+the presence of repressor, <span class="arithmatex">\(\langle I_{R = 0}\rangle\)</span> is the average
+cell YFP intensity in the absence of repressor, and
+<span class="arithmatex">\(\langle I_\text{auto} \rangle\)</span> is the average cell autofluorescence
+intensity, as measured from cells that lack the <em>lac</em>-YFP construct.</p>
+<h3 id="bayesian-parameter-estimation">Bayesian Parameter Estimation</h3>
+<p>In this work, we determine the most likely parameter values for the
+inducer dissociation constants <span class="arithmatex">\(K_A\)</span> and <span class="arithmatex">\(K_I\)</span> of the active and
+inactive state, respectively, using Bayesian methods. We compute the
+probability distribution of the value of each parameter given the data
+<span class="arithmatex">\(D\)</span>, which by Bayes’ theorem is given by 
+$$P(K_A, K_I \,\vert\, D) = \frac{P(D \,\vert\, K_A, K_I)P(K_A, K_I)}{P(D)},
+$${#eq:induction_bayes}
+where <span class="arithmatex">\(D\)</span> is all the data composed of independent variables (repressor
+copy number <span class="arithmatex">\(R\)</span>, repressor-DNA binding energy
+<span class="arithmatex">\(\Delta\varepsilon_{RA}\)</span>, and inducer concentration <span class="arithmatex">\(c\)</span>) and one
+dependent variable (experimental fold-change). <span class="arithmatex">\(P(D
+\mid K_A, K_I)\)</span> is the likelihood of having observed the data given the
+parameter values for the dissociation constants, <span class="arithmatex">\(P(K_A, K_I)\)</span>
+contains all the prior information on these parameters, and <span class="arithmatex">\(P(D)\)</span>
+serves as a normalization constant, which we can ignore in our parameter
+estimation. @Eq:fold_change_full assumes a deterministic relationship between the parameters
+and the data, so in order to construct a probabilistic relationship as
+required by @Eq:induction_bayes, we assume that the experimental fold-change for the
+<span class="arithmatex">\(i^\text{th}\)</span> datum given the parameters is of the form
+$$
+\text{fold-change}<em AI="AI">\text{exp}^{(i)} = \left( 1 + \frac{\left(1 +
+\frac{c^{(i)}}{K_A}\right)^2}{\left( 1 + \frac{c^{(i)}}{K_A}\right)^2 +
+e^{-\beta \Delta \varepsilon</em>} \left(1 + \frac{c^{(i)}}{K_I} \right)^2} \frac{R^{(i)}}{N_{NS}} e^{-\beta
+\Delta \varepsilon_{RA}^{(i)}}\right)^{-1} + \epsilon^{(i)},
+$${#eq:induction_fold_change_experimental}
+where <span class="arithmatex">\(\epsilon^{(i)}\)</span> represents the
+departure from the deterministic theoretical prediction for the
+<span class="arithmatex">\(i^\text{th}\)</span> data point. If we assume that these <span class="arithmatex">\(\epsilon^{(i)}\)</span>
+errors are normally distributed with mean zero and standard deviation
+<span class="arithmatex">\(\sigma\)</span>, the likelihood of the data given the parameters is of the
+form 
+$$
+\begin{aligned}
+P(D \vert K_A, K_I, \sigma) &amp;=
+\frac{1}{(2\pi\sigma^2)^{\frac{n}{2}}}\times\
+&amp;\prod\limits_{i=1}^n \exp 
+\left[-\frac{(\text{fold-change}^{(i)}<em RA="RA">\text{exp} - \text{fc}^\text{(theo)}(K_A, K_I, R^{(i)},
+    \Delta\varepsilon</em>^{(i)}, c^{(i)}))^2}{2\sigma^2}\right],
+\end{aligned}
+$${#eq:likelihood}
+where <span class="arithmatex">\(\text{fold-change}^{(i)}_{\text{exp}}\)</span> is the experimental fold-change
+and <span class="arithmatex">\(\text{fc}^\text{(theo)}(\,\cdots)\)</span> is the theoretical prediction. The product
+<span class="arithmatex">\(\prod\limits_{i=1}^n\)</span> captures the assumption that the <span class="arithmatex">\(n\)</span> data points are
+independent. Note that the likelihood and prior terms now include the extra
+unknown parameter <span class="arithmatex">\(\sigma\)</span>. In applying  @Eq:likelihood, a choice of <span class="arithmatex">\(K_A\)</span>
+and <span class="arithmatex">\(K_I\)</span> that provides better agreement between theoretical fold-change
+predictions and experimental measurements will result in a more probable
+likelihood.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Both mathematically and numerically, it is convenient to define
+<span class="arithmatex">\(\tilde{k}_A = -\log \frac{K_A}{1\,\mu\text{M}}\)</span> and
+<span class="arithmatex">\(\tilde{k}_I = -\log \frac{K_I}{1\,\mu\text{M}}\)</span> and fit for these
+parameters on a log scale. Dissociation constants are scale invariant,
+so that a change from <span class="arithmatex">\(10\,\mu\text{M}\)</span> to <span class="arithmatex">\(1\,\mu\text{M}\)</span> leads to
+an equivalent increase in affinity as a change from <span class="arithmatex">\(1\,\mu\text{M}\)</span>
+to <span class="arithmatex">\(0.1\,\mu\text{M}\)</span>. With these definitions, we assume for the prior
+<span class="arithmatex">\(P(\tilde{k}_A, \tilde{k}_I, \sigma)\)</span> that all three parameters are
+independent. In addition, we assume a uniform distribution for
+<span class="arithmatex">\(\tilde{k}_A\)</span> and <span class="arithmatex">\(\tilde{k}_I\)</span> and a Jeffreys prior  for the scale
+parameter <span class="arithmatex">\(\sigma\)</span>. This yields the complete prior
+$$P(\tilde{k}_A, \tilde{k}_I, \sigma) \equiv \frac{1}{(\tilde{k}_A^{\max} -
+\tilde{k}_A^{\min})} \frac{1}{(\tilde{k}_I^{\max} -
+\tilde{k}_I^{\min})}\frac{1}{\sigma}.
+$${#eq:induction_prior} </p>
+<p>These priors are maximally uninformative meaning that they imply no prior knowledge of the
+parameter values. We defined the <span class="arithmatex">\(\tilde{k}_A\)</span> and <span class="arithmatex">\(\tilde{k}_A\)</span>
+ranges uniform on the range of <span class="arithmatex">\(-7\)</span> to <span class="arithmatex">\(7\)</span>, although we note that
+this particular choice does not affect the outcome provided the chosen
+range is sufficiently wide.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Putting all these terms together we can now sample from <span class="arithmatex">\(P(\tilde{k}_A,
+\tilde{k}_I, \sigma \mid D)\)</span> using Markov chain Monte Carlo  to compute the most
+likely parameter as well as the error bars (given by the 95\% credible region)
+for <span class="arithmatex">\(K_A\)</span> and <span class="arithmatex">\(K_I\)</span>.</p>
+<h3 id="data-curation">Data Curation</h3>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All of the data used in this work as well as all relevant code can be
+found at the <a href="http://rpgroup-pboc.github.io/mwc_induction">website</a> associated
+with the publication mentioned at the beginning of this chapter. Data were
+collected, stored, and preserved using the Git version control software
+in combination with off-site storage and hosting website GitHub. Code
+used to generate all figures and complete all processing step as and
+analyses are available on the GitHub repository. Many analysis files are
+stored as instructive Jupyter Notebooks. The scientific community is
+invited to fork our repositories and open constructive issues on the
+<a href="https://www.github.com/rpgroup-pboc/mwc_induction">GitHub repository</a>.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>S. K. Sharan, L. C. Thomason, S. G. Kuznetsov, and D. L. Court. Recombineering: A homologous recombination-based method of genetic engineering. <em>Nature Protocols</em>, 4:206–23, 2009. <a href="https://doi.org/nprot.2008.227\%0020[pii]\%002010.1038/nprot.2008.227">doi:nprot.2008.227\\%0020[pii]\\%002010.1038/nprot.2008.227</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Rolf Lutz and Hermann Bujard. Independent and tight regulation of transcriptional units in \emph Escherichia coli via the LacR/O, the TetR/O and AraC/I1-I2 regulatory elements. <em>Nucleic Acids Research</em>, 25(6):1203–1210, March 1997. <a href="https://doi.org/10.1093/nar/25.6.1203">doi:10.1093/nar/25.6.1203</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>Lynn C. Thomason, Nina Costantino, and Donald L. Court. \emph E. coli genome manipulation by P1 transduction. <em>Current Protocols in Molecular Biology</em>, 79(1):1.17.1&ndash;1.17.8, 2007. <a href="https://doi.org/10.1002/0471142727.mb0117s79">doi:10.1002/0471142727.mb0117s79</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Alfred Fernández-Castané, Claire E. Vine, Glòria Caminal, and Josep López-Santín. Evidencing the role of lactose permease in IPTG uptake by \emph Escherichia coli in fed-batch high cell density cultures. <em>Journal of Biotechnology</em>, 157(3):391–398, February 2012. <a href="https://doi.org/10.1016/j.jbiotec.2011.12.007">doi:10.1016/j.jbiotec.2011.12.007</a>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>Mitchell Lewis, Geoffrey Chang, Nancy C. Horton, Michele A. Kercher, Helen C. Pace, Maria A. Schumacher, Richard G. Brennan, and Ponzy Lu. Crystal structure of the lactose operon repressor and its complexes with DNA and inducer. <em>Science</em>, 271(5253):1247–1254, 1996.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p>Robert Daber, Kim Sharp, and Mitchell Lewis. One is not enough. <em>Journal of Molecular Biology</em>, 392(5):1133–1144, October 2009. <a href="https://doi.org/10.1016/j.jmb.2009.07.050">doi:10.1016/j.jmb.2009.07.050</a>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p>Kenneth Lo, Ryan Remy Brinkman, and Raphael Gottardo. Automated gating of flow cytometry data via robust model-based clustering. <em>Cytometry Part A</em>, 73A(4):321–332, 2008. <a href="https://doi.org/10.1002/cyto.a.20531">doi:10.1002/cyto.a.20531</a>.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p>Nima Aghaeepour, Greg Finak, Holger Hoos, Tim R. Mosmann, Ryan Brinkman, Raphael Gottardo, and Richard H. Scheuermann. Critical assessment of automated flow cytometry data analysis techniques. <em>Nature Methods</em>, 10(3):228–238, March 2013. <a href="https://doi.org/10.1038/nmeth.2365">doi:10.1038/nmeth.2365</a>.&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes"], "search": "../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5cf534bf.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
