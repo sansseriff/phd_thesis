@@ -30,6 +30,8 @@ markdown_extensions:
   - pymdownx.superfences
   - footnotes
 
+extra_css:
+  - stylesheets/extra.css
 
 plugins:
   - search
