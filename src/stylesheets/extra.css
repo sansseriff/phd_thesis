@@ -2,6 +2,5 @@ mjx-utext {
     /* corrects a small error with font size for upgreek package */
     font-size: 1.04em !important;
     position: relative !important;
-    background-color: red !important;
     top: .02rem !important;
 }
