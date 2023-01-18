@@ -31,23 +31,14 @@ markdown_extensions:
   - footnotes
 
 extra_css:
-  - stylesheets/extra.css
+  - ./stylesheets/extra.css
 
 plugins:
   - search
   - bibtex:
       bib_file: "./src/references.bib"
       # csl_file: "../src/styles/ieee.csl"
-# markdown_extensions:
-#   - footnotes
 
-# extra:
-#   analytics:
-#     provider: google
-#     property: G-95QS2HZSZW
-#     # 3565859434
-
-    
 
 
 # nav:
