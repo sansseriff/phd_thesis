@@ -37,7 +37,7 @@ The filtering of the optical stack was modeled by assuming a black-body emitter 
 This work used a low-jitter, differential SNSPD \cite{Colangelo2021}, with an active area of 22 $\times$ 15 {\textmu}m, formed by a meander of 100 nm-wide and 5-nm-thick niobium nitride (NbN) nanowires on a 500 nm pitch. A more conventional single-ended readout SNSPD of similar area would also achieve low DCR in this coupling system, but would likely achieve a lower performance metric $H$ from correspondingly higher jitter. The nanowire is embedded in an efficiency-enhancing optical stack made of alternating layers of TiO$_2$ and SiO$_2$ and a gold mirror layer. As shown in Fig. \ref{fig:false-color}b and c, when fiber coupled (without any fiber-based filtering methods applied), this detector achieved a saturated SDE of $84\% \pm 4.4 \%$ and a DCR of 20 Hz at a bias current of 16 {\textmu}A. 
 
 
-As also shown in Fig. \ref{fig:false-color}b, the free-space coupling system achieves up to $72 \% \pm 3.7 \%$ SDE as measured from the fiber outside the cryostat. The reduction in efficiency is likely due to surface reflections in the free-space optics, and potential misalignment in the optical baffles. The minimum DCR (Fig. \ref{fig:false-color}c) at $72 \%$ SDE is about 0.1 Hz, with a bias current of 16 {\textmu}A. These metrics, with the jitter measurements shown in Fig. \ref{fig:false-color}b, give a maximum H value of $5 \times 10^{11}$ (Fig. \ref{fig:false-color}c). Values as high as $1.8 \times 10^{12}$ have been reported before, but at 1.5\% system detection efficiency \cite{Shibata2015}. Our system shows a low DCR can be achieved without severe reduction of SDE or usable target wavelength bandwidth. This is paramount for the future of terrestrial and space-to-ground quantum communication, since it increases success rate with finite statistics \cite{Boaron2018secure}. The same techniques can be applied to emerging SNSPD applications at longer wavelengths, such as laser ranging \cite{Taylor2019}, where fiber filtering is impractical. Beyond single-mode applications, our work paves the way to scalable, low-DCR, multi-mode coupling to SNSPD arrays \cite{Wollman2019}.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; As also shown in Fig. \ref{fig:false-color}b, the free-space coupling system achieves up to $72 \% \pm 3.7 \%$ SDE as measured from the fiber outside the cryostat. The reduction in efficiency is likely due to surface reflections in the free-space optics, and potential misalignment in the optical baffles. The minimum DCR (Fig. \ref{fig:false-color}c) at $72 \%$ SDE is about 0.1 Hz, with a bias current of 16 {\textmu}A. These metrics, with the jitter measurements shown in Fig. \ref{fig:false-color}b, give a maximum H value of $5 \times 10^{11}$ (Fig. \ref{fig:false-color}c). Values as high as $1.8 \times 10^{12}$ have been reported before, but at 1.5\% system detection efficiency \cite{Shibata2015}. Our system shows a low DCR can be achieved without severe reduction of SDE or usable target wavelength bandwidth. This is paramount for the future of terrestrial and space-to-ground quantum communication, since it increases success rate with finite statistics \cite{Boaron2018secure}. The same techniques can be applied to emerging SNSPD applications at longer wavelengths, such as laser ranging \cite{Taylor2019}, where fiber filtering is impractical. Beyond single-mode applications, our work paves the way to scalable, low-DCR, multi-mode coupling to SNSPD arrays \cite{Wollman2019}.
 
 ![**The caption heading** And I think the rest of this is the caption ](./figs/Figure_Data_Sept_2022.svg){#fig:custom_figure
 short-caption="The second first caption."
@@ -48,19 +48,3 @@ width=70%}
 ![**The caption heading** And I think the rest of this is the caption ](figs/test){#fig:custom_second_figure
 short-caption="The second first caption."}
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The central aim of this dissertation is to
-explore the biophysical mechanisms by which these levels of adaptation --
-molecular, physiological, and evolutionary -- are interconnected. Furthermore, in the spirit of
-Monod, we seek to make our exploration quantitative and leverage the tools of
-statistical physics to provide precise predictions from pen-and-paper theory
-that can be rigorously tested through experiment. The remaining sections of
-this chapter will outline the major topics of this thesis and place them in a
-historical context alongside the work of Monod. This thesis is structured such
-that **Chapters 1 -- 5** present a self-contained summary of how quantitative
-methods can be used to interrogate and understand the molecular biophysics of
-adaptation. The remainder, **Chapters 6 -- 9**, are detailed supplements to
-Chapters 1 -- 5,s and are targeted to readers who want to dig into the weeds of
-statistical inference, error estimation, and analytic properties of the
-theoretical models.  
-
-This is a new section thing I'm adding
