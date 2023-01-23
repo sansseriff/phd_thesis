@@ -1,4 +1,4 @@
-site_name: Computational Methods for SNSPDs
+site_name: Measurements with SNSPDs
 dev_addr: 127.0.0.1:9254
 site_dir: site
 docs_dir: src
