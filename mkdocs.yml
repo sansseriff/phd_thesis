@@ -1,7 +1,7 @@
-site_name: Measurements with SNSPDs
+site_name: Quantum Measurements with SNSPDs
 dev_addr: 127.0.0.1:9254
-site_dir: site
-docs_dir: src
+# site_dir: site
+docs_dir: site
   
 theme:
   name: material
@@ -16,7 +16,7 @@ theme:
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
-  # custom_dir: overrides
+  custom_dir: overrides
   features:
     - navigation.indexes
         
@@ -36,8 +36,8 @@ extra_css:
 plugins:
   - search
   - bibtex:
-      bib_file: "./src/references.bib"
-      # csl_file: "../src/styles/ieee.csl"
+      bib_file: "./site/references.bib"
+      # csl_file: "../site/styles/ieee.csl"
 
 
 # nav:
@@ -50,6 +50,44 @@ plugins:
   #   - Fast Entanglement Scans: hre/fast_ent_scans.md
   #   - Action Framework: hre/action_framework.md
   # - DDAQ Software: ddaq.md
+
+# nav:
+#   - index.md
+#   - Low Dark Count Rate Detection:
+#     - Introduction: chapter_01/section_02_introduction.md
+#     - Hardware: chapter_01/section_03_hardware.md
+#     - Model: chapter_01/section_04_model.md
+#   - High Rate Pulse Position Modulation: chapter_02/section_02_abstract.md
+#     - Introduction: chapter_02/section_03_introduction.md
+#   - Time Walk and Jitter Correction: chapter_03/section_02_abstract.md
+#     - Introduction: chapter_03/section_03_introduction.md
+#     - Method: chapter_03/section_04_method.md
+#     - Results: chapter_03/section_05_results.md
+#     - Peacoq: chapter_03/section_06_peacoq.md
+#     - Outlook: chapter_03/section_07_outlook.md
+#   - High Rate Entanglement Generation: chapter_04/section_02_abstract.md
+#     - Introduction: chapter_04/section_03_introduction.md
+
+nav:
+  - index.md
+  - Low Dark Count Rate Detection:
+    - chapter_01/section_01_abstract.md
+    - Introduction: chapter_01/section_02_introduction.md
+    - Hardware: chapter_01/section_03_hardware.md
+    - Model: chapter_01/section_04_model.md
+  - High Rate Pulse Position Modulation: 
+    - chapter_02/section_02_abstract.md
+    - Introduction: chapter_02/section_03_introduction.md
+  - Time Walk and Jitter Correction: 
+    - chapter_03/section_02_abstract.md
+    - Introduction: chapter_03/section_03_introduction.md
+    - Method: chapter_03/section_04_method.md
+    - Results: chapter_03/section_05_results.md
+    - Peacoq: chapter_03/section_06_peacoq.md
+    - Outlook: chapter_03/section_07_outlook.md
+  - High Rate Entanglement Generation: 
+    - chapter_04/section_02_abstract.md
+    - Introduction: chapter_04/section_03_introduction.md
 
 
 

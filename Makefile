@@ -64,12 +64,20 @@ overleaf_clean:
 	&& git commit -m "overleaf update" \
 	&& git push overleaf master
 
-html:	
-	# JEKYLL_ENV=production bundle exec jekyll build --destination docs;\
-	cd src && \
-	cp -r chapter_01 ../mkdocs/docs/chapter_01
-	cd .. \
-	# sh copyfigs.sh ;\
+mkdocs:
+	cp -R ./src/chapter_01 ./site/
+	cp -R ./src/chapter_02 ./site/
+	cp -R ./src/chapter_03 ./site/
+	cp -R ./src/chapter_04 ./site/
+	cp -R ./src/chapter_05 ./site/
+	cp -R ./src/frontmatter ./site/
+
+# html:	
+# 	# JEKYLL_ENV=production bundle exec jekyll build --destination docs;\
+# 	cd src && \
+# 	cp -r chapter_01 ../mkdocs/docs/chapter_01
+# 	cd .. \
+# 	# sh copyfigs.sh ;\
 
 
 	
