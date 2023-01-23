@@ -12,7 +12,7 @@ rights_statement: |
     Creative Commons Attribution License CC-BY 4.0. All software used in the
     analysis and generation of figures is distributed under an MIT license. and
     is available on a GitHub repository
-    \href{https://github.com/sansseriff/phd\textunderscore thesis}{https://github.com/sansseriff/phd_thesis}
+    \href{https://github.com/sansseriff/phd_thesis}{https://github.com/sansseriff/phd\textunderscore thesis}
     
 logo: true
 bibliography: references.bib
