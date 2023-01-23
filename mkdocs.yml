@@ -40,7 +40,6 @@ plugins:
       # csl_file: "../src/styles/ieee.csl"
 
 
-
 # nav:
 #   - index.md
   # - High Rate Entanglement:
@@ -53,8 +52,6 @@ plugins:
   # - DDAQ Software: ddaq.md
 
 
-
-  
 
 extra_javascript:
   # - javascripts/mathjax.js

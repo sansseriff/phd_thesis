@@ -97,11 +97,4 @@ entropic effects neglected in the initial estimation of the energetic
 parameters may play an important role; a hypothesis that is supported when we
 examine the change in the effective free energy.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The results presented here are, to our
-knowledge, the first attempts to systematically characterize the
-growth-dependent effects on biophysical parameters in thermodynamic models of
-transcription. While some parameters of our model are affected by changing
-the growth rate, they change in ways that are expected or fall close within
-our *a priori* predictions, suggesting that such modeling can still be
-powerful in understanding how adaptive processes influence physiology at the
-level of molecular interactions.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
