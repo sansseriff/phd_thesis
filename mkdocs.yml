@@ -71,22 +71,22 @@ plugins:
 nav:
   - index.md
   - Low Dark Count Rate Detection:
-    - chapter_01/section_01_abstract.md
-    - Introduction: chapter_01/section_02_introduction.md
-    - Hardware: chapter_01/section_03_hardware.md
-    - Model: chapter_01/section_04_model.md
+    - chapter_01/index.md
+    - Introduction: chapter_01/section_03_introduction.md
+    - Hardware: chapter_01/section_04_hardware.md
+    - Model: chapter_01/section_05_model.md
   - High Rate Pulse Position Modulation: 
-    - chapter_02/section_02_abstract.md
+    - chapter_02/index.md
     - Introduction: chapter_02/section_03_introduction.md
   - Time Walk and Jitter Correction: 
-    - chapter_03/section_02_abstract.md
+    - chapter_03/index.md
     - Introduction: chapter_03/section_03_introduction.md
     - Method: chapter_03/section_04_method.md
     - Results: chapter_03/section_05_results.md
     - Peacoq: chapter_03/section_06_peacoq.md
     - Outlook: chapter_03/section_07_outlook.md
   - High Rate Entanglement Generation: 
-    - chapter_04/section_02_abstract.md
+    - chapter_04/index.md
     - Introduction: chapter_04/section_03_introduction.md
 
 
