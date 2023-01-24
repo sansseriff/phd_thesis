@@ -3,7 +3,7 @@ if FORMAT ~= "latex" then
   end
 
   function fix_path (path)
-    chapter = path:sub(8, 10)
+    chapter = path:sub(8, 11)
     return 'chapter_' .. chapter .. '/' .. path:sub(2,-5) .. '.pdf'
   end
   
