@@ -1,6 +1,6 @@
 site_name: Quantum Measurements with SNSPDs
 dev_addr: 127.0.0.1:9254
-# site_dir: site
+site_dir: site_deploy
 docs_dir: site
   
 theme:
@@ -16,7 +16,7 @@ theme:
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
-  custom_dir: overrides
+  custom_dir: ./site/overrides
   features:
     - navigation.indexes
         
