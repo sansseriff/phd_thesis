@@ -3,7 +3,7 @@ if FORMAT ~= "latex" then
   end
 
   function fix_path (path)
-    return 'chapter_01/' .. path:sub(1)
+    return 'chapter_01/' .. path:sub(2)
   end
   
 --   function Link (element)
