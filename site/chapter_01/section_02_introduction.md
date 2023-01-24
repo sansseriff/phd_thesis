@@ -2,7 +2,7 @@
 $$ \require{upgreek} $$
 Time-resolved photon detection with low dark counts is a vital technology in fields such as quantum information processing, classical communication, quantum communication, and laser ranging. Increasingly, research in these fields employs superconducting nanowire single photon detectors (SNSPDs), which have been demonstrated with system detection efficiency ($\eta$) of more than 90% [@Reddy2020], timing jitter ($\Delta t$) as low as 2.6 ps [@Korzh2020] and intrinsic dark count rates ($D$) in the milli- to  micro-hertz range [@Hochberg2019]. However, quantum communication applications require detection systems with performance optimized across all three metrics simultaneously. The dimensionless figure of merit  $H$ specifies this application-specific performance as $H = \frac{\eta}{(\Delta t D)}$  [@Hadfield2009]. 
 
-Here, we focus on lowering the Dark Count Rate (DCR) of a telecom-band SNSPD system by filtering thermal photons, without sacrificing efficiency or jitter. We demonstrate a free-space coupled SNSPD with sub-0.1 Hz DCR, 14 ps timing jitter, and 72% total system detection efficiency (SDE) by using a differential single-pixel SNSPD [@Colangelo2021] to image a single-mode fiber through an optimized free-space filter stack.
+Here, we focus on lowering the Dark Count Rate (DCR) of a telecom-band SNSPD system by filtering thermal photons, without sacrificing efficiency or jitter. We demonstrate a free-space coupled SNSPD with sub-0.1 Hz DCR, 14 ps timing jitter, and 72% total system detection efficiency (SDE) by using a differential single-pixel SNSPD [@Colangelo2021] to image a single-mode fiber through an optimized free-space filter stack. 
 
 %HARDWARE
 \begin{figure}[htbp]
@@ -14,6 +14,7 @@ BK7: glass windows, SMF: Single-mode fiber, PEL: Peltier element, LC: Liquid coo
 \end{figure}
 %We compare performance with a fiber-coupled configuration using the same detector. 
 
+
 The highest system detection efficiencies have been achieved using self-aligned fiber coupling where dark counts can be reduced using cryogenic fiber looping [@Cohen2015] or spliced narrow-band filters [@Boaron2018secure]. But it is difficult to achieve strong filtering without losses at the target wavelength. Low-loss, high-rejection filters are typically available as free-space components, so some of the highest reported H-values were achieved with cryogenic, fiber to free-space to fiber coupling, but exhibit an SDE of only a few percent  [@Shibata2015]. The filtering method presented here takes advantage of commercially-available filters, achieves a high free-space coupling efficiency using a cryogenic lens, and is compatible with both fiber and free-space optical inputs.
 
 
@@ -21,12 +22,13 @@ In this work, a single mode fiber is imaged onto the detector using two f = 18.7
 
 The system is based on 1-inch optics, although the f = 18.75 mm lenses lead to a $1/e^2$ intensity diameter of about 5 mm in the collimated region. To reduce the larger-than-required numerical aperture of the system, painted 8 mm apertures (Acktar Spectral Black) were added in the collimated region. These are large enough to allow minor alignment adjustments --- by translating the exterior collimating lens --- without vignetting. 
 
-\begin{figure}[htbp]
+<!-- \begin{figure}[htbp]
 \centering
 \centering\includegraphics[width=\linewidth]{DataFigure_6.pdf}
 \caption{ \small a) Simulated photon flux at various temperatures with and without the 1550 nm bandpass filter (BP). b) Normalized photon count rate (PCR) and jitter measurements c) DCR, and calculated figure of merit $H$ versus bias current for both fiber-coupled and free space coupled configurations.}
 \label{fig:false-color}
-\end{figure}
+\end{figure} -->
+![**Low Dark Count Rate Project Results** a) Simulated photon flux at various temperatures with and without the 1550 nm bandpass filter (BP). b) Normalized photon count rate (PCR) and jitter measurements c) DCR, and calculated figure of merit $H$ versus bias current for both fiber-coupled and free space coupled configurations.](./figs_01/DataFigure_6.svg){#fig:dcrmin_data short-caption="Low Dark Count Rate Project Results."}
 
 We use four custom cryogenic short-pass filters, with pass-bands below $1.6 \ \mathrm{\upmu m}$ and $1.9 \ \mathrm{\upmu m}$ (Andover Corp.), both with transmission at 1550 nm of 98.8 ± 0.3\%. They reject wavelengths shorter than $3 \ \mathrm{\upmu m}$ through reflective optical coatings, and attenuate longer wavelengths through material absorption in the 12.7 mm-thick N-BK7 glass substrate. While the bandpass filter (FWHM = 7 nm) was found to blue-shift by about 2 nm at cryogenic temperatures, the passband was wide enough such that significant attenuation was not observed at the original target wavelength of 1550 nm. This filter is also sufficiently wide to avoid Fourier-limited broadening of ultra-short laser pulses. 
 
@@ -39,9 +41,14 @@ This work used a low-jitter, differential SNSPD \cite{Colangelo2021}, with an ac
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; As also shown in Fig. \ref{fig:false-color}b, the free-space coupling system achieves up to $72 \% \pm 3.7 \%$ SDE as measured from the fiber outside the cryostat. The reduction in efficiency is likely due to surface reflections in the free-space optics, and potential misalignment in the optical baffles. The minimum DCR (Fig. \ref{fig:false-color}c) at $72 \%$ SDE is about 0.1 Hz, with a bias current of 16 $\mathrm{\upmu A}$. These metrics, with the jitter measurements shown in Fig. \ref{fig:false-color}b, give a maximum H value of $5 \times 10^{11}$ (Fig. \ref{fig:false-color}c). Values as high as $1.8 \times 10^{12}$ have been reported before, but at 1.5\% system detection efficiency \cite{Shibata2015}. Our system shows a low DCR can be achieved without severe reduction of SDE or usable target wavelength bandwidth. This is paramount for the future of terrestrial and space-to-ground quantum communication, since it increases success rate with finite statistics \cite{Boaron2018secure}. The same techniques can be applied to emerging SNSPD applications at longer wavelengths, such as laser ranging \cite{Taylor2019}, where fiber filtering is impractical. Beyond single-mode applications, our work paves the way to scalable, low-DCR, multi-mode coupling to SNSPD arrays \cite{Wollman2019}.
 
-![**The caption heading** And I think the rest of this is the caption ](./figs/Figure_Data_Sept_2022.svg){#fig:custom_figure
-short-caption="The second first caption."
-width=70%}
+
+![**Figure Title.** And I think the rest of this is the caption with (A), (B), and (C) callouts](./figs_01/Figure_Data_Sept_2022.svg){#fig:custom_figure
+short-caption="A jitterate data figure." width=70%}
+
+Finally, here's a png figure for testing
+
+![**A test png figure.** And here is where I'd put in more information about the png.](./figs_01/fridge.png){#fig:test_png_figure
+short-caption="A png figure." width=70%}
 
 
 

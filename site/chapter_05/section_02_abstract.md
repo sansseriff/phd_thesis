@@ -1,2 +1,2 @@
 ## Abstract
-This is an overview of the informatin in this appendix. More details to come.
+This is an overview of the appendix section. More details to come.

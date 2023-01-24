@@ -42,24 +42,6 @@ This work used a low-jitter, differential SNSPD \cite{Colangelo2021}, with an ac
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; As also shown in Fig. \ref{fig:false-color}b, the free-space coupling system achieves up to $72 \% \pm 3.7 \%$ SDE as measured from the fiber outside the cryostat. The reduction in efficiency is likely due to surface reflections in the free-space optics, and potential misalignment in the optical baffles. The minimum DCR (Fig. \ref{fig:false-color}c) at $72 \%$ SDE is about 0.1 Hz, with a bias current of 16 $\mathrm{\upmu A}$. These metrics, with the jitter measurements shown in Fig. \ref{fig:false-color}b, give a maximum H value of $5 \times 10^{11}$ (Fig. \ref{fig:false-color}c). Values as high as $1.8 \times 10^{12}$ have been reported before, but at 1.5\% system detection efficiency \cite{Shibata2015}. Our system shows a low DCR can be achieved without severe reduction of SDE or usable target wavelength bandwidth. This is paramount for the future of terrestrial and space-to-ground quantum communication, since it increases success rate with finite statistics \cite{Boaron2018secure}. The same techniques can be applied to emerging SNSPD applications at longer wavelengths, such as laser ranging \cite{Taylor2019}, where fiber filtering is impractical. Beyond single-mode applications, our work paves the way to scalable, low-DCR, multi-mode coupling to SNSPD arrays \cite{Wollman2019}.
 
 
-![**Role of mechanosensitive channels during hypo-osmotic shock.** (A) A
-hypo-osmotic shock results in a large difference in the osmotic strength
-between the intracellular and extracellular spaces. As a result, water rushes
-into the cell to equalize this gradient increasing the turgor pressure and
-tension in the cell membrane. If no mechanosensitive channels are present and
-membrane tension is high (left panel), the membrane ruptures releasing
-intracellular content into the environment resulting in cell death. If
-mechanosensitive channels are present (right panel) and membrane tension is
-beyond the gating tension, the mechanosensitive channel MscL opens, releasing
-water and small intracellular molecules into the environment, thus relieving
-pressure and membrane tension. (B) The experimental approach undertaken in
-this work. The number of mechanosensitive channels tagged with a fluorescent
-reporter is tuned through modification of the Shine-Dalgarno sequence of the
-*mscL* gene. The cells are then subjected to a hypo-osmotic shock and the
-number of surviving cells are counted, allowing the calculation of a survival
-probability.](ch5_fig1){#fig:overview_2 short-caption="Role of mechanosensitive
-channels during hypo-osmotic shock."}
-
 ![**Figure Title.** And I think the rest of this is the caption with (A), (B), and (C) callouts](./figs_01/Figure_Data_Sept_2022.svg){#fig:custom_figure
 short-caption="A jitterate data figure." width=70%}
 
