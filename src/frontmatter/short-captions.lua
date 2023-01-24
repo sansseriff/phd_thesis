@@ -3,10 +3,16 @@ if FORMAT ~= "latex" then
   end
 
   function fix_path (path)
-    chapter = path:sub(8, 9) -- get chapter number from the figs directory folder
+    -- say path=./figs_01/Figure_Data_Sept_2022.svg
+
+    chapter = path:sub(8, 9) -- this pulls out the '01' from figs_01
+    final_path = path
     -- return chapter
-    return path:sub(-3)
-    -- return 'chapter_' .. chapter .. path:sub(2,-5) .. '.pdf'
+    -- if path:sub(-4) == '.svg' then -- if its a svg, switch to pdf of same name
+    --     final_path = 'chapter_' .. chapter .. path:sub(2,-5) .. '.pdf'
+    -- else -- otherwise don't change filetype
+    --     final_path = 'chapter_' .. chapter .. path:sub(2)
+    return final_path
   end
   
 --   function Link (element)

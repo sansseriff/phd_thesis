@@ -63,5 +63,10 @@ channels during hypo-osmotic shock."}
 ![**Figure Title.** And I think the rest of this is the caption with (A), (B), and (C) callouts](./figs_01/Figure_Data_Sept_2022.svg){#fig:custom_figure
 short-caption="A jitterate data figure." width=70%}
 
+Finally, here's a png figure for testing
+
+![**A test png figure.** And here is where I'd put in more information about the png.](./figs_01/fridge.png){#fig:test_png_figure
+short-caption="A png figure." width=70%}
+
 
 
