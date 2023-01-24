@@ -60,9 +60,8 @@ number of surviving cells are counted, allowing the calculation of a survival
 probability.](ch5_fig1){#fig:overview_2 short-caption="Role of mechanosensitive
 channels during hypo-osmotic shock."}
 
-![**Figure Title.** And I think the rest of this is the caption with (A), (B), and (C) callouts](./figs_01/Figure_Data_Sept_2022.svg){#fig:custom_figure
-short-caption="The second first caption."
-width=70%}
+![**Figure Title.** And I think the rest of this is the caption with (A), (B), and (C) callouts](.figs_01/Figure_Data_Sept_2022.svg){#fig:custom_figure
+short-caption="A jitterate data figure." width=70%}
 
 
 

@@ -3,7 +3,7 @@ if FORMAT ~= "latex" then
   end
 
   function fix_path (path)
-    chapter = path:sub(7, 9)
+    chapter = path:sub(7, 9) -- get chapter number from the figs directory folder
     -- return chapter
     return 'chapter_' .. chapter .. path:sub(2,-5) .. '.pdf'
   end
