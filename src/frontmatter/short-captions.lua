@@ -6,12 +6,13 @@ if FORMAT ~= "latex" then
     -- say path=./figs_01/Figure_Data_Sept_2022.svg
 
     chapter = path:sub(8, 9) -- this pulls out the '01' from figs_01
-    final_path = path
+    -- final_path = path
     -- return chapter
-    -- if path:sub(-4) == '.svg' then -- if its a svg, switch to pdf of same name
-    --     final_path = 'chapter_' .. chapter .. path:sub(2,-5) .. '.pdf'
-    -- else -- otherwise don't change filetype
-    --     final_path = 'chapter_' .. chapter .. path:sub(2)
+    if path:sub(-4) == '.svg' then -- if its a svg, switch to pdf of same name
+        final_path = 'chapter_' .. chapter .. path:sub(2,-5) .. '.pdf'
+    else -- otherwise don't change filetype
+        final_path = 'chapter_' .. chapter .. path:sub(2)
+    end
     return final_path
   end
   
