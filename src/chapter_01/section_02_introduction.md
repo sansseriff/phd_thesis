@@ -28,7 +28,7 @@ The system is based on 1-inch optics, although the f = 18.75 mm lenses lead to a
 \caption{ \small a) Simulated photon flux at various temperatures with and without the 1550 nm bandpass filter (BP). b) Normalized photon count rate (PCR) and jitter measurements c) DCR, and calculated figure of merit $H$ versus bias current for both fiber-coupled and free space coupled configurations.}
 \label{fig:false-color}
 \end{figure} -->
-![**Low Dark Count Rate Project Results** a) Simulated photon flux at various temperatures with and without the 1550 nm bandpass filter (BP). b) Normalized photon count rate (PCR) and jitter measurements c) DCR, and calculated figure of merit $H$ versus bias current for both fiber-coupled and free space coupled configurations.](.figs/DataFigure_6.svg){#fig:dcrmin_data short-caption="Low Dark Count Rate Project Results."}
+![**Low Dark Count Rate Project Results** a) Simulated photon flux at various temperatures with and without the 1550 nm bandpass filter (BP). b) Normalized photon count rate (PCR) and jitter measurements c) DCR, and calculated figure of merit $H$ versus bias current for both fiber-coupled and free space coupled configurations.](.figs_01/DataFigure_6.svg){#fig:dcrmin_data short-caption="Low Dark Count Rate Project Results."}
 
 We use four custom cryogenic short-pass filters, with pass-bands below $1.6 \ \mathrm{\upmu m}$ and $1.9 \ \mathrm{\upmu m}$ (Andover Corp.), both with transmission at 1550 nm of 98.8 ± 0.3\%. They reject wavelengths shorter than $3 \ \mathrm{\upmu m}$ through reflective optical coatings, and attenuate longer wavelengths through material absorption in the 12.7 mm-thick N-BK7 glass substrate. While the bandpass filter (FWHM = 7 nm) was found to blue-shift by about 2 nm at cryogenic temperatures, the passband was wide enough such that significant attenuation was not observed at the original target wavelength of 1550 nm. This filter is also sufficiently wide to avoid Fourier-limited broadening of ultra-short laser pulses. 
 
@@ -60,7 +60,7 @@ number of surviving cells are counted, allowing the calculation of a survival
 probability.](ch5_fig1){#fig:overview_2 short-caption="Role of mechanosensitive
 channels during hypo-osmotic shock."}
 
-![**Figure Title.** And I think the rest of this is the caption with (A), (B), and (C) callouts](./figs/Figure_Data_Sept_2022.svg){#fig:custom_figure
+![**Figure Title.** And I think the rest of this is the caption with (A), (B), and (C) callouts](./figs_01/Figure_Data_Sept_2022.svg){#fig:custom_figure
 short-caption="The second first caption."
 width=70%}
 
