@@ -1,6 +1,6 @@
 mjx-utext {
     /* corrects a small error with font size for upgreek package */
-    font-size: 1.04em !important;
+    font-size: 1.09em !important;
     position: relative !important;
-    top: .02rem !important;
+    top: .035rem !important;
 }
