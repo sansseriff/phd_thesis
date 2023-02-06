@@ -1,112 +1,36 @@
 ## Introduction
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Understanding how organisms sense and respond to changes in their
-environment has long been a central theme of biological inquiry. At the
-cellular level, this interaction is mediated by a diverse collection of
-molecular signaling pathways. A pervasive mechanism of signaling in these
-pathways is allosteric regulation, in which the binding of a ligand
-induces a conformational change in some target molecule, triggering
-a signaling cascade [@lindsley2006a]. One of the most important examples
-of such signaling is offered by transcriptional regulation, where
-a transcription factors' propensity to bind to DNA will be altered upon
-binding to an allosteric effector.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This study aimed to evaluate the feasibility of transmitting high clock-rate pulse position modulated (PPM) data using a mode-locked laser and receiving it with a low jitter superconducting nanowire single-photon detector (SNSPD). The investigation was driven by recent advancements in NbN SNSPDs, which have achieved a jitter as low as 50 ps at the FW(1/100)M level, enabling the demonstration of PPM with 50 ps slot widths and a 20 GHz clock. The aim was to increase the data rate by a factor of 10, from 2 GHz to 20 GHz, in the next generation of the Deep Space Optical Communication (DSOC) project.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Despite the ubiquity of allostery, we largely lack a
-formal, rigorous, and
-generalizable framework for studying its effects across the broad variety of
-contexts in which it appears. A key example of this is transcriptional
-regulation, in which allosteric transcription factors can be induced or
-corepressed by binding to a ligand. An allosteric transcription factor can
-adopt multiple conformational states, each of which has its own affinity for
-the ligand and for its DNA target site. *In vitro* studies have rigorously
-quantified the equilibria of different conformational states for allosteric
-transcription factors and measured the affinities of these states to the
-ligand [@harman2001; @lanfranco2017]. In spite of these experimental
-observations, the lack of a coherent quantitative model for allosteric
-transcriptional regulation has made it impossible to predict the behavior of
-even a simple genetic circuit across a range of regulatory parameters,
-physiological states of the organism, and evolutionary isoforms of the
-regulatory sequences.
+During the course of this study, the focus shifted towards investigating the impact of photon number resolution (PNR) on the low jitter detection of optical pulses. PNR can have an unintended impact on the demonstration of high-rate PPM, and therefore a thorough study of its effects was deemed crucial. A novel PNR cancellation technique was developed and applied to successfully demonstrate high-rate PPM. This technique is considered essential for future low-jitter applications of SNSPDs that exhibit photon-number effects.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The ability to predict circuit behavior robustly— that is, across both
-broad ranges of parameters and regulatory architectures —is important for
-multiple reasons. First, in the context of a specific gene, accurate
-prediction demonstrates that all components relevant to the genes'
-behavior have been identified and characterized to sufficient
-quantitative precision. Second, in the context of genetic circuits in
-general, robust prediction validates the model that generated the
-prediction. Possessing a validated model also has implications for future
-work. For example, when we have sufficient confidence in the model,
-a single data set can be used to accurately extrapolate a system’s
-behavior in other conditions. Moreover, there is an essential distinction
-between a predictive model, which is used to predict a system’s behavior
-given a set of input variables, and a retroactive model, which is used to
-describe the behavior of data that has already been obtained. We note
-that even some of the most careful and rigorous analysis of
-transcriptional regulation often entails only a retroactive reflection on
-a single experiment. This raises the fear that each regulatory
-architecture may require a unique analysis that cannot carry over to
-other systems, a worry that is exacerbated by the prevalent use of
-phenomenological functions (e.g. Hill functions or ratios of polynomials)
-that can analyze a single data set, but cannot be used to extrapolate
-a system’s behavior in other conditions [@setty2003; @poelwijk2011a;
-@vilar2013; @rogers2015; @rohlhill2017].
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This work explores what happens when theory takes center stage, namely, we
-first write down the equations governing a system and describe its expected
-behavior across a wide array of experimental conditions, and only then do we
-set out to experimentally confirm these results. Building upon previous work
-[@garcia2011; @brewster2014; @weinert2014] and the work of Monod, Wyman, and
-Changeux [@monod1965], we present a statistical mechanical rendering of
-allostery in the context of induction and corepression (shown schematically
-in @Fig:inducible_types and henceforth referred to as the MWC model), and use
-it as the basis of parameter-free predictions which we then test
-experimentally. More specifically, we study the simple repression motif – a
-widespread bacterial genetic regulatory architecture in which binding of a
-transcription factor occludes binding of an RNA polymerase, thereby
-inhibiting transcription initiation. The MWC model stipulates that an
-allosteric protein fluctuates between two distinct conformations – an active
-and inactive state – in thermodynamic equilibrium [@monod1965]. During
-induction, for example, effector binding increases the probability that a
-repressor will be in the inactive state, weakening its ability to bind to the
-promoter and resulting in increased expression. To test the predictions of
-our model across a wide range of operator binding strengths and repressor
-copy numbers, we design a genetic construct in *Escherichia coli* in which
-the binding probability of a repressor regulates gene expression of a
-fluorescent reporter.
+### Pulse Position Modulation for Deep Space Communication
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Deep Space Optical Communication has been a growing field of study in recent years, as researchers look for ways to communicate with spacecraft that are far away from Earth. In this article, we will focus on the use of Pulse Position Modulation (PPM) for deep space optical communication.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In total, the work presented here demonstrates that one extremely compact set
-of parameters can be applied self-consistently and predictively to different
-regulatory situations including simple repression on the chromosome, cases in
-which decoy binding sites for repressor are put on plasmids, cases in which
-multiple genes compete for the same regulatory machinery, cases involving
-multiple binding sites for repressor leading to DNA looping, and induction by
-signaling [@garcia2011; @garcia2011b; @brewster2012; @brewster2014;
-@boedicker2013a; @boedicker2013]. Thus, rather than viewing the behavior of
-each circuit as giving rise to its own unique input-output response, the MWC
-model provides a means to characterize these seemingly diverse behaviors
-using a single unified framework governed by a small set of parameters.
+While other modulation techniques such as quadrature amplitude modulation (QAM) have been used in the past, it has been shown that in the photon-starved regime, PPM is the best approach for sending data. This is because there is not enough light to measure the phase of the signal.
 
-![ **Transcriptional regulatory motifs involving an allosteric repressor.**
-(A) We consider a promoter regulated solely by an allosteric repressor in
-which the active (repressive, red blobs) state of the repressor is
-energetically favorable in the absence (induction, left panel) or presence
-(corepression, right panel) of an allosteric effector. Both inducible
-repression and corepression are ubiquitous regulatory strategies in *E.
-coli*, several examples of which are given in the tables below each panel.
-(B) A representative regulatory response (fold-change in gene expression) of
-the two architectures shown in Panel (A) as a function of the corresponding
-allosteric effector concentration. Properties of interest to this work are
-shown schematically upon the regulatory response. (C) Historical progression
-of thermodynamic modeling of the inducible simple-repression regulatory
-architecture. @garcia2011 used colorimetric assays and quantitative Western
-blots to investigate how single-site repression is modified by the repressor
-copy number and repressor-DNA binding energy. @brewster2014 used video
-microscopy to probe how the copy number of the promoter and presence of
-competing repressor binding sites affect gene expression. Building upon these
-works, we use flow cytometry to determine the inducer-repressor dissociation
-constants and demonstrate that with these parameters we can predict *a
-priori* the behavior of the system for any repressor copy number, DNA binding
-energy, gene copy number, and inducer
-concentration.](ch2_fig1){#fig:inducible_types short-caption="Transcriptional
-regulatory architectures involving an allosteric repressor."}
+PPM relies on sending one optical pulse carrying M bits of information in one of $2^M$ possible time slots. For M = 2, this corresponds to sending an early pulse to represent a 0 bit and a late pulse to represent a 1 bit.
+
+The main challenge in deep space optical communication is the high loss and distance that the link must traverse. This limits the communication from the spacecraft, as it is limited by the power available on the spacecraft. This means that the communication protocol is limited by the number of bits that can be sent per unit of energy on the spacecraft, also known as photon information efficiency or bits per photon.
+
+For large M, PPM achieves high photon information efficiency, allowing for the saving of power on the spacecraft and the sending of more information with fewer photons. The existing deep space optical communication project uses M up to $2^8 = 256$, meaning that 8 bits of data are carried in each optical pulse.
+
+In this project, we aimed to demonstrate even higher photon information efficiency by using M values up to 2048, or 11 bits of data per optical pulse.
+
+While the use of large M values increases photon information efficiency, it also decreases the data rate of the system. This is because the number of time bins needed per optical pulse scales exponentially with the amount of data in each pulse. Therefore, for a given fixed clock rate and time bin duration, the data rate decreases dramatically for higher M values.
+
+Using M values much larger than 11 is unlikely to be practical in future deep space optical communication systems. However, the data rate of these systems can be increased linearly by increasing the clock rate or bin size of the experiment. This is possible with the use of low jitter detection systems or low jitter superconducting nanowire single-photon detectors (SNSPDs).
+
+### Development of a modulation source
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The communication signal on a spacecraft is generated by utilizing a Continuous Wave (CW) seed laser that is carved by a fast intensity modulator. The resulting low-power pulsed signal is then amplified by an Erbium Doped Fiber Amplifier (EDFA) to increase its transmission power to Earth. The majority of the power used by the spacecraft for communication scales with the number of optical pulses due to the EDFA.
+
+In our experiment, the 20 GHz repetition rate was limited by the jitter of the Single-Photon Detectors (SNSPDs) that we intended to use. These detectors have a Full Width at Half Maximum (FW(1/100)M) jitter of approximately 50 ps. To ensure that the response function of the entire experiment had jitter of around 50 ps FW(1/100)M, we needed to build a Pulsed Phase Modulation (PPM) source with ultra-short optical pulses.
+
+Carving a CW laser with our system would have introduced excessive timing uncertainty due to the limited ability of even the fastest lithium niobate intensity modulators to carve pulses with widths below 20 ps. The added jitter from modulated CW pulses, combined with the jitter of the detectors, would have exceeded the 20 GHz/50 ps slot width requirement.
+
+Therefore, we chose to carve pulses from a mode-locked laser. This approach allows for extremely short pulses in time, with the modulators responsible for sufficiently reducing any surrounding unwanted pulses. The temporal width of the modulator pulse response must be extremely short and able to modulate from 'off' to 'on' within a time frame of the order of the 50 ps bin width.
+
+
+
+
