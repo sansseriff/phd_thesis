@@ -23,6 +23,6 @@ abstract: abstract.md
 degree_title: Applied Physics
 indent: true
 pandoc-latex-color:
-  - classes: [important]
+  - classes: [blue]
     color: blue
 ---

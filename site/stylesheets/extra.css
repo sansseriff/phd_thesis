@@ -12,3 +12,7 @@ mjx-utext {
 mjx-container {
     overflow-y: hidden !important;
 }
+
+.blue {
+    color: darkblue;
+}
