@@ -1,9 +1,9 @@
 ## Aph 138 Homework Assignment
 
-<!-- <span style="color:blue">some *blue* text</span>. -->
+<span class=important>some testing text</span>.
 
-::: important ::::::
+<!-- ::: important ::::::
 This is important content
-::::::::::::::::::::
+:::::::::::::::::::: -->
 
 Testing one two three
