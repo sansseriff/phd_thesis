@@ -65,24 +65,28 @@ overleaf_clean:
 	&& git push overleaf master
 
 mkdocs:
-	rm -r ./site/chapter_01/*
-	rm -r ./site/chapter_02/*
-	rm -r ./site/chapter_03/*
-	rm -r ./site/chapter_04/*
-	rm -r ./site/chapter_05/*
+	rm -r ./site/chapter_01/* \
+	&& rm -r ./site/chapter_02/* \
+	&& rm -r ./site/chapter_03/* \
+	&& rm -r ./site/chapter_04/* \
+	&& rm -r ./site/chapter_05/* \
+	&& cp -R ./src/chapter_01 ./site/ \
+	&& cp -R ./src/chapter_02 ./site/ \
+	&& cp -R ./src/chapter_03 ./site/ \
+	&& cp -R ./src/chapter_04 ./site/ \
+	&& cp -R ./src/chapter_05 ./site/ \
+	&& cp -R ./src/frontmatter ./site/ \
+	&& mv ./site/chapter_01/section_02_abstract.md ./site/chapter_01/index.md \
+	&& mv ./site/chapter_02/section_02_abstract.md ./site/chapter_02/index.md \
+	&& mv ./site/chapter_03/section_02_abstract.md ./site/chapter_03/index.md \
+	&& mv ./site/chapter_04/section_02_abstract.md ./site/chapter_04/index.md \
+	&& mv ./site/chapter_05/section_02_abstract.md ./site/chapter_05/index.md \
 
-	cp -R ./src/chapter_01 ./site/
-	cp -R ./src/chapter_02 ./site/
-	cp -R ./src/chapter_03 ./site/
-	cp -R ./src/chapter_04 ./site/
-	cp -R ./src/chapter_05 ./site/
-	cp -R ./src/frontmatter ./site/
+mkdocs_serve:
+	mkdocs serve
 
-	mv ./site/chapter_01/section_02_abstract.md ./site/chapter_01/index.md
-	mv ./site/chapter_02/section_02_abstract.md ./site/chapter_02/index.md
-	mv ./site/chapter_03/section_02_abstract.md ./site/chapter_03/index.md
-	mv ./site/chapter_04/section_02_abstract.md ./site/chapter_04/index.md
-	mv ./site/chapter_05/section_02_abstract.md ./site/chapter_05/index.md
+serve: mkdocs mkdocs_serve
+
 
 # html:	
 # 	# JEKYLL_ENV=production bundle exec jekyll build --destination docs;\

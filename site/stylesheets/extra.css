@@ -4,3 +4,11 @@ mjx-utext {
     position: relative !important;
     top: .035rem !important;
 }
+
+.arithmatex {
+    overflow-y: hidden !important;
+}
+
+mjx-container {
+    overflow-y: hidden !important;
+}

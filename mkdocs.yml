@@ -78,7 +78,7 @@ nav:
   - High Rate Pulse Position Modulation: 
     - chapter_02/index.md
     - Introduction: chapter_02/section_03_introduction.md
-    - Source: chapter_02/section_4_source.md
+    - Source: chapter_02/section_04_source.md
     - Initial Tests: chapter_02/section_05_extinction_ratio_pnr.md
     - Phased Locked Loop: chapter_02/section_06_phased_locked_loop.md
     - PNR Characterization: chapter_02/section_07_pnr_characterization.md

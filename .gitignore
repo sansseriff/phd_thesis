@@ -8,6 +8,7 @@
 *.bak
 *.swp
 Thumbs.db
+test.sh
 
 # -----------------------
 # Local Development Tools
@@ -33,3 +34,5 @@ src/pandoc-crossref
 src/pandoc-crossref.1
 
 ignore/
+
+
