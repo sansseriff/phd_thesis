@@ -1,0 +1,5 @@
+eventually I should set these up as an environment.yaml for making a conda environment
+
+pip install mkdocs-material
+pip install pandoc-latex-color
+pip install mkdocs-bibtex
