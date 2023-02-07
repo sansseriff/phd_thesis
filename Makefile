@@ -30,6 +30,7 @@ overleaf:
 	--default-image-extension=.pdf \
 	--template=styles/template.tex \
 	--filter pandoc-crossref \
+	--filter pandoc-latex-color \
 	-M "crossrefYaml=ref_formatting.yaml" \
 	--biblatex \
 	--bibliography=references.bib \
