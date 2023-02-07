@@ -10,4 +10,4 @@ An experimental apparatus emits a collimated beam of $1550~\mathrm{nm}$ photons 
 {#fig:cryostat_concept short-caption="Cryostat concept designs."} -->
 
 
-![**Cryostat concept designs** This is the regular caption.](./figs_05/fig1_light.svg){#fig:cryostat_concept short-caption="Cryostat concept designs."}
+![**Cryostat concept designs** This is the regular caption.](./figs_05/fig1_light.svg)![**Cryostat concept designs** This is the regular caption.](./figs_05/fig1_dark.svg){#fig:cryostat_concept short-caption="Cryostat concept designs."}
