@@ -22,4 +22,8 @@ acknowledgements: acknowledgements.md
 abstract: abstract.md
 degree_title: Applied Physics
 indent: true
+pandoc-latex-color:
+  - classes: [important]
+    color: red
+    bgcolor: blue
 ---
