@@ -6,9 +6,8 @@
 An experimental apparatus emits a collimated beam of $1550~\mathrm{nm}$ photons with gaussian beam waist $w_0 = 3~\mathrm{mm}$. You wish to focus the beam onto an SNSPD directly through a window in a cryostat. 
 
 
-![**Cryostat concept designs** This is the regular caption.](./figs_05/fig1_light.svg)
-{#fig:cryostat_concept short-caption="Cryostat concept designs."}
+<!-- ![**Cryostat concept designs** This is the regular caption.](./figs_05/fig1_light.svg)
+{#fig:cryostat_concept short-caption="Cryostat concept designs."} -->
 
-<!-- sdfsdf
 
-![**Low Dark Count Rate Project Results** a) Simulated photon flux at various temperatures with and without the 1550 nm bandpass filter (BP). b) Normalized photon count rate (PCR) and jitter measurements c) DCR, and calculated figure of merit $H$ versus bias current for both fiber-coupled and free space coupled configurations.](./figs_01/DataFigure_6.svg){#fig:dcrmin_data short-caption="Low Dark Count Rate Project Results."} -->
+![**Cryostat concept designs** This is the regular caption.](./figs_05/fig1_light.svg){#fig:cryostat_concept short-caption="Cryostat concept designs."}
