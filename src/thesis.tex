@@ -481,22 +481,6 @@ true photon number gets harder to identify. It's not clear if a pulse is
 a \(|3\rangle\) or a \(|4\rangle\), and the arrival time of the optical
 pulse is correspondingly uncertain.
 
-Just testing out some math features here\ldots{}
-
-\[
-\begin{align}
-    \langle \psi | \Pi_{\text {binary}} | \psi \rangle &= (1- \gamma^2) \sum_{\tilde{n}=0}^{\infty} \langle \tilde{n}_s \tilde{n}_i | \gamma^{\tilde{n}} \sum_{n=0}^{\infty}[1 - (1-\eta)^{n}] \gamma^n | n_s n_i \rangle
-    \\
-    \langle \psi | \Pi_{\text {binary}} | \psi \rangle &= p_{binary}(\gamma, \eta) =  \boxed{(1-\gamma^2) \sum_{n_s=0}^{\infty} \gamma^{2n_s} [1 - (1 - \eta)^{n_s}]}
-\end{align}
-\]
-
-For \(\gamma << 1\),
-\(p \sim (1 - \gamma^2)[\cancel{\gamma^0[1 - (1 - \eta)^0]} + \gamma^{2}\eta ] \sim (1 - \gamma^2)\gamma^{2}\eta\)\textbackslash{}
-\textbackslash{} To lowest order in \(\gamma\),
-\(p \sim \gamma^{2}\eta\). The single photon fock state dominates for
-\(\gamma << 1\).
-
 \hypertarget{time-walk-and-jitter-correction}{%
 \chapter{Time Walk and Jitter
 Correction}\label{time-walk-and-jitter-correction}}
@@ -662,16 +646,6 @@ examine the change in the effective free energy.
 
 ~~~~~~~~~~~~~\includegraphics{chapter_stoming_storm.pdf}
 
-A version of this chapter was published as Chure, G.* , Lee, H.J.\emph{,
-Rasmussen, A., and Phillips, R. (2018). Connecting the dots between
-mechanosensitive channel abundance, osmotic shock, and survival at
-single-cell Resolution. Journal of Bacteriology 200. DOI:
-10.1128/JB.00460-18 (} contributed equally). G.C., H.J.L, and R.P.
-designed and planned experiments. G.C. and H.J.L performed experiments.
-H.J.L constructed bacterial strains. A.R. performed electrophysiology
-experiments. G.C. performed data analysis and figure generation. G.C.
-and R.P. wrote the manuscrip
-
 \hypertarget{abstract-4}{%
 \section{Abstract}\label{abstract-4}}
 
@@ -699,6 +673,9 @@ An experimental apparatus emits a collimated beam of
 \(1550~\mathrm{nm}\) photons with gaussian beam waist
 \(w_0 = 3~\mathrm{mm}\). You wish to focus the beam onto an SNSPD
 directly through a window in a cryostat.
+
+\includegraphics{chapter_05/figs_05/fig1_light.svg\#only-light}
+\includegraphics{chapter_05/figs_05/fig1_dark.svg\#only-dark}
 
 \printbibliography
 \end{document}
