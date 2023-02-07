@@ -92,6 +92,10 @@ nav:
   - High Rate Entanglement Generation: 
     - chapter_04/index.md
     - Introduction: chapter_04/section_03_introduction.md
+  - Appendix 1:
+    - chapter_05/index.md
+    - Software Tools: chapter_05/section_05_software_operation.md
+    - Aph 138 Homework: chapter_05/section_06_aph_hw.md
 
 
 
