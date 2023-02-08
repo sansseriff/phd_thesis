@@ -1,6 +1,6 @@
 ## Aph 138 Homework Assignment
 
-<!-- [Toggle Visibility of Homework Solutions](#){ .md-button .md-button--primary } -->
+
 
 <button style="display: block; margin-left: auto; margin-right: auto" class="md-button md-button--primary">Toggle Visibility of Homework Solutions</button></td>
 
@@ -23,4 +23,4 @@ An experimental apparatus emits a collimated beam of $1550~\mathrm{nm}$ photons 
 This is a link to [The cryostat](./#cryostat_1)
 
 
-<script src="./chapter_05/section_05.js"></script>
+<script src="/chapter_05/section_05.js"></script>
