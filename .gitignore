@@ -19,6 +19,7 @@ src/data/*
 src/frontmatter/other/*
 # site/
 mkdocs/
+pandoc_site/
 
 # stuff from the origin griffin chure thesis
 old/ 
