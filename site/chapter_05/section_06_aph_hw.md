@@ -23,4 +23,4 @@ An experimental apparatus emits a collimated beam of $1550~\mathrm{nm}$ photons 
 This is a link to [The cryostat](./#cryostat_1)
 
 
-<script src="/chapter_05/section_05.js"></script>
+<script src="../../chapter_05/section_05.js"></script>
