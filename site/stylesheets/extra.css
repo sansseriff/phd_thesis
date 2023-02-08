@@ -16,3 +16,7 @@ mjx-container {
 .blue {
     color: darkblue;
 }
+
+h1 {
+    display: none !important;
+}

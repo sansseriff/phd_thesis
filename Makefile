@@ -20,6 +20,9 @@ tex:
 	--resource-path='.:chapter_01/figs:chapter_02/figs:chapter_03/figs:chapter_04/figs:chapter_05/figs:chapter_06/figs:chapter_07/figs:chapter_08/figs:chapter_09/figs:' \
 	&& cd - \
 
+md_test:
+	cd src/ && \
+	sh make_pandoc.sh
 
 overleaf:
 	cd src && \
