@@ -29,11 +29,25 @@ function RawInline(raw)
 end
 
 function figure_image(elem)
+    -- print(elem)
     local image = elem.content and elem.content[1]
     return (image.t == 'Image' and image.title == 'fig:')
         and image
         or nil
 end
+
+function dump(o)
+    if type(o) == 'table' then
+       local s = '{ '
+       for k,v in pairs(o) do
+          if type(k) ~= 'number' then k = '"'..k..'"' end
+          s = s .. '['..k..'] = ' .. dump(v) .. ','
+       end
+       return s .. '} '
+    else
+       return tostring(o)
+    end
+ end
 
 function Para(para)
     local img = figure_image(para)
@@ -50,13 +64,21 @@ function Para(para)
         hypertarget = string.format("\\hypertarget{%s}{%%\n", img.identifier)
         label = string.format("\n\\label{%s}", img.identifier)
     end
-    print(img.caption)
+    -- print(img.__name)
+
+    src_begin = img.src:sub(0,-10)
+    -- print(src_begin)
+    -- print(img.src:sub(-9,-5))
+    -- print()
+    caption = pandoc.utils.stringify(img.caption)
+    short_caption = pandoc.utils.stringify(short_caption)
     string = string.format("<figure markdown> \
-                            <a name='{%s}'></a> \
-                            ![%s](./figs_05/fig1_light.svg#only-light) \
-                            ![%s](./figs_05/fig1_dark.svg#only-dark) \
-                            <figcaption><b>%s</b>And this is the second part</figcaption> \
-                            </figure>", img.identifier, img.identifier, img.identifier, img.caption, short_caption)
+    <a name='%s'></a> \
+    ![%s](%slight.svg#only-light) \
+    ![%s](%sdark.svg#only-dark) \
+    <figcaption><b>%s</b>%s</figcaption> \
+</figure>", img.identifier, img.identifier, src_begin, img.identifier, src_begin, short_caption,
+            caption)
     return pandoc.RawInline('markdown', string)
 end
 
