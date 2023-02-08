@@ -1,7 +1,7 @@
 site_name: SNSPDs for Fun & Profit
 dev_addr: 127.0.0.1:9254
 site_dir: site_deploy
-docs_dir: site
+docs_dir: pandoc_site
   
 theme:
   name: material
@@ -16,7 +16,7 @@ theme:
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
-  custom_dir: ./site/overrides
+  custom_dir: ./pandoc_site/overrides
   features:
     - navigation.indexes
         
@@ -36,7 +36,7 @@ extra_css:
 plugins:
   - search
   - bibtex:
-      bib_file: "./site/references.bib"
+      bib_file: "./pandoc_site/references.bib"
       # csl_file: "../site/styles/ieee.csl"
 
 

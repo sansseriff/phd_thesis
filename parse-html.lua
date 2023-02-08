@@ -17,13 +17,17 @@ function RawBlock (raw)
         -- print(text)
         return pandoc.RawInline('markdown', text)
     end
-  end
+end
 
-  function RawInline(raw)
+function RawInline(raw)
     if raw.text == "\n" then
         return ""
     else
         text = string.gsub(raw.text,"[\n\r]","")
         return pandoc.RawInline('markdown', text)
     end
-  end
+end
+
+-- function Span(span)
+--     print(SPan)
+

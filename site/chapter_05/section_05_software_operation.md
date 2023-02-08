@@ -1,1 +1,0 @@
-## Software Systems and Operation

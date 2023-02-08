@@ -69,22 +69,7 @@ overleaf_clean:
 	&& git push overleaf master
 
 mkdocs:
-	rm -r ./site/chapter_01/* \
-	&& rm -r ./site/chapter_02/* \
-	&& rm -r ./site/chapter_03/* \
-	&& rm -r ./site/chapter_04/* \
-	&& rm -r ./site/chapter_05/* \
-	&& cp -R ./src/chapter_01 ./site/ \
-	&& cp -R ./src/chapter_02 ./site/ \
-	&& cp -R ./src/chapter_03 ./site/ \
-	&& cp -R ./src/chapter_04 ./site/ \
-	&& cp -R ./src/chapter_05 ./site/ \
-	&& cp -R ./src/frontmatter ./site/ \
-	&& mv ./site/chapter_01/section_02_abstract.md ./site/chapter_01/index.md \
-	&& mv ./site/chapter_02/section_02_abstract.md ./site/chapter_02/index.md \
-	&& mv ./site/chapter_03/section_02_abstract.md ./site/chapter_03/index.md \
-	&& mv ./site/chapter_04/section_02_abstract.md ./site/chapter_04/index.md \
-	&& mv ./site/chapter_05/section_02_abstract.md ./site/chapter_05/index.md \
+	sh make_pandoc_site.sh
 
 mkdocs_serve:
 	mkdocs serve
@@ -98,6 +83,24 @@ serve: mkdocs mkdocs_serve
 # 	cp -r chapter_01 ../mkdocs/docs/chapter_01
 # 	cd .. \
 # 	# sh copyfigs.sh ;\
+
+
+# rm -r ./site/chapter_01/* \
+# && rm -r ./site/chapter_02/* \
+# && rm -r ./site/chapter_03/* \
+# && rm -r ./site/chapter_04/* \
+# && rm -r ./site/chapter_05/* \
+# && cp -R ./src/chapter_01 ./site/ \
+# && cp -R ./src/chapter_02 ./site/ \
+# && cp -R ./src/chapter_03 ./site/ \
+# && cp -R ./src/chapter_04 ./site/ \
+# && cp -R ./src/chapter_05 ./site/ \
+# && cp -R ./src/frontmatter ./site/ \
+# && mv ./site/chapter_01/section_02_abstract.md ./site/chapter_01/index.md \
+# && mv ./site/chapter_02/section_02_abstract.md ./site/chapter_02/index.md \
+# && mv ./site/chapter_03/section_02_abstract.md ./site/chapter_03/index.md \
+# && mv ./site/chapter_04/section_02_abstract.md ./site/chapter_04/index.md \
+# && mv ./site/chapter_05/section_02_abstract.md ./site/chapter_05/index.md \
 
 
 	
