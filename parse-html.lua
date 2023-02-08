@@ -64,21 +64,27 @@ function Para(para)
         hypertarget = string.format("\\hypertarget{%s}{%%\n", img.identifier)
         label = string.format("\n\\label{%s}", img.identifier)
     end
-    -- print(img.__name)
 
     src_begin = img.src:sub(0,-10)
-    -- print(src_begin)
-    -- print(img.src:sub(-9,-5))
-    -- print()
+    check_light = img.src:sub(-9,-5)
+
+
     caption = pandoc.utils.stringify(img.caption)
     short_caption = pandoc.utils.stringify(short_caption)
+
+    light_src = string.format("![%s](%slight.svg#only-light)", img.identifier, src_begin)
+    dark_src = string.format("![%s](%sdark.svg#only-light)", img.identifier, src_begin)
+
+    if check_light == "light" then
+        full_src = string.format("%s\n    %s", light_src, dark_src)
+    else
+        full_src = string.format("![%s](%s)", img.identifier, img.src)
+    end
     string = string.format("<figure markdown> \
     <a name='%s'></a> \
-    ![%s](%slight.svg#only-light) \
-    ![%s](%sdark.svg#only-dark) \
+    %s \
     <figcaption><b>%s</b>%s</figcaption> \
-</figure>", img.identifier, img.identifier, src_begin, img.identifier, src_begin, short_caption,
-            caption)
+</figure>", img.identifier, full_src, short_caption, caption)
     return pandoc.RawInline('markdown', string)
 end
 
