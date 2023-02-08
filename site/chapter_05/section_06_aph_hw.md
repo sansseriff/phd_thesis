@@ -10,9 +10,6 @@
 An experimental apparatus emits a collimated beam of $1550~\mathrm{nm}$ photons with gaussian beam waist $w_0 = 3~\mathrm{mm}$. You wish to focus the beam onto an SNSPD directly through a window in a cryostat. 
 
 
-<!-- ![**Cryostat concept designs** This is the regular caption.](./figs_05/fig1_light.svg)
-{#fig:cryostat_concept short-caption="Cryostat concept designs."} -->
-
 
 ![**Cryostat concept designs** ](./figs_05/fig1_light.svg){#fig:cryostat_concept short-caption="Cryostat concept designs."}
 
