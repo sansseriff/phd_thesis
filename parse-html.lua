@@ -14,7 +14,6 @@ function RawBlock(raw)
         return ""
     else
         text = string.gsub(raw.text, "[\n\r]", "")
-        -- print(text)
         return pandoc.RawInline('markdown', text)
     end
 end
@@ -73,7 +72,7 @@ function Para(para)
     short_caption = pandoc.utils.stringify(short_caption)
 
     light_src = string.format("![%s](%slight.svg#only-light)", img.identifier, src_begin)
-    dark_src = string.format("![%s](%sdark.svg#only-light)", img.identifier, src_begin)
+    dark_src = string.format("![%s](%sdark.svg#only-dark)", img.identifier, src_begin)
 
     if check_light == "light" then
         full_src = string.format("%s\n    %s", light_src, dark_src)
