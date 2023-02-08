@@ -42,7 +42,12 @@ The system is based on 1-inch optics, although the f = 18.75 mm lenses lead to a
 
 <!-- \begin{figure}[htbp]\centering\centering\includegraphics[width=\linewidth]{DataFigure_6.pdf}\caption{ \small a) Simulated photon flux at various temperatures with and without the 1550 nm bandpass filter (BP). b) Normalized photon count rate (PCR) and jitter measurements c) DCR, and calculated figure of merit $H$ versus bias current for both fiber-coupled and free space coupled configurations.}\label{fig:false-color}\end{figure} -->
 
-![**Low Dark Count Rate Project Results** a) Simulated photon flux at various temperatures with and without the 1550 nm bandpass filter (BP). b) Normalized photon count rate (PCR) and jitter measurements c) DCR, and calculated figure of merit $H$ versus bias current for both fiber-coupled and free space coupled configurations.](./figs_01/DataFigure_6.svg){#fig:dcrmin_data short-caption="Low Dark Count Rate Project Results."}
+<figure markdown> 
+                            <a name='{fig:dcrmin_data}'></a> 
+                            ![fig:dcrmin_data](./figs_05/fig1_light.svg#only-light) 
+                            ![fig:dcrmin_data](./figs_05/fig1_dark.svg#only-dark) 
+                            <figcaption><b>Inlines: 0x7f1d1f6ad8d0</b>And this is the second part</figcaption> 
+                            </figure>
 
 We use four custom cryogenic short-pass filters, with pass-bands below $1.6 \ \mathrm{\upmu m}$ and $1.9 \ \mathrm{\upmu m}$ (Andover Corp.), both with transmission at 1550 nm of 98.8 ± 0.3%. They reject wavelengths shorter than $3 \ \mathrm{\upmu m}$ through reflective optical coatings, and attenuate longer wavelengths through material absorption in the 12.7 mm-thick N-BK7 glass substrate. While the bandpass filter (FWHM = 7 nm) was found to blue-shift by about 2 nm at cryogenic temperatures, the passband was wide enough such that significant attenuation was not observed at the original target wavelength of 1550 nm. This filter is also sufficiently wide to avoid Fourier-limited broadening of ultra-short laser pulses.
 
@@ -52,8 +57,18 @@ This work used a low-jitter, differential SNSPD \cite{Colangelo2021}, with an ac
 
       As also shown in Fig. \ref{fig:false-color}b, the free-space coupling system achieves up to $72 \% \pm 3.7 \%$ SDE as measured from the fiber outside the cryostat. The reduction in efficiency is likely due to surface reflections in the free-space optics, and potential misalignment in the optical baffles. The minimum DCR (Fig. \ref{fig:false-color}c) at $72 \%$ SDE is about 0.1 Hz, with a bias current of 16 $\mathrm{\upmu A}$. These metrics, with the jitter measurements shown in Fig. \ref{fig:false-color}b, give a maximum H value of $5 \times 10^{11}$ (Fig. \ref{fig:false-color}c). Values as high as $1.8 \times 10^{12}$ have been reported before, but at 1.5% system detection efficiency \cite{Shibata2015}. Our system shows a low DCR can be achieved without severe reduction of SDE or usable target wavelength bandwidth. This is paramount for the future of terrestrial and space-to-ground quantum communication, since it increases success rate with finite statistics \cite{Boaron2018secure}. The same techniques can be applied to emerging SNSPD applications at longer wavelengths, such as laser ranging \cite{Taylor2019}, where fiber filtering is impractical. Beyond single-mode applications, our work paves the way to scalable, low-DCR, multi-mode coupling to SNSPD arrays \cite{Wollman2019}.
 
-![**Figure Title.** And I think the rest of this is the caption with (A), (B), and (C) callouts](./figs_01/Figure_Data_Sept_2022.svg){#fig:custom_figure short-caption="A jitterate data figure." width="70%"}
+<figure markdown> 
+                            <a name='{fig:custom_figure}'></a> 
+                            ![fig:custom_figure](./figs_05/fig1_light.svg#only-light) 
+                            ![fig:custom_figure](./figs_05/fig1_dark.svg#only-dark) 
+                            <figcaption><b>Inlines: 0x7f1d1f68a4c0</b>And this is the second part</figcaption> 
+                            </figure>
 
 Finally, here’s a png figure for testing
 
-![**A test png figure.** And here is where I’d put in more information about the png.](./figs_01/fridge.png){#fig:test_png_figure short-caption="A png figure." width="70%"}
+<figure markdown> 
+                            <a name='{fig:test_png_figure}'></a> 
+                            ![fig:test_png_figure](./figs_05/fig1_light.svg#only-light) 
+                            ![fig:test_png_figure](./figs_05/fig1_dark.svg#only-dark) 
+                            <figcaption><b>Inlines: 0x7f1d1f701220</b>And this is the second part</figcaption> 
+                            </figure>

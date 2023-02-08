@@ -12,20 +12,15 @@
 
 An experimental apparatus emits a collimated beam of $1550~\mathrm{nm}$ photons with gaussian beam waist $w_0 = 3~\mathrm{mm}$. You wish to focus the beam onto an SNSPD directly through a window in a cryostat.
 
-![**Cryostat concept designs**](./figs_05/fig1_light.svg){#fig:cryostat_concept short-caption="Cryostat concept designs."}
+<figure markdown> 
+                            <a name='{fig:cryostat_concept}'></a> 
+                            ![fig:cryostat_concept](./figs_05/fig1_light.svg#only-light) 
+                            ![fig:cryostat_concept](./figs_05/fig1_dark.svg#only-dark) 
+                            <figcaption><b>Inlines: 0x7f0067e67f40</b>And this is the second part</figcaption> 
+                            </figure>
 
-<figure>
+<!-- <figure markdown><a name="cryostat_concept"></a>  ![cryostat_concept](./figs_05/fig1_light.svg#only-light)  ![cryostat_concept](./figs_05/fig1_dark.svg#only-dark)  <figcaption><b> This is the first part </b>And this is the second part</figcaption></figure> -->
 
-<a name="histogram_1"></a> ![cryostat_1](./figs_05/fig1_light.svg#only-light) ![cryostat_1](./figs_05/fig1_dark.svg#only-dark)
-
-<figcaption>
-
-<b> This is the first part </b>And this is the second part
-
-</figcaption>
-
-</figure>
-
-This is a link to [The cryostat](./#cryostat_1)
+This is a link to [The cryostat](./#cryostat_concept)
 
 <script src="../../chapter_05/code/section_05.js"></script>
