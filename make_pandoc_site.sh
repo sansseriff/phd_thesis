@@ -18,7 +18,7 @@ rm -r ./pandoc_site/chapter_01/* \
 
 
 find ./src/chapter_01/ -iname "*.md" -type f -exec sh -c 'pandoc \
---from markdown-hard_line_breaks-native_spans-native_divs \
+--from markdown-hard_line_breaks-native_spans \
 --to markdown \
 -t markdown-smart \
 --lua-filter=parse-html.lua \
@@ -26,7 +26,7 @@ find ./src/chapter_01/ -iname "*.md" -type f -exec sh -c 'pandoc \
 "${0}" -o "./pandoc_site/chapter_01/$(basename ${0%.md}.md)"' {} \;
 
 find ./src/chapter_02/ -iname "*.md" -type f -exec sh -c 'pandoc \
---from markdown-hard_line_breaks-native_spans-native_divs \
+--from markdown-hard_line_breaks-native_spans \
 --to markdown \
 -t markdown-smart \
 --lua-filter=parse-html.lua \
@@ -34,7 +34,7 @@ find ./src/chapter_02/ -iname "*.md" -type f -exec sh -c 'pandoc \
 "${0}" -o "./pandoc_site/chapter_02/$(basename ${0%.md}.md)"' {} \;
 
 find ./src/chapter_03/ -iname "*.md" -type f -exec sh -c 'pandoc \
---from markdown-hard_line_breaks-native_spans-native_divs \
+--from markdown-hard_line_breaks-native_spans \
 --to markdown \
 -t markdown-smart \
 --lua-filter=parse-html.lua \
@@ -42,7 +42,7 @@ find ./src/chapter_03/ -iname "*.md" -type f -exec sh -c 'pandoc \
 "${0}" -o "./pandoc_site/chapter_03/$(basename ${0%.md}.md)"' {} \;
 
 find ./src/chapter_04/ -iname "*.md" -type f -exec sh -c 'pandoc \
---from markdown-hard_line_breaks-native_spans-native_divs \
+--from markdown-hard_line_breaks-native_spans \
 --to markdown \
 -t markdown-smart \
 --lua-filter=parse-html.lua \
@@ -50,7 +50,7 @@ find ./src/chapter_04/ -iname "*.md" -type f -exec sh -c 'pandoc \
 "${0}" -o "./pandoc_site/chapter_04/$(basename ${0%.md}.md)"' {} \;
 
 find ./src/chapter_05/ -iname "*.md" -type f -exec sh -c 'pandoc \
---from markdown-hard_line_breaks-native_spans-native_divs \
+--from markdown-hard_line_breaks-native_spans \
 --to markdown \
 -t markdown-smart \
 --lua-filter=parse-html.lua \

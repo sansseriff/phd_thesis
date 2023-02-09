@@ -1,7 +1,6 @@
 ## Aph 138 Homework Assignment
-```{=html}
-<script src="../../chapter_05/code/section_05.js"></script>
-```
+
+
 
 <!-- the html tag makes this only appear on the website -->
 ```{=html}
@@ -29,21 +28,27 @@ a) (4 pts) If the detector has a circular active area with radius \SI{5}{\micro\
 
 <span class=blue markdown> The formula for power inside an aperture at $w(z)$ for a guassian beam:</span>
 
+<div class=blue style="display:block" markdown= >
 
+$$P(r, z)=P_{0}\left[1-e^{-2 r^{2} / w^{2}(z)}\right]$$ 
 
-<span class=blue markdown>$$P(r, z)=P_{0}\left[1-e^{-2 r^{2} / w^{2}(z)}\right]$$ </span>
-
+</div>
 
 <span class=blue markdown>We are interested in the ratio of power collected at $w(z=0) = w_0$ which may be expressed as:</span>
-<div class=blue markdown> 
+<div class=blue markdown style="display:block"> 
 
 $$P(r, z=0)=1-e^{-2 r^{2} / w_0^{2}}$$
 
 </div>
 
 <span class=blue markdown>Plugging in: </span>
-<div class=blue markdown> 
+<div class=blue markdown="1" style="display:block"> 
 
 $$P(r, z=0)=1-e^{-2(5^{2}) / 16.5^{2}} \approx  \boxed{0.17} $$
 
 </div>
+
+
+
+
+<script src="../../chapter_05/code/section_05.js"></script>

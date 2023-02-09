@@ -16,10 +16,6 @@ if FORMAT ~= "latex" then
     return final_path
   end
   
---   function Link (element)
---     element.target = fix_path(element.target)
---     return element
---   end
   
   function Image (element)
     element.src = fix_path(element.src)

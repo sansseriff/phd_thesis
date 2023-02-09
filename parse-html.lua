@@ -13,7 +13,7 @@ function RawBlock(raw)
     if raw.text == "\n" then
         return ""
     else
-        text = string.gsub(raw.text, "[\n\r]", "")
+        text = string.gsub(raw.text, "\n\r", "\n\r")
         return pandoc.RawInline('markdown', text)
     end
 end
@@ -22,7 +22,7 @@ function RawInline(raw)
     if raw.text == "\n" then
         return ""
     else
-        text = string.gsub(raw.text, "[\n\r]", "")
+        text = string.gsub(raw.text, "\n\r", "\n\r")
         return pandoc.RawInline('markdown', text)
     end
 end
@@ -37,16 +37,16 @@ end
 
 function dump(o)
     if type(o) == 'table' then
-       local s = '{ '
-       for k,v in pairs(o) do
-          if type(k) ~= 'number' then k = '"'..k..'"' end
-          s = s .. '['..k..'] = ' .. dump(v) .. ','
-       end
-       return s .. '} '
+        local s = '{ '
+        for k, v in pairs(o) do
+            if type(k) ~= 'number' then k = '"' .. k .. '"' end
+            s = s .. '[' .. k .. '] = ' .. dump(v) .. ','
+        end
+        return s .. '} '
     else
-       return tostring(o)
+        return tostring(o)
     end
- end
+end
 
 function Para(para)
     local img = figure_image(para)
@@ -64,8 +64,8 @@ function Para(para)
         label = string.format("\n\\label{%s}", img.identifier)
     end
 
-    src_begin = img.src:sub(0,-10)
-    check_light = img.src:sub(-9,-5)
+    src_begin = img.src:sub(0, -10)
+    check_light = img.src:sub( -9, -5)
 
 
     caption = pandoc.utils.stringify(img.caption)
@@ -85,6 +85,21 @@ function Para(para)
     <figcaption><b>%s</b>%s</figcaption> \
 </figure>", img.identifier, full_src, short_caption, caption)
     return pandoc.RawInline('markdown', string)
+end
+
+function Div(el)
+    -- this is useful for parsing divs: https://github.com/pandoc/lua-filters/blob/master/list-table/list-table.lua
+    -- print(el.classes[1])
+    -- print(el.content[1].t)
+    -- print(el.content[1].content[1].t)
+
+    if el.content[1].t == "Para" then
+        if el.content[1].content[1].t == "Math" then
+            string = string.format("<div class=%s markdown>\n\n$$%s$$\n\n</div>", el.classes[1], el.content[1].content[1].text)
+            return pandoc.RawInline('markdown', string)
+        end
+    end
+    return el
 end
 
 -- img.identifier is cryostat_concept

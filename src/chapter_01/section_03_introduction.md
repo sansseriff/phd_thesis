@@ -4,15 +4,6 @@ Time-resolved photon detection with low dark counts is a vital technology in fie
 Here, we focus on lowering the Dark Count Rate (DCR) of a telecom-band SNSPD system by filtering thermal photons, without sacrificing efficiency or jitter. We demonstrate a free-space coupled SNSPD with sub-0.1 Hz DCR, 14 ps timing jitter, and 72% total system detection efficiency (SDE) by using a differential single-pixel SNSPD [@Colangelo2021] to image a single-mode fiber through an optimized free-space filter stack. 
 
 
-<p> This is some html content </p>
-
-<div> This is a dive contents </div>
-
-<figcaption><b> This is the first part </b>And this is the second part</figcaption>
-
-
-<h2 id="toc-anchor-h2">H2</h2>
-
 %HARDWARE
 \begin{figure}[htbp]
 \centering\includegraphics[width=\linewidth]{Hardware and Filters Squashed 2.pdf}

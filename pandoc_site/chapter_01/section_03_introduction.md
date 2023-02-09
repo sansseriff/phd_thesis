@@ -4,33 +4,15 @@ Time-resolved photon detection with low dark counts is a vital technology in fie
 
 Here, we focus on lowering the Dark Count Rate (DCR) of a telecom-band SNSPD system by filtering thermal photons, without sacrificing efficiency or jitter. We demonstrate a free-space coupled SNSPD with sub-0.1 Hz DCR, 14 ps timing jitter, and 72% total system detection efficiency (SDE) by using a differential single-pixel SNSPD [@Colangelo2021] to image a single-mode fiber through an optimized free-space filter stack.
 
-<p>
-
-This is some html content
-
-</p>
-
-<div>
-
-This is a dive contents
-
-</div>
-
-<figcaption>
-
-<b> This is the first part </b>And this is the second part
-
-</figcaption>
-
-<h2 id="toc-anchor-h2">
-
-H2
-
-</h2>
-
 %HARDWARE
 
-\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{Hardware and Filters Squashed 2.pdf}\caption{\small a) System hardware. ASPH: aspheric lens, %(Edmund Optics \#47-729)SP1 \& SP2: custom short-pass filters, BP: band-pass filter, %(Semrock NIR01-1550/3-25),BK7: glass windows, SMF: Single-mode fiber, PEL: Peltier element, LC: Liquid cooling block. b) Transmission spectra for the three filters utilized. c) Absorption spectrum for the SNSPD efficiency-enhancing optical stack.}\label{fig:setup}\end{figure}
+\begin{figure}[htbp]
+\centering\includegraphics[width=\linewidth]{Hardware and Filters Squashed 2.pdf}
+\caption{\small a) System hardware. ASPH: aspheric lens, %(Edmund Optics \#47-729)
+SP1 \& SP2: custom short-pass filters, BP: band-pass filter, %(Semrock NIR01-1550/3-25),
+BK7: glass windows, SMF: Single-mode fiber, PEL: Peltier element, LC: Liquid cooling block. b) Transmission spectra for the three filters utilized. c) Absorption spectrum for the SNSPD efficiency-enhancing optical stack.}
+\label{fig:setup}
+\end{figure}
 
 %We compare performance with a fiber-coupled configuration using the same detector.
 
@@ -40,7 +22,12 @@ In this work, a single mode fiber is imaged onto the detector using two f = 18.7
 
 The system is based on 1-inch optics, although the f = 18.75 mm lenses lead to a $1/e^2$ intensity diameter of about 5 mm in the collimated region. To reduce the larger-than-required numerical aperture of the system, painted 8 mm apertures (Acktar Spectral Black) were added in the collimated region. These are large enough to allow minor alignment adjustments — by translating the exterior collimating lens — without vignetting.
 
-<!-- \begin{figure}[htbp]\centering\centering\includegraphics[width=\linewidth]{DataFigure_6.pdf}\caption{ \small a) Simulated photon flux at various temperatures with and without the 1550 nm bandpass filter (BP). b) Normalized photon count rate (PCR) and jitter measurements c) DCR, and calculated figure of merit $H$ versus bias current for both fiber-coupled and free space coupled configurations.}\label{fig:false-color}\end{figure} -->
+<!-- \begin{figure}[htbp]
+\centering
+\centering\includegraphics[width=\linewidth]{DataFigure_6.pdf}
+\caption{ \small a) Simulated photon flux at various temperatures with and without the 1550 nm bandpass filter (BP). b) Normalized photon count rate (PCR) and jitter measurements c) DCR, and calculated figure of merit $H$ versus bias current for both fiber-coupled and free space coupled configurations.}
+\label{fig:false-color}
+\end{figure} -->
 
 <figure markdown> 
     <a name='fig:dcrmin_data'></a> 
