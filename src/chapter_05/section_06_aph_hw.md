@@ -1,5 +1,7 @@
 ## Aph 138 Homework Assignment
+```{=html}
 <script src="../../chapter_05/code/section_05.js"></script>
+```
 
 <!-- the html tag makes this only appear on the website -->
 ```{=html}
@@ -19,18 +21,29 @@ As we will see later on, a set of filters will be needed between the detector an
 
 a) (4 pts) If the detector has a circular active area with radius \SI{5}{\micro\metre}, what ratio of power in the beam can it collect? Assume the detector has unity efficiency across all angles of incidence with respect to the surface normal. 
 
-<span class=blue markdown>
-    Answer: The divergence angle of the guassian beam: $\theta = \tan^{-1}({\frac{3}{100}})$. 
-    The formula for divergence angle in terms of waist $w_0$: $\theta = \frac{\lambda}{\pi w_0}$ 
-    Combining and plugging in, the waist radius at focus is  $\frac{\SI{1550}{\nano\metre}}{\pi \tan^{-1}(\frac{3}{100})} \approx 16.5~ \unit{\micro\metre}$ 
-    The formula for power inside an aperture at w(z) for a guassian beam: 
+<span class=blue markdown> Answer: The divergence angle of the guassian beam: $\theta = \tan^{-1}({\frac{3}{100}})$. </span>
 
-    $$P(r, z)=P_{0}\left[1-e^{-2 r^{2} / w^{2}(z)}\right]$$ 
+<span class=blue markdown>  The formula for divergence angle in terms of waist $w_0$: $\theta = \frac{\lambda}{\pi w_0}$ </span>
 
-    We are interested in the ratio of power collected at $w(z=0) = w_0$ which may be expressed as: 
+<span class=blue markdown>  Combining and plugging in, the waist radius at focus is $\frac{1550 nm}{\pi \tan^{-1}(\frac{3}{100})} \approx 16.5~ \mathrm{\upmu m}$ </span>
 
-    $$P(r, z=0)=1-e^{-2 r^{2} / w_0^{2}}$$ 
-    
-    Plugging in: 
-    $$P(r, z=0)=1-e^{-2(5^{2}) / 16.5^{2}} \approx  \boxed{0.17} $$ 
-</span>
+<span class=blue markdown> The formula for power inside an aperture at $w(z)$ for a guassian beam:</span>
+
+
+
+<span class=blue markdown>$$P(r, z)=P_{0}\left[1-e^{-2 r^{2} / w^{2}(z)}\right]$$ </span>
+
+
+<span class=blue markdown>We are interested in the ratio of power collected at $w(z=0) = w_0$ which may be expressed as:</span>
+<div class=blue markdown> 
+
+$$P(r, z=0)=1-e^{-2 r^{2} / w_0^{2}}$$
+
+</div>
+
+<span class=blue markdown>Plugging in: </span>
+<div class=blue markdown> 
+
+$$P(r, z=0)=1-e^{-2(5^{2}) / 16.5^{2}} \approx  \boxed{0.17} $$
+
+</div>
