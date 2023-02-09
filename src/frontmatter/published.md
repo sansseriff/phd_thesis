@@ -1,4 +1,5 @@
-\textbf{A. Mueller}, E. E. Wollman, B. Korzh, A. D. Beyer, L. Narvaez, R. Rogalin, M. Spiropulu, and M. D. Shaw, “Time-walk and jitter correction in snspds at high count rates,” \href{https://arxiv.org/abs/2210.01271}{arXiv:2210.01271, 2022}.
+
+\textbf{A. Mueller}, E. E. Wollman, B. Korzh, A. D. Beyer, L. Narvaez, R. Rogalin, M. Spiropulu, and M. D. Shaw, “Time-walk and jitter correction in snspds at high count rates,” \href{https://doi.org/10.1063/5.0129147}{Applied Physics Letters 122, 044001 (2023)}.
 
 \textbf{A. S. Mueller}, B. Korzh, M. Runyan, E. E. Wollman, A. D. Beyer, J. P. Allmaras, A. E. Velasco, I Craiciu, B. Bumble, R. M. Briggs, L. Narvaez, C. Peña, M. Spiropulu, and M. D. Shaw, “Free-space coupled superconducting nanowire single-photon detector with low dark counts,” \href{https://opg.optica.org/optica/fulltext.cfm?uri=optica-8-12-1586&id=465726}{Optica 8, 1586–1587 (2021)}.
 

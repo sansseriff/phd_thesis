@@ -1,3 +1,3 @@
 # Time Walk and Jitter Correction
 
-         ![](mutant)
+         ![](./figs_03/jitter_correction.svg)

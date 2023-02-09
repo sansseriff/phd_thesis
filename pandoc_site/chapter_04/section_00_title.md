@@ -1,3 +1,3 @@
 # High Rate Entanglement Generation
 
-                                    ![](physiology)
+                                    ![](./figs_04/high_rate_entanglement.svg)

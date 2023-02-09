@@ -1,3 +1,3 @@
 # Appendix 1
 
-             ![](coming_storm)
+             ![](./figs_04/appendix.svg)

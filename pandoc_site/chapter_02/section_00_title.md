@@ -1,3 +1,3 @@
 # High Rate Pulse Position Modulation
 
-                              ![](coarse_grain)
+                              ![](./figs_02/pnr_and_pulses.png)
