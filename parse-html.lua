@@ -48,6 +48,8 @@ function dump(o)
     end
 end
 
+-- This function takes the src/ style of figures and converts it into a mkdocs format that supports
+-- light and dark mode, and figure captions. 
 function Para(para)
     local img = figure_image(para)
     if not img or not img.caption or not img.attributes['short-caption'] then
@@ -87,6 +89,8 @@ function Para(para)
     return pandoc.RawInline('markdown', string)
 end
 
+-- This takes the native pandoc representation of Divs and outputs an html div with the markdown data attribute
+-- For some reason, pandoc was stripping the markdown data attribute when deactivating the native_divs extension
 function Div(el)
     -- this is useful for parsing divs: https://github.com/pandoc/lua-filters/blob/master/list-table/list-table.lua
     -- print(el.classes[1])
