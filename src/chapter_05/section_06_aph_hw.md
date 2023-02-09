@@ -20,13 +20,17 @@ As we will see later on, a set of filters will be needed between the detector an
 a) (4 pts) If the detector has a circular active area with radius \SI{5}{\micro\metre}, what ratio of power in the beam can it collect? Assume the detector has unity efficiency across all angles of incidence with respect to the surface normal. 
 
 <span class=blue markdown>
-    Answer: The divergence angle of the guassian beam: $\theta = \tan^{-1}({\frac{3}{100}})$. <br />
-    The formula for divergence angle in terms of waist $w_0$: $\theta = \frac{\lambda}{\pi w_0}$ <br />
-    Combining and plugging in, the waist radius at focus is  $\frac{\SI{1550}{\nano\metre}}{\pi \tan^{-1}(\frac{3}{100})} \approx 16.5~ \unit{\micro\metre}$ <br />
-    The formula for power inside an aperture at w(z) for a guassian beam:  <br />
-    $$P(r, z)=P_{0}\left[1-e^{-2 r^{2} / w^{2}(z)}\right]$$ <br />
-    We are interested in the ratio of power collected at $w(z=0) = w_0$ which may be expressed as: <br />
-    $$P(r, z=0)=1-e^{-2 r^{2} / w_0^{2}}$$ <br />
-    Plugging in: <br />
-    $$P(r, z=0)=1-e^{-2(5^{2}) / 16.5^{2}} \approx  \boxed{0.17} $$ <br />
+    Answer: The divergence angle of the guassian beam: $\theta = \tan^{-1}({\frac{3}{100}})$. 
+    The formula for divergence angle in terms of waist $w_0$: $\theta = \frac{\lambda}{\pi w_0}$ 
+    Combining and plugging in, the waist radius at focus is  $\frac{\SI{1550}{\nano\metre}}{\pi \tan^{-1}(\frac{3}{100})} \approx 16.5~ \unit{\micro\metre}$ 
+    The formula for power inside an aperture at w(z) for a guassian beam: 
+
+    $$P(r, z)=P_{0}\left[1-e^{-2 r^{2} / w^{2}(z)}\right]$$ 
+
+    We are interested in the ratio of power collected at $w(z=0) = w_0$ which may be expressed as: 
+
+    $$P(r, z=0)=1-e^{-2 r^{2} / w_0^{2}}$$ 
+    
+    Plugging in: 
+    $$P(r, z=0)=1-e^{-2(5^{2}) / 16.5^{2}} \approx  \boxed{0.17} $$ 
 </span>
