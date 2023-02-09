@@ -12,7 +12,7 @@
 ### 1. Free space coupling with low dark counts (50 points)
 An experimental apparatus emits a collimated beam of $1550~\mathrm{nm}$ photons with gaussian beam waist $w_0 = 3~\mathrm{mm}$. You wish to focus the beam onto an SNSPD directly through a window in a cryostat. 
 
-![**Cryostat concept designs** ](./figs_05/fig1_light.svg){#fig:cryostat_concept short-caption="Cryostat concept designs."}
+![**Cryostat concept designs** ](./figs_05/fig1b_light.svg){#fig:cryostat_concept short-caption="Cryostat concept designs."}
 
 As we will see later on, a set of filters will be needed between the detector and the window to minimize dark counts. In practice, the set of filters can be quite thick. Say a $f = 100 mm$ lens is used right outside the cryostat to focus the beam onto the detector though a set of filters (Fig 1a). The long focal length makes room for a few inches of filters between the external lens and focused spot. 
 
