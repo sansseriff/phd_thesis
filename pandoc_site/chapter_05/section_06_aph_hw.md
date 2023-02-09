@@ -1,5 +1,7 @@
 ## Aph 138 Homework Assignment
 
+<script src="../../chapter_05/code/section_05.js"></script>
+
 <!-- the html tag makes this only appear on the website -->
 
 <button style="display: block; margin-left: auto; margin-right: auto" class="md-button md-button--primary">Toggle Visibility of Homework Solutions</button></td>
@@ -16,9 +18,13 @@ An experimental apparatus emits a collimated beam of $1550~\mathrm{nm}$ photons 
     <a name='fig:cryostat_concept'></a> 
     ![fig:cryostat_concept](./figs_05/fig1_light.svg#only-light)
     ![fig:cryostat_concept](./figs_05/fig1_dark.svg#only-dark) 
-    <figcaption><b>Cryostat concept designs.</b>Cryostat concept designs. This is where more caption info is located</figcaption> 
+    <figcaption><b>Cryostat concept designs.</b>Cryostat concept designs</figcaption> 
 </figure>
 
-This is a link to [The cryostat](./#cryostat_concept)
+As we will see later on, a set of filters will be needed between the detector and the window to minimize dark counts. In practice, the set of filters can be quite thick. Say a $f = 100 mm$ lens is used right outside the cryostat to focus the beam onto the detector though a set of filters (Fig 1a). The long focal length makes room for a few inches of filters between the external lens and focused spot.
 
-<script src="../../chapter_05/code/section_05.js"></script>
+<!-- This is a link to [The cryostat](./#fig:cryostat_concept) -->
+
+a)  (4 pts) If the detector has a circular active area with radius \SI{5}{\micro\metre}, what ratio of power in the beam can it collect? Assume the detector has unity efficiency across all angles of incidence with respect to the surface normal.
+
+<span class=blue markdown> Answer: The divergence angle of the guassian beam: $\theta = \tan^{-1}({\frac{3}{100}})$. <br /> The formula for divergence angle in terms of waist $w_0$: $\theta = \frac{\lambda}{\pi w_0}$ <br /> Combining and plugging in, the waist radius at focus is $\frac{\SI{1550}{\nano\metre}}{\pi \tan^{-1}(\frac{3}{100})} \approx 16.5~ \unit{\micro\metre}$ <br /> The formula for power inside an aperture at w(z) for a guassian beam: <br /> $$P(r, z)=P_{0}\left[1-e^{-2 r^{2} / w^{2}(z)}\right]$$ <br /> We are interested in the ratio of power collected at $w(z=0) = w_0$ which may be expressed as: <br /> $$P(r, z=0)=1-e^{-2 r^{2} / w_0^{2}}$$ <br /> Plugging in: <br /> $$P(r, z=0)=1-e^{-2(5^{2}) / 16.5^{2}} \approx  \boxed{0.17} $$ <br /> </span>
