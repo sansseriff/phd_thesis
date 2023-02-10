@@ -116,7 +116,25 @@ If the detector has a circular active area with radius $5~\mathrm{\upmu m}$, wha
 
 $$\eta(\lambda) = \frac{1}{2}(1 - \text{erf}[\lambda - 3~\mathrm{\upmu m}]) $$
 
-$\lambda$ is measured in $\mathrm{\upmu m}$ and $\text{erf}()$ is the error function. Using your conclusions from (1.3) and expression from (1.4), write a formula $N_{photons}[\lambda]$ for the number of detectable dark counts with respect to $\lambda$, then numerically integrate it to find the dark count rate with no filtering. The laboratory temperature $T$ is 293~K, lens focal length $l$ is $18~\text{mm}$, detector radius $r$ is $5~\mathrm{\upmu m}$, and the diameter $d$ of all optics is 1 inch. The maximum count rate of this SNSPD is 10 MHz. Is the detector usable or overexposed? 
+$\lambda$ is measured in $\mathrm{\upmu m}$ and $\text{erf}()$ is the error function. Using your conclusions from (1.3) and expression from (1.4), write a formula $N_{photons}[\lambda]$ for the number of detectable dark counts with respect to $\lambda$, then numerically integrate it to find the dark count rate with no filtering. The laboratory temperature $T$ is 293 K, lens focal length $l$ is $18~\text{mm}$, detector radius $r$ is $5~\mathrm{\upmu m}$, and the diameter $d$ of all optics is 1 inch. The maximum count rate of this SNSPD is 10 MHz. Is the detector usable or overexposed? 
+
+<span class=blue markdown> **Answer:** </span>
+<span class=blue markdown>Use the expression from (1.4) and multiply it by the quantum efficiency function $\eta(\lambda)$ </span>
+    
+<div class=blue markdown> 
+
+$$N_{photons}[\lambda] = P \Omega D_{area} \eta(\lambda) B_{\lambda}(\lambda, T=293)$$
+
+</div>
+
+<span class=blue markdown>  Here is the function expressed in mathmatica and the solution to the integral: </span>
+
+![](./figs_05/mathematica_2.PNG)
+
+<span class=blue markdown>Dark count rate $\approx \boxed{110 \,\text{MCounts/s}}$ </span>
+<span class=blue markdown>The rate of dark counts exceeds the usual maximum count rate, the detector is not usable. </span>
+
+<span class=red markdown>3 pts. for similar dark count rate (+/- 20%) , 3 pts. for saying the detector is not usable.</span>
 
 
 
