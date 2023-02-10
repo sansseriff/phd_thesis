@@ -742,8 +742,42 @@ at \(w(z=0) = w_0\) which may be expressed as:}
 (4 pts) A faster lens mounted much closer to the detector inside the
 cryostat focuses to a smaller waist. Consider an \(f = 18~\mathrm{mm}\)
 lens with the detector at the focal length
-(Fig.~\ref{fig:cryostat_concept} (b)). Verify more than 99\% of the
+(Fig.~\ref{fig:cryostat_concept} (B)). Verify more than 99\% of the
 collimated light will be focused onto the active area of the detector.
+
+{\color{midnightblue}  The waist radius at focus is
+\(\frac{1550~\mathrm{nm}}}{\pi \tan^{-1}(\frac{3}{18})} \approx 2.98~\mathrm{\upmu m}\)
+}
+
+{\color{midnightblue} Ratio of power within the \(10~mathrm{\upmu m}\)
+radius active area: }
+
+{\color{midnightblue} 
+
+\[P(r, z=0)=1-e^{-2(5^{2}) / 2.98^{2}} \approx \boxed{0.996} \]
+
+}
+
+Without filtering, the mid-infrared photons coupled to the detector from
+the room temperature laboratory are a dominant source of dark counts.
+Think of the environment outside the window as an isotropic blackbody
+emitter. Consider 3 cases, where the shaded red regions illustrate the
+light field of thermal radiation that could couple to the detector:
+
+\hypertarget{fig:coupling_options}{%
+\begin{figure}
+\centering
+\includegraphics{chapter_05/figs_05/fig2b_light.pdf}
+\caption[{Cryostat coupling options}]{\textbf{Three Coupling Options}}
+\label{fig:coupling_options}
+\end{figure}
+}
+
+\begin{verbatim}
+    i) There is no lens; the detector is distance $l$ inside the cryostat, and the first window with diameter $d$ defines an entrance pupil.
+    ii) Same as (i), but a lens with focal length $l$ is placed right outside the first window. The detector is at the focal point.
+    iii) Same as (ii) but the lens is placed inside the cryostat with the detector still at the focal length. Equivalent to @Fig:cryostat_concept (B) above.
+\end{verbatim}
 
 \printbibliography
 \end{document}
