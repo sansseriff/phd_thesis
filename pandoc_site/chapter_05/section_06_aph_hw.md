@@ -78,7 +78,9 @@ Without filtering, the mid-infrared photons coupled to the detector from the roo
     <figcaption><b>Cryostat coupling options</b>Three Coupling Options</figcaption> 
 </figure>
 
-<span markdown> i) There is no lens; the detector is distance $l$ inside the cryostat, and the first window with diameter $d$ defines an entrance pupil. </span> <span markdown> ii) Same as (i), but a lens with focal length $l$ is placed right outside the first window. The detector is at the focal point. </span> <span markdown> iii) Same as (ii) but the lens is placed inside the cryostat with the detector still at the focal length. Equivalent to @Fig:cryostat_concept (B) above. </span>
+i)  There is no lens; the detector is distance $l$ inside the cryostat, and the first window with diameter $d$ defines an entrance pupil. <br>
+ii) Same as (i), but a lens with focal length $l$ is placed right outside the first window. The detector is at the focal point. <br>
+iii) Same as (ii) but the lens is placed inside the cryostat with the detector still at the focal length. Equivalent to @Fig:cryostat_concept (B) above. <br>
 
 <!-- Keep at end of the page! -->
 
