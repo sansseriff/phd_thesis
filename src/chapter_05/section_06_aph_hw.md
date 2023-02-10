@@ -1,6 +1,10 @@
 ## Aph 138 Homework Assignment
 
+In March of 2022, Matthew Shaw was a guest lecturer for the Quantum Hardware and Techniques course (APh/Ph 138b). The following is a homework assignment I wrote to accompany his series of lectures. 
 
+The first problem is inspired by the low dark count rate publication[@Mueller:21]. It has the student build a simple model for a dark count rate transmitted through a series of filters. Finally, it leads to the student to consider an ultimate tradeoff between dark count rate and coupling efficiency to wide bandwidth optical signals. An filtering system that only transmits a very narroband signal will not be able to detect ultra-short optical signals with high effciency or temporal resolution. 
+
+The second problem explores a potential use case of a photon number resolving SNSPD. It closely follows logic presented in a Andreas Christ and Christine Silberhorn paper[@Andreas:12]. I studied this paper closely earlier in my PhD, when I considered developing a multiplexed single photon source for my final PhD project. As it turned out, the project was overly ambitious at the time. But future students might be able to revisit this interesting application of high-efficiency PNR SNSPDs. 
 
 <!-- the html tag makes this only appear on the website -->
 <!-- if you don't use the {=html} syntax, then the inside of the div would be rendered in the latex document -->
