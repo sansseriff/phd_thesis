@@ -112,7 +112,6 @@ If the detector has a circular active area with radius $5~\mathrm{\upmu m}$, wha
      <span class=blue markdown> Since the expression asked for can be written many ways, just verify the student has taken into account all the terms in equation (1) above, and has the correct expressions for</span> <span class=red markdown>$\Omega$ (3 pts), $\theta$ (3 pts), and P (3 pts).</span>
 
 5. (6 pts) Consider the configuration in Fig. 1b).  The detector has an internal quantum efficiency approximated by: 
-<!--\footnote{A more accurate model would include the transmission spectrum of the optical stack in which the nanowire is embedded, along with a non-unity coupling efficiency}:  -->
 
     $$\eta(\lambda) = \frac{1}{2}(1 - \text{erf}[\lambda - 3~\mathrm{\upmu m}]) $$
 
@@ -152,6 +151,106 @@ If the detector has a circular active area with radius $5~\mathrm{\upmu m}$, wha
     <span class=blue markdown>Students may instead give a more qualitative answer, for example with a graph of the filtered spectrums, that shows the relative suppression of the region longer than 1560 nm. </span>
 
     <span class=blue markdown>![](./figs_05/filter_integrate_4.PNG)</span>
+
+7. If a narrow band filter is also inserted with center wavelength $1550~\text{nm}$ and spectral width below $1-2~nm$, then dark count rate can be approximated as just $N_{photons}[\lambda = 1550~\text{nm}]$ times the filter width. Show for this wavelength range you can simplify dark count rate further to a simple exponential function. If the laboratory air conditioner breaks, raising the lab temperature from 293 K to 300 K, how much higher is the dark count rate?
+
+    <span class=blue markdown> **Answer:** </span>
+
+    <span class=blue markdown>The expression for $N_{photons}[\lambda]$ from part (1.4) can be simplified and evaluated at 1550 nm, then multiplied by the filter width in nanometers. </span>
+
+    <div class=blue markdown>
+
+    $$\begin{aligned}
+    N_{photons}[\lambda] &= P \Omega D_{area} \eta(\lambda) B_{\lambda}(\lambda) \\
+    N_{filter} &= N_{photons}[\lambda = 1550~\text{nm}]\Delta \lambda
+    \end{aligned}$$
+
+    </div>
+
+    <span class=blue markdown>This code shows integrating the spectrum and just multiplying $N_{photons}$ times the filter width produce very similar results (for a 1 nm filter):</span>
+
+    <span class=blue markdown>![](./figs_05/nphoton_approx.PNG)</span>
+
+
+    <span class=blue markdown>Evaluating the $N_{photon}$ function at $\lambda = 1550~text{nm}$ shows the $-1$ term is small relative to the exponential term:</span>
+
+    <span class=blue markdown>![](./figs_05/small_relative_to_exponential.PNG)</span>
+
+    <span class=blue markdown>Therefore the filter transmission approximation is:</span>
+    <div class=blue markdown> 
+
+    $$\boxed{N_{filter} \approx 9.26\mathrm{e}21 \Delta\lambda e^{-9290/T} (\frac{photons}{s*meter})}$$
+
+    </div>
+
+    <span class=blue markdown>or equivalently: </span>
+    <div class=blue markdown> 
+
+    $$\boxed{N_{filter} \approx 9.26\mathrm{e}12 \Delta\lambda e^{-9290/T} (\frac{photons}{s*nm})}$$
+
+    </div>
+
+    <span class=blue markdown>and the dark count rate in the 300 K room is roughly double the rate in the 293 K room: </span>
+
+    <span class=blue markdown>![](./figs_05/filter_with_temp.PNG)</span>
+
+    <span class=red markdown>4 pts for a similar equation, 3 pts for finding the dark count rate roughly doubles. </span>
+
+    A quantum communication experiment requires time-tagging photons with respect to a 50 GHz clock with 95% fidelity. That is, 95% of the timing measurements of detected photons emitted at the same time with respect to a clock fall within a 20 ps bin. Say the detector and readout electronics have a combined jitter of 10 ps FWHM, and a mode locked laser is used for the experiment that generates transform-limited Gaussian pulses. You tune it's temporal length to a value for which the total timing uncertainty of time-tagged photons — including system jitter and pulse temporal length — matches the 95 % fidelity at 50 GHz requirement. Assume detector jitter has a Gaussian shape as well.
+
+8. Find the spectral width of a filter that would transmit 95% of the photons from the mode locked laser. What is the dark count rate with this filter, using the expression from (1.7) and T = 293 K?
+
+<span class=blue markdown> **Answer:** </span>
+
+<span class=blue markdown>For transform limited guassian pulses, the product of temporal and spectral width at a FWHM level is [about 0.441](https://www.lasercalculator.com/transform-limited-pulse-calculator/). There's a derivation of this [here](https://www.physicsforums.com/threads/time-bandwidth-product-ideal-mode-locking.171404/post-1339948), but students don't need to show it. </span>
+
+<div class=blue markdown> 
+
+$$T B P_{\text {Gaussian }}=\frac{2 \log 2}{\pi} \approx 0.441$$
+
+</div>
+
+<span class=blue markdown> Since this uses the FWHM level, all the 95% metrics need to be converted. About 95% of the area under a guassian falls within $\pm 2 \sigma$. </span>
+
+<span class=blue markdown> Bound on total system timing uncertainty: $20~\text{ps}_{95\%} = (20/4)*2.35 = 11.75~\text{ps}_{FWHM}$ </span>
+
+<span class=blue markdown> The jitter of the detection system and the temporal width of the laser pulse $\Delta t$ should add in quadrature to match the bound: </span>
+
+<div class=blue markdown> 
+
+$$ 11.75~\text{ps}_{FWHM} = \sqrt{ \Delta t^2 + (10~\text{ps})^2}$$
+
+</div>
+
+<div class=blue markdown> 
+
+$$ 0.441 = \Delta t \Delta \nu $$
+$$\Delta \nu = 71~\text{GHz}$$
+$$\Delta \lambda = \frac{\lambda^2 \Delta \nu}{c} = 0.57~\text{nm}$$
+
+</div>
+
+<span class=blue markdown> $0.57~\text{nm}$ is the spectral width of the laser pulse at the FWHM level. If this pulse passes through a tophat filter with width equal to the 95\% level of the laser pulse, then 95\% will be transmitted. </span>
+
+<span class=blue markdown>Filter width: </span>
+<div class=blue markdown> 
+
+$$\Delta \lambda_{95\%} = \frac{4 \Delta \lambda}{2.35} \approx \boxed{1~\text{nm}} $$
+
+</div>
+
+<span class=blue markdown>Dark count rate is easy to find using the expression from the previous section: </span>
+
+<div class=blue markdown> 
+
+$$\boxed{N_{filter} \approx 9.26e12 (1~\text{nm}) e^{-9290/T} (\frac{photons}{s*nm})} \approx 0.15~\text{photons/s} $$
+
+</div>
+
+<span class=red markdown>3 points for writing and solving the equation that matches the jitter bound to the quadrature sum </span>
+<span class=red markdown>5 points for correct filter width and dark count rate</span>
+
+### 2. SPDC Coupling and Single Photon Sources (50 points)
 
 
 

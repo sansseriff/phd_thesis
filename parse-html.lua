@@ -52,13 +52,27 @@ end
 -- light and dark mode, and figure captions. 
 function Para(para)
     local img = figure_image(para)
+    
+    -- if img.attributes['style'] then
+    --     print(img.attributes['style'])
+    -- end
+
     if not img or not img.caption or not img.attributes['short-caption'] then
         return nil
+        -- if not img.attributes["style"] then
+        --     return nil
+        -- else:
+        --     print(img.attributes["style"])
+        -- end
     end
+
+    -- print(img.attributes['style'])
 
     local short_caption = pandoc.Span(
             pandoc.read(img.attributes['short-caption']).blocks[1].c
         )
+
+    
     local hypertarget = "{%%\n"
     local label = "\n"
     if img.identifier ~= img.title then
