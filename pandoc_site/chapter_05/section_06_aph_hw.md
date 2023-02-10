@@ -16,20 +16,20 @@ An experimental apparatus emits a collimated beam of $1550~\mathrm{nm}$ photons 
     <a name='fig:cryostat_concept'></a> 
     ![fig:cryostat_concept](./figs_05/fig1b_light.svg#only-light)
     ![fig:cryostat_concept](./figs_05/fig1b_dark.svg#only-dark) 
-    <figcaption><b>Cryostat concept designs.</b>Cryostat concept designs</figcaption> 
+    <figcaption><b>Cryostat optical coupling</b>** **</figcaption> 
 </figure>
 
-As we will see later on, a set of filters will be needed between the detector and the window to minimize dark counts. In practice, the set of filters can be quite thick. Say a $f = 100 mm$ lens is used right outside the cryostat to focus the beam onto the detector though a set of filters (Fig 1a). The long focal length makes room for a few inches of filters between the external lens and focused spot.
+As we will see later on, a set of filters will be needed between the detector and the window to minimize dark counts. In practice, the set of filters can be quite thick. Say a $f = 100~\mathrm{mm}$ lens is used right outside the cryostat to focus the beam onto the detector though a set of filters (Fig 1a). The long focal length makes room for a few inches of filters between the external lens and focused spot.
 
 <!-- This is a link to [The cryostat](./#fig:cryostat_concept) -->
 
-a)  (4 pts) If the detector has a circular active area with radius \SI{5}{\micro\metre}, what ratio of power in the beam can it collect? Assume the detector has unity efficiency across all angles of incidence with respect to the surface normal.
+a)  (4 pts) If the detector has a circular active area with radius $5~\mathrm{\upmu m}$, what ratio of power in the beam can it collect? Assume the detector has unity efficiency across all angles of incidence with respect to the surface normal.
 
 <span class=blue markdown> Answer: The divergence angle of the guassian beam: $\theta = \tan^{-1}({\frac{3}{100}})$. </span>
 
 <span class=blue markdown> The formula for divergence angle in terms of waist $w_0$: $\theta = \frac{\lambda}{\pi w_0}$ </span>
 
-<span class=blue markdown> Combining and plugging in, the waist radius at focus is $\frac{1550 nm}{\pi \tan^{-1}(\frac{3}{100})} \approx 16.5~ \mathrm{\upmu m}$ </span>
+<span class=blue markdown> Combining and plugging in, the waist radius at focus is $\frac{1550~\mathrm{nm}}{\pi \tan^{-1}(\frac{3}{100})} \approx 16.5~ \mathrm{\upmu m}$ </span>
 
 <span class=blue markdown> The formula for power inside an aperture at $w(z)$ for a guassian beam:</span>
 

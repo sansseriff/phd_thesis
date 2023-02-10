@@ -680,25 +680,25 @@ directly through a window in a cryostat.
 \begin{figure}
 \centering
 \includegraphics{chapter_05/figs_05/fig1b_light.pdf}
-\caption[{Cryostat concept designs.}]{\textbf{Cryostat concept designs}}
+\caption[{Cryostat optical coupling}]{** **}
 \label{fig:cryostat_concept}
 \end{figure}
 }
 
 As we will see later on, a set of filters will be needed between the
 detector and the window to minimize dark counts. In practice, the set of
-filters can be quite thick. Say a \(f = 100 mm\) lens is used right
-outside the cryostat to focus the beam onto the detector though a set of
-filters (Fig 1a). The long focal length makes room for a few inches of
-filters between the external lens and focused spot.
+filters can be quite thick. Say a \(f = 100~\mathrm{mm}\) lens is used
+right outside the cryostat to focus the beam onto the detector though a
+set of filters (Fig 1a). The long focal length makes room for a few
+inches of filters between the external lens and focused spot.
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi})}
 \tightlist
 \item
   (4 pts) If the detector has a circular active area with radius
-  \SI{5}{\micro\metre}, what ratio of power in the beam can it collect?
-  Assume the detector has unity efficiency across all angles of
+  \(5~\mathrm{\upmu m}\), what ratio of power in the beam can it
+  collect? Assume the detector has unity efficiency across all angles of
   incidence with respect to the surface normal.
 \end{enumerate}
 
@@ -710,7 +710,7 @@ waist \(w_0\): \(\theta = \frac{\lambda}{\pi w_0}\) }
 
 {\color{midnightblue}  Combining and plugging in, the waist radius at
 focus is
-\(\frac{1550 nm}{\pi \tan^{-1}(\frac{3}{100})} \approx 16.5~ \mathrm{\upmu m}\)
+\(\frac{1550~\mathrm{nm}}{\pi \tan^{-1}(\frac{3}{100})} \approx 16.5~ \mathrm{\upmu m}\)
 }
 
 {\color{midnightblue}  The formula for power inside an aperture at
@@ -738,6 +738,12 @@ at \(w(z=0) = w_0\) which may be expressed as:}
 \[P(r, z=0)=1-e^{-2(5^{2}) / 16.5^{2}} \approx  \boxed{0.17} \]
 
 }
+
+(4 pts) A faster lens mounted much closer to the detector inside the
+cryostat focuses to a smaller waist. Consider an \(f = 18~\mathrm{mm}\)
+lens with the detector at the focal length
+(Fig.~\ref{fig:cryostat_concept} (1b)). Verify more than 99\% of the
+collimated light will be focused onto the active area of the detector.
 
 \printbibliography
 \end{document}
