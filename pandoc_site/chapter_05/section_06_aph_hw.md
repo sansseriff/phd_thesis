@@ -18,7 +18,7 @@ An experimental apparatus emits a collimated beam of $1550~\mathrm{nm}$ photons 
     <a name='fig:cryostat_concept'></a> 
     ![fig:cryostat_concept](./figs_05/fig1b_light.svg#only-light)
     ![fig:cryostat_concept](./figs_05/fig1b_dark.svg#only-dark) 
-    <figcaption><b>Cryostat optical coupling</b>** **</figcaption> 
+    <figcaption><b>Cryostat optical coupling: </b>** **</figcaption> 
 </figure>
 
 As we will see later on, a set of filters will be needed between the detector and the window to minimize dark counts. In practice, the set of filters can be quite thick. Say a $f = 100~\mathrm{mm}$ lens is used right outside the cryostat to focus the beam onto the detector though a set of filters (Fig 1a). The long focal length makes room for a few inches of filters between the external lens and focused spot.
@@ -72,7 +72,7 @@ As we will see later on, a set of filters will be needed between the detector an
         <a name='fig:coupling_options'></a> 
         ![fig:coupling_options](./figs_05/fig2b_light.svg#only-light)
         ![fig:coupling_options](./figs_05/fig2b_dark.svg#only-dark) 
-        <figcaption><b>Cryostat coupling options</b>Three Coupling Options</figcaption> 
+        <figcaption><b>Cryostat coupling options: </b>Three Coupling Options</figcaption> 
     </figure>
     i)  There is no lens; the detector is distance $l$ inside the cryostat, and the first window with diameter $d$ defines an entrance pupil. <br>
     ii) Same as (i), but a lens with focal length $l$ is placed right outside the first window. The detector is at the focal point. <br>
@@ -113,25 +113,40 @@ As we will see later on, a set of filters will be needed between the detector an
 
 5.  (6 pts) Consider the configuration in Fig. 1b). The detector has an internal quantum efficiency approximated by: <!--\footnote{A more accurate model would include the transmission spectrum of the optical stack in which the nanowire is embedded, along with a non-unity coupling efficiency}:  -->
 
-$$\eta(\lambda) = \frac{1}{2}(1 - \text{erf}[\lambda - 3~\mathrm{\upmu m}]) $$
+    $$\eta(\lambda) = \frac{1}{2}(1 - \text{erf}[\lambda - 3~\mathrm{\upmu m}]) $$
 
-$\lambda$ is measured in $\mathrm{\upmu m}$ and $\text{erf}()$ is the error function. Using your conclusions from (1.3) and expression from (1.4), write a formula $N_{photons}[\lambda]$ for the number of detectable dark counts with respect to $\lambda$, then numerically integrate it to find the dark count rate with no filtering. The laboratory temperature $T$ is 293 K, lens focal length $l$ is $18~\text{mm}$, detector radius $r$ is $5~\mathrm{\upmu m}$, and the diameter $d$ of all optics is 1 inch. The maximum count rate of this SNSPD is 10 MHz. Is the detector usable or overexposed?
+    $\lambda$ is measured in $\mathrm{\upmu m}$ and $\text{erf}()$ is the error function. Using your conclusions from (1.3) and expression from (1.4), write a formula $N_{photons}[\lambda]$ for the number of detectable dark counts with respect to $\lambda$, then numerically integrate it to find the dark count rate with no filtering. The laboratory temperature $T$ is 293 K, lens focal length $l$ is $18~\text{mm}$, detector radius $r$ is $5~\mathrm{\upmu m}$, and the diameter $d$ of all optics is 1 inch. The maximum count rate of this SNSPD is 10 MHz. Is the detector usable or overexposed?
 
-<span class=blue markdown> **Answer:** </span> <span class=blue markdown>Use the expression from (1.4) and multiply it by the quantum efficiency function $\eta(\lambda)$ </span>
+    <span class=blue markdown> **Answer:** </span> <span class=blue markdown>Use the expression from (1.4) and multiply it by the quantum efficiency function $\eta(\lambda)$ </span>
 
-<div class=blue markdown>
+    <div class=blue markdown>
 
-$$N_{photons}[\lambda] = P \Omega D_{area} \eta(\lambda) B_{\lambda}(\lambda, T=293)$$
+    $$N_{photons}[\lambda] = P \Omega D_{area} \eta(\lambda) B_{\lambda}(\lambda, T=293)$$
 
-</div>
+    </div>
+    <span class=blue markdown> Here is the function expressed in mathmatica and the solution to the integral: </span>
 
-<span class=blue markdown> Here is the function expressed in mathmatica and the solution to the integral: </span>
+    <span class=blue markdown>![](./figs_05/mathematica_2.PNG)</span>
 
-![](./figs_05/mathematica_2.PNG)
+    <span class=blue markdown>Dark count rate $\approx \boxed{110 \,\text{MCounts/s}}$ </span> <span class=blue markdown>The rate of dark counts exceeds the usual maximum count rate, the detector is not usable. </span>
 
-<span class=blue markdown>Dark count rate $\approx \boxed{110 \,\text{MCounts/s}}$ </span> <span class=blue markdown>The rate of dark counts exceeds the usual maximum count rate, the detector is not usable. </span>
+    <span class=red markdown>3 pts. for similar dark count rate (+/- 20%) , 3 pts. for saying the detector is not usable.</span>
 
-<span class=red markdown>3 pts. for similar dark count rate (+/- 20%) , 3 pts. for saying the detector is not usable.</span>
+6.  (6 pts) A set of shortpass filters can remove the bulk of blackbody radiation. A shortpass filter can be roughly modeled with the formula:
+
+    $$F(\lambda, E_t) = \frac{1}{E_t}[(E_t - 1)H(\lambda_c - \lambda) + 1]$$
+
+    Where H is the Heaviside step function, $\lambda_c$ is the cutoff wavelength of the filter, and $E_t$ is the extinction ratio of the filter. Use this with $N_{photons}[\lambda]$ from (d). How many filters with $\lambda_c = 1560~\text{nm}$ and $E_t = 30~\text{dB}$ are necessary to suppress the spectral region of detectable dark counts longer than 1560\~\text{nm} so that it is not the dominant source of dark counts?
+
+    <span class=blue markdown> **Answer:** </span>
+
+    <span class=blue markdown>$\boxed{\text{3 filters}}$ are needed to make the wavelength band shorter than 1560\~nm the dominant source of counts.</span> <span class=red markdown>3 pts. for this answer</span>
+
+    <span class=red markdown>3 pts for evidence:</span> <span class=blue markdown>Students might integrate the detectable dark count spectrum with different numbers of filters and comparing the results. The computations below show the addition of a fourth filter has a negligible effect on the dark count rate. </span>
+
+    <span class=blue markdown>Students may instead give a more qualitative answer, for example with a graph of the filtered spectrums, that shows the relative suppression of the region longer than 1560 nm. </span>
+
+    <span class=blue markdown>![](./figs_05/filter_integrate_4.PNG)</span>
 
 <!-- Keep at end of the page! -->
 

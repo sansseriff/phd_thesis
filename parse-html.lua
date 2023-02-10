@@ -84,7 +84,7 @@ function Para(para)
     string = string.format("<figure markdown> \
     <a name='%s'></a> \
     %s \
-    <figcaption><b>%s</b>%s</figcaption> \
+    <figcaption><b>%s: </b>%s</figcaption> \
 </figure>", img.identifier, full_src, short_caption, caption)
     return pandoc.RawInline('markdown', string)
 end
