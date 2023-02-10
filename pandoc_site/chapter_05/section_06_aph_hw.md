@@ -2,6 +2,8 @@
 
 <!-- the html tag makes this only appear on the website -->
 
+<!-- if you don't use the {=html} syntax, then the inside of the div would be rendered in the latex document -->
+
 <button style="display: block; margin-left: auto; margin-right: auto" class="md-button md-button--primary">Toggle Visibility of Homework Solutions</button></td>
 
 <!-- This span is processed by  pandoc-latex-color so that the color of the pdf will change also. -->
@@ -54,5 +56,32 @@ $$P(r, z=0)=1-e^{-2 r^{2} / w_0^{2}}$$
 $$P(r, z=0)=1-e^{-2(5^{2}) / 16.5^{2}} \approx  \boxed{0.17} $$
 
 </div>
+
+(4 pts) A faster lens mounted much closer to the detector inside the cryostat focuses to a smaller waist. Consider an $f = 18~\mathrm{mm}$ lens with the detector at the focal length (@Fig:cryostat_concept (B)). Verify more than 99% of the collimated light will be focused onto the active area of the detector.
+
+<span class=blue markdown> The waist radius at focus is $\frac{1550~\mathrm{nm}}{\pi \tan^{-1}(\frac{3}{18})} \approx 2.98~\mathrm{\upmu m}$ </span>
+
+<span class=blue markdown>Ratio of power within the $10~\mathrm{\upmu m}$ radius active area: </span>
+
+<div class=blue markdown>
+
+$$P(r, z=0)=1-e^{-2(5^{2}) / 2.98^{2}} \approx \boxed{0.996} $$
+
+</div>
+
+Without filtering, the mid-infrared photons coupled to the detector from the room temperature laboratory are a dominant source of dark counts. Think of the environment outside the window as an isotropic blackbody emitter. Consider 3 cases, where the shaded red regions illustrate the light field of thermal radiation that could couple to the detector:
+
+<figure markdown> 
+    <a name='fig:coupling_options'></a> 
+    ![fig:coupling_options](./figs_05/fig2b_light.svg#only-light)
+    ![fig:coupling_options](./figs_05/fig2b_dark.svg#only-dark) 
+    <figcaption><b>Cryostat coupling options</b>Three Coupling Options</figcaption> 
+</figure>
+
+i)  There is no lens; the detector is distance $l$ inside the cryostat, and the first window with diameter $d$ defines an entrance pupil.
+ii) Same as (i), but a lens with focal length $l$ is placed right outside the first window. The detector is at the focal point.
+iii) Same as (ii) but the lens is placed inside the cryostat with the detector still at the focal length. Equivalent to @Fig:cryostat_concept (B) above.
+
+<!-- Keep at end of the page! -->
 
 <script src="../../chapter_05/code/section_05.js"></script>
