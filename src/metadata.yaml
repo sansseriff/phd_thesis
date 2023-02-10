@@ -25,4 +25,6 @@ indent: true
 pandoc-latex-color:
   - classes: [blue]
     color: midnightblue
+  - classes: [red]
+    color: darkred
 ---
