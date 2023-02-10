@@ -27,6 +27,7 @@ a) (4 pts) If the detector has a circular active area with radius $5~\mathrm{\up
 
 <span class=blue markdown>  Combining and plugging in, the waist radius at focus is $\frac{1550~\mathrm{nm}}{\pi \tan^{-1}(\frac{3}{100})} \approx 16.5~ \mathrm{\upmu m}$ </span>
 
+
 <span class=blue markdown> The formula for power inside an aperture at $w(z)$ for a guassian beam:</span>
 
 <div class=blue markdown >
@@ -65,9 +66,9 @@ Without filtering, the mid-infrared photons coupled to the detector from the roo
 
 ![**Three Coupling Options**](./figs_05/fig2b_light.svg){#fig:coupling_options short-caption="Cryostat coupling options"}
 
-        i) There is no lens; the detector is distance $l$ inside the cryostat, and the first window with diameter $d$ defines an entrance pupil.
-        ii) Same as (i), but a lens with focal length $l$ is placed right outside the first window. The detector is at the focal point.
-        iii) Same as (ii) but the lens is placed inside the cryostat with the detector still at the focal length. Equivalent to @Fig:cryostat_concept (B) above.
+i) There is no lens; the detector is distance $l$ inside the cryostat, and the first window with diameter $d$ defines an entrance pupil.
+ii) Same as (i), but a lens with focal length $l$ is placed right outside the first window. The detector is at the focal point.
+iii) Same as (ii) but the lens is placed inside the cryostat with the detector still at the focal length. Equivalent to @Fig:cryostat_concept (B) above.
 
 
 
