@@ -53,9 +53,10 @@ $$P(r, z=0)=1-e^{-2(5^{2}) / 16.5^{2}} \approx  \boxed{0.17} $$
 (4 pts) A faster lens mounted much closer to the detector inside the cryostat focuses to a smaller waist. Consider an $f = 18~\mathrm{mm}$ lens with the detector at the focal length (@Fig:cryostat_concept (B)). Verify more than 99% of the collimated light will be focused onto the active area of the detector.  
 
 
-<span class=blue markdown> The waist radius at focus is  $\frac{1550~\mathrm{nm}}}{\pi \tan^{-1}(\frac{3}{18})} \approx 2.98~\mathrm{\upmu m}$ </span>
+<!-- <span class=blue markdown> The waist radius at focus is  $\frac{1550~\mathrm{nm}}}{\pi \tan^{-1}(\frac{3}{18})} \approx 2.98~\mathrm{\upmu m}$ </span> -->
+<span class=blue markdown> The waist radius at focus is  $\frac{1550~\mathrm{nm}}{\pi \tan^{-1}(\frac{3}{100})} \approx 16.5~ \mathrm{\upmu m}$ </span>
 
-<span class=blue markdown>Ratio of power within the $10~mathrm{\upmu m}$ radius active area: </span>
+<span class=blue markdown>Ratio of power within the $10~\mathrm{\upmu m}$ radius active area: </span>
 <div class=blue markdown> 
 
 $$P(r, z=0)=1-e^{-2(5^{2}) / 2.98^{2}} \approx \boxed{0.996} $$
