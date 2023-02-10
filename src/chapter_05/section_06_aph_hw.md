@@ -49,7 +49,7 @@ $$P(r, z=0)=1-e^{-2(5^{2}) / 16.5^{2}} \approx  \boxed{0.17} $$
 
 </div>
 
-(4 pts) A faster lens mounted much closer to the detector inside the cryostat focuses to a smaller waist. Consider an $f = 18~\mathrm{mm}$ lens with the detector at the focal length (@Fig:cryostat_concept 1b). Verify more than 99% of the collimated light will be focused onto the active area of the detector.  
+(4 pts) A faster lens mounted much closer to the detector inside the cryostat focuses to a smaller waist. Consider an $f = 18~\mathrm{mm}$ lens with the detector at the focal length (@Fig:cryostat_concept (b)). Verify more than 99% of the collimated light will be focused onto the active area of the detector.  
 
 
 <!-- Keep at end of the page! -->
