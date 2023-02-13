@@ -1,10 +1,10 @@
 ## Aph 138 Homework Assignment
 
-In March of 2022, Matthew Shaw was a guest lecturer for the APh Quantum Hardware and Methods course. The following is a homework assignment I wrote to accompany his series of lectures.
+In March of 2022, Matthew Shaw was a guest lecturer for the Quantum Hardware and Techniques course (APh/Ph 138b). The following is a homework assignment I wrote to accompany his series of lectures.
 
-The first problem is inspired by the low dark count rate publication [@Mueller:21]. It has the student build a simple model for a dark count rate transmitted through a series of filters. Finally, it leads to the student to consider an ultimate tradeoff between dark rate and coupling efficiency to wide bandwidth optical signals. An filtering system that only transmits a very narroband signal will not be able to detect ultra-short optical signals with high effciency or temporal resolution.
+The first problem is inspired by the low dark count rate publication[@Mueller:21]. It has the student build a simple model for a dark count rate transmitted through a series of filters. Finally, it leads to the student to consider an ultimate tradeoff between dark count rate and coupling efficiency to wide bandwidth optical signals. A filtering system that only transmits a very narroband signal will not be able to detect ultra-short optical signals with high effciency or temporal resolution.
 
-The second problem explores a potential use case of a photon number resolving SNSPD. It closely follows logic presented in a Andreas Christ and Christine Silberhorn paper [@Andreas:12]. I studied this paper closely earlier in my PhD, when I considered developing a multiplexed single photon source for my final PhD project. As it turned out, the project was overly ambitious at the time. But future students might be able to revisit this interesting application of high-efficiency PNR SNSPDs.
+The second problem explores a potential use case of a photon number resolving SNSPD. It closely follows logic presented in a Andreas Christ and Christine Silberhorn paper[@Andreas:12]. I studied this paper closely earlier in my PhD, when I considered developing a multiplexed single photon source for my final PhD project. As it turned out, the project was overly ambitious. But future students might be able to revisit this interesting application of high-efficiency PNR SNSPDs.
 
 <!-- the html tag makes this only appear on the website -->
 
@@ -200,53 +200,48 @@ As we will see later on, a set of filters will be needed between the detector an
 
 8.  Find the spectral width of a filter that would transmit 95% of the photons from the mode locked laser. What is the dark count rate with this filter, using the expression from (1.7) and T = 293 K?
 
-<span class=blue markdown> **Answer:** </span>
+    <span class=blue markdown> **Answer:** </span>
 
-<span class=blue markdown>For transform limited guassian pulses, the product of temporal and spectral width at a FWHM level is [about 0.441](https://www.lasercalculator.com/transform-limited-pulse-calculator/). There’s a derivation of this [here](https://www.physicsforums.com/threads/time-bandwidth-product-ideal-mode-locking.171404/post-1339948), but students don’t need to show it. </span>
+    <span class=blue markdown>For transform limited guassian pulses, the product of temporal and spectral width at a FWHM level is [about 0.441](https://www.lasercalculator.com/transform-limited-pulse-calculator/). There’s a derivation of this [here](https://www.physicsforums.com/threads/time-bandwidth-product-ideal-mode-locking.171404/post-1339948), but students don’t need to show it. </span>
 
-<div class=blue markdown>
+    <div class=blue markdown>
 
-$$T B P_{\text {Gaussian }}=\frac{2 \log 2}{\pi} \approx 0.441$$
+    $$T B P_{\text {Gaussian }}=\frac{2 \log 2}{\pi} \approx 0.441$$
 
-</div>
+    </div>
+    <span class=blue markdown> Since this uses the FWHM level, all the 95% metrics need to be converted. About 95% of the area under a guassian falls within $\pm 2 \sigma$. </span>
 
-<span class=blue markdown> Since this uses the FWHM level, all the 95% metrics need to be converted. About 95% of the area under a guassian falls within $\pm 2 \sigma$. </span>
+    <span class=blue markdown> Bound on total system timing uncertainty: $20~\text{ps}_{95\%} = (20/4)*2.35 = 11.75~\text{ps}_{FWHM}$ </span>
 
-<span class=blue markdown> Bound on total system timing uncertainty: $20~\text{ps}_{95\%} = (20/4)*2.35 = 11.75~\text{ps}_{FWHM}$ </span>
+    <span class=blue markdown> The jitter of the detection system and the temporal width of the laser pulse $\Delta t$ should add in quadrature to match the bound: </span>
 
-<span class=blue markdown> The jitter of the detection system and the temporal width of the laser pulse $\Delta t$ should add in quadrature to match the bound: </span>
+    <div class=blue markdown>
 
-<div class=blue markdown>
+    $$ 11.75~\text{ps}_{FWHM} = \sqrt{ \Delta t^2 + (10~\text{ps})^2}$$
 
-$$ 11.75~\text{ps}_{FWHM} = \sqrt{ \Delta t^2 + (10~\text{ps})^2}$$
+    </div>
+    <div class=blue markdown>
 
-</div>
+    $$ 0.441 = \Delta t \Delta \nu $$
 
-<div class=blue markdown>
+    </div>
+    <span class=blue markdown> $0.57~\text{nm}$ is the spectral width of the laser pulse at the FWHM level. If this pulse passes through a tophat filter with width equal to the 95% level of the laser pulse, then 95% will be transmitted. </span>
 
-$$ 0.441 = \Delta t \Delta \nu $$
+    <span class=blue markdown>Filter width: </span>
 
-</div>
+    <div class=blue markdown>
 
-<span class=blue markdown> $0.57~\text{nm}$ is the spectral width of the laser pulse at the FWHM level. If this pulse passes through a tophat filter with width equal to the 95% level of the laser pulse, then 95% will be transmitted. </span>
+    $$\Delta \lambda_{95\%} = \frac{4 \Delta \lambda}{2.35} \approx \boxed{1~\text{nm}} $$
 
-<span class=blue markdown>Filter width: </span>
+    </div>
+    <span class=blue markdown>Dark count rate is easy to find using the expression from the previous section: </span>
 
-<div class=blue markdown>
+    <div class=blue markdown>
 
-$$\Delta \lambda_{95\%} = \frac{4 \Delta \lambda}{2.35} \approx \boxed{1~\text{nm}} $$
+    $$\boxed{N_{filter} \approx 9.26e12 (1~\text{nm}) e^{-9290/T} (\frac{photons}{s*nm})} \approx 0.15~\text{photons/s} $$
 
-</div>
-
-<span class=blue markdown>Dark count rate is easy to find using the expression from the previous section: </span>
-
-<div class=blue markdown>
-
-$$\boxed{N_{filter} \approx 9.26e12 (1~\text{nm}) e^{-9290/T} (\frac{photons}{s*nm})} \approx 0.15~\text{photons/s} $$
-
-</div>
-
-<span class=red markdown>3 points for writing and solving the equation that matches the jitter bound to the quadrature sum </span> <span class=red markdown>5 points for correct filter width and dark count rate</span>
+    </div>
+    <span class=red markdown>3 points for writing and solving the equation that matches the jitter bound to the quadrature sum </span> <span class=red markdown>5 points for correct filter width and dark count rate</span>
 
 ### 2. SPDC Coupling and Single Photon Sources (50 points)
 
