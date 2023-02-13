@@ -16,7 +16,7 @@ rm -r ./pandoc_site/chapter_01/* \
 && cp -R ./src/frontmatter ./pandoc_site/ \
 && cp -R ./src/references.bib ./pandoc_site/ \
 
-# the lua filter need to go after (under) the pandoc-crossref. Otherwise,
+# the lua filter needs to go after (under) the pandoc-crossref. Otherwise,
 # padoc-crossref cannot recognize the figures.
 
 find ./src/chapter_01/ -iname "*.md" -type f -exec sh -c 'pandoc \

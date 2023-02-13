@@ -655,20 +655,18 @@ homework assignment I wrote to accompany his series of lectures.
 The first problem is inspired by the low dark count rate
 publication\autocite{Mueller:21}. It has the student build a simple
 model for a dark count rate transmitted through a series of filters.
-Finally, it leads to the student to consider an ultimate tradeoff
-between dark count rate and coupling efficiency to wide bandwidth
-optical signals. An filtering system that only transmits a very
-narroband signal will not be able to detect ultra-short optical signals
-with high effciency or temporal resolution.
+Finally, it leads the student to consider an ultimate tradeoff between
+dark count rate and coupling efficiency to wide bandwidth optical
+signals. A filtering system that only transmits a very narroband signal
+will not be able to detect ultra-short optical signals with high
+efficiency or temporal resolution.
 
 The second problem explores a potential use case of a photon number
-resolving SNSPD. It closely follows logic presented in a Andreas Christ
+resolving SNSPD. It closely follows logic presented in an Andreas Christ
 and Christine Silberhorn paper\autocite{Andreas:12}. I studied this
 paper closely earlier in my PhD, when I considered developing a
-multiplexed single photon source for my final PhD project. As it turned
-out, the project was overly ambitious at the time. But future students
-might be able to revisit this interesting application of high-efficiency
-PNR SNSPDs.
+multiplexed single photon source. This project turned out to be overly
+ambitious, but future PhD students might consider re-approaching it.
 
 {\color{midnightblue} Contact
 \href{mailto:andrewstermueller@gmail.com}{Andrew Mueller} with any
@@ -689,7 +687,8 @@ directly through a window in a cryostat.
 \begin{figure}
 \centering
 \includegraphics{chapter_05/figs_05/fig1b_light.pdf}
-\caption[{Cryostat optical coupling}]{** **}
+\caption[{Cryostat optical coupling}]{\textbf{Cryostat free space
+coupling options.}}
 \label{fig:cryostat_concept}
 \end{figure}
 }
@@ -750,7 +749,7 @@ inches of filters between the external lens and focused spot.
   (4 pts) A faster lens mounted much closer to the detector inside the
   cryostat focuses to a smaller waist. Consider an
   \(f = 18~\mathrm{mm}\) lens with the detector at the focal length
-  (Fig.~\ref{fig:cryostat_concept} (B)). Verify more than 99\% of the
+  (Fig.~\ref{fig:cryostat_concept} b). Verify more than 99\% of the
   collimated light will be focused onto the active area of the detector.
 
   {\color{midnightblue}  The waist radius at focus is
@@ -795,7 +794,7 @@ inches of filters between the external lens and focused spot.
   \item
     Same as (ii) but the lens is placed inside the cryostat with the
     detector still at the focal length. Equivalent to
-    Fig.~\ref{fig:cryostat_concept} (B) above.
+    Fig.~\ref{fig:cryostat_concept} b above.
   \end{enumerate}
 \item
   (6 pts) Does (ii) couple more, less, or equal dark counts to the
@@ -909,8 +908,8 @@ inches of filters between the external lens and focused spot.
   filter. Use this with \(N_{photons}[\lambda]\) from (d). How many
   filters with \(\lambda_c = 1560~\text{nm}\) and \(E_t = 30~\text{dB}\)
   are necessary to suppress the spectral region of detectable dark
-  counts longer than 1560\textasciitilde{}\text{nm} so that it is not
-  the dominant source of dark counts?
+  counts longer than 1560 nm so that it is not the dominant source of
+  dark counts?
 
   {\color{midnightblue}  \textbf{Answer:} }
 
@@ -971,7 +970,7 @@ inches of filters between the external lens and focused spot.
 
   {\color{midnightblue} 
 
-  \[\boxed{N_{filter} \approx 9.26\mathrm{e}21 \Delta\lambda e^{-9290/T} (\frac{photons}{s*meter})}\]
+  \[\boxed{N_{filter} \approx 9.26\mathrm{e}21 \Delta\lambda e^{-9290/T} (\frac{\text{photons}}{\text{s*meter}})}\]
 
   }
 
@@ -979,7 +978,7 @@ inches of filters between the external lens and focused spot.
 
   {\color{midnightblue} 
 
-  \[\boxed{N_{filter} \approx 9.26\mathrm{e}12 \Delta\lambda e^{-9290/T} (\frac{photons}{s*nm})}\]
+  \[\boxed{N_{filter} \approx 9.26\mathrm{e}12 \Delta\lambda e^{-9290/T} (\frac{\text{photons}}{\text{s*nm}})}\]
 
   }
 
@@ -1006,76 +1005,79 @@ inches of filters between the external lens and focused spot.
   Find the spectral width of a filter that would transmit 95\% of the
   photons from the mode locked laser. What is the dark count rate with
   this filter, using the expression from (1.7) and T = 293 K?
+
+  {\color{midnightblue}  \textbf{Answer:} }
+
+  {\color{midnightblue} For transform limited guassian pulses, the
+  product of temporal and spectral width at a FWHM level is
+  \href{https://www.lasercalculator.com/transform-limited-pulse-calculator/}{about
+  0.441}. There's a derivation of this
+  \href{https://www.physicsforums.com/threads/time-bandwidth-product-ideal-mode-locking.171404/post-1339948}{here},
+  but students don't need to show it. }
+
+  {\color{midnightblue} 
+
+  \[T B P_{\text {Gaussian }}=\frac{2 \log 2}{\pi} \approx 0.441\]
+
+  }
+
+  {\color{midnightblue}  Since this uses the FWHM level, all the 95\%
+  metrics need to be converted. About 95\% of the area under a guassian
+  falls within \(\pm 2 \sigma\). }
+
+  {\color{midnightblue}  Bound on total system timing uncertainty:
+  \(20~\text{ps}_{95\%} = (20/4)*2.35 = 11.75~\text{ps}_{FWHM}\) }
+
+  {\color{midnightblue}  The jitter of the detection system and the
+  temporal width of the laser pulse \(\Delta t\) should add in
+  quadrature to match the bound: }
+
+  {\color{midnightblue} 
+
+  \[ 11.75~\text{ps}_{FWHM} = \sqrt{ \Delta t^2 + (10~\text{ps})^2}\]
+
+  }
+
+  {\color{midnightblue} 
+
+  \[ 0.441 = \Delta t \Delta \nu \] \[\Delta \nu = 71~\text{GHz}\]
+  \[\Delta \lambda = \frac{\lambda^2 \Delta \nu}{c} = 0.57~\text{nm}\]
+
+  }
+
+  {\color{midnightblue}  \(0.57~\text{nm}\) is the spectral width of the
+  laser pulse at the FWHM level. If this pulse passes through a tophat
+  filter with width equal to the 95\% level of the laser pulse, then
+  95\% will be transmitted. }
+
+  {\color{midnightblue} Filter width: }
+
+  {\color{midnightblue} 
+
+  \[\Delta \lambda_{95\%} = \frac{4 \Delta \lambda}{2.35} \approx \boxed{1~\text{nm}} \]
+
+  }
+
+  {\color{midnightblue} Dark count rate is easy to find using the
+  expression from the previous section: }
+
+  {\color{midnightblue} 
+
+  \[\boxed{N_{filter} \approx 9.26e12 (1~\text{nm}) e^{-9290/T} (\frac{\text{photons}}{\text{s*nm}})} \approx 0.15~\text{photons/s} \]
+
+  }
+
+  {\color{darkred} 3 points for writing and solving the equation that
+  matches the jitter bound to the quadrature sum } {\color{darkred} 5
+  points for correct filter width and dark count rate}
 \end{enumerate}
-
-{\color{midnightblue}  \textbf{Answer:} }
-
-{\color{midnightblue} For transform limited guassian pulses, the product
-of temporal and spectral width at a FWHM level is
-\href{https://www.lasercalculator.com/transform-limited-pulse-calculator/}{about
-0.441}. There's a derivation of this
-\href{https://www.physicsforums.com/threads/time-bandwidth-product-ideal-mode-locking.171404/post-1339948}{here},
-but students don't need to show it. }
-
-{\color{midnightblue} 
-
-\[T B P_{\text {Gaussian }}=\frac{2 \log 2}{\pi} \approx 0.441\]
-
-}
-
-{\color{midnightblue}  Since this uses the FWHM level, all the 95\%
-metrics need to be converted. About 95\% of the area under a guassian
-falls within \(\pm 2 \sigma\). }
-
-{\color{midnightblue}  Bound on total system timing uncertainty:
-\(20~\text{ps}_{95\%} = (20/4)*2.35 = 11.75~\text{ps}_{FWHM}\) }
-
-{\color{midnightblue}  The jitter of the detection system and the
-temporal width of the laser pulse \(\Delta t\) should add in quadrature
-to match the bound: }
-
-{\color{midnightblue} 
-
-\[ 11.75~\text{ps}_{FWHM} = \sqrt{ \Delta t^2 + (10~\text{ps})^2}\]
-
-}
-
-{\color{midnightblue} 
-
-\[ 0.441 = \Delta t \Delta \nu \] \[\Delta \nu = 71~\text{GHz}\]
-\[\Delta \lambda = \frac{\lambda^2 \Delta \nu}{c} = 0.57~\text{nm}\]
-
-}
-
-{\color{midnightblue}  \(0.57~\text{nm}\) is the spectral width of the
-laser pulse at the FWHM level. If this pulse passes through a tophat
-filter with width equal to the 95\% level of the laser pulse, then 95\%
-will be transmitted. }
-
-{\color{midnightblue} Filter width: }
-
-{\color{midnightblue} 
-
-\[\Delta \lambda_{95\%} = \frac{4 \Delta \lambda}{2.35} \approx \boxed{1~\text{nm}} \]
-
-}
-
-{\color{midnightblue} Dark count rate is easy to find using the
-expression from the previous section: }
-
-{\color{midnightblue} 
-
-\[\boxed{N_{filter} \approx 9.26e12 (1~\text{nm}) e^{-9290/T} (\frac{photons}{s*nm})} \approx 0.15~\text{photons/s} \]
-
-}
-
-{\color{darkred} 3 points for writing and solving the equation that
-matches the jitter bound to the quadrature sum } {\color{darkred} 5
-points for correct filter width and dark count rate}
 
 \hypertarget{spdc-coupling-and-single-photon-sources-50-points}{%
 \subsection{2. SPDC Coupling and Single Photon Sources (50
 points)}\label{spdc-coupling-and-single-photon-sources-50-points}}
+
+This is a refernce to the coupling options figure
+(Fig.~\ref{fig:coupling_options} b)
 
 \printbibliography
 \end{document}
