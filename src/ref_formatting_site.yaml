@@ -1,0 +1,10 @@
+linkReferences: true
+figPrefix:
+  - "Fig."
+  - "Figs."
+eqnPrefix:
+  - "Eq."
+  - "Eqs."
+secPrefix:
+  - "Sec."
+  - "Secs."

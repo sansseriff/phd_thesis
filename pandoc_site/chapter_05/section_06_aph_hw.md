@@ -2,9 +2,9 @@
 
 In March of 2022, Matthew Shaw was a guest lecturer for the Quantum Hardware and Techniques course (APh/Ph 138b). The following is a homework assignment I wrote to accompany his series of lectures.
 
-The first problem is inspired by the low dark count rate publication[@Mueller:21]. It has the student build a simple model for a dark count rate transmitted through a series of filters. Finally, it leads to the student to consider an ultimate tradeoff between dark count rate and coupling efficiency to wide bandwidth optical signals. A filtering system that only transmits a very narroband signal will not be able to detect ultra-short optical signals with high effciency or temporal resolution.
+The first problem is inspired by the low dark count rate publication[@Mueller:21]. It has the student build a simple model for a dark count rate transmitted through a series of filters. Finally, it leads the student to consider an ultimate tradeoff between dark count rate and coupling efficiency to wide bandwidth optical signals. A filtering system that only transmits a very narroband signal will not be able to detect ultra-short optical signals with high efficiency or temporal resolution.
 
-The second problem explores a potential use case of a photon number resolving SNSPD. It closely follows logic presented in a Andreas Christ and Christine Silberhorn paper[@Andreas:12]. I studied this paper closely earlier in my PhD, when I considered developing a multiplexed single photon source for my final PhD project. As it turned out, the project was overly ambitious. But future students might be able to revisit this interesting application of high-efficiency PNR SNSPDs.
+The second problem explores a potential use case of a photon number resolving SNSPD. It closely follows logic presented in an Andreas Christ and Christine Silberhorn paper[@Andreas:12]. I studied this paper closely earlier in my PhD, when I considered developing a multiplexed single photon source. This project turned out to be overly ambitious, but future PhD students might consider re-approaching it.
 
 <!-- the html tag makes this only appear on the website -->
 
@@ -24,7 +24,7 @@ An experimental apparatus emits a collimated beam of $1550~\mathrm{nm}$ photons 
     <a name='fig:cryostat_concept'></a> 
     ![fig:cryostat_concept](./figs_05/fig1b_light.svg#only-light)
     ![fig:cryostat_concept](./figs_05/fig1b_dark.svg#only-dark) 
-    <figcaption><b>Cryostat optical coupling: </b>** **</figcaption> 
+    <figcaption>Figure 1: Cryostat free space coupling options.</figcaption> 
 </figure>
 
 As we will see later on, a set of filters will be needed between the detector and the window to minimize dark counts. In practice, the set of filters can be quite thick. Say a $f = 100~\mathrm{mm}$ lens is used right outside the cryostat to focus the beam onto the detector though a set of filters (Fig 1a). The long focal length makes room for a few inches of filters between the external lens and focused spot.
@@ -61,7 +61,7 @@ As we will see later on, a set of filters will be needed between the detector an
 
     </div>
 
-2.  (4 pts) A faster lens mounted much closer to the detector inside the cryostat focuses to a smaller waist. Consider an $f = 18~\mathrm{mm}$ lens with the detector at the focal length (@Fig:cryostat_concept (B)). Verify more than 99% of the collimated light will be focused onto the active area of the detector.
+2.  (4 pts) A faster lens mounted much closer to the detector inside the cryostat focuses to a smaller waist. Consider an $f = 18~\mathrm{mm}$ lens with the detector at the focal length (Fig. [1](#fig:cryostat_concept) b). Verify more than 99% of the collimated light will be focused onto the active area of the detector.
 
     <span class=blue markdown> The waist radius at focus is $\frac{1550~\mathrm{nm}}{\pi \tan^{-1}(\frac{3}{18})} \approx 2.98~\mathrm{\upmu m}$ </span>
 
@@ -78,11 +78,11 @@ As we will see later on, a set of filters will be needed between the detector an
         <a name='fig:coupling_options'></a> 
         ![fig:coupling_options](./figs_05/fig2b_light.svg#only-light)
         ![fig:coupling_options](./figs_05/fig2b_dark.svg#only-dark) 
-        <figcaption><b>Cryostat coupling options: </b>Three Coupling Options</figcaption> 
+        <figcaption>Figure 2: Three Coupling Options</figcaption> 
     </figure>
     i)  There is no lens; the detector is distance $l$ inside the cryostat, and the first window with diameter $d$ defines an entrance pupil. <br>
     ii) Same as (i), but a lens with focal length $l$ is placed right outside the first window. The detector is at the focal point. <br>
-    iii) Same as (ii) but the lens is placed inside the cryostat with the detector still at the focal length. Equivalent to @Fig:cryostat_concept (B) above. <br>
+    iii) Same as (ii) but the lens is placed inside the cryostat with the detector still at the focal length. Equivalent to Fig. [1](#fig:cryostat_concept) b above. <br>
 
 3.  (6 pts) Does (ii) couple more, less, or equal dark counts to the detector than (i)? What about case (iii)? Why? No calculations should be needed. (Hint: Consider the units of radiance, which characterizes a black body emitter. Etendue or beam parameter product may be useful concepts to consider)
 
@@ -142,7 +142,7 @@ As we will see later on, a set of filters will be needed between the detector an
 
     $$F(\lambda, E_t) = \frac{1}{E_t}[(E_t - 1)H(\lambda_c - \lambda) + 1]$$
 
-    Where H is the Heaviside step function, $\lambda_c$ is the cutoff wavelength of the filter, and $E_t$ is the extinction ratio of the filter. Use this with $N_{photons}[\lambda]$ from (d). How many filters with $\lambda_c = 1560~\text{nm}$ and $E_t = 30~\text{dB}$ are necessary to suppress the spectral region of detectable dark counts longer than 1560\~\text{nm} so that it is not the dominant source of dark counts?
+    Where H is the Heaviside step function, $\lambda_c$ is the cutoff wavelength of the filter, and $E_t$ is the extinction ratio of the filter. Use this with $N_{photons}[\lambda]$ from (d). How many filters with $\lambda_c = 1560~\text{nm}$ and $E_t = 30~\text{dB}$ are necessary to suppress the spectral region of detectable dark counts longer than 1560 nm so that it is not the dominant source of dark counts?
 
     <span class=blue markdown> **Answer:** </span>
 
@@ -180,14 +180,14 @@ As we will see later on, a set of filters will be needed between the detector an
 
     <div class=blue markdown>
 
-    $$\boxed{N_{filter} \approx 9.26\mathrm{e}21 \Delta\lambda e^{-9290/T} (\frac{photons}{s*meter})}$$
+    $$\boxed{N_{filter} \approx 9.26\mathrm{e}21 \Delta\lambda e^{-9290/T} (\frac{\text{photons}}{\text{s*meter}})}$$
 
     </div>
     <span class=blue markdown>or equivalently: </span>
 
     <div class=blue markdown>
 
-    $$\boxed{N_{filter} \approx 9.26\mathrm{e}12 \Delta\lambda e^{-9290/T} (\frac{photons}{s*nm})}$$
+    $$\boxed{N_{filter} \approx 9.26\mathrm{e}12 \Delta\lambda e^{-9290/T} (\frac{\text{photons}}{\text{s*nm}})}$$
 
     </div>
     <span class=blue markdown>and the dark count rate in the 300 K room is roughly double the rate in the 293 K room: </span>
@@ -238,12 +238,14 @@ As we will see later on, a set of filters will be needed between the detector an
 
     <div class=blue markdown>
 
-    $$\boxed{N_{filter} \approx 9.26e12 (1~\text{nm}) e^{-9290/T} (\frac{photons}{s*nm})} \approx 0.15~\text{photons/s} $$
+    $$\boxed{N_{filter} \approx 9.26e12 (1~\text{nm}) e^{-9290/T} (\frac{\text{photons}}{\text{s*nm}})} \approx 0.15~\text{photons/s} $$
 
     </div>
     <span class=red markdown>3 points for writing and solving the equation that matches the jitter bound to the quadrature sum </span> <span class=red markdown>5 points for correct filter width and dark count rate</span>
 
 ### 2. SPDC Coupling and Single Photon Sources (50 points)
+
+This is a refernce to the coupling options figure (Fig. [2](#fig:coupling_options) b)
 
 <!-- Keep at end of the page! -->
 

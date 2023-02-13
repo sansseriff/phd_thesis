@@ -16,45 +16,57 @@ rm -r ./pandoc_site/chapter_01/* \
 && cp -R ./src/frontmatter ./pandoc_site/ \
 && cp -R ./src/references.bib ./pandoc_site/ \
 
+# the lua filter need to go after (under) the pandoc-crossref. Otherwise,
+# padoc-crossref cannot recognize the figures.
 
 find ./src/chapter_01/ -iname "*.md" -type f -exec sh -c 'pandoc \
 --from markdown-hard_line_breaks-native_spans \
 --to markdown \
 -t markdown-smart \
---lua-filter=parse-html.lua \
 --wrap=none \
+--filter ./src/pandoc-crossref \
+-M "crossrefYaml=./src/ref_formatting_site.yaml" \
+--lua-filter=parse-html.lua \
 "${0}" -o "./pandoc_site/chapter_01/$(basename ${0%.md}.md)"' {} \;
 
 find ./src/chapter_02/ -iname "*.md" -type f -exec sh -c 'pandoc \
 --from markdown-hard_line_breaks-native_spans \
 --to markdown \
 -t markdown-smart \
---lua-filter=parse-html.lua \
 --wrap=none \
+--filter ./src/pandoc-crossref \
+-M "crossrefYaml=./src/ref_formatting_site.yaml" \
+--lua-filter=parse-html.lua \
 "${0}" -o "./pandoc_site/chapter_02/$(basename ${0%.md}.md)"' {} \;
 
 find ./src/chapter_03/ -iname "*.md" -type f -exec sh -c 'pandoc \
 --from markdown-hard_line_breaks-native_spans \
 --to markdown \
 -t markdown-smart \
---lua-filter=parse-html.lua \
 --wrap=none \
+--filter ./src/pandoc-crossref \
+-M "crossrefYaml=./src/ref_formatting_site.yaml" \
+--lua-filter=parse-html.lua \
 "${0}" -o "./pandoc_site/chapter_03/$(basename ${0%.md}.md)"' {} \;
 
 find ./src/chapter_04/ -iname "*.md" -type f -exec sh -c 'pandoc \
 --from markdown-hard_line_breaks-native_spans \
 --to markdown \
 -t markdown-smart \
---lua-filter=parse-html.lua \
 --wrap=none \
+--filter ./src/pandoc-crossref \
+-M "crossrefYaml=./src/ref_formatting_site.yaml" \
+--lua-filter=parse-html.lua \
 "${0}" -o "./pandoc_site/chapter_04/$(basename ${0%.md}.md)"' {} \;
 
 find ./src/chapter_05/ -iname "*.md" -type f -exec sh -c 'pandoc \
 --from markdown-hard_line_breaks-native_spans \
 --to markdown \
 -t markdown-smart \
---lua-filter=parse-html.lua \
 --wrap=none \
+--filter ./src/pandoc-crossref \
+-M "crossrefYaml=./src/ref_formatting_site.yaml" \
+--lua-filter=parse-html.lua \
 "${0}" -o "./pandoc_site/chapter_05/$(basename ${0%.md}.md)"' {} \;
 
 

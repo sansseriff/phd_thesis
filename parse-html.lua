@@ -48,11 +48,22 @@ function dump(o)
     end
 end
 
+-- if it's a figure crossref, change it to the markdown format. 
+-- I need to figure out how to have figures referenced by numbers...
+-- That's normally what pandoc-crossref does. 
+-- function Cite(citation)
+--     cite = citation.content[1].text
+--     if cite:sub(0,4) == "@Fig" then
+--         string = string.format("[f%s](./#f%s)", cite:sub(3), cite:sub(3))
+--         return pandoc.RawInline('markdown', string)
+--     end
+-- end
+
 -- This function takes the src/ style of figures and converts it into a mkdocs format that supports
--- light and dark mode, and figure captions. 
+-- light and dark mode, and figure captions.
 function Para(para)
     local img = figure_image(para)
-    
+
     -- if img.attributes['style'] then
     --     print(img.attributes['style'])
     -- end
@@ -72,7 +83,7 @@ function Para(para)
             pandoc.read(img.attributes['short-caption']).blocks[1].c
         )
 
-    
+
     local hypertarget = "{%%\n"
     local label = "\n"
     if img.identifier ~= img.title then
@@ -98,8 +109,8 @@ function Para(para)
     string = string.format("<figure markdown> \
     <a name='%s'></a> \
     %s \
-    <figcaption><b>%s: </b>%s</figcaption> \
-</figure>", img.identifier, full_src, short_caption, caption)
+    <figcaption>%s</figcaption> \
+</figure>", img.identifier, full_src, caption)
     return pandoc.RawInline('markdown', string)
 end
 
@@ -113,7 +124,8 @@ function Div(el)
 
     if el.content[1].t == "Para" then
         if el.content[1].content[1].t == "Math" then
-            string = string.format("<div class=%s markdown>\n\n$$%s$$\n\n</div>", el.classes[1], el.content[1].content[1].text)
+            string = string.format("<div class=%s markdown>\n\n$$%s$$\n\n</div>", el.classes[1],
+                    el.content[1].content[1].text)
             return pandoc.RawInline('markdown', string)
         end
     end
