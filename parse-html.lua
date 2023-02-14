@@ -59,6 +59,8 @@ end
 --     end
 -- end
 
+-- I need to remove the escape shlash in front of percent signs inside of latex.
+
 -- This function takes the src/ style of figures and converts it into a mkdocs format that supports
 -- light and dark mode, and figure captions.
 function Para(para)
