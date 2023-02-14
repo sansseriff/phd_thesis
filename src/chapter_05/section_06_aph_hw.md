@@ -4,7 +4,7 @@ In March of 2022, Matthew Shaw was a guest lecturer for the Quantum Hardware and
 
 The first problem is inspired by the low dark count rate publication[@Mueller:21]. It has the student build a simple model for a dark count rate transmitted through a series of filters. Finally, it leads the student to consider an ultimate tradeoff between dark count rate and coupling efficiency to wide bandwidth optical signals. A filtering system that only transmits a very narroband signal will not be able to detect ultra-short optical signals with high efficiency or temporal resolution. 
 
-The second problem explores a potential use case of a photon number resolving SNSPD. It closely follows logic presented in an Andreas Christ and Christine Silberhorn paper[@Andreas:12]. I studied this paper closely earlier in my PhD, when I considered developing a multiplexed single photon source. This project turned out to be overly ambitious, but future PhD students might consider re-approaching it. 
+The second problem explores a potential use case of a photon number resolving SNSPD. It closely follows logic presented in an Andreas Christ and Christine Silberhorn paper[@Andreas:12]. I studied this paper earlier in my PhD, when I considered developing a multiplexed single photon source. It turned out that project was overly ambitious, but future PhD students might consider approaching it again. 
 
 <!-- the html tag makes this only appear on the website -->
 <!-- if you don't use the {=html} syntax, then the inside of the div would be rendered in the latex document -->
@@ -19,7 +19,7 @@ An experimental apparatus emits a collimated beam of $1550~\mathrm{nm}$ photons 
 
 ![**Cryostat free space coupling options.**](./figs_05/fig1b_light.svg){#fig:cryostat_concept short-caption="Cryostat optical coupling"}
 
-As we will see later on, a set of filters will be needed between the detector and the window to minimize dark counts. In practice, the set of filters can be quite thick. Say a $f = 100~\mathrm{mm}$ lens is used right outside the cryostat to focus the beam onto the detector though a set of filters (Fig 1a). The long focal length makes room for a few inches of filters between the external lens and focused spot. 
+As we will see later on, a set of filters will be needed between the detector and the window to minimize dark counts. In practice, the set of filters can be quite thick. Say a $f = 100~\mathrm{mm}$ lens is used right outside the cryostat to focus the beam onto the detector though a set of filters (@Fig:cryostat_concept a). The long focal length makes room for a few inches of filters between the external lens and focused spot. 
 
 <!-- This is a link to [The cryostat](./#fig:cryostat_concept) -->
 
@@ -156,7 +156,7 @@ If the detector has a circular active area with radius $5~\mathrm{\upmu m}$, wha
 
     <span class=blue markdown>![](./figs_05/filter_integrate_4.PNG)</span>
 
-7. If a narrow band filter is also inserted with center wavelength $1550~\text{nm}$ and spectral width below $1-2~nm$, then dark count rate can be approximated as just $N_{photons}[\lambda = 1550~\text{nm}]$ times the filter width. Show for this wavelength range you can simplify dark count rate further to a simple exponential function. If the laboratory air conditioner breaks, raising the lab temperature from 293 K to 300 K, how much higher is the dark count rate?
+7. (7 pts)  If a narrow band filter is also inserted with center wavelength $1550~\text{nm}$ and spectral width below $1-2~nm$, then dark count rate can be approximated as just $N_{photons}[\lambda = 1550~\text{nm}]$ times the filter width. Show for this wavelength range you can simplify dark count rate further to a simple exponential function. If the laboratory air conditioner breaks, raising the lab temperature from 293 K to 300 K, how much higher is the dark count rate?
 
     <span class=blue markdown> **Answer:** </span>
 
@@ -202,7 +202,7 @@ If the detector has a circular active area with radius $5~\mathrm{\upmu m}$, wha
 
     A quantum communication experiment requires time-tagging photons with respect to a 50 GHz clock with 95% fidelity. That is, 95% of the timing measurements of detected photons emitted at the same time with respect to a clock fall within a 20 ps bin. Say the detector and readout electronics have a combined jitter of 10 ps FWHM, and a mode locked laser is used for the experiment that generates transform-limited Gaussian pulses. You tune it's temporal length to a value for which the total timing uncertainty of time-tagged photons — including system jitter and pulse temporal length — matches the 95 % fidelity at 50 GHz requirement. Assume detector jitter has a Gaussian shape as well.
 
-8. Find the spectral width of a filter that would transmit 95% of the photons from the mode locked laser. What is the dark count rate with this filter, using the expression from (1.7) and T = 293 K?
+8. (8 pts) Find the spectral width of a filter that would transmit 95% of the photons from the mode locked laser. What is the dark count rate with this filter, using the expression from (1.7) and T = 293 K?
 
     <span class=blue markdown> **Answer:** </span>
 
@@ -255,11 +255,190 @@ If the detector has a circular active area with radius $5~\mathrm{\upmu m}$, wha
     <span class=red markdown>5 points for correct filter width and dark count rate</span>
 
 ### 2. SPDC Coupling and Single Photon Sources (50 points)
+An Spontaneous Parametric Down Conversion (SPDC) crystal is known to generate a twin beam squeezed state of the form: 
+
+$$|\psi\rangle= \sqrt{1 - \gamma^2} \sum_{n=0}^{\infty} \gamma^{n}\left|n_{s}, n_{i}\right\rangle $$
+
+Where $n_s$ and $n_i$ are the number of photons corresponding to the signal and idler parts of the wavefunction. Consider @fig:hsps a, where the crystal is pumped with a pulsed laser, and the the signal and idler components that emerge are separated either by polarization or frequency. The idler arm is sent to an SNSPD. This configuration can be used as a heralded single photon source (HSPS). A click on the detector on the idler arm `heralds' a non-vacuum state in the signal arm. High fidelity and probability single photon sources are very useful for various quantum optics experiments and technologies, including linear optical quantum computing. 
+
+![**Heralded single photon sources**](./figs_05/hsps_light.svg){#fig:hsps short-caption="Heralded single photon source designs"}
+
+Most SNSPDs are *binary*-type single photon detectors, meaning they differentiate between zero and one or more photons arriving in a given light pulse. A positive operator value measure (POVM) quantifies how a `click' from a binary SPD updates our knowledge of the incident state: 
+
+$$\hat{\Pi}_{\text {binary}} = \sum_{n=0}^{\infty}\left[1-(1-\eta)^{n}\right]|n\rangle\langle n|$$
+
+Where $\eta$ is the coupling efficiency between state of interest and the detector. 
+
+1. (6 pts) Find the expectation value of $\hat{\Pi}_{\text {binary}}$ given the SPDC state above. This is the probability $p_{binary}\left(\gamma, \eta\right)$ of getting a binary detector click on the idler arm. For $\gamma << 1$, what is $p_{binary}$ up to lowest order in $\gamma$, and what fock state of the signal arm is the source of this dominant term? 
+
+    <span class=blue markdown> **Answer:** </span>
+
+    <div class=blue markdown> 
+
+    $$\begin{align}
+    \langle \psi | \Pi_{\text {binary}} | \psi \rangle &= (1- \gamma^2) \sum_{\tilde{n}=0}^{\infty} \langle \tilde{n}_s \tilde{n}_i | \gamma^{\tilde{n}} \sum_{n=0}^{\infty}[1 - (1-\eta)^{n}] \gamma^n | n_s n_i \rangle \\
+    \langle \psi | \Pi_{\text {binary}} | \psi \rangle &= p_{binary}(\gamma, \eta) =  \boxed{(1-\gamma^2) \sum_{n_s=0}^{\infty} \gamma^{2n_s} [1 - (1 - \eta)^{n_s}]}
+    \end{align}$$
+
+    </div>
+
+    <span class=blue markdown> For $\gamma << 1$, $p \sim (1 - \gamma^2)[\cancel{\gamma^0[1 - (1 - \eta)^0]} + \gamma^{2}\eta ] \sim (1 - \gamma^2)\gamma^{2}\eta$ </span>
+
+    <span class=blue markdown> To lowest order in $\gamma$, $p \sim \gamma^{2}\eta$. The single photon fock state dominates for $\gamma << 1$. </span>
+
+    <span class=red markdown> 3 pts for correct $p_{binary}(\gamma, \eta)$; 3 pts for saying the leading term is from single photons </span>
+
+ 2. (6 pts) A general form for the density matrix of the signal mode given a herald event is:
+
+    $$\rho_{s}\left(\gamma, \eta\right)=\frac{\operatorname{Tr}_{i}\left(\hat{\Pi}|\psi\rangle\langle\psi|\right)}{\left\langle\psi\left|\hat{\Pi}\right| \psi\right\rangle}$$
+
+    Write down the $|1\rangle\langle1|$ term of this matrix, and simplify any infinite sums. This is the single photon fidelity $F_{binary}(\gamma, \eta)$. Why does $F_{binary}$ approach zero for $\gamma$ approaching 1? What types of states is the SPDC generating in this limit?  
+
+    <span class=blue markdown> **Answer:** </span>
+
+    <div class=blue markdown> 
+
+    $$\begin{align}
+    \rho_s(\gamma,\eta) &= \frac{\operatorname{Tr}_i[\cancel{(1 - \gamma^2)}\Sigma_{n=0}^{\infty} \gamma^{2n}[1 - (1 - \eta)^{n} ]| n \rangle \langle n | n_s n_i \rangle \langle n_s n_i |]}
+    {\cancel{(1-\gamma^2)} \sum_{n_s=0}^{\infty} \gamma^{2n_s} [1 - (1 - \eta)^{n_s}]}\\
+    |1_s \rangle \langle 1_s | &= \frac{\gamma^2[1 - (1 - \eta)]}{\sum_{n_s=0}^{\infty} \gamma^{2n_s} [1 - (1 - \eta)^{n_s}]} = \frac{\gamma^2 \eta}{\sum_{n_s=0}^{\infty} \gamma^{2n_s} [1 - (1 - \eta)^{n_s}]}\\
+    |1_s \rangle \langle 1_s | &= \frac{\gamma^2 \eta}{\sum_{n_s=0}^{\infty}(\gamma^{2n_s} - [\gamma^2 (1 - \eta)]^{n_s})}\\
+    &= \frac{\gamma^2 \eta}{\frac{1}{1 - \gamma^2} - \frac{1}{1 - \gamma^2(1 - \eta)}}\\
+    &= \frac{\gamma^2 \eta (1 - \gamma^2)}{1 - \frac{1 - \gamma^2}{1 - \gamma^2(1 - \eta)}}\\
+    &= \frac{\cancel{\gamma^2 \eta} (1 - \gamma^2) (1 - \gamma^2 (1 - \eta))}{\cancel{1 - \gamma^2 (1 - \eta) - 1 + \gamma^2}} \\
+    F_{binary}(\gamma, \eta) &= \boxed{(1 - \gamma^2)(1 - \gamma^2(1 - \eta))}
+    \end{align}$$
+
+    </div>
+
+    <span class=blue markdown>As $\gamma$ approaches 1, the denominator in the original expression for $\rho_s(\gamma,\eta)$ approaches infinity while the numerator approaches $\eta$. In this limit, the SPDC is generating predominantly multi-photon states. For $\gamma$ approaching 1, the probability of the generated state being a single photon state goes to zero. Because the binary POVM was used, multi-photon states are 'included' in $\rho_s(\gamma,\eta)$. For  $\rho_s$ from the PNR POVM shown below, multi-photon states will be included to a much lesser extent, depending on the value for $\eta$.</span>
+
+    <span class=red markdown>3 pts for correct $F_{binary}(\gamma, \eta)$; 3 pts for similar explanation</span>
+
+    An HSPS with high single photon fidelity and probability is most useful, but you see these metrics are maximized for opposite limits of $\gamma$. One approach to achieving high probability and fidelity simultaneously is to link multiple SPDC sources and heralding detectors as shown in @Fig:hsps b. A click from the detector $j$ triggers the switch to move to position $j$ and let the heralded state pass through. This way, $\gamma$ for each source can be kept low to maximize fidelity, while heralding probability increases with the number of sources.
+
+2. (6 pts) If such a multiplexing setup is engineered to have 98\% single photon fidelity from each source and 98\% heralding probability overall, how many sources and binary SNSPDs are needed? Use an idler arm efficiency $\eta$ of 80\%.
+
+    <span class=blue markdown> **Answer:** </span>
+
+    <span class=blue markdown>The fist step is to determine the pump power $\gamma$ for which fideltiy is 98\%. </span>
+
+    <div class=blue markdown>
+
+    $$0.98 = F_{binary}(\gamma, \eta) = (1 - \gamma^2)(1 - \gamma^2(1 - \eta)\,\,\,\,\,\,\,\, \eta = 0.8$$
+
+    </div>
+
+    <div class=blue markdown> A numerical solution is fine. We're interested in the positive solution less than one:</span>
+
+    <span class=blue markdown>![](./figs_05/Ftsolve.PNG)</span>
+
+    <span class=blue markdown>Like in introductory statistics problems, its helpful to think about the negative case: Given N sources with herald probability $p$, the probability of zero sources heralding is:</span>
+
+    <div class=blue markdown>
+
+    $$P(\text{no herald}|N) = (1 - p_{binary}\left(\gamma, \eta\right))^N$$
+
+    </div>
+
+    <span class=blue markdown>Then the probability of at least one herald is 1 minus the previous expression:</span>
+    <div class=blue markdown>
+
+    $$P(\text{at least one herald}|N) = 1 - (1 - p_{binary}\left(\gamma, \eta\right))^N$$
+
+    </div>
+
+    <span class=blue markdown>![](./figs_05/mux_binary.PNG)</span>
+
+    <span class=blue markdown>About $\boxed{N = 290}$ sources are needed.</span>
+
+    <span class=red markdown>3 pts for correct form of the multiplexing expression
+    $P(\text{at least one herald}|N)$; 3 pts for similar number of sources $N$</span>
+
+    A photon number resolving (PNR) SNSPD is able to discriminate the number of photons in a light pulse. By heralding the idler mode with a PNR SNSPD, the generation of multi-photon signal pulses can be identified and discarded. There's a POVM for an ideal PNR single photon detector, where $i$ is the number of photons detected:
+
+    $$\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\rangle\langle n|$$
+
+
+3. (12 pts) Derive a herald probability $p_{PNR}$ and fidelity $F_{PNR}$ for the PNR POVM, following the steps in the previous sections with $i$ set to 1. You can use symbolic math tools to simplify them if you wish. The probability of successfully heralding states in the signal arm $p_{PNR}$ should now approach zero for $\gamma$ near one. Why is this? 
+   
+    <span class=blue markdown> **Answer:** </span>
+    <span class=blue markdown>The POVM for one photon detected:</span>
+
+    <div class=blue markdown>
+
+    $$\hat{\Pi}_{PNR}(1)=\sum_{n=1}^{\infty}n(1-\eta)^{n-1} \eta|n\rangle\langle n|$$
+
+    </div>
+
+    <span class=blue markdown>First, derive the probability of getting a single photon detection from the PNR detector: $p_{PNR}(\gamma, \eta)$:</span>
+
+    <div class=blue markdown>
+
+    $$\begin{align}
+        p_{PNR}(\gamma, \eta) =\langle \psi | \Pi_{\text {PNR}} | \psi \rangle &= (1- \gamma^2) \sum_{\tilde{n}=0}^{\infty} \langle \tilde{n}_s \tilde{n}_i | \gamma^{\tilde{n}} \sum_{n=1}^{\infty}n(1-\eta)^{n-1} \eta|n\rangle\langle n| | n_s n_i \rangle \\
+        \langle \psi | \Pi_{\text {PNR}} | \psi \rangle &= p_{PNR}\left(\gamma, \eta\right) =  \boxed{(1-\gamma^2) \sum_{n_s=0}^{\infty} \gamma^{2n_s} n_s(1-\eta)^{n_s-1}}\\
+        p_{PNR}\left(\gamma, \eta\right) &=  \boxed{\frac{\gamma ^2 (1 - \gamma ^2) \eta }{(\gamma ^2 (\eta -1)+1)^2}}
+    \end{align}$$
+
+    </div>
+
+    <span class=blue markdown>Where either of the boxed answers are acceptable, and the last line was found using mathematica:</span>
+
+    <span class=blue markdown>![](./figs_05/simplify_ppnr.PNG)</span>
+
+    <span class=red markdown>4 pts for $p_{PNR}\left(\gamma, \eta\right)$</span>
+
+    <span class=blue markdown>Second, derive the single photon fidelity, staring with the density matrix for the signal photon given a PNR herald event. Using (15) above for $\langle \psi | \Pi_{\text {PNR}} | \psi \rangle$ in the denominator helps simplify it significantly. </span>
+
+    <div class=blue markdown>
+
+    $$\begin{align}
+        \rho_s(\gamma,\eta) &= \frac{\operatorname{Tr}_i[\sum_{n=1}^{\infty} \gamma^{2n}n(1-\eta)^{n-1} \eta|n\rangle\langle n|n_s n_i \rangle \langle n_s n_i |]}
+            {\langle \psi | \Pi_{\text {PNR}} | \psi \rangle}\\
+            |1_s \rangle \langle 1_s | &= \frac{\cancel{(1 - \gamma^2)}(\gamma ^2 (\eta -1)+1)^2 \cancel{\gamma^2 \eta}}{\cancel{\gamma^2 \eta} \cancel{(1 - \gamma ^2)} }\\
+            F_{PNR}(\gamma, \eta) &= \boxed{(\gamma ^2 (\eta -1)+1)^2}
+    \end{align}$$
+
+    </div>
+
+    <span class=red markdown>4 pts for $F_{PNR}(\gamma, \eta)$</span>
+
+    <span class=blue markdown>For $\gamma$ near one, the SPDC is under strong pump power and is generating predominantly multi-pair states. A vanishing fraction of those states are single photon states that the PNR detector is able to distinguish and single-photon. Therefore, the PNR detector is signaling the generation of multi-pair states most of the time which should be discarded and do not contribute to $p_{PNR}$. For high efficiency $\eta$, only the vanishing single-pair creation rate contributes predominantly to $p_{PNR}$.</span>
+
+    <span class=red markdown>4 pts for similar explanation</span>
+
+4. (12 pts) Make a parametric plot for $0<\gamma<1$ with $F_{PNR}$ on the x-axis and $p_{PNR}$ on the y-axis. Plot the curve for a few different values of idler arm efficiency $0<\eta<1$. All curves should reach the same maximum herald probability. What is it? 
+   
+    <span class=blue markdown> **Answer:** </span>
+    <span class=blue markdown>![](./figs_05/PLT.PNG)</span>
+
+    <span class=blue markdown> The the herald probability regardless of idler arm efficiency is 25\%. </span>
+
+    <span class=red markdown> 4 points for the 25\% limit; 8 points for a few plots at different $\eta$ </span>
+
+5. (8 pts) Consider again the configuration in @Fig:hsps b. Find the number of sources using PNR detectors needed to reach 98\% single photon herald probability and fidelity with $\eta = 0.8$. Also find the number of sources for $\eta = 0.95$.
+
+    <span class=blue markdown> **Answer:** </span>
+    <span class=blue markdown>![](./figs_05/pnrTotalPerf.PNG)</span>
+
+    <span class=blue markdown>About $\boxed{\text{98 sources are needed for the case with an 80% heralding}}$, </span>
+    <span class=blue markdown>about $\boxed{\text{23 sources are needed with 95% efficient heralding}}$</span>
+
+    <span class=red markdown> 4 points for each of the 2 answers. Answers that vary from these values by 2-3 sources are acceptable. </span>
 
 
 
 
-This is a refernce to the coupling options figure (@Fig:coupling_options b)
+
+
+
+
+
+
+
+
+
 
 
 
