@@ -430,17 +430,5 @@ Where $\eta$ is the coupling efficiency between state of interest and the detect
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- Keep at end of the page! -->
 <script src="../../chapter_05/code/section_05.js"></script>
