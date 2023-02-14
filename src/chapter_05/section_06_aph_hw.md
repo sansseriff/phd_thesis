@@ -422,7 +422,7 @@ Where $\eta$ is the coupling efficiency between state of interest and the detect
     <span class=blue markdown>![](./figs_05/pnrTotalPerf.PNG)</span>
 
     <span class=blue markdown>About $\boxed{\text{98 sources are needed for the case with an 80\% heralding}}$, </span>
-    <span class=blue markdown>about $\boxed{\text{23 sources are needed with 95\% efficient heralding}}$</span>
+    <span class=blue markdown>about $ \\\boxed{\text{23 sources are needed with 95\% efficient heralding}}$</span>
 
     <span class=red markdown> 4 points for each of the 2 answers. Answers that vary from these values by 2-3 sources are acceptable. </span>
 
