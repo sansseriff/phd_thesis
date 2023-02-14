@@ -374,11 +374,11 @@ Where $\eta$ is the coupling efficiency between state of interest and the detect
 
     <div class=blue markdown>
 
-    $$\begin{align}
+    $$\begin{aligned}
         p_{PNR}(\gamma, \eta) =\langle \psi | \Pi_{\text {PNR}} | \psi \rangle &= (1- \gamma^2) \sum_{\tilde{n}=0}^{\infty} \langle \tilde{n}_s \tilde{n}_i | \gamma^{\tilde{n}} \sum_{n=1}^{\infty}n(1-\eta)^{n-1} \eta|n\rangle\langle n| | n_s n_i \rangle \\
         \langle \psi | \Pi_{\text {PNR}} | \psi \rangle &= p_{PNR}\left(\gamma, \eta\right) =  \boxed{(1-\gamma^2) \sum_{n_s=0}^{\infty} \gamma^{2n_s} n_s(1-\eta)^{n_s-1}}\\
         p_{PNR}\left(\gamma, \eta\right) &=  \boxed{\frac{\gamma ^2 (1 - \gamma ^2) \eta }{(\gamma ^2 (\eta -1)+1)^2}}
-    \end{align}$$
+    \end{aligned}$$
 
     </div>
 
@@ -392,12 +392,12 @@ Where $\eta$ is the coupling efficiency between state of interest and the detect
 
     <div class=blue markdown>
 
-    $$\begin{align}
+    $$\begin{aligned}
         \rho_s(\gamma,\eta) &= \frac{\operatorname{Tr}_i[\sum_{n=1}^{\infty} \gamma^{2n}n(1-\eta)^{n-1} \eta|n\rangle\langle n|n_s n_i \rangle \langle n_s n_i |]}
             {\langle \psi | \Pi_{\text {PNR}} | \psi \rangle}\\
             |1_s \rangle \langle 1_s | &= \frac{\cancel{(1 - \gamma^2)}(\gamma ^2 (\eta -1)+1)^2 \cancel{\gamma^2 \eta}}{\cancel{\gamma^2 \eta} \cancel{(1 - \gamma ^2)} }\\
             F_{PNR}(\gamma, \eta) &= \boxed{(\gamma ^2 (\eta -1)+1)^2}
-    \end{align}$$
+    \end{aligned}$$
 
     </div>
 
@@ -407,6 +407,24 @@ Where $\eta$ is the coupling efficiency between state of interest and the detect
 
     <span class=red markdown>4 pts for similar explanation</span>
 
+5. (12 pts) Make a parametric plot for $0<\gamma<1$ with $F_{PNR}$ on the x-axis and $p_{PNR}$ on the y-axis. Plot the curve for a few different values of idler arm efficiency $0<\eta<1$. All curves should reach the same maximum herald probability. What is it? 
+   
+    <span class=blue markdown> **Answer:** </span>
+    <span class=blue markdown>![](./figs_05/PLT.PNG)</span>
+
+    <span class=blue markdown> The the herald probability regardless of idler arm efficiency is 25\%. </span>
+
+    <span class=red markdown> 4 points for the 25\% limit; 8 points for a few plots at different $\eta$ </span>
+
+6. (8 pts) Consider again the configuration in @Fig:hsps b. Find the number of sources using PNR detectors needed to reach 98\% single photon herald probability and fidelity with $\eta = 0.8$. Also find the number of sources for $\eta = 0.95$.
+
+    <span class=blue markdown> **Answer:** </span>
+    <span class=blue markdown>![](./figs_05/pnrTotalPerf.PNG)</span>
+
+    <span class=blue markdown>About $\boxed{\text{98 sources are needed for the case with an 80% heralding}}$, </span>
+    <span class=blue markdown>about $\boxed{\text{23 sources are needed with 95% efficient heralding}}$</span>
+
+    <span class=red markdown> 4 points for each of the 2 answers. Answers that vary from these values by 2-3 sources are acceptable. </span>
 
 <!-- Keep at end of the page! -->
 <script src="../../chapter_05/code/section_05.js"></script>
