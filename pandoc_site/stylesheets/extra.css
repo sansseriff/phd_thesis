@@ -21,6 +21,8 @@ h1 {
     display: none !important;
 }
 
+
+
 :root,
 [data-md-color-scheme="slate"] {
     --md-default-bg-color: #24242d;
@@ -42,7 +44,7 @@ h1 {
 
 :root,
 [data-md-color-scheme="default"] {
-    --md-default-bg-color: rgb(253, 251, 250);
+    --md-default-bg-color: #f7f7fd;
     --md-primary-fg-color--light: #ffd06f;
     --md-primary-fg-color--dark: #db9d21;
     --md-accent-fg-color: #4e30e6;
@@ -64,4 +66,21 @@ h1 {
 
 .red {
     color: var(--pg-red);
+}
+
+.dark_img {
+    /* max-width: 80% !important;
+    max-height: 80% !important; */
+    filter: sepia(40%) invert(.89) saturate(1.9);
+    display: block;
+    /* filter: invert(1); */
+    /* filter: hue-rotate(240deg);
+    filter: invert(1); */
+}
+
+.light_img {
+    /* max-width: 100% !important;
+    max-height: 100% !important; */
+    display: block;
+    /* filter: invert(1); */
 }
