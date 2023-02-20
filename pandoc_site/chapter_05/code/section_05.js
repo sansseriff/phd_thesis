@@ -99,7 +99,7 @@ function init_img() {
     var local = JSON.parse(localStorage.getItem('/.__palette'));
 
     if (local == null) {
-        switchMode('light_mode', 'dark_mode');
+        switchMode('light_img', 'dark_img');
     } else {
         switch (local.color.scheme) {
             case 'slate':
