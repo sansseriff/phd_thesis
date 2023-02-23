@@ -4,7 +4,6 @@ message.addEventListener('click', toggle_solutions)
 
 
 function toggle_solutions() {
-    console.log("working function")
     elements = document.querySelectorAll('.blue,.red');
     for (var i = 0; i < elements.length; i++) {
         elements[i].style.display = elements[i].style.display == 'inline' ? 'none' : 'inline';
@@ -97,9 +96,10 @@ function switchMode(fromClass, toClass) {
 
 function init_img() {
     var local = JSON.parse(localStorage.getItem('/.__palette'));
-
+    console.log(local.color.scheme)
     switch (local.color.scheme) {
         case 'slate':
+
             switchMode('light_img', 'dark_img');
             break;
         default:

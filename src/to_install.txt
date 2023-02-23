@@ -1,5 +1,13 @@
 eventually I should set these up as an environment.yaml for making a conda environment
 
+install pandoc:
+    I'm using Windows Subsystem for Linux. Choose the latest stable release and download the amd64 version. 
+    https://github.com/jgm/pandoc/releases
+
+install pandoc-crossref
+
 pip install mkdocs-material
 pip install pandoc-latex-color
 pip install mkdocs-bibtex
+
+
