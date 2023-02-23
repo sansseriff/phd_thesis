@@ -94,18 +94,44 @@ function switchMode(fromClass, toClass) {
     }
 }
 
+// function init_img() {
+//     var local_1 = JSON.parse(localStorage.getItem('/phd_thesis/.__palette'));
+//     var local_2 = JSON.parse(localStorage.getItem('/.__palette'));
+//     if (local_1 != null) {
+//         switch (local_1.color.scheme) {
+//             case 'slate':
+//                 switchMode('light_img', 'dark_img');
+//                 break;
+//             default:
+//                 switchMode('dark_img', 'light_img');
+//         }
+//     }
+//     if (local_2 != null) {
+//         switch (local_2.color.scheme) {
+//             case 'slate':
+//                 switchMode('light_img', 'dark_img');
+//                 break;
+//             default:
+//                 switchMode('dark_img', 'light_img');
+//         }
+//     }
+
+// }
+
 function init_img() {
-    var local = JSON.parse(localStorage.getItem('/.__palette'));
-    console.log(local.color.scheme)
-    switch (local.color.scheme) {
-        case 'slate':
-
-            switchMode('light_img', 'dark_img');
-            break;
-        default:
-            switchMode('dark_img', 'light_img');
-    }
-
+    const local_storage_keys = ['/phd_thesis/.__palette', '/.__palette'];
+    local_storage_keys.map((key) => {
+        const local = JSON.parse(localStorage.getItem(key));
+        if (local !== null) {
+            switch (local.color.scheme) {
+                case 'slate':
+                    switchMode('light_img', 'dark_img');
+                    break;
+                default:
+                    switchMode('dark_img', 'light_img');
+            }
+        }
+    });
 }
 
 function dmode_a(e) {
