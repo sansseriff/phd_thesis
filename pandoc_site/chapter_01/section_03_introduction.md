@@ -39,7 +39,8 @@ This work used a low-jitter, differential SNSPD \cite{Colangelo2021}, with an ac
 
 <figure markdown> 
     <a name='fig:custom_figure'></a> 
-    ![fig:custom_figure](./figs_01/Figure_Data_Sept_2022.svg) 
+    ![fig:custom_figure](./figs_01/Figure_Data_Sept_2022_light.svg#only-light)
+    ![fig:custom_figure](./figs_01/Figure_Data_Sept_2022_dark.svg#only-dark) 
     <figcaption>Figure 2: Figure Title. And I think the rest of this is the caption with (A), (B), and (C) callouts</figcaption> 
 </figure>
 
