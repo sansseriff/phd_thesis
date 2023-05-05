@@ -980,7 +980,7 @@ and focused spot.
 \subsection{2. SPDC Coupling and Single Photon Sources (50
 points)}\label{spdc-coupling-and-single-photon-sources-50-points}}
 
-An Spontaneous Parametric Down Conversion (SPDC) crystal is known to
+A Spontaneous Parametric Down Conversion (SPDC) crystal is known to
 generate a twin beam squeezed state of the form:
 
 \[|\psi\rangle= \sqrt{1 - \gamma^2} \sum_{n=0}^{\infty} \gamma^{n}\left|n_{s}, n_{i}\right\rangle \]
@@ -1013,8 +1013,8 @@ light pulse. A positive operator value measure (POVM) quantifies how a
 
 \[\hat{\Pi}_{\text {binary}} = \sum_{n=0}^{\infty}\left[1-(1-\eta)^{n}\right]|n\rangle\langle n|\]
 
-Where \(\eta\) is the coupling efficiency between state of interest and
-the detector.
+Where \(\eta\) is the coupling efficiency between the state of interest
+and the detector.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1147,14 +1147,19 @@ the detector.
   {\color{darkred} 3 pts for correct form of the multiplexing expression
   \(P(\text{at least one herald}|N)\); 3 pts for similar number of
   sources \(N\)}
+\end{enumerate}
 
-  A photon number resolving (PNR) SNSPD is able to discriminate the
-  number of photons in a light pulse. By heralding the idler mode with a
-  PNR SNSPD, the generation of multi-photon signal pulses can be
-  identified and discarded. There's a POVM for an ideal PNR single
-  photon detector, where \(i\) is the number of photons detected:
+A photon number resolving (PNR) SNSPD is able to discriminate the number
+of photons in a light pulse*. By heralding the idler mode with a PNR
+SNSPD, the generation of multi-photon signal pulses can be identified
+and discarded. There's a POVM for an ideal PNR single photon detector,
+where \(i\) is the number of photons detected**:
 
-  \[\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\rangle\langle n|\]
+\[\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\rangle\langle n|\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
 \item
   (12 pts) Derive a herald probability \(p_{PNR}\) and fidelity
   \(F_{PNR}\) for the PNR POVM, following the steps in the previous
