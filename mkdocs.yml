@@ -29,6 +29,8 @@ markdown_extensions:
   - md_in_html
   - pymdownx.superfences
   - footnotes
+  - pymdownx.details
+  - admonition
 
 extra_css:
   - ./stylesheets/extra.css
