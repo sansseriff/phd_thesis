@@ -74,13 +74,15 @@ h1 {
     /* box-shadow: 1px 1x 18px rgba(0, 0, 0, 0.05);
     -webkit-box-shadow: 1px 1px 18px rgba(0, 0, 0, 0.05);
     -moz-box-shadow: 1px 1px 18px rgba(0, 0, 0, 0.05); */
-    filter: sepia(49%) invert(.84) saturate(2.3);
+    /* filter: hue-rotate(0deg); */
+    filter: hue-rotate(180deg) sepia(49%) invert(.84) saturate(2.3) ;
     display: block;
     /* filter: invert(1); */
     /* filter: hue-rotate(240deg);
     filter: invert(1); */
     border-radius: 7px;
-    border: solid #c7dfff 1.4px;
+    /* border: solid #c7dfff 1.4px; */
+    border: solid #f0d7b1 1.4px;
 
 }
 

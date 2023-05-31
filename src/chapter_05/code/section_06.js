@@ -1,3 +1,8 @@
+const message = document.querySelector(".md-button");
+message.addEventListener('click', toggle_solutions)
+
+
+
 function toggle_solutions() {
     elements = document.querySelectorAll('.blue,.red');
     for (var i = 0; i < elements.length; i++) {
@@ -12,7 +17,7 @@ function switchMode(fromClass, toClass) {
     console.log("Switching from", fromClass, "to", toClass);
     const images = document.getElementsByTagName('img');
     for (let i = 0; i < images.length; i++) {
-        if (images[i].src.endsWith('.png') || images[i].src.endsWith('.PNG') || images[i].src.endsWith('.webp')) {
+        if (images[i].src.endsWith('.PNG')) {
             if (images[i].classList.contains(fromClass)) {
                 images[i].classList.replace(fromClass, toClass);
             } else {
