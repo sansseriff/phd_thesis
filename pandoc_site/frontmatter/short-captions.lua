@@ -58,3 +58,6 @@ if FORMAT ~= "latex" then
 
 --   https://stackoverflow.com/questions/48569597/pandoc-filters-change-relative-paths-to-absolute-paths
   
+function CodeBlock(el)
+  print(el)
+end
