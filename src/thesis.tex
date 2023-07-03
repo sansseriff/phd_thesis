@@ -575,6 +575,15 @@ mosaic} is a tool for specifying the layout of a figure with a special
 python dictionary, demonstrated by this example from the docs:
 
 \begin{minted}{python}
+
+
+def this_is_function(my_list):
+    ls = []
+    for item in my_list:
+        ls.append(item)
+    return ls
+
+
 fig = plt.figure(layout="constrained")
 ax_dict = fig.subplot_mosaic(
     [
