@@ -60,4 +60,5 @@ if FORMAT ~= "latex" then
   
 function CodeBlock(el)
   print(el)
+  print(el.classes)
 end
