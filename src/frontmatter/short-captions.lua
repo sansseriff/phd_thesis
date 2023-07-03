@@ -60,5 +60,6 @@ if FORMAT ~= "latex" then
   
 function CodeBlock(el)
   print(el)
-  print(el[0])
+  print()
+  print(el.text)
 end
