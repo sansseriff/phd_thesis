@@ -62,7 +62,7 @@ if FORMAT ~= "latex" then
 -- convert markdown code block to latext 
 function CodeBlock(el)
   -- print(el)
-  local code_language = el.classes[1]
+  local code_language = el.classes[2]
   print(el.classes[0])
   print(el.text)
 end
