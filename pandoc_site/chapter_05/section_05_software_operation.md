@@ -51,7 +51,7 @@ There are methods of changing the aspect ratios of the plots, but tools for impo
 
 #### Gridspec
 
-[Gridspec](https://matplotlib.org/stable/gallery/lines_bars_and_markers/scatter_hist.html#sphx-glr-gallery-lines-bars-and-markers-scatter-hist-py) is a tool for more carefully specifying a grid layout. Space between plots can be specified, and the relative widths or heights of columns and rows can be customized. Gridspec offers a lot of control, but it requires a many custom parameters like width ratios that can be unintuitive to derive.
+[Gridspec](https://matplotlib.org/stable/gallery/lines_bars_and_markers/scatter_hist.html#sphx-glr-gallery-lines-bars-and-markers-scatter-hist-py) is a tool for more carefully specifying a grid layout. Space between plots can be specified, and the relative widths or heights of columns and rows can be customized. Gridspec offers a lot of control, but it requires many custom parameters that can be unintuitive to derive.
 
 #### Add_axes
 
@@ -62,5 +62,7 @@ One of the simplest ways of adding subplots to a figure is with the `fig.add_axe
     ![fig:layout_sketch](./figs_05/layout_sketch.png) 
     <figcaption>Figure 1: Sketch for layout with add_axese().</figcaption> 
 </figure>
+
+#### `bisect()` method
 
 <script src="../../chapter_05/code/section_05.js"></script>

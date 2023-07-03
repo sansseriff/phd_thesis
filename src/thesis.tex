@@ -74,15 +74,17 @@ Nanowire Single Photon Detectors}
 \university{California Institute of Technology}    
 \address{Pasadena, California}                     
 \unilogo{caltech.png}                                 
-\copyyear{2023}  
-\defenddate{XXX 2023}   
+\copyyear{2024}  
+\defenddate{November 2023}   
+       
+\orcid{0000-0002-6598-9732}
 
 
 
 \rightsstatement{Some rights reserved. This thesis is distributed under
 a Creative Commons Attribution License CC-BY 4.0. All software used in
 the analysis and generation of figures is distributed under an MIT
-license. and is available on a GitHub repository
+license, and is available on a GitHub repository
 \href{https://github.com/sansseriff/phd_thesis}{https://github.com/sansseriff/phd\textunderscore thesis}}
 
 \maketitle[logo]
@@ -535,6 +537,11 @@ and analyzed data. G.C. and R.P. wrote the paper.
 
 ~~~~~
 
+see this paper, page 4, for a nice explanation for how source
+engineering is done to create single mode spots with spdc. Basically it
+comes down to dispersion engineering for the signal and idler
+wavevectors. https://arxiv.org/pdf/2111.10981.pdf
+
 \hypertarget{appendix-1}{%
 \chapter{Appendix 1}\label{appendix-1}}
 
@@ -546,6 +553,86 @@ and analyzed data. G.C. and R.P. wrote the paper.
 \hypertarget{software-systems-and-operation}{%
 \section{Software Systems and
 Operation}\label{software-systems-and-operation}}
+
+\hypertarget{advanced-matplotlib-layouts-with-the-bisect-function}{%
+\subsection{\texorpdfstring{Advanced Matplotlib Layouts with the
+\texttt{bisect()}
+function}{Advanced Matplotlib Layouts with the bisect() function}}\label{advanced-matplotlib-layouts-with-the-bisect-function}}
+
+It can be difficult to create complex plot layouts with matplotlib,
+especially when the layout should have strict requirements, like
+neighboring axes that are aligned with one another. Before explaining a
+custom method for solving this problem through the use of a new function
+\texttt{bisect()}, its worth reviewing the more accepted methods of
+advanced matplotlib figure layout.
+
+\hypertarget{subplot-mosaic}{%
+\subsubsection{Subplot Mosaic}\label{subplot-mosaic}}
+
+\href{https://matplotlib.org/stable/gallery/subplots_axes_and_figures/mosaic.html}{Subplot
+mosaic} is a tool for specifying the layout of a figure with a special
+python dictionary, demonstrated by this example from the docs:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fig }\OperatorTok{=}\NormalTok{ plt.figure(layout}\OperatorTok{=}\StringTok{"constrained"}\NormalTok{)}
+\NormalTok{ax\_dict }\OperatorTok{=}\NormalTok{ fig.subplot\_mosaic(}
+\NormalTok{    [}
+\NormalTok{        [}\StringTok{"bar"}\NormalTok{, }\StringTok{"plot"}\NormalTok{],}
+\NormalTok{        [}\StringTok{"hist"}\NormalTok{, }\StringTok{"image"}\NormalTok{],}
+\NormalTok{    ],}
+\NormalTok{)}
+\NormalTok{ax\_dict[}\StringTok{"bar"}\NormalTok{].bar([}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{], [}\DecValTok{5}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{9}\NormalTok{])}
+\NormalTok{ax\_dict[}\StringTok{"plot"}\NormalTok{].plot([}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{])}
+\NormalTok{ax\_dict[}\StringTok{"hist"}\NormalTok{].hist(hist\_data)}
+\NormalTok{ax\_dict[}\StringTok{"image"}\NormalTok{].imshow([[}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{], [}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{]])}
+\NormalTok{identify\_axes(ax\_dict)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{chapter_05/figs_05/sphx_glr_mosaic_001_2_0x.webp}
+
+There are methods of changing the aspect ratios of the plots, but tools
+for imposing alignment constraints across plots are limited. For
+example, notice in the example above how the (1,1) plot axes are not
+vertically aligned with the (0,1) plot above.
+
+\hypertarget{gridspec}{%
+\subsubsection{Gridspec}\label{gridspec}}
+
+\href{https://matplotlib.org/stable/gallery/lines_bars_and_markers/scatter_hist.html\#sphx-glr-gallery-lines-bars-and-markers-scatter-hist-py}{Gridspec}
+is a tool for more carefully specifying a grid layout. Space between
+plots can be specified, and the relative widths or heights of columns
+and rows can be customized. Gridspec offers a lot of control, but it
+requires many custom parameters that can be unintuitive to derive.
+
+\hypertarget{add_axes}{%
+\subsubsection{Add\_axes}\label{add_axes}}
+
+One of the simplest ways of adding subplots to a figure is with the
+\texttt{fig.add\_axese(rect)} method. The
+\texttt{rect\ =\ {[}ll\_x,\ ll\_y,\ width,\ height{]}} specifies the x
+and y coordinate of the lower left corner with the first two parameters,
+and the width and height with the second 2 parameters. Multiple uses of
+\texttt{add\_axese()} offers maximum control for creating advanced
+layouts, but specifying all the correct \texttt{rect} arrays can get
+very confusing. Figure Fig.~\ref{fig:layout_sketch} illustrates the
+types of calculations that become necessary when the specific location
+and size of each subplot must be specified under certain constraints.
+
+\hypertarget{fig:layout_sketch}{%
+\begin{figure}
+\centering
+\includegraphics{chapter_05/figs_05/layout_sketch.png}
+\caption[{Rough sketch for layout with add\_axese()}]{\textbf{Sketch for
+layout with add\_axese().}}
+\label{fig:layout_sketch}
+\end{figure}
+}
+
+\hypertarget{bisect-method}{%
+\subsubsection{\texorpdfstring{\texttt{bisect()}
+method}{bisect() method}}\label{bisect-method}}
 
 \hypertarget{aph-138-homework-assignment}{%
 \section{Aph 138 Homework
@@ -1260,6 +1347,10 @@ where \(i\) is the number of photons detected**:
   {\color{darkred}  4 points for each of the 2 answers. Answers that
   vary from these values by 2-3 sources are acceptable. }
 \end{enumerate}
+
+\hypertarget{how-a-sorption-fridge-works}{%
+\section{How A Sorption Fridge
+Works}\label{how-a-sorption-fridge-works}}
 
 \printbibliography
 \end{document}

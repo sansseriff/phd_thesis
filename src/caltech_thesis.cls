@@ -136,13 +136,13 @@
 \newcommand{\copyyear}{\gdef\@copyyear}
 \newcommand{\defenddate}{\gdef\@defenddate}
 % Overleaf: Updated 21 January 2016; don't put in a default year value
-\copyyear{!!!!}
-\defenddate{!!!!}
+\copyyear{2024}
+\defenddate{November 2023}
 
 %
 % Overleaf: added 21 January 2016
 \newcommand{\orcid}[1]{\gdef\@orcid{#1}}
-\orcid{xxxxx}
+\orcid{0000-0002-6598-9732}
 \newcommand{\rightsstatement}[1]{\gdef\@rightsstatement{#1}}
 \rightsstatement{All rights reserved}
 % The copyright page is new, must conform to CIT requirements
