@@ -13,15 +13,6 @@ It can be difficult to create complex plot layouts with matplotlib, especially w
 [Subplot mosaic](https://matplotlib.org/stable/gallery/subplots_axes_and_figures/mosaic.html)  is a tool for specifying the layout of a figure with a special python dictionary, demonstrated by this example from the docs:
 
 ```python
-
-
-def this_is_function(my_list):
-    ls = []
-    for item in my_list:
-        ls.append(item)
-    return ls
-
-
 fig = plt.figure(layout="constrained")
 ax_dict = fig.subplot_mosaic(
     [
