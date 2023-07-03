@@ -66,8 +66,8 @@ function CodeBlock(el)
   -- print(el.classes[2])
   -- print(el.text)
 
-  lang_string = string.format("\n\\begin{minted}{%s}", code_language)
+  lang_string = latex(string.format("\n\\begin{minted}{%s}", code_language))
 
-  return pandoc.Para {lang_string, el.text, latex("\n\\end{minted}")
+  return pandoc.Para {lang_string, latex(el.text), latex("\n\\end{minted}")
   }
 end
