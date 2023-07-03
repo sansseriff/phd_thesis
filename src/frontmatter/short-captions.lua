@@ -62,7 +62,12 @@ if FORMAT ~= "latex" then
 -- convert markdown code block to latext 
 function CodeBlock(el)
   -- print(el)
-  local code_language = el.classes[2]
-  print(el.classes[0])
-  print(el.text)
+  local code_language = el.classes[1]
+  -- print(el.classes[2])
+  -- print(el.text)
+
+  lang_string = string.format("\n\\begin{minted}{%s}", code_language)
+
+  return pandoc.Para {lang_string, el.text, latex("\n\\end{minted}")
+  }
 end
