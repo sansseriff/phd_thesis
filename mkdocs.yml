@@ -19,6 +19,7 @@ theme:
   custom_dir: ./pandoc_site/overrides
   features:
     - navigation.indexes
+    - navigation.expand
         
 markdown_extensions:
   - pymdownx.arithmatex:
