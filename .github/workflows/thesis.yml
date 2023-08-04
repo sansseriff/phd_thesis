@@ -13,6 +13,10 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: 3.x
-      - run: pip install mkdocs-material 
+      - run: pip install mkdocs-material
+      - run: pip install pybtex==0.24.0
+      - run: pip install pypandoc==1.11
+      - run: pip install requests==2.31.0
+      - run: pip install validators==0.20.0
       - run: pip install mkdocs-bibtex
       - run: mkdocs gh-deploy --force
