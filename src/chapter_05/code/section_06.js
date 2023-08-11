@@ -17,6 +17,7 @@ function switchMode(fromClass, toClass) {
     console.log("Switching from", fromClass, "to", toClass);
     const images = document.getElementsByTagName('img');
     for (let i = 0; i < images.length; i++) {
+        // console.log(i)
         if (images[i].src.endsWith('.PNG')) {
             if (images[i].classList.contains(fromClass)) {
                 images[i].classList.replace(fromClass, toClass);
@@ -25,6 +26,7 @@ function switchMode(fromClass, toClass) {
             }
         }
     }
+    console.log("finished")
 }
 
 

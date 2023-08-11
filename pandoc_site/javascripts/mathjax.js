@@ -1,6 +1,6 @@
 window.MathJax = {
     loader: {
-        load: ['[tex]/autoload', '[tex]/upgreek', '[tex]/unicode', '[tex]/cancel'],
+        load: ['[tex]/autoload', '[tex]/upgreek', '[tex]/unicode', '[tex]/cancel', 'ui/lazy'],
         '[tex]/upgreek': {
             ready: (name) => console.log(name + ' ready'),
             failed: (error) => console.log(error.package + ' failed')
