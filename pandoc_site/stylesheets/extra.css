@@ -29,7 +29,7 @@ h1 {
     --md-primary-fg-color--light: #ffd06f;
     --md-primary-fg-color--dark: #db9d21;
     --md-accent-fg-color: #737aca;
-    --pg-light-border: rgb(47, 47, 47);
+    --pg-light-border: rgb(51, 51, 59);
     --pg-hero-color: #ffd06f;
     --pg-purple: #af94de;
     --pg-red: #ff6c6a;
@@ -98,4 +98,25 @@ h1 {
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.03);
     -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.03);
     -moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.03);
+}
+
+img {
+    height: 100%;
+    width: 100%;
+  }
+
+figure {
+    height: 100% !important;
+    width: 100% !important;
+}
+
+figcaption {
+    height: 100% !important;
+    width: 100% !important;
+    text-align: left;
+    margin: 0 !important;
+    max-width:none !important;
+    background-color:var(--pg-light-border);
+    padding: 0.2rem;
+    font-size: 0.7rem;
 }
