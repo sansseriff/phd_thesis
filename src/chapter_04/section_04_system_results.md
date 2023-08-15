@@ -1,5 +1,6 @@
 ## System
 
+$$\require{boldsymbol}$$
 
 <!-- %## Quick layout explanation -->
 Figure [system](./section_03_introduction.md#fig:system) shows the experiment setup. Pulses from a 4 GHz mode locked laser (Pritel UOC) with a center wavelength at 1539.47 nm are sent through an 80 ps delay interferometer (Optoplex). This generates the early/late basis, which is subsequently unconverted by a second harmonic generation (SHG) module (Pritel) and down converted into entangled photon pairs by a type-0 spontaneous parametric down conversion crystal (Covesion). The up-converted pulses at 769 nm have a FWHM bandwidth of 243 GHz (0.48 nm), which along with the phase matching condition of the SPDC waveguide, defines a wide Joint Spectral Intensity (JSI) function. 
@@ -18,7 +19,7 @@ The JSI is measured in Fig. @fig:jsi a by recording coincidence rates for differ
 ![**Channel JSI and Histogram** a) The singles rates $S_A$ and $S_B$ (grey bars), coupling efficiencies (purple bars), and coincidence rates $C_{AB}$ (diagonal boxes) for different DWDM channel pairings. The joint spectral intensity envelop spans several 100 GHz channels. So the coincidence rates (KHz, in black) are consistent with the efficiencies $\eta$ (purple bars) and the singles rates (grey bars), they are scaled to represent two branches of the total wavefunction. There are four branches in all, for the 4 pairs of 2 interferometer output ports that contribute coincidences. In practice, one output each of Alice and Bob's interferometers is measured, thereby capturing one branch. See supplemental for details of the scaling method, and the fitting method used to solve for the coupling efficiencies $\eta$. b) Coincidence rates for energy-matched channel pairings. The light green bars match the main diagonal in (a). Grey bars are measured with x16 DWDM at Alice and a tunable narroband filter at Bob. Dashed bars predict the rates for a system with x16 DWDMs at both Alice and Bob c) Histogram of photon arrival events with respect to the 4 GHz clock. Dashed black and grey lines show the response functions for coincidence events. Red bars represent guard regions where coincidence events are ignored.](./figs_04/jsi_figure_light.svg){#fig:jsi short-caption="Channel JSI and Histogram." width=100%}
 
 <!-- %## efficiency -->
-Figure @fig:jsi a also shows coupling efficiencies $/eta$ for each DWDM channel, $S_A$ is the singles rate at Alice, and $S_B$ is the singles rate at Bob [@Neumann2022Entanglement].  As only two of the total four interferometer output ports are measured at once, certain scalings are made to the singles and coincidence rates $C_{AB}$ to reflect a readout configuration with well defined coupling efficiency (see supplementary information). 
+Figure @fig:jsi a also shows coupling efficiencies $\eta$ for each DWDM channel, $S_A$ is the singles rate at Alice, and $S_B$ is the singles rate at Bob [@Neumann2022Entanglement].  As only two of the total four interferometer output ports are measured at once, certain scalings are made to the singles and coincidence rates $C_{AB}$ to reflect a readout configuration with well defined coupling efficiency (see supplementary information). 
 
 
 <!-- %## 16 channel diagonal -->
@@ -33,12 +34,11 @@ Signals from the SNSPDs are read out with a free running time tagger (Swabian) a
 The coincidence rate across Alice and Bob's middle bins varies sinusoidally with respect to the combined phase relationship source and readout interferometers (see supplementary information) [@Inagaki2013]. In figure @fig:jsi c  the coincidences shown are for any combination of early, middle, or late bins. For tomography and fidelity measurements, coincidences across specific bin pairings are considered. Events within 10 ps width guard regions centered at 80 and 160 ps (shaded red) are discarded for analysis of coincidences between individual bins. This is done to maximize fidelity in the presence of some minor overlap of the pulse response functions. 
 
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\linewidth]{shg_scan.pdf}
-    \caption{a) Fidelity versus pump power. Error bars arise from making multiple measurements of the center bin coincidence rate over some integration time. These measurements span small ranges of interferometer phase, as the extremum-finding algorithm jitters the interferometer voltage. b) Bounded distillable entanglement rate versus pump power. Multiple such measurements are made for all the tomographic measurements. These are used to calculate standard deviations for fidelity, log negativity, and coherent information. Error bars for the log negativity and coherent information are smaller than the line width shown. Rates shown assume readout of all 4 available interferometer ports, based on data measured using one port each at Alice and Bob.}
-    \label{fig:shg_scan}
-\end{figure}
+![**Fidelity and Rates vs $\boldsymbol \mu$** a) Fidelity versus pump power. Error bars arise from making multiple measurements of the center bin coincidence rate over some integration time. These measurements span small ranges of interferometer phase, as the extremum-finding algorithm jitters the interferometer voltage. b) Bounded distillable entanglement rate versus pump power. Multiple such measurements are made for all the tomographic measurements. These are used to calculate standard deviations for fidelity, log negativity, and coherent information. Error bars for the log negativity and coherent information are smaller than the line width shown. Rates shown assume readout of all 4 available interferometer ports, based on data measured using one port each at Alice and Bob.](./figs_04/shg_scan_light.svg){#fig:shg_scan short-caption="Fidelity and Rates vs $\boldsymbol \mu$." width=100%}
+
+This is something $\mu$
+This is something $\boldsymbol{\mu}$
+This is something **$\mu$**
 
 Due to the small size and athermal design of the interferomters, minimal temporal phase drift was observed over multiple hours. Nevertheless, software was used to 'lock' the phase at a minimum or maximum with a simple steepest-descent algorithm. This varied the phase by small amounts over several minutes and adjusted phase to maintain an extremum. 
 

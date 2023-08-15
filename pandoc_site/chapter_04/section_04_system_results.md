@@ -1,5 +1,7 @@
 ## System
 
+$$\require{boldsymbol}$$
+
 <!-- %## Quick layout explanation -->
 
 Figure [system](./section_03_introduction.md#fig:system) shows the experiment setup. Pulses from a 4 GHz mode locked laser (Pritel UOC) with a center wavelength at 1539.47 nm are sent through an 80 ps delay interferometer (Optoplex). This generates the early/late basis, which is subsequently unconverted by a second harmonic generation (SHG) module (Pritel) and down converted into entangled photon pairs by a type-0 spontaneous parametric down conversion crystal (Covesion). The up-converted pulses at 769 nm have a FWHM bandwidth of 243 GHz (0.48 nm), which along with the phase matching condition of the SPDC waveguide, defines a wide Joint Spectral Intensity (JSI) function.
@@ -27,7 +29,7 @@ The JSI is measured in Fig. Fig. [1](#fig:jsi) a by recording coincidence rates
 
 <!-- %## efficiency -->
 
-Figure Fig. [1](#fig:jsi) a also shows coupling efficiencies $/eta$ for each DWDM channel, $S_A$ is the singles rate at Alice, and $S_B$ is the singles rate at Bob [@Neumann2022Entanglement]. As only two of the total four interferometer output ports are measured at once, certain scalings are made to the singles and coincidence rates $C_{AB}$ to reflect a readout configuration with well defined coupling efficiency (see supplementary information).
+Figure Fig. [1](#fig:jsi) a also shows coupling efficiencies $\eta$ for each DWDM channel, $S_A$ is the singles rate at Alice, and $S_B$ is the singles rate at Bob [@Neumann2022Entanglement]. As only two of the total four interferometer output ports are measured at once, certain scalings are made to the singles and coincidence rates $C_{AB}$ to reflect a readout configuration with well defined coupling efficiency (see supplementary information).
 
 <!-- %## 16 channel diagonal -->
 
@@ -41,12 +43,14 @@ Signals from the SNSPDs are read out with a free running time tagger (Swabian) a
 
 The coincidence rate across Alice and Bob’s middle bins varies sinusoidally with respect to the combined phase relationship source and readout interferometers (see supplementary information) [@Inagaki2013]. In figure Fig. [1](#fig:jsi) c the coincidences shown are for any combination of early, middle, or late bins. For tomography and fidelity measurements, coincidences across specific bin pairings are considered. Events within 10 ps width guard regions centered at 80 and 160 ps (shaded red) are discarded for analysis of coincidences between individual bins. This is done to maximize fidelity in the presence of some minor overlap of the pulse response functions.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\linewidth]{shg_scan.pdf}
-    \caption{a) Fidelity versus pump power. Error bars arise from making multiple measurements of the center bin coincidence rate over some integration time. These measurements span small ranges of interferometer phase, as the extremum-finding algorithm jitters the interferometer voltage. b) Bounded distillable entanglement rate versus pump power. Multiple such measurements are made for all the tomographic measurements. These are used to calculate standard deviations for fidelity, log negativity, and coherent information. Error bars for the log negativity and coherent information are smaller than the line width shown. Rates shown assume readout of all 4 available interferometer ports, based on data measured using one port each at Alice and Bob.}
-    \label{fig:shg_scan}
-\end{figure}
+<figure markdown> 
+    <a name='fig:shg_scan'></a> 
+    ![fig:shg_scan](./figs_04/shg_scan_light.svg#only-light)
+    ![fig:shg_scan](./figs_04/shg_scan_dark.svg#only-dark) 
+    <figcaption markdown> Figure 2: **Fidelity and Rates vs $\mu$** a) Fidelity versus pump power. Error bars arise from making multiple measurements of the center bin coincidence rate over some integration time. These measurements span small ranges of interferometer phase, as the extremum-finding algorithm jitters the interferometer voltage. b) Bounded distillable entanglement rate versus pump power. Multiple such measurements are made for all the tomographic measurements. These are used to calculate standard deviations for fidelity, log negativity, and coherent information. Error bars for the log negativity and coherent information are smaller than the line width shown. Rates shown assume readout of all 4 available interferometer ports, based on data measured using one port each at Alice and Bob.</figcaption>
+    </figure>
+
+This is something $\mu$ This is something $\textbf{\mu}$ This is something **$\mu$**
 
 Due to the small size and athermal design of the interferomters, minimal temporal phase drift was observed over multiple hours. Nevertheless, software was used to ‘lock’ the phase at a minimum or maximum with a simple steepest-descent algorithm. This varied the phase by small amounts over several minutes and adjusted phase to maintain an extremum.
 

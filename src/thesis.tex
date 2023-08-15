@@ -690,6 +690,8 @@ high rate quantum networks.
 \hypertarget{system}{%
 \section{System}\label{system}}
 
+\[\require{boldsymbol}\]
+
 Figure \href{./section_03_introduction.md\#fig:system}{system} shows the
 experiment setup. Pulses from a 4 GHz mode locked laser (Pritel UOC)
 with a center wavelength at 1539.47 nm are sent through an 80 ps delay
@@ -759,7 +761,7 @@ represent guard regions where coincidence events are ignored.}
 \end{figure}
 }
 
-Figure Fig.~\ref{fig:jsi} a also shows coupling efficiencies \(/eta\)
+Figure Fig.~\ref{fig:jsi} a also shows coupling efficiencies \(\eta\)
 for each DWDM channel, \(S_A\) is the singles rate at Alice, and \(S_B\)
 is the singles rate at Bob \autocite{Neumann2022Entanglement}. As only
 two of the total four interferometer output ports are measured at once,
@@ -799,12 +801,29 @@ centered at 80 and 160 ps (shaded red) are discarded for analysis of
 coincidences between individual bins. This is done to maximize fidelity
 in the presence of some minor overlap of the pulse response functions.
 
+\hypertarget{fig:shg_scan}{%
 \begin{figure}
-    \centering
-    \includegraphics[width=0.8\linewidth]{shg_scan.pdf}
-    \caption{a) Fidelity versus pump power. Error bars arise from making multiple measurements of the center bin coincidence rate over some integration time. These measurements span small ranges of interferometer phase, as the extremum-finding algorithm jitters the interferometer voltage. b) Bounded distillable entanglement rate versus pump power. Multiple such measurements are made for all the tomographic measurements. These are used to calculate standard deviations for fidelity, log negativity, and coherent information. Error bars for the log negativity and coherent information are smaller than the line width shown. Rates shown assume readout of all 4 available interferometer ports, based on data measured using one port each at Alice and Bob.}
-    \label{fig:shg_scan}
+\centering
+\includegraphics[width=1\textwidth,height=\textheight]{chapter_04/figs_04/shg_scan_light.pdf}
+\caption[{Fidelity and Rates vs \(\boldsymbol \mu\).}]{\textbf{Fidelity
+and Rates vs \(\boldsymbol \mu\)} a) Fidelity versus pump power. Error
+bars arise from making multiple measurements of the center bin
+coincidence rate over some integration time. These measurements span
+small ranges of interferometer phase, as the extremum-finding algorithm
+jitters the interferometer voltage. b) Bounded distillable entanglement
+rate versus pump power. Multiple such measurements are made for all the
+tomographic measurements. These are used to calculate standard
+deviations for fidelity, log negativity, and coherent information. Error
+bars for the log negativity and coherent information are smaller than
+the line width shown. Rates shown assume readout of all 4 available
+interferometer ports, based on data measured using one port each at
+Alice and Bob.}
+\label{fig:shg_scan}
 \end{figure}
+}
+
+This is something \(\mu\) This is something \(\boldsymbol{\mu}\) This is
+something \textbf{\(\mu\)}
 
 Due to the small size and athermal design of the interferomters, minimal
 temporal phase drift was observed over multiple hours. Nevertheless,

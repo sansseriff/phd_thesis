@@ -1,6 +1,6 @@
 window.MathJax = {
     loader: {
-        load: ['[tex]/autoload', '[tex]/upgreek', '[tex]/unicode', '[tex]/cancel', 'ui/lazy'],
+        load: ['[tex]/autoload', '[tex]/upgreek', '[tex]/unicode', '[tex]/cancel', 'ui/lazy', '[tex]/boldsymbol'],
         '[tex]/upgreek': {
             ready: (name) => console.log(name + ' ready'),
             failed: (error) => console.log(error.package + ' failed')
@@ -15,7 +15,7 @@ window.MathJax = {
         displayMath: [["\\[", "\\]"]],
         processEscapes: true,
         processEnvironments: true,
-        packages: { '[+]': ['autoload', 'upgreek', 'unicode', 'cancel'] },
+        packages: { '[+]': ['autoload', 'upgreek', 'unicode', 'cancel', 'boldsymbol'] },
         autoload: {
             upgreek: ['upalpha', 'upbeta', 'upchi', 'updelta', 'Updelta', 'upepsilon',
                 'upeta', 'upgamma', 'Upgamma', 'upiota', 'upkappa', 'uplambda',
