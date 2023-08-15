@@ -42,7 +42,7 @@ extra_css:
 plugins:
   - search
   - bibtex:
-      bib_file: "./pandoc_site/references.bib"
+      bib_file: "./pandoc_site/references_cleaned.bib"
       csl_file: "./pandoc_site/styles/apa_md.csl"
 
 
@@ -98,6 +98,7 @@ nav:
   - High Rate Entanglement Generation: 
     - chapter_04/index.md
     - Introduction: chapter_04/section_03_introduction.md
+    - System & Results: chapter_04/section_04_system_results.md
   - Appendix 1:
     - chapter_05/index.md
     - Software Tools: chapter_05/section_05_software_operation.md
@@ -113,3 +114,5 @@ extra_javascript:
   # - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest?tex-svg.js
   - javascripts/wiki_hover.js
   - javascripts/fix_footnotes.js
+
+# using footnote technique from https://github.com/ObsidianPublisher/tooltips-internal-link

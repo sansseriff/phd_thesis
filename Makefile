@@ -5,6 +5,7 @@ PANDOC=pandoc
 
 tex:
 	cd src && \
+	python clean_references.py && \
 	pandoc metadata.yaml \
 	chapter*/*.md \
 	ref_heading.md \
@@ -22,10 +23,12 @@ tex:
 
 md_test:
 	cd src/ && \
+	python clean_references.py && \
 	sh make_pandoc.sh
 
 overleaf:
 	cd src && \
+	python clean_references.py && \
 	pandoc metadata.yaml \
 	chapter*/*.md \
 	ref_heading.md \
@@ -69,6 +72,9 @@ overleaf_clean:
 	&& git push overleaf master
 
 mkdocs:
+	cd src && \
+	python clean_references.py && \
+	cd .. && \
 	sh make_pandoc_site.sh
 
 mkdocs_serve:

@@ -30,6 +30,7 @@ h1 {
     --md-primary-fg-color--dark: #db9d21;
     --md-accent-fg-color: #737aca;
     --pg-light-border: rgb(51, 51, 59);
+    --pg-border-color: rgb(57, 57, 67);
     --pg-hero-color: #ffd06f;
     --pg-purple: #af94de;
     --pg-red: #ff6c6a;
@@ -48,7 +49,8 @@ h1 {
     --md-primary-fg-color--light: #ffd06f;
     --md-primary-fg-color--dark: #db9d21;
     --md-accent-fg-color: #4e30e6;
-    --pg-light-border: rgb(229, 231, 235);
+    --pg-light-border: rgb(237, 238, 245);
+    --pg-border-color: rgb(226, 228, 244);
     --pg-hero-color: rgb(45, 45, 45);
     --pg-purple: #603aa0;
     --pg-red: #872b2a;
@@ -108,15 +110,35 @@ img {
 figure {
     height: 100% !important;
     width: 100% !important;
+    transition: transform .2s; /* Animation */
+    background-color: var(--md-default-bg-color);
 }
+
+figure:hover {
+    transform: scale(1.5);
+    /* font-size: 0.5rem; */
+}
+
+/* figure:hover > figcaption {
+    font-size: 0.56rem;
+  } */
 
 figcaption {
     height: 100% !important;
     width: 100% !important;
     text-align: left;
     margin: 0 !important;
+    margin-top: 0.5rem !important;
     max-width:none !important;
     background-color:var(--pg-light-border);
-    padding: 0.2rem;
+    padding: 0.3rem 0.5rem;
     font-size: 0.7rem;
+    border-radius: 0.3rem;
+    border: 1px solid var(--pg-border-color);
+    /* border-color: black !important; */
+    /* transition: transform .1s, font-size .03s .03s;  */
 }
+
+/* figcaption:hover {
+    font-size: 0.5rem;
+} */

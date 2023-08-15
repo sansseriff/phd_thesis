@@ -26,8 +26,8 @@ The system is based on 1-inch optics, although the f = 18.75 mm lenses lead to a
 <figure markdown> 
     <a name='fig:dcrmin_data'></a> 
     ![fig:dcrmin_data](./figs_01/DataFigure_6.svg) 
-    <figcaption>Figure 1: Low Dark Count Rate Project Results a) Simulated photon flux at various temperatures with and without the 1550 nm bandpass filter (BP). b) Normalized photon count rate (PCR) and jitter measurements c) DCR, and calculated figure of merit H versus bias current for both fiber-coupled and free space coupled configurations.</figcaption> 
-</figure>
+    <figcaption markdown> Figure 1: **Low Dark Count Rate Project Results** a) Simulated photon flux at various temperatures with and without the 1550 nm bandpass filter (BP). b) Normalized photon count rate (PCR) and jitter measurements c) DCR, and calculated figure of merit $H$ versus bias current for both fiber-coupled and free space coupled configurations.</figcaption>
+    </figure>
 
 We use four custom cryogenic short-pass filters, with pass-bands below $1.6 \ \mathrm{\upmu m}$ and $1.9 \ \mathrm{\upmu m}$ (Andover Corp.), both with transmission at 1550 nm of 98.8 ± 0.3%. They reject wavelengths shorter than $3 \ \mathrm{\upmu m}$ through reflective optical coatings, and attenuate longer wavelengths through material absorption in the 12.7 mm-thick N-BK7 glass substrate. While the bandpass filter (FWHM = 7 nm) was found to blue-shift by about 2 nm at cryogenic temperatures, the passband was wide enough such that significant attenuation was not observed at the original target wavelength of 1550 nm. This filter is also sufficiently wide to avoid Fourier-limited broadening of ultra-short laser pulses.
 
@@ -41,13 +41,13 @@ This work used a low-jitter, differential SNSPD \cite{Colangelo2021}, with an ac
     <a name='fig:custom_figure'></a> 
     ![fig:custom_figure](./figs_01/Figure_Data_Sept_2022_light.svg#only-light)
     ![fig:custom_figure](./figs_01/Figure_Data_Sept_2022_dark.svg#only-dark) 
-    <figcaption>Figure 2: Figure Title. And I think the rest of this is the caption with (A), (B), and (C) callouts</figcaption> 
-</figure>
+    <figcaption markdown> Figure 2: **Figure Title.** And I think the rest of this is the caption with (A), (B), and (C) callouts</figcaption>
+    </figure>
 
 Finally, here’s a png figure for testing
 
 <figure markdown> 
     <a name='fig:test_png_figure'></a> 
     ![fig:test_png_figure](./figs_01/fridge.png) 
-    <figcaption>Figure 3: A test png figure. And here is where I’d put in more information about the png.</figcaption> 
-</figure>
+    <figcaption markdown> Figure 3: **A test png figure.** And here is where I’d put in more information about the png.</figcaption>
+    </figure>

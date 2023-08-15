@@ -634,12 +634,12 @@ independent carrier of photonic entanglement \autocite{Wengerowsky2018}
 and therefore the system as a whole is applicable to flex-grid
 architectures through the use of wavelength selective switching
 \autocite{Appas2021,Alshowkan22Switching}. However, we focus here on
-maximizing the rate between two receiving stations, Alice and Bob (Fig.
-\ref{fig:system}a). Each station is equipped with DWDMs that receive
-multiplexed channels, and may include multiple detectors to read out the
-full rate.
+maximizing the rate between two receiving stations, Alice and Bob
+(Fig.~\ref{fig:system} a). Each station is equipped with DWDMs that
+receive multiplexed channels, and may include multiple detectors to read
+out the full rate.
 
-\hypertarget{fig:sys_drawing}{%
+\hypertarget{fig:system}{%
 \begin{figure}
 \centering
 \includegraphics[width=1\textwidth,height=\textheight]{chapter_04/figs_04/sys_drawing_light.pdf}
@@ -648,21 +648,21 @@ DWDM Channels} a) Pulses from a 1539.47 nm mode locked laser (Pritel
 UOC) are doubled by an 80 ps delay interferometer before up-conversion
 and amplification in a SHG \& EDFA module (Pritel). A short PM fiber
 from the SHG connects to the SPDC where photon pairs are created. The
-CWDM module separates the SPDC spectrum into multiple \textasciitilde13
-nm wide bands spaced by 20 nm. The 1530 and 1550 nm bands are sent to
-the Bob and Alice stations respectively. The readout interferometers
-have the same time delay as the source interferometer. Polarization
-controllers are used to maximize the coincidence rates, as the detection
-efficiencies of the SNSPDs is polarization sensitive (\(\pm20\%\)).
-Entanglement fidelity is unaffected by readout polarization. The two
-SNSPDs are connected to each channel pair in succession to resolve full
-system performance. b) ITU channels involved with the experiment. Pairs
-of channels highlighted with the same color obey the SPDC \& pump energy
-matching condition, and can be directly read out through DWDM channel
-outputs. To asses the full 16 channels (27-42) of Alice's DWDM
-multiplexer, Bob's 8-channel DWDM is switched out for a tunable
-narroband filter.}
-\label{fig:sys_drawing}
+CWDM module separates the SPDC spectrum into multiple
+\(\sim\!\!13~\mathrm{nm}\) wide bands spaced by 20 nm. The 1530 and 1550
+nm bands are sent to the Bob and Alice stations respectively. The
+readout interferometers have the same time delay as the source
+interferometer. Polarization controllers are used to maximize the
+coincidence rates, as the detection efficiencies of the SNSPDs is
+polarization sensitive \(\pm20\%\). Entanglement fidelity is unaffected
+by readout polarization. The two SNSPDs are connected to each channel
+pair in succession to resolve full system performance. b) ITU channels
+involved with the experiment. Pairs of channels highlighted with the
+same color obey the SPDC \& pump energy matching condition, and can be
+directly read out through DWDM channel outputs. To asses the full 16
+channels (27-42) of Alice's DWDM multiplexer, Bob's 8-channel DWDM is
+switched out for a tunable narroband filter.}
+\label{fig:system}
 \end{figure}
 }
 
@@ -678,12 +678,202 @@ and 95\% of the high-power coincidence rate (0.41 - 0.48 Mebits/s).
 
 Quantifying a source's spectral mode purity is important for gauging its
 utility in advanced quantum networks that rely on 2-photon interference
-measurements like Bell State Measurements. With Schmidt decomposition we
-quantify the modal purity of single DWDM channel pairs and derive the
-inverse Shmidt number which serves as an estimate for two-photon HOM
-visibility between two such sources. Ultimately, we demonstrate that an
-entanglement generation source of this design makes for a robust and
-powerful building block for future high rate quantum networks.
+measurements like Bell State Measurements.
+
+With Schmidt decomposition we quantify the modal purity of single DWDM
+channel pairs and derive the inverse Shmidt number which serves as an
+estimate for two-photon HOM visibility between two such sources.
+Ultimately, we demonstrate that an entanglement generation source of
+this design makes for a robust and powerful building block for future
+high rate quantum networks.
+
+\hypertarget{system}{%
+\section{System}\label{system}}
+
+Figure \href{./section_03_introduction.md\#fig:system}{system} shows the
+experiment setup. Pulses from a 4 GHz mode locked laser (Pritel UOC)
+with a center wavelength at 1539.47 nm are sent through an 80 ps delay
+interferometer (Optoplex). This generates the early/late basis, which is
+subsequently unconverted by a second harmonic generation (SHG) module
+(Pritel) and down converted into entangled photon pairs by a type-0
+spontaneous parametric down conversion crystal (Covesion). The
+up-converted pulses at 769 nm have a FWHM bandwidth of 243 GHz (0.48
+nm), which along with the phase matching condition of the SPDC
+waveguide, defines a wide Joint Spectral Intensity (JSI) function.
+
+The entangled pairs, which are separated by a coarse wavelength division
+multiplexer (CWDM), are of the form
+\(|\psi\rangle=\frac{1}{\sqrt{2}}\left(|1\rangle_{s}|1\rangle_{i}+e^{i \phi}|2\rangle_{s}|2\rangle_{i}\right)\).
+Entangled idler and signal photons are sent to the receiving stations
+labeled Alice and Bob. One readout interferometer at each station
+projects all spectral bands into a composite time-phase basis. From
+here, dense wavelength division multiplexers (DWDM) divide up the
+energy-time entangled photon pairs into spectral channels.
+
+The outputs of the DWDMS are sent to differential niobium nitride (NbN)
+superconducting nanowire single photon detectors (SNSPDs)
+\autocite{Colangelo2023} with efficiencies of \textcolor{red}{XX} and
+\textcolor{red}{XX}. These measure the arrival time of photons with
+respect to a clock signal derived from the mode locked laser. We use two
+SNSPDs for this demonstration, but a full 8-channel implementation of
+this system requires 16 detectors operating in parallel at both Alice
+and Bob. To read out both outputs of both interferometers, 4 detectors
+per channel are required.
+
+\hypertarget{results}{%
+\section{Results}\label{results}}
+
+The JSI is measured in Fig. Fig.~\ref{fig:jsi} a by recording
+coincidence rates for different ITU channel pairings. For a given idler
+photon wavelength, the spectrum of corresponding signal photons spans
+several ITU channels. Pairs along the main diagonal are optimized for
+maximum coincidence rates, and are therefore used for all remaining
+measurements. In \href{./section_03_introduction.md\#fig:system}{system}
+c, these pairs are highlighted with matching colors.
+
+\hypertarget{fig:jsi}{%
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=\textheight]{chapter_04/figs_04/jsi_figure_light.pdf}
+\caption[{Channel JSI and Histogram.}]{\textbf{Channel JSI and
+Histogram} a) The singles rates \(S_A\) and \(S_B\) (grey bars),
+coupling efficiencies (purple bars), and coincidence rates \(C_{AB}\)
+(diagonal boxes) for different DWDM channel pairings. The joint spectral
+intensity envelop spans several 100 GHz channels. So the coincidence
+rates (KHz, in black) are consistent with the efficiencies \(\eta\)
+(purple bars) and the singles rates (grey bars), they are scaled to
+represent two branches of the total wavefunction. There are four
+branches in all, for the 4 pairs of 2 interferometer output ports that
+contribute coincidences. In practice, one output each of Alice and Bob's
+interferometers is measured, thereby capturing one branch. See
+supplemental for details of the scaling method, and the fitting method
+used to solve for the coupling efficiencies \(\eta\). b) Coincidence
+rates for energy-matched channel pairings. The light green bars match
+the main diagonal in (a). Grey bars are measured with x16 DWDM at Alice
+and a tunable narroband filter at Bob. Dashed bars predict the rates for
+a system with x16 DWDMs at both Alice and Bob c) Histogram of photon
+arrival events with respect to the 4 GHz clock. Dashed black and grey
+lines show the response functions for coincidence events. Red bars
+represent guard regions where coincidence events are ignored.}
+\label{fig:jsi}
+\end{figure}
+}
+
+Figure Fig.~\ref{fig:jsi} a also shows coupling efficiencies \(/eta\)
+for each DWDM channel, \(S_A\) is the singles rate at Alice, and \(S_B\)
+is the singles rate at Bob \autocite{Neumann2022Entanglement}. As only
+two of the total four interferometer output ports are measured at once,
+certain scalings are made to the singles and coincidence rates
+\(C_{AB}\) to reflect a readout configuration with well defined coupling
+efficiency (see supplementary information).
+
+Most tests were done with the 8 ITU 100 GHz channel pairings: Ch. 35-42
+at Alice and Ch. 52-49 at Bob. In Fig. Fig.~\ref{fig:jsi} b we
+investigate rates across 16 pairs by using all 16 channels available on
+the DWDM at Alice (24 - 34) and a tuneable narroband filter in place of
+the DWDM at Bob. As the narroband filter has higher loss, the
+coincidence rates are lower (grey bars in Fig. Fig.~\ref{fig:jsi} b).
+But the uniformity of coincidence rates across 16 channels implies the
+use of 16-channel DWDMs at both Alice and Bob would roughly double the
+total coincidence rate.
+
+Signals from the SNSPDs are read out with a free running time tagger
+(Swabian) and processed with custom software. In the resulting
+histograms referenced from a shared clock (Fig Fig.~\ref{fig:jsi} c),
+three peaks are visible which are caused by the sequential delays of the
+source and readout interferometers. Some intensity imbalance between
+long and short paths is present in these interferometers, which explains
+the asymmetry between early and late peaks in Fig.~\ref{fig:jsi} c.~This
+type of imbalance is expected to degrade entanglement fidelity only if
+present in the source interferometer (see supplemenatry info).
+Therefore, that with lowest imbalance was chosen for the source.
+
+The coincidence rate across Alice and Bob's middle bins varies
+sinusoidally with respect to the combined phase relationship source and
+readout interferometers (see supplementary information)
+\autocite{Inagaki2013}. In figure Fig.~\ref{fig:jsi} c the coincidences
+shown are for any combination of early, middle, or late bins. For
+tomography and fidelity measurements, coincidences across specific bin
+pairings are considered. Events within 10 ps width guard regions
+centered at 80 and 160 ps (shaded red) are discarded for analysis of
+coincidences between individual bins. This is done to maximize fidelity
+in the presence of some minor overlap of the pulse response functions.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{shg_scan.pdf}
+    \caption{a) Fidelity versus pump power. Error bars arise from making multiple measurements of the center bin coincidence rate over some integration time. These measurements span small ranges of interferometer phase, as the extremum-finding algorithm jitters the interferometer voltage. b) Bounded distillable entanglement rate versus pump power. Multiple such measurements are made for all the tomographic measurements. These are used to calculate standard deviations for fidelity, log negativity, and coherent information. Error bars for the log negativity and coherent information are smaller than the line width shown. Rates shown assume readout of all 4 available interferometer ports, based on data measured using one port each at Alice and Bob.}
+    \label{fig:shg_scan}
+\end{figure}
+
+Due to the small size and athermal design of the interferomters, minimal
+temporal phase drift was observed over multiple hours. Nevertheless,
+software was used to `lock' the phase at a minimum or maximum with a
+simple steepest-descent algorithm. This varied the phase by small
+amounts over several minutes and adjusted phase to maintain an extremum.
+
+Channels 35 and 59 were chosen for an analysis of entanglement fidelity
+and rates versus pump power. Fidelity with respect to pump power or mean
+entangled pair rate is shown in \ref{fig:shg_scan}a. We define the
+entanglement fidelity as \(F = 100\%*(1 - \frac{C_{min}}{C_{max}})\)
+where \(C_{min}\) and \(C_{max}\) are the minimum and maximum
+coincidence rates with respect to interferometer phase observed across
+the middle bins. As this coincidence rate depends on the total phase
+across all source and readout interferometers, just one (Bob's) is
+actively controlled to scan the full state space.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{8ch_bar_graph_high_power.pdf}
+    \caption{a) Fidelity for the main 8 channel pairs, measured at a high (5.17 Amps) and a low ( 1.2 Amps) SHG pump power setting. Each power setting results in similar $\mu$ for all channels: $\mu_{low}$ = 5.6e-5 $\pm$ 9e-6 and $\mu_{high}$ = 6.1e-3 $\pm$ 3e-4.  b) Rate metrics for the 8 channel pairs at the same high and low power settings. The range of possible values for distillable entanglement rate is spanned by the yellow regions, bounded above by log-negativity and below by coherent information. Rates shown assume readout of all 4 available interferometer ports, based on data measured using one port each at Alice and Bob}
+    \label{fig:channel_data}
+\end{figure}
+
+We quantify the rate of useful entanglement by supplying bounds for the
+distillable entanglement rate \(R_D\). Measured in ebits/s, \(R_D\) is
+the maximal asymptotic rate of Bell pair production per received state
+using only local operations and classical communications. It is bounded
+above by log negativity \(R_N = RE_N\) and below by \(R_I = R E_I\)
+where \(R\) is the raw coincidence rate \cite{Alshowkan2022}. For each
+pump power setting in Fig.\textasciitilde{}\ref{fig:shg_scan}, a series
+of tomographic measurements is performed and density matrices
+calculated. \(E_I\) and \(E_N\) are calculated from the density matrices
+as detailed in the supplementary information.
+
+Figure \ref{fig:channel_data} shows fidelities, raw coincidence rates,
+and bounded distillable entanglement rates for all 8 channel pairings
+and 2 pump powers. The higher pump power is the highest possible on our
+SHG \& EDFA module. Higher rates are readily achievable by increasing
+the output power of this component, up to a point where the high count
+rate on the SNSPDs induces higher jitter. However these pulse pileup and
+time-walk effects can be mitigated with jitter correction techniques
+\cite{Mueller2023}.
+
+\% \textbackslash textcolor\{blue\}\{ \% We perform a linear fit of the
+entanglement fidelity data, \(F = A + B\mu\), and obtain \(A = XXX\),
+\(B=XXX\). We derive expressions for A and B in terms of the mean photon
+number, interferometer transmittances, and interference visibilities
+(see Supplemental).\}
+
+Using the data in Fig. Fig.~\ref{fig:jsi} a, we model the joint spectral
+intensity function of the SPDC output as a product of pump envelope and
+phase matching condition functions
+
+\[|f(\omega_s, \omega_i)|^2 = |\psi_{\mathrm{ph}}\left(\omega_s, \omega_i\right)|^2 *|\psi_p\left(\omega_s, \omega_i\right)|^2\]
+
+This construction depends on the wavelength (769.78 nm) and bandwidth
+(243 GHz FWHM) of unconverted light out of the SHG, which was measured
+with a spectrum analyzer. The transmission spectrums of the 100 GHz DWDM
+channels was also modeled based on measured transmission data, in order
+to define the integrations over the JSI that would match the coincidence
+results in Fig. Fig.~\ref{fig:jsi} a (details in supplemental).
+
+We calculate the Schmidt decomposition of the JSI bipartite spectrum
+transmitted through pairs of DWDM filters at Alice and Bob, and derive
+an inverse Schmidt number of \(1/K = 0.87\). This value quantifies the
+spectral purity of the entangled photon source, and predicts the
+visibility of a two-source HOM (Hong-Ou-Mandel) interferogram. If 50 GHz
+ITU channels are used instead, the model predicts \(1/K = 0.96\).
 
 \hypertarget{appendix-1}{%
 \chapter{Appendix 1}\label{appendix-1}}

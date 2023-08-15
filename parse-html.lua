@@ -96,8 +96,11 @@ function Para(para)
     src_begin = img.src:sub(0, -10)
     check_light = img.src:sub( -9, -5)
 
+    -- print(type(img.caption))
 
-    caption = pandoc.utils.stringify(img.caption)
+    -- caption = pandoc.utils.stringify(Maths2Markdown(pandoc.Span(img.caption)))
+    caption = pandoc.Span(img.caption)
+
     short_caption = pandoc.utils.stringify(short_caption)
 
     light_src = string.format("![%s](%slight.svg#only-light)", img.identifier, src_begin)
@@ -108,12 +111,43 @@ function Para(para)
     else
         full_src = string.format("![%s](%s)", img.identifier, img.src)
     end
+    -- print(caption)
+    -- print(type(caption))
+--     string = string.format("<figure markdown> \
+--     <a name='%s'></a> \
+--     %s \
+--     <figcaption markdown>%s</figcaption> \
+-- </figure>", img.identifier, full_src, caption)
     string = string.format("<figure markdown> \
     <a name='%s'></a> \
     %s \
-    <figcaption>%s</figcaption> \
-</figure>", img.identifier, full_src, caption)
-    return pandoc.RawInline('markdown', string)
+    <figcaption markdown> ", img.identifier, full_src)
+    return pandoc.Para {pandoc.RawInline('markdown', string), caption, pandoc.RawInline('markdown',"</figcaption>\
+    </figure>")}
+end
+
+
+function Maths2Markdown(sp)
+    -- print(type(sp))
+    -- for i, thing in ipairs(sp) do
+    --     print(thing)
+    -- end
+    -- print(sp.content[15])
+    -- print(#sp.content)
+
+    for i, thing in ipairs(sp.content) do
+        -- print(type(thing))
+        -- print(thing)
+        -- print(thing.t)
+        -- print(thing)
+        if thing.t == "Math" then
+            print(thing.text)
+            thing.t = "Str"
+            thing.text = string.format("$%s$", thing.text)
+            print(thing.text)
+        end
+    end
+    return sp
 end
 
 -- This takes the native pandoc representation of Divs and outputs an html div with the markdown data attribute
@@ -145,3 +179,32 @@ end
 --   ![cryostat_1](./figs_05/fig1_dark.svg#only-dark)
 --   <figcaption>Image caption</figcaption>
 -- </figure>
+
+-- function serializeTable(val, name, skipnewlines, depth)
+--     skipnewlines = skipnewlines or false
+--     depth = depth or 0
+
+--     local tmp = string.rep(" ", depth)
+
+--     if name then tmp = tmp .. name .. " = " end
+
+--     if type(val) == "table" then
+--         tmp = tmp .. "{" .. (not skipnewlines and "\n" or "")
+
+--         for k, v in pairs(val) do
+--             tmp =  tmp .. serializeTable(v, k, skipnewlines, depth + 1) .. "," .. (not skipnewlines and "\n" or "")
+--         end
+
+--         tmp = tmp .. string.rep(" ", depth) .. "}"
+--     elseif type(val) == "number" then
+--         tmp = tmp .. tostring(val)
+--     elseif type(val) == "string" then
+--         tmp = tmp .. string.format("%q", val)
+--     elseif type(val) == "boolean" then
+--         tmp = tmp .. (val and "true" or "false")
+--     else
+--         tmp = tmp .. "\"[inserializeable datatype:" .. type(val) .. "]\""
+--     end
+
+--     return tmp
+-- end

@@ -60,8 +60,8 @@ One of the simplest ways of adding subplots to a figure is with the `fig.add_axe
 <figure markdown> 
     <a name='fig:layout_sketch'></a> 
     ![fig:layout_sketch](./figs_05/layout_sketch.png) 
-    <figcaption>Figure 1: Sketch for layout with add_axese().</figcaption> 
-</figure>
+    <figcaption markdown> Figure 1: **Sketch for layout with add_axese().**</figcaption>
+    </figure>
 
 #### `bisect()` method
 

@@ -24,8 +24,8 @@ An experimental apparatus emits a collimated beam of $1550~\mathrm{nm}$ photons 
     <a name='fig:cryostat_concept'></a> 
     ![fig:cryostat_concept](./figs_05/fig1b_light.svg#only-light)
     ![fig:cryostat_concept](./figs_05/fig1b_dark.svg#only-dark) 
-    <figcaption>Figure 1: Cryostat free space coupling options.</figcaption> 
-</figure>
+    <figcaption markdown> Figure 1: **Cryostat free space coupling options.**</figcaption>
+    </figure>
 
 As we will see later on, a set of filters will be needed between the detector and the window to minimize dark counts. In practice, the set of filters can be quite thick. Say a $f = 100~\mathrm{mm}$ lens is used right outside the cryostat to focus the beam onto the detector though a set of filters (Fig. [1](#fig:cryostat_concept) a). The long focal length makes room for a few inches of filters between the external lens and focused spot.
 
@@ -78,8 +78,9 @@ As we will see later on, a set of filters will be needed between the detector an
         <a name='fig:coupling_options'></a> 
         ![fig:coupling_options](./figs_05/fig2b_light.svg#only-light)
         ![fig:coupling_options](./figs_05/fig2b_dark.svg#only-dark) 
-        <figcaption>Figure 2: Three Coupling Options</figcaption> 
-    </figure>
+        <figcaption markdown> Figure 2: **Three Coupling Options**</figcaption>
+        </figure>
+
     i)  There is no lens; the detector is distance $l$ inside the cryostat, and the first window with diameter $d$ defines an entrance pupil. <br>
     ii) Same as (i), but a lens with focal length $l$ is placed right outside the first window. The detector is at the focal point. <br>
     iii) Same as (ii) but the lens is placed inside the cryostat with the detector still at the focal length. Equivalent to Fig. [1](#fig:cryostat_concept) b above. <br>
@@ -262,8 +263,8 @@ Where $n_s$ and $n_i$ are the number of photons corresponding to the signal and 
     <a name='fig:hsps'></a> 
     ![fig:hsps](./figs_05/hsps_light.svg#only-light)
     ![fig:hsps](./figs_05/hsps_dark.svg#only-dark) 
-    <figcaption>Figure 3: Heralded single photon sources</figcaption> 
-</figure>
+    <figcaption markdown> Figure 3: **Heralded single photon sources**</figcaption>
+    </figure>
 
 Most SNSPDs are *binary*-type single photon detectors, meaning they differentiate between zero and one or more photons arriving in a given light pulse. A positive operator value measure (POVM) quantifies how a \`click’ from a binary SPD updates our knowledge of the incident state:
 

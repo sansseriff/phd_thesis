@@ -15,6 +15,7 @@ rm -r ./pandoc_site/chapter_01/* \
 && cp -R ./src/chapter_05/figs_05/ ./pandoc_site/chapter_05/ \
 && cp -R ./src/frontmatter ./pandoc_site/ \
 && cp -R ./src/references.bib ./pandoc_site/ \
+&& cp -R ./src/references_cleaned.bib ./pandoc_site/ \
 
 # the lua filter needs to go after (under) the pandoc-crossref. Otherwise,
 # padoc-crossref cannot recognize the figures.

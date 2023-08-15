@@ -1,3 +1,5 @@
+// using technique from https://github.com/ObsidianPublisher/tooltips-internal-link
+
 function formatText(text) {
     // Replace special character codes with actual HTML tags
     text = text.replace(/&lt;b&gt;/g, "<b>").replace(/&lt;\/b&gt;/g, "</b>");
