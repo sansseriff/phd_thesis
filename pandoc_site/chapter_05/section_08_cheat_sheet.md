@@ -1,0 +1,27 @@
+use \boldsymbol for bold latex:
+
+**Fidelity and Rates vs $\boldsymbol \mu$**
+
+Here are a few bold characters together: $\boldsymbol{\mu \quad \beta \quad \gamma}$
+
+For units, use \mathrm{nm}: This is a number with units: $138.3~\mathrm{nm}$
+
+Refer to a figure with Fig. [1](#fig:figurename) or Fig. [1](#fig:figurename) or for multiple Fig. [1](#fig:figurename)
+
+Until I figure something more shorthand, you can set colors with “\<span\>” tags:
+
+<span class=blue markdown> **This text is blue. And it changes lightness when darkmode is witched** </span>
+
+<figure markdown> 
+    <a name='fig:figurename'></a> 
+    ![fig:figurename](./figs_05/fig1b_light.svg#only-light)
+    ![fig:figurename](./figs_05/fig1b_dark.svg#only-dark) 
+    <figcaption markdown> Figure 1: **Caption title here** a) Long caption here</figcaption>
+    </figure>
+
+<figure markdown> 
+    <a name='fig:figurename2'></a> 
+    ![fig:figurename2](./figs_05/hsps_light.svg#only-light)
+    ![fig:figurename2](./figs_05/hsps_dark.svg#only-dark) 
+    <figcaption markdown> Figure 2: **Caption title here** a) Long caption here</figcaption>
+    </figure>

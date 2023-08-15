@@ -1,8 +1,6 @@
 ## System
 
-$$\require{boldsymbol}$$
-
-<!-- %## Quick layout explanation -->
+<!-- $$\require{boldsymbol}$$ -->
 
 Figure [system](./section_03_introduction.md#fig:system) shows the experiment setup. Pulses from a 4 GHz mode locked laser (Pritel UOC) with a center wavelength at 1539.47 nm are sent through an 80 ps delay interferometer (Optoplex). This generates the early/late basis, which is subsequently unconverted by a second harmonic generation (SHG) module (Pritel) and down converted into entangled photon pairs by a type-0 spontaneous parametric down conversion crystal (Covesion). The up-converted pulses at 769 nm have a FWHM bandwidth of 243 GHz (0.48 nm), which along with the phase matching condition of the SPDC waveguide, defines a wide Joint Spectral Intensity (JSI) function.
 
@@ -47,27 +45,25 @@ The coincidence rate across Alice and Bob’s middle bins varies sinusoidally wi
     <a name='fig:shg_scan'></a> 
     ![fig:shg_scan](./figs_04/shg_scan_light.svg#only-light)
     ![fig:shg_scan](./figs_04/shg_scan_dark.svg#only-dark) 
-    <figcaption markdown> Figure 2: **Fidelity and Rates vs $\mu$** a) Fidelity versus pump power. Error bars arise from making multiple measurements of the center bin coincidence rate over some integration time. These measurements span small ranges of interferometer phase, as the extremum-finding algorithm jitters the interferometer voltage. b) Bounded distillable entanglement rate versus pump power. Multiple such measurements are made for all the tomographic measurements. These are used to calculate standard deviations for fidelity, log negativity, and coherent information. Error bars for the log negativity and coherent information are smaller than the line width shown. Rates shown assume readout of all 4 available interferometer ports, based on data measured using one port each at Alice and Bob.</figcaption>
+    <figcaption markdown> Figure 2: **Fidelity and Rates vs $\boldsymbol \mu$** a) Fidelity versus pump power. Error bars arise from making multiple measurements of the center bin coincidence rate over some integration time. These measurements span small ranges of interferometer phase, as the extremum-finding algorithm jitters the interferometer voltage. b) Bounded distillable entanglement rate versus pump power. Multiple such measurements are made for all the tomographic measurements. These are used to calculate standard deviations for fidelity, log negativity, and coherent information. Error bars for the log negativity and coherent information are smaller than the line width shown. Rates shown assume readout of all 4 available interferometer ports, based on data measured using one port each at Alice and Bob.</figcaption>
     </figure>
-
-This is something $\mu$ This is something $\textbf{\mu}$ This is something **$\mu$**
 
 Due to the small size and athermal design of the interferomters, minimal temporal phase drift was observed over multiple hours. Nevertheless, software was used to ‘lock’ the phase at a minimum or maximum with a simple steepest-descent algorithm. This varied the phase by small amounts over several minutes and adjusted phase to maintain an extremum.
 
 <!-- %## Figure 3 and fidelity defenition -->
 
-Channels 35 and 59 were chosen for an analysis of entanglement fidelity and rates versus pump power. Fidelity with respect to pump power or mean entangled pair rate is shown in \ref{fig:shg_scan}a. We define the entanglement fidelity as $F = 100\%*(1 - \frac{C_{min}}{C_{max}})$ where $C_{min}$ and $C_{max}$ are the minimum and maximum coincidence rates with respect to interferometer phase observed across the middle bins. As this coincidence rate depends on the total phase across all source and readout interferometers, just one (Bob’s) is actively controlled to scan the full state space.
+Channels 35 and 59 were chosen for an analysis of entanglement fidelity and rates versus pump power. Fidelity with respect to pump power or mean entangled pair rate is shown in Fig. [2](#fig:shg_scan) a. We define the entanglement fidelity as $F = 100\%*(1 - \frac{C_{min}}{C_{max}})$ where $C_{min}$ and $C_{max}$ are the minimum and maximum coincidence rates with respect to interferometer phase observed across the middle bins. As this coincidence rate depends on the total phase across all source and readout interferometers, just one (Bob’s) is actively controlled to scan the full state space.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\linewidth]{8ch_bar_graph_high_power.pdf}
-    \caption{a) Fidelity for the main 8 channel pairs, measured at a high (5.17 Amps) and a low ( 1.2 Amps) SHG pump power setting. Each power setting results in similar $\mu$ for all channels: $\mu_{low}$ = 5.6e-5 $\pm$ 9e-6 and $\mu_{high}$ = 6.1e-3 $\pm$ 3e-4.  b) Rate metrics for the 8 channel pairs at the same high and low power settings. The range of possible values for distillable entanglement rate is spanned by the yellow regions, bounded above by log-negativity and below by coherent information. Rates shown assume readout of all 4 available interferometer ports, based on data measured using one port each at Alice and Bob}
-    \label{fig:channel_data}
-\end{figure}
+<figure markdown> 
+    <a name='fig:channel_data'></a> 
+    ![fig:channel_data](./figs_04/8ch_bar_graph_high_power_light.svg#only-light)
+    ![fig:channel_data](./figs_04/8ch_bar_graph_high_power_dark.svg#only-dark) 
+    <figcaption markdown> Figure 3: **Fidelity and rates across 8 channel pairs** a) Fidelity for the main 8 channel pairs, measured at a high (5.17 Amps) and a low ( 1.2 Amps) SHG pump power setting. Each power setting results in similar $\mu$ for all channels: $\mu_{low}$ = 5.6e-5 $\pm$ 9e-6 and $\mu_{high}$ = 6.1e-3 $\pm$ 3e-4. b) Rate metrics for the 8 channel pairs at the same high and low power settings. The range of possible values for distillable entanglement rate is spanned by the yellow regions, bounded above by log-negativity and below by coherent information. Rates shown assume readout of all 4 available interferometer ports, based on data measured using one port each at Alice and Bob</figcaption>
+    </figure>
 
-We quantify the rate of useful entanglement by supplying bounds for the distillable entanglement rate $R_D$. Measured in ebits/s, $R_D$ is the maximal asymptotic rate of Bell pair production per received state using only local operations and classical communications. It is bounded above by log negativity $R_N = RE_N$ and below by $R_I = R E_I$ where $R$ is the raw coincidence rate \cite{Alshowkan2022}. For each pump power setting in Fig.\~\ref{fig:shg_scan}, a series of tomographic measurements is performed and density matrices calculated. $E_I$ and $E_N$ are calculated from the density matrices as detailed in the supplementary information.
+We quantify the rate of useful entanglement by supplying bounds for the distillable entanglement rate $R_D$. Measured in ebits/s, $R_D$ is the maximal asymptotic rate of Bell pair production per received state using only local operations and classical communications. It is bounded above by log negativity $R_N = RE_N$ and below by $R_I = R E_I$ where $R$ is the raw coincidence rate [@Alshowkan2022]. For each pump power setting in Fig. [2](#fig:shg_scan), a series of tomographic measurements is performed and density matrices calculated. $E_I$ and $E_N$ are calculated from the density matrices as detailed in the supplementary information.
 
-Figure \ref{fig:channel_data} shows fidelities, raw coincidence rates, and bounded distillable entanglement rates for all 8 channel pairings and 2 pump powers. The higher pump power is the highest possible on our SHG & EDFA module. Higher rates are readily achievable by increasing the output power of this component, up to a point where the high count rate on the SNSPDs induces higher jitter. However these pulse pileup and time-walk effects can be mitigated with jitter correction techniques \cite{Mueller2023}.
+Figure Fig. [3](#fig:channel_data) shows fidelities, raw coincidence rates, and bounded distillable entanglement rates for all 8 channel pairings and 2 pump powers. The higher pump power is the highest possible on our SHG & EDFA module. Higher rates are readily achievable by increasing the output power of this component, up to a point where the high count rate on the SNSPDs induces higher jitter. However these pulse pileup and time-walk effects can be mitigated with jitter correction techniques [@Mueller2023].
 
 \% \\textcolor{blue}{ % We perform a linear fit of the entanglement fidelity data, $F = A + B\mu$, and obtain $A = XXX$, $B=XXX$. We derive expressions for A and B in terms of the mean photon number, interferometer transmittances, and interference visibilities (see Supplemental).}
 
