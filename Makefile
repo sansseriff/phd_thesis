@@ -7,20 +7,21 @@ ppm:
 	pandoc metadata.yaml \
 	section_02_abstract.md section_03_introduction.md section_04_method.md section_05_results.md \
 	-o dist/manuscript.tex \
-	-r markdown-auto_identifiers \
 	--wrap=preserve \
-	--lua-filter abstract-section.lua \
 	--default-image-extension=.pdf \
 	--filter ../pandoc-crossref \
 	--natbib \
 	--bibliography=dist/references.bib \
 	--template=template.tex \
 	--lua-filter=short-captions.lua \
+	--lua-filter abstract-section.lua \
 	--resource-path='.:chapter_03/figs:' && \
 	sed -i 's/\\cite[t,p]{/\\cite{/g' dist/manuscript.tex && \
 	sed -i 's/{natbib}/{cite}/' dist/manuscript.tex && \
 	sed -i 's/,height=\\textheight//g' dist/manuscript.tex && \
 	sed -i 's/subsection{/section{/g' dist/manuscript.tex
+
+# -r markdown-auto_identifiers # messes up abstract-section.lua
 
 
 ppm-overleaf:
