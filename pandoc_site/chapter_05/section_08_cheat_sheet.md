@@ -25,3 +25,5 @@ Until I figure something more shorthand, you can set colors with “\<span\>” 
     ![fig:figurename2](./figs_05/hsps_dark.svg#only-dark) 
     <figcaption markdown> Figure 2: **Caption title here** a) Long caption here</figcaption>
     </figure>
+
+to have a “\~” space in latex and a no break space in html… “&#160”, just use “ ”. That’s a forward slash and a space.

@@ -81,19 +81,19 @@ nav:
     - Introduction: chapter_01/section_03_introduction.md
     - Hardware: chapter_01/section_04_hardware.md
     - Model: chapter_01/section_05_model.md
-  - High Rate Pulse Position Modulation: 
+  - Time Walk and Jitter Correction: 
     - chapter_02/index.md
     - Introduction: chapter_02/section_03_introduction.md
-    - Source: chapter_02/section_04_source.md
-    - Initial Tests: chapter_02/section_05_extinction_ratio_pnr.md
-    - Phased Locked Loop: chapter_02/section_06_phased_locked_loop.md
-    - PNR Characterization: chapter_02/section_07_pnr_characterization.md
-  - Time Walk and Jitter Correction: 
+    - Method: chapter_02/section_04_method.md
+    - Conclusion: chapter_02/section_05_conclusion.md
+    - Peacoq: chapter_02/section_06_peacoq.md
+    - Outlook: chapter_02/section_07_outlook.md
+  - Pulse Position Modulation & Photon Resolution: 
     - chapter_03/index.md
     - Introduction: chapter_03/section_03_introduction.md
     - Method: chapter_03/section_04_method.md
     - Results: chapter_03/section_05_results.md
-    - Peacoq: chapter_03/section_06_peacoq.md
+    - Phased Locked Loop: chapter_03/section_06_phased_locked_loop.md
     - Outlook: chapter_03/section_07_outlook.md
   - High Rate Entanglement Generation: 
     - chapter_04/index.md

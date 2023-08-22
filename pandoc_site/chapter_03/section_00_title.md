@@ -1,3 +1,3 @@
-# Time Walk and Jitter Correction
+# Pulse Position Modulation and PNR Resolution
 
-         ![](./figs_03/jitter_correction.svg)
+<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](./figs_03/jitter_correction.svg) -->
