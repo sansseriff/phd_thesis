@@ -25,6 +25,9 @@ mkdocs/
 old/ 
 site_deploy/
 
+# no sense in having two copies of these figures
+src/chapter_03/figs_03/ 
+
 # ---------------
 # Compiled assets
 # ---------------

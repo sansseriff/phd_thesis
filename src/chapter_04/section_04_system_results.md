@@ -1,5 +1,4 @@
 ## System
-<!-- $$\require{boldsymbol}$$ -->
 Figure [system](./section_03_introduction.md#fig:system) shows the experiment setup. Pulses from a 4 GHz mode locked laser (Pritel UOC) with a center wavelength at 1539.47 nm are sent through an 80 ps delay interferometer (Optoplex). This generates the early/late basis, which is subsequently unconverted by a second harmonic generation (SHG) module (Pritel) and down converted into entangled photon pairs by a type-0 spontaneous parametric down conversion crystal (Covesion). The up-converted pulses at 769 nm have a FWHM bandwidth of 243 GHz (0.48 nm), which along with the phase matching condition of the SPDC waveguide, defines a wide Joint Spectral Intensity (JSI) function. 
 
 <!-- %## Finish quicky layout explanation -->

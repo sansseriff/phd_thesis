@@ -1,0 +1,29 @@
+okay no branch stuff.
+
+
+1. if you can't push to overleaf, that means its been updated. 
+2. commit what you have in vscode
+3. do a "git pull overleaf master"
+4. You'll get a merge conflict in manuscript.tex, or in something else. 
+5. put the manuscript.text on one side and the markdown on the other. Go through and modify the markdown. 
+
+
+
+
+you could...
+
+0. if overleaf has been updated..
+0.5 commit what you have in master
+1. create a new branch
+2. pull the overleaf to the other branch
+3. go back to master
+4. pull the overleaf ALSO to master. 
+5. This will give a merge conflict in manuscript.tex or something else
+6. Go through and update the markdown by looking at manuscript.text
+7. When finished, compile manuscript.tex again. 
+8. Then, try merging the other branch and the main branch... There will now be differnt markdown files. I guess find a way to merge just the tex files?
+9. This shows you where the differences are. If the differences are minor or non-significant, then you're good. You can just re-compile from mardkwon and delete the other branch if you want. 
+
+
+
+so the compile process overwrote the bib file in the dist directory. If I do a git pull 
