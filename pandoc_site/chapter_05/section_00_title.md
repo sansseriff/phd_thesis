@@ -1,3 +1,3 @@
 # Appendix 1
 
-             ![](./figs_04/appendix.svg)
+<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](./figs_04/appendix.svg) -->

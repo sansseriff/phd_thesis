@@ -1,3 +1,0 @@
-## PNR Characterization
-
-**Todo:** - \[ \] This is where I’ll show the first scans of the rising edge of the NbN nanowire pulse - \[ \] Convey how triggering at any level results in weird multi-modal histograms because of the PNR effect - \[ \] State that initially the idea was to fully characterize the PNR component, as in identify each pulse as $|1\rangle$, $|2\rangle$, $|3\rangle$ or so on. Then, apply a fixed correction value to the arrival time the cancel out the effect - \[ \] That approach didn’t work out because in the 3 photons per pulse range, the true photon number gets harder to identify. It’s not clear if a pulse is a $|3\rangle$ or a $|4\rangle$, and the arrival time of the optical pulse is correspondingly uncertain.
