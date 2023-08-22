@@ -1,0 +1,36 @@
+\documentclass{optica-article}
+
+
+\journal{opticajournal} % for journals or Optica Open
+
+\articletype{Research Article}
+
+\usepackage{lineno}
+\linenumbers % Turn off line numbering for Optica Open preprint submissions.
+
+\begin{document}
+
+\title{$if(title)$$title$$else$Your Title Here$endif$}
+
+\author{Author One,\authormark{1} Author Two,\authormark{2,*} and Author Three\authormark{2,3}}
+
+\address{\authormark{1}Peer Review, Publications Department, Optica Publishing Group, 2010 Massachusetts Avenue NW, Washington, DC 20036, USA\\
+\authormark{2}Publications Department, Optica Publishing Group, 2010 Massachusetts Avenue NW, Washington, DC 20036, USA\\
+\authormark{3}Currently with the Department of Electronic Journals, Optica Publishing Group, 2010 Massachusetts Avenue NW, Washington, DC 20036, USA}
+
+\email{\authormark{*}opex@optica.org} %% email address is required; see note below about the corresponding author designation
+
+% use {asbstract*} to suppress the copyright line. Copyright information will be added in production
+
+\begin{abstract*} 
+$abstract$
+\end{abstract*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%  body  %%%%%%%%%%%%%%%%%%%%%%%%%%
+$body$
+
+\bibliography{references}
+
+
+
+\end{document}

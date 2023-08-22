@@ -10,7 +10,7 @@ Refer to a figure with Fig. [1](#fig:figurename) or Fig. [1](#fig:figurename) 
 
 Until I figure something more shorthand, you can set colors with “\<span\>” tags:
 
-<span class=blue markdown> **This text is blue. And it changes lightness when darkmode is witched** </span>
+<span class=blue markdown> This text is blue. And it changes lightness when darkmode is witched </span>
 
 <figure markdown> 
     <a name='fig:figurename'></a> 
