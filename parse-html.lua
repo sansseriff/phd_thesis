@@ -48,9 +48,9 @@ function dump(o)
     end
 end
 
--- if it's a figure crossref, change it to the markdown format. 
+-- if it's a figure crossref, change it to the markdown format.
 -- I need to figure out how to have figures referenced by numbers...
--- That's normally what pandoc-crossref does. 
+-- That's normally what pandoc-crossref does.
 -- function Cite(citation)
 --     cite = citation.content[1].text
 --     if cite:sub(0,4) == "@Fig" then
@@ -82,8 +82,8 @@ function Para(para)
     -- print(img.attributes['style'])
 
     local short_caption = pandoc.Span(
-            pandoc.read(img.attributes['short-caption']).blocks[1].c
-        )
+        pandoc.read(img.attributes['short-caption']).blocks[1].c
+    )
 
 
     local hypertarget = "{%%\n"
@@ -94,7 +94,7 @@ function Para(para)
     end
 
     src_begin = img.src:sub(0, -10)
-    check_light = img.src:sub( -9, -5)
+    check_light = img.src:sub(-9, -5)
 
     -- print(type(img.caption))
 
@@ -113,19 +113,18 @@ function Para(para)
     end
     -- print(caption)
     -- print(type(caption))
---     string = string.format("<figure markdown> \
---     <a name='%s'></a> \
---     %s \
---     <figcaption markdown>%s</figcaption> \
--- </figure>", img.identifier, full_src, caption)
+    --     string = string.format("<figure markdown> \
+    --     <a name='%s'></a> \
+    --     %s \
+    --     <figcaption markdown>%s</figcaption> \
+    -- </figure>", img.identifier, full_src, caption)
     string = string.format("<figure markdown> \
     <a name='%s'></a> \
     %s \
     <figcaption markdown> ", img.identifier, full_src)
-    return pandoc.Para {pandoc.RawInline('markdown', string), caption, pandoc.RawInline('markdown',"</figcaption>\
-    </figure>")}
+    return pandoc.Para { pandoc.RawInline('markdown', string), caption, pandoc.RawInline('markdown', "</figcaption>\
+    </figure>") }
 end
-
 
 function Maths2Markdown(sp)
     -- print(type(sp))
@@ -157,18 +156,104 @@ function Div(el)
     -- print(el.classes[1])
     -- print(el.content[1].t)
     -- print(el.content[1].content[1].t)
+    -- color = el.attributes['color']
+    -- -- if no color attribute, return unchanged
+    -- if color ~= nil then
+    --     print(color)
+    -- end
+    -- print("")
+    
+    
 
     if el.content[1].t == "Para" then
         if el.content[1].content[1].t == "Math" then
             string = string.format("<div class=%s markdown>\n\n$$%s$$\n\n</div>", el.classes[1],
-                    el.content[1].content[1].text)
+                el.content[1].content[1].text)
+            -- print(el.content[1].content[1].text)
             return pandoc.RawInline('markdown', string)
         end
     end
     return el
 end
 
+-- function Span(el)
+--     -- print("dsf")
+--     color = el.attributes['color']
+--     -- if no color attribute, return unchanged
+--     if color ~= nil then
+--         print(color)
 
+--         string = string.format("<span class=%s markdown></div>", el.classes[1],
+--         el.content[1].content[1].text)
+--         return pandoc.RawInline('markdown', string)
+--     end
+-- end
+
+
+-- -- converts things like <span color=red>This text is red </span>
+-- Span = function(el)
+--     color = el.attributes['color']
+--     -- if no color attribute, return unchanged
+--     if color == nil then return el end
+    
+--     -- transform to <span style="color: red;"></span>
+--     if FORMAT:match 'html' then
+--       -- remove color attributes
+--       el.attributes['color'] = nil
+--       -- use style attribute instead
+--       el.attributes['style'] = 'class: ' .. color .. ';'
+--       -- return full span element
+--       return el
+--     elseif FORMAT:match 'latex' then
+--       -- remove color attributes
+--       el.attributes['color'] = nil
+--       -- encapsulate in latex code
+--       table.insert(
+--         el.content, 1,
+--         pandoc.RawInline('latex', '\\textcolor{'..color..'}{')
+--       )
+--       table.insert(
+--         el.content,
+--         pandoc.RawInline('latex', '}')
+--       )
+--       return el.content
+--     else
+--       -- for other format return unchanged
+--       return el
+--     end
+--   end
+
+-- Span = function(el)
+--     color = el.attributes['color']
+--     -- if no color attribute, return unchanged
+--     if color == nil then return el end
+
+--     -- transform to <span style="color: red;"></span>
+--     if FORMAT:match 'html' then
+--       -- remove color attributes
+--       el.attributes['color'] = nil
+--       -- use style attribute instead
+--       el.attributes['style'] = 'color: ' .. color .. ';'
+--       -- return full span element
+--       return el
+--     elseif FORMAT:match 'latex' then
+--       -- remove color attributes
+--       el.attributes['color'] = nil
+--       -- encapsulate in latex code
+--       table.insert(
+--         el.content, 1,
+--         pandoc.RawInline('latex', '\\textcolor{'..color..'}{')
+--       )
+--       table.insert(
+--         el.content,
+--         pandoc.RawInline('latex', '}')
+--       )
+--       return el.content
+--     else
+--       -- for other format return unchanged
+--       return el
+--     end
+--   end
 
 -- img.identifier is cryostat_concept
 

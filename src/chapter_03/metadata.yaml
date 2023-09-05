@@ -1,4 +1,9 @@
 ---
 title: Data Recovery and Pulse Position Modulation with a Photon Number Resolving SNSPD
 csl: cell.csl
+pandoc-latex-color:
+  - classes: [blue]
+    color: midnightblue
+  - classes: [red]
+    color: darkred
 ---
