@@ -22,3 +22,26 @@ Until I figure something more shorthand, you can set colors with "<span\>" tags:
 
 
 to have a "~" space in latex and a no break space in html... "\&#160", just use "\ ". That's a forward slash and a space.
+
+
+The formatting of multi-line divs is very important. This will render correctly:
+
+<div class=blue markdown> 
+
+$$math stuff 1$$
+
+</div>
+
+But this won't:
+<div class=blue markdown> 
+
+    $$math stuff 2$$
+
+</div>
+
+And this won't
+    <div class=blue markdown> 
+
+    $$math stuff 3$$
+
+    </div>
