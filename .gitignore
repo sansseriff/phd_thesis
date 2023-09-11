@@ -22,6 +22,7 @@ mkdocs/
 # pandoc_site/
 
 src/chapter_03/dist/.git
+src/chapter_03/dist/
 
 # stuff from the origin griffin chure thesis
 old/ 
