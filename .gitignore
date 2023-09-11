@@ -21,6 +21,8 @@ src/frontmatter/other/*
 mkdocs/
 # pandoc_site/
 
+src/chapter_03/dist/.git
+
 # stuff from the origin griffin chure thesis
 old/ 
 site_deploy/
