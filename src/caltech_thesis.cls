@@ -5,7 +5,7 @@
 % Load memoir
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 \ProcessOptions\relax
-\LoadClass[oneside,12pt]{memoir}
+\LoadClass[oneside,11pt]{memoir}
 
 \RequirePackage{etoolbox}
 
