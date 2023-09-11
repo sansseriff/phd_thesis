@@ -114,8 +114,6 @@ license, and is available on a GitHub repository
 \chapter{Low Dark Count Rate
 Detection}\label{low-dark-count-rate-detection}}
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\includegraphics{chapter_01/figs_01/dark_counts.png}
-
 The work described in this chapter culminated in the research paper:
 Andrew S. Mueller, Boris Korzh, Marcus Runyan, Emma E. Wollman, Andrew
 D. Beyer, Jason P. Allmaras, Angel E. Velasco, Ioana Craiciu, Bruce
@@ -338,16 +336,79 @@ you used the xyz stage on the fiber for that, and the xy or the mirror.
 How you defocused the laser to see the detector when you were using the
 narroband filter.
 
-\hypertarget{high-rate-pulse-position-modulation}{%
-\chapter{High Rate Pulse Position
-Modulation}\label{high-rate-pulse-position-modulation}}
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\includegraphics{chapter_02/figs_02/pnr_and_pulses.png}
+\hypertarget{time-walk-and-jitter-correction}{%
+\chapter{Time Walk and Jitter
+Correction}\label{time-walk-and-jitter-correction}}
 
 \hypertarget{abstract-1}{%
 \section{Abstract}\label{abstract-1}}
 
-~~~~~ This study aimed to evaluate the feasibility of transmitting high
+~~~~~
+
+\hypertarget{introduction-1}{%
+\section{Introduction}\label{introduction-1}}
+
+\hypertarget{method}{%
+\section{Method}\label{method}}
+
+Method here
+
+\hypertarget{conclusion}{%
+\section{Conclusion}\label{conclusion}}
+
+conclusion here
+
+\hypertarget{the-peacoq-detector-and-higher-order-correction-methods}{%
+\section{The Peacoq Detector, and Higher Order Correction
+Methods}\label{the-peacoq-detector-and-higher-order-correction-methods}}
+
+Peacoq data and stuff here
+
+\hypertarget{outlook}{%
+\section{Outlook}\label{outlook}}
+
+outlook discussion here
+
+\hypertarget{pulse-position-modulation-and-pnr-resolution}{%
+\chapter{Pulse Position Modulation and PNR
+Resolution}\label{pulse-position-modulation-and-pnr-resolution}}
+
+A version of this chapter will appear as Optix Express arciel
+XXX\ldots{}
+
+\hypertarget{abstract-2}{%
+\section{Abstract}\label{abstract-2}}
+
+Photon number resolution is an emerging capability of advanced
+Superconducting Nanowire Single Photon Detectors. If leveraged to it's
+full potential, PNR capability can have a profound impact on the
+usefulness of SNSPDs is certain quantum applications including linear
+optical quantum computing, quantum networks, and quantum sensing.
+Discrimination of not just the number of photons in an optical pulse but
+also pulse arrival time with high accuracy is an open problem,
+complicated by the nuanced way in which these two degrees of freedom are
+intertwined in the response function of these detectors. In this work we
+put a differential readout SNSPD to the ultimate test. We test it's
+capabilities in a Pulse Position Modulation experiment whereby data is
+sent in the arrival time of optical pulses derived from a 20~GHz optical
+clock. We show the detector is capable of discriminating the arrival
+time of photons to 50~ps wide bins with high accuracy while
+simultaneously providing photon number information about the impinging
+optical pulses. We find that a careful statistical analysis of the PNR
+response is necessary to back-out a precise measurement of pulse arrival
+time.
+
+\hypertarget{introduction-2}{%
+\section{Introduction}\label{introduction-2}}
+
+\textcolor{green}{ The following is very rough, taken from years ago
+when I first started writing the manuscript }
+
+This is my div
+
+{\color{midnightblue}  \textbf{Answer:} }
+
+This study aimed to evaluate the feasibility of transmitting high
 clock-rate pulse position modulated (PPM) data using a mode-locked laser
 and receiving it with a low jitter superconducting nanowire
 single-photon detector (SNSPD). The investigation was driven by recent
@@ -366,10 +427,7 @@ developed and applied to successfully demonstrate high-rate PPM. This
 technique is considered essential for future low-jitter applications of
 SNSPDs that exhibit photon-number effects.
 
-\hypertarget{introduction-1}{%
-\section{Introduction}\label{introduction-1}}
-
-~~~~~ This study aimed to evaluate the feasibility of transmitting high
+This study aimed to evaluate the feasibility of transmitting high
 clock-rate pulse position modulated (PPM) data using a mode-locked laser
 and receiving it with a low jitter superconducting nanowire
 single-photon detector (SNSPD). The investigation was driven by recent
@@ -392,8 +450,8 @@ SNSPDs that exhibit photon-number effects.
 \subsection{Pulse Position Modulation for Deep Space
 Communication}\label{pulse-position-modulation-for-deep-space-communication}}
 
-~~~~~ Deep Space Optical Communication has been a growing field of study
-in recent years, as researchers look for ways to communicate with
+Deep Space Optical Communication has been a growing field of study in
+recent years, as researchers look for ways to communicate with
 spacecraft that are far away from Earth. In this article, we will focus
 on the use of Pulse Position Modulation (PPM) for deep space optical
 communication.
@@ -444,8 +502,8 @@ detectors (SNSPDs).
 \subsection{Development of a modulation
 source}\label{development-of-a-modulation-source}}
 
-~~~~~ The communication signal on a spacecraft is generated by utilizing
-a Continuous Wave (CW) seed laser that is carved by a fast intensity
+The communication signal on a spacecraft is generated by utilizing a
+Continuous Wave (CW) seed laser that is carved by a fast intensity
 modulator. The resulting low-power pulsed signal is then amplified by an
 Erbium Doped Fiber Amplifier (EDFA) to increase its transmission power
 to Earth. The majority of the power used by the spacecraft for
@@ -472,13 +530,13 @@ The temporal width of the modulator pulse response must be extremely
 short and able to modulate from `off' to `on' within a time frame of the
 order of the 50 ps bin width.
 
-\hypertarget{initial-tests-and-performance}{%
-\section{Initial tests and
-performance}\label{initial-tests-and-performance}}
+\hypertarget{methods}{%
+\section{Methods}\label{methods}}
 
-\emph{This is where I will describe the initial problems with the first
-iteration of the experiment, using one modulator and not taking into
-account PNR effects.}
+This is the methods section with some latex \(\frac{33}{44}\)
+
+Here is citation \autocite{Dolinar2011Photon} and here is the rest of
+the sentence.
 
 \hypertarget{synchronization-with-a-software-phase-locked-loop-pll}{%
 \section{Synchronization with a Software Phase Locked Loop
@@ -507,53 +565,6 @@ arrives on a regular period. 5. More recently Rahaf Youssef and I have
 worked on updating our software PLL tools so that its easier to
 understand and reason about, and easier to lock to a given signal.
 
-\hypertarget{pnr-characterization}{%
-\section{PNR Characterization}\label{pnr-characterization}}
-
-\textbf{Todo:} - {[} {]} This is where I'll show the first scans of the
-rising edge of the NbN nanowire pulse - {[} {]} Convey how triggering at
-any level results in weird multi-modal histograms because of the PNR
-effect - {[} {]} State that initially the idea was to fully characterize
-the PNR component, as in identify each pulse as \(|1\rangle\),
-\(|2\rangle\), \(|3\rangle\) or so on. Then, apply a fixed correction
-value to the arrival time the cancel out the effect - {[} {]} That
-approach didn't work out because in the 3 photons per pulse range, the
-true photon number gets harder to identify. It's not clear if a pulse is
-a \(|3\rangle\) or a \(|4\rangle\), and the arrival time of the optical
-pulse is correspondingly uncertain.
-
-\hypertarget{time-walk-and-jitter-correction}{%
-\chapter{Time Walk and Jitter
-Correction}\label{time-walk-and-jitter-correction}}
-
-~~~~~~~~~\includegraphics{chapter_03/figs_03/jitter_correction.pdf}
-
-A version of this chapter originally appeared as Chure, G, Razo-Mejia,
-M., Belliveau, N.M., Kaczmarek, Zofii A., Einav, T., Barnes, Stephanie
-L., Lewis, M., and Phillips, R. (2019). Predictive shifts in free energy
-couple mutations to their phenotypic consequences. Proceedings of the
-National Academies of Sciences 116(37) DOI:
-https://doi.org/10.1073/pnas.1907869116. G.C., M.R.M, N.M.B., Z.A.K.,
-and S.L.B designed the experiments and collected and analyzed data. G.C.
-developed the theoretical treatment of free energy shifts. G.C., M.R.M,
-N.M.B., Z.A.K., T.E., S.L.B., and R.P. designed the research project.
-G.C. and R.P. wrote the paper. M.L. provided guidance and advice.
-
-\hypertarget{abstract-2}{%
-\section{Abstract}\label{abstract-2}}
-
-This is an overview of the time walk and jitter correction section. More
-details to come.
-
-\hypertarget{introduction-2}{%
-\section{Introduction}\label{introduction-2}}
-
-~~~~~ To be written.
-
-\hypertarget{the-peacoq-detector-and-higher-order-correction-methods}{%
-\section{The Peacoq Detector, and Higher Order Correction
-Methods}\label{the-peacoq-detector-and-higher-order-correction-methods}}
-
 \hypertarget{outlook-towards-high-rate-pnr-and-time-walk-correction}{%
 \section{Outlook: Towards High Rate PNR and Time Walk
 Correction}\label{outlook-towards-high-rate-pnr-and-time-walk-correction}}
@@ -561,8 +572,6 @@ Correction}\label{outlook-towards-high-rate-pnr-and-time-walk-correction}}
 \hypertarget{high-rate-entanglement-generation}{%
 \chapter{High Rate Entanglement
 Generation}\label{high-rate-entanglement-generation}}
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\includegraphics{chapter_04/figs_04/high_rate_entanglement.pdf}
 
 A version of this chapter is currently under review. A preprint is
 released as Chure, G, Kaczmarek, Z. A., and Phillips, R. Physiological
@@ -903,8 +912,6 @@ ITU channels are used instead, the model predicts \(1/K = 0.96\).
 
 \hypertarget{appendix-1}{%
 \chapter{Appendix 1}\label{appendix-1}}
-
-~~~~~~~~~~~~~\includegraphics{chapter_04/figs_04/appendix.pdf}
 
 \hypertarget{abstract-4}{%
 \section{Abstract}\label{abstract-4}}
@@ -1755,6 +1762,53 @@ here} a) Long caption here}
 \label{fig:figurename2}
 \end{figure}
 }
+
+to have a ``\textasciitilde{}'' space in latex and a no break space in
+html\ldots{} ``\&\#160'', just use ``~''. That's a forward slash and a
+space.
+
+The formatting of multi-line divs is very important. This will render
+correctly:
+
+{\color{midnightblue} 
+
+\[math stuff 1\]
+
+}
+
+But this won't:
+
+{\color{midnightblue} 
+
+\begin{minted}
+[
+frame=lines,
+framesep=2mm,
+baselinestretch=1,
+bgcolor=extralightgray,
+fontsize=\footnotesize,
+linenos]
+{nil}
+$$math stuff 2$$
+\end{minted}
+
+}
+
+And this won't
+
+\begin{minted}
+[
+frame=lines,
+framesep=2mm,
+baselinestretch=1,
+bgcolor=extralightgray,
+fontsize=\footnotesize,
+linenos]
+{nil}
+$$math stuff 3$$
+
+</div>
+\end{minted}
 
 \printbibliography
 \end{document}
