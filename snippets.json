@@ -1,0 +1,14 @@
+{
+    "html": {
+      "snippets": {
+        "img:l": "img[width height loading='lazy']",
+        "span:red": "span[color='red' markdown.]",
+        "span:green": "span[color='red' markdown.]",
+        "span:blue": "span[color='red' markdown.]"
+      }
+    },
+    "css": {
+      "snippets": {
+      }
+    }
+  }

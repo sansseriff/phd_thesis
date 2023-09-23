@@ -3,5 +3,7 @@
     "[markdown]": {
         "editor.fontFamily": "Calibri",
         "editor.fontSize": 18
-    }
+    },
+    "emmet.excludeLanguages": [],
+    "emmet.includeLanguages": {"markdown": "html"},
 }

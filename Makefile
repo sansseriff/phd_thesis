@@ -31,9 +31,21 @@ ppm-overleaf:
 	git commit -m "overleaf update" && \
 	git push overleaf master
 
+ppm-overleaf-clean:
+	cd src/chapter_03/dist && \
+	rm manuscript.tex && \
+	git pull overleaf master && \
+	cd .. && cd .. && cd .. && \
+	$(MAKE) ppm-overleaf
+
 ppm-pull:
 	cd src/chapter_03/dist && \
 	git pull overleaf master
+
+
+ppm-produce-md:
+	cd src/chapter_03 && \
+	pandoc dist/manuscript.tex -o _manuscript.md --wrap=preserve --lua-filter=to_html_spans.lua
 
 	
 ref-update:

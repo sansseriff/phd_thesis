@@ -27,3 +27,8 @@ you could...
 
 
 so the compile process overwrote the bib file in the dist directory. If I do a git pull 
+
+
+# git branch differs
+# git pull --force overleaf master:differs
+# 
