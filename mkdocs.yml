@@ -115,5 +115,6 @@ extra_javascript:
   # - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest?tex-svg.js
   - javascripts/wiki_hover.js
   - javascripts/fix_footnotes.js
+  - javascripts/load_bokeh.js
 
 # using footnote technique from https://github.com/ObsidianPublisher/tooltips-internal-link
