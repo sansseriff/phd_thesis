@@ -38,6 +38,12 @@
             % IMPORTANT: load a style suitable for your discipline
             style=ieee
         ]{biblatex}
+        
+% \usepackage[titletoc]{appendix}
+
+% \renewcommand{\appendixname}{Annex}
+% \renewcommand{\appendixtocname}{Annex}
+% \renewcommand{\appendixpagename}{Annex}
 
 
 % added to conform with this issue: https://github.com/jgm/pandoc/issues/4384
@@ -1249,9 +1255,13 @@ an inverse Schmidt number of \(1/K = 0.87\). This value quantifies the
 spectral purity of the entangled photon source, and predicts the
 visibility of a two-source HOM (Hong-Ou-Mandel) interferogram. If 50 GHz
 ITU channels are used instead, the model predicts \(1/K = 0.96\).
-
+% \begin{appendices}
+\appendix
 \hypertarget{appendix-1}{%
 \chapter{Appendix 1}\label{appendix-1}}
+
+
+
 
 \hypertarget{abstract-4}{%
 \section{Abstract}\label{abstract-4}}
@@ -2110,6 +2120,7 @@ space.
 The formatting of multi-line divs is very important. This will render
 correctly:
 
+
 {\color{midnightblue} 
 
 \[math stuff 1\]
@@ -2154,6 +2165,7 @@ the file where you're working on bokeh styling is at :
 
 C:\Users\Andrew\OneDrive - California Institute of
 Technology\JPL.Jitterate\peacoq\src\bokeh\_hists\_js\_callbacks.ipynb
+% \end{appendices}
 
 \printbibliography
 \end{document}
