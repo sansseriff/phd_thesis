@@ -10,7 +10,16 @@ const cdnUrls = [
 let loadedCount = 0;
 let bokeh = NaN;
 
-const activateSpan = document.querySelector('.activate');
+const activateSpan = document.querySelector('.bokeh');
+
+const elements = document.querySelectorAll('.bokeh')
+
+const ids = [];
+elements.forEach(element => {
+    const id = element.getAttribute('id');
+    ids.push(id);
+  });
+
 
 if (activateSpan) {
   let loadedCount = 0;
@@ -24,6 +33,7 @@ if (activateSpan) {
       if (loadedCount === cdnUrls.length) {
         // Code to execute after all scripts have loaded
         console.log('this is bokeh: ', window.Bokeh);
+        init_bokeh(ids, elements)
       }
     };
     document.head.appendChild(script);
@@ -32,14 +42,14 @@ if (activateSpan) {
 
 
 
-const message = document.querySelector(".md-button");
-message.addEventListener('click', func)
+// const message = document.querySelector(".md-button");
+// message.addEventListener('click', func)
 
-function func() {
-    alert("This is your message!")
-}
+// function func() {
+//     alert("This is your message!")
+// }
 
-console.log(window.location.href)
+// console.log(window.location.href)
 
 // res = fetch("./this.json")
 // .then(res => res.json())
@@ -53,10 +63,10 @@ var obj;
 //   .then(res => res.json())
 //   .then(data => obj = data).then(() => load_plot(obj))
 
-init_bokeh()
 
 
-function init_bokeh() {
+
+function init_bokeh(ids, elements) {
     var local = JSON.parse(localStorage.getItem('/.__palette'));
 
     if (local == null) {
@@ -67,19 +77,30 @@ function init_bokeh() {
     }
 
 
-    if (mode == 'slate') {
-        fetch('./json_test_peacoq_hist_dark_special.json')
-            .then(res => res.json())
-            .then(data => obj = data).then(() => load_plot(obj))
-    }
-    else {
-        fetch('./json_test_peacoq_hist_light.json')
-            .then(res => res.json())
-            .then(data => obj = data).then(() => load_plot(obj))
-    }
+    // if (mode == 'slate') {
+    //     fetch('./json_test_peacoq_hist_dark_special.json')
+    //         .then(res => res.json())
+    //         .then(data => obj = data).then(() => load_plot(obj))
+    // }
+    ids.forEach(id => {
+        res = fetch("./code/" + id + ".json")
+        console.log(res)
+      });
+
+
+
+    
+
+
+
+    // else {
+    //     fetch('./json_test_peacoq_hist_light.json')
+    //         .then(res => res.json())
+    //         .then(data => obj = data).then(() => load_plot(obj))
+    // }
 }
 
-function load_plot(docs_json) {
+function load_plot(element, docs_json) {
     document.getElementById("testPlot").innerHTML = "";
     window.Bokeh.embed.embed_item(docs_json, 'testPlot').then(figure => get_figure_info(figure))
     // window.Bokeh.theme = 'dark_minimal'
@@ -101,9 +122,10 @@ const signal2 = document.querySelector(".md-option#__palette_1").addEventListene
 function dmode_a(e) {
     // console.log(e.target)
     // console.log("dark")
-    fetch('./json_test_peacoq_hist_dark.json')
-        .then(res => res.json())
-        .then(data => obj = data).then(() => load_plot(obj))
+    // fetch('./json_test_peacoq_hist_dark.json')
+    //     .then(res => res.json())
+    //     .then(data => obj = data).then(() => load_plot(obj))
+    
 }
 
 function dmode_b(e) {
