@@ -2,7 +2,7 @@
 
 <!-- In paper -->
 
-<span color=red markdown> The following is very rough, taken from years ago when I first started writing the manuscript </span>
+<!-- <span color=red markdown> The following is very rough, taken from years ago when I first started writing the manuscript </span> -->
 
 <span class="bokeh" id="../code/test_1"></span>
 
