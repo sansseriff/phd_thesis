@@ -49,3 +49,7 @@ And this won’t
     $$math stuff 3$$
 
     </div>
+
+the file where you’re working on bokeh styling is at :
+
+C:\Users\Andrew\OneDrive - California Institute of Technology\JPL.Jitterate\peacoq\src\bokeh\_hists_js_callbacks.ipynb

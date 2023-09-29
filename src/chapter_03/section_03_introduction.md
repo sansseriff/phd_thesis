@@ -4,7 +4,7 @@
 
 <span color=red markdown> The following is very rough, taken from years ago when I first started writing the manuscript </span>
 
-<span class="bokeh" id="test_1"></span>
+<span class="bokeh" id="../code/test_1" style="display: flex; justify-content: center; align-items: center;"></span>
 
 This study aimed to evaluate the feasibility of transmitting high clock-rate pulse position modulated (PPM) data using a mode-locked laser and receiving it with a low jitter superconducting nanowire single-photon detector (SNSPD). The investigation was driven by recent advancements in NbN SNSPDs, which have achieved a jitter as low as 50 ps at the FW(1/100)M level, enabling the demonstration of PPM with 50 ps slot widths and a 20 GHz clock. The aim was to increase the data rate by a factor of 10, from 2 GHz to 20 GHz, in the next generation of the Deep Space Optical Communication (DSOC) project.
 
