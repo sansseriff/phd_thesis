@@ -22,6 +22,22 @@ h1 {
 }
 
 
+.bokeh {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.bk-root .bk-Slider {
+    background-color: red !important;
+    width: 100% !important;
+}
+
+.noUi-connect {
+    background-color: red !important;
+    color: blue !important;
+}
+
 
 :root,
 [data-md-color-scheme="slate"] {

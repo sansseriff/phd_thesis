@@ -96,20 +96,23 @@ const darkColors = [
     '#3d3f4f', // background_fill_color
     '#24242d', // border_fill_color
     '#444444', // outline_line_color
-    '#e0e0e0', // major_tick_line_color
-    '#e0e0e0', // minor_tick_line_color
-    '#e0e0e0', // axis_line_color
-    '#e0e0e0', // major_label_text_color
-    '#e0e0e0', // axis_label_text_color
+    '#b8b9bf', // major_tick_line_color
+    '#b8b9bf', // minor_tick_line_color
+    '#b8b9bf', // axis_line_color
+    '#b8b9bf', // major_label_text_color
+    '#b8b9bf', // axis_label_text_color
     'white', // text_color
-    '#e0e0e0', // label_text_color
-    '#e0e0e0', // title_text_color
+    '#b8b9bf', // label_text_color
+    '#b8b9bf', // title_text_color
     '#e0e0e0', // major_label_text_color
     '#15191c', // background_fill_color
     '#c08df0', // line_color
     '#3d3f4f', // bar_color
     '#575766', // grid line color
     '#797c91', // legend fill color
+    '#56586b', // slider border color
+    '#727487', // slider handle background color
+    '#9799ad', // handle border color
 ];
 
 const lightColors = [
@@ -127,9 +130,12 @@ const lightColors = [
     '#83838a', // major_label_text_color
     '#666666', // background_fill_color
     '#595959', // line_color
-    '#83838a', // bar_color
+    'white', // bar_color
     '#d0d0d6', // grid line color
     '#d3d4db', // legend fill color
+    '#e6e7ed', // slider border color
+    '#d0d2db', // slider handle background color
+    '#e1e2e8', // handle border color
 ];
 
 const colorNames = [
@@ -208,13 +214,34 @@ function init_bokeh(ids, elements) {
     }
 
     init_with_mode(ids, elements, mode)
+    var sliderDiv = document.querySelector('.bk-Slider');
+    
+
+    // Use setTimeout instead of window.onload
+    // setTimeout(function() {
+    //     // Get the div element with the class "bk-Slider"
+    //     // var shadowDivs = document.querySelectorAll('shadow-root::shadow div.noUi-connect');
+    //     // console.log(shadowDivs)
+
+    //     var shadowDivs = document.querySelectorAll('shadow-root div.noUi-connect');
+    //     console.log(shadowDivs)
+    //     // Loop through the div elements and access their shadow roots
+    //     shadowDivs.forEach(function(div) {
+    //         var shadowRoot = div.shadowRoot;
+    //         console.log(shadowRoot);
+    //     });
+
+    // }, 3000); // Set the timeout to 1000 milliseconds (1 second)
+    // window.onload = function() {
+    //     var sliderDiv = document.querySelector('.noUi-connect');
+    //     console.log(sliderDiv);
+    // };
 }
 
 function load_plot(element, id, docs_json) {
     element.innerHTML = "";
     
     window.Bokeh.embed.embed_item(docs_json, id).then(figure => get_figure_info(figure))
-    // window.Bokeh.theme = 'dark_minimal'
 }
 
 function get_figure_info(figure) {
