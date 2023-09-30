@@ -208,6 +208,7 @@ function Span(el)
         -- print(color)
         if color then
             string = string.format("<span class=%s markdown>", color)
+            
 
             table.insert(el.content, 1, pandoc.RawInline('markdown', string))
             table.insert(el.content, pandoc.RawInline('markdown', '</span>'))

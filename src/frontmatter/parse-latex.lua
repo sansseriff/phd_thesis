@@ -80,6 +80,14 @@ function Div(el)
     local style = el.attributes.style
     local color = style:match("color:%s*([^;]+)")
     if color then
+
+      if color == "red" then
+        color= "darkred"
+      end
+      if color == "blue" then
+        color= "midnightblue"
+      end
+      
       table.insert(
         el.content, 1,
         pandoc.RawInline('latex', '\\textcolor{' .. color .. '}{')
@@ -103,6 +111,14 @@ Span = function(el)
     local style = el.attributes.style
     local color = style:match("color:%s*([^;]+)")
     if color then
+
+      if color == "red" then
+        color= "darkred"
+      end
+      if color == "blue" then
+        color= "midnightblue"
+      end
+
       table.insert(
         el.content, 1,
         pandoc.RawInline('latex', '\\textcolor{' .. color .. '}{')
