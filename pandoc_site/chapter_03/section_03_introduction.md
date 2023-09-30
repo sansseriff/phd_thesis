@@ -2,7 +2,7 @@
 
 <!-- In paper -->
 
-<!-- <span color=red markdown> The following is very rough, taken from years ago when I first started writing the manuscript </span> -->
+<!-- <span style="color:red" markdown> The following is very rough, taken from years ago when I first started writing the manuscript </span> -->
 
 []{#../code/test_1 .bokeh}
 
@@ -48,7 +48,7 @@ Using M values much larger than 11 is unlikely to be practical in future deep sp
 
 ## Detector Figure of Merit
 
-The work here highlights the application of low jitter single-photon detectors for optical communication, which is impactful for deep-space optical communication as well as classical communication in quantum networks. Although single-photon counting is well estanblished for deep-space optical communication\~\cite{Laser lunar, DSOC} so far it has not been ulitized in quantum networks, mainly due to the use of SFP modules and DWDMs. However, with the eachievement of high data rates recently achieved with photon-counting classical communication, these approaches can now be seriously considered for quantum networks. The main driver is would be the deduction of optical power in neighbouring DWDM channels, which ultimately lowers the Raman scattered photons into the quantum channel [@EraerdsRaman] [Calculate reduction in power from state of the art SFP modules]{color="red" markdown=""}
+The work here highlights the application of low jitter single-photon detectors for optical communication, which is impactful for deep-space optical communication as well as classical communication in quantum networks. Although single-photon counting is well estanblished for deep-space optical communication\~\cite{Laser lunar, DSOC} so far it has not been ulitized in quantum networks, mainly due to the use of SFP modules and DWDMs. However, with the eachievement of high data rates recently achieved with photon-counting classical communication, these approaches can now be seriously considered for quantum networks. The main driver is would be the deduction of optical power in neighbouring DWDM channels, which ultimately lowers the Raman scattered photons into the quantum channel [@EraerdsRaman] <span class=red markdown>Calculate reduction in power from state of the art SFP modules</span>
 
 To access the applicability of different detectors, here we compare some of the recent near infrared detectors.
 
@@ -63,7 +63,7 @@ In this work:
 -   Efficiency = 0.84
 -   Afterpulsing = 0 %
 -   Jitter = 15 ps
--   Deadtime = 30 ns [measure 3dB flux]{color="red" markdown=""}
+-   Deadtime = 30 ns <span class=red markdown>measure 3dB flux</span>
 -   Area = 330 $\mu m^2$
 -   Dark count rate = 20 Hz
 
@@ -71,7 +71,7 @@ $FoM_T = 7.58 \times 10^{12}$ at 1550 nm.
 
 The deadtime is calculated as the 1/MCR, which is the 3 dB point of the nominal efficiency. This is only a factor of 3.7 less than the state of the art visible Silicon SPADs (peak efficiency at 480\nm) [@Gramuglia2022]
 
-In the future, the performance of the optical communication system could be improved by using, high count rate SNSPD arrays. Recently published high-count rate arrays have figures of merit of [$FoM_T$ for Peacoq and Resta2023 results]{color="red" markdown=""}. This would result in a proportinal increase in the data rate. [$FoM_T$ for fastest InGaAs/InP gated detector]{color="red" markdown=""} These devices are ideal for fiber-based optical communication. In free-space, the active area is especially important, whithout the use of an adaptive optics system. [$FoM_T$ for DSOC array]{color="red" markdown=""}
+In the future, the performance of the optical communication system could be improved by using, high count rate SNSPD arrays. Recently published high-count rate arrays have figures of merit of <span class=red markdown>$FoM_T$ for Peacoq and Resta2023 results</span>. This would result in a proportinal increase in the data rate. <span class=red markdown>$FoM_T$ for fastest InGaAs/InP gated detector</span> These devices are ideal for fiber-based optical communication. In free-space, the active area is especially important, whithout the use of an adaptive optics system. <span class=red markdown>$FoM_T$ for DSOC array</span>
 
 ### Development of a modulation source
 

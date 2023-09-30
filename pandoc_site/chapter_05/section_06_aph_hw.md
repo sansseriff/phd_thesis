@@ -163,7 +163,7 @@ As we will see later on, a set of filters will be needed between the detector an
 
     <span class=blue markdown> **Answer:** </span>
 
-    <span class=blue markdown>$\boxed{\text{3 filters}}$ are needed to make the wavelength band shorter than 156 nm the dominant source of counts.</span> [3 pts. for this answer]{color="red" markdown=""}
+    <span class=blue markdown>$\boxed{\text{3 filters}}$ are needed to make the wavelength band shorter than 156 nm the dominant source of counts.</span> <span class=red markdown>3 pts. for this answer</span>
 
     <span class=red markdown>3 pts for evidence:</span> <span class=blue markdown>Students might integrate the detectable dark count spectrum with different numbers of filters and comparing the results. The computations below show the addition of a fourth filter has a negligible effect on the dark count rate. </span>
 
@@ -349,8 +349,7 @@ Where $\eta$ is the coupling efficiency between the state of interest and the de
     $$0.98 = F_{binary}(\gamma, \eta) = (1 - \gamma^2)(1 - \gamma^2(1 - \eta)\,\,\,\,\,\,\,\, \eta = 0.8$$
 
     </div>
-    <div style="color:blue" markdown>
-    A numerical solution is fine. We’re interested in the positive solution less than one:</span>
+    <span class=blue markdown> A numerical solution is fine. We’re interested in the positive solution less than one:</span>
 
     <span class=blue markdown>![](./figs_05/Ftsolve.PNG)</span>
 

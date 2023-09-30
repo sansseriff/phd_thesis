@@ -163,7 +163,7 @@ If the detector has a circular active area with radius $5~\mathrm{\upmu m}$, wha
 
     <span style="color:blue" markdown> **Answer:** </span>
 
-    <span style="color:blue" markdown>$\boxed{\text{3 filters}}$ are needed to make the wavelength band shorter than 156 nm the dominant source of counts.</span> <span color=red markdown>3 pts. for this answer</span>
+    <span style="color:blue" markdown>$\boxed{\text{3 filters}}$ are needed to make the wavelength band shorter than 156 nm the dominant source of counts.</span> <span style="color:red" markdown>3 pts. for this answer</span>
 
     <span style="color:red" markdown>3 pts for evidence:</span>
     <span style="color:blue" markdown>Students might integrate the detectable dark count spectrum with different numbers of filters and comparing the results. The computations below show the addition of a fourth filter has a negligible effect on the dark count rate. </span>
@@ -364,7 +364,7 @@ Where $\eta$ is the coupling efficiency between the state of interest and the de
 
     </div>
 
-    <div style="color:blue" markdown> A numerical solution is fine. We're interested in the positive solution less than one:</span>
+    <span style="color:blue" markdown> A numerical solution is fine. We're interested in the positive solution less than one:</span>
 
     <span style="color:blue" markdown>![](./figs_05/Ftsolve.PNG)</span>
 
