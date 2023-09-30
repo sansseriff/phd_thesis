@@ -931,13 +931,12 @@ multiplexing the Spontaneous Parametric Down Conversion (SPDC) output
 into 8 energy-time entangled channel pairs. We demonstrate entanglement
 fidelities as high as 99.76\%, total entanglement rates up to 0.5
 Mbits/s, and predict a straightforward path towards achieving up to
-{\color{darkred} XXX} Mbit/s. Finally, we resolve the density matrices
-of individual channels and express distillable entanglement rates in
-ebit/s, thereby quantifying the tradeoff between fidelity and
-coincidence rates that contributes to useful entanglement distribution.
-This source is a fundamental building block for high rate
-entanglement-based quantum key distribution systems or advanced quantum
-networks.
+{XXX} Mbit/s. Finally, we resolve the density matrices of individual
+channels and express distillable entanglement rates in ebit/s, thereby
+quantifying the tradeoff between fidelity and coincidence rates that
+contributes to useful entanglement distribution. This source is a
+fundamental building block for high rate entanglement-based quantum key
+distribution systems or advanced quantum networks.
 
 \hypertarget{introduction-4}{%
 \section{Introduction}\label{introduction-4}}
@@ -1251,6 +1250,110 @@ visibility of a two-source HOM (Hong-Ou-Mandel) interferogram. If 50 GHz
 ITU channels are used instead, the model predicts \(1/K = 0.96\).
 
 \appendix
+% \begin{appendices}
+\appendix
+\hypertarget{appendix-1}{%
+\chapter{Appendix 1}\label{appendix-1}}
+
+
+
+
+\hypertarget{abstract-4}{%
+\section{Abstract}\label{abstract-4}}
+
+\hypertarget{software-systems-and-operation}{%
+\section{Software Systems and
+Operation}\label{software-systems-and-operation}}
+
+\hypertarget{advanced-matplotlib-layouts-with-the-bisect-function}{%
+\subsection{\texorpdfstring{Advanced Matplotlib Layouts with the
+\texttt{bisect()}
+function}{Advanced Matplotlib Layouts with the bisect() function}}\label{advanced-matplotlib-layouts-with-the-bisect-function}}
+
+It can be difficult to create complex plot layouts with matplotlib,
+especially when the layout should have strict requirements, like
+neighboring axes that are aligned with one another. Before explaining a
+custom method for solving this problem through the use of a new function
+\texttt{bisect()}, its worth reviewing the more accepted methods of
+advanced matplotlib figure layout.
+
+\hypertarget{subplot-mosaic}{%
+\subsubsection{Subplot Mosaic}\label{subplot-mosaic}}
+
+\href{https://matplotlib.org/stable/gallery/subplots_axes_and_figures/mosaic.html}{Subplot
+mosaic} is a tool for specifying the layout of a figure with a special
+python dictionary, demonstrated by this example from the docs:
+
+\begin{minted}
+[
+frame=lines,
+framesep=2mm,
+baselinestretch=1,
+bgcolor=extralightgray,
+fontsize=\footnotesize,
+linenos]
+{python}
+fig = plt.figure(layout="constrained")
+ax_dict = fig.subplot_mosaic(
+    [
+        ["bar", "plot"],
+        ["hist", "image"],
+    ],
+)
+ax_dict["bar"].bar(["a", "b", "c"], [5, 7, 9])
+ax_dict["plot"].plot([1, 2, 3])
+ax_dict["hist"].hist(hist_data)
+ax_dict["image"].imshow([[1, 2], [2, 1]])
+identify_axes(ax_dict)
+\end{minted}
+
+\includegraphics{chapter_05/figs_05/sphx_glr_mosaic_001_2_0x.webp}
+
+There are methods of changing the aspect ratios of the plots, but tools
+for imposing alignment constraints across plots are limited. For
+example, notice in the example above how the (1,1) plot axes are not
+vertically aligned with the (0,1) plot above.
+
+\hypertarget{gridspec}{%
+\subsubsection{Gridspec}\label{gridspec}}
+
+\href{https://matplotlib.org/stable/gallery/lines_bars_and_markers/scatter_hist.html\#sphx-glr-gallery-lines-bars-and-markers-scatter-hist-py}{Gridspec}
+is a tool for more carefully specifying a grid layout. Space between
+plots can be specified, and the relative widths or heights of columns
+and rows can be customized. Gridspec offers a lot of control, but it
+requires many custom parameters that can be unintuitive to derive.
+
+\hypertarget{add_axes}{%
+\subsubsection{Add\_axes}\label{add_axes}}
+
+One of the simplest ways of adding subplots to a figure is with the
+\texttt{fig.add\_axese(rect)} method. The
+\texttt{rect\ =\ {[}ll\_x,\ ll\_y,\ width,\ height{]}} specifies the x
+and y coordinate of the lower left corner with the first two parameters,
+and the width and height with the second 2 parameters. Multiple uses of
+\texttt{add\_axese()} offers maximum control for creating advanced
+layouts, but specifying all the correct \texttt{rect} arrays can get
+very confusing. Figure Fig.~\ref{fig:layout_sketch} illustrates the
+types of calculations that become necessary when the specific location
+and size of each subplot must be specified under certain constraints.
+
+\hypertarget{fig:layout_sketch}{%
+\begin{figure}
+\centering
+\includegraphics{chapter_05/figs_05/layout_sketch.png}
+\caption[{Rough sketch for layout with add\_axese()}]{\textbf{Sketch for
+layout with add\_axese().}}
+\label{fig:layout_sketch}
+\end{figure}
+}
+
+\hypertarget{bisect-method}{%
+\subsubsection{\texorpdfstring{\texttt{bisect()}
+method}{bisect() method}}\label{bisect-method}}
+
+\hypertarget{aph-138-homework-assignment}{%
+\section{Aph 138 Homework
+Assignment}\label{aph-138-homework-assignment}}
 
 In March of 2022, Matthew Shaw was a guest lecturer for the Quantum
 Hardware and Techniques course (APh/Ph 138b). The following is a
@@ -2086,8 +2189,7 @@ Fig.~\ref{fig:figurename} or for multiple Fig.~\ref{fig:figurename}
 Until I figure something more shorthand, you can set colors with
 ``\textless span\textgreater{}'' tags:
 
-{\color{midnightblue}  This text is blue. And it changes lightness when
-darkmode is witched }
+{ This text is blue. And it changes lightness when darkmode is witched }
 
 \hypertarget{fig:figurename}{%
 \begin{figure}
@@ -2116,15 +2218,9 @@ space.
 The formatting of multi-line divs is very important. This will render
 correctly:
 
-{\color{midnightblue} 
-
 \[math stuff 1\]
 
-}
-
 But this won't:
-
-{\color{midnightblue} 
 
 \begin{minted}
 [
@@ -2137,8 +2233,6 @@ linenos]
 {nil}
 $$math stuff 2$$
 \end{minted}
-
-}
 
 And this won't
 
@@ -2160,6 +2254,7 @@ the file where you're working on bokeh styling is at :
 
 C:\Users\Andrew\OneDrive - California Institute of
 Technology\JPL.Jitterate\peacoq\src\bokeh\_hists\_js\_callbacks.ipynb
+% \end{appendices}
 
 \printbibliography
 \end{document}
