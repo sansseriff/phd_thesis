@@ -207,9 +207,21 @@ function init_with_mode(ids, elements, mode) {
 }
 
 function init_bokeh(ids, elements) {
-    var local = JSON.parse(localStorage.getItem('/.__palette'));
-    console.log("this is local storage: ", localStorage)
-    console.log(" this is current theme: ", local)
+    var local_self_hosted = JSON.parse(localStorage.getItem('/.__palette'));
+    var local_deployed = JSON.parse(localStorage.getItem('/phd_thesis/.__palette'));
+    var local;
+    
+    if (local_self_hosted !== null) {
+        local = local_self_hosted;
+    } else if (local_deployed !== null) {
+        local = local_deployed;
+    } else {
+        // Both values are null
+        local = null;
+    }
+
+    // console.log("this is local storage: ", localStorage)
+    // console.log(" this is current theme: ", local)
 
     if (local == null) {
         var mode = 'default'
