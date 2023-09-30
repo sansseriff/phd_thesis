@@ -1,4 +1,10 @@
-## Aph 138 Homework Assignment
+<!-- this works with one word -->
+
+[\appendix]{.latex}
+
+<!-- This works with more words -->
+
+<!-- <div class="latex">\appendix and more</div> -->
 
 In March of 2022, Matthew Shaw was a guest lecturer for the Quantum Hardware and Techniques course (APh/Ph 138b). The following is a homework assignment I wrote to accompany his series of lectures.
 
@@ -14,7 +20,7 @@ The second problem explores a potential use case of a photon number resolving SN
 
 <!-- This span is processed by  pandoc-latex-color so that the color of the pdf will change also. -->
 
-<span class=blue>Contact [Andrew Mueller](mailto:andrewstermueller@gmail.com) with any questions about the homework or solution manual. The solutions to some sections specify finer-grained point values when there are multiple answers per section. As the grader, feel free to use these or not. </span>
+<span class=blue markdown>Contact [Andrew Mueller](mailto:andrewstermueller@gmail.com) with any questions about the homework or solution manual. The solutions to some sections specify finer-grained point values when there are multiple answers per section. As the grader, feel free to use these or not. </span>
 
 ### 1. Free space coupling with low dark counts (50 points)
 
@@ -33,8 +39,15 @@ As we will see later on, a set of filters will be needed between the detector an
 
 1.  (4 pts) If the detector has a circular active area with radius $5~\mathrm{\upmu m}$, what ratio of power in the beam can it collect? Assume the detector has unity efficiency across all angles of incidence with respect to the surface normal.
 
-    <span class=blue markdown> **Answer:** </span> <span class=blue markdown> The divergence angle of the guassian beam: $\theta = \tan^{-1}({\frac{3}{100}})$. </span>
+    <div class=blue markdown>
 
+    **Answer:**
+    </div>
+    <div class=blue markdown>
+
+    The divergence angle of the guassian beam: $\theta = \tan^{-1}({\frac{3}{100}})$.
+
+    </div>
     <span class=blue markdown> The formula for divergence angle in terms of waist $w_0$: $\theta = \frac{\lambda}{\pi w_0}$ </span>
 
     <span class=blue markdown> Combining and plugging in, the waist radius at focus is $\frac{1550~\mathrm{nm}}{\pi \tan^{-1}(\frac{3}{100})} \approx 16.5~ \mathrm{\upmu m}$ </span>
@@ -89,7 +102,7 @@ As we will see later on, a set of filters will be needed between the detector an
 
     <span class=blue markdown> **Answer:** </span> <span class=blue markdown> The three cases couple the same amount of light to the detector. (ii) couples the same amount of power as (i) because a blackbody source can’t be focused to higher intensity with a lens. The solid angle subtended by the entrance pupil as seen by the detector is the same in all cases. The detector area stays the same as well so the etendue is conserved across all three cases. This implies the same radiant power is coupled. </span>
 
-    <span class=red markdown> 3 points for saying all situations couple the same rate; 3 points for some explanation. </span>
+    <span class=blue markdown> 3 points for saying all situations couple the same rate; 3 points for some explanation. </span>
 
 4.  (9 pts) Using Planck’s law with laboratory temperature $T$ and the geometry of case (i) above, write an expression for spectral radiant flux (photons per unit wavelength) on the active area of a detector with radius $r$.
 
@@ -140,7 +153,7 @@ As we will see later on, a set of filters will be needed between the detector an
 
     <span class=blue markdown>Dark count rate $\approx \boxed{110 \,\text{MCounts/s}}$ </span> <span class=blue markdown>The rate of dark counts exceeds the usual maximum count rate, the detector is not usable. </span>
 
-    <span class=red markdown>3 pts. for similar dark count rate (+/- 20%) , 3 pts. for saying the detector is not usable.</span>
+    <span class=blue markdown>3 pts. for similar dark count rate (+/- 20%) , 3 pts. for saying the detector is not usable.</span>
 
 6.  (6 pts) A set of shortpass filters can remove the bulk of blackbody radiation. A shortpass filter can be roughly modeled with the formula:
 
@@ -150,7 +163,7 @@ As we will see later on, a set of filters will be needed between the detector an
 
     <span class=blue markdown> **Answer:** </span>
 
-    <span class=blue markdown>$\boxed{\text{3 filters}}$ are needed to make the wavelength band shorter than 156 nm the dominant source of counts.</span> <span class=red markdown>3 pts. for this answer</span>
+    <span class=blue markdown>$\boxed{\text{3 filters}}$ are needed to make the wavelength band shorter than 156 nm the dominant source of counts.</span> [3 pts. for this answer]{color="red" markdown=""}
 
     <span class=red markdown>3 pts for evidence:</span> <span class=blue markdown>Students might integrate the detectable dark count spectrum with different numbers of filters and comparing the results. The computations below show the addition of a fourth filter has a negligible effect on the dark count rate. </span>
 
@@ -198,7 +211,7 @@ As we will see later on, a set of filters will be needed between the detector an
 
     <span class=blue markdown>![](./figs_05/filter_with_temp.PNG)</span>
 
-    <span class=red markdown>4 pts for a similar equation, 3 pts for finding the dark count rate roughly doubles. </span>
+    <span class=blue markdown>4 pts for a similar equation, 3 pts for finding the dark count rate roughly doubles. </span>
 
     A quantum communication experiment requires time-tagging photons with respect to a 50 GHz clock with 95% fidelity. That is, 95% of the timing measurements of detected photons emitted at the same time with respect to a clock fall within a 20 ps bin. Say the detector and readout electronics have a combined jitter of 10 ps FWHM, and a mode locked laser is used for the experiment that generates transform-limited Gaussian pulses. You tune it’s temporal length to a value for which the total timing uncertainty of time-tagged photons — including system jitter and pulse temporal length — matches the 95 % fidelity at 50 GHz requirement. Assume detector jitter has a Gaussian shape as well.
 
@@ -226,7 +239,7 @@ As we will see later on, a set of filters will be needed between the detector an
     </div>
     <div class=blue markdown>
 
-    $$ 0.441 = \Delta t \Delta \nu $$
+    $$ 0.441 = \Delta t \Delta \nu $$ $$\Delta \nu = 71~\text{GHz}$$ $$\Delta \lambda = \frac{\lambda^2 \Delta \nu}{c} = 0.57~\text{nm}$$
 
     </div>
     <span class=blue markdown> $0.57~\text{nm}$ is the spectral width of the laser pulse at the FWHM level. If this pulse passes through a tophat filter with width equal to the 95% level of the laser pulse, then 95% will be transmitted. </span>
@@ -245,7 +258,7 @@ As we will see later on, a set of filters will be needed between the detector an
     $$\boxed{N_{filter} \approx 9.26e12 (1~\text{nm}) e^{-9290/T} (\frac{\text{photons}}{\text{s*nm}})} \approx 0.15~\text{photons/s} $$
 
     </div>
-    <span class=red markdown>3 points for writing and solving the equation that matches the jitter bound to the quadrature sum </span> <span class=red markdown>5 points for correct filter width and dark count rate</span>
+    <span class=blue markdown>3 points for writing and solving the equation that matches the jitter bound to the quadrature sum </span> <span class=blue markdown>5 points for correct filter width and dark count rate</span>
 
 ### 2. SPDC Coupling and Single Photon Sources (50 points)
 
@@ -292,7 +305,7 @@ Where $\eta$ is the coupling efficiency between the state of interest and the de
 
     <span class=blue markdown> To lowest order in $\gamma$, $p \sim \gamma^{2}\eta$. The single photon fock state dominates for $\gamma << 1$. </span>
 
-    <span class=red markdown> 3 pts for correct $p_{binary}(\gamma, \eta)$; 3 pts for saying the leading term is from single photons </span>
+    <span class=blue markdown> 3 pts for correct $p_{binary}(\gamma, \eta)$; 3 pts for saying the leading term is from single photons </span>
 
 2.  (6 pts) A general form for the density matrix of the signal mode given a herald event is:
 
@@ -318,7 +331,7 @@ Where $\eta$ is the coupling efficiency between the state of interest and the de
     </div>
     <span class=blue markdown>As $\gamma$ approaches 1, the denominator in the original expression for $\rho_s(\gamma,\eta)$ approaches infinity while the numerator approaches $\eta$. In this limit, the SPDC is generating predominantly multi-photon states. For $\gamma$ approaching 1, the probability of the generated state being a single photon state goes to zero. Because the binary POVM was used, multi-photon states are ‘included’ in $\rho_s(\gamma,\eta)$. For $\rho_s$ from the PNR POVM shown below, multi-photon states will be included to a much lesser extent, depending on the value for $\eta$.</span>
 
-    <span class=red markdown>3 pts for correct $F_{binary}(\gamma, \eta)$; 3 pts for similar explanation</span>
+    <span class=blue markdown>3 pts for correct $F_{binary}(\gamma, \eta)$; 3 pts for similar explanation</span>
 
     An HSPS with high single photon fidelity and probability is most useful, but you see these metrics are maximized for opposite limits of $\gamma$. One approach to achieving high probability and fidelity simultaneously is to link multiple SPDC sources and heralding detectors as shown in Fig. [3](#fig:hsps) b. A click from the detector $j$ triggers the switch to move to position $j$ and let the heralded state pass through. This way, $\gamma$ for each source can be kept low to maximize fidelity, while heralding probability increases with the number of sources.
 
@@ -336,7 +349,7 @@ Where $\eta$ is the coupling efficiency between the state of interest and the de
     $$0.98 = F_{binary}(\gamma, \eta) = (1 - \gamma^2)(1 - \gamma^2(1 - \eta)\,\,\,\,\,\,\,\, \eta = 0.8$$
 
     </div>
-    <div class=blue markdown>
+    <div style="color:blue" markdown>
     A numerical solution is fine. We’re interested in the positive solution less than one:</span>
 
     <span class=blue markdown>![](./figs_05/Ftsolve.PNG)</span>
@@ -359,7 +372,7 @@ Where $\eta$ is the coupling efficiency between the state of interest and the de
 
     <span class=blue markdown>About $\boxed{N = 290}$ sources are needed.</span>
 
-    <span class=red markdown>3 pts for correct form of the multiplexing expression $P(\text{at least one herald}|N)$; 3 pts for similar number of sources $N$</span>
+    <span class=blue markdown>3 pts for correct form of the multiplexing expression $P(\text{at least one herald}|N)$; 3 pts for similar number of sources $N$</span>
 
 A photon number resolving (PNR) SNSPD is able to discriminate the number of photons in a light pulse\*. By heralding the idler mode with a PNR SNSPD, the generation of multi-photon signal pulses can be identified and discarded. There’s a POVM for an ideal PNR single photon detector, where $i$ is the number of photons detected\*\*:
 
@@ -409,7 +422,7 @@ $$\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\ra
      \end{aligned}$$
 
     </div>
-    <span class=red markdown>4 pts for $F_{PNR}(\gamma, \eta)$</span>
+    <span class=blue markdown>4 pts for $F_{PNR}(\gamma, \eta)$</span>
 
     <span class=blue markdown>For $\gamma$ near one, the SPDC is under strong pump power and is generating predominantly multi-pair states. A vanishing fraction of those states are single photon states that the PNR detector is able to distinguish and single-photon. Therefore, the PNR detector is signaling the generation of multi-pair states most of the time which should be discarded and do not contribute to $p_{PNR}$. For high efficiency $\eta$, only the vanishing single-pair creation rate contributes predominantly to $p_{PNR}$.</span>
 

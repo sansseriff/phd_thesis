@@ -21,7 +21,7 @@ rm -r ./pandoc_site/chapter_01/* \
 # padoc-crossref cannot recognize the figures.
 
 find ./src/chapter_01/ -iname "*.md" -type f -exec sh -c 'pandoc \
---from markdown-hard_line_breaks-native_spans \
+--from markdown \
 --to markdown \
 -t markdown-smart \
 --wrap=none \
@@ -31,7 +31,7 @@ find ./src/chapter_01/ -iname "*.md" -type f -exec sh -c 'pandoc \
 "${0}" -o "./pandoc_site/chapter_01/$(basename ${0%.md}.md)"' {} \;
 
 find ./src/chapter_02/ -iname "*.md" -type f -exec sh -c 'pandoc \
---from markdown-hard_line_breaks-native_spans \
+--from markdown \
 --to markdown \
 -t markdown-smart \
 --wrap=none \
@@ -41,7 +41,7 @@ find ./src/chapter_02/ -iname "*.md" -type f -exec sh -c 'pandoc \
 "${0}" -o "./pandoc_site/chapter_02/$(basename ${0%.md}.md)"' {} \;
 
 find ./src/chapter_03/ -iname "*.md" -type f -exec sh -c 'pandoc \
---from markdown-hard_line_breaks-native_spans \
+--from markdown \
 --to markdown \
 -t markdown-smart \
 --wrap=none \
@@ -51,7 +51,7 @@ find ./src/chapter_03/ -iname "*.md" -type f -exec sh -c 'pandoc \
 "${0}" -o "./pandoc_site/chapter_03/$(basename ${0%.md}.md)"' {} \;
 
 find ./src/chapter_04/ -iname "*.md" -type f -exec sh -c 'pandoc \
---from markdown-hard_line_breaks-native_spans \
+--from markdown \
 --to markdown \
 -t markdown-smart \
 --wrap=none \
@@ -61,7 +61,7 @@ find ./src/chapter_04/ -iname "*.md" -type f -exec sh -c 'pandoc \
 "${0}" -o "./pandoc_site/chapter_04/$(basename ${0%.md}.md)"' {} \;
 
 find ./src/chapter_05/ -iname "*.md" -type f -exec sh -c 'pandoc \
---from markdown-hard_line_breaks-native_spans \
+--from markdown \
 --to markdown \
 -t markdown-smart \
 --wrap=none \

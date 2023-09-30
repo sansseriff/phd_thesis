@@ -71,9 +71,41 @@ end
 -- converts things like <span color=red>This text is red </span>
 Span = function(el)
   color = el.attributes['color']
-  -- if no color attribute, return unchanged
+  target = el.attributes['target']
+  -- -- if no color attribute, return unchanged
+  -- -- print(el.content[1])
+
+  -- print(FORMAT:match 'latex')
+
+  if target == "latex" then
+    -- cnt = pandoc.utils.stringify(el.content[1])
+
+    if FORMAT:match 'html' then
+      return nil
+    elseif FORMAT:match 'latex' then
+      return el.content[1]
+    else
+      print("dhsdf")
+      return el
+    end
+  end
+
+  -- if target == "html" then
+  --   cnt = pandoc.utils.stringify(el.content[1])
+  --   print(el.content[1])
+  --   print(cnt)
+  --   if FORMAT:match 'html' then
+  --     return cnt
+  --   elseif FORMAT:match 'latex' then
+  --     return nil
+  --   else
+  --     print("dhsdsdfsdfsf")
+  --     return el
+  --   end
+  -- end
+
   if color == nil then return el end
-  
+
   -- transform to <span style="color: red;"></span>
   if FORMAT:match 'html' then
     -- remove color attributes

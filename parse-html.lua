@@ -71,6 +71,7 @@ function Para(para)
     -- end
 
     if not img or not img.caption or not img.attributes['short-caption'] then
+        -- print("here?")
         return nil
         -- if not img.attributes["style"] then
         --     return nil
@@ -162,8 +163,31 @@ function Div(el)
     --     print(color)
     -- end
     -- print("")
-    
-    
+
+    -- success, color = pcall(function() return el.attributes['color'] end)
+    -- print(el.content[1])
+    -- if el.content[1].t == "Para" then
+
+    -- if success then
+    --     string = string.format("<div class=%s markdown>\n\n", color)
+
+    --     table.insert(el.content, 1, pandoc.RawInline('markdown', string))
+    --     table.insert(el.content, pandoc.RawInline('markdown', '</div>'))
+    --     return el.content
+    -- end
+
+    if el.attributes.style then
+        local style = el.attributes.style
+        local color = style:match("color:%s*([^;]+)")
+        if color then
+            string = string.format("<div class=%s markdown>\n\n", color)
+
+            table.insert(el.content, 1, pandoc.RawInline('markdown', string))
+            table.insert(el.content, pandoc.RawInline('markdown', '</div>'))
+            return el.content
+        end
+    end
+
 
     if el.content[1].t == "Para" then
         if el.content[1].content[1].t == "Math" then
@@ -174,6 +198,25 @@ function Div(el)
         end
     end
     return el
+end
+
+function Span(el)
+    if el.attributes.style then
+        local style = el.attributes.style
+        -- print(style)
+        local color = style:match("color:%s*([^;]+)")
+        -- print(color)
+        if color then
+            string = string.format("<span class=%s markdown>", color)
+
+            table.insert(el.content, 1, pandoc.RawInline('markdown', string))
+            table.insert(el.content, pandoc.RawInline('markdown', '</span>'))
+            return el.content
+        end
+    end
+    -- success, color = pcall(function() return el.attributes['color'] end)
+    -- print(el.content[1])
+    -- if el.content[1].t == "Para" then
 end
 
 -- function Span(el)
@@ -195,7 +238,7 @@ end
 --     color = el.attributes['color']
 --     -- if no color attribute, return unchanged
 --     if color == nil then return el end
-    
+
 --     -- transform to <span style="color: red;"></span>
 --     if FORMAT:match 'html' then
 --       -- remove color attributes

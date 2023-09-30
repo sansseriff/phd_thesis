@@ -67,13 +67,32 @@ function CodeBlock(el)
   }
 end
 
+function Div(el)
+  if el.classes:includes("latex") then
+    -- return pandoc.Para(el.content)
+    print(el.content[1].text)
+    print(el.content[1])
+    return el.content[1]
+  end
+end
 
 -- converts things like <span color=red>This text is red </span>
 Span = function(el)
   color = el.attributes['color']
-  -- if no color attribute, return unchanged
+  target = el.attributes['target']
+
+
+
+  if el.classes[1] == "latex" then
+    -- table.insert(el.content, 1, pandoc.RawInline('latex', '\\mccorrect{'))
+    -- table.insert(el.content, pandoc.RawInline('latex', '}'))
+    -- return el.content
+    print(pandoc.RawInline('latex', el.content[1].text))
+    return pandoc.RawInline('latex', el.content[1].text)
+    end
+
   if color == nil then return el end
-  
+
   -- transform to <span style="color: red;"></span>
   if FORMAT:match 'html' then
     -- remove color attributes

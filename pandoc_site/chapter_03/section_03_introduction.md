@@ -2,8 +2,13 @@
 
 <!-- In paper -->
 
-<span class="bokeh" id="../code/test_1"></span>
+<!-- <span color=red markdown> The following is very rough, taken from years ago when I first started writing the manuscript </span> -->
 
+[]{#../code/test_1 .bokeh}
+
+This study aimed to evaluate the feasibility of transmitting high clock-rate pulse position modulated (PPM) data using a mode-locked laser and receiving it with a low jitter superconducting nanowire single-photon detector (SNSPD). The investigation was driven by recent advancements in NbN SNSPDs, which have achieved a jitter as low as 50 ps at the FW(1/100)M level, enabling the demonstration of PPM with 50 ps slot widths and a 20 GHz clock. The aim was to increase the data rate by a factor of 10, from 2 GHz to 20 GHz, in the next generation of the Deep Space Optical Communication (DSOC) project.
+
+During the course of this study, the focus shifted towards investigating the impact of photon number resolution (PNR) on the low jitter detection of optical pulses. PNR can have an unintended impact on the demonstration of high-rate PPM, and therefore a thorough study of its effects was deemed crucial. A novel PNR cancellation technique was developed and applied to successfully demonstrate high-rate PPM. This technique is considered essential for future low-jitter applications of SNSPDs that exhibit photon-number effects.
 
 This study aimed to evaluate the feasibility of transmitting high clock-rate pulse position modulated (PPM) data using a mode-locked laser and receiving it with a low jitter superconducting nanowire single-photon detector (SNSPD). The investigation was driven by recent advancements in NbN SNSPDs, which have achieved a jitter as low as 50 ps at the FW(1/100)M level, enabling the demonstration of PPM with 50 ps slot widths and a 20 GHz clock. The aim was to increase the data rate by a factor of 10, from 2 GHz to 20 GHz, in the next generation of the Deep Space Optical Communication (DSOC) project.
 
@@ -43,7 +48,7 @@ Using M values much larger than 11 is unlikely to be practical in future deep sp
 
 ## Detector Figure of Merit
 
-The work here highlights the application of low jitter single-photon detectors for optical communication, which is impactful for deep-space optical communication as well as classical communication in quantum networks. Although single-photon counting is well estanblished for deep-space optical communication\~\cite{Laser lunar, DSOC} so far it has not been ulitized in quantum networks, mainly due to the use of SFP modules and DWDMs. However, with the eachievement of high data rates recently achieved with photon-counting classical communication, these approaches can now be seriously considered for quantum networks. The main driver is would be the deduction of optical power in neighbouring DWDM channels, which ultimately lowers the Raman scattered photons into the quantum channel [@EraerdsRaman] <span color="red" markdown>Calculate reduction in power from state of the art SFP modules</span>
+The work here highlights the application of low jitter single-photon detectors for optical communication, which is impactful for deep-space optical communication as well as classical communication in quantum networks. Although single-photon counting is well estanblished for deep-space optical communication\~\cite{Laser lunar, DSOC} so far it has not been ulitized in quantum networks, mainly due to the use of SFP modules and DWDMs. However, with the eachievement of high data rates recently achieved with photon-counting classical communication, these approaches can now be seriously considered for quantum networks. The main driver is would be the deduction of optical power in neighbouring DWDM channels, which ultimately lowers the Raman scattered photons into the quantum channel [@EraerdsRaman] [Calculate reduction in power from state of the art SFP modules]{color="red" markdown=""}
 
 To access the applicability of different detectors, here we compare some of the recent near infrared detectors.
 
@@ -58,7 +63,7 @@ In this work:
 -   Efficiency = 0.84
 -   Afterpulsing = 0 %
 -   Jitter = 15 ps
--   Deadtime = 30 ns <span color="red" markdown>measure 3dB flux</span>
+-   Deadtime = 30 ns [measure 3dB flux]{color="red" markdown=""}
 -   Area = 330 $\mu m^2$
 -   Dark count rate = 20 Hz
 
@@ -66,7 +71,7 @@ $FoM_T = 7.58 \times 10^{12}$ at 1550 nm.
 
 The deadtime is calculated as the 1/MCR, which is the 3 dB point of the nominal efficiency. This is only a factor of 3.7 less than the state of the art visible Silicon SPADs (peak efficiency at 480\nm) [@Gramuglia2022]
 
-In the future, the performance of the optical communication system could be improved by using, high count rate SNSPD arrays. Recently published high-count rate arrays have figures of merit of <span color="red" markdown>$FoM_T$ for Peacoq and Resta2023 results</span>. This would result in a proportinal increase in the data rate. <span color="red" markdown>$FoM_T$ for fastest InGaAs/InP gated detector</span> These devices are ideal for fiber-based optical communication. In free-space, the active area is especially important, whithout the use of an adaptive optics system. <span color="red" markdown>$FoM_T$ for DSOC array</span>
+In the future, the performance of the optical communication system could be improved by using, high count rate SNSPD arrays. Recently published high-count rate arrays have figures of merit of [$FoM_T$ for Peacoq and Resta2023 results]{color="red" markdown=""}. This would result in a proportinal increase in the data rate. [$FoM_T$ for fastest InGaAs/InP gated detector]{color="red" markdown=""} These devices are ideal for fiber-based optical communication. In free-space, the active area is especially important, whithout the use of an adaptive optics system. [$FoM_T$ for DSOC array]{color="red" markdown=""}
 
 ### Development of a modulation source
 

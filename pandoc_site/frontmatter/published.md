@@ -7,9 +7,9 @@ M. Colangelo, B. Korzh, J. P. Allmaras, A. D. Beyer, \textbf{A. S. Mueller}, R. 
 
 S. I. Davis, \textbf{A. Mueller}, R. Valivarthi, N. Lauk, L. Narvaez, B. Korzh, A. D. Beyer, O. Cerri, M. Colangelo, K. K. Berggren, M. D. Shaw, S. Xie, N. Sin- clair, and M. Spiropulu, “Improved heralded single-photon source with a photon-number-resolving superconducting nanowire detector,” \href{https://link.aps.org/doi/10.1103/PhysRevApplied.18.064007}{Phys. Rev. Appl. 18, 064007 (2022)}.
 
-R. Valivarthi, S. I. Davis, C. Peña, S. Xie, N. Lauk, L. Narváez, J. P. Allmaras, A. D. Beyer, Y. Gim M. Hussein, G. Iskander, H. L. Kim, B. Korzh, \textbf{A. Mueller}, M. Rominsky, M. Shaw, D. Tang, E. E. Wollman, C. Simon, P. Spentzouris, D. Oblak, N. Sinclair, and M. Spiropulu, “Teleportation systems toward a quantum internet,” href{https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.1.020317}{PRX Quantum 1, 020317 (2020)}.
+R. Valivarthi, S. I. Davis, C. Peña, S. Xie, N. Lauk, L. Narváez, J. P. Allmaras, A. D. Beyer, Y. Gim M. Hussein, G. Iskander, H. L. Kim, B. Korzh, \textbf{A. Mueller}, M. Rominsky, M. Shaw, D. Tang, E. E. Wollman, C. Simon, P. Spentzouris, D. Oblak, N. Sinclair, and M. Spiropulu, “Teleportation systems toward a quantum internet,” \href{https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.1.020317}{PRX Quantum 1, 020317 (2020)}.
 
-R. Valivarthi, L. Narvarez, S. I. Davis, N. Lauk, C. Peña, S. Xie, J. P. Allmaras, A. D. Beyer, B. Korzh, \textbf{A. Mueller}, M. Kiburg, M. D. Shaw, E. E. Wollman, P. Spentzouris, D. Oblak, N. Sinclair, and M. Spiropulu, “Picosecond synchronization system for quantum networks,” href{https://ieeexplore.ieee.org/document/9856607}{Journal of Lightwave Technology , 1–7 (2022)}.
+R. Valivarthi, L. Narvarez, S. I. Davis, N. Lauk, C. Peña, S. Xie, J. P. Allmaras, A. D. Beyer, B. Korzh, \textbf{A. Mueller}, M. Kiburg, M. D. Shaw, E. E. Wollman, P. Spentzouris, D. Oblak, N. Sinclair, and M. Spiropulu, “Picosecond synchronization system for quantum networks,” \href{https://ieeexplore.ieee.org/document/9856607}{Journal of Lightwave Technology , 1–7 (2022)}.
 
 
 
