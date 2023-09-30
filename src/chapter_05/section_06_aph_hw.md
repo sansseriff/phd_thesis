@@ -1,9 +1,4 @@
 
-<!-- this works with one word -->
-<span class="latex">\appendix</span>
-
-<!-- This works with more words -->
-<!-- <div class="latex">\appendix and more</div> -->
 
 In March of 2022, Matthew Shaw was a guest lecturer for the Quantum Hardware and Techniques course (APh/Ph 138b). The following is a homework assignment I wrote to accompany his series of lectures. 
 
