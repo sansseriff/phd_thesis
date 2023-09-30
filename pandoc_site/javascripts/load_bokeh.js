@@ -178,10 +178,10 @@ function init_with_mode(ids, elements, mode) {
     ids.forEach(id => {
         fetch(id + ".json").then(response => response.text())
             .then(data => {
-                console.log(mode)
-                console.log(typeof (mode))
+                // console.log(mode)
+                // console.log(typeof (mode))
                 if (mode == 'slate') {
-                    console.log('running slate')
+                    // console.log('running slate')
                     var converted = replaceDarkWithDark(data)
                     bokeh_graphs.push(converted)
                     const parsedJson = JSON.parse(converted); // Convert the string back to JSON
@@ -190,7 +190,7 @@ function init_with_mode(ids, elements, mode) {
 
                 }
                 else {
-                    console.log('running default')
+                    // console.log('running default')
                     var converted = replaceLightWithLight(data)
                     bokeh_graphs.push(converted)
                     const parsedJson = JSON.parse(converted); // Convert the string back to JSON
@@ -205,6 +205,7 @@ function init_with_mode(ids, elements, mode) {
 
 function init_bokeh(ids, elements) {
     var local = JSON.parse(localStorage.getItem('/.__palette'));
+    console.log(" this is current theme: ", local)
 
     if (local == null) {
         var mode = 'default'

@@ -2,7 +2,6 @@
 
 <!-- In paper -->
 
-<!-- <span style="color:red" markdown> The following is very rough, taken from years ago when I first started writing the manuscript </span> -->
 
 <span class="bokeh" path="../code/test_1"></span>
 
