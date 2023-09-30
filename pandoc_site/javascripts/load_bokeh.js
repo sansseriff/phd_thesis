@@ -57,6 +57,7 @@ let loadedCount = 0;
 let bokeh = NaN;
 
 const bokeh_graphs = [];
+// const bokeh_graphs_loaded = [];
 
 const activateSpan = document.querySelector('.bokeh');
 
@@ -154,7 +155,7 @@ const colorNames = [
     'background_fill_color',
     'line_color',
     'bar_color',
-  ];
+];
 
 function replaceColors(colors1, colors2) {
     // Create a regex pattern that matches all colors in the light mode array
@@ -176,41 +177,60 @@ const replaceDarkWithDark = replaceColors(lightColors, darkColors);
 
 function init_with_mode(ids, elements, mode) {
     console.log("starting init with mode")
-    ids.forEach(id => {
-        fetch(id + ".json").then(response => response.text())
-            .then(data => {
-                // console.log(mode)
-                // console.log(typeof (mode))
-                if (mode == 'slate') {
-                    // console.log('running slate')
-                    var converted = replaceDarkWithDark(data)
-                    bokeh_graphs.push(converted)
-                    const parsedJson = JSON.parse(converted); // Convert the string back to JSON
-                    // console.log(parsedJson); // Do something with the parsed JSON
-                    load_plot(document.getElementById(id), id, parsedJson)
-                    console.log("loaded")
+    ids.forEach((id, index) => {
+        if (bokeh_graphs.length > 0) {
+            console.log("bokeh graphs already loaded")
+            if (mode == 'slate') {
+                graph_string = bokeh_graphs[index]
+                const parsedJson = JSON.parse(graph_string); // Convert the string back to JSON
+                load_plot(document.getElementById(id), id, parsedJson)
+            }
+            else {
+                graph_string = bokeh_graphs[index]
+                var converted = replaceLightWithLight(graph_string)
+                const parsedJson = JSON.parse(converted); // Convert the string back to JSON
+                load_plot(document.getElementById(id), id, parsedJson)
+            }
+        }
+        else {
+            fetch(id + ".json").then(response => response.text())
+                .then(data => {
+                    // console.log(mode)
+                    // console.log(typeof (mode))
+                    if (mode == 'slate') {
+                        // console.log('running slate')
+                        // var converted = replaceDarkWithDark(data)
+                        // bokeh_graphs.push(converted)
+                        const parsedJson = JSON.parse(data); // Convert the string back to JSON
+                        // console.log(parsedJson); // Do something with the parsed JSON
+                        load_plot(document.getElementById(id), id, parsedJson)
+                        // console.log("loaded")
+                        // console.log(bokeh_graphs)
 
-                }
-                else {
-                    // console.log('running default')
-                    var converted = replaceLightWithLight(data)
-                    bokeh_graphs.push(converted)
-                    const parsedJson = JSON.parse(converted); // Convert the string back to JSON
-                    // console.log(parsedJson); // Do something with the parsed JSON
-                    load_plot(document.getElementById(id), id, parsedJson)
-                    console.log("loaded")
+                    }
+                    else {
+                        bokeh_graphs.push(data)
+                        // console.log('running default')
+                        var converted = replaceLightWithLight(data)
+                        const parsedJson = JSON.parse(converted); // Convert the string back to JSON
+                        // console.log(parsedJson); // Do something with the parsed JSON
+                        load_plot(document.getElementById(id), id, parsedJson)
+                        // console.log("loaded")
+                        // console.log(bokeh_graphs)
 
-                }
-            })
-            .catch(error => console.error(error));
-    });
+                    }
+                })
+                .catch(error => console.error(error));
+        }
+    }
+    );
 }
 
 function init_bokeh(ids, elements) {
     var local_self_hosted = JSON.parse(localStorage.getItem('/.__palette'));
     var local_deployed = JSON.parse(localStorage.getItem('/phd_thesis/.__palette'));
     var local;
-    
+
     if (local_self_hosted !== null) {
         local = local_self_hosted;
     } else if (local_deployed !== null) {
@@ -220,9 +240,6 @@ function init_bokeh(ids, elements) {
         local = null;
     }
 
-    // console.log("this is local storage: ", localStorage)
-    // console.log(" this is current theme: ", local)
-
     if (local == null) {
         var mode = 'default'
     }
@@ -230,9 +247,13 @@ function init_bokeh(ids, elements) {
         var mode = local.color.scheme
     }
 
+    ids.forEach(id => {
+
+    })
+
     init_with_mode(ids, elements, mode)
     var sliderDiv = document.querySelector('.bk-Slider');
-    
+
 
     // Use setTimeout instead of window.onload
     // setTimeout(function() {
@@ -257,7 +278,7 @@ function init_bokeh(ids, elements) {
 
 function load_plot(element, id, docs_json) {
     element.innerHTML = "";
-    
+
     window.Bokeh.embed.embed_item(docs_json, id).then(figure => get_figure_info(figure))
 }
 
