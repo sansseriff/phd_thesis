@@ -175,6 +175,7 @@ const replaceDarkWithDark = replaceColors(lightColors, darkColors);
 
 
 function init_with_mode(ids, elements, mode) {
+    console.log("starting init with mode")
     ids.forEach(id => {
         fetch(id + ".json").then(response => response.text())
             .then(data => {
@@ -187,6 +188,7 @@ function init_with_mode(ids, elements, mode) {
                     const parsedJson = JSON.parse(converted); // Convert the string back to JSON
                     // console.log(parsedJson); // Do something with the parsed JSON
                     load_plot(document.getElementById(id), id, parsedJson)
+                    console.log("loaded")
 
                 }
                 else {
@@ -196,6 +198,7 @@ function init_with_mode(ids, elements, mode) {
                     const parsedJson = JSON.parse(converted); // Convert the string back to JSON
                     // console.log(parsedJson); // Do something with the parsed JSON
                     load_plot(document.getElementById(id), id, parsedJson)
+                    console.log("loaded")
 
                 }
             })
@@ -205,6 +208,7 @@ function init_with_mode(ids, elements, mode) {
 
 function init_bokeh(ids, elements) {
     var local = JSON.parse(localStorage.getItem('/.__palette'));
+    console.log("this is local storage: ", localStorage)
     console.log(" this is current theme: ", local)
 
     if (local == null) {
