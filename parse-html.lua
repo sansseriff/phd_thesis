@@ -201,6 +201,15 @@ function Div(el)
 end
 
 function Span(el)
+    -- <span class="bokeh" id="../code/test_1"></span>
+    if el.classes:includes("bokeh") then
+        local path = el.attributes.path
+        string = string.format("<span class='bokeh' id='%s'></span>", path)
+        return pandoc.RawInline('markdown', string)
+    end
+
+
+
     if el.attributes.style then
         local style = el.attributes.style
         -- print(style)

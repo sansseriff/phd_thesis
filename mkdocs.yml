@@ -76,34 +76,35 @@ plugins:
 
 nav:
   - index.md
-  - Low Dark Count Rate Detection:
+  - "Ch. 1: Low Dark Count Rate SNSPD":
     - chapter_01/index.md
     - Introduction: chapter_01/section_03_introduction.md
     - Hardware: chapter_01/section_04_hardware.md
     - Model: chapter_01/section_05_model.md
-  - Time Walk and Jitter Correction: 
+  - "Ch. 2: Time Walk Correction": 
     - chapter_02/index.md
     - Introduction: chapter_02/section_03_introduction.md
     - Method: chapter_02/section_04_method.md
     - Conclusion: chapter_02/section_05_conclusion.md
     - Peacoq: chapter_02/section_06_peacoq.md
     - Outlook: chapter_02/section_07_outlook.md
-  - Pulse Position Modulation & Photon Resolution: 
+  - "Ch. 3: PPM & Photon Resolution": 
     - chapter_03/index.md
     - Introduction: chapter_03/section_03_introduction.md
     - Method: chapter_03/section_04_method.md
     - Results: chapter_03/section_05_results.md
     - Phased Locked Loop: chapter_03/section_06_phased_locked_loop.md
     - Outlook: chapter_03/section_07_outlook.md
-  - High Rate Entanglement Generation: 
+  - "Ch. 4: High Rate Entanglement": 
     - chapter_04/index.md
     - Introduction: chapter_04/section_03_introduction.md
     - System & Results: chapter_04/section_04_system_results.md
-  - Appendix 1:
+  - "A1: Aph 138 Homework":
     - chapter_05/index.md
-    - Software Tools: chapter_05/section_05_software_operation.md
     - Aph 138 Homework: chapter_05/section_06_aph_hw.md
-    - Cheat Sheet: chapter_05/section_08_cheat_sheet.md
+  - "A2: Software Tools":
+    - Software Tools: chapter_06/section_05_software_operation.md
+    - Cheat Sheet: chapter_06/section_08_cheat_sheet.md
 
 
 
