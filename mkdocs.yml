@@ -8,13 +8,15 @@ theme:
   logo: ./site_images/logo.svg
   favicon: ./site_images/favicon.png
   palette: 
-    - scheme: default
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
       toggle:
-        icon: material/toggle-switch-off-outline
+        icon: material/brightness-7
         name: Switch to dark mode
-    - scheme: slate 
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate 
       toggle:
-        icon: material/toggle-switch
+        icon: material/brightness-4
         name: Switch to light mode
   custom_dir: ./pandoc_site/overrides
   features:
@@ -117,5 +119,6 @@ extra_javascript:
   - javascripts/wiki_hover.js
   - javascripts/fix_footnotes.js
   - javascripts/load_bokeh.js
+  - javascripts/lightbox.js
 
 # using footnote technique from https://github.com/ObsidianPublisher/tooltips-internal-link
