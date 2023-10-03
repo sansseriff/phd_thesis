@@ -1,4 +1,21 @@
+//I know doing this all in javascipt only is terrible. I'm sorry.
+// The css is in stylesheets/extra.css
+
+// this is the modal dom created:
+
+// <div class="modal">
+//  <div class="backdrop">
+//    <div class="image-container">
+//        <div class="direct-background">
+//            <img class="modal-image">
+//            <figcaption-modal></figcaption-modal>
+//        </div>
+//    </div>
+//  </div>
+//</div>
+
 const images = document.querySelectorAll('img[alt^="fig:"]');
+
 
 images.forEach(image => {
   image.addEventListener('click', event => {
@@ -25,15 +42,6 @@ images.forEach(image => {
     const figcaptionHtml = event.target.parentNode.nextElementSibling.innerHTML;
     // console.log(figcaptionHtml);
 
-    // const directBackground = document.createElement('div');
-    // directBackground.classList.add('direct-background');
-
-    // // imageContainer.appendChild(modalImage);
-    // directBackground.appendChild(modalImage)
-    // imageContainer.appendChild(directBackground);
-    // backdrop.appendChild(imageContainer);
-    // modal.appendChild(backdrop);
-    // modal.appendChild(bg);
     
     // document.body.appendChild(modal);
     const imageWithCaption = document.createElement('div');

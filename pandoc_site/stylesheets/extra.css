@@ -130,13 +130,6 @@ figure {
     background-color: var(--md-default-bg-color);
 }
 
-/* figure:hover {
-    transform: scale(1.5);
-} */
-
-/* figure:hover > figcaption {
-    font-size: 0.56rem;
-  } */
 
 figcaption {
     /* height: 100% !important;
@@ -155,16 +148,16 @@ figcaption {
     /* transition: transform .1s, font-size .03s .03s;  */
 }
 
-/* figcaption:hover {
-    font-size: 0.5rem;
-} */
 
 
 
 /* <div class="modal">
   <div class="backdrop">
     <div class="image-container">
-        <div class="direct-background"><img class="modal-image"></div>
+        <div class="direct-background">
+            <img class="modal-image">
+            <figcaption-modal></figcaption-modal>
+        </div>
     </div>
   </div>
 </div> */
