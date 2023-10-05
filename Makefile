@@ -13,7 +13,7 @@ ppm:
 	--natbib \
 	--bibliography=dist/references.bib \
 	--template=template.tex \
-	--lua-filter=short-captions.lua \
+	--lua-filter=parse-latex.lua \
 	--lua-filter abstract-section.lua \
 	--resource-path='.:chapter_03/figs:' && \
 	sed -i 's/\\cite[t,p]{/\\cite{/g' dist/manuscript.tex && \

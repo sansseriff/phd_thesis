@@ -5,13 +5,13 @@ end
 function fix_path(path)
   -- say path=./figs_01/Figure_Data_Sept_2022.svg
 
-  chapter = path:sub(8, 9)   -- this pulls out the '01' from figs_01
+  chapter = path:sub(8, 9) -- this pulls out the '01' from figs_01
   -- final_path = path
   -- return chapter
-  if path:sub(-4) == '.svg' then   -- if its a svg, switch to pdf of same name
-    final_path = 'chapter_' .. chapter .. path:sub(2, -5) .. '.pdf'
-  else                             -- otherwise don't change filetype
-    final_path = 'chapter_' .. chapter .. path:sub(2)
+  if path:sub(-4) == '.svg' then -- if its a svg, switch to pdf of same name
+    final_path = '.' .. path:sub(2, -5) .. '.pdf'
+  else                           -- otherwise don't change filetype
+    final_path = path:sub(2)
   end
   return final_path
 end
@@ -62,47 +62,46 @@ end
 function CodeBlock(el)
   local code_language = el.classes[1]
   lang_string = latex(string.format(
-  "\n\\begin{minted}\n[\nframe=lines,\nframesep=2mm,\nbaselinestretch=1,\nbgcolor=extralightgray,\nfontsize=\\footnotesize,\nlinenos]\n{%s}\n",
+    "\n\\begin{minted}\n[\nframe=lines,\nframesep=2mm,\nbaselinestretch=1,\nbgcolor=extralightgray,\nfontsize=\\footnotesize,\nlinenos]\n{%s}\n",
     code_language))
   return pandoc.Para { lang_string, latex(el.text), latex("\n\\end{minted}")
   }
 end
 
-function Div(el)
-  if el.classes:includes("latex") then
-    -- return pandoc.Para(el.content)
-    print(el.content[1].text)
-    print(el.content[1])
-    return el.content[1]
-  end
+-- Span = function(el)
+--   color = el.attributes['color']
+--   -- if no color attribute, return unchanged
+--   if color == nil then return el end
 
-  if el.attributes.style then
-    local style = el.attributes.style
-    local color = style:match("color:%s*([^;]+)")
-    if color then
+--   -- transform to <span style="color: red;"></span>
+--   if FORMAT:match 'html' then
+--     -- remove color attributes
+--     el.attributes['color'] = nil
+--     -- use style attribute instead
+--     el.attributes['style'] = 'color: ' .. color .. ';'
+--     -- return full span element
+--     return el
+--   elseif FORMAT:match 'latex' then
+--     -- remove color attributes
+--     el.attributes['color'] = nil
+--     -- encapsulate in latex code
+--     table.insert(
+--       el.content, 1,
+--       pandoc.RawInline('latex', '\\textcolor{'..color..'}{')
+--     )
+--     table.insert(
+--       el.content,
+--       pandoc.RawInline('latex', '}')
+--     )
+--     return el.content
+--   else
+--     -- for other format return unchanged
+--     return el
+--   end
+-- end
 
-      if color == "red" then
-        color= "darkred"
-      end
-      if color == "blue" then
-        color= "midnightblue"
-      end
-      
-      table.insert(
-        el.content, 1,
-        pandoc.RawInline('latex', '\\textcolor{' .. color .. '}{')
-      )
-      table.insert(
-        el.content,
-        pandoc.RawInline('latex', '}')
-      )
-      return el.content
-    end
-  end
 
-end
-
--- converts things like <span color=red>This text is red </span>
+-- converts things like <span style="color: red">This text is red </span>
 Span = function(el)
   -- color = el.attributes['color']
   target = el.attributes['target']
@@ -112,11 +111,24 @@ Span = function(el)
     local color = style:match("color:%s*([^;]+)")
     if color then
 
-      if color == "red" then
-        color= "darkred"
-      end
-      if color == "blue" then
-        color= "midnightblue"
+      -- if color == "red" then
+      --   color= "darkred"
+      -- end
+      -- if color == "blue" then
+      --   color= "midnightblue"
+      -- end
+
+      -- use orange for todos
+      if color == "orange" then 
+        table.insert(
+          el.content, 1,
+          pandoc.RawInline('latex', '\\textbf{\\hl{')
+        )
+        table.insert(
+          el.content,
+          pandoc.RawInline('latex', '}}')
+        )
+        return el.content
       end
 
       table.insert(
@@ -129,6 +141,19 @@ Span = function(el)
       )
       return el.content
     end
+  end
+
+  -- explicit todos from class name
+  if el.classes[1] == "todo" then
+    table.insert(
+      el.content, 1,
+      pandoc.RawInline('latex', '\\textbf{\\hl{')
+    )
+    table.insert(
+      el.content,
+      pandoc.RawInline('latex', '}}')
+    )
+    return el.content
   end
 
 
@@ -141,38 +166,10 @@ Span = function(el)
   end
 
   if color == nil then return el end
-
-  -- -- transform to <span style="color: red;"></span>
-  -- if FORMAT:match 'html' then
-  --   -- remove color attributes
-  --   el.attributes['color'] = nil
-  --   -- use style attribute instead
-  --   el.attributes['style'] = 'class: ' .. color .. ';'
-  --   -- return full span element
-  --   return el
-
-  -- elseif FORMAT:match 'latex' then
-  --   -- remove color attributes
-  --   el.attributes['color'] = nil
-  --   -- encapsulate in latex code
-  --   table.insert(
-  --     el.content, 1,
-  --     pandoc.RawInline('latex', '\\textcolor{'..color..'}{')
-  --   )
-  --   table.insert(
-  --     el.content,
-  --     pandoc.RawInline('latex', '}')
-  --   )
-  --   return el.content
-  -- else
-  --   -- for other format return unchanged
-  --   return el
-  -- end
 end
 
--- added 10.4.02023
 -- for using $$ and $ for math instead of \(...\)
-function Math (m)
+function Math(m)
   local delimiter = m.mathtype == 'InlineMath' and '$' or '$$'
   return pandoc.RawInline('tex', delimiter .. m.text .. delimiter)
 end

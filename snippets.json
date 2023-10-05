@@ -2,9 +2,10 @@
     "html": {
       "snippets": {
         "img:l": "img[width height loading='lazy']",
-        "span:red": "span[color='red' markdown.]",
-        "span:green": "span[color='red' markdown.]",
-        "span:blue": "span[color='red' markdown.]"
+        "span:red": "span[style='color: red']",
+        "span:green": "span[style='color: green']",
+        "span:blue": "span[style='color: blue']",
+        "span:todo": "span[style='color: orange']"
       }
     },
     "css": {

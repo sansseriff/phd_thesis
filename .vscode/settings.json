@@ -5,5 +5,8 @@
         "editor.fontSize": 18
     },
     "emmet.excludeLanguages": [],
-    "emmet.includeLanguages": {"markdown": "html"},
+    "emmet.includeLanguages": {
+        "markdown": "html"
+    },
+    "CodeGPT.organizationId": "org-IS7gPJHuSc4mlawRrBsRQ1qz",
 }
