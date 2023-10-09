@@ -20,6 +20,7 @@ theme:
         name: Switch to light mode
   custom_dir: ./pandoc_site/overrides
   features:
+    # - navigation.instant
     - navigation.indexes
     - navigation.expand
         

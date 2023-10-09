@@ -34,7 +34,14 @@ window.MathJax = {
 
 };
 
+// document$.subscribe(() => {
+//     MathJax.typesetClear()
+//     MathJax.typesetPromise()
+//   })
+
 document$.subscribe(() => {
-    MathJax.typesetClear()
-    MathJax.typesetPromise()
-})
+    setTimeout(() => {
+    //   MathJax.typesetClear()
+      MathJax.typesetPromise()
+    }, 100)
+  })
