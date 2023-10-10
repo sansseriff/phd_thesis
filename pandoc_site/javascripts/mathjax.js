@@ -34,14 +34,14 @@ window.MathJax = {
 
 };
 
-// document$.subscribe(() => {
-//     MathJax.typesetClear()
-//     MathJax.typesetPromise()
-//   })
-
 document$.subscribe(() => {
-    setTimeout(() => {
-    //   MathJax.typesetClear()
-      MathJax.typesetPromise()
-    }, 100)
+    MathJax.typesetClear()
+    MathJax.typesetPromise()
   })
+
+// document$.subscribe(() => {
+//     setTimeout(() => {
+//     //   MathJax.typesetClear()
+//       MathJax.typesetPromise()
+//     }, 100)
+//   })

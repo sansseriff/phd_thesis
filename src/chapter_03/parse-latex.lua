@@ -110,7 +110,6 @@ Span = function(el)
     local style = el.attributes.style
     local color = style:match("color:%s*([^;]+)")
     if color then
-
       -- if color == "red" then
       --   color= "darkred"
       -- end
@@ -119,7 +118,7 @@ Span = function(el)
       -- end
 
       -- use orange for todos
-      if color == "orange" then 
+      if color == "orange" then
         table.insert(
           el.content, 1,
           pandoc.RawInline('latex', '\\textbf{\\hl{')
@@ -173,3 +172,45 @@ function Math(m)
   local delimiter = m.mathtype == 'InlineMath' and '$' or '$$'
   return pandoc.RawInline('tex', delimiter .. m.text .. delimiter)
 end
+
+
+
+
+
+-- if you want to pass comments
+
+-- Default: Don't export comments
+-- local comments = nil
+
+-- function Meta(meta)
+--   -- If there is a "comments" field in the YAML frontmatter, extract this
+--   if meta.comments then
+--     comments = pandoc.utils.stringify(meta.comments)
+--   end
+--   return meta
+-- end
+
+-- function RawBlock(raw)
+--   -- Only export if the input format is HTML (== HTML comment)
+--   -- and if we have a comments value
+--   -- if not comments then return end
+--   -- if raw.format ~= 'html' then return end
+
+--   -- Let's see if we actually have a comment
+--   local comment = raw.text:match '%<%!%-%-%s*(.*)%s*%-%-%>'
+--   if not comment then return end
+
+
+--   local new_comment = "%" .. comment
+--   new_comment = string.gsub(new_comment, "\n", "\n%%")
+
+--   return new_comment
+
+-- end
+
+-- -- This line is required so that the meta values are read in first and THEN the
+-- -- RawBlocks are traversed
+-- return {
+--   { Meta = Meta },
+--   { RawBlock = RawBlock }
+-- }

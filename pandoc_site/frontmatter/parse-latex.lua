@@ -169,3 +169,10 @@ Span = function(el)
   --   return el
   -- end
 end
+
+-- added 10.4.02023
+-- for using $$ and $ for math instead of \(...\)
+function Math (m)
+  local delimiter = m.mathtype == 'InlineMath' and '$' or '$$'
+  return pandoc.RawInline('tex', delimiter .. m.text .. delimiter)
+end

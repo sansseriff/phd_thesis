@@ -24,65 +24,89 @@ rm -r ./pandoc_site/chapter_01/* \
 # padoc-crossref cannot recognize the figures.
 
 find ./src/chapter_01/ -iname "*.md" -type f -exec sh -c 'pandoc \
---from markdown \
---to markdown \
--t markdown-smart \
---wrap=none \
---filter ./src/pandoc-crossref \
--M "crossrefYaml=./src/ref_formatting_site.yaml" \
---lua-filter=parse-html.lua \
-"${0}" -o "./pandoc_site/chapter_01/$(basename ${0%.md}.md)"' {} \;
+    --from markdown \
+    --to markdown \
+    -t markdown-smart \
+    --wrap=none \
+    --filter ./src/pandoc-crossref \
+    -M "crossrefYaml=./src/ref_formatting_site.yaml" \
+    --lua-filter=parse-html.lua \
+    "${0}" -o "./pandoc_site/chapter_01/$(basename ${0%.md}.md)" &&
+    sed -i "s.'\\\\\\\\~'.\\&\\#160;.g" "./pandoc_site/chapter_01/$(basename ${0%.md}.md)"
+' {} \;
 
 find ./src/chapter_02/ -iname "*.md" -type f -exec sh -c 'pandoc \
---from markdown \
---to markdown \
--t markdown-smart \
---wrap=none \
---filter ./src/pandoc-crossref \
--M "crossrefYaml=./src/ref_formatting_site.yaml" \
---lua-filter=parse-html.lua \
-"${0}" -o "./pandoc_site/chapter_02/$(basename ${0%.md}.md)"' {} \;
+    --from markdown \
+    --to markdown \
+    -t markdown-smart \
+    --wrap=none \
+    --filter ./src/pandoc-crossref \
+    -M "crossrefYaml=./src/ref_formatting_site.yaml" \
+    --lua-filter=parse-html.lua \
+    "${0}" -o "./pandoc_site/chapter_02/$(basename ${0%.md}.md)" &&
+    sed -i "s.'\\\\\\\\~'.\\&\\#160;.g" "./pandoc_site/chapter_02/$(basename ${0%.md}.md)"
+' {} \;
+# find ./src/chapter_03/ -iname "*.md" -type f -exec sh -c 'pandoc \
+# --from markdown \
+# --to markdown \
+# -t markdown-smart \
+# --wrap=none \
+# --filter ./src/pandoc-crossref \
+# -M "crossrefYaml=./src/ref_formatting_site.yaml" \
+# --lua-filter=parse-html.lua \
+# "${0}" -o "./pandoc_site/chapter_03/$(basename ${0%.md}.md)"' {}  &&
+# -exec sed -i 's/\\~/~/g' ./pandoc_site/chapter_03/*.md \;
 
-find ./src/chapter_03/ -iname "*.md" -type f -exec sh -c 'pandoc \
---from markdown \
---to markdown \
--t markdown-smart \
---wrap=none \
---filter ./src/pandoc-crossref \
--M "crossrefYaml=./src/ref_formatting_site.yaml" \
---lua-filter=parse-html.lua \
-"${0}" -o "./pandoc_site/chapter_03/$(basename ${0%.md}.md)"' {} \;
+find ./src/chapter_03/ -iname "*.md" -type f -exec sh -c '
+    pandoc \
+    --from markdown \
+    --to markdown \
+    -t markdown-smart \
+    --wrap=none \
+    --filter ./src/pandoc-crossref \
+    -M "crossrefYaml=./src/ref_formatting_site.yaml" \
+    --lua-filter=parse-html.lua \
+    "${0}" -o "./pandoc_site/chapter_03/$(basename ${0%.md}.md)" &&
+    sed -i "s.'\\\\\\\\~'.\\&\\#160;.g" "./pandoc_site/chapter_03/$(basename ${0%.md}.md)"
+' {} \;
+# lol I can't even at all those escape characters. You litterally need every one. It's so bad who would design this
+# I'm just converting "\~" to "&#160"
 
 find ./src/chapter_04/ -iname "*.md" -type f -exec sh -c 'pandoc \
---from markdown \
---to markdown \
--t markdown-smart \
---wrap=none \
---filter ./src/pandoc-crossref \
--M "crossrefYaml=./src/ref_formatting_site.yaml" \
---lua-filter=parse-html.lua \
-"${0}" -o "./pandoc_site/chapter_04/$(basename ${0%.md}.md)"' {} \;
+    --from markdown \
+    --to markdown \
+    -t markdown-smart \
+    --wrap=none \
+    --filter ./src/pandoc-crossref \
+    -M "crossrefYaml=./src/ref_formatting_site.yaml" \
+    --lua-filter=parse-html.lua \
+    "${0}" -o "./pandoc_site/chapter_04/$(basename ${0%.md}.md)" &&
+    sed -i "s.'\\\\\\\\~'.\\&\\#160;.g" "./pandoc_site/chapter_04/$(basename ${0%.md}.md)"
+' {} \;
 
 find ./src/chapter_05/ -iname "*.md" -type f -exec sh -c 'pandoc \
---from markdown \
---to markdown \
--t markdown-smart \
---wrap=none \
---filter ./src/pandoc-crossref \
--M "crossrefYaml=./src/ref_formatting_site.yaml" \
---lua-filter=parse-html.lua \
-"${0}" -o "./pandoc_site/chapter_05/$(basename ${0%.md}.md)"' {} \;
+    --from markdown \
+    --to markdown \
+    -t markdown-smart \
+    --wrap=none \
+    --filter ./src/pandoc-crossref \
+    -M "crossrefYaml=./src/ref_formatting_site.yaml" \
+    --lua-filter=parse-html.lua \
+    "${0}" -o "./pandoc_site/chapter_05/$(basename ${0%.md}.md)" &&
+    sed -i "s.'\\\\\\\\~'.\\&\\#160;.g" "./pandoc_site/chapter_05/$(basename ${0%.md}.md)"
+' {} \;
 
 find ./src/chapter_06/ -iname "*.md" -type f -exec sh -c 'pandoc \
---from markdown \
---to markdown \
--t markdown-smart \
---wrap=none \
---filter ./src/pandoc-crossref \
--M "crossrefYaml=./src/ref_formatting_site.yaml" \
---lua-filter=parse-html.lua \
-"${0}" -o "./pandoc_site/chapter_06/$(basename ${0%.md}.md)"' {} \;
-
+    --from markdown \
+    --to markdown \
+    -t markdown-smart \
+    --wrap=none \
+    --filter ./src/pandoc-crossref \
+    -M "crossrefYaml=./src/ref_formatting_site.yaml" \
+    --lua-filter=parse-html.lua \
+    "${0}" -o "./pandoc_site/chapter_06/$(basename ${0%.md}.md)" &&
+    sed -i "s.'\\\\\\\\~'.\\&\\#160;.g" "./pandoc_site/chapter_06/$(basename ${0%.md}.md)"
+' {} \;
 
 mv ./pandoc_site/chapter_01/section_02_abstract.md ./pandoc_site/chapter_01/index.md \
 && mv ./pandoc_site/chapter_02/section_02_abstract.md ./pandoc_site/chapter_02/index.md \

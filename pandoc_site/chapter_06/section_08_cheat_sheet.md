@@ -26,7 +26,7 @@ Until I figure something more shorthand, you can set colors with “\<span\>” 
     <figcaption markdown> Figure 2: **Caption title here** a) Long caption here</figcaption>
     </figure>
 
-to have a “\~” space in latex and a no break space in html… “&#160”, just use “ ”. That’s a forward slash and a space.
+to have a “&#160;” space in latex and a no break space in html… “&#160”, just use “ ”. That’s a forward slash and a space.
 
 The formatting of multi-line divs is very important. This will render correctly:
 

@@ -19,7 +19,8 @@ ppm:
 	sed -i 's/\\cite[t,p]{/\\cite{/g' dist/manuscript.tex && \
 	sed -i 's/{natbib}/{cite}/' dist/manuscript.tex && \
 	sed -i 's/,height=\\textheight//g' dist/manuscript.tex && \
-	sed -i 's/subsection{/section{/g' dist/manuscript.tex
+	sed -i 's/subsection{/section{/g' dist/manuscript.tex && \
+	sed -i 's/\\%/%/g' dist/manuscript.tex
 
 # -r markdown-auto_identifiers # messes up abstract-section.lua
 
@@ -45,7 +46,7 @@ ppm-pull:
 
 ppm-produce-md:
 	cd src/chapter_03 && \
-	pandoc dist/manuscript.tex -o _manuscript.md --wrap=preserve --lua-filter=to_html_spans.lua
+	pandoc dist/manuscript.tex -o _manuscript.md --wrap=preserve --lua-filter=to_md.lua
 
 	
 ref-update:
