@@ -57,6 +57,7 @@ h1 {
     --pg-green: #72cd75;
     --pg-blue-gray: #9ab2bc;
     --md-footer-bg-color--dark: var(--md-default-bg-color);
+    --orange-bg: #6e4e22;
 }
 
 :root,
@@ -76,6 +77,7 @@ h1 {
     --pg-blue: #2c3d7d;
     --pg-green: #2e7e31;
     --pg-blue-gray: #546d78;
+    --orange-bg: #ffc26c;
 }
 
 .blue {
@@ -84,6 +86,11 @@ h1 {
 
 .red {
     color: var(--pg-red);
+}
+
+.orange {
+    color: var(--pg-orange);
+    background-color: var(--orange-bg)
 }
 
 .md-nav__toggle:checked~.md-nav {
@@ -269,3 +276,14 @@ figcaption {
     width: 18rem !important;
 } */
 
+
+.md-typeset .footnote-ref {
+    font-size: 1em !important;
+    font-weight: 400 !important;
+}
+
+sup {
+    font-size: inherit;
+    vertical-align: inherit;
+    margin-right: 0.1em;
+  }
