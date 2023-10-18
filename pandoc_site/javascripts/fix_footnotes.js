@@ -13,9 +13,9 @@ function formatText(text) {
 
 var thing = null
 
+// document.addEventListener("DOMContentLoaded", function () {
+document$.subscribe(function() {
 
-
-document.addEventListener("DOMContentLoaded", function () {
 
     // this fixes situations where a citation follows some latex. With nowrap,
     // the citation doesn't fall to the next line.

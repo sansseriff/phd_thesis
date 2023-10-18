@@ -231,7 +231,11 @@ As we will see later on, a set of filters will be needed between the detector an
     </div>
     <div class=blue markdown>
 
-    $$ 0.441 = \Delta t \Delta \nu $$ $$\Delta \nu = 71~\text{GHz}$$ $$\Delta \lambda = \frac{\lambda^2 \Delta \nu}{c} = 0.57~\text{nm}$$
+    $$\begin{aligned}
+     0.441 = \Delta t \Delta \nu \\
+     \Delta \nu = 71~\text{GHz} \\
+     \Delta \lambda = \frac{\lambda^2 \Delta \nu}{c} = 0.57~\text{nm} \\
+     \end{aligned}$$
 
     </div>
     <span class=blue markdown> $0.57~\text{nm}$ is the spectral width of the laser pulse at the FWHM level. If this pulse passes through a tophat filter with width equal to the 95% level of the laser pulse, then 95% will be transmitted. </span>

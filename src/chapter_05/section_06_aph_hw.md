@@ -239,9 +239,11 @@ If the detector has a circular active area with radius $5~\mathrm{\upmu m}$, wha
 
     <div style="color:blue" markdown> 
 
-    $$ 0.441 = \Delta t \Delta \nu $$
-    $$\Delta \nu = 71~\text{GHz}$$
-    $$\Delta \lambda = \frac{\lambda^2 \Delta \nu}{c} = 0.57~\text{nm}$$
+    $$\begin{aligned}
+    0.441 = \Delta t \Delta \nu \\
+    \Delta \nu = 71~\text{GHz} \\
+    \Delta \lambda = \frac{\lambda^2 \Delta \nu}{c} = 0.57~\text{nm} \\
+    \end{aligned}$$
 
     </div>
 

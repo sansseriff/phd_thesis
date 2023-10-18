@@ -91,6 +91,19 @@ if (activateSpan) {
     loadScript(cdnUrls[0], 0);
 }
 
+
+document$.subscribe(function () {
+    const elements = document.querySelectorAll('.bokeh')
+
+    const ids = [];
+    elements.forEach(element => {
+        const id = element.getAttribute('id');
+        ids.push(id);
+    });
+    init_bokeh(ids, elements)
+});
+
+
 var obj;
 
 const darkColors = [
