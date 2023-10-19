@@ -90,7 +90,13 @@ h1 {
 
 .orange {
     color: var(--pg-orange);
-    background-color: var(--orange-bg)
+    background-color: var(--orange-bg);
+    border-radius: 3px;
+    padding: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone; /* most browsers need -webkit */
 }
 
 .md-nav__toggle:checked~.md-nav {

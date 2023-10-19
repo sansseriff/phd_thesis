@@ -21,7 +21,8 @@ ppm:
 	sed -i 's/,height=\\textheight//g' dist/manuscript.tex && \
 	sed -i 's/subsection{/section{/g' dist/manuscript.tex && \
 	sed -i 's/\\%/%/g' dist/manuscript.tex && \
-	sed -i "s.\\\textasciitilde{}.~.g" dist/manuscript.tex
+	sed -i "s.\\\textasciitilde{}.~.g" dist/manuscript.tex && \
+	sed -i "s.\\\textasciitilde .~.g" dist/manuscript.tex
 
 # -r markdown-auto_identifiers # messes up abstract-section.lua
 

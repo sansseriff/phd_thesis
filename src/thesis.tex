@@ -158,7 +158,7 @@ windows. Assuming visible light can be blocked from entering the
 detector system, the blackbody emission of the room temperature
 laboratory environment presents is the primary source of dark counts.
 The spectrum of blackbody photons, defined by Planck's law, is peaked at
-about \(10~\mathrm{\upmu m}\), though it can contribute dark counts at
+about $10~\mathrm{\upmu m}$, though it can contribute dark counts at
 significant rates up through near-infrared wavelengths.
 
 Without filtering in fiber or free space, dark counts from blackbody
@@ -173,14 +173,14 @@ technology in fields such as quantum information processing, classical
 communication, quantum communication, and laser ranging. Increasingly,
 research in these fields employs superconducting nanowire single photon
 detectors (SNSPDs), which have been demonstrated with system detection
-efficiency (\(\eta\)) of more than 90\% \autocite{Reddy2020}, timing
-jitter (\(\Delta t\)) as low as 2.6 ps \autocite{Korzh2020} and
-intrinsic dark count rates (\(D\)) in the milli- to micro-hertz range
+efficiency ($\eta$) of more than 90\% \autocite{Reddy2020}, timing
+jitter ($\Delta t$) as low as 2.6 ps \autocite{Korzh2020} and intrinsic
+dark count rates ($D$) in the milli- to micro-hertz range
 \autocite{Hochberg2019}. However, quantum communication applications
 require detection systems with performance optimized across all three
-metrics simultaneously. The dimensionless figure of merit \(H\)
-specifies this application-specific performance as
-\(H = \frac{\eta}{(\Delta t D)}\) \autocite{Hadfield2009}.
+metrics simultaneously. The dimensionless figure of merit $H$ specifies
+this application-specific performance as
+$H = \frac{\eta}{(\Delta t D)}$\textasciitilde{}\autocite{Hadfield2009}.
 
 Here, we focus on lowering the Dark Count Rate (DCR) of a telecom-band
 SNSPD system by filtering thermal photons, without sacrificing
@@ -218,7 +218,7 @@ paint (Aeroglaze Z306) \autocite{Persky1999}, while gaps between filters
 and the windows were covered with metal tape.
 
 The system is based on 1-inch optics, although the f = 18.75 mm lenses
-lead to a \(1/e^2\) intensity diameter of about 5 mm in the collimated
+lead to a $1/e^2$ intensity diameter of about 5 mm in the collimated
 region. To reduce the larger-than-required numerical aperture of the
 system, painted 8 mm apertures (Acktar Spectral Black) were added in the
 collimated region. These are large enough to allow minor alignment
@@ -233,16 +233,16 @@ vignetting.
 Rate Project Results} a) Simulated photon flux at various temperatures
 with and without the 1550 nm bandpass filter (BP). b) Normalized photon
 count rate (PCR) and jitter measurements c) DCR, and calculated figure
-of merit \(H\) versus bias current for both fiber-coupled and free space
+of merit $H$ versus bias current for both fiber-coupled and free space
 coupled configurations.}
 \label{fig:dcrmin_data}
 \end{figure}
 }
 
 We use four custom cryogenic short-pass filters, with pass-bands below
-\(1.6 \ \mathrm{\upmu m}\) and \(1.9 \ \mathrm{\upmu m}\) (Andover
-Corp.), both with transmission at 1550 nm of 98.8 ± 0.3\%. They reject
-wavelengths shorter than \(3 \ \mathrm{\upmu m}\) through reflective
+$1.6 \ \mathrm{\upmu m}$ and $1.9 \ \mathrm{\upmu m}$ (Andover Corp.),
+both with transmission at 1550 nm of 98.8 ± 0.3\%. They reject
+wavelengths shorter than $3 \ \mathrm{\upmu m}$ through reflective
 optical coatings, and attenuate longer wavelengths through material
 absorption in the 12.7 mm-thick N-BK7 glass substrate. While the
 bandpass filter (FWHM = 7 nm) was found to blue-shift by about 2 nm at
@@ -257,17 +257,17 @@ length of the cryogenic lens and the 8 mm diameter of the apertures. The
 resulting spectrum was multiplied by the transmission of the filters
 (Fig. \ref{fig:setup}b) and detector optical stack (Fig.
 \ref{fig:setup}c). The model showed that two each of the
-\(1.6 \ \mathrm{\upmu m}\) and \(1.9 \ \mathrm{\upmu m}\) short pass
-filters were necessary to suppress mid-infrared light to where it was no
-longer the dominant source of dark counts. With the inclusion of the
-four shortpass filters, the dominant source of dark counts is the
-spectral region near 1550 nm as shown in Fig. \ref{fig:false-color}a,
-which also illustrates the effect of the bandpass filter. Also evident
-in Fig. \ref{fig:false-color}a is the strong dependence of DCR on the
+$1.6 \ \mathrm{\upmu m}$ and $1.9 \ \mathrm{\upmu m}$ short pass filters
+were necessary to suppress mid-infrared light to where it was no longer
+the dominant source of dark counts. With the inclusion of the four
+shortpass filters, the dominant source of dark counts is the spectral
+region near 1550 nm as shown in Fig. \ref{fig:false-color}a, which also
+illustrates the effect of the bandpass filter. Also evident in Fig.
+\ref{fig:false-color}a is the strong dependence of DCR on the
 temperature of the final surface outside the cryostat emitting thermal
 radiation. This motivated the exterior cooling apparatus shown at the
 bottom of Fig. \ref{fig:setup}a. The bulkhead holding the fiber
-connector is cooled to around -2\(^\circ\)C using a Peltier element and
+connector is cooled to around -2$^\circ$C using a Peltier element and
 liquid cooling block. This addition reduced the system DCR from 0.4 Hz
 to below 0.1 Hz. While dark counts from multiple spatial modes are
 present in this system --- modes that would not be present in a purely
@@ -275,29 +275,28 @@ fiber based approach --- the external cooling technique works to
 minimize their effect.
 
 This work used a low-jitter, differential SNSPD \cite{Colangelo2021},
-with an active area of \(22 \times 15 \ \mathrm{\upmu m}\), formed by a
+with an active area of $22 \times 15 \ \mathrm{\upmu m}$, formed by a
 meander of 100 nm-wide and 5-nm-thick niobium nitride (NbN) nanowires on
 a 500 nm pitch. A more conventional single-ended readout SNSPD of
 similar area would also achieve low DCR in this coupling system, but
-would likely achieve a lower performance metric \(H\) from
-correspondingly higher jitter. The nanowire is embedded in an
-efficiency-enhancing optical stack made of alternating layers of
-TiO\(_2\) and SiO\(_2\) and a gold mirror layer. As shown in Fig.
-\ref{fig:false-color}b and c, when fiber coupled (without any
-fiber-based filtering methods applied), this detector achieved a
-saturated SDE of \(84\% \pm 4.4 \%\) and a DCR of 20 Hz at a bias
-current of \(16\ \mathrm{\upmu A}\).
+would likely achieve a lower performance metric $H$ from correspondingly
+higher jitter. The nanowire is embedded in an efficiency-enhancing
+optical stack made of alternating layers of TiO$_2$ and SiO$_2$ and a
+gold mirror layer. As shown in Fig. \ref{fig:false-color}b and c, when
+fiber coupled (without any fiber-based filtering methods applied), this
+detector achieved a saturated SDE of $84\% \pm 4.4 \%$ and a DCR of 20
+Hz at a bias current of $16\ \mathrm{\upmu A}$.
 
 ~~~~~ As also shown in Fig. \ref{fig:false-color}b, the free-space
-coupling system achieves up to \(72 \% \pm 3.7 \%\) SDE as measured from
+coupling system achieves up to $72 \% \pm 3.7 \%$ SDE as measured from
 the fiber outside the cryostat. The reduction in efficiency is likely
 due to surface reflections in the free-space optics, and potential
 misalignment in the optical baffles. The minimum DCR (Fig.
-\ref{fig:false-color}c) at \(72 \%\) SDE is about 0.1 Hz, with a bias
-current of 16 \(\mathrm{\upmu A}\). These metrics, with the jitter
+\ref{fig:false-color}c) at $72 \%$ SDE is about 0.1 Hz, with a bias
+current of 16 $\mathrm{\upmu A}$. These metrics, with the jitter
 measurements shown in Fig. \ref{fig:false-color}b, give a maximum H
-value of \(5 \times 10^{11}\) (Fig. \ref{fig:false-color}c). Values as
-high as \(1.8 \times 10^{12}\) have been reported before, but at 1.5\%
+value of $5 \times 10^{11}$ (Fig. \ref{fig:false-color}c). Values as
+high as $1.8 \times 10^{12}$ have been reported before, but at 1.5\%
 system detection efficiency \cite{Shibata2015}. Our system shows a low
 DCR can be achieved without severe reduction of SDE or usable target
 wavelength bandwidth. This is paramount for the future of terrestrial
@@ -365,239 +364,17 @@ Methods}\label{the-peacoq-detector-and-higher-order-correction-methods}}
 
 Peacoq data and stuff here
 
+{}
+
 \hypertarget{outlook}{%
 \section{Outlook}\label{outlook}}
 
 outlook discussion here
 
-Photon number resolution is an emerging capability of advanced
-Superconducting Nanowire Single Photon Detectors. If leveraged to it's
-full potential, PNR capability can have a profound impact on the
-usefulness of SNSPDs is certain quantum applications including linear
-optical quantum computing, quantum networks, and quantum sensing.
-Discrimination of not just the number of photons in an optical pulse but
-also pulse arrival time with high accuracy is an open problem,
-complicated by the nuanced way in which these two degrees of freedom are
-intertwined in the response function of these detectors. In this work we
-put a differential readout SNSPD to the ultimate test. We test it's
-capabilities in a Pulse Position Modulation experiment whereby data is
-sent in the arrival time of optical pulses derived from a 20~GHz optical
-clock. We show the detector is capable of discriminating the arrival
-time of photons to 50~ps wide bins with high accuracy while
-simultaneously providing photon number information about the impinging
-optical pulses. We find that a careful statistical analysis of the PNR
-response is necessary to back-out a precise measurement of pulse arrival
-time.
-
-\hypertarget{introduction-2}{%
-\chapter{Introduction}\label{introduction-2}}
-
-\textcolor{darkred}{ The following is very rough, taken from years ago
-when I first started writing the manuscript }
-
-This study aimed to evaluate the feasibility of transmitting high
-clock-rate pulse position modulated (PPM) data using a mode-locked laser
-and receiving it with a low jitter superconducting nanowire
-single-photon detector (SNSPD). The investigation was driven by recent
-advancements in NbN SNSPDs, which have achieved a jitter as low as 50 ps
-at the FW(1/100)M level, enabling the demonstration of PPM with 50 ps
-slot widths and a 20 GHz clock. The aim was to increase the data rate by
-a factor of 10, from 2 GHz to 20 GHz, in the next generation of the Deep
-Space Optical Communication (DSOC) project.
-
-During the course of this study, the focus shifted towards investigating
-the impact of photon number resolution (PNR) on the low jitter detection
-of optical pulses. PNR can have an unintended impact on the
-demonstration of high-rate PPM, and therefore a thorough study of its
-effects was deemed crucial. A novel PNR cancellation technique was
-developed and applied to successfully demonstrate high-rate PPM. This
-technique is considered essential for future low-jitter applications of
-SNSPDs that exhibit photon-number effects.
-
-This study aimed to evaluate the feasibility of transmitting high
-clock-rate pulse position modulated (PPM) data using a mode-locked laser
-and receiving it with a low jitter superconducting nanowire
-single-photon detector (SNSPD). The investigation was driven by recent
-advancements in NbN SNSPDs, which have achieved a jitter as low as 50 ps
-at the FW(1/100)M level, enabling the demonstration of PPM with 50 ps
-slot widths and a 20 GHz clock. The aim was to increase the data rate by
-a factor of 10, from 2 GHz to 20 GHz, in the next generation of the Deep
-Space Optical Communication (DSOC) project.
-
-During the course of this study, the focus shifted towards investigating
-the impact of photon number resolution (PNR) on the low jitter detection
-of optical pulses. PNR can have an unintended impact on the
-demonstration of high-rate PPM, and therefore a thorough study of its
-effects was deemed crucial. A novel PNR cancellation technique was
-developed and applied to successfully demonstrate high-rate PPM. This
-technique is considered essential for future low-jitter applications of
-SNSPDs that exhibit photon-number effects.
-
-\hypertarget{pulse-position-modulation-for-deep-space-communication}{%
-\section{Pulse Position Modulation for Deep Space
-Communication}\label{pulse-position-modulation-for-deep-space-communication}}
-
-Deep Space Optical Communication has been a growing field of study in
-recent years, as researchers look for ways to communicate with
-spacecraft that are far away from Earth. In this article, we will focus
-on the use of Pulse Position Modulation (PPM) for deep space optical
-communication.
-
-While other modulation techniques such as quadrature amplitude
-modulation (QAM) have been used in the past, it has been shown that in
-the photon-starved regime, PPM is the best approach for sending data.
-This is because there is not enough light to measure the phase of the
-signal.
-
-PPM relies on sending one optical pulse carrying M bits of information
-in one of \(2^M\) possible time slots. For M = 2, this corresponds to
-sending an early pulse to represent a 0 bit and a late pulse to
-represent a 1 bit.
-
-The main challenge in deep space optical communication is the high loss
-and distance that the link must traverse. This limits the communication
-from the spacecraft, as it is limited by the power available on the
-spacecraft. This means that the communication protocol is limited by the
-number of bits that can be sent per unit of energy on the spacecraft,
-also known as photon information efficiency or bits per photon.
-
-For large M, PPM achieves high photon information efficiency, allowing
-for the saving of power on the spacecraft and the sending of more
-information with fewer photons. The existing deep space optical
-communication project uses M up to \(2^8 = 256\), meaning that 8 bits of
-data are carried in each optical pulse.
-
-In this project, we aimed to demonstrate even higher photon information
-efficiency by using M values up to 2048, or 11 bits of data per optical
-pulse.
-
-While the use of large M values increases photon information efficiency,
-it also decreases the data rate of the system. This is because the
-number of time bins needed per optical pulse scales exponentially with
-the amount of data in each pulse. Therefore, for a given fixed clock
-rate and time bin duration, the data rate decreases dramatically for
-higher M values.
-
-Using M values much larger than 11 is unlikely to be practical in future
-deep space optical communication systems. However, the data rate of
-these systems can be increased linearly by increasing the clock rate or
-bin size of the experiment. This is possible with the use of low jitter
-detection systems or low jitter superconducting nanowire single-photon
-detectors (SNSPDs).
-
-\hypertarget{detector-figure-of-merit}{%
-\chapter{Detector Figure of Merit}\label{detector-figure-of-merit}}
-
-The work here highlights the application of low jitter single-photon
-detectors for optical communication, which is impactful for deep-space
-optical communication as well as classical communication in quantum
-networks. Although single-photon counting is well estanblished for
-deep-space optical
-communication\textasciitilde{}\autocite{Laser,lunar,DSOC} so far it has
-not been ulitized in quantum networks, mainly due to the use of SFP
-modules and DWDMs. However, with the eachievement of high data rates
-recently achieved with photon-counting classical communication, these
-approaches can now be seriously considered for quantum networks. The
-main driver is would be the deduction of optical power in neighbouring
-DWDM channels, which ultimately lowers the Raman scattered photons into
-the quantum channel \autocite{EraerdsRaman}
-\textcolor{darkred}{Calculate reduction in power from state of the art
-SFP modules}
-
-To access the applicability of different detectors, here we compare some
-of the recent near infrared detectors.
-
-A useful figure of merit that includes all of the revelant detector
-metrics for photon timing was introduced by Bronzi and co-authors
-\autocite{Bronzi2016}
-
-\[FoM_T = \frac{\eta  (1 - P_{ap})\Phi_{-3 \text{dB}}}{J} \sqrt{\frac{A}{D}},\]
-
-where \(\eta\) is the single photon detection efficiency,
-\(\Phi_{-3 \text{dB}}\) is the photon flux at which the system detection
-efficiency drops by 3\textasciitilde dB, \(P_{ap}\) is the afterpulsing
-probability, \(J\) is the detector jitter evaluated as the FWHM, \(T_d\)
-is the deadtime, \(A\) is the active area and \(D\) is the dark count
-rate. Here we have defined the maximum photon flux as the
-3\textasciitilde dB point, for ease of standardization.
-
-In this work:
-
-\begin{itemize}
-\item
-  Efficiency = 0.84
-\item
-  Afterpulsing = 0 \%
-\item
-  Jitter = 15 ps
-\item
-  Deadtime = 30 ns \textcolor{darkred}{measure 3dB flux}
-\item
-  Area = 330 \(\mu m^2\)
-\item
-  Dark count rate = 20~Hz
-\end{itemize}
-
-\(FoM_T = 7.58 \times 10^{12}\) at 1550 nm.
-
-The deadtime is calculated as the 1/MCR, which is the 3 dB point of the
-nominal efficiency. This is only a factor of 3.7 less than the state of
-the art visible Silicon SPADs (peak efficiency at 480)
-\autocite{Gramuglia2022}
-
-In the future, the performance of the optical communication system could
-be improved by using, high count rate SNSPD arrays. Recently published
-high-count rate arrays have figures of merit of
-\textcolor{darkred}{FoM\_T for Peacoq and Resta2023 results}. This would
-result in a proportinal increase in the data rate.
-\textcolor{darkred}{FoM\_T for fastest InGaAs/InP gated detector} These
-devices are ideal for fiber-based optical communication. In free-space,
-the active area is especially important, whithout the use of an adaptive
-optics system. \textcolor{darkred}{FoM\_T for DSOC array}
-
-\hypertarget{development-of-a-modulation-source}{%
-\section{Development of a modulation
-source}\label{development-of-a-modulation-source}}
-
-The communication signal on a spacecraft is generated by utilizing a
-Continuous Wave (CW) seed laser that is carved by a fast intensity
-modulator. The resulting low-power pulsed signal is then amplified by an
-Erbium Doped Fiber Amplifier (EDFA) to increase its transmission power
-to Earth. The majority of the power used by the spacecraft for
-communication scales with the number of optical pulses due to the EDFA.
-
-In our experiment, the 20 GHz repetition rate was limited by the jitter
-of the Single-Photon Detectors (SNSPDs) that we intended to use. These
-detectors have a Full Width at Half Maximum (FW(1/100)M) jitter of
-approximately 50 ps. To ensure that the response function of the entire
-experiment had jitter of around 50 ps FW(1/100)M, we needed to build a
-Pulsed Phase Modulation (PPM) source with ultra-short optical pulses.
-
-Carving a CW laser with our system would have introduced excessive
-timing uncertainty due to the limited ability of even the fastest
-lithium niobate intensity modulators to carve pulses with widths below
-20 ps. The added jitter from modulated CW pulses, combined with the
-jitter of the detectors, would have exceeded the 20 GHz/50 ps slot width
-requirement.
-
-Therefore, we chose to carve pulses from a mode-locked laser. This
-approach allows for extremely short pulses in time, with the modulators
-responsible for sufficiently reducing any surrounding unwanted pulses.
-The temporal width of the modulator pulse response must be extremely
-short and able to modulate from `off' to `on' within a time frame of the
-order of the 50 ps bin width.
-
-\hypertarget{methods}{%
-\chapter{Methods}\label{methods}}
-
-\hypertarget{results}{%
-\chapter{Results}\label{results}}
-
-results here
-
-\hypertarget{pulse-position-modulation-and-pnr-resolution}{%
-\chapter{Pulse Position Modulation and PNR
-Resolution}\label{pulse-position-modulation-and-pnr-resolution}}
+\hypertarget{data-recovery-and-pulse-position-modulation-with-a-photon-number-resolving-snspd}{%
+\chapter{Data Recovery and Pulse Position Modulation with a Photon
+Number Resolving
+SNSPD}\label{data-recovery-and-pulse-position-modulation-with-a-photon-number-resolving-snspd}}
 
 A version of this chapter will appear as Optix Express arciel
 XXX\ldots{}
@@ -605,135 +382,123 @@ XXX\ldots{}
 \hypertarget{abstract-2}{%
 \section{Abstract}\label{abstract-2}}
 
-Photon number resolution is an emerging capability of advanced
-Superconducting Nanowire Single Photon Detectors. If leveraged to it's
-full potential, PNR capability can have a profound impact on the
-usefulness of SNSPDs is certain quantum applications including linear
-optical quantum computing, quantum networks, and quantum sensing.
-Discrimination of not just the number of photons in an optical pulse but
-also pulse arrival time with high accuracy is an open problem,
-complicated by the nuanced way in which these two degrees of freedom are
-intertwined in the response function of these detectors. In this work we
-put a differential readout SNSPD to the ultimate test. We test it's
-capabilities in a Pulse Position Modulation experiment whereby data is
-sent in the arrival time of optical pulses derived from a 20~GHz optical
-clock. We show the detector is capable of discriminating the arrival
-time of photons to 50~ps wide bins with high accuracy while
-simultaneously providing photon number information about the impinging
-optical pulses. We find that a careful statistical analysis of the PNR
-response is necessary to back-out a precise measurement of pulse arrival
-time.
+Superconducting Nanowire Single Photon Detectors are a type of
+time-correlated photon detector with low jitter performance especially
+in the mid-infrared. They are useful for classical communication over
+high loss channels --such as across deep space-- and for quantum
+communication for which signals are restricted to the few-photon level.
+For classical communication, high photon information efficiency
+communication may be achieved with Pulse Position Modulation (PPM)
+whereby data is encoded in the arrival time of an optical pulse with
+respect to a clock. In the process of demonstrating PPM on a 20~Ghz
+clock, we study the effects of Photon Number Resolution (PNR) in new
+low-jitter types of SNSPDs. These PNR effects complicate fixed-threshold
+triggering of RF pulses from the SNSPD, and corrupt arrival time
+measurements if not properly managed. We demonstrate methods for
+simultaneous arrival time and photon number measurement which enables
+high clock rate PPM for space applications as well as high rate quantum
+communication and computing applications that benefit from photon number
+resolution.
 
-\hypertarget{introduction-3}{%
-\section{Introduction}\label{introduction-3}}
+\hypertarget{introduction-2}{%
+\section{Introduction}\label{introduction-2}}
 
-{}
+Deep space optical communication has been a growing field of study in
+recent years, as researchers look for ways to communicate with
+spacecraft that are far away from Earth. A key challenge in the
+development of this technology is closing the communication link over
+extremely large distances and high loss. This must be done given a
+restricted power budget available on the spacecraft, and therefore
+requires the use of highly efficient optical communication protocols
+that optimize the number of bits sent per unit of energy.
 
-This study aimed to evaluate the feasibility of transmitting high
-clock-rate pulse position modulated (PPM) data using a mode-locked laser
-and receiving it with a low jitter superconducting nanowire
-single-photon detector (SNSPD). The investigation was driven by recent
-advancements in NbN SNSPDs, which have achieved a jitter as low as 50 ps
-at the FW(1/100)M level, enabling the demonstration of PPM with 50 ps
-slot widths and a 20 GHz clock. The aim was to increase the data rate by
-a factor of 10, from 2 GHz to 20 GHz, in the next generation of the Deep
-Space Optical Communication (DSOC) project.
+In this article, we will focus on the use of Pulse Position Modulation
+(PPM) for space based optical communication. PPM involves sending a
+pulse in one of $2^M$ possible time slots. The transmission of each such
+pulse carries M bits of information based on when it arrives in a set of
+bins called a frame.
 
-During the course of this study, the focus shifted towards investigating
-the impact of photon number resolution (PNR) on the low jitter detection
-of optical pulses. PNR can have an unintended impact on the
-demonstration of high-rate PPM, and therefore a thorough study of its
-effects was deemed crucial. A novel PNR cancellation technique was
-developed and applied to successfully demonstrate high-rate PPM. This
-technique is considered essential for future low-jitter applications of
-SNSPDs that exhibit photon-number effects.
+The Deep Space Optical Communicaiton (DSOC) project managed by the Jet
+Propulsion Laboratory (JPL) aims to demonstrate optical communication
+using PPM with the Psyche spacecraft from distances of up to
+\textcolor{orange}{XX} Au.
 
-This study aimed to evaluate the feasibility of transmitting high
-clock-rate pulse position modulated (PPM) data using a mode-locked laser
-and receiving it with a low jitter superconducting nanowire
-single-photon detector (SNSPD). The investigation was driven by recent
-advancements in NbN SNSPDs, which have achieved a jitter as low as 50 ps
-at the FW(1/100)M level, enabling the demonstration of PPM with 50 ps
-slot widths and a 20 GHz clock. The aim was to increase the data rate by
-a factor of 10, from 2 GHz to 20 GHz, in the next generation of the Deep
-Space Optical Communication (DSOC) project.
+For larger M, more data may be sent with a single optical pulse, thereby
+allowing a power limited spacecraft to send more data over a high loss
+optical channel back to earth. This is quantified through the photon
+information efficiency $c_p = C/E$ where $C$ is the link capacity and
+$E$ is the photon cost per optical pulse
 
-During the course of this study, the focus shifted towards investigating
-the impact of photon number resolution (PNR) on the low jitter detection
-of optical pulses. PNR can have an unintended impact on the
-demonstration of high-rate PPM, and therefore a thorough study of its
-effects was deemed crucial. A novel PNR cancellation technique was
-developed and applied to successfully demonstrate high-rate PPM. This
-technique is considered essential for future low-jitter applications of
-SNSPDs that exhibit photon-number effects.
+The existing DSOC project uses M up to $2^8 = 256$, meaning 8 bits of
+data may be carried in each optical pulse. M values as high as 19 have
+been demonstrated in the
+lab\textasciitilde{}\autocite{essiambre2023record}, but the number of
+time bins needed per frame scales exponentially with the number of bits
+transmitted per pulse. Therefore, for a given fixed clock rate and time
+bin duration, the PPM data rate decreases dramatically for higher M
+values.
+
+We demonstrate a high clock rate PPM protocol in the lab based on
+modulating a mode-locked laser and receiving pulses with a low jitter
+superconducting nanowire single photon detector (SNSPD)
+(Fig.~\ref{fig:intro} (a)).We focus on demonstrating moderately large
+PIE, while also increasing the clock rate of the sytem by an order of
+magnitude relative to the DSOC platform (2\textasciitilde GHz). By
+operating at both higher clock rate and PIE than DSOC, this system
+exemplifies how future iterations of DSOC may send data more quickly but
+also over greater distances with the same power budget.
+
+The rate increase is possible due to recent advancements in Niobium
+Nitride SNSPDs\textasciitilde{}\autocite{Colangelo2023}. These acheive
+low jitter performance by incorporating impedance matching tapers for
+efficient RF coupling, resulting in higher slew rate pulses, and by
+enabling RF pulse readout from both ends of the nanowire. The dual-ended
+readout allows for the cancellation of jitter caused by the variable
+location of photon arrival along the meander when the differential
+signals are recombined with a balun. These detectors achieve jitter as
+low as 50 ps at the FW(1/100)M level, making them suitable for the
+demonstration of PPM with 50 ps slot widths and a 20 GHz clock.
 
 \hypertarget{fig:intro}{%
 \begin{figure}
 \centering
-\includegraphics[width=0.8\textwidth,height=\textheight]{chapter_03/figs_03/fig_intro_light.pdf}
+\includegraphics[width=1\textwidth,height=\textheight]{chapter_03/figs_03/fig_intro_2_light.pdf}
 \caption[{PPM modulation and experiment setup}]{\textbf{PPM modulation
-and experiment setup} a) How bits are transmitted in M=16 PPM
-modulation. An optical pulse is transmitted with a clock-referenced
-integer delay which encodes 4 bits of data. b) Diagram of the
-expiremental setup. WG: wave generator, CD: clock divider board, AWG:
-Arbitrary Waveform Generator, MLL: Mode Locked Laser (Pritel UAC), IM:
-Intensity Modulator, BC: Bias Controller, FSC: Free Space Coupling
-System, DCA: DC Coupled Cryo-amp}
+and experiment setup} a) Diagram of the expiremental setup. WG: wave
+generator, CD: clock divider board, AWG: Arbitrary Waveform Generator,
+MLL: Mode Locked Laser (Pritel UAC), IM: Intensity Modulator, BC: Bias
+Controller, FSC: Free Space Coupling System, DCA: DC Coupled Cryo-amp b)
+How bits are transmitted in M=16 PPM modulation. An optical pulse is
+transmitted with a clock-referenced integer delay which encodes 4 bits
+of data. c) \textcolor{orange}{XXXXXXXX}}
 \label{fig:intro}
 \end{figure}
 }
 
-\hypertarget{pulse-position-modulation-for-deep-space-communication-1}{%
-\subsection{Pulse Position Modulation for Deep Space
-Communication}\label{pulse-position-modulation-for-deep-space-communication-1}}
+However, the photon number number dependent response of these detectors
+is shown to affect the time-correlated measurements needed for high-rate
+PPM. This response, shown in Fig.~\ref{fig:waveform} is also known as
+photon number resolution (PNR) -- a property that is desirable in
+certain applications including quantum communication and quantum
+computing. The SNSPD generates RF pulses with greater amplitude and slew
+rate when detecting optical pulses with multiple photons. Photon number
+effects manifest in this lower jitter variety of SNSPD due to the more
+efficient coupling of the nanowire to the readout circuit through the
+impedance matching tapers. It is likely that these effects will be
+present in other new SNSPD types engineered for low jitter, whether the
+PNR resolution is desired or not.
 
-Deep Space Optical Communication has been a growing field of study in
-recent years, as researchers look for ways to communicate with
-spacecraft that are far away from Earth. In this article, we will focus
-on the use of Pulse Position Modulation (PPM) for deep space optical
-communication.
-
-While other modulation techniques such as quadrature amplitude
-modulation (QAM) have been used in the past, it has been shown that in
-the photon-starved regime, PPM is the best approach for sending data.
-This is because there is not enough light to measure the phase of the
-signal.
-
-PPM relies on sending one optical pulse carrying M bits of information
-in one of \(2^M\) possible time slots. For M = 2, this corresponds to
-sending an early pulse to represent a 0 bit and a late pulse to
-represent a 1 bit.
-
-The main challenge in deep space optical communication is the high loss
-and distance that the link must traverse. This limits the communication
-from the spacecraft, as it is limited by the power available on the
-spacecraft. This means that the communication protocol is limited by the
-number of bits that can be sent per unit of energy on the spacecraft,
-also known as photon information efficiency or bits per photon.
-
-For large M, PPM achieves high photon information efficiency, allowing
-for the saving of power on the spacecraft and the sending of more
-information with fewer photons. The existing deep space optical
-communication project uses M up to \(2^8 = 256\), meaning that 8 bits of
-data are carried in each optical pulse.
-
-In this project, we aimed to demonstrate even higher photon information
-efficiency by using M values up to 2048, or 11 bits of data per optical
-pulse.
-
-While the use of large M values increases photon information efficiency,
-it also decreases the data rate of the system. This is because the
-number of time bins needed per optical pulse scales exponentially with
-the amount of data in each pulse. Therefore, for a given fixed clock
-rate and time bin duration, the data rate decreases dramatically for
-higher M values.
-
-Using M values much larger than 11 is unlikely to be practical in future
-deep space optical communication systems. However, the data rate of
-these systems can be increased linearly by increasing the clock rate or
-bin size of the experiment. This is possible with the use of low jitter
-detection systems or low jitter superconducting nanowire single-photon
-detectors (SNSPDs).
+As the PNR response affects the timing of fixed threashold timetaggs at
+any trigger level, it has a significant effect of the timing
+measurements used for the PPM demonstration. Any other applications
+illumnate these detectors with optical pulses of non-vanishing mean
+photon numbers will have to content with these effects as well. For this
+reason, we study the PNR response in detail and present two methods for
+managing it. We show how the photon number information can be
+deconvolved from the arrival time information, and how both
+de-correlated degrees of freedom can be measured simultaneously. This is
+applicable to certain types of high-rate quantum communication and
+computing systems.
 
 \hypertarget{fig:waveform}{%
 \begin{figure}
@@ -751,8 +516,8 @@ about pulse slope and arrival time as possible}
 \end{figure}
 }
 
-\hypertarget{detector-figure-of-merit-1}{%
-\section{Detector Figure of Merit}\label{detector-figure-of-merit-1}}
+\hypertarget{detector-figure-of-merit}{%
+\section{Detector Figure of Merit}\label{detector-figure-of-merit}}
 
 The work here highlights the application of low jitter single-photon
 detectors for optical communication, which is impactful for deep-space
@@ -766,7 +531,7 @@ achieved with photon-counting classical communication, these approaches
 can now be seriously considered for quantum networks. The main driver is
 would be the deduction of optical power in neighbouring DWDM channels,
 which ultimately lowers the Raman scattered photons into the quantum
-channel \autocite{EraerdsRaman} \textcolor{darkred}{Calculate reduction
+channel \autocite{EraerdsRaman} \textcolor{orange}{Calculate reduction
 in power from state of the art SFP modules}
 
 To access the applicability of different detectors, here we compare some
@@ -776,15 +541,15 @@ A useful figure of merit that includes all of the revelant detector
 metrics for photon timing was introduced by Bronzi and co-authors
 \autocite{Bronzi2016}
 
-\[FoM_T = \frac{\eta  (1 - P_{ap})\Phi_{-3 \text{dB}}}{J} \sqrt{\frac{A}{D}},\]
+$$FoM_T = \frac{\eta  (1 - P_{ap})\Phi_{-3 \text{dB}}}{J} \sqrt{\frac{A}{D}},$$
 
-where \(\eta\) is the single photon detection efficiency,
-\(\Phi_{-3 \text{dB}}\) is the photon flux at which the system detection
-efficiency drops by 3\textasciitilde dB, \(P_{ap}\) is the afterpulsing
-probability, \(J\) is the detector jitter evaluated as the FWHM, \(T_d\)
-is the deadtime, \(A\) is the active area and \(D\) is the dark count
-rate. Here we have defined the maximum photon flux as the
-3\textasciitilde dB point, for ease of standardization.
+where $\eta$ is the single photon detection efficiency,
+$\Phi_{-3 \text{dB}}$ is the photon flux at which the system detection
+efficiency drops by 3\textasciitilde dB, $P_{ap}$ is the afterpulsing
+probability, $J$ is the detector jitter evaluated as the FWHM, $T_d$ is
+the deadtime, $A$ is the active area and $D$ is the dark count rate.
+Here we have defined the maximum photon flux as the 3\textasciitilde dB
+point, for ease of standardization.
 
 In this work:
 
@@ -797,54 +562,45 @@ In this work:
 \item
   Jitter = 15 ps
 \item
-  Deadtime = 30 ns \textcolor{darkred}{measure 3dB flux}
+  Deadtime = 30 ns \textcolor{orange}{measure 3dB flux}
 \item
-  Area = 330 \(\mu m^2\)
+  Area = 330 $\mu m^2$
 \item
   Dark count rate = 20~Hz
 \end{itemize}
 
-\(FoM_T = 7.58 \times 10^{12}\) at 1550 nm.
+$FoM_T = 7.58 \times 10^{12}$ at 1550 nm.
 
 The deadtime is calculated as the 1/MCR, which is the 3 dB point of the
 nominal efficiency. This is only a factor of 3.7 less than the state of
-the art visible Silicon SPADs (peak efficiency at 480\nm)
+the art visible Silicon SPADs (peak efficiency at 480~nm)
 \autocite{Gramuglia2022}
 
 In the future, the performance of the optical communication system could
 be improved by using, high count rate SNSPD arrays. Recently published
 high-count rate arrays have figures of merit of
-\textcolor{darkred}{\(FoM_T\) for Peacoq and Resta2023 results}. This
-would result in a proportinal increase in the data rate.
-\textcolor{darkred}{\(FoM_T\) for fastest InGaAs/InP gated detector}
-These devices are ideal for fiber-based optical communication. In
-free-space, the active area is especially important, whithout the use of
-an adaptive optics system. \textcolor{darkred}{\(FoM_T\) for DSOC array}
+\textcolor{orange}{$FoM_T$ for Peacoq and Resta2023 results}. This would
+result in a proportinal increase in the data rate.
+\textcolor{orange}{$FoM_T$ for fastest InGaAs/InP gated detector} These
+devices are ideal for fiber-based optical communication. In free-space,
+the active area is especially important, whithout the use of an adaptive
+optics system. \textcolor{orange}{$FoM_T$ for DSOC array}
 
-\hypertarget{development-of-a-modulation-source-1}{%
+\hypertarget{development-of-a-modulation-source}{%
 \subsection{Development of a modulation
-source}\label{development-of-a-modulation-source-1}}
+source}\label{development-of-a-modulation-source}}
 
-The communication signal on a spacecraft is generated by utilizing a
-Continuous Wave (CW) seed laser that is carved by a fast intensity
-modulator. The resulting low-power pulsed signal is then amplified by an
-Erbium Doped Fiber Amplifier (EDFA) to increase its transmission power
-to Earth. The majority of the power used by the spacecraft for
-communication scales with the number of optical pulses due to the EDFA.
+DSOC relies on modulation of a CW seed laser to generate the
+communication signal on the spacecraft. This signal is then amplified by
+an Erbium Doped Fiber Amplifier (EDFA) to increase its transmission
+power to Earth. As the EDFA amplifies the pre-generated pulses and uses
+most of the power of the spacecraft optical transmission system, power
+consumption scales with the number of optical pulses.
 
-In our experiment, the 20 GHz repetition rate was limited by the jitter
-of the Single-Photon Detectors (SNSPDs) that we intended to use. These
-detectors have a Full Width at Half Maximum (FW(1/100)M) jitter of
-approximately 50 ps. To ensure that the response function of the entire
-experiment had jitter of around 50 ps FW(1/100)M, we needed to build a
-Pulsed Phase Modulation (PPM) source with ultra-short optical pulses.
-
-Carving a CW laser with our system would have introduced excessive
-timing uncertainty due to the limited ability of even the fastest
-lithium niobate intensity modulators to carve pulses with widths below
-20 ps. The added jitter from modulated CW pulses, combined with the
-jitter of the detectors, would have exceeded the 20 GHz/50 ps slot width
-requirement.
+We produce our modulated singal by carving a series of mode locked laser
+pulses with lithium niobate modulators. This way, the jitter of the
+optical pulses themselves are not limited by the modulators or thew slew
+rate of the RF signal that drives them.
 
 Therefore, we chose to carve pulses from a mode-locked laser. This
 approach allows for extremely short pulses in time, with the modulators
@@ -853,8 +609,8 @@ The temporal width of the modulator pulse response must be extremely
 short and able to modulate from `off' to `on' within a time frame of the
 order of the 50 ps bin width.
 
-\hypertarget{methods-1}{%
-\section{Methods}\label{methods-1}}
+\hypertarget{methods}{%
+\section{Methods}\label{methods}}
 
 \hypertarget{slope-correction}{%
 \subsection{Slope Correction}\label{slope-correction}}
@@ -865,9 +621,9 @@ order of the 50 ps bin width.
 \includegraphics[width=0.75\textwidth,height=\textheight]{chapter_03/figs_03/slope_cancellation_light.pdf}
 \caption[{PNR Slope Variation Analysis and Cancellation}]{\textbf{PNR
 Slope Variation Analysis and Cancellation} a) 2D histogram of RF pulse
-measurements. Through graphing slope \(\Delta t_{BA}\) on the x-axis and
-arrival time \(t_A\) on the y-axis, a series of groupings are visible
-that identify the discrete photon numbers detected.}
+measurements. Through graphing slope $\Delta t_{BA}$ on the x-axis and
+arrival time $t_A$ on the y-axis, a series of groupings are visible that
+identify the discrete photon numbers detected.}
 \label{fig:slope-correction}
 \end{figure}
 }
@@ -875,10 +631,12 @@ that identify the discrete photon numbers detected.}
 \hypertarget{cluster-analysis}{%
 \subsection{Cluster Analysis}\label{cluster-analysis}}
 
-\hypertarget{results-1}{%
-\section{Results}\label{results-1}}
+\hypertarget{results}{%
+\section{Results}\label{results}}
 
 results here
+
+{}
 
 \hypertarget{synchronization-with-a-software-phase-locked-loop-pll}{%
 \section{Synchronization with a Software Phase Locked Loop
@@ -941,8 +699,8 @@ This source is a fundamental building block for high rate
 entanglement-based quantum key distribution systems or advanced quantum
 networks.
 
-\hypertarget{introduction-4}{%
-\section{Introduction}\label{introduction-4}}
+\hypertarget{introduction-3}{%
+\section{Introduction}\label{introduction-3}}
 
 ~~~~~
 
@@ -1000,14 +758,14 @@ UOC) are doubled by an 80 ps delay interferometer before up-conversion
 and amplification in a SHG \& EDFA module (Pritel). A short PM fiber
 from the SHG connects to the SPDC where photon pairs are created. The
 CWDM module separates the SPDC spectrum into multiple
-\(\sim\!\!13~\mathrm{nm}\) wide bands spaced by 20 nm. The 1530 and 1550
+$\sim\!\!13~\mathrm{nm}$ wide bands spaced by 20 nm. The 1530 and 1550
 nm bands are sent to the Bob and Alice stations respectively. The
 readout interferometers have the same time delay as the source
 interferometer. Polarization controllers are used to maximize the
 coincidence rates, as the detection efficiencies of the SNSPDs is
-polarization sensitive \(\pm20\%\). Entanglement fidelity is unaffected
-by readout polarization. The two SNSPDs are connected to each channel
-pair in succession to resolve full system performance. b) ITU channels
+polarization sensitive $\pm20\%$. Entanglement fidelity is unaffected by
+readout polarization. The two SNSPDs are connected to each channel pair
+in succession to resolve full system performance. b) ITU channels
 involved with the experiment. Pairs of channels highlighted with the
 same color obey the SPDC \& pump energy matching condition, and can be
 directly read out through DWDM channel outputs. To asses the full 16
@@ -1054,7 +812,7 @@ waveguide, defines a wide Joint Spectral Intensity (JSI) function.
 
 The entangled pairs, which are separated by a coarse wavelength division
 multiplexer (CWDM), are of the form
-\(|\psi\rangle=\frac{1}{\sqrt{2}}\left(|1\rangle_{s}|1\rangle_{i}+e^{i \phi}|2\rangle_{s}|2\rangle_{i}\right)\).
+$|\psi\rangle=\frac{1}{\sqrt{2}}\left(|1\rangle_{s}|1\rangle_{i}+e^{i \phi}|2\rangle_{s}|2\rangle_{i}\right)$.
 Entangled idler and signal photons are sent to the receiving stations
 labeled Alice and Bob. One readout interferometer at each station
 projects all spectral bands into a composite time-phase basis. From
@@ -1071,8 +829,8 @@ this system requires 16 detectors operating in parallel at both Alice
 and Bob. To read out both outputs of both interferometers, 4 detectors
 per channel are required.
 
-\hypertarget{results-2}{%
-\section{Results}\label{results-2}}
+\hypertarget{results-1}{%
+\section{Results}\label{results-1}}
 
 The JSI is measured in Fig. Fig.~\ref{fig:jsi} a by recording
 coincidence rates for different ITU channel pairings. For a given idler
@@ -1087,36 +845,36 @@ c, these pairs are highlighted with matching colors.
 \centering
 \includegraphics[width=1\textwidth,height=\textheight]{chapter_04/figs_04/jsi_figure_light.pdf}
 \caption[{Channel JSI and Histogram.}]{\textbf{Channel JSI and
-Histogram} a) The singles rates \(S_A\) and \(S_B\) (grey bars),
-coupling efficiencies (purple bars), and coincidence rates \(C_{AB}\)
-(diagonal boxes) for different DWDM channel pairings. The joint spectral
-intensity envelop spans several 100 GHz channels. So the coincidence
-rates (KHz, in black) are consistent with the efficiencies \(\eta\)
-(purple bars) and the singles rates (grey bars), they are scaled to
-represent two branches of the total wavefunction. There are four
-branches in all, for the 4 pairs of 2 interferometer output ports that
-contribute coincidences. In practice, one output each of Alice and Bob's
-interferometers is measured, thereby capturing one branch. See
-supplemental for details of the scaling method, and the fitting method
-used to solve for the coupling efficiencies \(\eta\). b) Coincidence
-rates for energy-matched channel pairings. The light green bars match
-the main diagonal in (a). Grey bars are measured with x16 DWDM at Alice
-and a tunable narroband filter at Bob. Dashed bars predict the rates for
-a system with x16 DWDMs at both Alice and Bob c) Histogram of photon
-arrival events with respect to the 4 GHz clock. Dashed black and grey
-lines show the response functions for coincidence events. Red bars
-represent guard regions where coincidence events are ignored.}
+Histogram} a) The singles rates $S_A$ and $S_B$ (grey bars), coupling
+efficiencies (purple bars), and coincidence rates $C_{AB}$ (diagonal
+boxes) for different DWDM channel pairings. The joint spectral intensity
+envelop spans several 100 GHz channels. So the coincidence rates (KHz,
+in black) are consistent with the efficiencies $\eta$ (purple bars) and
+the singles rates (grey bars), they are scaled to represent two branches
+of the total wavefunction. There are four branches in all, for the 4
+pairs of 2 interferometer output ports that contribute coincidences. In
+practice, one output each of Alice and Bob's interferometers is
+measured, thereby capturing one branch. See supplemental for details of
+the scaling method, and the fitting method used to solve for the
+coupling efficiencies $\eta$. b) Coincidence rates for energy-matched
+channel pairings. The light green bars match the main diagonal in (a).
+Grey bars are measured with x16 DWDM at Alice and a tunable narroband
+filter at Bob. Dashed bars predict the rates for a system with x16 DWDMs
+at both Alice and Bob c) Histogram of photon arrival events with respect
+to the 4 GHz clock. Dashed black and grey lines show the response
+functions for coincidence events. Red bars represent guard regions where
+coincidence events are ignored.}
 \label{fig:jsi}
 \end{figure}
 }
 
-Figure Fig.~\ref{fig:jsi} a also shows coupling efficiencies \(\eta\)
-for each DWDM channel, \(S_A\) is the singles rate at Alice, and \(S_B\)
-is the singles rate at Bob \autocite{Neumann2022Entanglement}. As only
-two of the total four interferometer output ports are measured at once,
-certain scalings are made to the singles and coincidence rates
-\(C_{AB}\) to reflect a readout configuration with well defined coupling
-efficiency (see supplementary information).
+Figure Fig.~\ref{fig:jsi} a also shows coupling efficiencies $\eta$ for
+each DWDM channel, $S_A$ is the singles rate at Alice, and $S_B$ is the
+singles rate at Bob \autocite{Neumann2022Entanglement}. As only two of
+the total four interferometer output ports are measured at once, certain
+scalings are made to the singles and coincidence rates $C_{AB}$ to
+reflect a readout configuration with well defined coupling efficiency
+(see supplementary information).
 
 Most tests were done with the 8 ITU 100 GHz channel pairings: Ch. 35-42
 at Alice and Ch. 52-49 at Bob. In Fig. Fig.~\ref{fig:jsi} b we
@@ -1155,7 +913,7 @@ in the presence of some minor overlap of the pulse response functions.
 \centering
 \includegraphics[width=1\textwidth,height=\textheight]{chapter_04/figs_04/shg_scan_light.pdf}
 \caption[{Fidelity and Rates vs \(\boldsymbol \mu\).}]{\textbf{Fidelity
-and Rates vs \(\boldsymbol \mu\)} a) Fidelity versus pump power. Error
+and Rates vs $\boldsymbol \mu$} a) Fidelity versus pump power. Error
 bars arise from making multiple measurements of the center bin
 coincidence rate over some integration time. These measurements span
 small ranges of interferometer phase, as the extremum-finding algorithm
@@ -1180,12 +938,12 @@ amounts over several minutes and adjusted phase to maintain an extremum.
 Channels 35 and 59 were chosen for an analysis of entanglement fidelity
 and rates versus pump power. Fidelity with respect to pump power or mean
 entangled pair rate is shown in Fig.~\ref{fig:shg_scan} a. We define the
-entanglement fidelity as \(F = 100\%*(1 - \frac{C_{min}}{C_{max}})\)
-where \(C_{min}\) and \(C_{max}\) are the minimum and maximum
-coincidence rates with respect to interferometer phase observed across
-the middle bins. As this coincidence rate depends on the total phase
-across all source and readout interferometers, just one (Bob's) is
-actively controlled to scan the full state space.
+entanglement fidelity as $F = 100\%*(1 - \frac{C_{min}}{C_{max}})$ where
+$C_{min}$ and $C_{max}$ are the minimum and maximum coincidence rates
+with respect to interferometer phase observed across the middle bins. As
+this coincidence rate depends on the total phase across all source and
+readout interferometers, just one (Bob's) is actively controlled to scan
+the full state space.
 
 \hypertarget{fig:channel_data}{%
 \begin{figure}
@@ -1194,28 +952,28 @@ actively controlled to scan the full state space.
 \caption[{Fidelity and rates across 8 channel pairs.}]{\textbf{Fidelity
 and rates across 8 channel pairs} a) Fidelity for the main 8 channel
 pairs, measured at a high (5.17 Amps) and a low ( 1.2 Amps) SHG pump
-power setting. Each power setting results in similar \(\mu\) for all
-channels: \(\mu_{low}\) = 5.6e-5 \(\pm\) 9e-6 and \(\mu_{high}\) =
-6.1e-3 \(\pm\) 3e-4. b) Rate metrics for the 8 channel pairs at the same
-high and low power settings. The range of possible values for
-distillable entanglement rate is spanned by the yellow regions, bounded
-above by log-negativity and below by coherent information. Rates shown
-assume readout of all 4 available interferometer ports, based on data
-measured using one port each at Alice and Bob}
+power setting. Each power setting results in similar $\mu$ for all
+channels: $\mu_{low}$ = 5.6e-5 $\pm$ 9e-6 and $\mu_{high}$ = 6.1e-3
+$\pm$ 3e-4. b) Rate metrics for the 8 channel pairs at the same high and
+low power settings. The range of possible values for distillable
+entanglement rate is spanned by the yellow regions, bounded above by
+log-negativity and below by coherent information. Rates shown assume
+readout of all 4 available interferometer ports, based on data measured
+using one port each at Alice and Bob}
 \label{fig:channel_data}
 \end{figure}
 }
 
 We quantify the rate of useful entanglement by supplying bounds for the
-distillable entanglement rate \(R_D\). Measured in ebits/s, \(R_D\) is
-the maximal asymptotic rate of Bell pair production per received state
-using only local operations and classical communications. It is bounded
-above by log negativity \(R_N = RE_N\) and below by \(R_I = R E_I\)
-where \(R\) is the raw coincidence rate \autocite{Alshowkan2022}. For
-each pump power setting in Fig.~\ref{fig:shg_scan}, a series of
-tomographic measurements is performed and density matrices calculated.
-\(E_I\) and \(E_N\) are calculated from the density matrices as detailed
-in the supplementary information.
+distillable entanglement rate $R_D$. Measured in ebits/s, $R_D$ is the
+maximal asymptotic rate of Bell pair production per received state using
+only local operations and classical communications. It is bounded above
+by log negativity $R_N = RE_N$ and below by $R_I = R E_I$ where $R$ is
+the raw coincidence rate \autocite{Alshowkan2022}. For each pump power
+setting in Fig.~\ref{fig:shg_scan}, a series of tomographic measurements
+is performed and density matrices calculated. $E_I$ and $E_N$ are
+calculated from the density matrices as detailed in the supplementary
+information.
 
 Figure Fig.~\ref{fig:channel_data} shows fidelities, raw coincidence
 rates, and bounded distillable entanglement rates for all 8 channel
@@ -1227,8 +985,8 @@ pulse pileup and time-walk effects can be mitigated with jitter
 correction techniques \autocite{Mueller2023}.
 
 \% \textbackslash textcolor\{blue\}\{ \% We perform a linear fit of the
-entanglement fidelity data, \(F = A + B\mu\), and obtain \(A = XXX\),
-\(B=XXX\). We derive expressions for A and B in terms of the mean photon
+entanglement fidelity data, $F = A + B\mu$, and obtain $A = XXX$,
+$B=XXX$. We derive expressions for A and B in terms of the mean photon
 number, interferometer transmittances, and interference visibilities
 (see Supplemental).\}
 
@@ -1236,7 +994,7 @@ Using the data in Fig. Fig.~\ref{fig:jsi} a, we model the joint spectral
 intensity function of the SPDC output as a product of pump envelope and
 phase matching condition functions
 
-\[|f(\omega_s, \omega_i)|^2 = |\psi_{\mathrm{ph}}\left(\omega_s, \omega_i\right)|^2 *|\psi_p\left(\omega_s, \omega_i\right)|^2\]
+$$|f(\omega_s, \omega_i)|^2 = |\psi_{\mathrm{ph}}\left(\omega_s, \omega_i\right)|^2 *|\psi_p\left(\omega_s, \omega_i\right)|^2$$
 
 This construction depends on the wavelength (769.78 nm) and bandwidth
 (243 GHz FWHM) of unconverted light out of the SHG, which was measured
@@ -1247,10 +1005,10 @@ results in Fig. Fig.~\ref{fig:jsi} a (details in supplemental).
 
 We calculate the Schmidt decomposition of the JSI bipartite spectrum
 transmitted through pairs of DWDM filters at Alice and Bob, and derive
-an inverse Schmidt number of \(1/K = 0.87\). This value quantifies the
+an inverse Schmidt number of $1/K = 0.87$. This value quantifies the
 spectral purity of the entangled photon source, and predicts the
 visibility of a two-source HOM (Hong-Ou-Mandel) interferogram. If 50 GHz
-ITU channels are used instead, the model predicts \(1/K = 0.96\).
+ITU channels are used instead, the model predicts $1/K = 0.96$.
 
 \appendix
 
@@ -1263,20 +1021,20 @@ Hardware and Techniques course (APh/Ph 138b). The following is a
 homework assignment I wrote to accompany his series of lectures.
 
 The first problem is inspired by the low dark count rate
-publication\autocite{Mueller:21}. It has the student build a simple
-model for a dark count rate transmitted through a series of filters.
-Finally, it leads the student to consider an ultimate tradeoff between
-dark count rate and coupling efficiency to wide bandwidth optical
-signals. A filtering system that only transmits a very narroband signal
-will not be able to detect ultra-short optical signals with high
-efficiency or temporal resolution.
+publication\textasciitilde{}\autocite{Mueller:21}. It has the student
+build a simple model for a dark count rate transmitted through a series
+of filters. Finally, it leads the student to consider an ultimate
+tradeoff between dark count rate and coupling efficiency to wide
+bandwidth optical signals. A filtering system that only transmits a very
+narroband signal will not be able to detect ultra-short optical signals
+with high efficiency or temporal resolution.
 
 The second problem explores a potential use case of a photon number
 resolving SNSPD. It closely follows logic presented in an Andreas Christ
-and Christine Silberhorn paper\autocite{Andreas:12}. I studied this
-paper earlier in my PhD, when I considered developing a multiplexed
-single photon source. It turned out that project was overly ambitious,
-but future PhD students might consider approaching it again.
+and Christine Silberhorn paper\textasciitilde{}\autocite{Andreas:12}. I
+studied this paper earlier in my PhD, when I considered developing a
+multiplexed single photon source. It turned out that project was overly
+ambitious, but future PhD students might consider approaching it again.
 
 \textcolor{midnightblue}{Contact
 \href{mailto:andrewstermueller@gmail.com}{Andrew Mueller} with any
@@ -1288,10 +1046,9 @@ answers per section. As the grader, feel free to use these or not. }
 \subsection{1. Free space coupling with low dark counts (50
 points)}\label{free-space-coupling-with-low-dark-counts-50-points}}
 
-An experimental apparatus emits a collimated beam of
-\(1550~\mathrm{nm}\) photons with gaussian beam waist
-\(w_0 = 3~\mathrm{mm}\). You wish to focus the beam onto an SNSPD
-directly through a window in a cryostat.
+An experimental apparatus emits a collimated beam of $1550~\mathrm{nm}$
+photons with gaussian beam waist $w_0 = 3~\mathrm{mm}$. You wish to
+focus the beam onto an SNSPD directly through a window in a cryostat.
 
 \hypertarget{fig:cryostat_concept}{%
 \begin{figure}
@@ -1305,7 +1062,7 @@ coupling options.}}
 
 As we will see later on, a set of filters will be needed between the
 detector and the window to minimize dark counts. In practice, the set of
-filters can be quite thick. Say a \(f = 100~\mathrm{mm}\) lens is used
+filters can be quite thick. Say a $f = 100~\mathrm{mm}$ lens is used
 right outside the cryostat to focus the beam onto the detector though a
 set of filters (Fig.~\ref{fig:cryostat_concept} a). The long focal
 length makes room for a few inches of filters between the external lens
@@ -1315,8 +1072,8 @@ and focused spot.
 \def\labelenumi{\arabic{enumi}.}
 \item
   (4 pts) If the detector has a circular active area with radius
-  \(5~\mathrm{\upmu m}\), what ratio of power in the beam can it
-  collect? Assume the detector has unity efficiency across all angles of
+  $5~\mathrm{\upmu m}$, what ratio of power in the beam can it collect?
+  Assume the detector has unity efficiency across all angles of
   incidence with respect to the surface normal.
 
   \textcolor{midnightblue}{
@@ -1328,33 +1085,33 @@ and focused spot.
   \textcolor{midnightblue}{
 
   The divergence angle of the guassian beam:
-  \(\theta = \tan^{-1}({\frac{3}{100}})\).
+  $\theta = \tan^{-1}({\frac{3}{100}})$.
 
   }
 
   \textcolor{midnightblue}{ The formula for divergence angle in terms of
-  waist \(w_0\): \(\theta = \frac{\lambda}{\pi w_0}\) }
+  waist $w_0$: $\theta = \frac{\lambda}{\pi w_0}$ }
 
   \textcolor{midnightblue}{ Combining and plugging in, the waist radius
   at focus is
-  \(\frac{1550~\mathrm{nm}}{\pi \tan^{-1}(\frac{3}{100})} \approx 16.5~ \mathrm{\upmu m}\)
+  $\frac{1550~\mathrm{nm}}{\pi \tan^{-1}(\frac{3}{100})} \approx 16.5~ \mathrm{\upmu m}$
   }
 
   \textcolor{midnightblue}{ The formula for power inside an aperture at
-  \(w(z)\) for a guassian beam:}
+  $w(z)$ for a guassian beam:}
 
   \textcolor{midnightblue}{
 
-  \[P(r, z)=P_{0}\left[1-e^{-2 r^{2} / w^{2}(z)}\right]\]
+  $$P(r, z)=P_{0}\left[1-e^{-2 r^{2} / w^{2}(z)}\right]$$
 
   }
 
   \textcolor{midnightblue}{We are interested in the ratio of power
-  collected at \(w(z=0) = w_0\) which may be expressed as:}
+  collected at $w(z=0) = w_0$ which may be expressed as:}
 
   \textcolor{midnightblue}{
 
-  \[P(r, z=0)=1-e^{-2 r^{2} / w_0^{2}}\]
+  $$P(r, z=0)=1-e^{-2 r^{2} / w_0^{2}}$$
 
   }
 
@@ -1362,26 +1119,26 @@ and focused spot.
 
   \textcolor{midnightblue}{
 
-  \[P(r, z=0)=1-e^{-2(5^{2}) / 16.5^{2}} \approx  \boxed{0.17} \]
+  $$P(r, z=0)=1-e^{-2(5^{2}) / 16.5^{2}} \approx  \boxed{0.17} $$
 
   }
 \item
   (4 pts) A faster lens mounted much closer to the detector inside the
-  cryostat focuses to a smaller waist. Consider an
-  \(f = 18~\mathrm{mm}\) lens with the detector at the focal length
+  cryostat focuses to a smaller waist. Consider an $f = 18~\mathrm{mm}$
+  lens with the detector at the focal length
   (Fig.~\ref{fig:cryostat_concept} b). Verify more than 99\% of the
   collimated light will be focused onto the active area of the detector.
 
   \textcolor{midnightblue}{ The waist radius at focus is
-  \(\frac{1550~\mathrm{nm}}{\pi \tan^{-1}(\frac{3}{18})} \approx 2.98~\mathrm{\upmu m}\)
+  $\frac{1550~\mathrm{nm}}{\pi \tan^{-1}(\frac{3}{18})} \approx 2.98~\mathrm{\upmu m}$
   }
 
   \textcolor{midnightblue}{Ratio of power within the
-  \(10~\mathrm{\upmu m}\) radius active area: }
+  $10~\mathrm{\upmu m}$ radius active area: }
 
   \textcolor{midnightblue}{
 
-  \[P(r, z=0)=1-e^{-2(5^{2}) / 2.98^{2}} \approx \boxed{0.996} \]
+  $$P(r, z=0)=1-e^{-2(5^{2}) / 2.98^{2}} \approx \boxed{0.996} $$
 
   }
 
@@ -1405,11 +1162,10 @@ and focused spot.
   \def\labelenumii{\roman{enumii})}
   \tightlist
   \item
-    There is no lens; the detector is distance \(l\) inside the
-    cryostat, and the first window with diameter \(d\) defines an
-    entrance pupil.
+    There is no lens; the detector is distance $l$ inside the cryostat,
+    and the first window with diameter $d$ defines an entrance pupil.
   \item
-    Same as (i), but a lens with focal length \(l\) is placed right
+    Same as (i), but a lens with focal length $l$ is placed right
     outside the first window. The detector is at the focal point.
   \item
     Same as (ii) but the lens is placed inside the cryostat with the
@@ -1435,10 +1191,10 @@ and focused spot.
   \textcolor{midnightblue}{ 3 points for saying all situations couple
   the same rate; 3 points for some explanation. }
 \item
-  (9 pts) Using Planck's law with laboratory temperature \(T\) and the
+  (9 pts) Using Planck's law with laboratory temperature $T$ and the
   geometry of case (i) above, write an expression for spectral radiant
   flux (photons per unit wavelength) on the active area of a detector
-  with radius \(r\).
+  with radius $r$.
 
   \textcolor{midnightblue}{ \textbf{Answer:} }
   \textcolor{midnightblue}{The expression is a product of several
@@ -1446,63 +1202,62 @@ and focused spot.
 
   \textcolor{midnightblue}{
 
-  \[\text{Flux}[\lambda] = P \Omega D_{area} B_{\lambda}(\lambda, T)\]
+  $$\text{Flux}[\lambda] = P \Omega D_{area} B_{\lambda}(\lambda, T)$$
 
   }
 
-  \textcolor{midnightblue}{ Where \(P = \frac{\lambda}{hc}\) is the
-  number of photons per unit energy, \(\Omega\) is the solid angle of
-  blackbody radiation as seen by the detector, \(D_{area} = \pi r^2\) is
-  the area of the detector, and \(B_{\lambda}\) is Planck's law. }
+  \textcolor{midnightblue}{ Where $P = \frac{\lambda}{hc}$ is the number
+  of photons per unit energy, $\Omega$ is the solid angle of blackbody
+  radiation as seen by the detector, $D_{area} = \pi r^2$ is the area of
+  the detector, and $B_{\lambda}$ is Planck's law. }
   \textcolor{midnightblue}{Planck's law:}
 
   \textcolor{midnightblue}{
 
-  \[B_{\lambda}(\lambda, T)=\frac{2 h c^{2}}{\lambda^{5}} \frac{1}{e^{h c /\left(\lambda k_{\mathrm{B}} T\right)}-1}\]
+  $$B_{\lambda}(\lambda, T)=\frac{2 h c^{2}}{\lambda^{5}} \frac{1}{e^{h c /\left(\lambda k_{\mathrm{B}} T\right)}-1}$$
 
   }
 
-  \textcolor{midnightblue}{ \(\Omega = \pi \sin{\theta^2}\), where
-  \(\theta = \tan^{-1}(\frac{(d/2)}{l})\) is the half angle of the field
+  \textcolor{midnightblue}{ $\Omega = \pi \sin{\theta^2}$, where
+  $\theta = \tan^{-1}(\frac{(d/2)}{l})$ is the half angle of the field
   of view of blackbody radiation as seen by the detector. }
 
   \textcolor{midnightblue}{The full expression: }
 
   \textcolor{midnightblue}{
 
-  \[\text{Flux}[\lambda] = \frac{\lambda \pi^2 r^2 \sin{\theta^2}}{hc} \frac{2 h c^{2}}{\lambda^{5}} \frac{1}{e^{h c /\left(\lambda k_{\mathrm{B}} T\right)}-1}, \,\,\,\,\,\,\,\,\,\,\,\theta = \tan^{-1}(\frac{(d/2)}{l})\]
+  $$\text{Flux}[\lambda] = \frac{\lambda \pi^2 r^2 \sin{\theta^2}}{hc} \frac{2 h c^{2}}{\lambda^{5}} \frac{1}{e^{h c /\left(\lambda k_{\mathrm{B}} T\right)}-1}, \,\,\,\,\,\,\,\,\,\,\,\theta = \tan^{-1}(\frac{(d/2)}{l})$$
 
   }
 
   \textcolor{midnightblue}{ Since the expression asked for can be
   written many ways, just verify the student has taken into account all
   the terms in equation (1) above, and has the correct expressions for}
-  \textcolor{darkred}{\(\Omega\) (3 pts), \(\theta\) (3 pts), and P (3
+  \textcolor{darkred}{$\Omega$ (3 pts), $\theta$ (3 pts), and P (3
   pts).}
 \item
   (6 pts) Consider the configuration in Fig. 1b). The detector has an
   internal quantum efficiency approximated by:
 
-  \[\eta(\lambda) = \frac{1}{2}(1 - \text{erf}[\lambda - 3~\mathrm{\upmu m}]) \]
+  $$\eta(\lambda) = \frac{1}{2}(1 - \text{erf}[\lambda - 3~\mathrm{\upmu m}]) $$
 
-  \(\lambda\) is measured in \(\mathrm{\upmu m}\) and \(\text{erf}()\)
-  is the error function. Using your conclusions from (1.3) and
-  expression from (1.4), write a formula \(N_{photons}[\lambda]\) for
-  the number of detectable dark counts with respect to \(\lambda\), then
-  numerically integrate it to find the dark count rate with no
-  filtering. The laboratory temperature \(T\) is 293 K, lens focal
-  length \(l\) is \(18~\text{mm}\), detector radius \(r\) is
-  \(5~\mathrm{\upmu m}\), and the diameter \(d\) of all optics is 1
-  inch. The maximum count rate of this SNSPD is 10 MHz. Is the detector
-  usable or overexposed?
+  $\lambda$ is measured in $\mathrm{\upmu m}$ and $\text{erf}()$ is the
+  error function. Using your conclusions from (1.3) and expression from
+  (1.4), write a formula $N_{photons}[\lambda]$ for the number of
+  detectable dark counts with respect to $\lambda$, then numerically
+  integrate it to find the dark count rate with no filtering. The
+  laboratory temperature $T$ is 293 K, lens focal length $l$ is
+  $18~\text{mm}$, detector radius $r$ is $5~\mathrm{\upmu m}$, and the
+  diameter $d$ of all optics is 1 inch. The maximum count rate of this
+  SNSPD is 10 MHz. Is the detector usable or overexposed?
 
   \textcolor{midnightblue}{ \textbf{Answer:} }
   \textcolor{midnightblue}{Use the expression from (1.4) and multiply it
-  by the quantum efficiency function \(\eta(\lambda)\) }
+  by the quantum efficiency function $\eta(\lambda)$ }
 
   \textcolor{midnightblue}{
 
-  \[N_{photons}[\lambda] = P \Omega D_{area} \eta(\lambda) B_{\lambda}(\lambda, T=293)\]
+  $$N_{photons}[\lambda] = P \Omega D_{area} \eta(\lambda) B_{\lambda}(\lambda, T=293)$$
 
   }
 
@@ -1512,7 +1267,7 @@ and focused spot.
   \textcolor{midnightblue}{\includegraphics{chapter_05/figs_05/mathematica_2.PNG}}
 
   \textcolor{midnightblue}{Dark count rate
-  \(\approx \boxed{110 \,\text{MCounts/s}}\) }
+  $\approx \boxed{110 \,\text{MCounts/s}}$ }
   \textcolor{midnightblue}{The rate of dark counts exceeds the usual
   maximum count rate, the detector is not usable. }
 
@@ -1522,20 +1277,20 @@ and focused spot.
   (6 pts) A set of shortpass filters can remove the bulk of blackbody
   radiation. A shortpass filter can be roughly modeled with the formula:
 
-  \[F(\lambda, E_t) = \frac{1}{E_t}[(E_t - 1)H(\lambda_c - \lambda) + 1]\]
+  $$F(\lambda, E_t) = \frac{1}{E_t}[(E_t - 1)H(\lambda_c - \lambda) + 1]$$
 
-  Where H is the Heaviside step function, \(\lambda_c\) is the cutoff
-  wavelength of the filter, and \(E_t\) is the extinction ratio of the
-  filter. Use this with \(N_{photons}[\lambda]\) from (d). How many
-  filters with \(\lambda_c = 1560~\text{nm}\) and \(E_t = 30~\text{dB}\)
-  are necessary to suppress the spectral region of detectable dark
-  counts longer than 1560 nm so that it is not the dominant source of
-  dark counts?
+  Where H is the Heaviside step function, $\lambda_c$ is the cutoff
+  wavelength of the filter, and $E_t$ is the extinction ratio of the
+  filter. Use this with $N_{photons}[\lambda]$ from (d). How many
+  filters with $\lambda_c = 1560~\text{nm}$ and $E_t = 30~\text{dB}$ are
+  necessary to suppress the spectral region of detectable dark counts
+  longer than 1560 nm so that it is not the dominant source of dark
+  counts?
 
   \textcolor{midnightblue}{ \textbf{Answer:} }
 
-  \textcolor{midnightblue}{\(\boxed{\text{3 filters}}\) are needed to
-  make the wavelength band shorter than 156 nm the dominant source of
+  \textcolor{midnightblue}{$\boxed{\text{3 filters}}$ are needed to make
+  the wavelength band shorter than 156 nm the dominant source of
   counts.} \textcolor{darkred}{3 pts. for this answer}
 
   \textcolor{darkred}{3 pts for evidence:}
@@ -1551,9 +1306,9 @@ and focused spot.
   \textcolor{midnightblue}{\includegraphics{chapter_05/figs_05/filter_integrate_4.PNG}}
 \item
   (7 pts) If a narrow band filter is also inserted with center
-  wavelength \(1550~\text{nm}\) and spectral width below \(1-2~nm\),
-  then dark count rate can be approximated as just
-  \(N_{photons}[\lambda = 1550~\text{nm}]\) times the filter width. Show
+  wavelength $1550~\text{nm}$ and spectral width below $1-2~nm$, then
+  dark count rate can be approximated as just
+  $N_{photons}[\lambda = 1550~\text{nm}]$ times the filter width. Show
   for this wavelength range you can simplify dark count rate further to
   a simple exponential function. If the laboratory air conditioner
   breaks, raising the lab temperature from 293 K to 300 K, how much
@@ -1561,28 +1316,28 @@ and focused spot.
 
   \textcolor{midnightblue}{ \textbf{Answer:} }
 
-  \textcolor{midnightblue}{The expression for \(N_{photons}[\lambda]\)
+  \textcolor{midnightblue}{The expression for $N_{photons}[\lambda]$
   from part (1.4) can be simplified and evaluated at 1550 nm, then
   multiplied by the filter width in nanometers. }
 
   \textcolor{midnightblue}{
 
-  \[\begin{aligned}
+  $$\begin{aligned}
    N_{photons}[\lambda] &= P \Omega D_{area} \eta(\lambda) B_{\lambda}(\lambda) \\
    N_{filter} &= N_{photons}[\lambda = 1550~\text{nm}]\Delta \lambda
-   \end{aligned}\]
+   \end{aligned}$$
 
   }
 
   \textcolor{midnightblue}{This code shows integrating the spectrum and
-  just multiplying \(N_{photons}\) times the filter width produce very
+  just multiplying $N_{photons}$ times the filter width produce very
   similar results (for a 1 nm filter):}
 
   \textcolor{midnightblue}{\includegraphics{chapter_05/figs_05/nphoton_approx.PNG}}
 
-  \textcolor{midnightblue}{Evaluating the \(N_{photon}\) function at
-  \(\lambda = 1550~text{nm}\) shows the \(-1\) term is small relative to
-  the exponential term:}
+  \textcolor{midnightblue}{Evaluating the $N_{photon}$ function at
+  $\lambda = 1550~text{nm}$ shows the $-1$ term is small relative to the
+  exponential term:}
 
   \textcolor{midnightblue}{\includegraphics{chapter_05/figs_05/small_relative_to_exponential.PNG}}
 
@@ -1591,7 +1346,7 @@ and focused spot.
 
   \textcolor{midnightblue}{
 
-  \[\boxed{N_{filter} \approx 9.26\mathrm{e}21 \Delta\lambda e^{-9290/T} (\frac{\text{photons}}{\text{s*meter}})}\]
+  $$\boxed{N_{filter} \approx 9.26\mathrm{e}21 \Delta\lambda e^{-9290/T} (\frac{\text{photons}}{\text{s*meter}})}$$
 
   }
 
@@ -1599,7 +1354,7 @@ and focused spot.
 
   \textcolor{midnightblue}{
 
-  \[\boxed{N_{filter} \approx 9.26\mathrm{e}12 \Delta\lambda e^{-9290/T} (\frac{\text{photons}}{\text{s*nm}})}\]
+  $$\boxed{N_{filter} \approx 9.26\mathrm{e}12 \Delta\lambda e^{-9290/T} (\frac{\text{photons}}{\text{s*nm}})}$$
 
   }
 
@@ -1638,35 +1393,38 @@ and focused spot.
 
   \textcolor{midnightblue}{
 
-  \[T B P_{\text {Gaussian }}=\frac{2 \log 2}{\pi} \approx 0.441\]
+  $$T B P_{\text {Gaussian }}=\frac{2 \log 2}{\pi} \approx 0.441$$
 
   }
 
   \textcolor{midnightblue}{ Since this uses the FWHM level, all the 95\%
   metrics need to be converted. About 95\% of the area under a guassian
-  falls within \(\pm 2 \sigma\). }
+  falls within $\pm 2 \sigma$. }
 
   \textcolor{midnightblue}{ Bound on total system timing uncertainty:
-  \(20~\text{ps}_{95\%} = (20/4)*2.35 = 11.75~\text{ps}_{FWHM}\) }
+  $20~\text{ps}_{95\%} = (20/4)*2.35 = 11.75~\text{ps}_{FWHM}$ }
 
   \textcolor{midnightblue}{ The jitter of the detection system and the
-  temporal width of the laser pulse \(\Delta t\) should add in
-  quadrature to match the bound: }
+  temporal width of the laser pulse $\Delta t$ should add in quadrature
+  to match the bound: }
 
   \textcolor{midnightblue}{
 
-  \[ 11.75~\text{ps}_{FWHM} = \sqrt{ \Delta t^2 + (10~\text{ps})^2}\]
+  $$ 11.75~\text{ps}_{FWHM} = \sqrt{ \Delta t^2 + (10~\text{ps})^2}$$
 
   }
 
   \textcolor{midnightblue}{
 
-  \[ 0.441 = \Delta t \Delta \nu \] \[\Delta \nu = 71~\text{GHz}\]
-  \[\Delta \lambda = \frac{\lambda^2 \Delta \nu}{c} = 0.57~\text{nm}\]
+  $$\begin{aligned}
+   0.441 = \Delta t \Delta \nu \\
+   \Delta \nu = 71~\text{GHz} \\
+   \Delta \lambda = \frac{\lambda^2 \Delta \nu}{c} = 0.57~\text{nm} \\
+   \end{aligned}$$
 
   }
 
-  \textcolor{midnightblue}{ \(0.57~\text{nm}\) is the spectral width of
+  \textcolor{midnightblue}{ $0.57~\text{nm}$ is the spectral width of
   the laser pulse at the FWHM level. If this pulse passes through a
   tophat filter with width equal to the 95\% level of the laser pulse,
   then 95\% will be transmitted. }
@@ -1675,7 +1433,7 @@ and focused spot.
 
   \textcolor{midnightblue}{
 
-  \[\Delta \lambda_{95\%} = \frac{4 \Delta \lambda}{2.35} \approx \boxed{1~\text{nm}} \]
+  $$\Delta \lambda_{95\%} = \frac{4 \Delta \lambda}{2.35} \approx \boxed{1~\text{nm}} $$
 
   }
 
@@ -1684,7 +1442,7 @@ and focused spot.
 
   \textcolor{midnightblue}{
 
-  \[\boxed{N_{filter} \approx 9.26e12 (1~\text{nm}) e^{-9290/T} (\frac{\text{photons}}{\text{s*nm}})} \approx 0.15~\text{photons/s} \]
+  $$\boxed{N_{filter} \approx 9.26e12 (1~\text{nm}) e^{-9290/T} (\frac{\text{photons}}{\text{s*nm}})} \approx 0.15~\text{photons/s} $$
 
   }
 
@@ -1701,9 +1459,9 @@ points)}\label{spdc-coupling-and-single-photon-sources-50-points}}
 A Spontaneous Parametric Down Conversion (SPDC) crystal is known to
 generate a twin beam squeezed state of the form:
 
-\[|\psi\rangle= \sqrt{1 - \gamma^2} \sum_{n=0}^{\infty} \gamma^{n}\left|n_{s}, n_{i}\right\rangle \]
+$$|\psi\rangle= \sqrt{1 - \gamma^2} \sum_{n=0}^{\infty} \gamma^{n}\left|n_{s}, n_{i}\right\rangle $$
 
-Where \(n_s\) and \(n_i\) are the number of photons corresponding to the
+Where $n_s$ and $n_i$ are the number of photons corresponding to the
 signal and idler parts of the wavefunction. Consider Fig.~\ref{fig:hsps}
 a, where the crystal is pumped with a pulsed laser, and the the signal
 and idler components that emerge are separated either by polarization or
@@ -1729,60 +1487,60 @@ differentiate between zero and one or more photons arriving in a given
 light pulse. A positive operator value measure (POVM) quantifies how a
 `click' from a binary SPD updates our knowledge of the incident state:
 
-\[\hat{\Pi}_{\text {binary}} = \sum_{n=0}^{\infty}\left[1-(1-\eta)^{n}\right]|n\rangle\langle n|\]
+$$\hat{\Pi}_{\text {binary}} = \sum_{n=0}^{\infty}\left[1-(1-\eta)^{n}\right]|n\rangle\langle n|$$
 
-Where \(\eta\) is the coupling efficiency between the state of interest
+Where $\eta$ is the coupling efficiency between the state of interest
 and the detector.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  (6 pts) Find the expectation value of \(\hat{\Pi}_{\text {binary}}\)
+  (6 pts) Find the expectation value of $\hat{\Pi}_{\text {binary}}$
   given the SPDC state above. This is the probability
-  \(p_{binary}\left(\gamma, \eta\right)\) of getting a binary detector
-  click on the idler arm. For \(\gamma << 1\), what is \(p_{binary}\) up
-  to lowest order in \(\gamma\), and what fock state of the signal arm
-  is the source of this dominant term?
+  $p_{binary}\left(\gamma, \eta\right)$ of getting a binary detector
+  click on the idler arm. For $\gamma << 1$, what is $p_{binary}$ up to
+  lowest order in $\gamma$, and what fock state of the signal arm is the
+  source of this dominant term?
 
   \textcolor{midnightblue}{ \textbf{Answer:} }
 
   \textcolor{midnightblue}{
 
-  \[\begin{aligned}
+  $$\begin{aligned}
    \langle \psi | \Pi_{\text {binary}} | \psi \rangle &= (1- \gamma^2) \sum_{\tilde{n}=0}^{\infty} \langle \tilde{n}_s \tilde{n}_i | \gamma^{\tilde{n}} \sum_{n=0}^{\infty}[1 - (1-\eta)^{n}] \gamma^n | n_s n_i \rangle \\
    \langle \psi | \Pi_{\text {binary}} | \psi \rangle &= p_{binary}(\gamma, \eta) =  \boxed{(1-\gamma^2) \sum_{n_s=0}^{\infty} \gamma^{2n_s} [1 - (1 - \eta)^{n_s}]}
-   \end{aligned}\]
+   \end{aligned}$$
 
   }
 
   \textcolor{midnightblue}{For
-  \(\gamma << 1, ~~ p \sim (1 - \gamma^2)[\cancel{\gamma^0[1 - (1 - \eta)^0]} + \gamma^{2}\eta ] \sim (1 - \gamma^2)\gamma^{2}\eta\)
+  $\gamma << 1, ~~ p \sim (1 - \gamma^2)[\cancel{\gamma^0[1 - (1 - \eta)^0]} + \gamma^{2}\eta ] \sim (1 - \gamma^2)\gamma^{2}\eta$
   }
 
-  \textcolor{midnightblue}{ To lowest order in \(\gamma\),
-  \(p \sim \gamma^{2}\eta\). The single photon fock state dominates for
-  \(\gamma << 1\). }
+  \textcolor{midnightblue}{ To lowest order in $\gamma$,
+  $p \sim \gamma^{2}\eta$. The single photon fock state dominates for
+  $\gamma << 1$. }
 
   \textcolor{midnightblue}{ 3 pts for correct
-  \(p_{binary}(\gamma, \eta)\); 3 pts for saying the leading term is
-  from single photons }
+  $p_{binary}(\gamma, \eta)$; 3 pts for saying the leading term is from
+  single photons }
 \item
   (6 pts) A general form for the density matrix of the signal mode given
   a herald event is:
 
-  \[\rho_{s}\left(\gamma, \eta\right)=\frac{\operatorname{Tr}_{i}\left(\hat{\Pi}|\psi\rangle\langle\psi|\right)}{\left\langle\psi\left|\hat{\Pi}\right| \psi\right\rangle}\]
+  $$\rho_{s}\left(\gamma, \eta\right)=\frac{\operatorname{Tr}_{i}\left(\hat{\Pi}|\psi\rangle\langle\psi|\right)}{\left\langle\psi\left|\hat{\Pi}\right| \psi\right\rangle}$$
 
-  Write down the \(|1\rangle\langle1|\) term of this matrix, and
-  simplify any infinite sums. This is the single photon fidelity
-  \(F_{binary}(\gamma, \eta)\). Why does \(F_{binary}\) approach zero
-  for \(\gamma\) approaching 1? What types of states is the SPDC
-  generating in this limit?
+  Write down the $|1\rangle\langle1|$ term of this matrix, and simplify
+  any infinite sums. This is the single photon fidelity
+  $F_{binary}(\gamma, \eta)$. Why does $F_{binary}$ approach zero for
+  $\gamma$ approaching 1? What types of states is the SPDC generating in
+  this limit?
 
   \textcolor{midnightblue}{ \textbf{Answer:} }
 
   \textcolor{midnightblue}{
 
-  \[\begin{aligned}
+  $$\begin{aligned}
    \rho_s(\gamma,\eta) &= \frac{\operatorname{Tr}_i[\cancel{(1 - \gamma^2)}\Sigma_{n=0}^{\infty} \gamma^{2n}[1 - (1 - \eta)^{n} ]| n \rangle \langle n | n_s n_i \rangle \langle n_s n_i |]}
    {\cancel{(1-\gamma^2)} \sum_{n_s=0}^{\infty} \gamma^{2n_s} [1 - (1 - \eta)^{n_s}]}\\
    |1_s \rangle \langle 1_s | &= \frac{\gamma^2[1 - (1 - \eta)]}{\sum_{n_s=0}^{\infty} \gamma^{2n_s} [1 - (1 - \eta)^{n_s}]} = \frac{\gamma^2 \eta}{\sum_{n_s=0}^{\infty} \gamma^{2n_s} [1 - (1 - \eta)^{n_s}]}\\
@@ -1791,47 +1549,46 @@ and the detector.
    &= \frac{\gamma^2 \eta (1 - \gamma^2)}{1 - \frac{1 - \gamma^2}{1 - \gamma^2(1 - \eta)}}\\
    &= \frac{\cancel{\gamma^2 \eta} (1 - \gamma^2) (1 - \gamma^2 (1 - \eta))}{\cancel{1 - \gamma^2 (1 - \eta) - 1 + \gamma^2}} \\
    F_{binary}(\gamma, \eta) &= \boxed{(1 - \gamma^2)(1 - \gamma^2(1 - \eta))}
-   \end{aligned}\]
+   \end{aligned}$$
 
   }
 
-  \textcolor{midnightblue}{As \(\gamma\) approaches 1, the denominator
-  in the original expression for \(\rho_s(\gamma,\eta)\) approaches
-  infinity while the numerator approaches \(\eta\). In this limit, the
-  SPDC is generating predominantly multi-photon states. For \(\gamma\)
-  approaching 1, the probability of the generated state being a single
-  photon state goes to zero. Because the binary POVM was used,
-  multi-photon states are `included' in \(\rho_s(\gamma,\eta)\). For
-  \(\rho_s\) from the PNR POVM shown below, multi-photon states will be
-  included to a much lesser extent, depending on the value for
-  \(\eta\).}
+  \textcolor{midnightblue}{As $\gamma$ approaches 1, the denominator in
+  the original expression for $\rho_s(\gamma,\eta)$ approaches infinity
+  while the numerator approaches $\eta$. In this limit, the SPDC is
+  generating predominantly multi-photon states. For $\gamma$ approaching
+  1, the probability of the generated state being a single photon state
+  goes to zero. Because the binary POVM was used, multi-photon states
+  are `included' in $\rho_s(\gamma,\eta)$. For $\rho_s$ from the PNR
+  POVM shown below, multi-photon states will be included to a much
+  lesser extent, depending on the value for $\eta$.}
 
-  \textcolor{midnightblue}{3 pts for correct
-  \(F_{binary}(\gamma, \eta)\); 3 pts for similar explanation}
+  \textcolor{midnightblue}{3 pts for correct $F_{binary}(\gamma, \eta)$;
+  3 pts for similar explanation}
 
   An HSPS with high single photon fidelity and probability is most
   useful, but you see these metrics are maximized for opposite limits of
-  \(\gamma\). One approach to achieving high probability and fidelity
+  $\gamma$. One approach to achieving high probability and fidelity
   simultaneously is to link multiple SPDC sources and heralding
   detectors as shown in Fig.~\ref{fig:hsps} b. A click from the detector
-  \(j\) triggers the switch to move to position \(j\) and let the
-  heralded state pass through. This way, \(\gamma\) for each source can
-  be kept low to maximize fidelity, while heralding probability
-  increases with the number of sources.
+  $j$ triggers the switch to move to position $j$ and let the heralded
+  state pass through. This way, $\gamma$ for each source can be kept low
+  to maximize fidelity, while heralding probability increases with the
+  number of sources.
 \item
   (6 pts) If such a multiplexing setup is engineered to have 98\% single
   photon fidelity from each source and 98\% heralding probability
   overall, how many sources and binary SNSPDs are needed? Use an idler
-  arm efficiency \(\eta\) of 80\%.
+  arm efficiency $\eta$ of 80\%.
 
   \textcolor{midnightblue}{ \textbf{Answer:} }
 
   \textcolor{midnightblue}{The fist step is to determine the pump power
-  \(\gamma\) for which fideltiy is 98\%. }
+  $\gamma$ for which fideltiy is 98\%. }
 
   \textcolor{midnightblue}{
 
-  \[0.98 = F_{binary}(\gamma, \eta) = (1 - \gamma^2)(1 - \gamma^2(1 - \eta)\,\,\,\,\,\,\,\, \eta = 0.8\]
+  $$0.98 = F_{binary}(\gamma, \eta) = (1 - \gamma^2)(1 - \gamma^2(1 - \eta)\,\,\,\,\,\,\,\, \eta = 0.8$$
 
   }
 
@@ -1842,11 +1599,11 @@ and the detector.
 
   \textcolor{midnightblue}{Like in introductory statistics problems, its
   helpful to think about the negative case: Given N sources with herald
-  probability \(p\), the probability of zero sources heralding is:}
+  probability $p$, the probability of zero sources heralding is:}
 
   \textcolor{midnightblue}{
 
-  \[P(\text{no herald}|N) = (1 - p_{binary}\left(\gamma, \eta\right))^N\]
+  $$P(\text{no herald}|N) = (1 - p_{binary}\left(\gamma, \eta\right))^N$$
 
   }
 
@@ -1855,59 +1612,58 @@ and the detector.
 
   \textcolor{midnightblue}{
 
-  \[P(\text{at least one herald}|N) = 1 - (1 - p_{binary}\left(\gamma, \eta\right))^N\]
+  $$P(\text{at least one herald}|N) = 1 - (1 - p_{binary}\left(\gamma, \eta\right))^N$$
 
   }
 
   \textcolor{midnightblue}{\includegraphics{chapter_05/figs_05/mux_binary.PNG}}
 
-  \textcolor{midnightblue}{About \(\boxed{N = 290}\) sources are
-  needed.}
+  \textcolor{midnightblue}{About $\boxed{N = 290}$ sources are needed.}
 
   \textcolor{midnightblue}{3 pts for correct form of the multiplexing
-  expression \(P(\text{at least one herald}|N)\); 3 pts for similar
-  number of sources \(N\)}
+  expression $P(\text{at least one herald}|N)$; 3 pts for similar number
+  of sources $N$}
 \end{enumerate}
 
 A photon number resolving (PNR) SNSPD is able to discriminate the number
 of photons in a light pulse*. By heralding the idler mode with a PNR
 SNSPD, the generation of multi-photon signal pulses can be identified
 and discarded. There's a POVM for an ideal PNR single photon detector,
-where \(i\) is the number of photons detected**:
+where $i$ is the number of photons detected**:
 
-\[\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\rangle\langle n|\]
+$$\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\rangle\langle n|$$
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{3}
 \item
-  (12 pts) Derive a herald probability \(p_{PNR}\) and fidelity
-  \(F_{PNR}\) for the PNR POVM, following the steps in the previous
-  sections with \(i\) set to 1. You can use symbolic math tools to
-  simplify them if you wish. The probability of successfully heralding
-  states in the signal arm \(p_{PNR}\) should now approach zero for
-  \(\gamma\) near one. Why is this?
+  (12 pts) Derive a herald probability $p_{PNR}$ and fidelity $F_{PNR}$
+  for the PNR POVM, following the steps in the previous sections with
+  $i$ set to 1. You can use symbolic math tools to simplify them if you
+  wish. The probability of successfully heralding states in the signal
+  arm $p_{PNR}$ should now approach zero for $\gamma$ near one. Why is
+  this?
 
   \textcolor{midnightblue}{ \textbf{Answer:} }
   \textcolor{midnightblue}{The POVM for one photon detected:}
 
   \textcolor{midnightblue}{
 
-  \[\hat{\Pi}_{PNR}(1)=\sum_{n=1}^{\infty}n(1-\eta)^{n-1} \eta|n\rangle\langle n|\]
+  $$\hat{\Pi}_{PNR}(1)=\sum_{n=1}^{\infty}n(1-\eta)^{n-1} \eta|n\rangle\langle n|$$
 
   }
 
   \textcolor{midnightblue}{First, derive the probability of getting a
   single photon detection from the PNR detector:
-  \(p_{PNR}(\gamma, \eta)\):}
+  $p_{PNR}(\gamma, \eta)$:}
 
   \textcolor{midnightblue}{
 
-  \[\begin{aligned}
+  $$\begin{aligned}
        p_{PNR}(\gamma, \eta) =\langle \psi | \Pi_{\text {PNR}} | \psi \rangle &= (1- \gamma^2) \sum_{\tilde{n}=0}^{\infty} \langle \tilde{n}_s \tilde{n}_i | \gamma^{\tilde{n}} \sum_{n=1}^{\infty}n(1-\eta)^{n-1} \eta|n\rangle\langle n| | n_s n_i \rangle \\
        \langle \psi | \Pi_{\text {PNR}} | \psi \rangle &= p_{PNR}\left(\gamma, \eta\right) =  \boxed{(1-\gamma^2) \sum_{n_s=0}^{\infty} \gamma^{2n_s} n_s(1-\eta)^{n_s-1}}\\
        p_{PNR}\left(\gamma, \eta\right) &=  \boxed{\frac{\gamma ^2 (1 - \gamma ^2) \eta }{(\gamma ^2 (\eta -1)+1)^2}}
-   \end{aligned}\]
+   \end{aligned}$$
 
   }
 
@@ -1916,42 +1672,42 @@ where \(i\) is the number of photons detected**:
 
   \textcolor{midnightblue}{\includegraphics{chapter_05/figs_05/simplify_ppnr.PNG}}
 
-  \textcolor{darkred}{4 pts for \(p_{PNR}\left(\gamma, \eta\right)\)}
+  \textcolor{darkred}{4 pts for $p_{PNR}\left(\gamma, \eta\right)$}
 
   \textcolor{midnightblue}{Second, derive the single photon fidelity,
   staring with the density matrix for the signal photon given a PNR
   herald event. Using (15) above for
-  \(\langle \psi | \Pi_{\text {PNR}} | \psi \rangle\) in the denominator
+  $\langle \psi | \Pi_{\text {PNR}} | \psi \rangle$ in the denominator
   helps simplify it significantly. }
 
   \textcolor{midnightblue}{
 
-  \[\begin{aligned}
+  $$\begin{aligned}
        \rho_s(\gamma,\eta) &= \frac{\operatorname{Tr}_i[\sum_{n=1}^{\infty} \gamma^{2n}n(1-\eta)^{n-1} \eta|n\rangle\langle n|n_s n_i \rangle \langle n_s n_i |]}
            {\langle \psi | \Pi_{\text {PNR}} | \psi \rangle}\\
            |1_s \rangle \langle 1_s | &= \frac{\cancel{(1 - \gamma^2)}(\gamma ^2 (\eta -1)+1)^2 \cancel{\gamma^2 \eta}}{\cancel{\gamma^2 \eta} \cancel{(1 - \gamma ^2)} }\\
            F_{PNR}(\gamma, \eta) &= \boxed{(\gamma ^2 (\eta -1)+1)^2}
-   \end{aligned}\]
+   \end{aligned}$$
 
   }
 
-  \textcolor{midnightblue}{4 pts for \(F_{PNR}(\gamma, \eta)\)}
+  \textcolor{midnightblue}{4 pts for $F_{PNR}(\gamma, \eta)$}
 
-  \textcolor{midnightblue}{For \(\gamma\) near one, the SPDC is under
+  \textcolor{midnightblue}{For $\gamma$ near one, the SPDC is under
   strong pump power and is generating predominantly multi-pair states. A
   vanishing fraction of those states are single photon states that the
   PNR detector is able to distinguish and single-photon. Therefore, the
   PNR detector is signaling the generation of multi-pair states most of
-  the time which should be discarded and do not contribute to
-  \(p_{PNR}\). For high efficiency \(\eta\), only the vanishing
-  single-pair creation rate contributes predominantly to \(p_{PNR}\).}
+  the time which should be discarded and do not contribute to $p_{PNR}$.
+  For high efficiency $\eta$, only the vanishing single-pair creation
+  rate contributes predominantly to $p_{PNR}$.}
 
   \textcolor{darkred}{4 pts for similar explanation}
 \item
-  (12 pts) Make a parametric plot for \(0<\gamma<1\) with \(F_{PNR}\) on
-  the x-axis and \(p_{PNR}\) on the y-axis. Plot the curve for a few
-  different values of idler arm efficiency \(0<\eta<1\). All curves
-  should reach the same maximum herald probability. What is it?
+  (12 pts) Make a parametric plot for $0<\gamma<1$ with $F_{PNR}$ on the
+  x-axis and $p_{PNR}$ on the y-axis. Plot the curve for a few different
+  values of idler arm efficiency $0<\eta<1$. All curves should reach the
+  same maximum herald probability. What is it?
 
   \textcolor{midnightblue}{ \textbf{Answer:} }
   \textcolor{midnightblue}{\includegraphics{chapter_05/figs_05/PLT.PNG}}
@@ -1960,22 +1716,22 @@ where \(i\) is the number of photons detected**:
   idler arm efficiency is 25\%. }
 
   \textcolor{darkred}{ 4 points for the 25\% limit; 8 points for a few
-  plots at different \(\eta\) }
+  plots at different $\eta$ }
 \item
   (8 pts) Consider again the configuration in Fig.~\ref{fig:hsps} b.
   Find the number of sources using PNR detectors needed to reach 98\%
-  single photon herald probability and fidelity with \(\eta = 0.8\).
-  Also find the number of sources for \(\eta = 0.95\).
+  single photon herald probability and fidelity with $\eta = 0.8$. Also
+  find the number of sources for $\eta = 0.95$.
 
   \textcolor{midnightblue}{ \textbf{Answer:} }
   \textcolor{midnightblue}{\includegraphics{chapter_05/figs_05/pnrTotalPerf.PNG}}
 
   \textcolor{midnightblue}{About
-  \(\boxed{\text{98 sources are needed for the case with an 80\% heralding}}\),
+  $\boxed{\text{98 sources are needed for the case with an 80\% heralding}}$,
   }
 
   \textcolor{midnightblue}{about
-  \(\boxed{\text{23 sources are needed with 95\% efficient heralding}}\)}
+  $\boxed{\text{23 sources are needed with 95\% efficient heralding}}$}
 
   \textcolor{darkred}{ 4 points for each of the 2 answers. Answers that
   vary from these values by 2-3 sources are acceptable. }
@@ -2083,13 +1839,13 @@ Works}\label{how-a-sorption-fridge-works}}
 
 use \boldsymbol for bold latex:
 
-\textbf{Fidelity and Rates vs \(\boldsymbol \mu\)}
+\textbf{Fidelity and Rates vs $\boldsymbol \mu$}
 
 Here are a few bold characters together:
-\(\boldsymbol{\mu \quad \beta \quad \gamma}\)
+$\boldsymbol{\mu \quad \beta \quad \gamma}$
 
 For units, use \mathrm{nm}: This is a number with units:
-\(138.3~\mathrm{nm}\)
+$138.3~\mathrm{nm}$
 
 Refer to a figure with Fig.~\ref{fig:figurename} or
 Fig.~\ref{fig:figurename} or for multiple Fig.~\ref{fig:figurename}
@@ -2129,7 +1885,7 @@ correctly:
 
 {\color{midnightblue} 
 
-\[math stuff 1\]
+$$math stuff 1$$
 
 }
 
