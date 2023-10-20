@@ -13,11 +13,57 @@
 //    </div>
 //  </div>
 //</div>
-document$.subscribe(function() {
+document$.subscribe(function () {
   const images = document.querySelectorAll('img[alt^="fig:"]');
 
 
   images.forEach(image => {
+    let timerId;
+
+
+    const imageContainer = image.parentNode
+
+    imageContainer.addEventListener('mouseenter', (event) => {
+      const firstImage = event.target.querySelector('img');
+      timerId = setTimeout(() => {
+        const img = document.createElement('img');
+        console.log('added')
+        img.id = 'overlay'
+        img.src = '/site_images/zoom-white.svg';
+        img.style.position = 'absolute';
+        img.style.top = `${firstImage.offsetTop + Math.round(0.5 * firstImage.offsetHeight)}px`;
+        img.style.left = `${firstImage.offsetLeft + Math.round(0.5 * firstImage.offsetWidth)}px`;
+        img.style.width = "250px";
+        img.style.height = "250px";
+        img.style.opacity = '0';
+        img.style.transform = 'translate(-50%, -50%)';
+        img.style.transition = 'opacity 0.5s';
+        img.style.pointerEvents = 'none'; // make the img element click-through
+        img.style.mixBlendMode = "difference";
+        img.style.zIndex = "0";
+        // imageContainer.appendChild(img);
+        imageContainer.insertBefore(img, imageContainer.firstChild);
+        setTimeout(() => {
+          img.style.opacity = '0.06';
+        }, 10);
+
+        img.addEventListener('mouseenter', (event) => {
+          clearTimeout(timerId);
+          event.stopPropagation();
+        });
+      }, 400);
+    });
+
+    imageContainer.addEventListener('mouseleave', () => {
+      clearTimeout(timerId);
+      const newNode = imageContainer.querySelector('#overlay');
+      if (newNode) {
+        imageContainer.removeChild(newNode);
+      }
+    });
+
+
+
     image.addEventListener('click', event => {
       event.preventDefault();
 
@@ -42,7 +88,7 @@ document$.subscribe(function() {
       const figcaptionHtml = event.target.parentNode.nextElementSibling.innerHTML;
       // console.log(figcaptionHtml);
 
-      
+
       // document.body.appendChild(modal);
       const imageWithCaption = document.createElement('div');
       imageWithCaption.classList.add('image-with-caption');

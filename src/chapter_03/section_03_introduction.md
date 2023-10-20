@@ -31,7 +31,7 @@ The SNSPD generates RF pulses with greater amplitude and slew rate when detectin
 
 As the PNR response affects the timing of fixed threashold timetaggs at any trigger level, it has a significant effect of the timing measurements used for the PPM demonstration. Any other applications illumnate these detectors with optical pulses of non-vanishing mean photon numbers will have to content with these effects as well. For this reason, we study the PNR response in detail and present two methods for managing it. We show how the photon number information can be deconvolved from the arrival time information, and how both de-correlated degrees of freedom can be measured simultaneously. This is applicable to certain types of high-rate quantum communication and computing systems. 
 
-![**PNR-sensitive Pulse Waveform** The rising edge of the differential SNSPD's RF pulses exibit variations in height, slew rate, and arrival time due to photon-number dependent dynamics. The slopes of the 1-photon and 2-photon pulses significantly differ, and as the photon number increases, the alterations to the pulse shape become progressively smaller. Trigger levels A (8\ mV) and B (50\ mV) were used to extract as much information about pulse slope and arrival time as possible](./figs_03/waveform_light.svg){#fig:waveform short-caption="PNR-sensitive Pulse Waveform" width=80%}
+![**PNR-sensitive Pulse Waveform** The rising edge of the differential SNSPD's RF pulses exhibit variations in height, slew rate, and arrival time due to photon-number dependent dynamics. The slopes of the 1-photon and 2-photon pulses significantly differ, and as the photon number increases, the alterations to the pulse shape become progressively smaller. Trigger levels A (8\ mV) and B (50\ mV) were used to extract as much information about pulse slope and arrival time as possible](./figs_03/waveform_light.svg){#fig:waveform short-caption="PNR-sensitive Pulse Waveform" width=80%}
 
 
 
@@ -40,7 +40,6 @@ The work here highlights the application of low jitter single-photon detectors f
 <span style="color:orange">Calculate reduction in power from state of the art SFP modules</span>
 
 To access the applicability of different detectors, here we compare some of the recent near infrared detectors. 
-
 
 A useful figure of merit that includes all of the revelant detector metrics for photon timing was introduced by Bronzi and co-authors [@Bronzi2016]
 
