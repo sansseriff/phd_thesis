@@ -29,7 +29,7 @@ document$.subscribe(function () {
         const img = document.createElement('img');
         console.log('added')
         img.id = 'overlay'
-        img.src = '/site_images/zoom-white.svg';
+        img.src = '/zoom-white.svg';
         img.style.position = 'absolute';
         img.style.top = `${firstImage.offsetTop + Math.round(0.5 * firstImage.offsetHeight)}px`;
         img.style.left = `${firstImage.offsetLeft + Math.round(0.5 * firstImage.offsetWidth)}px`;
