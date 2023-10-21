@@ -9,4 +9,12 @@
         "markdown": "html"
     },
     "CodeGPT.organizationId": "org-IS7gPJHuSc4mlawRrBsRQ1qz",
+    "PandocCiter.DefaultBibs": [
+
+        "/home/andrew/phd/src/references_cleaned.bib",
+
+    ],
+    "cSpell.words": [
+        "seperated"
+    ],
 }
