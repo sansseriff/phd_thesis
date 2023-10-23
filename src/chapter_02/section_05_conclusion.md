@@ -1,3 +1,9 @@
 ## Conclusion
 
-conclusion here
+For some SNSPD systems, the intrinsic reset time of the nanowire is considerably shorter than the reset dynamics of the amplifier chain. Then, the delay effect induced on each pulse may depend on the arrival time of multiple previous pulses, as amplifier reset dynamics combine additively. To optimally correct for this, higher-order correction techniques are needed based on higher-dimensional lookup tables. There is an avenue for exploring such methods for unique use-cases. 
+
+The technique described in this work could be adapted for pulses measured at multiple voltage levels, or even fully digitized pulses captured with high speed ADCs and FPGAs. These more rigorous readout techniques may be needed to deconvolve photon timing and photon number resolution effects from the same nanowire at high count rates~[@Hao2021]. 
+
+There is a broad range of extensions and modifications to the presented method that may prove to be useful.  However, the single-$\Delta t$ measurement approach detailed here is broadly applicable and straightforward to implement. 
+
+As applications like LIDAR and quantum communication demand ever higher data rates, multiple techniques for increasing photon and data throughput of SNSPD systems are being explored. Arrays or multi-channel SNSPD systems will play a role in satisfying that demand. However, compared to multiple lower count rate SNSPDs operating in parallel, a single detector operating at high rate has certain advantages. First, it makes more efficient use of the extensive bandwidth of the RF readout channel. Second, the single detector with single readout line puts less thermal load on the cooling system than multiple detectors with multiple readout lines. Therefore, paths toward operating individual SNSPDs at the limits of their count rate performance should be explored before extending to multi-pixel systems. This work is a step towards unlocking all available performance and timing precision of SNSPDs operated at high count rates.
