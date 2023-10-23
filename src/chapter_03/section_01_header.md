@@ -1,1 +1,3 @@
-A version of this chapter will appear as Optix Express arciel XXX...
+A version of this chapter will be submitted the the journal optics express. A preprint is released as:
+
+<span style="color: orange">arxiv citation here</span>

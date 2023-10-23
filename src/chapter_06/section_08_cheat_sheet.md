@@ -1,4 +1,21 @@
 
+to put something only in the mkdocs/html output:
+
+```{=html}
+content here
+```
+
+
+to put something only in the latex output:
+
+
+
+<!-- and this might work? -->
+<!-- ```{=latex}
+content here
+``` -->
+
+
 
 use \boldsymbol for bold latex:
 
@@ -13,7 +30,7 @@ Refer to a figure with @fig:figurename or @Fig:figurename or for multiple @fig:f
 
 Until I figure something more shorthand, you can set colors with "<span\>" tags:
 
-<span class=blue markdown> This text is blue. And it changes lightness when darkmode is witched </span>
+<span style="color:blue" markdown> This text is blue. And it changes lightness when darkmode is witched </span>
 
 
 ![**Caption title here** a) Long caption here](./figs_06/fig1b_light.svg){#fig:figurename short-caption="Figure label for in thesis index here." width=70%}

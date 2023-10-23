@@ -340,13 +340,140 @@ narroband filter.
 \chapter{Time Walk and Jitter
 Correction}\label{time-walk-and-jitter-correction}}
 
+A version of this chapter is currently published as:
+
+Andrew Mueller, Emma E. Wollman, Boris Korzh, Andrew D. Beyer, Lautaro
+Narvaez, Ryan Rogalin, Maria Spiropulu, Matthew D. Shaw;
+\href{https://pubs.aip.org/aip/apl/article/122/4/044001/2870246/Time-walk-and-jitter-correction-in-SNSPDs-at-high}{Time-walk
+and jitter correction in SNSPDs at high count rates}. Appl. Phys. Lett.
+23 January 2023; 122 (4): 044001.
+
 \hypertarget{abstract-1}{%
 \section{Abstract}\label{abstract-1}}
 
 ~~~~~
 
+Superconducting nanowire single-photon detectors (SNSPDs) are a leading
+detector type for time correlated single photon counting, especially in
+the near-infrared. When operated at high count rates, SNSPDs exhibit
+increased timing jitter caused by internal device properties and
+features of the RF amplification chain. Variations in RF pulse height
+and shape lead to variations in the latency of timing measurements. To
+compensate for this, we demonstrate a calibration method that correlates
+delays in detection events with the time elapsed between pulses. The
+increase in jitter at high rates can be largely canceled in software by
+applying corrections derived from the calibration process. We
+demonstrate our method with a single-pixel tungsten silicide SNSPD and
+show it decreases high count rate jitter. The technique is especially
+effective at removing a long tail that appears in the instrument
+response function at high count rates. At a count rate of 11.4
+MCounts/s, we reduce the full width at 1\% maximum level (FW1\%M) by
+45\%. The method, therefore, enables certain quantum communication
+protocols that are rate-limited by the FW1\%M metric to operate almost
+twice as fast.
+
 \hypertarget{introduction-1}{%
 \section{Introduction}\label{introduction-1}}
+
+Over the last decade, SNSPDs have advanced rapidly to become essential
+components in many optical systems and technologies, owing to their high
+efficiency
+$(>90\%)$\textasciitilde{}\autocite{99.5_Chang_2021,reddy2020superconducting},
+fast reset times
+($< 1~\mathrm{ns}$)\textasciitilde{}\autocite{Vetter2016Cavity} and
+scalability to kilopixel
+arrays\textasciitilde{}\autocite{WollWollman2019}. The timing jitter of
+SNSPDs is also best-in-class -- values as low as 3\textasciitilde ps
+have been demonstrated in short
+nanowires\textasciitilde{}\autocite{Korzh2020}, and new high-efficiency
+designs exhibit sub-10 ps
+jitter\textasciitilde{}\autocite{EsmaeilZadeh2020,Colangelo2021}.
+
+SNSPD jitter increases with count rate due to properties of the nanowire
+reset process and features of the readout circuit. The effect bears
+resemblance to time walk observed in silicon avalanche diodes and other
+detectors where the pulses have varying heights and slew
+rates\textasciitilde{}\autocite{SPAD_walk_Kirchnir_1997} thereby causing
+a timing measurement using a fixed threshold to `walk' along the rising
+edge of the pulse (the labeled delay in Fig.~\ref{fig:intro_jitterate}
+a). At low count rates SNSPDs exhibit very uniform pulse heights.
+However, at high counts rates where the inter-arrival time is on the
+order of the reset time of the detector, current-reset and amplifier
+effects lead to smaller and distorted pulses. If photon inter-arrival
+times are not known a priori in the intended application, the
+uncorrected time walk manifests as a perceived increase in jitter
+(Fig.~\ref{fig:intro_jitterate} b).
+
+\hypertarget{fig:intro_jitterate}{%
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth,height=\textheight]{chapter_02/figs_02/intro_jitterate_light.pdf}
+\caption[{Introduction to the time walk effect}]{\textbf{Introduction to
+the time walk effect} a) Diagram illustrating two major sources of
+correlated high count rate jitter. First, detections may occur during
+the reset time of a previous detection. At this time the bias current in
+the nanowire is below its saturated value so that a photodetection
+triggers an RF pulse with correspondingly lower amplitude. Second, an RF
+pulse may arrive in the undershoot region of a previous pulse, where the
+undershoot is a period of negative voltage induced by the low-frequency
+cutoff properties of the readout amplifier chain. (b) Measured
+histograms of detections from short $3~\mathrm{ps}$ mode-locked laser
+pulses. With lower attenuation and higher count rate, the observed
+timing uncertainty is greater. Inset shows where respective count rates
+fall on a maximum count rate (MCR) curve \autocite{Zhang_MCR_2019}. The
+MCR of an SNSPD is often quoted at the $3~\mathrm{dB}$ point, where the
+normalized efficiency drops to $-3~\mathrm{dB}$ of its maximum value.
+The jitter increase due to time walk manifests as a tail in the
+instrument response functions (inside dashed black box) even at count
+rates significantly below the 3-dB point where detector efficiency has
+not started to drop significantly (e.g.~the 1.7 Mcps data)}
+\label{fig:intro_jitterate}
+\end{figure}
+}
+
+The time-walk effect in SNSPDs is typically not reported, as jitter is
+usually measured at low count rates where the detector has ample time to
+reset following each detection. But as communication and quantum
+information applications push into higher count rates, the high count
+rate induced jitter becomes more relevant. LIDAR, quantum and classical
+optical communication, and imaging applications may all benefit from the
+development of new detection systems and methods that keep jitter as low
+as possible in this regime.
+
+We first consider the features of SNSPD operation and readout that cause
+an increase in jitter with count rate. Then we present multiple ways of
+mitigating or avoiding these effects, before reviewing our preferred
+method that relies on a calibration and correction process.
+
+The jitter increase observed at high rate originates from two groups of
+system characteristics: (i) the intrinsic reset properties of the
+nanowire, and (ii) properties of the amplification chain. These
+influence the system's jitter differently, thus it is helpful to
+consider them separately. Added jitter from either or both sources can
+emerge when an SNSPD system is operated at high count rates.
+
+The nanowire reset process determines how the detector becomes
+single-photon sensitive again after a detection. When an SNSPD fires,
+the current flow in the nanowire momentarily drops to near zero, then
+recovers in an inverted exponential fashion
+(Fig.~\ref{fig:intro_jitterate} a). An incident photon may trigger
+another detection before the bias current fully returns to its saturated
+value, producing a pulse with a lower amplitude and slew rate. A fixed
+threshold comparator will trigger on this lower pulse later in time than
+a full amplitude pulse. If uncorrected for, this time walk manifests as
+an increase in jitter at high count rates.
+
+The choice of readout amplifiers may also contribute to added high count
+rate jitter. Pulses may be shifted in voltage and distorted if they
+arrive when the RF signal has not yet reached a steady zero state
+following the previous detection. For example, pulses may arrive within
+an amplifier-induced undershoot region following previous pulses. This
+phenomenon is illustrated in Fig.~\ref{fig:intro_jitterate} a as the
+area below 0\textasciitilde mV. The duration of ringing or undershoot
+effects varies widely depending on the design of the readout circuit. If
+they last longer than the reset time of the nanowire bias current, the
+calibration technique may correct for the potentially complex
+interactions between pulse waveforms that overlap in time.
 
 \hypertarget{method}{%
 \section{Method}\label{method}}
@@ -376,8 +503,10 @@ outlook discussion here
 Number Resolving
 SNSPD}\label{data-recovery-and-pulse-position-modulation-with-a-photon-number-resolving-snspd}}
 
-A version of this chapter will appear as Optix Express arciel
-XXX\ldots{}
+A version of this chapter will be submitted the the journal optics
+express. A preprint is released as:
+
+\textcolor{orange}{arxiv citation here}
 
 \hypertarget{abstract-2}{%
 \section{Abstract}\label{abstract-2}}
@@ -741,8 +870,9 @@ released as:
 
 Andrew Mueller, Samantha Davis, Boris Korzh, Raju Valivarthi, Andrew D.
 Beyer, Rahaf Youssef, Neil Sinclair, Matthew D. Shaw, \& Maria
-Spiropulu. (2023). High-rate multiplexed entanglement source based on
-time-bin qubits for advanced quantum networks.
+Spiropulu. (2023). \href{https://arxiv.org/abs/2310.01804}{High-rate
+multiplexed entanglement source based on time-bin qubits for advanced
+quantum networks}.
 
 \hypertarget{abstract-3}{%
 \section{Abstract}\label{abstract-3}}
@@ -1804,8 +1934,56 @@ $$\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\ra
 \hypertarget{software-tools}{%
 \chapter{Software Tools}\label{software-tools}}
 
-\hypertarget{abstract-4}{%
-\section{Abstract}\label{abstract-4}}
+\hypertarget{software-tools-for-equipment-and-experiment-control}{%
+\section{Software Tools for Equipment and Experiment
+Control}\label{software-tools-for-equipment-and-experiment-control}}
+
+Much of my time during the phd was spent writing software. While the
+main product of a phd is papers and the underlying ideas of the
+experiments carried out, software was often used to rigorously encode
+these more semantic or ephemeral results. Sometimes, the efficacy of a
+certain excremental idea depends greatly on the simplicity and
+reliability of the software used to implement it. If the setup of an
+initially complex excremental arrangement -- for example the
+synchronization of intensity modulators and arbitrary waveform generator
+with a mode locked laser -- can be made significantly more simple
+through the use of software, then the idea becomes more practical and
+more likely to be adopted by other researchers.
+
+For these reasons I include introductions to the software tools on which
+I spent the most time and gained the most benefit. Perhaps these
+repositories provide insight that the thesis so far has not.
+
+\hypertarget{sequence-generator}{%
+\section{Sequence Generator}\label{sequence-generator}}
+
+The Sequence Generator repository is for generating AWG sequences that
+are synchronized with the Pritel OAC fast mode locked laser. This is
+needed for carving the mode locked laser signal with intensity
+modulators. This toolset was useful for my PPM project as well as a
+concurrent high rate QKD project with slightly different requirements.
+
+The most important feature of this toolset is the ability to determine
+compatible AWG sample rates and sequence lengths for a given laser
+repetition rate, while imposing certain requirements, like that the AWG
+sequence length must be a multiple of 128 samples. The script supports
+situations where a small integer number of laser pulses does not math in
+time an integer number of AWG samples. The main requirement is that the
+time for the full AWG sequence to run must be an integer multiple of the
+laser repetition period, so that the AWG sequence can be repeated
+indefinitely without drifting out of sync with the laser.
+
+The sections of code that undergo this analysis are located in the
+functions \texttt{determine\_ppm\_properties} and
+\texttt{determine\_regular\_properties} for the PPM and QKD applications
+respectively.
+
+Repository:
+\href{https://github.com/sansseriff/sequence_generator/tree/main}{sequence
+generator}
+
+\hypertarget{section}{%
+\section{}\label{section}}
 
 \hypertarget{software-systems-and-operation}{%
 \section{Software Systems and
@@ -1901,6 +2079,10 @@ method}{bisect() method}}\label{bisect-method}}
 \section{How A Sorption Fridge
 Works}\label{how-a-sorption-fridge-works}}
 
+to put something only in the mkdocs/html output:
+
+to put something only in the latex output:
+
 use \boldsymbol for bold latex:
 
 \textbf{Fidelity and Rates vs $\boldsymbol \mu$}
@@ -1917,8 +2099,8 @@ Fig.~\ref{fig:figurename} or for multiple Fig.~\ref{fig:figurename}
 Until I figure something more shorthand, you can set colors with
 ``\textless span\textgreater{}'' tags:
 
-{\color{midnightblue}  This text is blue. And it changes lightness when
-darkmode is witched }
+\textcolor{midnightblue}{ This text is blue. And it changes lightness
+when darkmode is witched }
 
 \hypertarget{fig:figurename}{%
 \begin{figure}

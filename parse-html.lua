@@ -209,7 +209,13 @@ function Span(el)
     end
 
 
+    -- ignore stuff like <span class="latex"></span> that's only for latex output
+    if el.classes[1] == "latex" then
+        return pandoc.RawInline('markdown', "")
+    end
 
+
+    -- switch style tags for colors to classes (for light/dark support)
     if el.attributes.style then
         local style = el.attributes.style
         -- print(style)
