@@ -1,4 +1,8 @@
+<!-- ## Aph 138b Homework Assignment -->
+
+```{=html}
 ## Aph 138b Homework Assignment
+```
 
 In March of 2022, Matthew Shaw was a guest lecturer for the Quantum Hardware and Techniques course (APh/Ph 138b). The following is a homework assignment I wrote to accompany his series of lectures. 
 
