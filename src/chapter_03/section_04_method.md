@@ -6,7 +6,7 @@ Prior to the PPM demosntration, we collected data with multi-photon optical puls
 
 ### Slope-Based Correction
 
-![**PNR Slope Variation Analysis and Cancellation** a) 2D histogram of RF pulse measurements. Through graphing slope $\Delta t_{BA}$ on the x-axis and arrival time $t_A$ on the y-axis, a series of groupings are visible that identify the discrete photon numbers detected. ](./figs_03/slope_cancellation_light.svg){#fig:slope_correction short-caption="PNR Slope Variation Analysis and Cancellation" width=75%}
+![**PNR Slope Variation Analysis and Cancellation** a) 2D histogram of RF pulse measurements. Through graphing slope $\Delta t_{BA}$ on the x-axis and arrival time $t_A$ on the y-axis, a series of groupings are visible that identify the discrete photon numbers detected. ](./figs_03/slope_cancellation_light.svg){#fig:slope_correction short-caption="PNR Slope Variation Analysis and Cancellation" width=100%}
 
 
 Pairs of pulse measurements $t_A$ and $t_B$ may be graphed on a 2D plane parametrized by  $\Delta t_{BA}$ on the x-axis and $t_A$. @fig:slope_correction a shows how this protection exhibits multiple groupings that correspond the the photon number character of the impinging optical mode. The 1 and 2-photon events are clearly identifiable and seperated from other events, with $|3\rangle$, $|4\rangle$, and $|5\rangle$ events also visible with less mutual separation. While @fig:slope_correction a is shown here for just one mean photon number $\mu$, these grouplings are collected for a full range of attenuations and corresponding $\mu$. @fig:slope_correction a shows histograms from projecting 3 such groupings down onto the $\Delta t_{BA}$ axis. 
