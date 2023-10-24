@@ -136,7 +136,7 @@ Span = function(el)
     -- table.insert(el.content, 1, pandoc.RawInline('latex', '\\mccorrect{'))
     -- table.insert(el.content, pandoc.RawInline('latex', '}'))
     -- return el.content
-    print(pandoc.RawInline('latex', el.content[1].text))
+    -- print(pandoc.RawInline('latex', el.content[1].text))
     return pandoc.RawInline('latex', el.content[1].text)
   end
 

@@ -222,9 +222,18 @@ function Span(el)
         return pandoc.RawInline('markdown', string)
     end
 
+    -- <span class="html">This is some html</span>
+    -- pass through unmodified spans marked "html"
+    if el.classes[1] == "html" then
+        -- print(el.content[1].text)
+        return el.content
+      end
+
 
     -- ignore stuff like <span class="latex"></span> that's only for latex output
     if el.classes[1] == "latex" then
+        -- print(el)
+        -- print("NOT including: ", el.content)
         return pandoc.RawInline('markdown', "")
     end
 

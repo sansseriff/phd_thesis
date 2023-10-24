@@ -45,8 +45,8 @@ With the interpolation operation expressed as a function $D$, the correction is 
 
 <figure markdown> 
     <a name='fig:jitterate_results_2'></a> 
-    <img alt="fig:jitterate_results_2" style="width: 100%; margin: auto;" src="../figs_02/jitterate_data_c_light.svg#only-light" >
-    <img alt="fig:jitterate_results_2" style="width: 100%; margin: auto;" src="../figs_02/jitterate_data_c_dark.svg#only-dark" > 
+    <img alt="fig:jitterate_results_2" style="width: 90%; margin: auto;" src="../figs_02/jitterate_data_c_light.svg#only-light" >
+    <img alt="fig:jitterate_results_2" style="width: 90%; margin: auto;" src="../figs_02/jitterate_data_c_dark.svg#only-dark" > 
     <figcaption markdown> Figure 4: **Jitters metrics across incident powers** (a) Effect of the correction on measurements of system jitter over a range of rates approaching the maximum count rate. (b) Corrected (solid) and uncorrected (dashed) instrument response functions with color-matched arrows showing the location of the width-statistics plotted above in (a). The black vertical line in (a) is drawn at the count rate of this plot. Inset shows linear scaling. (c) Corrected (solid) and uncorrected (dashed) histogram analogous to (b), but at a higher count rate indicated by the grey line in (a).</figcaption>
     </figure>
 

@@ -1,3 +1,0 @@
-## Outlook
-
-outlook discussion here

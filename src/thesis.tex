@@ -309,17 +309,6 @@ The correction we perform using the $\tilde{d}$-vs-$t^\prime$ curve in Fig.~\ref
 
 To study the effectiveness of our correction method at different count rates, we apply it to data collected at different mean photon numbers per pulse, with the same 537.5 MHz pulse train. As shown in Fig.~\ref{fig:jitterate_results_2} c, the correction improves the FWHM at rates approaching the 3~dB point, and improves FW10\%M and FW1\%M (full width at ten percent/one percent maximum) dramatically, even at count rates significantly below the 3 dB point, where detector efficiency is nearly maximized. This reduction is evident in Fig.~\ref{fig:jitterate_results_2} c, where the correction works to remove a time-walk induced tail in the instrument response function. The ratio of corrected FW1\%M over uncorrected FW1\%M reaches a minimum of 0.55 at a count rate of 11.5 MCounts/s. Therefore if an application sets its repetition rate or bin size based on the FW1\%M metric, the repetition rate can be increased and the bin size decreased by up to 45\% without any increase in event misattribution errors. These improvements are notable for applications including biomedical imaging~\autocite{Sutin16,Bruschini2019}, quantum communication~\autocite{Hadfield2009} and laser ranging~\autocite{McCarthy13} that have stringent timing requirements over a large dynamic range.
 
-\hypertarget{conclusion}{%
-\section{Conclusion}\label{conclusion}}
-
-For some SNSPD systems, the intrinsic reset time of the nanowire is considerably shorter than the reset dynamics of the amplifier chain. Then, the delay effect induced on each pulse may depend on the arrival time of multiple previous pulses, as amplifier reset dynamics combine additively. To optimally correct for this, higher-order correction techniques are needed based on higher-dimensional lookup tables. There is an avenue for exploring such methods for unique use-cases.
-
-The technique described in this work could be adapted for pulses measured at multiple voltage levels, or even fully digitized pulses captured with high speed ADCs and FPGAs. These more rigorous readout techniques may be needed to deconvolve photon timing and photon number resolution effects from the same nanowire at high count rates~\autocite{Hao2021}.
-
-There is a broad range of extensions and modifications to the presented method that may prove to be useful. However, the single-$\Delta t$ measurement approach detailed here is broadly applicable and straightforward to implement.
-
-As applications like LIDAR and quantum communication demand ever higher data rates, multiple techniques for increasing photon and data throughput of SNSPD systems are being explored. Arrays or multi-channel SNSPD systems will play a role in satisfying that demand. However, compared to multiple lower count rate SNSPDs operating in parallel, a single detector operating at high rate has certain advantages. First, it makes more efficient use of the extensive bandwidth of the RF readout channel. Second, the single detector with single readout line puts less thermal load on the cooling system than multiple detectors with multiple readout lines. Therefore, paths toward operating individual SNSPDs at the limits of their count rate performance should be explored before extending to multi-pixel systems. This work is a step towards unlocking all available performance and timing precision of SNSPDs operated at high count rates.
-
 \hypertarget{the-peacoq-detector-and-higher-order-correction-methods}{%
 \section{The Peacoq Detector, and Higher Order Correction Methods}\label{the-peacoq-detector-and-higher-order-correction-methods}}
 
@@ -327,10 +316,20 @@ Peacoq data and stuff here
 
 {}
 
-\hypertarget{outlook}{%
-\section{Outlook}\label{outlook}}
+\hypertarget{conclusion-outlook}{%
+\section{Conclusion \& Outlook}\label{conclusion-outlook}}
 
-outlook discussion here
+The original research paper on time walk analysis \autocite{Mueller2023} included comments on the potential for time walk correction in situations where the reset reset time of the nanowire is considerably shorter than the reset dynamics of the amplifier chain:
+
+\begin{quote}
+To optimally correct for this, higher-order correction techniques are needed based on higher-dimensional lookup tables. There is an avenue for exploring such methods for unique use-cases. \autocite{Mueller2023}
+\end{quote}
+
+This potential for higher order correction methods turned out to be fruitful, which is why the prior section about \href{section_05_extensions_supplemental.md\#higher-order-correction}{higher corder correction} adapted from the PEACOQ paper \autocite{Craiciu23} is included. The original paper went on to claim that there are avenues for exploring time walk correction for pulses measured at multiple voltage levels, or even fully digitized pulses captured with high speed ADCs and FPGAs. These more rigorous readout techniques may be needed to deconvolve photon timing and Photon Number Resolution (PNR) effects from the same nanowire at high count rates~\autocite{Hao2021}. While drafting this thesis, methods for simultaneous time walk correction and PNR correction have not been demonstrated in the literature. However, I believe there is imminent potential to extend the gaussian mixture model methods introduced in the next section for these purposes.
+
+There are other types of extensions and modifications to the presented time walk correction method that may prove to be useful. However, the single-$\Delta t$ measurement approach primarily detailed in this chapter is broadly applicable and straightforward to implement. For insight into developing a streamlined calibration process and in-situ time walk correction as part of larger quantum communication experiments, see the time walk correction section in the chapter 4 \textcolor{orange}{include link}.
+
+As applications like LIDAR and quantum communication demand ever higher data rates, multiple techniques for increasing photon and data throughput of SNSPD systems are being explored. Arrays or multi-channel SNSPD systems will play a role in satisfying that demand. However, compared to multiple lower count rate SNSPDs operating in parallel, a single detector operating at high rate has certain advantages. First, it makes more efficient use of the extensive bandwidth of the RF readout channel. Second, the single detector with single readout line puts less thermal load on the cooling system than multiple detectors with multiple readout lines. Therefore, paths toward operating individual SNSPDs at the limits of their count rate performance should be explored before extending to multi-pixel systems. This work is a step towards unlocking all available performance and timing precision of SNSPDs operated at high count rates.
 
 \hypertarget{data-recovery-and-pulse-position-modulation-with-a-photon-number-resolving-snspd}{%
 \chapter{Data Recovery and Pulse Position Modulation with a Photon Number Resolving SNSPD}\label{data-recovery-and-pulse-position-modulation-with-a-photon-number-resolving-snspd}}
@@ -436,7 +435,11 @@ Several modern free running time taggers support the averaging of multiple input
 \hypertarget{methods}{%
 \section{Methods}\label{methods}}
 
-Prior to the PPM demosntration, we collected data with multi-photon optical pulses repeatedly impinging on the detector at the same time with respect to a clock. This way, we study how the PNR effect in isolation is manifest in the timing measurements recorded at the low and high trigger levels. We label the measurements from the low (8~mV) and high (50~mV) trigger levels as $t_A$ and $t_B$ respectively. As shown in Fig.~\ref{fig:waveform}, histograms of these arrival events are multimodal due to the PNR response. We first present a method for recovering a symmetric arrival time response function using the the slope measurement $\Delta t_{BA} = t_B - t_A$.
+Prior to the PPM demosntration, we collected data with multi-photon optical pulses repeatedly impinging on the detector at the same time with respect to a clock. This way, we study how the PNR effect in isolation is manifest in the timing measurements recorded at the low and high trigger levels. We label the measurements from the low (8~mV) and high (50~mV) trigger levels as $t_A$ and $t_B$ respectively. As shown in
+
+Fig.~\ref{fig:waveform}
+
+, histograms of these arrival events are multimodal due to the PNR response. We first present a method for recovering a symmetric arrival time response function using the the slope measurement $\Delta t_{BA} = t_B - t_A$.
 
 \hypertarget{slope-based-correction}{%
 \subsection{Slope-Based Correction}\label{slope-based-correction}}

@@ -2,7 +2,11 @@
 
 <!-- In paper -->
 
-Prior to the PPM demosntration, we collected data with multi-photon optical pulses repeatedly impinging on the detector at the same time with respect to a clock. This way, we study how the PNR effect in isolation is manifest in the timing measurements recorded at the low and high trigger levels. We label the measurements from the low (8&#160;mV) and high (50&#160;mV) trigger levels as $t_A$ and $t_B$ respectively. As shown in Fig. **¿fig:waveform?**, histograms of these arrival events are multimodal due to the PNR response. We first present a method for recovering a symmetric arrival time response function using the the slope measurement $\Delta t_{BA} = t_B - t_A$.
+Prior to the PPM demosntration, we collected data with multi-photon optical pulses repeatedly impinging on the detector at the same time with respect to a clock. This way, we study how the PNR effect in isolation is manifest in the timing measurements recorded at the low and high trigger levels. We label the measurements from the low (8&#160;mV) and high (50&#160;mV) trigger levels as $t_A$ and $t_B$ respectively. As shown in
+
+[this is a link](section_03_introduction.md#fig:waveform)
+
+, histograms of these arrival events are multimodal due to the PNR response. We first present a method for recovering a symmetric arrival time response function using the the slope measurement $\Delta t_{BA} = t_B - t_A$.
 
 ### Slope-Based Correction
 
