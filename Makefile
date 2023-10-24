@@ -68,10 +68,12 @@ tex:
 	--filter pandoc-crossref \
 	-M "crossrefYaml=ref_formatting.yaml" \
 	--biblatex \
-	--bibliography=references.bib \
+	--bibliography=references_cleaned.bib \
 	--lua-filter=frontmatter/parse-latex.lua \
 	--top-level-division chapter \
 	--resource-path='.:chapter_01/figs:chapter_02/figs:chapter_03/figs:chapter_04/figs:chapter_05/figs:chapter_06/figs:chapter_07/figs:chapter_08/figs:chapter_09/figs:' \
+	&& sed -i "s.\\\textasciitilde{}.~.g" thesis.tex \
+	&& sed -i "s.\\\textasciitilde .~.g" thesis.tex \
 	&& cd - \
 
 md_test:
@@ -86,13 +88,14 @@ overleaf:
 	chapter*/*.md \
 	ref_heading.md \
 	-o thesis.tex \
+	--wrap=preserve \
 	--default-image-extension=.pdf \
 	--template=styles/template.tex \
 	--filter pandoc-crossref \
 	--filter pandoc-latex-color \
 	-M "crossrefYaml=ref_formatting.yaml" \
 	--biblatex \
-	--bibliography=references.bib \
+	--bibliography=references_cleaned.bib \
 	--lua-filter=frontmatter/parse-latex.lua \
 	--top-level-division chapter \
 	--resource-path='.:chapter_01/figs:chapter_02/figs:chapter_03/figs:chapter_04/figs:chapter_05/figs:chapter_06/figs:chapter_07/figs:chapter_08/figs:chapter_09/figs:' \
