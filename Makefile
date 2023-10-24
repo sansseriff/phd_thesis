@@ -62,6 +62,7 @@ tex:
 	chapter*/*.md \
 	ref_heading.md \
 	-o thesis.tex \
+	--wrap=preserve \
 	--default-image-extension=.pdf \
 	--template=styles/template.tex \
 	--filter pandoc-crossref \
