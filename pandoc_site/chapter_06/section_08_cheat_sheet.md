@@ -26,15 +26,15 @@ Until I figure something more shorthand, you can set colors with “\<span\>” 
 
 <figure markdown> 
     <a name='fig:figurename'></a> 
-    ![fig:figurename](./figs_06/fig1b_light.svg#only-light)
-    ![fig:figurename](./figs_06/fig1b_dark.svg#only-dark) 
+    <img alt="fig:figurename" style="width: 70%; margin: auto;" src="../figs_06/fig1b_light.svg#only-light" >
+    <img alt="fig:figurename" style="width: 70%; margin: auto;" src="../figs_06/fig1b_dark.svg#only-dark" > 
     <figcaption markdown> Figure 1: **Caption title here** a) Long caption here</figcaption>
     </figure>
 
 <figure markdown> 
     <a name='fig:figurename2'></a> 
-    ![fig:figurename2](./figs_06/hsps_light.svg#only-light)
-    ![fig:figurename2](./figs_06/hsps_dark.svg#only-dark) 
+    <img alt="fig:figurename2" style="width: 70%; margin: auto;" src="../figs_06/hsps_light.svg#only-light" >
+    <img alt="fig:figurename2" style="width: 70%; margin: auto;" src="../figs_06/hsps_dark.svg#only-dark" > 
     <figcaption markdown> Figure 2: **Caption title here** a) Long caption here</figcaption>
     </figure>
 

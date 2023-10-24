@@ -8,8 +8,8 @@ Prior to the PPM demosntration, we collected data with multi-photon optical puls
 
 <figure markdown> 
     <a name='fig:slope_correction'></a> 
-    ![fig:slope_correction](./figs_03/slope_cancellation_light.svg#only-light)
-    ![fig:slope_correction](./figs_03/slope_cancellation_dark.svg#only-dark) 
+    <img alt="fig:slope_correction" style="width: 100%; margin: auto;" src="../figs_03/slope_cancellation_light.svg#only-light" >
+    <img alt="fig:slope_correction" style="width: 100%; margin: auto;" src="../figs_03/slope_cancellation_dark.svg#only-dark" > 
     <figcaption markdown> Figure 1: **PNR Slope Variation Analysis and Cancellation** a) 2D histogram of RF pulse measurements. Through graphing slope $\Delta t_{BA}$ on the x-axis and arrival time $t_A$ on the y-axis, a series of groupings are visible that identify the discrete photon numbers detected.</figcaption>
     </figure>
 

@@ -23,8 +23,8 @@ An experimental apparatus emits a collimated beam of $1550~\mathrm{nm}$ photons 
 
 <figure markdown> 
     <a name='fig:cryostat_concept'></a> 
-    ![fig:cryostat_concept](./figs_05/fig1b_light.svg#only-light)
-    ![fig:cryostat_concept](./figs_05/fig1b_dark.svg#only-dark) 
+    <img alt="fig:cryostat_concept" style="width: nil; margin: auto;" src="../figs_05/fig1b_light.svg#only-light" >
+    <img alt="fig:cryostat_concept" style="width: nil; margin: auto;" src="../figs_05/fig1b_dark.svg#only-dark" > 
     <figcaption markdown> Figure 1: **Cryostat free space coupling options.**</figcaption>
     </figure>
 
@@ -84,8 +84,8 @@ As we will see later on, a set of filters will be needed between the detector an
 
     <figure markdown> 
         <a name='fig:coupling_options'></a> 
-        ![fig:coupling_options](./figs_05/fig2b_light.svg#only-light)
-        ![fig:coupling_options](./figs_05/fig2b_dark.svg#only-dark) 
+        <img alt="fig:coupling_options" style="width: nil; margin: auto;" src="../figs_05/fig2b_light.svg#only-light" >
+        <img alt="fig:coupling_options" style="width: nil; margin: auto;" src="../figs_05/fig2b_dark.svg#only-dark" > 
         <figcaption markdown> Figure 2: **Three Coupling Options**</figcaption>
         </figure>
 
@@ -273,8 +273,8 @@ Where $n_s$ and $n_i$ are the number of photons corresponding to the signal and 
 
 <figure markdown> 
     <a name='fig:hsps'></a> 
-    ![fig:hsps](./figs_05/hsps_light.svg#only-light)
-    ![fig:hsps](./figs_05/hsps_dark.svg#only-dark) 
+    <img alt="fig:hsps" style="width: nil; margin: auto;" src="../figs_05/hsps_light.svg#only-light" >
+    <img alt="fig:hsps" style="width: nil; margin: auto;" src="../figs_05/hsps_dark.svg#only-dark" > 
     <figcaption markdown> Figure 3: **Heralded single photon sources**</figcaption>
     </figure>
 

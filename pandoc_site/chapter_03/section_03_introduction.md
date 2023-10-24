@@ -24,8 +24,8 @@ The rate increase is possible due to recent advancements in Niobium Nitride SNSP
 
 <figure markdown> 
     <a name='fig:intro'></a> 
-    ![fig:intro](./figs_03/fig_intro_2_light.svg#only-light)
-    ![fig:intro](./figs_03/fig_intro_2_dark.svg#only-dark) 
+    <img alt="fig:intro" style="width: 100%; margin: auto;" src="../figs_03/fig_intro_2_light.svg#only-light" >
+    <img alt="fig:intro" style="width: 100%; margin: auto;" src="../figs_03/fig_intro_2_dark.svg#only-dark" > 
     <figcaption markdown> Figure 1: **PPM modulation and experiment setup** a) Diagram of the expiremental setup. WG: wave generator, CD: clock divider board, AWG: Arbitrary Waveform Generator, MLL: Mode Locked Laser (Pritel UAC), IM: Intensity Modulator, BC: Bias Controller, FSC: Free Space Coupling System, DCA: DC Coupled Cryo-amp b) How bits are transmitted in M=16 PPM modulation. An optical pulse is transmitted with a clock-referenced integer delay which encodes 4 bits of data. c) <span class=orange markdown>XXXXXXXX</span></figcaption>
     </figure>
 
@@ -35,8 +35,8 @@ For the tapered differential detectors, the PNR response affects timing of fixed
 
 <figure markdown> 
     <a name='fig:waveform'></a> 
-    ![fig:waveform](./figs_03/waveform_light.svg#only-light)
-    ![fig:waveform](./figs_03/waveform_dark.svg#only-dark) 
+    <img alt="fig:waveform" style="width: 80%; margin: auto;" src="../figs_03/waveform_light.svg#only-light" >
+    <img alt="fig:waveform" style="width: 80%; margin: auto;" src="../figs_03/waveform_dark.svg#only-dark" > 
     <figcaption markdown> Figure 2: **PNR-sensitive Pulse Waveform** The rising edge of the differential SNSPD’s RF pulses exhibit variations in height, slew rate, and arrival time due to photon-number dependent dynamics. The slopes of the 1-photon and 2-photon pulses significantly differ, and as the photon number increases, the alterations to the pulse shape become progressively smaller. Trigger levels A (8 mV) and B (50 mV) were used to extract as much information about pulse slope and arrival time as possible</figcaption>
     </figure>
 

@@ -180,7 +180,7 @@ dark count rates ($D$) in the milli- to micro-hertz range
 require detection systems with performance optimized across all three
 metrics simultaneously. The dimensionless figure of merit $H$ specifies
 this application-specific performance as
-$H = \frac{\eta}{(\Delta t D)}$\textasciitilde{}\autocite{Hadfield2009}.
+$H = \frac{\eta}{(\Delta t D)}$~\autocite{Hadfield2009}.
 
 Here, we focus on lowering the Dark Count Rate (DCR) of a telecom-band
 SNSPD system by filtering thermal photons, without sacrificing
@@ -381,22 +381,21 @@ twice as fast.
 Over the last decade, SNSPDs have advanced rapidly to become essential
 components in many optical systems and technologies, owing to their high
 efficiency
-$(>90\%)$\textasciitilde{}\autocite{99.5_Chang_2021,reddy2020superconducting},
+$(>90\%)$~\autocite{99.5_Chang_2021,reddy2020superconducting},
 fast reset times
-($< 1~\mathrm{ns}$)\textasciitilde{}\autocite{Vetter2016Cavity} and
-scalability to kilopixel
-arrays\textasciitilde{}\autocite{WollWollman2019}. The timing jitter of
-SNSPDs is also best-in-class -- values as low as 3\textasciitilde ps
-have been demonstrated in short
-nanowires\textasciitilde{}\autocite{Korzh2020}, and new high-efficiency
+($< 1~\mathrm{ns}$)~\autocite{Vetter2016Cavity} and
+scalability to kilopixel arrays~\autocite{Wollman2019}.
+The timing jitter of SNSPDs is also best-in-class -- values as low as
+3~ps have been demonstrated in short
+nanowires~\autocite{Korzh2020}, and new high-efficiency
 designs exhibit sub-10 ps
-jitter\textasciitilde{}\autocite{EsmaeilZadeh2020,Colangelo2021}.
+jitter~\autocite{EsmaeilZadeh2020,Colangelo2021}.
 
 SNSPD jitter increases with count rate due to properties of the nanowire
 reset process and features of the readout circuit. The effect bears
 resemblance to time walk observed in silicon avalanche diodes and other
 detectors where the pulses have varying heights and slew
-rates\textasciitilde{}\autocite{SPAD_walk_Kirchnir_1997} thereby causing
+rates~\autocite{SPAD_walk_Kirchnir_1997} thereby causing
 a timing measurement using a fixed threshold to `walk' along the rising
 edge of the pulse (the labeled delay in Fig.~\ref{fig:jitterate_intro}
 a). At low count rates SNSPDs exhibit very uniform pulse heights.
@@ -472,7 +471,7 @@ arrive when the RF signal has not yet reached a steady zero state
 following the previous detection. For example, pulses may arrive within
 an amplifier-induced undershoot region following previous pulses. This
 phenomenon is illustrated in Fig.~\ref{fig:jitterate_intro} a as the
-area below 0\textasciitilde mV. The duration of ringing or undershoot
+area below 0~mV. The duration of ringing or undershoot
 effects varies widely depending on the design of the readout circuit. If
 they last longer than the reset time of the nanowire bias current, the
 calibration technique may correct for the potentially complex
@@ -495,14 +494,14 @@ triggering at a fixed percentage of pulse height rather than at a fixed
 voltage. Adding a CFD to an existing setup is straightforward for a
 single channel, however it does require additional hardware such as
 multiple high-speed discriminators and a D-type
-flip-flop\textasciitilde{}\autocite{Becker2005}, which significantly
+flip-flop~\autocite{Becker2005}, which significantly
 increases the circuit complexity and power budget of a multi-channel
 system. In addition, CFDs are not expected to optimally correct for
 distortions of the pulse rising edge which may arise from the overlap of
 one pulse with a signal reflection or undershoot features on the falling
 edge of a previous pulse. Multi-channel time-to-digital converters
 (TDCs) used to read out large SNSPD arrays typically only include
-fixed-threshold comparators\textasciitilde{}\autocite{Wollman2019}.
+fixed-threshold comparators~\autocite{Wollman2019}.
 
 In a simple software-based jitter mitigation method, each time-tagged
 event may be accepted or rejected based on how soon it arrives after the
@@ -518,7 +517,7 @@ Our correction method preserves original count rate and works with
 timing measurements from a fixed-threshold free-running TDC -- the type
 that is often used for SNSPD readout. Pulse pileup correction techniques
 have been demonstrated with systems that fully digitize detector pulse
-waveforms\textasciitilde{}\autocite{Behbahani2019,scoullar_evans_2009,Haselman2010}.
+waveforms~\autocite{Behbahani2019,scoullar_evans_2009,Haselman2010}.
 But capturing the fast rising edges of SNSPD pulses in this way would
 require very high sample rates and subsequently, impractically large
 data streams. In contrast, our method assumes one timing measurement is
@@ -535,26 +534,54 @@ leaving only stochastic jitter.
 \hypertarget{method-and-results}{%
 \section{Method and Results}\label{method-and-results}}
 
+\hypertarget{experimental-setup}{%
+\subsection{Experimental setup}\label{experimental-setup}}
+
+The measurements used for calibration and correction were acquired with
+a high rate mode locked laser (\emph{Pritel}). The minimum repetition
+rate of this laser was too high to produce a calibration dataset for the
+Tungsten Silicide detector at highest count rate, given the constraints
+addressed in the main text. Therefore, the laser was set at a repetition
+rate of 10.75 GHz and modulated down to 537.5 MHz using two lithium
+niobate intensity modulators in series. Residual peaks from suppressed
+mode-locked laser pulses are not observed above the noise floor in the
+collected data, so their effect was not further considered. Clock jitter
+is minimized in post-processing with the help of a software-based Phase
+Locked Loop.
+
+\hypertarget{fig:jitterate_exp_setup}{%
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth,height=\textheight]{chapter_02/figs_02/supplemental_expirement_light.pdf}
+\caption[{Time walk experiment setup}]{\textbf{Experimental Setup} CLK:
+clock synchronization signal; AWG: Arbitrary Waveform Generator
+(\emph{Keysight}); IM: Intensity Modulator (\emph{IXBlue}); TDC: Time to
+Digital Converter (\emph{Swabian Instruments}). The extinction ratio of
+both modulators exceeds 30 dB.}
+\label{fig:jitterate_exp_setup}
+\end{figure}
+}
+
 \hypertarget{detector-and-trigger-level}{%
 \subsection{Detector and trigger
 level}\label{detector-and-trigger-level}}
 
 We study the pulse distortions observed in a fiber coupled single-pixel
 tungsten silicide (WSi) SNSPD with
-380\textasciitilde{}$\mathrm{\upmu m^2}$ active area and
-160\textasciitilde nm nanowire width. The detector is biased at
-9.3\textasciitilde{}$\mathrm{\upmu A}$, roughly 90\% of the switching
+380~$\mathrm{\upmu m^2}$ active area and
+160~nm nanowire width. The detector is biased at
+9.3~$\mathrm{\upmu A}$, roughly 90\% of the switching
 current. The readout is handled by a cryogenic DC-coupled amplifier,
-mounted on the 40\textasciitilde K-stage of the cryostat, which has
-43\textasciitilde dB of gain and a 3\textasciitilde dB bandwidth of 700
-MHz, followed by a 1\textasciitilde GHz amplifier with
-20\textasciitilde dB of gain (\emph{MiniCircuits ZFL-1000LN+}). The
+mounted on the 40~K-stage of the cryostat, which has
+43~dB of gain and a 3~dB bandwidth of 700
+MHz, followed by a 1~GHz amplifier with
+20~dB of gain (\emph{MiniCircuits ZFL-1000LN+}). The
 system reaches a $3~\mathrm{dB}$ maximum count rate (MCR) of
 $15.6~\mathrm{MHz}$. The time constant of supercurrent recovery
 $\tau_{bias} \approx 40~\mathrm{ns}$ is significantly longer than the
 decay time constant of the RF pulse $\tau_{RF} \approx 5~\mathrm{ns}$,
 owing to our use of a low-frequency cut-on of
-$\approx 80$\textasciitilde MHz (-3\textasciitilde dB point from the
+$\approx 80$~MHz (-3~dB point from the
 peak gain) in the DC-coupled amplifiers. For this detector, the
 calibration process primarily corrects for the lower bias current
 effects, rather than for any overlapping between RF pulse waveforms (see
@@ -567,7 +594,7 @@ threshold voltage is set just above the noise floor. But triggering on
 the pulse higher, where it achieves maximum slope, minimizes jitter at
 low-to-medium count rates. This level varies from 20\% to 50\% of pulse
 height depending on the detector. We found the minimum low-rate jitter
-at a trigger level of 50\textasciitilde mV, about 40\% of the pulse
+at a trigger level of 50~mV, about 40\% of the pulse
 height. All further calibration and analysis is performed by triggering
 at this level in order to optimize jitter across all count rates.
 
@@ -576,19 +603,19 @@ at this level in order to optimize jitter across all count rates.
 calibration}\label{mode-locked-laser-calibration}}
 
 To perform our calibration, we illuminated the SNSPD with an attenuated
-537.5\textasciitilde MHz mode locked laser with a mean photon number per
-pulse between $5\mathrm{e}{-4}$ and $0.016$. The 1.86\textasciitilde ns
+537.5~MHz mode locked laser with a mean photon number per
+pulse between $5\mathrm{e}{-4}$ and $0.016$. The 1.86~ns
 period of the pulse sequence is large enough that almost all SNSPD
 detections can be unambiguously matched with a preceding laser pulse --
 the period of the pulse train used must be greater than the worst
 detector jitter for this to succeed. The uncorrected jitter for the WSi
-detector varies from 50\textasciitilde ps FWHM at low count rates, to
-about 350\textasciitilde ps at high rates.
+detector varies from 50~ps FWHM at low count rates, to
+about 350~ps at high rates.
 
 \hypertarget{fig:jitterate_explain}{%
 \begin{figure}
 \centering
-\includegraphics[width=0.5\textwidth,height=\textheight]{chapter_02/figs_02/jitterate_explain_light.pdf}
+\includegraphics[width=0.7\textwidth,height=\textheight]{chapter_02/figs_02/jitterate_explain_light.pdf}
 \caption[{Calibration method for extracing t' vs
 delay}]{\textbf{Calibration Method} a) A qualitative diagram
 illustrating how inter-pulse timing measurements $t'$ and $d$ are
@@ -622,6 +649,38 @@ laser spacing (Fig.~\ref{fig:jitterate_explain} c) to form a curve
 $\tilde{d}$-vs-$t^\prime$ for the added time-walk versus inter-arrival
 time.
 
+\hypertarget{fig:jitterate_results_1}{%
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth,height=\textheight]{chapter_02/figs_02/jitterate_data_ab_light.pdf}
+\caption[{t-prime curve and correction effect}]{\textbf{t-prime curve
+and correction effect} (a) Delay and intrinsic jitter curves extracted
+from the 537.5 MHz pulsed light dataset. (b) Histogram of corrected
+(black) and uncorrected (dashed grey) time tags from a 2.15 GHz pulse
+train, corrected using a calibration curve developed with the 537.5 MHz
+dataset. The improvement affirms that the light modulation used for an
+application need not match the repetition rate of the calibration
+laser.}
+\label{fig:jitterate_results_1}
+\end{figure}
+}
+
+Fig.~\ref{fig:jitterate_results_1} a shows the $\tilde{d}$-vs-$t^\prime$
+and $\Delta d$-vs-$t^\prime$ curves collected from our measurements of
+the WSi detector. The $\tilde{d}$-vs-$t^\prime$ curve is the main result
+of the calibration process and is used as a lookup table in the
+correction method. $\Delta d$ is a measure of the more intrinsic jitter
+that the correction method cannot cancel out. While it is larger for
+small $t^\prime$ due to triggers on lower amplitude pulses, it notably
+stays at a nearly minimized value down to around $t^\prime =$
+50~ns. $\tilde{d}$ grows more dramatically with
+decreasing $t^\prime$, especially in the range from 50~
+to 100~ns. For count rates that don't exhibit many
+inter-pulse arrival times smaller than 50~ns, a method
+for removing the time-walk effect's contribution to jitter should bring
+entire system jitter back down to near the intrinsic limit implied by
+the $\Delta d$ curve.
+
 The correction method we implement involves subtracting off the
 distortion-induced delays a time-tag is expected to have based on the
 inter-pulse-time that precedes it. For each time tag $t_n$ in a set, the
@@ -648,35 +707,53 @@ the current time tag and information available from earlier, the
 correction can be applied in real-time in an FPGA or computer used for
 time tagging.
 
+\hypertarget{fig:jitterate_results_2}{%
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth,height=\textheight]{chapter_02/figs_02/jitterate_data_c_light.pdf}
+\caption[{Jitters metrics across incident powers}]{\textbf{Jitters
+metrics across incident powers} (a) Effect of the correction on
+measurements of system jitter over a range of rates approaching the
+maximum count rate. (b) Corrected (solid) and uncorrected (dashed)
+instrument response functions with color-matched arrows showing the
+location of the width-statistics plotted above in (a). The black
+vertical line in (a) is drawn at the count rate of this plot. Inset
+shows linear scaling. (c) Corrected (solid) and uncorrected (dashed)
+histogram analogous to (b), but at a higher count rate indicated by the
+grey line in (a).}
+\label{fig:jitterate_results_2}
+\end{figure}
+}
+
 The correction we perform using the $\tilde{d}$-vs-$t^\prime$ curve in
-Fig. \ref{fig:data}a is applicable to a wide range of count rates and
-arbitrary modulation patterns; there is no requirement that applications
-match the repetition rate of the calibration laser.
-Figure\textasciitilde{}\ref{fig:data}b shows that the correction method,
+Fig.~\ref{fig:jitterate_results_1} a is applicable to a wide range of
+count rates and arbitrary modulation patterns; there is no requirement
+that applications match the repetition rate of the calibration laser.
+Fig.~\ref{fig:jitterate_results_1} b shows that the correction method,
 derived from the 537.5 MHz calibration data, significantly reduces
-jitter when applied to detections from a 2.15\textasciitilde GHz pulse
+jitter when applied to detections from a 2.15~GHz pulse
 train. A similar jitter reduction can be demonstrated for repetition
-rates below 537.5\textasciitilde MHz.
+rates below 537.5~MHz.
 
 To study the effectiveness of our correction method at different count
 rates, we apply it to data collected at different mean photon numbers
-per pulse, with the same 537.5 MHz pulse train. As shown in Fig.
-\ref{fig:data}c, the correction improves the FWHM at rates approaching
-the 3\textasciitilde dB point, and improves FW10\%M and FW1\%M (full
-width at ten percent/one percent maximum) dramatically, even at count
-rates significantly below the 3 dB point, where detector efficiency is
-nearly maximized. This reduction is evident in \ref{fig:data}d, where
-the correction works to remove a time-walk induced tail in the
-instrument response function. The ratio of corrected FW1\%M over
-uncorrected FW1\%M reaches a minimum of 0.55 at a count rate of 11.5
-MCounts/. Therefore if an application sets its repetition rate or bin
-size based on the FW1\%M metric, the repetition rate can be increased
-and the bin size decreased by up to 45\% without any increase in event
-misattribution errors. These improvements are notable for applications
-including biomedical
-imaging\textasciitilde{}\cite{Sutin16, Bruschini2019}, quantum
-communication\textasciitilde{}\cite{Hadfield2009} and laser
-ranging\textasciitilde{}\cite{McCarthy13} that have stringent timing
+per pulse, with the same 537.5 MHz pulse train. As shown in
+Fig.~\ref{fig:jitterate_results_2} c, the correction improves the FWHM
+at rates approaching the 3~dB point, and improves FW10\%M
+and FW1\%M (full width at ten percent/one percent maximum) dramatically,
+even at count rates significantly below the 3 dB point, where detector
+efficiency is nearly maximized. This reduction is evident in
+Fig.~\ref{fig:jitterate_results_2} c, where the correction works to
+remove a time-walk induced tail in the instrument response function. The
+ratio of corrected FW1\%M over uncorrected FW1\%M reaches a minimum of
+0.55 at a count rate of 11.5 MCounts/s. Therefore if an application sets
+its repetition rate or bin size based on the FW1\%M metric, the
+repetition rate can be increased and the bin size decreased by up to
+45\% without any increase in event misattribution errors. These
+improvements are notable for applications including biomedical
+imaging~\autocite{Sutin16,Bruschini2019}, quantum
+communication~\autocite{Hadfield2009} and laser
+ranging~\autocite{McCarthy13} that have stringent timing
 requirements over a large dynamic range.
 
 \hypertarget{conclusion}{%
@@ -695,7 +772,7 @@ measured at multiple voltage levels, or even fully digitized pulses
 captured with high speed ADCs and FPGAs. These more rigorous readout
 techniques may be needed to deconvolve photon timing and photon number
 resolution effects from the same nanowire at high count
-rates\textasciitilde{}\autocite{Hao2021}.
+rates~\autocite{Hao2021}.
 
 There is a broad range of extensions and modifications to the presented
 method that may prove to be useful. However, the single-$\Delta t$
@@ -794,7 +871,7 @@ $E$ is the photon cost per optical pulse
 
 The DSOC project uses M at least as high as 5, meaning 5 bits of data
 are send using 32 time slots per frame. M values as high as 19 have been
-demonstrated in the lab\textasciitilde{}\autocite{essiambre2023record},
+demonstrated in the lab~\autocite{essiambre2023record},
 but the number of time bins needed per frame scales exponentially with
 the number of bits transmitted per pulse. Therefore, for a given fixed
 clock rate and time bin duration, the PPM data rate decreases
@@ -805,13 +882,13 @@ modulating a mode-locked laser and receiving pulses with a low jitter
 superconducting nanowire single photon detector (SNSPD)
 (Fig.~\ref{fig:intro} (a)).We focus on demonstrating moderately large
 PIE, while also increasing the clock rate of the sytem by an order of
-magnitude relative to the DSOC platform (2\textasciitilde GHz). By
+magnitude relative to the DSOC platform (2~GHz). By
 operating at both higher clock rate and PIE than DSOC, this system
 exemplifies how future iterations of DSOC may send data more quickly but
 also over greater distances with the same power budget.
 
 The rate increase is possible due to recent advancements in Niobium
-Nitride SNSPDs\textasciitilde{}\autocite{Colangelo2023}. These achieve
+Nitride SNSPDs~\autocite{Colangelo2023}. These achieve
 low jitter performance by incorporating impedance matching tapers for
 efficient RF coupling, resulting in higher slew rate pulses, and by
 enabling RF pulse readout from both ends of the nanowire. The dual-ended
@@ -896,7 +973,7 @@ detectors for optical communication, which is impactful for deep-space
 optical communication as well as classical communication in quantum
 networks. Although single-photon counting is well estanblished for
 deep-space optical
-communication\textasciitilde{}\autocite{Srinivasan2023GroundReceiver} so
+communication~\autocite{Srinivasan2023GroundReceiver} so
 far it has not been ulitized in quantum networks, mainly due to the use
 of SFP modules and DWDMs. However, with the eachievement of high data
 rates recently achieved with photon-counting classical communication,
@@ -917,10 +994,10 @@ $$FoM_T = \frac{\eta  (1 - P_{ap})\Phi_{-3 \text{dB}}}{J} \sqrt{\frac{A}{D}},$$
 
 where $\eta$ is the single photon detection efficiency,
 $\Phi_{-3 \text{dB}}$ is the photon flux at which the system detection
-efficiency drops by 3\textasciitilde dB, $P_{ap}$ is the afterpulsing
+efficiency drops by 3~dB, $P_{ap}$ is the afterpulsing
 probability, $J$ is the detector jitter evaluated as the FWHM, $T_d$ is
 the deadtime, $A$ is the active area and $D$ is the dark count rate.
-Here we have defined the maximum photon flux as the 3\textasciitilde dB
+Here we have defined the maximum photon flux as the 3~dB
 point, for ease of standardization.
 
 In this work:
@@ -996,7 +1073,7 @@ optical pulses repeatedly impinging on the detector at the same time
 with respect to a clock. This way, we study how the PNR effect in
 isolation is manifest in the timing measurements recorded at the low and
 high trigger levels. We label the measurements from the low
-(8\textasciitilde mV) and high (50\textasciitilde mV) trigger levels as
+(8~mV) and high (50~mV) trigger levels as
 $t_A$ and $t_B$ respectively. As shown in Fig.~\ref{fig:waveform},
 histograms of these arrival events are multimodal due to the PNR
 response. We first present a method for recovering a symmetric arrival
@@ -1447,7 +1524,7 @@ Hardware and Techniques course (APh/Ph 138b). The following is a
 homework assignment I wrote to accompany his series of lectures.
 
 The first problem is inspired by the low dark count rate
-publication\textasciitilde{}\autocite{Mueller:21}. It has the student
+publication~\autocite{Mueller:21}. It has the student
 build a simple model for a dark count rate transmitted through a series
 of filters. Finally, it leads the student to consider an ultimate
 tradeoff between dark count rate and coupling efficiency to wide
@@ -1457,7 +1534,7 @@ with high efficiency or temporal resolution.
 
 The second problem explores a potential use case of a photon number
 resolving SNSPD. It closely follows logic presented in an Andreas Christ
-and Christine Silberhorn paper\textasciitilde{}\autocite{Andreas:12}. I
+and Christine Silberhorn paper~\autocite{Andreas:12}. I
 studied this paper earlier in my PhD, when I considered developing a
 multiplexed single photon source. It turned out that project was overly
 ambitious, but future PhD students might consider approaching it again.
@@ -2354,7 +2431,7 @@ here} a) Long caption here}
 \end{figure}
 }
 
-to have a ``\textasciitilde{}'' space in latex and a no break space in
+to have a ``~'' space in latex and a no break space in
 html\ldots{} ``\&\#160'', just use ``~''. That's a forward slash and a
 space.
 

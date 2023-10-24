@@ -18,8 +18,8 @@ The JSI is measured in Fig. Fig. [1](#fig:jsi) a by recording coincidence rates
 
 <figure markdown> 
     <a name='fig:jsi'></a> 
-    ![fig:jsi](./figs_04/jsi_figure_light.svg#only-light)
-    ![fig:jsi](./figs_04/jsi_figure_dark.svg#only-dark) 
+    <img alt="fig:jsi" style="width: 100%; margin: auto;" src="../figs_04/jsi_figure_light.svg#only-light" >
+    <img alt="fig:jsi" style="width: 100%; margin: auto;" src="../figs_04/jsi_figure_dark.svg#only-dark" > 
     <figcaption markdown> Figure 1: **Channel JSI and Histogram** a) The singles rates $S_A$ and $S_B$ (grey bars), coupling efficiencies (purple bars), and coincidence rates $C_{AB}$ (diagonal boxes) for different DWDM channel pairings. The joint spectral intensity envelop spans several 100 GHz channels. So the coincidence rates (KHz, in black) are consistent with the efficiencies $\eta$ (purple bars) and the singles rates (grey bars), they are scaled to represent two branches of the total wavefunction. There are four branches in all, for the 4 pairs of 2 interferometer output ports that contribute coincidences. In practice, one output each of Alice and Bob’s interferometers is measured, thereby capturing one branch. See supplemental for details of the scaling method, and the fitting method used to solve for the coupling efficiencies $\eta$. b) Coincidence rates for energy-matched channel pairings. The light green bars match the main diagonal in (a). Grey bars are measured with x16 DWDM at Alice and a tunable narroband filter at Bob. Dashed bars predict the rates for a system with x16 DWDMs at both Alice and Bob c) Histogram of photon arrival events with respect to the 4 GHz clock. Dashed black and grey lines show the response functions for coincidence events. Red bars represent guard regions where coincidence events are ignored.</figcaption>
     </figure>
 
@@ -41,8 +41,8 @@ The coincidence rate across Alice and Bob’s middle bins varies sinusoidally wi
 
 <figure markdown> 
     <a name='fig:shg_scan'></a> 
-    ![fig:shg_scan](./figs_04/shg_scan_light.svg#only-light)
-    ![fig:shg_scan](./figs_04/shg_scan_dark.svg#only-dark) 
+    <img alt="fig:shg_scan" style="width: 100%; margin: auto;" src="../figs_04/shg_scan_light.svg#only-light" >
+    <img alt="fig:shg_scan" style="width: 100%; margin: auto;" src="../figs_04/shg_scan_dark.svg#only-dark" > 
     <figcaption markdown> Figure 2: **Fidelity and Rates vs $\boldsymbol \mu$** a) Fidelity versus pump power. Error bars arise from making multiple measurements of the center bin coincidence rate over some integration time. These measurements span small ranges of interferometer phase, as the extremum-finding algorithm jitters the interferometer voltage. b) Bounded distillable entanglement rate versus pump power. Multiple such measurements are made for all the tomographic measurements. These are used to calculate standard deviations for fidelity, log negativity, and coherent information. Error bars for the log negativity and coherent information are smaller than the line width shown. Rates shown assume readout of all 4 available interferometer ports, based on data measured using one port each at Alice and Bob.</figcaption>
     </figure>
 
@@ -54,8 +54,8 @@ Channels 35 and 59 were chosen for an analysis of entanglement fidelity and rate
 
 <figure markdown> 
     <a name='fig:channel_data'></a> 
-    ![fig:channel_data](./figs_04/8ch_bar_graph_high_power_light.svg#only-light)
-    ![fig:channel_data](./figs_04/8ch_bar_graph_high_power_dark.svg#only-dark) 
+    <img alt="fig:channel_data" style="width: 100%; margin: auto;" src="../figs_04/8ch_bar_graph_high_power_light.svg#only-light" >
+    <img alt="fig:channel_data" style="width: 100%; margin: auto;" src="../figs_04/8ch_bar_graph_high_power_dark.svg#only-dark" > 
     <figcaption markdown> Figure 3: **Fidelity and rates across 8 channel pairs** a) Fidelity for the main 8 channel pairs, measured at a high (5.17 Amps) and a low ( 1.2 Amps) SHG pump power setting. Each power setting results in similar $\mu$ for all channels: $\mu_{low}$ = 5.6e-5 $\pm$ 9e-6 and $\mu_{high}$ = 6.1e-3 $\pm$ 3e-4. b) Rate metrics for the 8 channel pairs at the same high and low power settings. The range of possible values for distillable entanglement rate is spanned by the yellow regions, bounded above by log-negativity and below by coherent information. Rates shown assume readout of all 4 available interferometer ports, based on data measured using one port each at Alice and Bob</figcaption>
     </figure>
 

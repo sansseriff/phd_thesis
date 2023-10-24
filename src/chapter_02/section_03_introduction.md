@@ -1,7 +1,7 @@
 ## Introduction
 
 ### Origin of time walk
-Over the last decade, SNSPDs have advanced rapidly to become essential components in many optical systems and technologies, owing to their high efficiency $(>90\%)$~[@99.5_Chang_2021; @reddy2020superconducting], fast reset times ($< 1~\mathrm{ns}$)~[@Vetter2016Cavity] and scalability to kilopixel arrays~[@WollWollman2019]. The timing jitter of SNSPDs is also best-in-class -- values as low as 3~ps have been demonstrated in short nanowires~[@Korzh2020], and new high-efficiency designs exhibit sub-10 ps jitter~[@EsmaeilZadeh2020; @Colangelo2021].
+Over the last decade, SNSPDs have advanced rapidly to become essential components in many optical systems and technologies, owing to their high efficiency $(>90\%)$~[@99.5_Chang_2021; @reddy2020superconducting], fast reset times ($< 1~\mathrm{ns}$)~[@Vetter2016Cavity] and scalability to kilopixel arrays~[@Wollman2019]. The timing jitter of SNSPDs is also best-in-class -- values as low as 3~ps have been demonstrated in short nanowires~[@Korzh2020], and new high-efficiency designs exhibit sub-10 ps jitter~[@EsmaeilZadeh2020; @Colangelo2021].
 
 
 SNSPD jitter increases with count rate due to properties of the nanowire reset process and features of the readout circuit. The effect bears resemblance to time walk observed in silicon avalanche diodes and other detectors where the pulses have varying heights and slew rates~[@SPAD_walk_Kirchnir_1997] thereby causing a timing measurement using a fixed threshold to 'walk' along the rising edge of the pulse (the labeled delay in @fig:jitterate_intro a). 

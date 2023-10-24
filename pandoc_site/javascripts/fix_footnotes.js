@@ -70,7 +70,9 @@ document$.subscribe(function() {
             if (firstElement && lastElement) {
                 const firstTextNode = firstElement.previousSibling;
                 const lastTextNode = lastElement.nextSibling;
-                firstTextNode.nodeValue += "[";
+                if (firstTextNode.nodeValue.slice(-1) !== "[") {
+                    firstTextNode.nodeValue += "[";
+                  }
                 lastTextNode.nodeValue = "]" + lastTextNode.nodeValue;
             }
 

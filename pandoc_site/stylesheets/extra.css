@@ -227,6 +227,12 @@ figcaption {
     z-index: 1;
     display: flex;
   }
+
+/* img {
+    position: relative;
+    max-height: 450px; 
+    width: 100%;
+} */
   
   /* Image container */
   .image-container {

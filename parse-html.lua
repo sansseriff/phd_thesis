@@ -63,6 +63,8 @@ end
 
 -- This function takes the src/ style of figures and converts it into a mkdocs format that supports
 -- light and dark mode, and figure captions.
+
+
 function Para(para)
     local img = figure_image(para)
 
@@ -86,6 +88,8 @@ function Para(para)
         pandoc.read(img.attributes['short-caption']).blocks[1].c
     )
 
+    -- print(img.attributes['width'])
+
 
     local hypertarget = "{%%\n"
     local label = "\n"
@@ -104,12 +108,22 @@ function Para(para)
 
     short_caption = pandoc.utils.stringify(short_caption)
 
-    light_src = string.format("![%s](%slight.svg#only-light)", img.identifier, src_begin)
-    dark_src = string.format("![%s](%sdark.svg#only-dark)", img.identifier, src_begin)
+    -- inject markdown that works inside the html environment
+    -- see: https://squidfunk.github.io/mkdocs-material/reference/images/#light-and-dark-mode
+    -- light_src = string.format("![%s](%slight.svg#only-light)", img.identifier, src_begin)
+    -- dark_src = string.format("![%s](%sdark.svg#only-dark)", img.identifier, src_begin)
+
+    -- switch to injecting raw html
+
+    html_style = string.format("style=\"width: %s; margin: auto;\"", img.attributes['width'])
+
+    light_src = string.format("<img alt=\"%s\" %s src=\".%slight.svg#only-light\" >", img.identifier, html_style, src_begin)
+    dark_src = string.format("<img alt=\"%s\" %s src=\".%sdark.svg#only-dark\" >", img.identifier, html_style, src_begin)
 
     if check_light == "light" then
         full_src = string.format("%s\n    %s", light_src, dark_src)
     else
+        -- if light/dark options don't seem present, just use the src as is.
         full_src = string.format("![%s](%s)", img.identifier, img.src)
     end
     -- print(caption)
