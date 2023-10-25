@@ -314,11 +314,8 @@ The correction we perform using the $\tilde{d}$-vs-$t^\prime$ curve in Fig.~\ref
 
 To study the effectiveness of our correction method at different count rates, we apply it to data collected at different mean photon numbers per pulse, with the same 537.5 MHz pulse train. As shown in Fig.~\ref{fig:jitterate_results_2} c, the correction improves the FWHM at rates approaching the 3~dB point, and improves FW10\%M and FW1\%M (full width at ten percent/one percent maximum) dramatically, even at count rates significantly below the 3 dB point, where detector efficiency is nearly maximized. This reduction is evident in Fig.~\ref{fig:jitterate_results_2} c, where the correction works to remove a time-walk induced tail in the instrument response function. The ratio of corrected FW1\%M over uncorrected FW1\%M reaches a minimum of 0.55 at a count rate of 11.5 MCounts/s. Therefore if an application sets its repetition rate or bin size based on the FW1\%M metric, the repetition rate can be increased and the bin size decreased by up to 45\% without any increase in event misattribution errors. These improvements are notable for applications including biomedical imaging~\autocite{Sutin16,Bruschini2019}, quantum communication~\autocite{Hadfield2009} and laser ranging~\autocite{McCarthy13} that have stringent timing requirements over a large dynamic range.
 
-\hypertarget{higher-order-correction-supplementary-information}{%
-\section{Higher order correction \& supplementary information}\label{higher-order-correction-supplementary-information}}
-
-\hypertarget{peacoq-detector}{%
-\subsection{PEACOQ detector}\label{peacoq-detector}}
+\hypertarget{higher-order-correction-the-peacoq-detector}{%
+\section{Higher order correction \& the PEACOQ detector}\label{higher-order-correction-the-peacoq-detector}}
 
 The Performance Enhanced Array for Counting Optical Quanta (PEACOQ) is a new fiber-coupled SNSPD design that achieves high count rate by spreading the photon flux across a parallel array of short niobium nitride nanowires. Each wire may acheive count rates as high as 50 MCounts/s, so the 32-wire array as a whole can handle photon rates in excess of 1 GCounts/s. The PEACOQ is described in detail in Reference \autocite{Craiciu23}.
 
@@ -326,7 +323,7 @@ From early tests of the PEACOQ, it became evident that jitter increased dramatic
 
 A 1-GHz repetition rate 1550 nm mode locked laser was used (Pritel UOC) for calibration. The 1~GHz repetition rate was chosen so that uncorrected jitter even at the highest count rates (approaching 400 ps at the FW1\%M), was smaller than the laser period. Then, each time tag may be matched to the timing of the original optical pulse. A dataset with a count rate of 20 MCounts/s was used for calibration. At this rate, there is a good balance of statistics available for $t'$ ranging between 5 and 150 ns.
 
-The calibration process for the PEACOQ showed that high-rate pulse distortions are primarily due to amplifier effects and the overlap of RF pulses with the overshoot or ringing effects of previous RF pulses. This is because the nanowire design and fabrication of the PEACOQ seeks to minimize the intrinsic reset time of the nanowire. The time it takes for bias current to re-saturate in the device is generally faster than the time for all amplifier effects to disappear following a previous RF pulse. Fig.~\ref{fig:order_1st} b is the delay vs.~$t’$ curve derived from the calibration process. Unlike the in Fig. \ref{fig:jitterate_results_1}, the delay vs.~$t’$ curve for the PEACOQ shows features that are closely related to the falling edge of the RF pulse (Fig.~\ref{fig:order_1st} a). In particular, the calibration curve shows a peack near 25 ns that aligns with an undershoot in the RF waveform caused by a reflection off a cryogenic amplifier. Future implementations of the PEACOQ will optimize the amplification chain for minimal RF reflections. Though even with such optimizations, it is likely that 1st or 2nd order time walk correction will improve high rate jitter.
+The calibration process for the PEACOQ showed that high-rate pulse distortions are primarily due to amplifier effects and the overlap of RF pulses with the overshoot or ringing effects of previous RF pulses. This is because the nanowire design and fabrication of the PEACOQ seeks to minimize the intrinsic reset time of the nanowire. The time it takes for bias current to re-saturate in the device is generally faster than the time for all amplifier effects to disappear following a previous RF pulse. Fig.~\ref{fig:order_1st} b is the delay vs.~$t’$ curve derived from the calibration process. Unlike the in Fig. \ref{fig:jitterate_results_1}, the delay vs.~$t’$ curve for the PEACOQ shows features that are closely related to the falling edge of the RF pulse (Fig.~\ref{fig:order_1st} a). In particular, the calibration curve shows a peak near 25 ns that aligns with an undershoot in the RF waveform caused by a reflection off a cryogenic amplifier. Future implementations of the PEACOQ will optimize the amplification chain to minimize RF reflections. Though even with such optimizations, it is likely that time-walk correction will improve high rate jitter.
 
 \hypertarget{fig:order_1st}{%
 \begin{figure}
@@ -339,31 +336,58 @@ The calibration process for the PEACOQ showed that high-rate pulse distortions a
 
 As before with the meandered SNSPD, there is no requirement that the calibration only be used in an application that's based on the same repetition rate of 1 Ghz. As interpolation between points on the delay vs.~$t'$ vslookup curve is possible, delay corrections for arbitrary $t'$ measurements may be found.
 
-\hypertarget{second-order-time-walk-correction}{%
-\subsubsection{Second Order Time Walk Correction}\label{second-order-time-walk-correction}}
+\hypertarget{second-order-calibration}{%
+\subsubsection{Second Order Calibration}\label{second-order-calibration}}
 
-The 2nd order time-walk correction is a new technique that builds on the methods previously introduced in this chapter. The intrinsic reset time of the PEACOQ nanowires is considerably shorter than the time it takes an RF pulse to return to a steady zero voltage. So multiple pulses can arrive in the time it takes one RF pulse to fully decay as seen by the timing electronics. Therefore, a given RF pulse can be level shifted not only by the presence of a previous pulse a few nanoseconds earlier, but even by the presence of two previous pulses. The calibration and correction process was extended to correct a given pulse timing measurement based on two inter-pulse time measurements $t'$ and $t''$ as shown in Fig.~\ref{fig:order_2nd} a. The calibration process uses the same mode-locked laser derived pulse train as the 1\tsup{st} order calibration. For each $t'$ there is a full range of possible $t''$ times and vice versa, so the result of calibration becomes a 2D grid of delay corrections indexed by $t'$ and $t''$. $t'$ is always less than $t''$ for the parameterization chosen, where both are measured from the latest or `current' time tag (\ref{fig:order_2nd}a). Therefore, the space of valid measurements is triangular as shown in \ref{fig:order_2nd}b.
+The 2nd order time-walk correction is a new technique that builds on the methods previously introduced in this chapter. The intrinsic reset time of the PEACOQ nanowires is considerably shorter than the time it takes an RF pulse to return to a steady zero voltage. So multiple pulses can arrive in the time it takes one RF pulse to fully decay as seen by the timing electronics. Therefore, a given RF pulse can be level shifted not only by the presence of a previous pulse a few nanoseconds earlier, but even by the presence of two previous pulses. The calibration and correction process was extended to correct a given pulse timing measurement based on two inter-pulse time measurements $t'$ and $t''$ as shown in Fig.~\ref{fig:order_2nd} a. The calibration process uses the same mode-locked laser derived pulse train as the 1st order calibration. For each $t'$ there is a full range of possible $t''$ times and vice versa, so the result of calibration becomes a 2D grid of delay corrections indexed by $t'$ and $t''$. $t'$ is always less than $t''$ for the parameterization chosen, where both are measured from the latest or `current' time tag (Fig.~\ref{fig:order_2nd} a). Therefore, the space of valid measurements is triangular as shown in Fig.~\ref{fig:order_2nd} b.
 
-\begin{figure*}[ht!]
-\centering\includegraphics[width=5in]{SOM_Figure_order_2nd_v1.eps}
-\caption{a) A diagram showing how RF pulse waveforms can interfere additively, and how $t'$ and $t''$ are parameterized. For illustrative purposes only. b) The result of 2\tsup{nd} order calibration, a grid of delay measurements indexed by $t'$ and $t''$. The blue/red slices and corresponding graphs show how the the effect of varying $t''$ for a given $t'$ is similar to varying $t'$ for a given $t''$. }\label{fig:order_2nd}
-\end{figure*}
+\hypertarget{fig:order_2nd}{%
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=\textheight]{chapter_02/figs_02/SOM_Figure_order_2nd_v1_light.pdf}
+\caption[{PEACOQ 2D calibration parameterization \& results}]{\textbf{PEACOQ 2D calibration parameterization \& results} a) A diagram showing how RF pulse waveforms can interfere additively, and how $t'$ and $t''$ are parameterized. For illustrative purposes only. b) The result of 2nd order calibration, a grid of delay measurements indexed by $t'$ and $t''$. The blue/red slices and corresponding graphs show how the the effect of varying $t''$ for a given $t'$ is similar to varying $t'$ for a given $t''$.}
+\label{fig:order_2nd}
+\end{figure}
+}
 
-\% Predominant features of the 2d calibration grid seem to be orthogonal and aligned to the axes, which supports the assumption that the distortion effects arise from the additive mixing of overlapped RF pulse waveforms. (This is the most nuanced statement. Elaborate or gloss over it?)
+Predominant features of the 2d calibration grid seem to be orthogonal and aligned to the axes. This is a result of the parametrization chosen for $t'$ and $t''$. Features of the calibration that arise due to additive mixing of overlapped RF pulse waveforms which manifest as orthogonal structures in the 2d-calibration grid.
 
-In the limit of large $t''$, a slice of the calibration grid bears close resemblance to the $t'$ vs delay curve used for 1D calibration and correction (\ref{fig:order_1st}b).
-Like in the 1D correction method, a delay correction can be found during real-time acquisition and processing by interpolating on a lookup table. Only now, the lookup table has an extra dependent variable $t''$, and the interpolation is two dimensional.
+In the limit of large $t''$, a slice of the calibration grid bears close resemblance to the $t'$ vs delay curve used for 1D calibration and correction (Fig.~\ref{fig:order_1st} b). Like in the 1D correction method, a delay correction can be found during real-time acquisition and processing by interpolating on a lookup table. Only now, the lookup table has an extra dependent variable $t''$, and the interpolation is two dimensional.
 
-Proper handling of inter-pulse arrival measurements that fall outside the 2D grid is necessary for good correction performance. When both $t'$ and $t''$ fall outside the 2D grid, no correction is applied. When $t''$ falls outside the grid but $t'$ does not, a 1\tsup{st} order correction is applied to determine what delay must be subtracted to the current tag to correct its distortion. When both $t''$ and $t'$ fall within the 2d grid, a full 2d spline interpolation on the grid in \ref{fig:order_2nd}b is applied to find the necessary delay correction.
+Proper handling of inter-pulse arrival measurements that fall outside the 2D grid is necessary for good correction performance. When both $t'$ and $t''$ fall outside the 2D grid, no correction is applied. When $t''$ falls outside the grid but $t'$ does not, a 1st order correction is applied to determine what delay must be subtracted to the current tag to correct its distortion. When both $t''$ and $t'$ fall within the 2d grid, a full 2d spline interpolation on the grid in Fig.~\ref{fig:order_2nd} b is applied to find the necessary delay correction.
 
-\% Like the 1\tsup{st}-order correction, the 2\tsup{nd}-order method makes the assumption that the delays to be corrected are small relative to the inter-pulse times t' and t'\,'.
+Like the 1st-order correction, the 2nd-order method makes the assumption that the delays to be corrected are small relative to the inter-pulse times t' and t'\,'.
 
-The codebase supporting our findings with the 1\tsup{st} order and 2\tsup{nd} order correction is available at \href{https://github.com/sansseriff/SNSPD-time-walk-and-jitter-correction}{https://github.com/sansseriff/SNSPD-time-walk-and-jitter-correction}
-
-\hypertarget{section}{%
-\subsection{}\label{section}}
+The codebase supporting our findings with the 1st and 2nd order correction is
+available at \href{https://github.com/sansseriff/SNSPD-time-walk-and-jitter-correction}{SNSPD-time-walk-and-jitter-correction}.
 
 {}
+
+\hypertarget{performance-regime-of-the-tungsten-silicide-detector}{%
+\subsection{Performance Regime of the Tungsten Silicide detector}\label{performance-regime-of-the-tungsten-silicide-detector}}
+
+When our calibration and correction method is applied to the Tungsten Silicide SNSPD, the walk-cancellation method primarily corrects for pulse height variations. These variations are caused by varying levels of bias current in the device at the time of photo-detection. An oscilloscope trace shows an exponentially decaying increase in SNSPD pulse height following a previous detection. This exponential recovery shape reinforces evidence that this detector operates in this `bias current recovery' regime, rather than the regime where amplifier reset dynamics dominate.
+
+\hypertarget{fig:rise_exp}{%
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=\textheight]{chapter_02/figs_02/rise_exp_light.pdf}
+\caption[{WSi pulse exponential pulse recovery}]{\textbf{WSi pulse exponential pulse recovery} Sweep of trigger levels for pulse rising edges after a previous pulse (not shown). This is similar to a scope trace in overlay false color mode. The detector is illuminated by a 537.5 MHz pulse train.}
+\label{fig:rise_exp}
+\end{figure}
+}
+
+\hypertarget{software-dead-time-for-high-count-rate-jitter-suppression}{%
+\subsection{Software dead time for high count rate jitter suppression}\label{software-dead-time-for-high-count-rate-jitter-suppression}}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\linewidth]{supp_deadtime_2.eps}
+    \label{fig:dead_time}
+    \caption{(a) Illustration of the RF signal out of an SNSPD with red highlighted regions signifying a software-based dead time that rejects some events. (b) Count rate vs normalized efficiency, similar to Fig. 3c in green in the main text. (c) \& (d) Response functions for timetaggs at two count rates denoted by the vertical lines in (b), similar to Fig. 3d and 3e from the main text. The dark grey solid lines show response functions from the calibration and correction method which does not limit count rate. The 100 ns dead time filtered data does not reach the 5.9 Mcps of figure (d) and is therefore not shown in (d).}
+\end{figure}
+
+In certain cases a software-based dead time is an effective way of reducing jitter at high count rates. SNSPD pulses that arrive soon after a previous pulse are ignored because their timing is assumed to be corrupted due to pulse distortions (Fig. \ref{fig:dead_time}a). With a long software-based dead time, data is filtered to keep only events for which the SNSPD was in a fully reset state prior to detection. This results in low jitter measurements even at high rate as shown in Fig. \ref{fig:dead_time}d where the dashed and solid (red, orange) lines are response functions of unfiltered and filtered data respectively. However, the use of software-based dead times can severely limit usable count rate. This paradoxically contrasts with the main intended goal, which is to operate an SNSPD at the highest possible count rates. As shown in the Fig. 3b, adding a 100 ns software dead time to our WSi single pixel SNSPD limits its usable maximum count rate to about 4 MHz, while the raw count rate exceeds 10 MHz. Furthermore, the usable count rate drops to zero for higher incident photon rates, as the dead time starts to reject most events. This behavior can be unexpected and problematic for any applications that occasionally over-saturate the detector.
 
 \hypertarget{conclusion-outlook}{%
 \section{Conclusion \& Outlook}\label{conclusion-outlook}}
@@ -1141,8 +1165,8 @@ The sections of code that undergo this analysis are located in the functions \te
 
 \href{https://github.com/sansseriff/sequence_generator/tree/main}{Sequence Generator Repository}
 
-\hypertarget{section-1}{%
-\section{}\label{section-1}}
+\hypertarget{section}{%
+\section{}\label{section}}
 
 \hypertarget{software-systems-and-operation}{%
 \section{Software Systems and Operation}\label{software-systems-and-operation}}
