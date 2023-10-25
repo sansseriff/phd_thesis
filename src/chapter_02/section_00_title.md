@@ -2,8 +2,9 @@
 ```{=html}
 ## Time-walk and jitter correction in SNSPDs at high count rates
 
-![sizzle_time_walk](./figs_02/time_walk_image_light.svg#only-light)
-![sizzle_time_walk](./figs_02/time_walk_image_dark.svg#only-dark)
-
+<figure markdown>
+<img  alt="sizzle_time_walk" src="figs_02/time_walk_image_light.svg#only-light" style="margin-left: auto; margin-right: auto; width: 70%; opacity: 0.5"/>
+<img  alt="sizzle_time_walk" src="figs_02/time_walk_image_dark.svg#only-dark" style="margin-left: auto; margin-right: auto; width: 70%"/>
+</figure>
 ```
 <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](./figs_02/pnr_and_pulses.png) -->
