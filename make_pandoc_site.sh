@@ -108,12 +108,15 @@ find ./src/chapter_06/ -iname "*.md" -type f -exec sh -c 'pandoc \
     sed -i "s.'\\\\\\\\~'.\\&\\#160;.g" "./pandoc_site/chapter_06/$(basename ${0%.md}.md)"
 ' {} \;
 
+
+# I need the sed command with "'s/\.\.\//\.\//g'" to transform "../" to "./" in the index.md files. Because they are deployed one level up from the chapter folders.
 mv ./pandoc_site/chapter_01/section_02_abstract.md ./pandoc_site/chapter_01/index.md \
 && cat ./pandoc_site/chapter_02/section_00_title.md ./pandoc_site/chapter_02/section_01_header.md ./pandoc_site/chapter_02/section_02_abstract.md > ./pandoc_site/chapter_02/index.md \
 && cat ./pandoc_site/chapter_03/section_00_title.md ./pandoc_site/chapter_03/section_01_header.md ./pandoc_site/chapter_03/section_02_abstract.md > ./pandoc_site/chapter_03/index.md \
 && mv ./pandoc_site/chapter_04/section_02_abstract.md ./pandoc_site/chapter_04/index.md \
 && mv ./pandoc_site/chapter_06/section_02_abstract.md ./pandoc_site/chapter_06/index.md \
 && cat ./pandoc_site/chapter_05/section_02_abstract.md ./pandoc_site/chapter_05/section_06_aph_hw.md > ./pandoc_site/chapter_05/index.md \
+&& sed -i 's/\.\.\//\.\//g' ./pandoc_site/chapter_05/index.md \
 && rm ./pandoc_site/chapter_05/section_00_title.md \
 && rm ./pandoc_site/chapter_05/section_06_aph_hw.md \
 && rm ./pandoc_site/chapter_05/section_02_abstract.md \

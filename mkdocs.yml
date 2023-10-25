@@ -97,8 +97,9 @@ nav:
     - chapter_02/index.md
     - Introduction: chapter_02/section_03_introduction.md
     - Method: chapter_02/section_04_method.md
-    - Extensions & Supplemental: chapter_02/section_05_extensions_supplemental.md
-    - Conclusion: chapter_02/section_06_conclusion.md
+    - PEACOQ and 2D-Correction: chapter_02/section_05_peacoq_2nd_order.md
+    - Extra: chapter_02/section_06_extra.md
+    - Conclusion: chapter_02/section_07_conclusion.md
   - "Ch. 3: PPM & Photon Resolution": 
     - chapter_03/index.md
     - Introduction: chapter_03/section_03_introduction.md

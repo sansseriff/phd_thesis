@@ -380,14 +380,16 @@ When our calibration and correction method is applied to the Tungsten Silicide S
 \hypertarget{software-dead-time-for-high-count-rate-jitter-suppression}{%
 \subsection{Software dead time for high count rate jitter suppression}\label{software-dead-time-for-high-count-rate-jitter-suppression}}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.7\linewidth]{supp_deadtime_2.eps}
-    \label{fig:dead_time}
-    \caption{(a) Illustration of the RF signal out of an SNSPD with red highlighted regions signifying a software-based dead time that rejects some events. (b) Count rate vs normalized efficiency, similar to Fig. 3c in green in the main text. (c) \& (d) Response functions for timetaggs at two count rates denoted by the vertical lines in (b), similar to Fig. 3d and 3e from the main text. The dark grey solid lines show response functions from the calibration and correction method which does not limit count rate. The 100 ns dead time filtered data does not reach the 5.9 Mcps of figure (d) and is therefore not shown in (d).}
-\end{figure}
-
 In certain cases a software-based dead time is an effective way of reducing jitter at high count rates. SNSPD pulses that arrive soon after a previous pulse are ignored because their timing is assumed to be corrupted due to pulse distortions (Fig. \ref{fig:dead_time}a). With a long software-based dead time, data is filtered to keep only events for which the SNSPD was in a fully reset state prior to detection. This results in low jitter measurements even at high rate as shown in Fig. \ref{fig:dead_time}d where the dashed and solid (red, orange) lines are response functions of unfiltered and filtered data respectively. However, the use of software-based dead times can severely limit usable count rate. This paradoxically contrasts with the main intended goal, which is to operate an SNSPD at the highest possible count rates. As shown in the Fig. 3b, adding a 100 ns software dead time to our WSi single pixel SNSPD limits its usable maximum count rate to about 4 MHz, while the raw count rate exceeds 10 MHz. Furthermore, the usable count rate drops to zero for higher incident photon rates, as the dead time starts to reject most events. This behavior can be unexpected and problematic for any applications that occasionally over-saturate the detector.
+
+\hypertarget{fig:dead_time}{%
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth,height=\textheight]{chapter_02/figs_02/cut_count_rate_v2_light.pdf}
+\caption[{Removing time walk with dead time}]{\textbf{Removing time walk with dead time} a) Illustration of the RF signal out of an SNSPD with red highlighted regions signifying a software-based dead time that rejects some events. b) Count rate vs normalized efficiency, similar to the curve in green in Fig.~\ref{fig:jitterate_results_2}. (c) \& (d) Response functions for timetaggs at two count rates denoted by the vertical lines in (b), similar to Fig. 3d and 3e from the main text. The dark grey solid lines show response functions from the calibration and correction method which does not limit count rate. The 100 ns dead time filtered data does not reach the 5.9 Mcps of figure (d) and is therefore not shown in (d).}
+\label{fig:dead_time}
+\end{figure}
+}
 
 \hypertarget{conclusion-outlook}{%
 \section{Conclusion \& Outlook}\label{conclusion-outlook}}
@@ -398,7 +400,7 @@ The original research paper on time walk analysis \autocite{Mueller2023} include
 To optimally correct for this, higher-order correction techniques are needed based on higher-dimensional lookup tables. There is an avenue for exploring such methods for unique use-cases. \autocite{Mueller2023}
 \end{quote}
 
-This potential for higher order correction methods turned out to be fruitful, which is why the prior section about \href{section_05_extensions_supplemental.md\#higher-order-correction}{higher corder correction} adapted from the PEACOQ paper \autocite{Craiciu23} is included. The original paper went on to claim that there are avenues for exploring time walk correction for pulses measured at multiple voltage levels, or even fully digitized pulses captured with high speed ADCs and FPGAs. These more rigorous readout techniques may be needed to deconvolve photon timing and Photon Number Resolution (PNR) effects from the same nanowire at high count rates~\autocite{Hao2021}. While drafting this thesis, methods for simultaneous time walk correction and PNR correction have not been demonstrated in the literature. However, I believe there is imminent potential to extend the gaussian mixture model methods introduced in the next section for these purposes.
+This potential for higher order correction methods turned out to be fruitful, which is why the prior section about \href{section_05_peacoq_2nd_order.md\#second-order-calibration}{higher corder correction} adapted from the PEACOQ paper \autocite{Craiciu23} is included. The original paper went on to claim that there are avenues for exploring time walk correction for pulses measured at multiple voltage levels, or even fully digitized pulses captured with high speed ADCs and FPGAs. These more rigorous readout techniques may be needed to deconvolve photon timing and Photon Number Resolution (PNR) effects from the same nanowire at high count rates~\autocite{Hao2021}. While drafting this thesis, methods for simultaneous time walk correction and PNR correction have not been demonstrated in the literature. However, I believe there is imminent potential to extend the gaussian mixture model methods introduced in the next section for these purposes.
 
 There are other types of extensions and modifications to the presented time walk correction method that may prove to be useful. However, the single-$\Delta t$ measurement approach primarily detailed in this chapter is broadly applicable and straightforward to implement. For insight into developing a streamlined calibration process and in-situ time walk correction as part of larger quantum communication experiments, see the time walk correction section in the chapter 4 \textcolor{orange}{include link}.
 
