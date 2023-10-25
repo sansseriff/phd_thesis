@@ -334,9 +334,7 @@ As applications like LIDAR and quantum communication demand ever higher data rat
 \hypertarget{data-recovery-and-pulse-position-modulation-with-a-photon-number-resolving-snspd}{%
 \chapter{Data Recovery and Pulse Position Modulation with a Photon Number Resolving SNSPD}\label{data-recovery-and-pulse-position-modulation-with-a-photon-number-resolving-snspd}}
 
-A version of this chapter will be submitted the the journal optics express. A preprint is released as:
-
-\textcolor{orange}{arxiv citation here}
+A version of this chapter will be submitted the the journal optics express. A preprint is released as \textcolor{orange}{arxiv citation here}
 
 \hypertarget{abstract-2}{%
 \section{Abstract}\label{abstract-2}}
@@ -364,12 +362,12 @@ The rate increase is possible due to recent advancements in Niobium Nitride SNSP
 \begin{figure}
 \centering
 \includegraphics[width=1\textwidth,height=\textheight]{chapter_03/figs_03/fig_intro_2_light.pdf}
-\caption[{PPM modulation and experiment setup}]{\textbf{PPM modulation and experiment setup} a) Diagram of the expiremental setup. WG: wave generator, CD: clock divider board, AWG: Arbitrary Waveform Generator, MLL: Mode Locked Laser (Pritel UAC), IM: Intensity Modulator, BC: Bias Controller, FSC: Free Space Coupling System, DCA: DC Coupled Cryo-amp b) How bits are transmitted in M=16 PPM modulation. An optical pulse is transmitted with a clock-referenced integer delay which encodes 4 bits of data. c) \textcolor{orange}{XXXXXXXX}}
+\caption[{PPM modulation and experiment setup}]{\textbf{PPM modulation and experiment setup} a) Diagram of the expiremental setup. WG: wave generator, CD: clock divider board, AWG: Arbitrary Waveform Generator, MLL: Mode Locked Laser (Pritel UAC), IM: Intensity Modulator, BC: Bias Controller, FSC: Free Space Coupling System, DCA: DC Coupled Cryo-amp b) How bits are transmitted in M=16 PPM modulation. An optical pulse is transmitted with a clock-referenced integer delay which encodes 4 bits of data. c) Scope trace of the RF pulse produced by the differential-readout tapered SNSPD. Fig.~\ref{fig:waveform} zooms in on the rising edge outlined in red here}
 \label{fig:intro}
 \end{figure}
 }
 
-However, these detectors exhibit photon number number dependent responses that affect the time-correlated measurements needed for high-rate PPM. This behavior, shown in Fig.~\ref{fig:waveform} is also known as photon number resolution (PNR) -- a property that is desirable in certain applications including quantum communication and quantum computing. The SNSPD generates RF pulses with greater amplitude and slew rate when detecting optical pulses with multiple photons. Photon number effects are especially evident in this lower jitter variety of SNSPD due to the use of impedance matching tapers which more efficiently couple energy out of the nanowire and into the readout circuit. With high resolution time tagging equipment, photon number dependent effects have even been observed in SNSPDs not necessarily designed to exhibit it \autocite[\textcite{sauer2023resolving}]{schapeler2023superconducting} like those without tapers \autocite{Cahall2017SlewRatePNR}. Therefore it is increasingly likely that future research involving low-jitter SNSPDs and multiphoton pulsed sources will have to explicitly manage the PNR response for accurate time-correlated measurements -- whether the effect it is desired or not.
+However, these detectors exhibit photon number number dependent responses that affect the time-correlated measurements needed for high-rate PPM. This behavior, shown in Fig.~\ref{fig:waveform} is also known as photon number resolution (PNR) -- a property that is desirable in certain applications including quantum communication and quantum computing. The SNSPD generates RF pulses with greater amplitude and slew rate when detecting optical pulses with multiple photons. Photon number effects are especially evident in this lower jitter variety of SNSPD due to the use of impedance matching tapers which more efficiently couple energy out of the nanowire and into the readout circuit. With high resolution time tagging equipment, photon number dependent effects have even been observed in SNSPDs not necessarily designed to exhibit it \autocite{schapeler2023superconducting,sauer2023resolving} like those without tapers \autocite{Cahall2017SlewRatePNR}. Therefore it is increasingly likely that future research involving low-jitter SNSPDs and multiphoton pulsed sources will have to explicitly manage the PNR response for accurate time-correlated measurements -- whether the effect it is desired or not.
 
 For the tapered differential detectors, the PNR response affects timing of fixed threshold timetaggs at any trigger level (Fig.~\ref{fig:waveform}). However, at higher trigger levels the PNR response is less pronounced and the timing measurements are less affected. Therefore, we divide a single SNSPD readout line using an RF splitter and trigger on the RF pulse at a high and low level as shwon by the red lines in Fig.~\ref{fig:waveform}. This allows us to extract the somewhat conjugate information of pulse arrival time and photon number. From these measurements we study the PNR response in detail and present two methods for managing it. We demonstrate how the photon number information may be deconvolved from the arrival time information, and how both de-correlated degrees of freedom can be extracted simultaneously. This enables the original goal of high rate PPM, but also informs how low-jitter photon number resolving SNSPDs can be used in other classical communication and quantum applications.
 
@@ -435,11 +433,7 @@ Several modern free running time taggers support the averaging of multiple input
 \hypertarget{methods}{%
 \section{Methods}\label{methods}}
 
-Prior to the PPM demosntration, we collected data with multi-photon optical pulses repeatedly impinging on the detector at the same time with respect to a clock. This way, we study how the PNR effect in isolation is manifest in the timing measurements recorded at the low and high trigger levels. We label the measurements from the low (8~mV) and high (50~mV) trigger levels as $t_A$ and $t_B$ respectively. As shown in
-
-Fig.~\ref{fig:waveform}
-
-, histograms of these arrival events are multimodal due to the PNR response. We first present a method for recovering a symmetric arrival time response function using the the slope measurement $\Delta t_{BA} = t_B - t_A$.
+Prior to the PPM demosntration, we collected data with multi-photon optical pulses repeatedly impinging on the detector at the same time with respect to a clock. This way, we study how the PNR effect in isolation is manifest in the timing measurements recorded at the low and high trigger levels. We label the measurements from the low (8~mV) and high (50~mV) trigger levels as $t_A$ and $t_B$ respectively. As shown in Fig.~\ref{fig:waveform}, histograms of these arrival events are multimodal due to the PNR response. We first present a method for recovering a symmetric arrival time response function using the the slope measurement $\Delta t_{BA} = t_B - t_A$.
 
 \hypertarget{slope-based-correction}{%
 \subsection{Slope-Based Correction}\label{slope-based-correction}}
@@ -1096,7 +1090,7 @@ The most important feature of this toolset is the ability to determine compatibl
 
 The sections of code that undergo this analysis are located in the functions \texttt{determine\_ppm\_properties} and \texttt{determine\_regular\_properties} for the PPM and QKD applications respectively.
 
-Repository: \href{https://github.com/sansseriff/sequence_generator/tree/main}{sequence generator}
+\href{https://github.com/sansseriff/sequence_generator/tree/main}{Repository :fontawesome-brands-git-alt:}
 
 \hypertarget{section}{%
 \section{}\label{section}}

@@ -32,6 +32,9 @@ markdown_extensions:
   - pymdownx.snippets:
       check_paths: true
   - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - md_in_html
   - pymdownx.superfences
   - footnotes
@@ -111,7 +114,8 @@ nav:
     - chapter_05/index.md
   - "A2: Software Tools":
     - chapter_06/index.md
-    - Software Tools: chapter_06/section_05_software_operation.md
+    - Experiment Control: chapter_06/section_04_experiment_control.md
+    - Data Analysis & Visualization: chapter_06/section_05_data_analysis_visualization.md
     - Cheat Sheet: chapter_06/section_08_cheat_sheet.md
 
 

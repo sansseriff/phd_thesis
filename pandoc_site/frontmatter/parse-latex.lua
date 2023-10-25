@@ -137,7 +137,11 @@ Span = function(el)
     -- table.insert(el.content, pandoc.RawInline('latex', '}'))
     -- return el.content
     -- print(pandoc.RawInline('latex', el.content[1].text))
-    return pandoc.RawInline('latex', el.content[1].text)
+    return el.content
+  end
+
+  if el.classes[1] == "html" then
+    return pandoc.RawInline('latex', "")
   end
 
   if color == nil then return el end

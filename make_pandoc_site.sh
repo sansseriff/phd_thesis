@@ -110,7 +110,7 @@ find ./src/chapter_06/ -iname "*.md" -type f -exec sh -c 'pandoc \
 
 mv ./pandoc_site/chapter_01/section_02_abstract.md ./pandoc_site/chapter_01/index.md \
 && cat ./pandoc_site/chapter_02/section_00_title.md ./pandoc_site/chapter_02/section_01_header.md ./pandoc_site/chapter_02/section_02_abstract.md > ./pandoc_site/chapter_02/index.md \
-&& mv ./pandoc_site/chapter_03/section_02_abstract.md ./pandoc_site/chapter_03/index.md \
+&& cat ./pandoc_site/chapter_03/section_00_title.md ./pandoc_site/chapter_03/section_01_header.md ./pandoc_site/chapter_03/section_02_abstract.md > ./pandoc_site/chapter_03/index.md \
 && mv ./pandoc_site/chapter_04/section_02_abstract.md ./pandoc_site/chapter_04/index.md \
 && mv ./pandoc_site/chapter_06/section_02_abstract.md ./pandoc_site/chapter_06/index.md \
 && cat ./pandoc_site/chapter_05/section_02_abstract.md ./pandoc_site/chapter_05/section_06_aph_hw.md > ./pandoc_site/chapter_05/index.md \
