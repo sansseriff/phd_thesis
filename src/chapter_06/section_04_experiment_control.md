@@ -6,8 +6,9 @@ The most important feature of this toolset is the ability to determine compatibl
 
 The sections of code that undergo this analysis are located in the functions `determine_ppm_properties` and `determine_regular_properties` for the PPM and QKD applications respectively. 
 
+<span class="html">[Repository :fontawesome-brands-git-alt:](https://github.com/sansseriff/sequence_generator/tree/main){ .md-button }</span>
+<span class="latex">\href{Sequence Generator Repository}{https://github.com/sansseriff/sequence_generator/tree/main}</span>
 
-[Repository :fontawesome-brands-git-alt:](https://github.com/sansseriff/sequence_generator/tree/main){ .md-button }
 
 
 
