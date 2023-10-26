@@ -442,8 +442,13 @@ $$\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\ra
 5. (12 pts) Make a parametric plot for $0<\gamma<1$ with $F_{PNR}$ on the x-axis and $p_{PNR}$ on the y-axis. Plot the curve for a few different values of idler arm efficiency $0<\eta<1$. All curves should reach the same maximum herald probability. What is it? 
    
     <span style="color:blue"markdown> **Answer:** </span>
+```{=latex}
+\begin{center}
+```
     <span style="color:blue" markdown>![](./figs/PLT.PNG){#fig:plt width=70% path="chapter_07"}</span>
-
+```{=latex}
+\end{center}
+```
     <span style="color:blue" markdown> The the herald probability regardless of idler arm efficiency is 25\%. </span>
 
     <span style="color:red" markdown> 4 points for the 25\% limit; 8 points for a few plots at different $\eta$ </span>
