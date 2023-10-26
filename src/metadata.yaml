@@ -1,8 +1,8 @@
 ---
-title: Towards Precise Quantum Measurements with Superconducting Nanowire Single Photon Detectors
+title: Precise Quantum Measurements with Superconducting Nanowire Single Photon Detectors
 author: Andrew Sterling Mueller
 copyyear: 2024
-defense: November 2023
+defense: December 2023
 orcid: 0000-0002-6598-9732
 degree: 
     Doctor of Philosophy in  
@@ -15,7 +15,7 @@ rights_statement: |
     \href{https://github.com/sansseriff/phd_thesis}{https://github.com/sansseriff/phd\textunderscore thesis}
     
 logo: true
-bibliography: references.bib
+bibliography: references_cleaned.bib
 csl: styles/cell.csl
 ownpubs: published.md
 acknowledgements: acknowledgements.md

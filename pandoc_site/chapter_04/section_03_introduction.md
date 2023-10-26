@@ -1,40 +1,80 @@
 ## Introduction
 
-     
+<!-- DSOC, high loss -->
 
-Entangled photons play a vital role in the development of quantum information processing and communication systems. The ability to generate entangled photon pairs at a high rate is essential for establishing reliable and scalable quantum networks, as well as for implementing entanglement-based quantum key distribution (QKD) systems. Unlike QKD systems that rely on attenuated lasers, entanglement distribution systems may fulfill the objectives of QKD while also serving as the foundation for advanced quantum networks that heavily rely on entanglement as a fundamental resource.
+Deep space optical communication has been a growing field of study in recent years, as space agencies look for ways to increase data rates to and from deep space missions. A key challenge in the development of this technology is closing the communication link over extremely large distances and high loss. This must be done given a restricted power budget available on the spacecraft, and therefore requires the use of photon efficient communication protocols that optimize the number of bits sent per unit of energy.
 
-<!-- prior entanglement dist. work -->
+<!-- more will be said about PIE later i guess? -->
 
-Entanglement-distribution and entanglement-based QKD systems have been demonstrated with impressive performance across a number of metrics. These include 40 Kbps data rates in a QKD system deployed over 50 km of fiber [@Pelet2022], as well as multiple polarization entangled sources that leverage spectral multiplexing. These polarization sources include a demonstration of 181 kebits/s across 150 ITU channel pairs, and a high-power source potentially capable of gigabit rates with many added channels and detectors [@Alshowkan2022; @Neumann2022Entanglement]. Multiple works have highlighted the need to leverage high total brightness, spectral brightness, collection efficiency, and high visibility from pair generating non-linear crystals in order to realize practical high-rate entanglement distribution [@Neumann2022Entanglement].
+In this article, we demonstrate high rate Pulse Position Modulation (PPM) applicable to future deep space communication. This starts with a transmitter that sends an optical pulse in one of $2^M$ possible time slots measured with respect to a clock. At a receiver, the arrival time of this pulse is measured to recover $M$ bits of encoded data. Each successive set of $2^M$ time slots following by a dead time constitute a PPM frame.
 
-<!-- less existing focus on polarization entanglement -->
+The Deep Space Optical Communicaiton (DSOC) project managed by the Jet Propulsion Laboratory (JPL) aims to demonstrate optical communication using PPM with the Psyche spacecraft from distances of 0.06 to 2.7 Au [@Srinivasan2023GroundReceiver].
 
-<!-- % There has been less community focus on the use of time-bin entanglement to achieve these goals. 
-A time-bin entangled photon source has certain advantages over a polarization-based system. Time-bin entanglement can be measured with no moving hardware and does not require precise polarization tracking to maximise visibility\cite{something}.
-% As opposed to polarization entanglement, a time-bin approach does not require precise polarization tracking to maximise visibility\cite{something}.  -->
+For larger M, more data may be sent with a single optical pulse, thereby allowing a power limited spacecraft to send more data over a high loss optical channel back to earth. This is quantified through the photon information efficiency $c_p = C/E$ where $C$ is the link capacity and $E$ is the photon cost per optical pulse
 
-Also, with suitable equipment, robust time-bin modulation is possible over free space links with turbulence [@Jin2019]. Therefore, the possibility of simplified fiber-free space interconnects and larger quantum networks based on a shared time-bin protocol motivates development of improved time-bin sources.
+The DSOC project uses M at least as high as 5, meaning 5 bits of data are send using 32 time slots per frame. M values as high as 19 have been demonstrated in the lab&#160;[@essiambre2023record], but the number of time bins needed per frame scales exponentially with the number of bits transmitted per pulse. Therefore, for a given fixed clock rate and time bin duration, the PPM data rate decreases dramatically for higher M values.
 
-<!--  Short system overview -->
+<!-- PPM can achieve higher photon information efficiency than coherent detection techniques [@Dolinar2011Photon] for which the need to measure phase of the incoming optical signal limits minimum transmission power.  -->
 
-We employ a 4.0 GHz mode locked laser source with 80-ps delay interferometers to realize a high-rate source. Wavelength multiplexing is used for reading out energy-time entangled photon pairs, thereby realizing multiple high fidelity channels pairings which together sum to a high coincidence rate. Each of the 8 pairs can be considered an independent carrier of photonic entanglement [@Wengerowsky2018] and therefore the system as a whole is applicable to flex-grid architectures through the use of wavelength selective switching [@Appas2021; @Alshowkan22Switching]. However, we focus here on maximizing the rate between two receiving stations, Alice and Bob (Fig. [1](#fig:system) a). Each station is equipped with DWDMs that receive multiplexed channels, and may include multiple detectors to read out the full rate.
+We demonstrate a high clock rate PPM protocol in the lab based on modulating a mode-locked laser and receiving pulses with a low jitter superconducting nanowire single photon detector (SNSPD) (Fig. [1](#fig:intro) (a)).We focus on demonstrating moderately large PIE, while also increasing the clock rate of the sytem by an order of magnitude relative to the DSOC platform (2&#160;GHz). By operating at both higher clock rate and PIE than DSOC, this system exemplifies how future iterations of DSOC may send data more quickly but also over greater distances with the same power budget.
+
+<!-- With the increase of both clock rate and PIE, this protocol suggests a potentially attractive upgrade path DSOC-like systems, as similar implementations could offer both higher data rates and operation across greater distances.  -->
+
+The rate increase is possible due to recent advancements in Niobium Nitride SNSPDs&#160;[@Colangelo2023]. These achieve low jitter performance by incorporating impedance matching tapers for efficient RF coupling, resulting in higher slew rate pulses, and by enabling RF pulse readout from both ends of the nanowire. The dual-ended readout allows for the cancellation of jitter caused by the variable location of photon arrival along the meander when the differential signals are recombined with a balun. These detectors achieve jitter as low as 50 ps at the FW(1/100)M level, making them suitable for the demonstration of PPM with 50 ps slot widths and a 20 GHz clock.
 
 <figure markdown> 
-    <a name='fig:system'></a> 
-    <img alt="fig:system" style="width: 100%; margin: auto;" src="../figs_04/sys_drawing_light.svg#only-light" >
-    <img alt="fig:system" style="width: 100%; margin: auto;" src="../figs_04/sys_drawing_dark.svg#only-dark" > 
-    <figcaption markdown> Figure 1: **System Drawing & DWDM Channels** a) Pulses from a 1539.47 nm mode locked laser (Pritel UOC) are doubled by an 80 ps delay interferometer before up-conversion and amplification in a SHG & EDFA module (Pritel). A short PM fiber from the SHG connects to the SPDC where photon pairs are created. The CWDM module separates the SPDC spectrum into multiple $\sim\!\!13~\mathrm{nm}$ wide bands spaced by 20 nm. The 1530 and 1550 nm bands are sent to the Bob and Alice stations respectively. The readout interferometers have the same time delay as the source interferometer. Polarization controllers are used to maximize the coincidence rates, as the detection efficiencies of the SNSPDs is polarization sensitive $\pm20\%$. Entanglement fidelity is unaffected by readout polarization. The two SNSPDs are connected to each channel pair in succession to resolve full system performance. b) ITU channels involved with the experiment. Pairs of channels highlighted with the same color obey the SPDC & pump energy matching condition, and can be directly read out through DWDM channel outputs. To asses the full 16 channels (27-42) of Alice’s DWDM multiplexer, Bob’s 8-channel DWDM is switched out for a tunable narroband filter.</figcaption>
+    <a name='fig:intro'></a> 
+    <img alt="fig:intro" style="width: 100%; margin: auto;" src="../figs_03/fig_intro_2_light.svg#only-light" >
+    <img alt="fig:intro" style="width: 100%; margin: auto;" src="../figs_03/fig_intro_2_dark.svg#only-dark" > 
+    <figcaption markdown> Figure 1: **PPM modulation and experiment setup** a) Diagram of the expiremental setup. WG: wave generator, CD: clock divider board, AWG: Arbitrary Waveform Generator, MLL: Mode Locked Laser (Pritel UAC), IM: Intensity Modulator, BC: Bias Controller, FSC: Free Space Coupling System, DCA: DC Coupled Cryo-amp b) How bits are transmitted in M=16 PPM modulation. An optical pulse is transmitted with a clock-referenced integer delay which encodes 4 bits of data. c) Scope trace of the RF pulse produced by the differential-readout tapered SNSPD. Fig. [2](#fig:waveform) zooms in on the rising edge outlined in red here</figcaption>
     </figure>
 
-<!-- %## Overview of data we collect -->
+However, these detectors exhibit photon number number dependent responses that affect the time-correlated measurements needed for high-rate PPM. This behavior, shown in Fig. [2](#fig:waveform) is also known as photon number resolution (PNR) – a property that is desirable in certain applications including quantum communication and quantum computing. The SNSPD generates RF pulses with greater amplitude and slew rate when detecting optical pulses with multiple photons. Photon number effects are especially evident in this lower jitter variety of SNSPD due to the use of impedance matching tapers which more efficiently couple energy out of the nanowire and into the readout circuit. With high resolution time tagging equipment, photon number dependent effects have even been observed in SNSPDs not necessarily designed to exhibit it [@schapeler2023superconducting; @sauer2023resolving] like those without tapers [@Cahall2017SlewRatePNR]. Therefore it is increasingly likely that future research involving low-jitter SNSPDs and multiphoton pulsed sources will have to explicitly manage the PNR response for accurate time-correlated measurements – whether the effect it is desired or not.
 
-We quantify per-channel brightness and fidelity as a function of pump power, as well as collection efficiencies, coincidence rates across 8 channel pairs, and expected performance of a partially realized 16-channel pair configuration. We show that the 8 channel system achieves low-power fidelities that average to 99.76%. At a higher power, we demonstrate a total coincidence rate of 0.51 MHz with fidelities that average to 99.22%. Through quantum state tomography we bound the distillable entanglement rate of the system to between 80% and 95% of the high-power coincidence rate (0.41 - 0.48 Mebits/s).
+For the tapered differential detectors, the PNR response affects timing of fixed threshold timetaggs at any trigger level (Fig. [2](#fig:waveform)). However, at higher trigger levels the PNR response is less pronounced and the timing measurements are less affected. Therefore, we divide a single SNSPD readout line using an RF splitter and trigger on the RF pulse at a high and low level as shwon by the red lines in Fig. [2](#fig:waveform). This allows us to extract the somewhat conjugate information of pulse arrival time and photon number. From these measurements we study the PNR response in detail and present two methods for managing it. We demonstrate how the photon number information may be deconvolved from the arrival time information, and how both de-correlated degrees of freedom can be extracted simultaneously. This enables the original goal of high rate PPM, but also informs how low-jitter photon number resolving SNSPDs can be used in other classical communication and quantum applications.
 
-<!-- %## witch Schmidt we get HOM prediction -->
+<figure markdown> 
+    <a name='fig:waveform'></a> 
+    <img alt="fig:waveform" style="width: 80%; margin: auto;" src="../figs_03/waveform_light.svg#only-light" >
+    <img alt="fig:waveform" style="width: 80%; margin: auto;" src="../figs_03/waveform_dark.svg#only-dark" > 
+    <figcaption markdown> Figure 2: **PNR-sensitive Pulse Waveform** The rising edge of the differential SNSPD’s RF pulses exhibit variations in height, slew rate, and arrival time due to photon-number dependent dynamics. The slopes of the 1-photon and 2-photon pulses significantly differ, and as the photon number increases, the alterations to the pulse shape become progressively smaller. Trigger levels A (8 mV) and B (50 mV) were used to extract as much information about pulse slope and arrival time as possible</figcaption>
+    </figure>
 
-Quantifying a source’s spectral mode purity is important for gauging its utility in advanced quantum networks that rely on 2-photon interference measurements like Bell State Measurements.
+## Detector Figure of Merit
 
-<!-- % But for most sources in the literature, spectral mode purity is not studied or optimized for.  -->
+The work here highlights the application of low jitter single-photon detectors for optical communication, which is impactful for deep-space optical communication as well as classical communication in quantum networks. Although single-photon counting is well estanblished for deep-space optical communication&#160;[@Srinivasan2023GroundReceiver] so far it has not been ulitized in quantum networks, mainly due to the use of SFP modules and DWDMs. However, with the eachievement of high data rates recently achieved with photon-counting classical communication, these approaches can now be seriously considered for quantum networks. The main driver is the reduction of optical power in neighbouring DWDM channels, which ultimately lowers the Raman scattered photons into the quantum channel [@EraerdsRaman] <span class=orange markdown>Calculate reduction in power from state of the art SFP modules</span>
 
-With Schmidt decomposition we quantify the modal purity of single DWDM channel pairs and derive the inverse Shmidt number which serves as an estimate for two-photon HOM visibility between two such sources. Ultimately, we demonstrate that an entanglement generation source of this design makes for a robust and powerful building block for future high rate quantum networks.
+To access the applicability of different detectors, here we compare some of the recent near infrared detectors.
+
+A useful figure of merit that includes all of the revelant detector metrics for photon timing was introduced by Bronzi and co-authors [@Bronzi2016]
+
+$$FoM_T = \frac{\eta  (1 - P_{ap})\Phi_{-3 \text{dB}}}{J} \sqrt{\frac{A}{D}},$$
+
+where $\eta$ is the single photon detection efficiency, $\Phi_{-3 \text{dB}}$ is the photon flux at which the system detection efficiency drops by 3&#160;dB, $P_{ap}$ is the afterpulsing probability, $J$ is the detector jitter evaluated as the FWHM, $T_d$ is the deadtime, $A$ is the active area and $D$ is the dark count rate. Here we have defined the maximum photon flux as the 3&#160;dB point, for ease of standardization.
+
+In this work:
+
+-   Efficiency = 0.84
+-   Afterpulsing = 0 %
+-   Jitter = 15 ps
+-   Deadtime = 30 ns <span class=orange markdown>measure 3dB flux</span>
+-   Area = 330 $\mu m^2$
+-   Dark count rate = 20 Hz
+
+$FoM_T = 7.58 \times 10^{12}$ at 1550 nm.
+
+The deadtime is calculated as the 1/MCR, which is the 3 dB point of the nominal efficiency. This is only a factor of 3.7 less than the state of the art visible Silicon SPADs (peak efficiency at 480 nm) [@Gramuglia2022]
+
+In the future, the performance of the optical communication system could be improved by using, high count rate SNSPD arrays. Recently published high-count rate arrays have figures of merit of <span class=orange markdown>$FoM_T$ for Peacoq and Resta2023 results</span>. This would result in a proportinal increase in the data rate. <span class=orange markdown>$FoM_T$ for fastest InGaAs/InP gated detector</span> These devices are ideal for fiber-based optical communication. In free-space, the active area is especially important, whithout the use of an adaptive optics system. <span class=orange markdown>$FoM_T$ for DSOC array</span>
+
+### Development of a modulation source
+
+DSOC relies on modulation of a CW seed laser to generate the communication signal on the spacecraft. This signal is then amplified by an Erbium Doped Fiber Amplifier (EDFA) to increase its transmission power to Earth. As the EDFA amplifies the pre-generated pulses and uses most of the power of the spacecraft optical transmission system, power consumption scales with the number of optical pulses.
+
+We produce our PPM signal signal by carving a high rate mode locked laser with lithium niobate modulators. This way, the jitter of the optical pulses themselves are not limited by the modulators or slew slew rate of the RF signal that drives them. We do two PPM demonstrations, with the source mode locked laser operating at 10.75 and 20 GHz. THe 10.75 GHz demonstration uses a M value of 10, thereby making frames with 1024 time slots of 93 ps width each. The 20 GHz demonstration uses M=11, giving 2048 time slots of 50 ps width per frame. Each frame ends with a dead time of approximately 150 ns to allow the SNSPD to fully recover before the next frame.
+
+<!-- Therefore, we chose to carve pulses from a mode-locked laser. This approach allows for extremely short pulses in time, with the modulators responsible for sufficiently reducing any surrounding unwanted pulses. The temporal width of the modulator pulse response must be extremely short and able to modulate from 'off' to 'on' within a time frame of the order of the 50 ps bin width. -->
+
+<!-- Extras -->
+
+Several modern free running time taggers support the averaging of multiple input channels to create fewer higher resolution channels. This implies a tradeoff between jitter or timing resolution and number of channels for a given time tagging device. Therefore, it is important to consider readout methods like that presented here that make use of 2 lower-resolution channels in place of a single higher resolution channel, as these two configurations are similarly resource efficient.

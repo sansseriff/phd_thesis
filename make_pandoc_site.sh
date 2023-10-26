@@ -4,18 +4,24 @@ rm -r ./pandoc_site/chapter_01/* \
 && rm -r ./pandoc_site/chapter_04/* \
 && rm -r ./pandoc_site/chapter_05/* \
 && rm -r ./pandoc_site/chapter_06/* \
+&& rm -r ./pandoc_site/chapter_07/* \
+&& rm -r ./pandoc_site/chapter_08/* \
 && cp -R ./src/chapter_01/code/ ./pandoc_site/chapter_01/ \
 && cp -R ./src/chapter_02/code/ ./pandoc_site/chapter_02/ \
 && cp -R ./src/chapter_03/code/ ./pandoc_site/chapter_03/ \
 && cp -R ./src/chapter_04/code/ ./pandoc_site/chapter_04/ \
 && cp -R ./src/chapter_05/code/ ./pandoc_site/chapter_05/ \
 && cp -R ./src/chapter_06/code/ ./pandoc_site/chapter_06/ \
+&& cp -R ./src/chapter_07/code/ ./pandoc_site/chapter_07/ \
+&& cp -R ./src/chapter_08/code/ ./pandoc_site/chapter_08/ \
 && cp -R ./src/chapter_01/figs_01/ ./pandoc_site/chapter_01/ \
 && cp -R ./src/chapter_02/figs_02/ ./pandoc_site/chapter_02/ \
 && cp -R ./src/chapter_03/figs_03/ ./pandoc_site/chapter_03/ \
 && cp -R ./src/chapter_04/figs_04/ ./pandoc_site/chapter_04/ \
 && cp -R ./src/chapter_05/figs_05/ ./pandoc_site/chapter_05/ \
 && cp -R ./src/chapter_06/figs_06/ ./pandoc_site/chapter_06/ \
+&& cp -R ./src/chapter_07/figs_07/ ./pandoc_site/chapter_07/ \
+&& cp -R ./src/chapter_08/figs_08/ ./pandoc_site/chapter_08/ \
 && cp -R ./src/frontmatter ./pandoc_site/ \
 && cp -R ./src/references.bib ./pandoc_site/ \
 && cp -R ./src/references_cleaned.bib ./pandoc_site/ \
@@ -108,18 +114,46 @@ find ./src/chapter_06/ -iname "*.md" -type f -exec sh -c 'pandoc \
     sed -i "s.'\\\\\\\\~'.\\&\\#160;.g" "./pandoc_site/chapter_06/$(basename ${0%.md}.md)"
 ' {} \;
 
+find ./src/chapter_07/ -iname "*.md" -type f -exec sh -c 'pandoc \
+    --from markdown \
+    --to markdown \
+    -t markdown-smart \
+    --wrap=none \
+    --filter ./src/pandoc-crossref \
+    -M "crossrefYaml=./src/ref_formatting_site.yaml" \
+    --lua-filter=parse-html.lua \
+    "${0}" -o "./pandoc_site/chapter_07/$(basename ${0%.md}.md)" &&
+    sed -i "s.'\\\\\\\\~'.\\&\\#160;.g" "./pandoc_site/chapter_07/$(basename ${0%.md}.md)"
+' {} \;
+
+find ./src/chapter_08/ -iname "*.md" -type f -exec sh -c 'pandoc \
+    --from markdown \
+    --to markdown \
+    -t markdown-smart \
+    --wrap=none \
+    --filter ./src/pandoc-crossref \
+    -M "crossrefYaml=./src/ref_formatting_site.yaml" \
+    --lua-filter=parse-html.lua \
+    "${0}" -o "./pandoc_site/chapter_08/$(basename ${0%.md}.md)" &&
+    sed -i "s.'\\\\\\\\~'.\\&\\#160;.g" "./pandoc_site/chapter_08/$(basename ${0%.md}.md)"
+' {} \;
+
 
 # I need the sed command with "'s/\.\.\//\.\//g'" to transform "../" to "./" in the index.md files. Because they are deployed one level up from the chapter folders.
-mv ./pandoc_site/chapter_01/section_02_abstract.md ./pandoc_site/chapter_01/index.md \
-&& cat ./pandoc_site/chapter_02/section_00_title.md ./pandoc_site/chapter_02/section_01_header.md ./pandoc_site/chapter_02/section_02_abstract.md > ./pandoc_site/chapter_02/index.md \
+mv ./pandoc_site/chapter_02/section_02_abstract.md ./pandoc_site/chapter_02/index.md \
 && cat ./pandoc_site/chapter_03/section_00_title.md ./pandoc_site/chapter_03/section_01_header.md ./pandoc_site/chapter_03/section_02_abstract.md > ./pandoc_site/chapter_03/index.md \
-&& mv ./pandoc_site/chapter_04/section_02_abstract.md ./pandoc_site/chapter_04/index.md \
+&& cat ./pandoc_site/chapter_04/section_00_title.md ./pandoc_site/chapter_04/section_01_header.md ./pandoc_site/chapter_04/section_02_abstract.md > ./pandoc_site/chapter_04/index.md \
+&& mv ./pandoc_site/chapter_05/section_02_abstract.md ./pandoc_site/chapter_05/index.md \
 && mv ./pandoc_site/chapter_06/section_02_abstract.md ./pandoc_site/chapter_06/index.md \
-&& cat ./pandoc_site/chapter_05/section_02_abstract.md ./pandoc_site/chapter_05/section_06_aph_hw.md > ./pandoc_site/chapter_05/index.md \
-&& sed -i 's/\.\.\//\.\//g' ./pandoc_site/chapter_05/index.md \
-&& rm ./pandoc_site/chapter_05/section_00_title.md \
-&& rm ./pandoc_site/chapter_05/section_06_aph_hw.md \
-&& rm ./pandoc_site/chapter_05/section_02_abstract.md \
+&& cat ./pandoc_site/chapter_07/section_02_abstract.md ./pandoc_site/chapter_07/section_06_aph_hw.md > ./pandoc_site/chapter_07/index.md \
+&& sed -i 's/\.\.\//\.\//g' ./pandoc_site/chapter_07/index.md \
+&& rm ./pandoc_site/chapter_07/section_00_title.md \
+&& rm ./pandoc_site/chapter_07/section_06_aph_hw.md \
+&& rm ./pandoc_site/chapter_07/section_02_abstract.md \
+&& mv ./pandoc_site/chapter_08/section_02_abstract.md ./pandoc_site/chapter_08/index.md \
+
+
+
 
 
 # && mv ./pandoc_site/chapter_05/section_02_abstract.md ./pandoc_site/chapter_05/index.md \

@@ -1,5 +1,10 @@
-#  High Rate Entanglement Generation
+# Data Recovery and Pulse Position Modulation with a Photon Number Resolving SNSPD
+```{=html}
+## Data Recovery and Pulse Position Modulation with a Photon Number Resolving SNSPD
 
-<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](./figs_04/high_rate_entanglement.svg) -->
-
+<figure markdown>
+<img  alt="sizzle_ppm" src="figs_03/ppm_sizzle_light.svg#only-light" style="margin-left: auto; margin-right: auto; width: 60%; opacity: 0.5"/>
+<img  alt="sizzle_ppm" src="figs_03/ppm_sizzle_dark.svg#only-dark" style="margin-left: auto; margin-right: auto; width: 60%"/>
+</figure>
+```
 

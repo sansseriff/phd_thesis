@@ -17,6 +17,10 @@ function fix_path(path)
 end
 
 function Image(element)
+  local path = element.attributes
+
+  -- Print the path to the console
+  print(path)
   element.src = fix_path(element.src)
   return element
 end

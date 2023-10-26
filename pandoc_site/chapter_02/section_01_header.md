@@ -1,7 +1,3 @@
-A version of this chapter is currently published as:
+The work described in this chapter culminated in the research paper: Andrew S. Mueller, Boris Korzh, Marcus Runyan, Emma E. Wollman, Andrew D. Beyer, Jason P. Allmaras, Angel E. Velasco, Ioana Craiciu, Bruce Bumble, Ryan M. Briggs, Lautaro Narvaez, Cristián Peña, Maria Spiropulu, and Matthew D. Shaw, “Free-space coupled superconducting nanowire single-photon detector with low dark counts,” [Optica 8, 1586-1587 (2021)](https://opg.optica.org/optica/fulltext.cfm?uri=optica-8-12-1586&id=465726)
 
-Andrew Mueller, Emma E. Wollman, Boris Korzh, Andrew D. Beyer, Lautaro Narvaez, Ryan Rogalin, Maria Spiropulu, Matthew D. Shaw; [Time-walk and jitter correction in SNSPDs at high count rates](https://pubs.aip.org/aip/apl/article/122/4/044001/2870246/Time-walk-and-jitter-correction-in-SNSPDs-at-high). Appl. Phys. Lett. 23 January 2023; 122 (4): 044001.
-
-Portions of this chapter appear in:
-
-Ioana Craiciu, Boris Korzh, Andrew D. Beyer, Andrew Mueller, Jason P. Allmaras, Lautaro Narváez, Maria Spiropulu, Bruce Bumble, Thomas Lehner, Emma E. Wollman, & Matthew D. Shaw (2023). [High-speed detection of 1550 nm single photons with superconducting nanowire detectors](https://opg.optica.org/optica/fulltext.cfm?uri=optica-10-2-183&id=525546). Optica, 10(2), 183–190.
+Boriz Korzh provided extensive assistance during ideation, construction, testing, and copyediting phases of the experiment. Bruce Bumble designed the elevated 0.8 K stage and innovated translation system using flexible carbon fiber rods. Jason Trevor provided technical assistance with the implementation of a nitrogen flow bag. Sahil Patel assisted with editing the manuscript.

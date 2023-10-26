@@ -71,14 +71,14 @@
 
 \begin{document}
 
-\title{Towards Precise Quantum Measurements with Superconducting Nanowire Single Photon Detectors}
+\title{Precise Quantum Measurements with Superconducting Nanowire Single Photon Detectors}
 \author{Andrew Sterling Mueller}
 \degreeaward{Doctor of Philosophy in Applied Physics}                 
 \university{California Institute of Technology}    
 \address{Pasadena, California}                     
 \unilogo{caltech.png}                                 
 \copyyear{2024}  
-\defenddate{November 2023}   
+\defenddate{December 2023}   
        
 \orcid{0000-0002-6598-9732}
 
@@ -111,6 +111,9 @@ is available on a GitHub repository
 \printnomenclature
 \mainmatter
 
+\hypertarget{introduction}{%
+\chapter{Introduction}\label{introduction}}
+
 \hypertarget{low-dark-count-rate-detection}{%
 \chapter{Low Dark Count Rate Detection}\label{low-dark-count-rate-detection}}
 
@@ -132,8 +135,8 @@ Visible, near-infrared, and mid-infrared photons are often the main sources of d
 
 Without filtering in fiber or free space, dark counts from blackbody emission will overload most SNSPDs and overpower the extremely faint signal of interest.
 
-\hypertarget{introduction}{%
-\section{Introduction}\label{introduction}}
+\hypertarget{introduction-1}{%
+\section{Introduction}\label{introduction-1}}
 
 Time-resolved photon detection with low dark counts is a vital technology in fields such as quantum information processing, classical communication, quantum communication, and laser ranging. Increasingly, research in these fields employs superconducting nanowire single photon detectors (SNSPDs), which have been demonstrated with system detection efficiency ($\eta$) of more than 90\% \autocite{Reddy2020}, timing jitter ($\Delta t$) as low as 2.6 ps \autocite{Korzh2020} and intrinsic dark count rates ($D$) in the milli- to micro-hertz range \autocite{Hochberg2019}. However, quantum communication applications require detection systems with performance optimized across all three metrics simultaneously. The dimensionless figure of merit $H$ specifies this application-specific performance as $H = \frac{\eta}{(\Delta t D)}$~\autocite{Hadfield2009}.
 
@@ -202,8 +205,8 @@ Ioana Craiciu, Boris Korzh, Andrew D. Beyer, Andrew Mueller, Jason P. Allmaras, 
 
 Superconducting nanowire single-photon detectors (SNSPDs) are a leading detector type for time correlated single photon counting, especially in the near-infrared. When operated at high count rates, SNSPDs exhibit increased timing jitter caused by internal device properties and features of the RF amplification chain. Variations in RF pulse height and shape lead to variations in the latency of timing measurements. To compensate for this, we demonstrate a calibration method that correlates delays in detection events with the time elapsed between pulses. The increase in jitter at high rates can be largely canceled in software by applying corrections derived from the calibration process. We demonstrate our method with a single-pixel tungsten silicide SNSPD and show it decreases high count rate jitter. The technique is especially effective at removing a long tail that appears in the instrument response function at high count rates. At a count rate of 11.4 MCounts/s, we reduce the full width at 1\% maximum level (FW1\%M) by 45\%. The method, therefore, enables certain quantum communication protocols that are rate-limited by the FW1\%M metric to operate almost twice as fast.
 
-\hypertarget{introduction-1}{%
-\section{Introduction}\label{introduction-1}}
+\hypertarget{introduction-2}{%
+\section{Introduction}\label{introduction-2}}
 
 \hypertarget{origin-of-time-walk}{%
 \subsection{Origin of time walk}\label{origin-of-time-walk}}
@@ -356,7 +359,7 @@ In the limit of large $t''$, a slice of the calibration grid bears close resembl
 
 Proper handling of inter-pulse arrival measurements that fall outside the 2D grid is necessary for good correction performance. When both $t'$ and $t''$ fall outside the 2D grid, no correction is applied. When $t''$ falls outside the grid but $t'$ does not, a 1st order correction is applied to determine what delay must be subtracted to the current tag to correct its distortion. When both $t''$ and $t'$ fall within the 2d grid, a full 2d spline interpolation on the grid in Fig.~\ref{fig:order_2nd} b is applied to find the necessary delay correction.
 
-Like the 1st-order correction, the 2nd-order method makes the assumption that the delays to be corrected are small relative to the inter-pulse times t' and t'\,'.
+Like the 1st-order correction, the 2nd-order method makes the assumption that the delays to be corrected are small relative to the inter-pulse times $t’$ and $t’’$.
 
 The codebase supporting our findings with the 1st and 2nd order correction is
 available at \href{https://github.com/sansseriff/SNSPD-time-walk-and-jitter-correction}{SNSPD-time-walk-and-jitter-correction}.
@@ -366,7 +369,7 @@ available at \href{https://github.com/sansseriff/SNSPD-time-walk-and-jitter-corr
 \hypertarget{performance-regime-of-the-tungsten-silicide-detector}{%
 \subsection{Performance Regime of the Tungsten Silicide detector}\label{performance-regime-of-the-tungsten-silicide-detector}}
 
-When our calibration and correction method is applied to the Tungsten Silicide SNSPD, the walk-cancellation method primarily corrects for pulse height variations. These variations are caused by varying levels of bias current in the device at the time of photo-detection. An oscilloscope trace shows an exponentially decaying increase in SNSPD pulse height following a previous detection. This exponential recovery shape reinforces evidence that this detector operates in this `bias current recovery' regime, rather than the regime where amplifier reset dynamics dominate. \footnote{This is a footnote}
+When our calibration and correction method is applied to the Tungsten Silicide SNSPD, the walk-cancellation method primarily corrects for pulse height variations. These variations are caused by varying levels of bias current in the device at the time of photo-detection. An oscilloscope trace shows an exponentially decaying increase in SNSPD pulse height following a previous detection. This exponential recovery shape reinforces evidence that this detector operates in this `bias current recovery' regime, rather than the regime where amplifier reset dynamics dominate.
 
 \hypertarget{fig:rise_exp}{%
 \begin{figure}
@@ -386,7 +389,7 @@ In certain cases a software-based dead time is an effective way of reducing jitt
 \begin{figure}
 \centering
 \includegraphics[width=0.8\textwidth,height=\textheight]{chapter_02/figs_02/cut_count_rate_v2_light.pdf}
-\caption[{Removing time walk with dead time}]{\textbf{Removing time walk with dead time} a) Illustration of the RF signal out of an SNSPD with red highlighted regions signifying a software-based dead time that rejects some events. b) Count rate vs normalized efficiency, similar to the curve in green in Fig.~\ref{fig:jitterate_results_2}. (c) \& (d) Response functions for timetaggs at two count rates denoted by the vertical lines in (b), similar to Fig. 3d and 3e from the main text. The dark grey solid lines show response functions from the calibration and correction method which does not limit count rate. The 100 ns dead time filtered data does not reach the 5.9 Mcps of figure (d) and is therefore not shown in (d).}
+\caption[{Removing time walk with dead time}]{\textbf{Removing time walk with dead time} a) Illustration of the RF signal out of an SNSPD with red highlighted regions signifying a software-based dead time that rejects some events. b) Count rate vs normalized efficiency, similar to the curve in green in Fig.~\ref{fig:jitterate_results_2}. (c) \& (d) Response functions for timetaggs at two count rates denoted by the vertical lines in (b), similar to Fig.~\ref{fig:jitterate_results_2} (b) and (c). The dark grey solid lines show response functions from the calibration and correction method which does not limit count rate. The 100 ns dead time filtered data does not reach the 5.9 Mcps of figure (d) and is therefore not shown in (d).}
 \label{fig:dead_time}
 \end{figure}
 }
@@ -416,8 +419,8 @@ A version of this chapter will be submitted the the journal optics express. A pr
 
 Superconducting Nanowire Single Photon Detectors are a type of time-correlated photon detector with low jitter performance especially in the mid-infrared. They are useful for classical communication over high loss channels --such as across deep space-- and for quantum communication for which signals are restricted to the few-photon level. For classical communication, high photon information efficiency communication may be achieved with Pulse Position Modulation (PPM) whereby data is encoded in the arrival time of an optical pulse with respect to a clock. In the process of demonstrating PPM on a 20~Ghz clock, we study the effects of Photon Number Resolution (PNR) in new low-jitter types of SNSPDs. These PNR effects complicate fixed-threshold triggering of RF pulses from the SNSPD, and corrupt arrival time measurements if not properly managed. We demonstrate methods for simultaneous arrival time and photon number measurement which enables high clock rate PPM for space applications as well as high rate quantum communication and computing applications that benefit from photon number resolution.
 
-\hypertarget{introduction-2}{%
-\section{Introduction}\label{introduction-2}}
+\hypertarget{introduction-3}{%
+\section{Introduction}\label{introduction-3}}
 
 Deep space optical communication has been a growing field of study in recent years, as space agencies look for ways to increase data rates to and from deep space missions. A key challenge in the development of this technology is closing the communication link over extremely large distances and high loss. This must be done given a restricted power budget available on the spacecraft, and therefore requires the use of photon efficient communication protocols that optimize the number of bits sent per unit of energy.
 
@@ -564,8 +567,8 @@ Andrew Mueller, Samantha Davis, Boris Korzh, Raju Valivarthi, Andrew D. Beyer, R
 
 Entanglement distribution based on time-bins is an attractive option for emerging quantum networks. We demonstrate a 4 GHz repetition rate source of photon pairs entangled across early and late time bins separated by 80 ps. Simultaneous high rates and high fidelities are achieved through multiplexing the Spontaneous Parametric Down Conversion (SPDC) output into 8 energy-time entangled channel pairs. We demonstrate entanglement fidelities as high as 99.76\%, total entanglement rates up to 0.5 Mbits/s, and predict a straightforward path towards achieving up to {\color{darkred} XXX} Mbit/s. Finally, we resolve the density matrices of individual channels and express distillable entanglement rates in ebit/s, thereby quantifying the tradeoff between fidelity and coincidence rates that contributes to useful entanglement distribution. This source is a fundamental building block for high rate entanglement-based quantum key distribution systems or advanced quantum networks.
 
-\hypertarget{introduction-3}{%
-\section{Introduction}\label{introduction-3}}
+\hypertarget{introduction-4}{%
+\section{Introduction}\label{introduction-4}}
 
 ~~~~~
 
@@ -660,6 +663,9 @@ This construction depends on the wavelength (769.78 nm) and bandwidth (243 GHz F
 
 We calculate the Schmidt decomposition of the JSI bipartite spectrum transmitted through pairs of DWDM filters at Alice and Bob, and derive an inverse Schmidt number of $1/K = 0.87$. This value quantifies the spectral purity of the entangled photon source, and predicts the visibility of a two-source HOM (Hong-Ou-Mandel) interferogram. If 50 GHz ITU channels are used instead, the model predicts $1/K = 0.96$.
 
+\hypertarget{conclusion}{%
+\chapter{Conclusion}\label{conclusion}}
+
 \appendix
 
 \hypertarget{aph-138-homework-assignment}{%
@@ -681,7 +687,7 @@ An experimental apparatus emits a collimated beam of $1550~\mathrm{nm}$ photons 
 \hypertarget{fig:cryostat_concept}{%
 \begin{figure}
 \centering
-\includegraphics{chapter_05/figs_05/fig1b_light.pdf}
+\includegraphics{chapter_07/figs_07/fig1b_light.pdf}
 \caption[{Cryostat optical coupling}]{\textbf{Cryostat free space coupling options.}}
 \label{fig:cryostat_concept}
 \end{figure}
@@ -753,7 +759,7 @@ As we will see later on, a set of filters will be needed between the detector an
   \hypertarget{fig:coupling_options}{%
   \begin{figure}
   \centering
-  \includegraphics{chapter_05/figs_05/fig2b_light.pdf}
+  \includegraphics{chapter_07/figs_07/fig2b_light.pdf}
   \caption[{Cryostat coupling options}]{\textbf{Three Coupling Options}}
   \label{fig:coupling_options}
   \end{figure}
@@ -827,7 +833,7 @@ As we will see later on, a set of filters will be needed between the detector an
 
   \textcolor{midnightblue}{ Here is the function expressed in mathmatica and the solution to the integral: }
 
-  \textcolor{midnightblue}{\includegraphics{chapter_05/figs_05/mathematica_2.PNG}}
+  \textcolor{midnightblue}{\includegraphics{chapter_07/figs_07/mathematica_2.PNG}}
 
   \textcolor{midnightblue}{Dark count rate $\approx \boxed{110 \,\text{MCounts/s}}$ }
   \textcolor{midnightblue}{The rate of dark counts exceeds the usual maximum count rate, the detector is not usable. }
@@ -849,7 +855,7 @@ As we will see later on, a set of filters will be needed between the detector an
 
   \textcolor{midnightblue}{Students may instead give a more qualitative answer, for example with a graph of the filtered spectrums, that shows the relative suppression of the region longer than 1560 nm. }
 
-  \textcolor{midnightblue}{\includegraphics{chapter_05/figs_05/filter_integrate_4.PNG}}
+  \textcolor{midnightblue}{\includegraphics{chapter_07/figs_07/filter_integrate_4.PNG}}
 \item
   (7 pts) If a narrow band filter is also inserted with center wavelength $1550~\text{nm}$ and spectral width below $1-2~nm$, then dark count rate can be approximated as just $N_{photons}[\lambda = 1550~\text{nm}]$ times the filter width. Show for this wavelength range you can simplify dark count rate further to a simple exponential function. If the laboratory air conditioner breaks, raising the lab temperature from 293 K to 300 K, how much higher is the dark count rate?
 
@@ -868,11 +874,11 @@ As we will see later on, a set of filters will be needed between the detector an
 
   \textcolor{midnightblue}{This code shows integrating the spectrum and just multiplying $N_{photons}$ times the filter width produce very similar results (for a 1 nm filter):}
 
-  \textcolor{midnightblue}{\includegraphics{chapter_05/figs_05/nphoton_approx.PNG}}
+  \textcolor{midnightblue}{\includegraphics{chapter_07/figs_07/nphoton_approx.PNG}}
 
   \textcolor{midnightblue}{Evaluating the $N_{photon}$ function at $\lambda = 1550~text{nm}$ shows the $-1$ term is small relative to the exponential term:}
 
-  \textcolor{midnightblue}{\includegraphics{chapter_05/figs_05/small_relative_to_exponential.PNG}}
+  \textcolor{midnightblue}{\includegraphics{chapter_07/figs_07/small_relative_to_exponential.PNG}}
 
   \textcolor{midnightblue}{Therefore the filter transmission approximation is:}
 
@@ -892,7 +898,7 @@ As we will see later on, a set of filters will be needed between the detector an
 
   \textcolor{midnightblue}{and the dark count rate in the 300 K room is roughly double the rate in the 293 K room: }
 
-  \textcolor{midnightblue}{\includegraphics{chapter_05/figs_05/filter_with_temp.PNG}}
+  \textcolor{midnightblue}{\includegraphics{chapter_07/figs_07/filter_with_temp.PNG}}
 
   \textcolor{midnightblue}{4 pts for a similar equation, 3 pts for finding the dark count rate roughly doubles. }
 
@@ -966,7 +972,7 @@ Where $n_s$ and $n_i$ are the number of photons corresponding to the signal and 
 \hypertarget{fig:hsps}{%
 \begin{figure}
 \centering
-\includegraphics{chapter_05/figs_05/hsps_light.pdf}
+\includegraphics{chapter_07/figs_07/hsps_light.pdf}
 \caption[{Heralded single photon source designs}]{\textbf{Heralded single photon sources}}
 \label{fig:hsps}
 \end{figure}
@@ -1043,7 +1049,7 @@ Where $\eta$ is the coupling efficiency between the state of interest and the de
 
   \textcolor{midnightblue}{ A numerical solution is fine. We're interested in the positive solution less than one:}
 
-  \textcolor{midnightblue}{\includegraphics{chapter_05/figs_05/Ftsolve.PNG}}
+  \textcolor{midnightblue}{\includegraphics{chapter_07/figs_07/Ftsolve.PNG}}
 
   \textcolor{midnightblue}{Like in introductory statistics problems, its helpful to think about the negative case: Given N sources with herald probability $p$, the probability of zero sources heralding is:}
 
@@ -1061,7 +1067,7 @@ Where $\eta$ is the coupling efficiency between the state of interest and the de
 
   }
 
-  \textcolor{midnightblue}{\includegraphics{chapter_05/figs_05/mux_binary.PNG}}
+  \textcolor{midnightblue}{\includegraphics{chapter_07/figs_07/mux_binary.PNG}}
 
   \textcolor{midnightblue}{About $\boxed{N = 290}$ sources are needed.}
 
@@ -1102,7 +1108,7 @@ $$\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\ra
 
   \textcolor{midnightblue}{Where either of the boxed answers are acceptable, and the last line was found using mathematica:}
 
-  \textcolor{midnightblue}{\includegraphics{chapter_05/figs_05/simplify_ppnr.PNG}}
+  \textcolor{midnightblue}{\includegraphics{chapter_07/figs_07/simplify_ppnr.PNG}}
 
   \textcolor{darkred}{4 pts for $p_{PNR}\left(\gamma, \eta\right)$}
 
@@ -1128,7 +1134,7 @@ $$\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\ra
   (12 pts) Make a parametric plot for $0<\gamma<1$ with $F_{PNR}$ on the x-axis and $p_{PNR}$ on the y-axis. Plot the curve for a few different values of idler arm efficiency $0<\eta<1$. All curves should reach the same maximum herald probability. What is it?
 
   \textcolor{midnightblue}{ \textbf{Answer:} }
-  \textcolor{midnightblue}{\includegraphics{chapter_05/figs_05/PLT.PNG}}
+  \textcolor{midnightblue}{\includegraphics{chapter_07/figs_07/PLT.PNG}}
 
   \textcolor{midnightblue}{ The the herald probability regardless of idler arm efficiency is 25\%. }
 
@@ -1137,7 +1143,7 @@ $$\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\ra
   (8 pts) Consider again the configuration in Fig.~\ref{fig:hsps} b. Find the number of sources using PNR detectors needed to reach 98\% single photon herald probability and fidelity with $\eta = 0.8$. Also find the number of sources for $\eta = 0.95$.
 
   \textcolor{midnightblue}{ \textbf{Answer:} }
-  \textcolor{midnightblue}{\includegraphics{chapter_05/figs_05/pnrTotalPerf.PNG}}
+  \textcolor{midnightblue}{\includegraphics{chapter_07/figs_07/pnrTotalPerf.PNG}}
 
   \textcolor{midnightblue}{About $\boxed{\text{98 sources are needed for the case with an 80\% heralding}}$, }
 
@@ -1238,6 +1244,8 @@ One of the simplest ways of adding subplots to a figure is with the \texttt{fig.
 to put something only in the mkdocs/html output:
 
 to put something only in the latex output:
+
+You can do footnotes like this\footnote{This is a footnote}
 
 use \boldsymbol for bold latex:
 

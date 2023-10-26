@@ -259,13 +259,10 @@ function Span(el)
 end
 
 function Note (note)
-    -- Get the footnote text
+    --- this can capture footnotes
+    -- you might be able to customize this for turning footnotes into material mkdocs annotations
     local text = pandoc.utils.stringify(note.content)
   
-    -- Print the footnote text to the console
-    print(text)
-  
-    -- Return the original footnote unchanged
     return note
   end
 

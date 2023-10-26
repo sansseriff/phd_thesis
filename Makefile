@@ -2,7 +2,7 @@ PY=python
 PANDOC=pandoc
 
 ppm:
-	cd src/chapter_03 && \
+	cd src/chapter_04 && \
 	cp -R figs_03/ dist/ && \
 	pandoc metadata.yaml \
 	section_02_abstract.md section_03_introduction.md section_04_method.md section_05_results.md \
@@ -15,7 +15,7 @@ ppm:
 	--template=template.tex \
 	--lua-filter=parse-latex.lua \
 	--lua-filter abstract-section.lua \
-	--resource-path='.:chapter_03/figs:' && \
+	--resource-path='.:chapter_04/figs:' && \
 	sed -i 's/\\cite[t,p]{/\\cite{/g' dist/manuscript.tex && \
 	sed -i 's/{natbib}/{cite}/' dist/manuscript.tex && \
 	sed -i 's/,height=\\textheight//g' dist/manuscript.tex && \
@@ -29,25 +29,25 @@ ppm:
 
 ppm-overleaf:
 	$(MAKE) ppm && \
-	cd src/chapter_03/dist && \
+	cd src/chapter_04/dist && \
 	git add . && \
 	git commit -m "overleaf update" && \
 	git push overleaf master
 
 ppm-overleaf-clean:
-	cd src/chapter_03/dist && \
+	cd src/chapter_04/dist && \
 	rm manuscript.tex && \
 	git pull overleaf master && \
 	cd .. && cd .. && cd .. && \
 	$(MAKE) ppm-overleaf
 
 ppm-pull:
-	cd src/chapter_03/dist && \
+	cd src/chapter_04/dist && \
 	git pull overleaf master
 
 
 ppm-produce-md:
-	cd src/chapter_03 && \
+	cd src/chapter_04 && \
 	pandoc dist/manuscript.tex -o _manuscript.md --wrap=preserve --lua-filter=to_md.lua
 
 	

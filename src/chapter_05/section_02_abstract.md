@@ -1,12 +1,4 @@
-<!-- ## Aph 138b Homework Assignment -->
+## Abstract 
 
-```{=html}
-## Aph 138b Homework Assignment
-```
 
-In March of 2022, Matthew Shaw was a guest lecturer for the Quantum Hardware and Techniques course (APh/Ph 138b). The following is a homework assignment I wrote to accompany his series of lectures. 
-
-The first problem is inspired by the low dark count rate publication~[@Mueller:21]. It has the student build a simple model for a dark count rate transmitted through a series of filters. Finally, it leads the student to consider an ultimate tradeoff between dark count rate and coupling efficiency to wide bandwidth optical signals. A filtering system that only transmits a very narroband signal will not be able to detect ultra-short optical signals with high efficiency or temporal resolution. 
-
-The second problem explores a potential use case of a photon number resolving SNSPD. It closely follows logic presented in an Andreas Christ and Christine Silberhorn paper~[@Andreas:12]. I studied this paper earlier in my PhD, when I considered developing a multiplexed single photon source. It turned out that project was overly ambitious, but future PhD students might consider approaching it again. 
-
+Entanglement distribution based on time-bins is an attractive option for emerging quantum networks. We demonstrate a 4 GHz repetition rate source of photon pairs entangled across early and late time bins separated by 80 ps. Simultaneous high rates and high fidelities are achieved through multiplexing the Spontaneous Parametric Down Conversion (SPDC) output  into 8 energy-time entangled channel pairs. We demonstrate entanglement fidelities as high as 99.76\%, total entanglement rates up to 0.5 Mbits/s, and predict a straightforward path towards achieving up to </span> <span class=red markdown>XXX</span> Mbit/s. Finally, we resolve the density matrices of individual channels and express distillable entanglement rates in ebit/s, thereby quantifying the tradeoff between fidelity and coincidence rates that contributes to useful entanglement distribution. This source is a fundamental building block for high rate entanglement-based quantum key distribution systems or advanced quantum networks. 

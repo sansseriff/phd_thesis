@@ -90,36 +90,45 @@ repo_url: https://github.com/sansseriff/phd_thesis
 
 nav:
   - index.md
-  - "Ch. 1: Low Dark Count Rate SNSPD":
+  - "Ch. 1: Introduction":
     - chapter_01/index.md
-    - Introduction: chapter_01/section_03_introduction.md
-    - Hardware: chapter_01/section_04_hardware.md
-    - Model: chapter_01/section_05_model.md
-  - "Ch. 2: Time Walk Correction": 
+    - SNSPD history & applications: chapter_01/section_03_snspd_background.md
+    - The Differential Tapered SNSPD: chapter_01/section_04_dtsnspd.md
+    - Structure of this thesis: chapter_01/section_05_structure.md
+  - "Ch. 2: Low Dark Count Rate SNSPD":
     - chapter_02/index.md
     - Introduction: chapter_02/section_03_introduction.md
-    - Method: chapter_02/section_04_method.md
-    - PEACOQ and 2D-Correction: chapter_02/section_05_peacoq_2nd_order.md
-    - Extra: chapter_02/section_06_extra.md
-    - Conclusion: chapter_02/section_07_conclusion.md
-  - "Ch. 3: PPM & Photon Resolution": 
+    - Hardware: chapter_02/section_04_hardware.md
+    - Model: chapter_02/section_05_model.md
+  - "Ch. 3: Time Walk Correction": 
     - chapter_03/index.md
     - Introduction: chapter_03/section_03_introduction.md
     - Method: chapter_03/section_04_method.md
-    - Results: chapter_03/section_05_results.md
-    - Phased Locked Loop: chapter_03/section_06_phased_locked_loop.md
-    - Outlook: chapter_03/section_07_outlook.md
-  - "Ch. 4: High Rate Entanglement": 
+    - PEACOQ and 2D-Correction: chapter_03/section_05_peacoq_2nd_order.md
+    - Extra: chapter_03/section_06_extra.md
+    - Conclusion: chapter_03/section_07_conclusion.md
+  - "Ch. 4: PPM & Photon Resolution": 
     - chapter_04/index.md
     - Introduction: chapter_04/section_03_introduction.md
-    - System & Results: chapter_04/section_04_system_results.md
-  - "A1: Aph 138 Homework":
+    - Method: chapter_04/section_04_method.md
+    - Results: chapter_04/section_05_results.md
+    - Phased Locked Loop: chapter_04/section_06_phased_locked_loop.md
+    - Outlook: chapter_04/section_07_outlook.md
+  - "Ch. 5: High Rate Entanglement": 
     - chapter_05/index.md
-  - "A2: Software Tools":
+    - Introduction: chapter_05/section_03_introduction.md
+    - System & Results: chapter_05/section_04_system_results.md
+  - "Ch. 6: Conclusion":
     - chapter_06/index.md
-    - Experiment Control: chapter_06/section_04_experiment_control.md
-    - Data Analysis & Visualization: chapter_06/section_05_data_analysis_visualization.md
-    - Cheat Sheet: chapter_06/section_08_cheat_sheet.md
+    - Summary: chapter_06/section_03_summary.md
+    - Outlook: chapter_06/section_04_outlook.md
+  - "A1: Aph 138 Homework":
+    - chapter_07/index.md
+  - "A2: Software Tools":
+    - chapter_08/index.md
+    - Experiment Control: chapter_08/section_04_experiment_control.md
+    - Data Analysis & Visualization: chapter_08/section_05_data_analysis_visualization.md
+    - Cheat Sheet: chapter_08/section_08_cheat_sheet.md
 
 
 

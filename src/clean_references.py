@@ -9,7 +9,7 @@ with open('references.bib', 'r') as f:
 
 
 # add on refs from chapter 03
-with open("./chapter_03/dist/references.bib", "r") as f:
+with open("./chapter_04/dist/references.bib", "r") as f:
     lines_2 = f.readlines()
     lines = lines + lines_2
 

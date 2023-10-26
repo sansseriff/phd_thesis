@@ -1,16 +1,22 @@
-# Data Recovery and Pulse Position Modulation with a Photon Number Resolving SNSPD
+# Time Walk and Jitter Correction
 
-## Data Recovery and Pulse Position Modulation with a Photon Number Resolving SNSPD
+## Time-walk and jitter correction in SNSPDs at high count rates
 
 <figure markdown>
-<img  alt="sizzle_ppm" src="figs_03/ppm_sizzle_light.svg#only-light" style="margin-left: auto; margin-right: auto; width: 60%; opacity: 0.5"/>
-<img  alt="sizzle_ppm" src="figs_03/ppm_sizzle_dark.svg#only-dark" style="margin-left: auto; margin-right: auto; width: 60%"/>
+<img  alt="sizzle_time_walk" src="figs_02/time_walk_image_light.svg#only-light" style="margin-left: auto; margin-right: auto; width: 70%; opacity: 0.5"/>
+<img  alt="sizzle_time_walk" src="figs_02/time_walk_image_dark.svg#only-dark" style="margin-left: auto; margin-right: auto; width: 70%"/>
 </figure>
-A version of this chapter will be submitted the the journal optics express. A preprint is released as <span class=orange markdown>arxiv citation here</span>
+
+<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](./figs_02/pnr_and_pulses.png) -->
+A version of this chapter is currently published as:
+
+Andrew Mueller, Emma E. Wollman, Boris Korzh, Andrew D. Beyer, Lautaro Narvaez, Ryan Rogalin, Maria Spiropulu, Matthew D. Shaw; [Time-walk and jitter correction in SNSPDs at high count rates](https://pubs.aip.org/aip/apl/article/122/4/044001/2870246/Time-walk-and-jitter-correction-in-SNSPDs-at-high). Appl. Phys. Lett. 23 January 2023; 122 (4): 044001.
+
+Portions of this chapter appear in:
+
+Ioana Craiciu, Boris Korzh, Andrew D. Beyer, Andrew Mueller, Jason P. Allmaras, Lautaro Narváez, Maria Spiropulu, Bruce Bumble, Thomas Lehner, Emma E. Wollman, & Matthew D. Shaw (2023). [High-speed detection of 1550 nm single photons with superconducting nanowire detectors](https://opg.optica.org/optica/fulltext.cfm?uri=optica-10-2-183&id=525546). Optica, 10(2), 183–190.
 ## Abstract
 
-Superconducting Nanowire Single Photon Detectors are a type of time-correlated photon detector with low jitter performance especially in the mid-infrared. They are useful for classical communication over high loss channels –such as across deep space– and for quantum communication for which signals are restricted to the few-photon level. For classical communication, high photon information efficiency communication may be achieved with Pulse Position Modulation (PPM) whereby data is encoded in the arrival time of an optical pulse with respect to a clock. In the process of demonstrating PPM on a 20 Ghz clock, we study the effects of Photon Number Resolution (PNR) in new low-jitter types of SNSPDs. These PNR effects complicate fixed-threshold triggering of RF pulses from the SNSPD, and corrupt arrival time measurements if not properly managed. We demonstrate methods for simultaneous arrival time and photon number measurement which enables high clock rate PPM for space applications as well as high rate quantum communication and computing applications that benefit from photon number resolution.
+     
 
-<!-- This first enables high clock rate PPM for space applications, but also highlights a path towards resource-efficient decoupling of photon number and arrival time information from low-jitter SNSPDs.  -->
-
-<!-- Photon number resolution is an emerging feature of advanced Superconducting Nanowire Single Photon Detectors. If leveraged to it's full potential, PNR capability can have a profound impact on the usefulness of SNSPDs is certain quantum applications including linear optical quantum computing, quantum networks, and quantum sensing. Discrimination of not just the number of photons in an optical pulse but also pulse arrival time with high accuracy is an open problem, complicated by the nuanced way in which these two degrees of freedom are intertwined in the response function of these detectors. In this work we put a differential readout SNSPD to the ultimate test. We test it's capabilities in a Pulse Position Modulation experiment whereby data is sent in the arrival time of optical pulses derived from a 20\ GHz optical clock. We show the detector is capable of discriminating the arrival time of photons to 50\ ps wide bins with high accuracy while simultaneously providing photon number information about the impinging optical pulses. We find that a careful statistical analysis of the PNR response is necessary to back-out a precise measurement of pulse arrival time.  -->
+Superconducting nanowire single-photon detectors (SNSPDs) are a leading detector type for time correlated single photon counting, especially in the near-infrared. When operated at high count rates, SNSPDs exhibit increased timing jitter caused by internal device properties and features of the RF amplification chain. Variations in RF pulse height and shape lead to variations in the latency of timing measurements. To compensate for this, we demonstrate a calibration method that correlates delays in detection events with the time elapsed between pulses. The increase in jitter at high rates can be largely canceled in software by applying corrections derived from the calibration process. We demonstrate our method with a single-pixel tungsten silicide SNSPD and show it decreases high count rate jitter. The technique is especially effective at removing a long tail that appears in the instrument response function at high count rates. At a count rate of 11.4 MCounts/s, we reduce the full width at 1% maximum level (FW1%M) by 45%. The method, therefore, enables certain quantum communication protocols that are rate-limited by the FW1%M metric to operate almost twice as fast.
