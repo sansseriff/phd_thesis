@@ -21,7 +21,7 @@ function Image(element)
 
   if element.attributes["path"] ~= nil then
     -- Print the path to the console
-    local new_path = "./" .. element.attributes["path"] .. element.src:sub(2, -1)
+    local new_path = "./" .. element.attributes["path"] .. element.src:sub(2, -5) .. '.pdf'
     element.src = new_path -- fix_path(element.src)
   else
     -- Print the path to the console
