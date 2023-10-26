@@ -2,7 +2,7 @@ import re
 import os
 
 
-def modify_figures(file_path, path):
+def modify_figures(file_path, path, verbose=False):
     # Read the file contents
     with open(file_path, 'r') as f:
         contents = f.read()
@@ -23,7 +23,8 @@ def modify_figures(file_path, path):
     # Replace the matched strings with the modified string
     modified_contents, num_substitutions = re.subn(pattern, replacement, contents, flags=re.DOTALL)
 
-    print(f"made {num_substitutions} substitutions in {file_path}")
+    if verbose:
+        print(f"made {num_substitutions} substitutions in {file_path}")
 
     # Write the modified contents back to the file
     with open(file_path, 'w') as f:
@@ -32,13 +33,13 @@ def modify_figures(file_path, path):
 
 
 if __name__ == '__main__':
-    # modify_figures('section_06_aph_hw copy.md', 'chapter_07')
+    # modify_figures('section_06_aph_hw copy.md', 'chapter_07', verbose=True)
     
     # Get the current working directory
-    cwd = os.getcwd()
+    src_path = os.getcwd()
 
-    # Define the path to the src directory
-    src_path = os.path.join(cwd, 'src')
+    # # Define the path to the src directory
+    # src_path = os.path.join(cwd, 'src')
 
     # Loop through each chapter directory
     for chapter_dir in os.listdir(src_path):
@@ -56,5 +57,5 @@ if __name__ == '__main__':
                 file_path = os.path.join(chapter_path, file_name)
 
                 # Call the modify_figures function with the chapter directory name as the path argument
-                modify_figures(file_path, chapter_dir)
+                modify_figures(file_path, chapter_dir, verbose=False)
 

@@ -125,6 +125,7 @@ overleaf-clean:
 mkdocs:
 	cd src && \
 	python clean_references.py && \
+	python give_figures_path_info.py && \
 	cd .. && \
 	sh make_pandoc_site.sh
 

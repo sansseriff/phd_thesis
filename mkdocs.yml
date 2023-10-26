@@ -1,4 +1,4 @@
-site_name: SNSPDs for Fun & Profit
+site_name: SNSPhD
 dev_addr: 127.0.0.1:9254
 site_dir: site_deploy
 docs_dir: pandoc_site
