@@ -200,7 +200,7 @@ If the detector has a circular active area with radius $5~\mathrm{\upmu m}$, wha
 
     <span style="color:blue" markdown>and the dark count rate in the 300 K room is roughly double the rate in the 293 K room: </span>
 
-    <span style="color:blue" markdown>![](./figs/filter_with_temp.PNG){#fig:filter_with_temp width=0.5 path="chapter_07"}</span>
+    <span style="color:blue" markdown>![](./figs/filter_with_temp.PNG){#fig:filter_with_temp width=50% path="chapter_07"}</span>
 
     <span style="color:blue" markdown>4 pts for a similar equation, 3 pts for finding the dark count rate roughly doubles. </span>
 
