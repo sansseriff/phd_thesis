@@ -8,8 +8,8 @@ SNSPD jitter increases with count rate due to properties of the nanowire reset p
 
 <figure markdown> 
     <a name='fig:jitterate_intro'></a> 
-    <img alt="fig:jitterate_intro" style="width: 70%; margin: auto;" src="../figs_02/intro_jitterate_light.svg#only-light" >
-    <img alt="fig:jitterate_intro" style="width: 70%; margin: auto;" src="../figs_02/intro_jitterate_dark.svg#only-dark" > 
+    <img alt="fig:jitterate_intro" style="width: 70%; margin: auto;" src="../figs/intro_jitterate_light.svg#only-light" >
+    <img alt="fig:jitterate_intro" style="width: 70%; margin: auto;" src="../figs/intro_jitterate_dark.svg#only-dark" > 
     <figcaption markdown> Figure 1: **Introduction to the time walk effect** a) Diagram illustrating two major sources of correlated high count rate jitter. First, detections may occur during the reset time of a previous detection. At this time the bias current in the nanowire is below its saturated value so that a photodetection triggers an RF pulse with correspondingly lower amplitude. Second, an RF pulse may arrive in the undershoot region of a previous pulse, where the undershoot is a period of negative voltage induced by the low-frequency cutoff properties of the readout amplifier chain. (b) Measured histograms of detections from short $3~\mathrm{ps}$ mode-locked laser pulses. With lower attenuation and higher count rate, the observed timing uncertainty is greater. Inset shows where respective count rates fall on a maximum count rate (MCR) curve [@Zhang_MCR_2019]. The MCR of an SNSPD is often quoted at the $3~\mathrm{dB}$ point, where the normalized efficiency drops to $-3~\mathrm{dB}$ of its maximum value. The jitter increase due to time walk manifests as a tail in the instrument response functions (inside dashed black box) even at count rates significantly below the 3-dB point where detector efficiency has not started to drop significantly (e.g. the 1.7 Mcps data)</figcaption>
     </figure>
 

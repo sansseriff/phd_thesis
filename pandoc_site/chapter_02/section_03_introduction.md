@@ -25,7 +25,7 @@ The system is based on 1-inch optics, although the f = 18.75 mm lenses lead to a
 
 <figure markdown> 
     <a name='fig:dcrmin_data'></a> 
-    ![fig:dcrmin_data](./figs_01/DataFigure_6.svg) 
+    ![fig:dcrmin_data](./figs/DataFigure_6.svg) 
     <figcaption markdown> Figure 1: **Low Dark Count Rate Project Results** a) Simulated photon flux at various temperatures with and without the 1550 nm bandpass filter (BP). b) Normalized photon count rate (PCR) and jitter measurements c) DCR, and calculated figure of merit $H$ versus bias current for both fiber-coupled and free space coupled configurations.</figcaption>
     </figure>
 
@@ -39,8 +39,8 @@ This work used a low-jitter, differential SNSPD \cite{Colangelo2021}, with an ac
 
 <figure markdown> 
     <a name='fig:custom_figure'></a> 
-    <img alt="fig:custom_figure" style="width: 70%; margin: auto;" src="../figs_01/Figure_Data_Sept_2022_light.svg#only-light" >
-    <img alt="fig:custom_figure" style="width: 70%; margin: auto;" src="../figs_01/Figure_Data_Sept_2022_dark.svg#only-dark" > 
+    <img alt="fig:custom_figure" style="width: 70%; margin: auto;" src="../figs/Figure_Data_Sept_2022_light.svg#only-light" >
+    <img alt="fig:custom_figure" style="width: 70%; margin: auto;" src="../figs/Figure_Data_Sept_2022_dark.svg#only-dark" > 
     <figcaption markdown> Figure 2: **Figure Title.** And I think the rest of this is the caption with (A), (B), and (C) callouts</figcaption>
     </figure>
 
@@ -48,6 +48,6 @@ Finally, here’s a png figure for testing
 
 <figure markdown> 
     <a name='fig:test_png_figure'></a> 
-    ![fig:test_png_figure](./figs_01/fridge.png) 
+    ![fig:test_png_figure](./figs/fridge.png) 
     <figcaption markdown> Figure 3: **A test png figure.** And here is where I’d put in more information about the png.</figcaption>
     </figure>

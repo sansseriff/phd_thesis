@@ -6,8 +6,8 @@ The measurements used for calibration and correction were acquired with a high r
 
 <figure markdown> 
     <a name='fig:jitterate_exp_setup'></a> 
-    <img alt="fig:jitterate_exp_setup" style="width: 90%; margin: auto;" src="../figs_02/supplemental_expirement_light.svg#only-light" >
-    <img alt="fig:jitterate_exp_setup" style="width: 90%; margin: auto;" src="../figs_02/supplemental_expirement_dark.svg#only-dark" > 
+    <img alt="fig:jitterate_exp_setup" style="width: 90%; margin: auto;" src="../figs/supplemental_expirement_light.svg#only-light" >
+    <img alt="fig:jitterate_exp_setup" style="width: 90%; margin: auto;" src="../figs/supplemental_expirement_dark.svg#only-dark" > 
     <figcaption markdown> Figure 1: **Experimental Setup** CLK: clock synchronization signal; AWG: Arbitrary Waveform Generator (*Keysight*); IM: Intensity Modulator (*IXBlue*); TDC: Time to Digital Converter (*Swabian Instruments*). The extinction ratio of both modulators exceeds 30 dB.</figcaption>
     </figure>
 
@@ -23,8 +23,8 @@ To perform our calibration, we illuminated the SNSPD with an attenuated 537.5&#1
 
 <figure markdown> 
     <a name='fig:jitterate_explain'></a> 
-    <img alt="fig:jitterate_explain" style="width: 70%; margin: auto;" src="../figs_02/jitterate_explain_light.svg#only-light" >
-    <img alt="fig:jitterate_explain" style="width: 70%; margin: auto;" src="../figs_02/jitterate_explain_dark.svg#only-dark" > 
+    <img alt="fig:jitterate_explain" style="width: 70%; margin: auto;" src="../figs/jitterate_explain_light.svg#only-light" >
+    <img alt="fig:jitterate_explain" style="width: 70%; margin: auto;" src="../figs/jitterate_explain_dark.svg#only-dark" > 
     <figcaption markdown> Figure 2: **Calibration Method** a) A qualitative diagram illustrating how inter-pulse timing measurements $t'$ and $d$ are extracted. A small fraction of laser pulses contain a photon due to the low mean photon number per pulse of the attenuated laser. Pairs of subsequent photon arrivals are separated by a time denoted by $t' = n t_l$. b) Possible distributions of delay $d$ measurements for two different $t'$. The median of these defines the extracted delay parameters $\tilde{d}$ which form the y-axis in the calibration curve illustrated in (c). The $\tilde{d}$ vs $t^\prime$ curve in (c) approaches zero for $t^\prime$ approaching infinity. Blue and green arrows with matching color and style denote the same measure in (a), (b), and (c).</figcaption>
     </figure>
 
@@ -32,8 +32,8 @@ We collect sorted time-tags and first consider adjacent pairs of SNSPD events as
 
 <figure markdown> 
     <a name='fig:jitterate_results_1'></a> 
-    <img alt="fig:jitterate_results_1" style="width: 90%; margin: auto;" src="../figs_02/jitterate_data_ab_light.svg#only-light" >
-    <img alt="fig:jitterate_results_1" style="width: 90%; margin: auto;" src="../figs_02/jitterate_data_ab_dark.svg#only-dark" > 
+    <img alt="fig:jitterate_results_1" style="width: 90%; margin: auto;" src="../figs/jitterate_data_ab_light.svg#only-light" >
+    <img alt="fig:jitterate_results_1" style="width: 90%; margin: auto;" src="../figs/jitterate_data_ab_dark.svg#only-dark" > 
     <figcaption markdown> Figure 3: **t-prime curve and correction effect** (a) Delay and intrinsic jitter curves extracted from the 537.5 MHz pulsed light dataset. (b) Histogram of corrected (black) and uncorrected (dashed grey) time tags from a 2.15 GHz pulse train, corrected using a calibration curve developed with the 537.5 MHz dataset. The improvement affirms that the light modulation used for an application need not match the repetition rate of the calibration laser.</figcaption>
     </figure>
 
@@ -45,8 +45,8 @@ With the interpolation operation expressed as a function $D$, the correction is 
 
 <figure markdown> 
     <a name='fig:jitterate_results_2'></a> 
-    <img alt="fig:jitterate_results_2" style="width: 90%; margin: auto;" src="../figs_02/jitterate_data_c_light.svg#only-light" >
-    <img alt="fig:jitterate_results_2" style="width: 90%; margin: auto;" src="../figs_02/jitterate_data_c_dark.svg#only-dark" > 
+    <img alt="fig:jitterate_results_2" style="width: 90%; margin: auto;" src="../figs/jitterate_data_c_light.svg#only-light" >
+    <img alt="fig:jitterate_results_2" style="width: 90%; margin: auto;" src="../figs/jitterate_data_c_dark.svg#only-dark" > 
     <figcaption markdown> Figure 4: **Jitters metrics across incident powers** (a) Effect of the correction on measurements of system jitter over a range of rates approaching the maximum count rate. (b) Corrected (solid) and uncorrected (dashed) instrument response functions with color-matched arrows showing the location of the width-statistics plotted above in (a). The black vertical line in (a) is drawn at the count rate of this plot. Inset shows linear scaling. (c) Corrected (solid) and uncorrected (dashed) histogram analogous to (b), but at a higher count rate indicated by the grey line in (a).</figcaption>
     </figure>
 

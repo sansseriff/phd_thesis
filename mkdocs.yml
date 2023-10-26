@@ -92,8 +92,8 @@ nav:
   - index.md
   - "Ch. 1: Introduction":
     - chapter_01/index.md
-    - SNSPD history & applications: chapter_01/section_03_snspd_background.md
-    - The Differential Tapered SNSPD: chapter_01/section_04_dtsnspd.md
+    - SNSPD background: chapter_01/section_03_snspd_background.md
+    - The Differential SNSPD: chapter_01/section_04_dtsnspd.md
     - Structure of this thesis: chapter_01/section_05_structure.md
   - "Ch. 2: Low Dark Count Rate SNSPD":
     - chapter_02/index.md

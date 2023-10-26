@@ -17,7 +17,19 @@ function fix_path(path)
 end
 
 function Image(element)
-  element.src = fix_path(element.src)
+  local path = element.attributes
+
+  if element.attributes["path"] ~= nil then
+    -- Print the path to the console
+    local new_path = "./" .. element.attributes["path"] .. element.src:sub(2, -1)
+    element.src = new_path -- fix_path(element.src)
+  else
+    -- Print the path to the console
+    print("error: missing path attribute")
+    print(element.attributes)
+    print("missing: " .. element.src)
+  end
+  
   return element
 end
 

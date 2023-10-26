@@ -460,4 +460,4 @@ $$\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\ra
     <span style="color:red" markdown> 4 points for each of the 2 answers. Answers that vary from these values by 2-3 sources are acceptable. </span>
 
 <!-- Keep at end of the page! -->
-<script src="../../chapter_05/code/section_06.js"></script>
+<script src="./code/section_06.js"></script>

@@ -25,7 +25,7 @@ ax_dict["image"].imshow([[1, 2], [2, 1]])
 identify_axes(ax_dict)
 ```
 
-![](./figs_06/sphx_glr_mosaic_001_2_0x.webp)
+![](./figs/sphx_glr_mosaic_001_2_0x.webp){#fig:mosaic path="chapter_08"}
 
 ??? note
 
@@ -59,7 +59,7 @@ One of the simplest ways of adding subplots to a figure is with the `fig.add_axe
 
 <figure markdown> 
     <a name='fig:layout_sketch'></a> 
-    ![fig:layout_sketch](./figs_06/layout_sketch.png) 
+    ![fig:layout_sketch](./figs/layout_sketch.png) 
     <figcaption markdown> Figure 1: **Sketch for layout with add_axese().**</figcaption>
     </figure>
 

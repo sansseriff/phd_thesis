@@ -14,14 +14,14 @@ rm -r ./pandoc_site/chapter_01/* \
 && cp -R ./src/chapter_06/code/ ./pandoc_site/chapter_06/ \
 && cp -R ./src/chapter_07/code/ ./pandoc_site/chapter_07/ \
 && cp -R ./src/chapter_08/code/ ./pandoc_site/chapter_08/ \
-&& cp -R ./src/chapter_01/figs_01/ ./pandoc_site/chapter_01/ \
-&& cp -R ./src/chapter_02/figs_02/ ./pandoc_site/chapter_02/ \
-&& cp -R ./src/chapter_03/figs_03/ ./pandoc_site/chapter_03/ \
-&& cp -R ./src/chapter_04/figs_04/ ./pandoc_site/chapter_04/ \
-&& cp -R ./src/chapter_05/figs_05/ ./pandoc_site/chapter_05/ \
-&& cp -R ./src/chapter_06/figs_06/ ./pandoc_site/chapter_06/ \
-&& cp -R ./src/chapter_07/figs_07/ ./pandoc_site/chapter_07/ \
-&& cp -R ./src/chapter_08/figs_08/ ./pandoc_site/chapter_08/ \
+&& cp -R ./src/chapter_01/figs/ ./pandoc_site/chapter_01/ \
+&& cp -R ./src/chapter_02/figs/ ./pandoc_site/chapter_02/ \
+&& cp -R ./src/chapter_03/figs/ ./pandoc_site/chapter_03/ \
+&& cp -R ./src/chapter_04/figs/ ./pandoc_site/chapter_04/ \
+&& cp -R ./src/chapter_05/figs/ ./pandoc_site/chapter_05/ \
+&& cp -R ./src/chapter_06/figs/ ./pandoc_site/chapter_06/ \
+&& cp -R ./src/chapter_07/figs/ ./pandoc_site/chapter_07/ \
+&& cp -R ./src/chapter_08/figs/ ./pandoc_site/chapter_08/ \
 && cp -R ./src/frontmatter ./pandoc_site/ \
 && cp -R ./src/references.bib ./pandoc_site/ \
 && cp -R ./src/references_cleaned.bib ./pandoc_site/ \
@@ -140,7 +140,8 @@ find ./src/chapter_08/ -iname "*.md" -type f -exec sh -c 'pandoc \
 
 
 # I need the sed command with "'s/\.\.\//\.\//g'" to transform "../" to "./" in the index.md files. Because they are deployed one level up from the chapter folders.
-mv ./pandoc_site/chapter_02/section_02_abstract.md ./pandoc_site/chapter_02/index.md \
+cat ./pandoc_site/chapter_01/section_00_title.md ./pandoc_site/chapter_01/section_01_header.md ./pandoc_site/chapter_01/section_02_abstract.md > ./pandoc_site/chapter_01/index.md \
+&& cat ./pandoc_site/chapter_02/section_00_title.md ./pandoc_site/chapter_02/section_01_header.md ./pandoc_site/chapter_02/section_02_abstract.md > ./pandoc_site/chapter_02/index.md \
 && cat ./pandoc_site/chapter_03/section_00_title.md ./pandoc_site/chapter_03/section_01_header.md ./pandoc_site/chapter_03/section_02_abstract.md > ./pandoc_site/chapter_03/index.md \
 && cat ./pandoc_site/chapter_04/section_00_title.md ./pandoc_site/chapter_04/section_01_header.md ./pandoc_site/chapter_04/section_02_abstract.md > ./pandoc_site/chapter_04/index.md \
 && mv ./pandoc_site/chapter_05/section_02_abstract.md ./pandoc_site/chapter_05/index.md \

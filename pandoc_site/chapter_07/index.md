@@ -23,8 +23,8 @@ An experimental apparatus emits a collimated beam of $1550~\mathrm{nm}$ photons 
 
 <figure markdown> 
     <a name='fig:cryostat_concept'></a> 
-    <img alt="fig:cryostat_concept" style="width: nil; margin: auto;" src="./figs_07/fig1b_light.svg#only-light" >
-    <img alt="fig:cryostat_concept" style="width: nil; margin: auto;" src="./figs_07/fig1b_dark.svg#only-dark" > 
+    <img alt="fig:cryostat_concept" style="width: nil; margin: auto;" src="./figs/fig1b_light.svg#only-light" >
+    <img alt="fig:cryostat_concept" style="width: nil; margin: auto;" src="./figs/fig1b_dark.svg#only-dark" > 
     <figcaption markdown> Figure 1: **Cryostat free space coupling options.**</figcaption>
     </figure>
 
@@ -84,8 +84,8 @@ As we will see later on, a set of filters will be needed between the detector an
 
     <figure markdown> 
         <a name='fig:coupling_options'></a> 
-        <img alt="fig:coupling_options" style="width: nil; margin: auto;" src="./figs_07/fig2b_light.svg#only-light" >
-        <img alt="fig:coupling_options" style="width: nil; margin: auto;" src="./figs_07/fig2b_dark.svg#only-dark" > 
+        <img alt="fig:coupling_options" style="width: nil; margin: auto;" src="./figs/fig2b_light.svg#only-light" >
+        <img alt="fig:coupling_options" style="width: nil; margin: auto;" src="./figs/fig2b_dark.svg#only-dark" > 
         <figcaption markdown> Figure 2: **Three Coupling Options**</figcaption>
         </figure>
 
@@ -144,7 +144,7 @@ As we will see later on, a set of filters will be needed between the detector an
     </div>
     <span class=blue markdown> Here is the function expressed in mathmatica and the solution to the integral: </span>
 
-    <span class=blue markdown>![](./figs_07/mathematica_2.PNG)</span>
+    <span class=blue markdown>![](./figs/mathematica_2.PNG){#fig:mathematica_1 path="chapter_07"}</span>
 
     <span class=blue markdown>Dark count rate $\approx \boxed{110 \,\text{MCounts/s}}$ </span> <span class=blue markdown>The rate of dark counts exceeds the usual maximum count rate, the detector is not usable. </span>
 
@@ -164,7 +164,7 @@ As we will see later on, a set of filters will be needed between the detector an
 
     <span class=blue markdown>Students may instead give a more qualitative answer, for example with a graph of the filtered spectrums, that shows the relative suppression of the region longer than 1560 nm. </span>
 
-    <span class=blue markdown>![](./figs_07/filter_integrate_4.PNG)</span>
+    <span class=blue markdown>![](./figs/filter_integrate_4.PNG){#fig:filter_integrate path="chapter_07"}</span>
 
 7.  (7 pts) If a narrow band filter is also inserted with center wavelength $1550~\text{nm}$ and spectral width below $1-2~nm$, then dark count rate can be approximated as just $N_{photons}[\lambda = 1550~\text{nm}]$ times the filter width. Show for this wavelength range you can simplify dark count rate further to a simple exponential function. If the laboratory air conditioner breaks, raising the lab temperature from 293 K to 300 K, how much higher is the dark count rate?
 
@@ -182,11 +182,11 @@ As we will see later on, a set of filters will be needed between the detector an
     </div>
     <span class=blue markdown>This code shows integrating the spectrum and just multiplying $N_{photons}$ times the filter width produce very similar results (for a 1 nm filter):</span>
 
-    <span class=blue markdown>![](./figs_07/nphoton_approx.PNG)</span>
+    <span class=blue markdown>![](./figs/nphoton_approx.PNG){#fig:nphoton_approx path="chapter_07"}</span>
 
     <span class=blue markdown>Evaluating the $N_{photon}$ function at $\lambda = 1550~text{nm}$ shows the $-1$ term is small relative to the exponential term:</span>
 
-    <span class=blue markdown>![](./figs_07/small_relative_to_exponential.PNG)</span>
+    <span class=blue markdown>![](./figs/small_relative_to_exponential.PNG){#fig:small_relative path="chapter_07"}</span>
 
     <span class=blue markdown>Therefore the filter transmission approximation is:</span>
 
@@ -204,7 +204,7 @@ As we will see later on, a set of filters will be needed between the detector an
     </div>
     <span class=blue markdown>and the dark count rate in the 300 K room is roughly double the rate in the 293 K room: </span>
 
-    <span class=blue markdown>![](./figs_07/filter_with_temp.PNG)</span>
+    <span class=blue markdown>![](./figs/filter_with_temp.PNG){#fig:filter_with_temp path="chapter_07"}</span>
 
     <span class=blue markdown>4 pts for a similar equation, 3 pts for finding the dark count rate roughly doubles. </span>
 
@@ -273,8 +273,8 @@ Where $n_s$ and $n_i$ are the number of photons corresponding to the signal and 
 
 <figure markdown> 
     <a name='fig:hsps'></a> 
-    <img alt="fig:hsps" style="width: nil; margin: auto;" src="./figs_07/hsps_light.svg#only-light" >
-    <img alt="fig:hsps" style="width: nil; margin: auto;" src="./figs_07/hsps_dark.svg#only-dark" > 
+    <img alt="fig:hsps" style="width: nil; margin: auto;" src="./figs/hsps_light.svg#only-light" >
+    <img alt="fig:hsps" style="width: nil; margin: auto;" src="./figs/hsps_dark.svg#only-dark" > 
     <figcaption markdown> Figure 3: **Heralded single photon sources**</figcaption>
     </figure>
 
@@ -350,7 +350,7 @@ Where $\eta$ is the coupling efficiency between the state of interest and the de
     </div>
     <span class=blue markdown> A numerical solution is fine. We’re interested in the positive solution less than one:</span>
 
-    <span class=blue markdown>![](./figs_07/Ftsolve.PNG)</span>
+    <span class=blue markdown>![](./figs/Ftsolve.PNG){#fig:ftsolve path="chapter_07"}</span>
 
     <span class=blue markdown>Like in introductory statistics problems, its helpful to think about the negative case: Given N sources with herald probability $p$, the probability of zero sources heralding is:</span>
 
@@ -366,7 +366,7 @@ Where $\eta$ is the coupling efficiency between the state of interest and the de
     $$P(\text{at least one herald}|N) = 1 - (1 - p_{binary}\left(\gamma, \eta\right))^N$$
 
     </div>
-    <span class=blue markdown>![](./figs_07/mux_binary.PNG)</span>
+    <span class=blue markdown>![](./figs/mux_binary.PNG){#fig:mux_binary path="chapter_07"}</span>
 
     <span class=blue markdown>About $\boxed{N = 290}$ sources are needed.</span>
 
@@ -404,7 +404,7 @@ $$\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\ra
     </div>
     <span class=blue markdown>Where either of the boxed answers are acceptable, and the last line was found using mathematica:</span>
 
-    <span class=blue markdown>![](./figs_07/simplify_ppnr.PNG)</span>
+    <span class=blue markdown>![](./figs/simplify_ppnr.PNG){#fig:simplify_pnnr path="chapter_07"}</span>
 
     <span class=red markdown>4 pts for $p_{PNR}\left(\gamma, \eta\right)$</span>
 
@@ -428,7 +428,7 @@ $$\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\ra
 
 5.  (12 pts) Make a parametric plot for $0<\gamma<1$ with $F_{PNR}$ on the x-axis and $p_{PNR}$ on the y-axis. Plot the curve for a few different values of idler arm efficiency $0<\eta<1$. All curves should reach the same maximum herald probability. What is it?
 
-    <span class=blue markdown> **Answer:** </span> <span class=blue markdown>![](./figs_07/PLT.PNG)</span>
+    <span class=blue markdown> **Answer:** </span> <span class=blue markdown>![](./figs/PLT.PNG){#fig:plt path="chapter_07"}</span>
 
     <span class=blue markdown> The the herald probability regardless of idler arm efficiency is 25%. </span>
 
@@ -436,7 +436,7 @@ $$\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\ra
 
 6.  (8 pts) Consider again the configuration in Fig. [3](#fig:hsps) b. Find the number of sources using PNR detectors needed to reach 98% single photon herald probability and fidelity with $\eta = 0.8$. Also find the number of sources for $\eta = 0.95$.
 
-    <span class=blue markdown> **Answer:** </span> <span class=blue markdown>![](./figs_07/pnrTotalPerf.PNG)</span>
+    <span class=blue markdown> **Answer:** </span> <span class=blue markdown>![](./figs/pnrTotalPerf.PNG){#fig:pnr_total path="chapter_07"}</span>
 
     <span class=blue markdown>About $\boxed{\text{98 sources are needed for the case with an 80\% heralding}}$, </span>
 
@@ -446,4 +446,4 @@ $$\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\ra
 
 <!-- Keep at end of the page! -->
 
-<script src="././chapter_05/code/section_06.js"></script>
+<script src="./code/section_06.js"></script>

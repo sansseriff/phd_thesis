@@ -22,8 +22,8 @@ We employ a 4.0 GHz mode locked laser source with 80-ps delay interferometers to
 
 <figure markdown> 
     <a name='fig:system'></a> 
-    <img alt="fig:system" style="width: 100%; margin: auto;" src="../figs_04/sys_drawing_light.svg#only-light" >
-    <img alt="fig:system" style="width: 100%; margin: auto;" src="../figs_04/sys_drawing_dark.svg#only-dark" > 
+    <img alt="fig:system" style="width: 100%; margin: auto;" src="../figs/sys_drawing_light.svg#only-light" >
+    <img alt="fig:system" style="width: 100%; margin: auto;" src="../figs/sys_drawing_dark.svg#only-dark" > 
     <figcaption markdown> Figure 1: **System Drawing & DWDM Channels** a) Pulses from a 1539.47 nm mode locked laser (Pritel UOC) are doubled by an 80 ps delay interferometer before up-conversion and amplification in a SHG & EDFA module (Pritel). A short PM fiber from the SHG connects to the SPDC where photon pairs are created. The CWDM module separates the SPDC spectrum into multiple $\sim\!\!13~\mathrm{nm}$ wide bands spaced by 20 nm. The 1530 and 1550 nm bands are sent to the Bob and Alice stations respectively. The readout interferometers have the same time delay as the source interferometer. Polarization controllers are used to maximize the coincidence rates, as the detection efficiencies of the SNSPDs is polarization sensitive $\pm20\%$. Entanglement fidelity is unaffected by readout polarization. The two SNSPDs are connected to each channel pair in succession to resolve full system performance. b) ITU channels involved with the experiment. Pairs of channels highlighted with the same color obey the SPDC & pump energy matching condition, and can be directly read out through DWDM channel outputs. To asses the full 16 channels (27-42) of Alice’s DWDM multiplexer, Bob’s 8-channel DWDM is switched out for a tunable narroband filter.</figcaption>
     </figure>
 
