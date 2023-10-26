@@ -38,7 +38,7 @@ In the limit of large $t''$, a slice of the calibration grid bears close resembl
 
 Proper handling of inter-pulse arrival measurements that fall outside the 2D grid is necessary for good correction performance. When both $t'$ and $t''$ fall outside the 2D grid, no correction is applied. When $t''$ falls outside the grid but $t'$ does not, a 1st order correction is applied to determine what delay must be subtracted to the current tag to correct its distortion. When both $t''$ and $t'$ fall within the 2d grid, a full 2d spline interpolation on the grid in Fig. [2](#fig:order_2nd) b is applied to find the necessary delay correction.
 
-Like the 1st-order correction, the 2nd-order method makes the assumption that the delays to be corrected are small relative to the inter-pulse times t’ and t’’.
+Like the 1st-order correction, the 2nd-order method makes the assumption that the delays to be corrected are small relative to the inter-pulse times $t’$ and $t’’$.
 
 The codebase supporting our findings with the 1st and 2nd order correction is available at [SNSPD-time-walk-and-jitter-correction](https://github.com/sansseriff/SNSPD-time-walk-and-jitter-correction).
 

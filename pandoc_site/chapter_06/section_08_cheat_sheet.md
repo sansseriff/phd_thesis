@@ -10,6 +10,8 @@ to put something only in the latex output:
 content here
 ``` -->
 
+You can do footnotes like this[^1]
+
 use \boldsymbol for bold latex:
 
 **Fidelity and Rates vs $\boldsymbol \mu$**
@@ -65,3 +67,5 @@ And this won’t
 the file where you’re working on bokeh styling is at :
 
 C:\Users\Andrew\OneDrive - California Institute of Technology\JPL.Jitterate\peacoq\src\bokeh\_hists_js_callbacks.ipynb
+
+[^1]: This is a footnote

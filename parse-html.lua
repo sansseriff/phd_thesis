@@ -258,6 +258,17 @@ function Span(el)
     -- if el.content[1].t == "Para" then
 end
 
+function Note (note)
+    -- Get the footnote text
+    local text = pandoc.utils.stringify(note.content)
+  
+    -- Print the footnote text to the console
+    print(text)
+  
+    -- Return the original footnote unchanged
+    return note
+  end
+
 -- function Span(el)
 --     -- print("dsf")
 --     color = el.attributes['color']

@@ -16,6 +16,10 @@ content here
 ``` -->
 
 
+You can do footnotes like this[^1]
+
+[^1]: This is a footnote
+
 
 use \boldsymbol for bold latex:
 
