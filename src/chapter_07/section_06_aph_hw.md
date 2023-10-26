@@ -456,7 +456,7 @@ $$\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\ra
 6. (8 pts) Consider again the configuration in @Fig:hsps b. Find the number of sources using PNR detectors needed to reach 98\% single photon herald probability and fidelity with $\eta = 0.8$. Also find the number of sources for $\eta = 0.95$.
 
     <span style="color:blue" markdown> **Answer:** </span>
-    <span style="color:blue" markdown>![](./figs/pnrTotalPerf.PNG){#fig:pnr_total path="chapter_07"}</span>
+    <span style="color:blue" markdown>![](./figs/pnrTotalPerf.PNG){#fig:pnr_total width=70% path="chapter_07"}</span>
 
     <span style="color:blue" markdown>About $\boxed{\text{98 sources are needed for the case with an 80\% heralding}}$, </span>
 
