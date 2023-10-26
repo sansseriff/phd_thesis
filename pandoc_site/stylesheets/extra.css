@@ -38,13 +38,19 @@ h1 {
     color: blue !important;
 }
 
+/* :root {
+    --md-primary-fg-color:        #43464f;
+    --md-primary-fg-color--light: #ECB7B7;
+    --md-primary-fg-color--dark:  #90030C;
+  } */
 
 :root,
 [data-md-color-scheme="slate"] {
+    --md-primary-fg-color:#886fed;
     --md-default-bg-color: #24242d;
     --md-primary-fg-color--light: #ffd06f;
     --md-primary-fg-color--dark: #db9d21;
-    --md-accent-fg-color: #737aca;
+    --md-accent-fg-color: #be5b5b;
     --pg-light-border: rgb(51, 51, 59);
     --pg-border-color: rgb(57, 57, 67);
     --pg-hero-color: #ffd06f;
@@ -62,6 +68,7 @@ h1 {
 
 :root,
 [data-md-color-scheme="default"] {
+    --md-primary-fg-color:#506696;
     --md-default-bg-color: #f7f7fd;
     --md-primary-fg-color--light: #ffd06f;
     --md-primary-fg-color--dark: #db9d21;
