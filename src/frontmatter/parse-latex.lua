@@ -21,8 +21,14 @@ function Image(element)
 
   if element.attributes["path"] ~= nil then
     -- Print the path to the console
-    local new_path = "./" .. element.attributes["path"] .. element.src:sub(2, -5) .. '.pdf'
-    element.src = new_path -- fix_path(element.src)
+    if element.src:sub(-5, -1) == ".svg" then
+      local new_path = "./" .. element.attributes["path"] .. element.src:sub(2, -5) .. '.pdf'
+      element.src = new_path
+    else
+      local new_path = "./" .. element.attributes["path"] .. element.src:sub(2, -1)
+      element.src = new_path
+    end
+     -- fix_path(element.src)
   else
     -- Print the path to the console
     print("error: missing path attribute")
