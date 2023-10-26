@@ -20,8 +20,9 @@ function Image(element)
   local path = element.attributes
 
   if element.attributes["path"] ~= nil then
+    -- print("path: " .. element.src:sub(-4, -1))
     -- Print the path to the console
-    if element.src:sub(-5, -1) == ".svg" then
+    if element.src:sub(-4, -1) == ".svg" then
       local new_path = "./" .. element.attributes["path"] .. element.src:sub(2, -5) .. '.pdf'
       element.src = new_path
     else

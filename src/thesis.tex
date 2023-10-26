@@ -157,7 +157,7 @@ The system is based on 1-inch optics, although the f = 18.75 mm lenses lead to a
 \hypertarget{fig:dcrmin_data}{%
 \begin{figure}
 \centering
-\includegraphics{./chapter_02/figs/DataFigure_6.svg}
+\includegraphics{./chapter_02/figs/DataFigure_6.pdf}
 \caption[{Low Dark Count Rate Project Results.}]{\textbf{Low Dark Count Rate Project Results} a) Simulated photon flux at various temperatures with and without the 1550 nm bandpass filter (BP). b) Normalized photon count rate (PCR) and jitter measurements c) DCR, and calculated figure of merit $H$ versus bias current for both fiber-coupled and free space coupled configurations.}
 \label{fig:dcrmin_data}
 \end{figure}
@@ -174,7 +174,7 @@ This work used a low-jitter, differential SNSPD \cite{Colangelo2021}, with an ac
 \hypertarget{fig:custom_figure}{%
 \begin{figure}
 \centering
-\includegraphics[width=0.7\textwidth,height=\textheight]{./chapter_02/figs/Figure_Data_Sept_2022_light.svg}
+\includegraphics[width=0.7\textwidth,height=\textheight]{./chapter_02/figs/Figure_Data_Sept_2022_light.pdf}
 \caption[{A jitterate data figure.}]{\textbf{Figure Title.} And I think the rest of this is the caption with (A), (B), and (C) callouts}
 \label{fig:custom_figure}
 \end{figure}
@@ -225,7 +225,7 @@ At low count rates SNSPDs exhibit very uniform pulse heights. However, at high c
 \hypertarget{fig:jitterate_intro}{%
 \begin{figure}
 \centering
-\includegraphics[width=0.7\textwidth,height=\textheight]{./chapter_03/figs/intro_jitterate_light.svg}
+\includegraphics[width=0.7\textwidth,height=\textheight]{./chapter_03/figs/intro_jitterate_light.pdf}
 \caption[{Introduction to the time walk effect}]{\textbf{Introduction to the time walk effect} a) Diagram illustrating two major sources of correlated high count rate jitter. First, detections may occur during the reset time of a previous detection. At this time the bias current in the nanowire is below its saturated value so that a photodetection triggers an RF pulse with correspondingly lower amplitude. Second, an RF pulse may arrive in the undershoot region of a previous pulse, where the undershoot is a period of negative voltage induced by the low-frequency cutoff properties of the readout amplifier chain. (b) Measured histograms of detections from short $3~\mathrm{ps}$ mode-locked laser pulses. With lower attenuation and higher count rate, the observed timing uncertainty is greater. Inset shows where respective count rates fall on a maximum count rate (MCR) curve \autocite{Zhang_MCR_2019}. The MCR of an SNSPD is often quoted at the $3~\mathrm{dB}$ point, where the normalized efficiency drops to $-3~\mathrm{dB}$ of its maximum value. The jitter increase due to time walk manifests as a tail in the instrument response functions (inside dashed black box) even at count rates significantly below the 3-dB point where detector efficiency has not started to drop significantly (e.g.~the 1.7 Mcps data)}
 \label{fig:jitterate_intro}
 \end{figure}
@@ -265,7 +265,7 @@ The measurements used for calibration and correction were acquired with a high r
 \hypertarget{fig:jitterate_exp_setup}{%
 \begin{figure}
 \centering
-\includegraphics[width=0.9\textwidth,height=\textheight]{./chapter_03/figs/supplemental_expirement_light.svg}
+\includegraphics[width=0.9\textwidth,height=\textheight]{./chapter_03/figs/supplemental_expirement_light.pdf}
 \caption[{Time walk experiment setup}]{\textbf{Experimental Setup} CLK: clock synchronization signal; AWG: Arbitrary Waveform Generator (\emph{Keysight}); IM: Intensity Modulator (\emph{IXBlue}); TDC: Time to Digital Converter (\emph{Swabian Instruments}). The extinction ratio of both modulators exceeds 30 dB.}
 \label{fig:jitterate_exp_setup}
 \end{figure}
@@ -287,7 +287,7 @@ To perform our calibration, we illuminated the SNSPD with an attenuated 537.5~MH
 \hypertarget{fig:jitterate_explain}{%
 \begin{figure}
 \centering
-\includegraphics[width=0.7\textwidth,height=\textheight]{./chapter_03/figs/jitterate_explain_light.svg}
+\includegraphics[width=0.7\textwidth,height=\textheight]{./chapter_03/figs/jitterate_explain_light.pdf}
 \caption[{Calibration method for extracing t' vs delay}]{\textbf{Calibration Method} a) A qualitative diagram illustrating how inter-pulse timing measurements $t'$ and $d$ are extracted. A small fraction of laser pulses contain a photon due to the low mean photon number per pulse of the attenuated laser. Pairs of subsequent photon arrivals are separated by a time denoted by $t' = n t_l$. b) Possible distributions of delay $d$ measurements for two different $t'$. The median of these defines the extracted delay parameters $\tilde{d}$ which form the y-axis in the calibration curve illustrated in (c). The $\tilde{d}$ vs $t^\prime$ curve in (c) approaches zero for $t^\prime$ approaching infinity. Blue and green arrows with matching color and style denote the same measure in (a), (b), and (c).}
 \label{fig:jitterate_explain}
 \end{figure}
@@ -298,7 +298,7 @@ We collect sorted time-tags and first consider adjacent pairs of SNSPD events as
 \hypertarget{fig:jitterate_results_1}{%
 \begin{figure}
 \centering
-\includegraphics[width=0.9\textwidth,height=\textheight]{./chapter_03/figs/jitterate_data_ab_light.svg}
+\includegraphics[width=0.9\textwidth,height=\textheight]{./chapter_03/figs/jitterate_data_ab_light.pdf}
 \caption[{t-prime curve and correction effect}]{\textbf{t-prime curve and correction effect} (a) Delay and intrinsic jitter curves extracted from the 537.5 MHz pulsed light dataset. (b) Histogram of corrected (black) and uncorrected (dashed grey) time tags from a 2.15 GHz pulse train, corrected using a calibration curve developed with the 537.5 MHz dataset. The improvement affirms that the light modulation used for an application need not match the repetition rate of the calibration laser.}
 \label{fig:jitterate_results_1}
 \end{figure}
@@ -313,7 +313,7 @@ With the interpolation operation expressed as a function $D$, the correction is 
 \hypertarget{fig:jitterate_results_2}{%
 \begin{figure}
 \centering
-\includegraphics[width=0.9\textwidth,height=\textheight]{./chapter_03/figs/jitterate_data_c_light.svg}
+\includegraphics[width=0.9\textwidth,height=\textheight]{./chapter_03/figs/jitterate_data_c_light.pdf}
 \caption[{Jitters metrics across incident powers}]{\textbf{Jitters metrics across incident powers} (a) Effect of the correction on measurements of system jitter over a range of rates approaching the maximum count rate. (b) Corrected (solid) and uncorrected (dashed) instrument response functions with color-matched arrows showing the location of the width-statistics plotted above in (a). The black vertical line in (a) is drawn at the count rate of this plot. Inset shows linear scaling. (c) Corrected (solid) and uncorrected (dashed) histogram analogous to (b), but at a higher count rate indicated by the grey line in (a).}
 \label{fig:jitterate_results_2}
 \end{figure}
@@ -337,7 +337,7 @@ The calibration process for the PEACOQ showed that high-rate pulse distortions a
 \hypertarget{fig:order_1st}{%
 \begin{figure}
 \centering
-\includegraphics[width=1\textwidth,height=\textheight]{./chapter_03/figs/SOM_Figure_order_1st_v2_light.svg}
+\includegraphics[width=1\textwidth,height=\textheight]{./chapter_03/figs/SOM_Figure_order_1st_v2_light.pdf}
 \caption[{PEACOQ RF pulse and calibration curve}]{\textbf{PEACOQ RF pulse and calibration curve} a) The RF pulse of one of the PEACOQ nanowires. The effect of an impedance mismatch reflection is visible at 25~ns. b) The delay vs $t'$ curve for wire 1 of the PEACOQ. The peak at 25~ns lines up in time with the RF reflection visible in (a), and works to correct for the time-walk delays it causes.}
 \label{fig:order_1st}
 \end{figure}
@@ -353,7 +353,7 @@ The 2nd order time-walk correction is a new technique that builds on the methods
 \hypertarget{fig:order_2nd}{%
 \begin{figure}
 \centering
-\includegraphics[width=1\textwidth,height=\textheight]{./chapter_03/figs/SOM_Figure_order_2nd_v1_light.svg}
+\includegraphics[width=1\textwidth,height=\textheight]{./chapter_03/figs/SOM_Figure_order_2nd_v1_light.pdf}
 \caption[{PEACOQ 2D calibration parameterization \& results}]{\textbf{PEACOQ 2D calibration parameterization \& results} a) A diagram showing how RF pulse waveforms can interfere additively, and how $t'$ and $t''$ are parameterized. For illustrative purposes only. b) The result of 2nd order calibration, a grid of delay measurements indexed by $t'$ and $t''$. The blue/red slices and corresponding graphs show how the the effect of varying $t''$ for a given $t'$ is similar to varying $t'$ for a given $t''$.}
 \label{fig:order_2nd}
 \end{figure}
@@ -380,7 +380,7 @@ When our calibration and correction method is applied to the Tungsten Silicide S
 \hypertarget{fig:rise_exp}{%
 \begin{figure}
 \centering
-\includegraphics[width=1\textwidth,height=\textheight]{./chapter_03/figs/rise_exp_light.svg}
+\includegraphics[width=1\textwidth,height=\textheight]{./chapter_03/figs/rise_exp_light.pdf}
 \caption[{WSi pulse exponential pulse recovery}]{\textbf{WSi detector pulse recovery} Sweep of trigger levels for pulse rising edges after a previous pulse (not shown). This is similar to a scope trace in overlay false color mode. The detector is illuminated by a 537.5 MHz pulse train.}
 \label{fig:rise_exp}
 \end{figure}
@@ -394,7 +394,7 @@ In certain cases a software-based dead time is an effective way of reducing jitt
 \hypertarget{fig:dead_time}{%
 \begin{figure}
 \centering
-\includegraphics[width=0.8\textwidth,height=\textheight]{./chapter_03/figs/cut_count_rate_v2_light.svg}
+\includegraphics[width=0.8\textwidth,height=\textheight]{./chapter_03/figs/cut_count_rate_v2_light.pdf}
 \caption[{Removing time walk with dead time}]{\textbf{Removing time walk with dead time} a) Illustration of the RF signal out of an SNSPD with red highlighted regions signifying a software-based dead time that rejects some events. b) Count rate vs normalized efficiency, similar to the curve in green in Fig.~\ref{fig:jitterate_results_2}. (c) \& (d) Response functions for timetaggs at two count rates denoted by the vertical lines in (b), similar to Fig.~\ref{fig:jitterate_results_2} (b) and (c). The dark grey solid lines show response functions from the calibration and correction method which does not limit count rate. The 100 ns dead time filtered data does not reach the 5.9 Mcps of figure (d) and is therefore not shown in (d).}
 \label{fig:dead_time}
 \end{figure}
@@ -445,7 +445,7 @@ The rate increase is possible due to recent advancements in Niobium Nitride SNSP
 \hypertarget{fig:intro}{%
 \begin{figure}
 \centering
-\includegraphics[width=1\textwidth,height=\textheight]{./chapter_04/figs/fig_intro_2_light.svg}
+\includegraphics[width=1\textwidth,height=\textheight]{./chapter_04/figs/fig_intro_2_light.pdf}
 \caption[{PPM modulation and experiment setup}]{\textbf{PPM modulation and experiment setup} a) Diagram of the expiremental setup. WG: wave generator, CD: clock divider board, AWG: Arbitrary Waveform Generator, MLL: Mode Locked Laser (Pritel UAC), IM: Intensity Modulator, BC: Bias Controller, FSC: Free Space Coupling System, DCA: DC Coupled Cryo-amp b) How bits are transmitted in M=16 PPM modulation. An optical pulse is transmitted with a clock-referenced integer delay which encodes 4 bits of data. c) Scope trace of the RF pulse produced by the differential-readout tapered SNSPD. Fig.~\ref{fig:waveform} zooms in on the rising edge outlined in red here}
 \label{fig:intro}
 \end{figure}
@@ -458,7 +458,7 @@ For the tapered differential detectors, the PNR response affects timing of fixed
 \hypertarget{fig:waveform}{%
 \begin{figure}
 \centering
-\includegraphics[width=0.8\textwidth,height=\textheight]{./chapter_04/figs/waveform_light.svg}
+\includegraphics[width=0.8\textwidth,height=\textheight]{./chapter_04/figs/waveform_light.pdf}
 \caption[{PNR-sensitive Pulse Waveform}]{\textbf{PNR-sensitive Pulse Waveform} The rising edge of the differential SNSPD's RF pulses exhibit variations in height, slew rate, and arrival time due to photon-number dependent dynamics. The slopes of the 1-photon and 2-photon pulses significantly differ, and as the photon number increases, the alterations to the pulse shape become progressively smaller. Trigger levels A (8~mV) and B (50~mV) were used to extract as much information about pulse slope and arrival time as possible}
 \label{fig:waveform}
 \end{figure}
@@ -525,7 +525,7 @@ Prior to the PPM demosntration, we collected data with multi-photon optical puls
 \hypertarget{fig:slope_correction}{%
 \begin{figure}
 \centering
-\includegraphics[width=1\textwidth,height=\textheight]{./chapter_04/figs/slope_cancellation_light.svg}
+\includegraphics[width=1\textwidth,height=\textheight]{./chapter_04/figs/slope_cancellation_light.pdf}
 \caption[{PNR Slope Variation Analysis and Cancellation}]{\textbf{PNR Slope Variation Analysis and Cancellation} a) 2D histogram of RF pulse measurements. Through graphing slope $\Delta t_{BA}$ on the x-axis and arrival time $t_A$ on the y-axis, a series of groupings are visible that identify the discrete photon numbers detected.}
 \label{fig:slope_correction}
 \end{figure}
@@ -589,7 +589,7 @@ We employ a 4.0 GHz mode locked laser source with 80-ps delay interferometers to
 \hypertarget{fig:system}{%
 \begin{figure}
 \centering
-\includegraphics[width=1\textwidth,height=\textheight]{./chapter_05/figs/sys_drawing_light.svg}
+\includegraphics[width=1\textwidth,height=\textheight]{./chapter_05/figs/sys_drawing_light.pdf}
 \caption[{System Drawing \& DWDM Channels.}]{\textbf{System Drawing \& DWDM Channels} a) Pulses from a 1539.47 nm mode locked laser (Pritel UOC) are doubled by an 80 ps delay interferometer before up-conversion and amplification in a SHG \& EDFA module (Pritel). A short PM fiber from the SHG connects to the SPDC where photon pairs are created. The CWDM module separates the SPDC spectrum into multiple $\sim\!\!13~\mathrm{nm}$ wide bands spaced by 20 nm. The 1530 and 1550 nm bands are sent to the Bob and Alice stations respectively. The readout interferometers have the same time delay as the source interferometer. Polarization controllers are used to maximize the coincidence rates, as the detection efficiencies of the SNSPDs is polarization sensitive $\pm20\%$. Entanglement fidelity is unaffected by readout polarization. The two SNSPDs are connected to each channel pair in succession to resolve full system performance. b) ITU channels involved with the experiment. Pairs of channels highlighted with the same color obey the SPDC \& pump energy matching condition, and can be directly read out through DWDM channel outputs. To asses the full 16 channels (27-42) of Alice's DWDM multiplexer, Bob's 8-channel DWDM is switched out for a tunable narroband filter.}
 \label{fig:system}
 \end{figure}
@@ -618,7 +618,7 @@ The JSI is measured in Fig. Fig.~\ref{fig:jsi} a by recording coincidence rates 
 \hypertarget{fig:jsi}{%
 \begin{figure}
 \centering
-\includegraphics[width=1\textwidth,height=\textheight]{./chapter_05/figs/jsi_figure_light.svg}
+\includegraphics[width=1\textwidth,height=\textheight]{./chapter_05/figs/jsi_figure_light.pdf}
 \caption[{Channel JSI and Histogram.}]{\textbf{Channel JSI and Histogram} a) The singles rates $S_A$ and $S_B$ (grey bars), coupling efficiencies (purple bars), and coincidence rates $C_{AB}$ (diagonal boxes) for different DWDM channel pairings. The joint spectral intensity envelop spans several 100 GHz channels. So the coincidence rates (KHz, in black) are consistent with the efficiencies $\eta$ (purple bars) and the singles rates (grey bars), they are scaled to represent two branches of the total wavefunction. There are four branches in all, for the 4 pairs of 2 interferometer output ports that contribute coincidences. In practice, one output each of Alice and Bob's interferometers is measured, thereby capturing one branch. See supplemental for details of the scaling method, and the fitting method used to solve for the coupling efficiencies $\eta$. b) Coincidence rates for energy-matched channel pairings. The light green bars match the main diagonal in (a). Grey bars are measured with x16 DWDM at Alice and a tunable narroband filter at Bob. Dashed bars predict the rates for a system with x16 DWDMs at both Alice and Bob c) Histogram of photon arrival events with respect to the 4 GHz clock. Dashed black and grey lines show the response functions for coincidence events. Red bars represent guard regions where coincidence events are ignored.}
 \label{fig:jsi}
 \end{figure}
@@ -635,7 +635,7 @@ The coincidence rate across Alice and Bob's middle bins varies sinusoidally with
 \hypertarget{fig:shg_scan}{%
 \begin{figure}
 \centering
-\includegraphics[width=1\textwidth,height=\textheight]{./chapter_05/figs/shg_scan_light.svg}
+\includegraphics[width=1\textwidth,height=\textheight]{./chapter_05/figs/shg_scan_light.pdf}
 \caption[{Fidelity and Rates vs \(\boldsymbol \mu\).}]{\textbf{Fidelity and Rates vs $\boldsymbol \mu$} a) Fidelity versus pump power. Error bars arise from making multiple measurements of the center bin coincidence rate over some integration time. These measurements span small ranges of interferometer phase, as the extremum-finding algorithm jitters the interferometer voltage. b) Bounded distillable entanglement rate versus pump power. Multiple such measurements are made for all the tomographic measurements. These are used to calculate standard deviations for fidelity, log negativity, and coherent information. Error bars for the log negativity and coherent information are smaller than the line width shown. Rates shown assume readout of all 4 available interferometer ports, based on data measured using one port each at Alice and Bob.}
 \label{fig:shg_scan}
 \end{figure}
@@ -648,7 +648,7 @@ Channels 35 and 59 were chosen for an analysis of entanglement fidelity and rate
 \hypertarget{fig:channel_data}{%
 \begin{figure}
 \centering
-\includegraphics[width=1\textwidth,height=\textheight]{./chapter_05/figs/8ch_bar_graph_high_power_light.svg}
+\includegraphics[width=1\textwidth,height=\textheight]{./chapter_05/figs/8ch_bar_graph_high_power_light.pdf}
 \caption[{Fidelity and rates across 8 channel pairs.}]{\textbf{Fidelity and rates across 8 channel pairs} a) Fidelity for the main 8 channel pairs, measured at a high (5.17 Amps) and a low ( 1.2 Amps) SHG pump power setting. Each power setting results in similar $\mu$ for all channels: $\mu_{low}$ = 5.6e-5 $\pm$ 9e-6 and $\mu_{high}$ = 6.1e-3 $\pm$ 3e-4. b) Rate metrics for the 8 channel pairs at the same high and low power settings. The range of possible values for distillable entanglement rate is spanned by the yellow regions, bounded above by log-negativity and below by coherent information. Rates shown assume readout of all 4 available interferometer ports, based on data measured using one port each at Alice and Bob}
 \label{fig:channel_data}
 \end{figure}
@@ -693,7 +693,7 @@ An experimental apparatus emits a collimated beam of $1550~\mathrm{nm}$ photons 
 \hypertarget{fig:cryostat_concept}{%
 \begin{figure}
 \centering
-\includegraphics{./chapter_07/figs/fig1b_light.svg}
+\includegraphics{./chapter_07/figs/fig1b_light.pdf}
 \caption[{Cryostat optical coupling}]{\textbf{Cryostat free space coupling options.}}
 \label{fig:cryostat_concept}
 \end{figure}
@@ -765,7 +765,7 @@ As we will see later on, a set of filters will be needed between the detector an
   \hypertarget{fig:coupling_options}{%
   \begin{figure}
   \centering
-  \includegraphics{./chapter_07/figs/fig2b_light.svg}
+  \includegraphics{./chapter_07/figs/fig2b_light.pdf}
   \caption[{Cryostat coupling options}]{\textbf{Three Coupling Options}}
   \label{fig:coupling_options}
   \end{figure}
@@ -978,7 +978,7 @@ Where $n_s$ and $n_i$ are the number of photons corresponding to the signal and 
 \hypertarget{fig:hsps}{%
 \begin{figure}
 \centering
-\includegraphics{./chapter_07/figs/hsps_light.svg}
+\includegraphics{./chapter_07/figs/hsps_light.pdf}
 \caption[{Heralded single photon source designs}]{\textbf{Heralded single photon sources}}
 \label{fig:hsps}
 \end{figure}
@@ -1271,7 +1271,7 @@ Until I figure something more shorthand, you can set colors with ``\textless spa
 \hypertarget{fig:figurename}{%
 \begin{figure}
 \centering
-\includegraphics[width=0.7\textwidth,height=\textheight]{./chapter_08/figs_06/fig1b_light.svg}
+\includegraphics[width=0.7\textwidth,height=\textheight]{./chapter_08/figs_06/fig1b_light.pdf}
 \caption[{Figure label for in thesis index here.}]{\textbf{Caption title here} a) Long caption here}
 \label{fig:figurename}
 \end{figure}
@@ -1280,7 +1280,7 @@ Until I figure something more shorthand, you can set colors with ``\textless spa
 \hypertarget{fig:figurename2}{%
 \begin{figure}
 \centering
-\includegraphics[width=0.7\textwidth,height=\textheight]{./chapter_08/figs_06/hsps_light.svg}
+\includegraphics[width=0.7\textwidth,height=\textheight]{./chapter_08/figs_06/hsps_light.pdf}
 \caption[{Figure label for in thesis index here.}]{\textbf{Caption title here} a) Long caption here}
 \label{fig:figurename2}
 \end{figure}
