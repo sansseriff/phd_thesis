@@ -200,7 +200,7 @@ If the detector has a circular active area with radius $5~\mathrm{\upmu m}$, wha
 
     <span style="color:blue" markdown>and the dark count rate in the 300 K room is roughly double the rate in the 293 K room: </span>
 
-    <span style="color:blue" markdown>![](./figs/filter_with_temp.PNG){#fig:filter_with_temp width=50% path="chapter_07"}</span>
+    <span style="color:blue" markdown>![](./figs/filter_with_temp.PNG){#fig:filter_with_temp width=60% path="chapter_07"}</span>
 
     <span style="color:blue" markdown>4 pts for a similar equation, 3 pts for finding the dark count rate roughly doubles. </span>
 
@@ -442,7 +442,7 @@ $$\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\ra
 5. (12 pts) Make a parametric plot for $0<\gamma<1$ with $F_{PNR}$ on the x-axis and $p_{PNR}$ on the y-axis. Plot the curve for a few different values of idler arm efficiency $0<\eta<1$. All curves should reach the same maximum herald probability. What is it? 
    
     <span style="color:blue"markdown> **Answer:** </span>
-    <span style="color:blue" markdown>![](./figs/PLT.PNG){#fig:plt path="chapter_07"}</span>
+    <span style="color:blue" markdown>![](./figs/PLT.PNG){#fig:plt width=70% path="chapter_07"}</span>
 
     <span style="color:blue" markdown> The the herald probability regardless of idler arm efficiency is 25\%. </span>
 
