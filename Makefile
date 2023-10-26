@@ -3,7 +3,7 @@ PANDOC=pandoc
 
 ppm:
 	cd src/chapter_04 && \
-	cp -R figs_03/ dist/ && \
+	cp -R figs/ dist/ && \
 	pandoc metadata.yaml \
 	section_02_abstract.md section_03_introduction.md section_04_method.md section_05_results.md \
 	-o dist/manuscript.tex \

@@ -26,7 +26,7 @@ ax_dict["hist"].hist(hist_data)
 ax_dict["image"].imshow([[1, 2], [2, 1]])
 identify_axes(ax_dict)
 ```
-![](./figs_06/sphx_glr_mosaic_001_2_0x.webp)
+![](./figs_06/sphx_glr_mosaic_001_2_0x.webp){#fig:mosaic path="chapter_08"}
 
 
 ```{=html}
@@ -61,7 +61,7 @@ There are methods of changing the aspect ratios of the plots, but tools for impo
 #### Add_axes
 One of the simplest ways of adding subplots to a figure is with the `fig.add_axese(rect)` method. The `rect = [ll_x, ll_y, width, height]` specifies the x and y coordinate of the lower left corner with the first two parameters, and the width and height with the second 2 parameters. Multiple uses of `add_axese()` offers maximum control for creating advanced layouts, but specifying all the correct `rect` arrays can get very confusing. Figure @Fig:layout_sketch illustrates the types of calculations that become necessary when the specific location and size of each subplot must be specified under certain constraints. 
 
-![**Sketch for layout with add_axese().**](./figs_06/layout_sketch.png){#fig:layout_sketch short-caption="Rough sketch for layout with add_axese()"}
+![**Sketch for layout with add_axese().**](./figs_06/layout_sketch.png){#fig:layout_sketch short-caption="Rough sketch for layout with add_axese()" path="chapter_08"}
 
 
 #### `bisect()` method
