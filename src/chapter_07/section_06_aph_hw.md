@@ -356,7 +356,7 @@ Where $\eta$ is the coupling efficiency between the state of interest and the de
 
     <span style="color:blue" markdown> A numerical solution is fine. We're interested in the positive solution less than one:</span>
 
-    <span style="color:blue" markdown>![](./figs/Ftsolve.PNG){#fig:ftsolve path="chapter_07"}</span>
+    <span style="color:blue" markdown>![](./figs/Ftsolve.PNG){#fig:ftsolve width=70% path="chapter_07"}</span>
 
     <span style="color:blue" markdown>Like in introductory statistics problems, its helpful to think about the negative case: Given N sources with herald probability $p$, the probability of zero sources heralding is:</span>
 
