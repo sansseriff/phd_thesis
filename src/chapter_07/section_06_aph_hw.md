@@ -373,7 +373,7 @@ Where $\eta$ is the coupling efficiency between the state of interest and the de
 
     </div>
 
-    <span style="color:blue" markdown>![](./figs/mux_binary.PNG){#fig:mux_binary path="chapter_07"}</span>
+    <span style="color:blue" markdown>![](./figs/mux_binary.PNG){#fig:mux_binary width=70% path="chapter_07"}</span>
 
     <span style="color:blue" markdown>About $\boxed{N = 290}$ sources are needed.</span>
 

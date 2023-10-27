@@ -204,7 +204,7 @@ As we will see later on, a set of filters will be needed between the detector an
     </div>
     <span class=blue markdown>and the dark count rate in the 300 K room is roughly double the rate in the 293 K room: </span>
 
-    <span class=blue markdown>![](./figs/filter_with_temp.PNG){#fig:filter_with_temp path="chapter_07"}</span>
+    <span class=blue markdown>![](./figs/filter_with_temp.PNG){#fig:filter_with_temp width="60%" path="chapter_07"}</span>
 
     <span class=blue markdown>4 pts for a similar equation, 3 pts for finding the dark count rate roughly doubles. </span>
 
@@ -350,7 +350,7 @@ Where $\eta$ is the coupling efficiency between the state of interest and the de
     </div>
     <span class=blue markdown> A numerical solution is fine. We’re interested in the positive solution less than one:</span>
 
-    <span class=blue markdown>![](./figs/Ftsolve.PNG){#fig:ftsolve path="chapter_07"}</span>
+    <span class=blue markdown>![](./figs/Ftsolve.PNG){#fig:ftsolve width="70%" path="chapter_07"}</span>
 
     <span class=blue markdown>Like in introductory statistics problems, its helpful to think about the negative case: Given N sources with herald probability $p$, the probability of zero sources heralding is:</span>
 
@@ -366,7 +366,7 @@ Where $\eta$ is the coupling efficiency between the state of interest and the de
     $$P(\text{at least one herald}|N) = 1 - (1 - p_{binary}\left(\gamma, \eta\right))^N$$
 
     </div>
-    <span class=blue markdown>![](./figs/mux_binary.PNG){#fig:mux_binary path="chapter_07"}</span>
+    <span class=blue markdown>![](./figs/mux_binary.PNG){#fig:mux_binary width="70%" path="chapter_07"}</span>
 
     <span class=blue markdown>About $\boxed{N = 290}$ sources are needed.</span>
 
@@ -428,15 +428,19 @@ $$\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\ra
 
 5.  (12 pts) Make a parametric plot for $0<\gamma<1$ with $F_{PNR}$ on the x-axis and $p_{PNR}$ on the y-axis. Plot the curve for a few different values of idler arm efficiency $0<\eta<1$. All curves should reach the same maximum herald probability. What is it?
 
-    <span class=blue markdown> **Answer:** </span> <span class=blue markdown>![](./figs/PLT.PNG){#fig:plt path="chapter_07"}</span>
+    <span class=blue markdown> **Answer:** </span>
 
+    \begin{center}
+    <span class=blue markdown>![](./figs/PLT.PNG){#fig:plt width="70%" path="chapter_07"}</span>
+
+    \end{center}
     <span class=blue markdown> The the herald probability regardless of idler arm efficiency is 25%. </span>
 
     <span class=red markdown> 4 points for the 25% limit; 8 points for a few plots at different $\eta$ </span>
 
 6.  (8 pts) Consider again the configuration in Fig. [3](#fig:hsps) b. Find the number of sources using PNR detectors needed to reach 98% single photon herald probability and fidelity with $\eta = 0.8$. Also find the number of sources for $\eta = 0.95$.
 
-    <span class=blue markdown> **Answer:** </span> <span class=blue markdown>![](./figs/pnrTotalPerf.PNG){#fig:pnr_total path="chapter_07"}</span>
+    <span class=blue markdown> **Answer:** </span> <span class=blue markdown>![](./figs/pnrTotalPerf.PNG){#fig:pnr_total width="70%" path="chapter_07"}</span>
 
     <span class=blue markdown>About $\boxed{\text{98 sources are needed for the case with an 80\% heralding}}$, </span>
 
