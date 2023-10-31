@@ -99,6 +99,7 @@ function Para(para)
     end
 
     src_begin = img.src:sub(0, -10)
+    file_type = img.src:sub(-4) -- could be png or jpg or svg. would break with jpeg
     check_light = img.src:sub(-9, -5)
 
     -- print(type(img.caption))
@@ -116,9 +117,10 @@ function Para(para)
     -- switch to injecting raw html
 
     html_style = string.format("style=\"width: %s; margin: auto;\"", img.attributes['width'])
+    
 
-    light_src = string.format("<img alt=\"%s\" %s src=\".%slight.svg#only-light\" >", img.identifier, html_style, src_begin)
-    dark_src = string.format("<img alt=\"%s\" %s src=\".%sdark.svg#only-dark\" >", img.identifier, html_style, src_begin)
+    light_src = string.format("<img alt=\"%s\" %s src=\".%slight%s#only-light\" >", img.identifier, html_style, src_begin, file_type)
+    dark_src = string.format("<img alt=\"%s\" %s src=\".%sdark%s#only-dark\" >", img.identifier, html_style, src_begin, file_type)
 
     if check_light == "light" then
         full_src = string.format("%s\n    %s", light_src, dark_src)
