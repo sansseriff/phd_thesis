@@ -10,7 +10,7 @@ When our calibration and correction method is applied to the Tungsten Silicide S
     This is a real scope trace that shows the same inverted exponential recovery effect:
 
     ![thing1](./figs/ringdown_scope_light.png#only-light)
-    ![thing2](../figs/ringdown_scope_dark.png#only-dark)
+    ![thing2](./figs/ringdown_scope_dark.png#only-dark)
 ```
 
 ### Software dead time for high count rate jitter suppression
