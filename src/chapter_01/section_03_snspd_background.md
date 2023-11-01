@@ -21,7 +21,31 @@ Going forward, there is a plethora of opportunities to improve the practicality 
 
 ### Applications
 
-BREAD snspd
+<!-- BREAD snspd
+
+Lidar
+
+Quantum communication - QKD, teleportation, 
+
+Medical imaging
+
+Astronomy  -->
+
+Superconducting nanowire single-photon detectors (SNSPDs) have been employed in various applications, highlighting their versatility and potential in the field of photonics. These applications span different areas, ranging from astrophysics to biomedical imaging. This section provides a brief overview of some recent applications of SNSPDs.
+
+**Dark Matter Searches**: SNSPDs have been utilized in experiments aimed at detecting dark matter particles. For example, in a study focused on searching for sub-GeV dark matter, SNSPDs were used as photosensors in a cryogenic scintillator-based experiment. The detectors demonstrated near-infrared sensitivity and a large active area, enabling high optical coupling efficiency. This application also extended to the search for axion and dark photon dark matter.
+
+**Dark Photon Dark Matter**: Another notable application involved the search for dark photon dark matter using a multilayer dielectric haloscope. SNSPDs were employed to achieve efficient photon detection. By improving the limits on the kinetic mixing parameter for dark photon dark matter, these experiments provided valuable insights into the nature of dark matter in the eV mass range.
+
+**Cerebral Blood Flow Measurement**: SNSPDs were integrated into diffuse correlation spectroscopy (DCS) devices to enhance the measurement of cerebral blood flow. The high sensitivity of SNSPDs improved the signal-to-noise ratio and enabled the detection of low-intensity signals associated with pulsatile flow. This advancement in DCS technology has the potential to improve the understanding and diagnosis of cerebral blood flow-related conditions.
+
+**Deep Space Optical Communication**: SNSPDs played a crucial role in the development of ground laser receiver (GLR) systems for deep space optical communication. The GLR, equipped with an array of SNSPDs, received optical downlink signals from spaceborne transceivers. These detectors facilitated the processing of discrete downlink data rates over large distances, making significant contributions to the success of the Deep Space Optical Communication (DSOC) project.
+
+**Photon Counting LIDAR**: SNSPDs also found application in lidar systems operating at 2.3µm wavelength. These detectors demonstrated enhanced photon counting performance in the mid-infrared region, making them suitable for free-space photon counting applications. This development opens up opportunities for lidar systems to operate in environments with low atmospheric absorption and background solar flux.
+
+In addition to these specific applications, SNSPDs have been extensively used in quantum key distribution and quantum communication experiments. Notably, they have been employed in demonstrating high-quality quantum teleportation and will continue to be integral components in the development of advanced quantum networks.
+
+This brief overview highlights the wide range of applications that have utilized SNSPDs, showcasing their potential to advance various fields of science and technology. With ongoing advancements in SNSPD technology and further optimization, these detectors will continue to play a vital role in enabling groundbreaking research and innovation.
 
 
 
