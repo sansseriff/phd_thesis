@@ -27,7 +27,3 @@ Also, the use of impedance matching tapers can help distinguish between instance
 
 
 
-successfully mitigate the impedance mismatch and geometric jitter problems. The concurrent use of these innovations yields jitter reduction due the reduced amplifier jitter component as well as the longitudinal geometric component. Therefore this design offers a previous impossible trade-off between high detection efficiency and low jitter. 
-
-
-

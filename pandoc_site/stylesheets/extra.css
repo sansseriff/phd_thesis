@@ -1,8 +1,8 @@
 mjx-utext {
     /* corrects a small error with font size for upgreek package */
-    font-size: 1.09em !important;
+    font-size: 1.04em !important;
     position: relative !important;
-    top: .035rem !important;
+    top: .025rem !important;
 }
 
 .arithmatex {
@@ -99,7 +99,7 @@ h1 {
     color: var(--pg-orange);
     background-color: var(--orange-bg);
     border-radius: 3px;
-    padding: 5px;
+    padding: 2.5px;
     padding-left: 8px;
     padding-right: 8px;
     box-decoration-break: clone;

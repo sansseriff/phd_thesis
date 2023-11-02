@@ -10,26 +10,16 @@ An SNSPD consists of a thin superconducting nanowire patterned on a substrate bi
 When a photon hits the wire, it breaks a superconducting electron pair or Cooper pair. This disruption creates quasiparticles and initiates a downcoversion cascade.  This localized disruption of superconductivity in turn leads to the formation of region of reduced superconductivity called a hot-spot. The hot-spot has a higher resistance than the superconducting state, which due the initial flow of current induces a voltage pulse from this region. This pulse is shunted out of the nanowire and into a readout circuit, which amplifies the pulse and may include electronics for digitizing the pulse arrival time. Following the formation of the hotspot, the nanowire cools down through electron-phonon interaction with the substrate and returns back to the superconducting state, making it ready for the next photon detection.
 
 The readout scheme typically adopted for the detection of these electrical signals involves separating the RF and DC components of the rf line from the SNSPD using a bias-T circuit. The RF component is then amplified using one or more cryogenic or room temperature amplifiers, followed by a free running or TCSPC based time tagger to digitize pulse arrival time. 
-
+clean
 
 ### Recent Advancements
 
-Recent SNSPDs advancements revolve around improving the detection efficiency, count rate, timing jitter, sensitive wavelength range, and scalability to large arrays. Ultra-fast measurements of short superconducting wires have demonstrated timing jitters as low as 3~ps and illuminated the relationship between timing jitter and intrinsic detection latency effects [@Korzh2020]. System detection efficiencies from 98% to 99.5% have been demonstrated as well, and have highlighted the need to optimize the quality of the optical cavity surrounding the detector through ulta-high reflectivity mirrors or distributed bragg reflectors [@reddy2020superconducting; @99.5_Chang_2021]. More recently, single photon sensitivity has been demonstrated out to 29~μm in thin silicon-rich WSi nanowires, paving the way for unique new SNSPD applications in astronomy and dark matter detection [@taylor2023lownoise]. Finally, with the development of a novel thermally coupled readout architechure, a 400,000 pixel SNSPD array has been demonstrated -- more than doubling the number of pixels from any previous superconducting detector array [@Oripov2023]. 
+Recent SNSPDs advancements revolve around improving the detection efficiency, count rate, timing jitter, sensitive wavelength range, and scalability to large arrays. Ultra-fast measurements of short superconducting wires have demonstrated timing jitters as low as 3~ps and illuminated the relationship between timing jitter and intrinsic detection latency effects [@Korzh2020]. System detection efficiencies from 98% to 99.5% have been demonstrated as well, and have highlighted the need to optimize the quality of the optical cavity surrounding the detector through ulta-high reflectivity mirrors or distributed bragg reflectors [@reddy2020superconducting; @99.5_Chang_2021]. More recently, single photon sensitivity has been demonstrated out to 29~$\upmu \mathrm{m}$ in thin silicon-rich WSi nanowires, paving the way for unique new SNSPD applications in astronomy and dark matter detection [@taylor2023lownoise]. Finally, with the development of a novel thermally coupled readout architechure, a 400,000 pixel SNSPD array has been demonstrated -- more than doubling the number of pixels from any previous superconducting detector array [@Oripov2023]. 
 
 Going forward, there is a plethora of opportunities to improve the practicality of fabricating and using SNSPDs. There is a growing interest in wide superconducting strips with performance that rivals much narrower nanowire designs~[@Yabuno:23] thereby accommodating scalable photolithography processes. Finally, there is ongoing effort to raise critical current and critical temperatures in advanced SNSPD superconducting materials. 
 
 
 ### Applications
-
-<!-- BREAD snspd
-
-Lidar
-
-Quantum communication - QKD, teleportation, 
-
-Medical imaging
-
-Astronomy  -->
 
 Superconducting nanowire single-photon detectors (SNSPDs) have been employed in various applications, highlighting their versatility and potential in the field of photonics. These applications span different areas, ranging from astrophysics to biomedical imaging. This section provides a brief overview of some recent applications of SNSPDs.
 
@@ -41,9 +31,9 @@ Superconducting nanowire single-photon detectors (SNSPDs) have been employed in 
 
 **Deep Space Optical Communication**: SNSPDs played a crucial role in the development of ground laser receiver (GLR) systems for deep space optical communication. The GLR, equipped with an array of SNSPDs, received optical downlink signals from spaceborne transceivers. These detectors facilitated the processing of discrete downlink data rates over large distances, making significant contributions to the success of the Deep Space Optical Communication (DSOC) project.
 
-**Photon Counting LIDAR**: SNSPDs also found application in lidar systems operating at 2.3µm wavelength. These detectors demonstrated enhanced photon counting performance in the mid-infrared region, making them suitable for free-space photon counting applications. This development opens up opportunities for lidar systems to operate in environments with low atmospheric absorption and background solar flux.
+**Photon Counting LIDAR**: SNSPDs also found application in lidar systems operating at 2.3~$\upmu \mathrm{m}$ wavelength. These detectors demonstrated enhanced photon counting performance in the mid-infrared region, making them suitable for free-space photon counting applications. This development opens up opportunities for lidar systems to operate in environments with low atmospheric absorption and background solar flux.
 
-In addition to these specific applications, SNSPDs have been extensively used in quantum key distribution and quantum communication experiments. Notably, they have been employed in demonstrating high-quality quantum teleportation and will continue to be integral components in the development of advanced quantum networks.
+In addition to these specific applications, SNSPDs have been extensively used in quantum key distribution and quantum communication experiments. Notably, they have been employed in demonstrating high-quality quantum teleportation~[@Valivarthi2020] and will continue to be integral components in the development of advanced quantum networks~[@Valivarthi2022].
 
 This brief overview highlights the wide range of applications that have utilized SNSPDs, showcasing their potential to advance various fields of science and technology. With ongoing advancements in SNSPD technology and further optimization, these detectors will continue to play a vital role in enabling groundbreaking research and innovation.
 

@@ -8,7 +8,10 @@
         "span:todo": "span[style='color: orange']",
         "span:latex": "span[class='latex']",
         "span:html": "span[class='html']",
-        "block:figure": "{![**short caption here** long caption here](./figs/${1:fig_file_name}.svg)\\{#fig:${2:fig_id} short-caption='short caption here' width=100%\\}}"
+        "block:figure": "{![**short caption here** long caption here](./figs/${1:fig_file_name}.svg)\\{#fig:${2:fig_id} short-caption='short caption here' width=100%\\}}",
+        "unit:um": "{~\\$\\\\upmu \\\\mathrm{m}\\$}",
+        "unit:ohm": "{~$\\Upomega$}",
+        "unit:kohm": "{~\\$\\\\mathrm{k}\\\\Upomega\\$}"
       }
     },
     "css": {
