@@ -1,7 +1,5 @@
 ## Discussion
-<div class="latex">
-
-\begin{table}
+<div class="latex">\begin{table}
 \begin{tabular}{ |p{2.9cm}||p{1.7cm}|p{1.7cm}|p{1.7cm}|p{1.7cm}|}
  \hline
  \multicolumn{5}{|c|}{Extrapolated rates (MHz)} \\
@@ -17,8 +15,9 @@
  \makecell[l]{secret key rate, $SKR$ \\(0.007)}& 0.309 & 2.21 &  4.73  &  14.3 \\
  \hline
 \end{tabular}
-
-</div>
+\caption{Per-channel predicted maximum values for the 4 rate metrics are shown in the column labeled `1 Channel'. Depending on the metric, the maxima are achieved for different pump powers $\mu$ (See supplemental note 11). The $\mu$ value that maximizes each metric is shown in parenthesis on the left.}
+\label{table:maximum_rates}
+\end{table}</div>
 
 
 ```{=html}
