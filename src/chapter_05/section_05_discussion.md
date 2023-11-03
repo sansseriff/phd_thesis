@@ -1,5 +1,6 @@
 ## Discussion
 <div class="latex">
+
 \begin{table}
 \begin{tabular}{ |p{2.9cm}||p{1.7cm}|p{1.7cm}|p{1.7cm}|p{1.7cm}|}
  \hline
@@ -16,6 +17,7 @@
  \makecell[l]{secret key rate, $SKR$ \\(0.007)}& 0.309 & 2.21 &  4.73  &  14.3 \\
  \hline
 \end{tabular}
+
 </div>
 
 
