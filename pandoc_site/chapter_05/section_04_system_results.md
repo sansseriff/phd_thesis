@@ -63,6 +63,8 @@ Signals from the SNSPDs are directed to a free-running time tagger (Swabian) and
 
 <!-- %# about phase variation and guard regions -->
 
+#### Phase variation and guard regions
+
 The coincidence rate across Alice and Bob’s middle bins varies sinusoidally with respect to the combined phase relationship of the source and readout interferometers (see Supplementary note 1)&#160;[@Inagaki2013; @Marcikic2002]. In Fig. [1](#fig:figure_2nd_1) c the coincidences shown are for any combination of early, middle, or late bins. For tomography and visibility measurements, coincidence detections across specific bin pairings are considered.\
 <!-- %Interferometers with longer time delay or lower jitter detectors would negate the need for guard regions. -->
 
@@ -88,21 +90,32 @@ Channels 35 and 59 are chosen for an analysis of entanglement visibility and rat
 
 The raw visibility versus $\mu$ is shown in blue in Fig. [2](#fig:shg_scan) a. Relative to similar measurements [@Kim2022], this drops quickly with increasing $\mu$, and one reason is the presence of accidental coincidences across mutually incompatible spectral modes. The presence of these unwanted coincidences is a consequence of the narrowband filtering regime, and depends on factors included the singles rates $S_A$ and $S_B$, and the geometric compensation factor $\delta$ <span class=orange markdown>(see Supplementary note 9 for derivation)</span>. We model this type of accidental coincidence rate $C_{Acc}$ versus $\mu$, and subtract it off from coincidence measurements to produce the grey data in Fig. [2](#fig:shg_scan) a. This simulated visibility’s more gradual drop with increasing $\mu$ highlights the detrimental effect of our high single-to-coincidence rates $S_A/C_{AB}$, $S_B/C_{AB}$. As detailed in the discussion section below, this motivates special source engineering techniques for future systems.
 
-\begin{figure}
+<!-- \begin{figure}
     \centering
     \includegraphics[width=0.8\linewidth]{8ch_bar_graph_high_power_light.pdf}
     \caption{a) Visibility for the main 8 channel pairs, measured at a high (22.9~mW) and a low (0.21~mW) SHG pump power setting. Each power setting results in similar $\mu$ for all channels: $\mu_L = 5.6{\times}10^{-5} \pm 9{\times}10^{-6}$ and $\mu_H = 5.0{\times}10^{-3} \pm 3{\times}10^{-4}$.  b) Rate metrics for the 8 channel pairs at the same high and low power settings. The range of possible values for distillable entanglement rate is spanned by the yellow regions, bounded above by log-negativity and below by coherent information. Rates shown assume readout of all 4 available interferometer ports, based on data measured using one port each at Alice and Bob}
     \label{fig:channel_data}
-\end{figure}
+\end{figure} -->
+
+<figure markdown> 
+    <a name='fig:channel_data'></a> 
+    <img alt="fig:channel_data" style="width: 80%; margin: auto;" src="../figs/8ch_bar_graph_high_power_light.svg#only-light" >
+    <img alt="fig:channel_data" style="width: 80%; margin: auto;" src="../figs/8ch_bar_graph_high_power_dark.svg#only-dark" > 
+    <figcaption markdown> Figure 3: **Visibilities and rates for 8 channel pairs** a) Visibility for the main 8 channel pairs, measured at a high (22.9&#160;mW) and a low (0.21&#160;mW) SHG pump power setting. Each power setting results in similar $\mu$ for all channels: $\mu_L = 5.6{\times}10^{-5} \pm 9{\times}10^{-6}$ and $\mu_H = 5.0{\times}10^{-3} \pm 3{\times}10^{-4}$. b) Rate metrics for the 8 channel pairs at the same high and low power settings. The range of possible values for distillable entanglement rate is spanned by the yellow regions, bounded above by log-negativity and below by coherent information. Rates shown assume readout of all 4 available interferometer ports, based on data measured using one port each at Alice and Bob</figcaption>
+    </figure>
 
 We quantify the rate of useful entanglement by supplying bounds for the distillable entanglement rate $C_D$. Measured in ebits/s, $C_D$ is the maximal asymptotic rate of Bell-pair production per coincidence using only local operations and classical communications [@Alshowkan2022; @Bennett1996]. It is bounded above by log-negativity $C_N = C_{AB} E_N$ and below by coherent information $C_I = C_{AB} E_I$ [@Alshowkan2022]. For each pump power setting in Fig. [2](#fig:shg_scan), a series of tomographic measurements is performed and density matrices are calculated. The values of $E_I$ and $E_N$ are calculated from the density matrices as detailed in <span class=orange markdown>Supplementary note 8</span>.
 
-Figure Fig. **¿fig:channel_data?** shows visibilities, raw coincidence rates, and bounded distillable entanglement rates for two pump powers and all 8 channel pairings. The highest pump power is currently limited by our EDFA-amplified SHG module. The pump power in principle could be increased until the SNSPD efficiency drops due to saturation, and the net coincidence rate plateaus. Without the time-walk correction, high-rate jitter becomes an issue well before the gradual drop of SNSPD efficiency. At the $\mu_H$ (22.9&#160;mW) power, the singles rates $S_A, S_B$ average to 3.84 MHz, for which SNSPD efficiencies are about 78% of nominal.
+Figure Fig. [3](#fig:channel_data) shows visibilities, raw coincidence rates, and bounded distillable entanglement rates for two pump powers and all 8 channel pairings. The highest pump power is currently limited by our EDFA-amplified SHG module. The pump power in principle could be increased until the SNSPD efficiency drops due to saturation, and the net coincidence rate plateaus. Without the time-walk correction, high-rate jitter becomes an issue well before the gradual drop of SNSPD efficiency. At the $\mu_H$ (22.9&#160;mW) power, the singles rates $S_A, S_B$ average to 3.84 MHz, for which SNSPD efficiencies are about 78% of nominal.
 
 <!-- % By about 16 MHz, SNSPD efficiency drops by 3dB.  -->
 
 Using the data in Fig. [1](#fig:figure_2nd_1) a, we model the JSI of our pair source as a product of pump envelope and phase matching condition functions
 
-$$|f(\omega_s, \omega_i)|^2 = |\psi_{\mathrm{ph}}\left(\omega_s, \omega_i\right)|^2 *|\psi_p\left(\omega_s, \omega_i\right)|^2,$$ which depends on the wavelength (769.78 nm) and bandwidth (243 GHz FWHM) of up-converted light out of the SHG, measured with a spectrum analyzer. The path efficiencies from SPDC to detectors are also fitted based on integrations over the JSI that model the DWDM transmission passbands (see Supplementary note 6).
+$$
+|f(\omega_s, \omega_i)|^2 = |\psi_{\mathrm{ph}}\left(\omega_s, \omega_i\right)|^2 *|\psi_p\left(\omega_s, \omega_i\right)|^2,
+$$
+
+which depends on the wavelength (769.78 nm) and bandwidth (243 GHz FWHM) of up-converted light out of the SHG, measured with a spectrum analyzer. The path efficiencies from SPDC to detectors are also fitted based on integrations over the JSI that model the DWDM transmission passbands (<span class=orange markdown>see Supplementary note 6</span>).
 
 We calculate the Schmidt decomposition of the pair source JSI, taking into account the DWDM filters at Alice and Bob, and derive an average inverse Schmidt number $1/K$ of $0.87$. This value quantifies the spectral purity of the entangled photon source, and is theoretically equivalent to the visibility of a two-source HOM (Hong-Ou-Mandel) interferogram&#160;[@mandel1995optical]. If 50 GHz ITU channels are used instead, the resulting filtered JSI better approximates a single mode, and the model predicts $1/K = 0.96$.
