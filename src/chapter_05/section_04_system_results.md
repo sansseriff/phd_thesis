@@ -51,7 +51,7 @@ In the following, rigorous tests of entanglement are primarily done with the 8 I
 Signals from the SNSPDs are directed to a free-running time tagger (Swabian) and processed with custom software. The resulting histograms, referenced from a shared clock (@fig:figure_2nd_1 c), depict three peaks, which are caused by the sequential delays of the source and readout interferometers. Some intensity imbalance between long and short paths is present in these interferometers, which explains the asymmetry between early and late peaks in @fig:figure_2nd_1 c. Such imbalances are present in both the source and readout interferometers to varying degrees. The interferometer used for the source exhibits an early/late intensity balance ratio of 1.13. Alice and Bob's interferometers exhibit early/late imbalances of 1.24 and 1.15 respectively. An analysis of how this type of imbalance affects entanglement visibility is included in Supplementary note 10.
 
 <!-- %# about phase variation and guard regions -->
-#### Phase variation and guard regions
+<!-- #### Phase variation and guard regions -->
 The coincidence rate across Alice and Bob's middle bins varies sinusoidally with respect to the combined phase relationship of the source and readout interferometers (see Supplementary note 1)~[@Inagaki2013; @Marcikic2002]. In @fig:figure_2nd_1 c  the coincidences shown are for any combination of early, middle, or late bins. For tomography and visibility measurements, coincidence detections across specific bin pairings are considered.  
 <!-- %Interferometers with longer time delay or lower jitter detectors would negate the need for guard regions. -->
 

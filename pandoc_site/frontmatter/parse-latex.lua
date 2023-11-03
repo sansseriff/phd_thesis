@@ -95,6 +95,10 @@ function Div(el)
     return el.content[1]
   end
 
+  if el.classes[1] == "html" then
+    return pandoc.RawInline('latex', "")
+  end
+
   if el.attributes.style then
     local style = el.attributes.style
     local color = style:match("color:%s*([^;]+)")
@@ -120,6 +124,7 @@ function Div(el)
   end
 
 end
+
 
 -- converts things like <span color=red>This text is red </span>
 Span = function(el)

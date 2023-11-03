@@ -18,6 +18,15 @@ function RawBlock(raw)
     end
 end
 
+-- function RawBlock(el)
+--     if FORMAT:match 'markdown' and el.format:match 'latex' then
+--         print(el)
+--         return pandoc.RawInline('markdown', "")
+--     else
+--         return el
+--     end
+-- end
+
 function RawInline(raw)
     if raw.text == "\n" then
         return ""
@@ -191,6 +200,10 @@ function Div(el)
     --     table.insert(el.content, pandoc.RawInline('markdown', '</div>'))
     --     return el.content
     -- end
+
+    if el.classes[1] == "latex" then
+        return pandoc.RawInline('markdown', "")
+      end
 
     if el.attributes.style then
         local style = el.attributes.style

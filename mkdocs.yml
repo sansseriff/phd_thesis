@@ -118,6 +118,7 @@ nav:
     - chapter_05/index.md
     - Introduction: chapter_05/section_03_introduction.md
     - System & Results: chapter_05/section_04_system_results.md
+    - Discussion: chapter_05/section_05_discussion.md
   - "Ch. 6: Conclusion":
     - chapter_06/index.md
     - Summary: chapter_06/section_03_summary.md

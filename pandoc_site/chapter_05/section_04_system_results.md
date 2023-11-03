@@ -14,7 +14,7 @@ DWDM outputs are sent to differential niobium nitride (NbN) single pixel SNSPDs&
 
 <!-- % time walk correction -->
 
-A novel time-walk or pulse-pileup correction technique is used to extract accurate measurements of SNSPD pulses that arrive between 23 and 200&#160;ns after a previous detection on the same RF channel. Without special handling of these events, timing jitter will suffer due to RF pulse amplitude variations and pileup effects. As detailed in Supplementary note 3, the correction method works by subtracting off predicable timing distortions based on the inter-arrival time that precedes them&#160;[@Mueller2023; @Craiciu23]. An in-situ calibration process is used to build a lookup table that relates corrections and inter-arrival time. At the highest achievable pump power, this correction method leads to 320% higher coincidence rates compared to a data filtering method that rejects all distorted events arriving within \$\simeq\$200&#160;ns of a previous pulse.
+A novel time-walk or pulse-pileup correction technique is used to extract accurate measurements of SNSPD pulses that arrive between 23 and 200&#160;ns after a previous detection on the same RF channel. Without special handling of these events, timing jitter will suffer due to RF pulse amplitude variations and pileup effects. As detailed in Supplementary note 3, the correction method works by subtracting off predicable timing distortions based on the inter-arrival time that precedes them&#160;[@Mueller2023; @Craiciu23]. An in-situ calibration process is used to build a lookup table that relates corrections and inter-arrival time. At the highest achievable pump power, this correction method leads to 320% higher coincidence rates compared to a data filtering method that rejects all distorted events arriving within $\simeq$ 200&#160;ns of a previous pulse.
 
 ## Results
 
@@ -63,7 +63,7 @@ Signals from the SNSPDs are directed to a free-running time tagger (Swabian) and
 
 <!-- %# about phase variation and guard regions -->
 
-#### Phase variation and guard regions
+<!-- #### Phase variation and guard regions -->
 
 The coincidence rate across Alice and Bob’s middle bins varies sinusoidally with respect to the combined phase relationship of the source and readout interferometers (see Supplementary note 1)&#160;[@Inagaki2013; @Marcikic2002]. In Fig. [1](#fig:figure_2nd_1) c the coincidences shown are for any combination of early, middle, or late bins. For tomography and visibility measurements, coincidence detections across specific bin pairings are considered.\
 <!-- %Interferometers with longer time delay or lower jitter detectors would negate the need for guard regions. -->
