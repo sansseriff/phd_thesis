@@ -15,7 +15,7 @@
  \makecell[l]{secret key rate, $SKR$ \\(0.007)}& 0.309 & 2.21 &  4.73  &  14.3 \\
  \hline
 \end{tabular}
-\caption{Per-channel predicted maximum values for the 4 rate metrics are shown in the column labeled `1 Channel'. Depending on the metric, the maxima are achieved for different pump powers $\mu$ (See supplemental note 11). The $\mu$ value that maximizes each metric is shown in parenthesis on the left.}
+\caption[{Extrapolating entanglement rates to more channels}]{Per-channel predicted maximum values for the 4 rate metrics are shown in the column labeled `1 Channel'. Depending on the metric, the maxima are achieved for different pump powers $\mu$ (See supplemental note 11). The $\mu$ value that maximizes each metric is shown in parenthesis on the left.}
 \label{table:maximum_rates}
 \end{table}</div>
 
