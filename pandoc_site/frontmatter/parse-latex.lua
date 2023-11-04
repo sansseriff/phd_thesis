@@ -90,9 +90,7 @@ end
 function Div(el)
   if el.classes:includes("latex") then
     -- return pandoc.Para(el.content)
-    print(el.content[1].text)
-    print(el.content[1])
-    return el.content[1]
+    return el.content
   end
 
   if el.classes[1] == "html" then

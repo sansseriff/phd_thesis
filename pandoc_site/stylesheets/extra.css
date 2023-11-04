@@ -95,6 +95,20 @@ h1 {
     color: var(--pg-red);
 }
 
+
+.md-typeset__scrollwrap {
+    margin: 0;
+}
+.md-typeset__table {
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+ }
+
+.md-typeset table:not([class]) {
+    display: table;
+}
+
 .orange {
     color: var(--pg-orange);
     background-color: var(--orange-bg);
