@@ -1,6 +1,6 @@
 ## Discussion
 <div class="latex">\begin{table}
-\begin{tabular}{ |p{2.9cm}||p{1.7cm}|p{1.7cm}|p{1.7cm}|p{1.7cm}|}
+\begin{tabular}{ |p{3.5cm}||p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
  \hline
  \multicolumn{5}{|c|}{Extrapolated rates (MHz)} \\
  \hline
