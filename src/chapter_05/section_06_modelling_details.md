@@ -59,6 +59,7 @@ The coincidence rates for all wavefunction branches are the same if $\theta$ in 
 \end{tabular}
 \caption[{Rates for wavefunction branches}]{Singles and coincidence rates for wavefunction branches. The $A+, B+$ branch was measured, and the rates of other branches are predicted using relative transmission factors $R_A, R_B$}
 \label{table:branches}
+
 \end{table}
 
 
