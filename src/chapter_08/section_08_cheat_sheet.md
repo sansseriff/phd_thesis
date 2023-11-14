@@ -9,6 +9,21 @@ content here
 to put something only in the latex output:
 
 
+to get numbered equations to work in both latex and html, use this format. Notice that the label is used twice, once inside the align block and once outside:
+
+$$ 
+\begin{align}
+P_{A+ B+} &= |\langle 2|2\rangle|^2_{A+ B+} = 2(1 + v \cos(\theta)) \label{eq:cosines}\\
+P_{A+ B-} &= |\langle 2|2\rangle|^2_{A+ B-} = 2(1 - v \cos(\theta)) \notag \\
+P_{A- B+} &= |\langle 2|2\rangle|^2_{A- B+} = 2(1 - v \cos(\theta)) \notag \\
+P_{A- B-} &= |\langle 2|2\rangle|^2_{A- B-} = 2(1 + v \cos(\theta)) \notag \\ \notag
+\end{align}
+$$ 
+{#eq:cosines}
+
+NOTE if its NOT a numbered equation you have to switch align to aligned!!
+
+
 
 <!-- and this might work? -->
 <!-- ```{=latex}

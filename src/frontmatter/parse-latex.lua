@@ -198,7 +198,15 @@ end
 
 -- added 10.4.02023
 -- for using $$ and $ for math instead of \(...\)
+-- function Math (m)
+--   local delimiter = m.mathtype == 'InlineMath' and '$' or '$$'
+--   return pandoc.RawInline('tex', delimiter .. m.text .. delimiter)
+-- end
+
 function Math (m)
   local delimiter = m.mathtype == 'InlineMath' and '$' or '$$'
+  if string.sub(m.text, 1, 12) == '\\begin{align}' then
+    delimiter = ''
+  end
   return pandoc.RawInline('tex', delimiter .. m.text .. delimiter)
 end
