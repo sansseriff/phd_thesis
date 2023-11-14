@@ -33,6 +33,11 @@ function figure_image(elem)
 end
 
 function Para(para)
+
+  if para.content[1].identifier and string.sub(para.content[1].identifier, 1, 2) == "eq" then
+    print(para.content[1].content[1])
+  end
+
   local img = figure_image(para)
   if not img or not img.caption or not img.attributes['short-caption'] then
     return nil
