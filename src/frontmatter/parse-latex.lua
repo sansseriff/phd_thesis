@@ -205,8 +205,8 @@ end
 
 function Math (m)
   local delimiter = m.mathtype == 'InlineMath' and '$' or '$$'
-  print(string.sub(m.text, 1, 14))
-  if string.sub(m.text, 1, 14) == '\begin{align}' then
+  print(string.sub(m.text, 2, 14))
+  if string.sub(m.text, 2, 14) == 'begin{align}' then
     print("################ correct")
     delimiter = ''
   end
