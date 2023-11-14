@@ -73,8 +73,40 @@ end
 -- This function takes the src/ style of figures and converts it into a mkdocs format that supports
 -- light and dark mode, and figure captions.
 
+-- function Para(el)
+--     print(el.identifier)
+-- end
 
 function Para(para)
+
+    if para.content[1].identifier and string.sub(para.content[1].identifier, 1, 2) == "eq" then
+        -- fix equations
+        -- <a name='table:branches'></a>
+        -- string = string.format("<a name='%s'></a>", para.content[1].identifier)
+        -- math = para.content[1].content[1]
+        local link = string.format("<a name='%s'></a>\n", para.content[1].identifier)
+        local linkBlock = pandoc.RawBlock("markdown", link)
+        -- table.insert(para.content.content, 1, linkBlock)
+        -- local math = para.content[2].content[1]
+        -- print
+
+
+        -- print(para.content[1].content[1])
+        -- table.insert(para.content, 1, pandoc.RawInline('markdown', string))
+        -- table.insert(para.content, pandoc.RawInline('markdown', ''))
+        -- print(para.content[1])
+
+
+
+        -- this works
+        -- print(para.content[1].content[1])
+        table.insert(para.content[1].content, 1, linkBlock)
+        table.insert(para.content[1].content, pandoc.RawInline('markdown', '\n'))
+
+
+        return para.content[1].content
+    end
+
     local img = figure_image(para)
 
     -- if img.attributes['style'] then
@@ -175,6 +207,26 @@ function Maths2Markdown(sp)
     return sp
 end
 
+-- math-printer.lua
+-- function Math(el)
+--     -- el.t can be 'Math', 'InlineMath', or 'DisplayMath'
+--     -- el.text is the LaTeX code
+--     print(el.text)
+--     -- Return the element unchanged
+--     return el
+-- end
+
+-- math-label-capture.lua
+-- function Div(el)
+--     -- Check if the Div contains a math block
+--     if #el.content > 0 and el.content[1].t == "Math" then
+--         -- Print the label of the math block
+--         print(el.identifier)
+--     end
+--     -- Return the element unchanged
+--     return el
+-- end
+
 -- This takes the native pandoc representation of Divs and outputs an html div with the markdown data attribute
 -- For some reason, pandoc was stripping the markdown data attribute when deactivating the native_divs extension
 function Div(el)
@@ -200,6 +252,8 @@ function Div(el)
     --     table.insert(el.content, pandoc.RawInline('markdown', '</div>'))
     --     return el.content
     -- end
+
+    -- if 
 
     if el.classes[1] == "latex" then
         return pandoc.RawInline('markdown', "")
@@ -228,6 +282,8 @@ function Div(el)
     end
     return el
 end
+
+
 
 function Span(el)
     -- <span class="bokeh" id="../code/test_1"></span>

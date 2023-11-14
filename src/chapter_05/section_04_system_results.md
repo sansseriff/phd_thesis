@@ -96,3 +96,4 @@ $$
 which depends on the wavelength (769.78 nm) and bandwidth (243 GHz FWHM) of up-converted light out of the SHG, measured with a spectrum analyzer. The path efficiencies from SPDC to detectors are also fitted based on integrations over the JSI that model the DWDM transmission passbands (<span style="color: orange">see Supplementary note 6</span>). 
 
 We calculate the Schmidt decomposition of the pair source JSI, taking into account the DWDM filters at Alice and Bob, and derive an average inverse Schmidt number $1/K$ of $0.87$. This value quantifies the spectral purity of the entangled photon source, and is theoretically equivalent to the visibility of a two-source HOM (Hong-Ou-Mandel) interferogram~[@mandel1995optical]. If 50 GHz ITU channels are used instead, the resulting filtered JSI better approximates a single mode, and the model predicts $1/K = 0.96$. 
+

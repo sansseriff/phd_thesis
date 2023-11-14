@@ -8,3 +8,5 @@ eqnPrefix:
 secPrefix:
   - "Sec."
   - "Secs."
+equationNumberTeX: \\tag
+eqnIndexTemplate: $$i$$
