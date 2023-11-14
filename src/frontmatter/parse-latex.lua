@@ -208,5 +208,6 @@ function Math (m)
   if string.sub(m.text, 1, 12) == '\\begin{align}' then
     delimiter = ''
   end
+  print("working")
   return pandoc.RawInline('tex', delimiter .. m.text .. delimiter)
 end
