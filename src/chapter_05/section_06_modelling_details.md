@@ -46,6 +46,7 @@ The coincidence rates for all wavefunction branches are the same if $\theta$ in 
 \definecolor{color2}{HTML}{6275CE}
 \definecolor{color3}{HTML}{D088BF}
 \definecolor{color4}{HTML}{F4A596}
+\being{table}
 \begin{tabular}{ |p{2.5cm}||p{1.3cm}|p{2.9cm}|p{2.9cm}|p{3.4cm}|  }
  \hline
  \multicolumn{5}{|c|}{Predicted Singles and Coincidence Rates for Full Wavefunction} \\
@@ -57,8 +58,10 @@ The coincidence rates for all wavefunction branches are the same if $\theta$ in 
  coincidence rate&\textcolor{color1}{$C_{A+B+}$}&\textcolor{color3}{$C_{A-B+}=R_A C_{A+B+}$}&\textcolor{color2}{$C_{A+B-}=R_B C_{A+B+}$}&\textcolor{color4}{$C_{A-B-}=R_B R_A C_{A+B+}$}\\
  \hline
 \end{tabular}
-\caption[{Rates for wavefunction branches}]{ingles and coincidence rates for wavefunction branches. The $A+, B+$ branch was measured, and the rates of other branches are predicted using relative transmission factors $R_A, R_B$}
-\label{table:branches}</div>
+\caption[{Rates for wavefunction branches}]{Singles and coincidence rates for wavefunction branches. The $A+, B+$ branch was measured, and the rates of other branches are predicted using relative transmission factors $R_A, R_B$}
+\label{table:branches}
+\end{table}
+</div>
 ```{=html}
 $$
 \definecolor{color1}{RGB}{56, 165, 186}
