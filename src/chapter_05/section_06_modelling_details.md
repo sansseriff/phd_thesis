@@ -26,6 +26,7 @@ P_{A- B-} &= |\langle 2|2\rangle|^2_{A- B-} = 2(1 + v \cos(\theta)) \notag \\ \n
 $$ {#eq:cosines}
 <!-- \end{align} -->
 
+
 where $v$ was added to denote the visibility of the phase basis. Scanning the phase of the system and measuring coincidence rate across the center bins produces sinusoidal fringes as shown in @fig:fringes. 
 
 
