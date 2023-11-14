@@ -49,9 +49,11 @@ The width $x$ of the guard regions centered at 80 and 160 ps were set to 10~ps. 
 ## Incompatible Bases \& Accidental Coincidence Rate
 
 An entangled pair can be called 'spectrally compatible' with a given DWDM channel pairing if --given no losses-- it would be detected 100\% of the time across that channel pair. In the case where signal and idler modes are perfectly spectrally compatible, it has been shown that accidental coincidences still negatively impact visibilities \cite{Kim2022}. In this case and assuming negligible dark counts, visibility is reduced as: 
+$$
 \begin{align}
 V = \frac{1}{1+\mu}V_0
 \end{align}
+$$
 Where $V_0$ is a nominal interferometer-limited visibility \cite{Kim2022} and $\mu$ is the mean photon number per pulse (classically defined like with \ref{eq:colorless}). The accidental coincidence rate discussed in the main text $C_{Acc}$ is only partially related to this, as it specifically takes into account only accidental coincidences due to incompatible spectral modes. Such coincidences can arise from two situations, and can be assigned their own coincidence rates
 \begin{itemize}
 \item $C_{ee}$: two photons both from mutually incompatible spectral regions, like the red regions in Fig. \ref{fig:narroband}c 
