@@ -41,7 +41,8 @@ $$R_A = 0.99 \pm 0.03, ~~~~~~ R_B = 1.04 \pm 0.03$$
 
 The coincidence rates for all wavefunction branches are the same if $\theta$ in \ref{cosines} is set to zero. With this phase state rate $C_{A+ B+, \theta=0}$ measured directly (labeled B in \ref{fig:fringes}), it's straightforward to estimate the full wavefunction coincidence rate across all interferometer outputs. As shown in table @table:rates, the rate is $C_{A+ B+}(1 + R_A + R_B + R_AR_B)$. This estimate is used to express a full coincidence rate for figures 3 and 4 in the main text. 
 
-<div class="latex">\being{table}
+```{=latex}
+\being{table}
 \definecolor{color1}{HTML}{38A5BA}
 \definecolor{color2}{HTML}{6275CE}
 \definecolor{color3}{HTML}{D088BF}
@@ -60,7 +61,7 @@ coincidence rate&\textcolor{color1}{$C_{A+B+}$}&\textcolor{color3}{$C_{A-B+}=R_A
 \caption[{Rates for wavefunction branches}]{Singles and coincidence rates for wavefunction branches. The $A+, B+$ branch was measured, and the rates of other branches are predicted using relative transmission factors $R_A, R_B$}
 \label{table:branches}
 \end{table}
-</div>
+```
 ```{=html}
 $$
 \definecolor{color1}{RGB}{56, 165, 186}
