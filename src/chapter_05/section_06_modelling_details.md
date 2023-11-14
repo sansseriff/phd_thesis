@@ -165,13 +165,21 @@ where $\lambda_i$ are the Schmidt coefficients \cite{ZielnickiKwiat2018SPDCmodel
 \end{figure}
 
 It is common in the literature to calculate signal and idler arm efficiencies with equations of the form:
+
+$$
 \begin{align}
 \eta_{s(i)}=\frac{C_{s i}}{S_{i(s)}} \label{regular_eff}
 \end{align}
+$$
+
 Where $\eta_{s(i)}$ is coupling efficiency of the signal (idler) arm, $C_{s i}$ is the coincidence rate, and $S_{i(s)}$ is the singles rate on the idler (signal) arm. $\mu$, the mean pair rate per period or cycle, may also be defined in terms of the repetition rate $R$ as $R \mu \eta_{s(i)}=S_{s(i)}$. With these, one can define $\mu$ in terms of coincidence rate $C_{s i}$ and singles rates $S_s$ and $S_i$:
+
+$$
 \begin{align}
     \mu=\frac{S_s S_i}{C_{s i} R} \label{eq:colorless}
 \end{align}
+$$
+
 However, this definition breaks down in the limit of narroband filtering, or when the losses on the signal and ider arm cannot be thought of as 'colorless'. Consider the situation of two very-narroband filters, as illustrated in figure \ref{fig:narroband}a. This situation can be simulated using the JSI model. We set signal and idler filter bandwidth to 5\% of the 100 GHz DWDM bandwidths. Pump power is scaled by 200x. Transmission of the filters at their maximum is set to 100\%. This results in $S_s = 58.0~\mathrm{MHz}$, $S_i = 57.6~\mathrm{MHz}$, and $C_{s i} = 567~\mathrm{KHz}$. With these values, eq. \ref{eq:colorless} suggests a $\mu$ value of 1.47. This is misleading because it's unreasonable to expect the red outlined region at the intersection of the filters in \ref{fig:narroband}a --which is responsible for all true detections of entangled pairs-- to be the source of more than one entangled pair per pulse. Rather, the high singles rates $S_s$ and $S_i$ are having an adverse effect on the $\mu$ calculation. Most of the singles detections are from mutually incompatible spectral modes -- the 4 regions that form a cross shape above, below, and to the sides of the red outlined square. 
 
 We propose a definition of $\mu$ similar to the form of eq. \ref{C_uv}:
