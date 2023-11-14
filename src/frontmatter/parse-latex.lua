@@ -205,9 +205,10 @@ end
 
 function Math (m)
   local delimiter = m.mathtype == 'InlineMath' and '$' or '$$'
-  if string.sub(m.text, 1, 12) == '\\begin{align}' then
+  print(string.sub(m.text, 1, 12))
+  if string.sub(m.text, 1, 12) == '\n\\begin{align}' then
     delimiter = ''
   end
-  print("working")
+  -- print("working")
   return pandoc.RawInline('tex', delimiter .. m.text .. delimiter)
 end
