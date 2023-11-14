@@ -614,6 +614,17 @@ results here
 
 {}
 
+\hypertarget{discussion}{%
+\section{Discussion}\label{discussion}}
+
+We have shown that measurement of the slew rate or slope of SNSPD RF pulses may be useful for both photon number and arrival time discrimination. This is a fairly practical method that limited assumptions about the underlying modulation pattern of the optical signal. We show it allows for the measurement of pulse position modulation signals based on 10 and 20 Ghz clocks for which each optical pulse contains anywhere from 1 to 5 or more photons.
+
+We also present a 2-dimensional gaussian mixture model of the SNSPD response to the two trigger levels in an effort to model the available data as accurately and faithfully as possible. This may be used for photon number and arrival time discrimination as well. Assigning SNSPD detection events to photon number or PPM bins generalizes to assigning points in a 2-dimensional space to probability distributions built from gaussian mixtures. We show the gaussian mixture method moderately improves the accuracy of arrival time discrimination relative to the slope-based method.
+
+The full 2D treatment of photon number discrimination based on community detection of gaussian mixture groups is undeniably more complex than principle component analysis methods demonstrated in previous research\autocite{sauer2023resolving,schapeler2023superconducting}. However, it's generality may be advantageous for future SNSPD systems that gather added data about the transient state of the SNSPD and readout circuitry. For example, more than two timing measurements from each SNSPD pulse may prove to be useful. Recent research has demonstrated that photon number information is present in the falling edge of the pulse \autocite{sauer2023resolving,schapeler2023superconducting}, and, as shown here, timing measurements from two trigger levels on the rising edge are also useful. Therefore, the use of three or more unique time-correlated measurements may be advantageous. Digitizing the RF pulse with a high speed ADC or oscilloscope extends this thinking to many more measurements. Ultimately, photon number discrimination becomes a higher dimensional problem, for which gaussian mixture methods may outperform principle component analysis.
+
+Finally, higher dimensional analysis may be necessary when pulse overlap or time walk effects \autocite{Mueller2023} complicate the nuanced photon number response characteristics of each SNSPD pulse. This is important in future SNSPD systems that are designed to exhibit both high maximum count rates \autocite{Craiciu23} and photon number resolution.
+
 \hypertarget{synchronization-with-a-software-phase-locked-loop-pll}{%
 \section{Synchronization with a Software Phase Locked Loop (PLL)}\label{synchronization-with-a-software-phase-locked-loop-pll}}
 
@@ -624,9 +635,6 @@ results here
 3. I had some sense that that should be a way of `averaging' past clock cycles in some way to cancel jitter. After some research and failed tests toward developing my own averaging method, I learned a software based Phase Locked Loop is just what I needed.
 4. Initial version was adapted from a Matlab code on the Phase Locked Loop wikipedia page. That code was written for a sampled sign wave, but I adapted to take in just one data point per period. For our non-coherent and time-resolved types of measurements with SNSPDs, we typically only have clocks of this type. Where the clock is expressed by some type of optical or RF pulse that arrives on a regular period.
 5. More recently Rahaf Youssef and I have worked on updating our software PLL tools so that its easier to understand and reason about, and easier to lock to a given signal.
-
-\hypertarget{outlook-towards-high-rate-pnr-and-time-walk-correction}{%
-\section{Outlook: Towards High Rate PNR and Time Walk Correction}\label{outlook-towards-high-rate-pnr-and-time-walk-correction}}
 
 \hypertarget{high-rate-entanglement-generation}{%
 \chapter{High Rate Entanglement Generation}\label{high-rate-entanglement-generation}}
@@ -744,8 +752,8 @@ which depends on the wavelength (769.78 nm) and bandwidth (243 GHz FWHM) of up-c
 
 We calculate the Schmidt decomposition of the pair source JSI, taking into account the DWDM filters at Alice and Bob, and derive an average inverse Schmidt number $1/K$ of $0.87$. This value quantifies the spectral purity of the entangled photon source, and is theoretically equivalent to the visibility of a two-source HOM (Hong-Ou-Mandel) interferogram~\autocite{mandel1995optical}. If 50 GHz ITU channels are used instead, the resulting filtered JSI better approximates a single mode, and the model predicts $1/K = 0.96$.
 
-\hypertarget{discussion}{%
-\section{Discussion}\label{discussion}}
+\hypertarget{discussion-1}{%
+\section{Discussion}\label{discussion-1}}
 
 \begin{table}
 \begin{tabular}{ |p{3.5cm}||p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
@@ -782,6 +790,70 @@ Part of the research was carried out at the Jet Propulsion Laboratory, Californi
 \subsubsection{Data availability}\label{data-availability}}
 
 Data underlying the results presented in this paper are available in \autocite{mueller2023code,mueller2023data}.
+
+\hypertarget{phase-basis-readout}{%
+\section{Phase basis readout}\label{phase-basis-readout}}
+
+This section uses numbers in kets to signify time delays, such that the notation from the main text transforms as $|e\rangle, |l\rangle \longrightarrow |0\rangle, |1\rangle$. Following the creation of the bell pair $\frac{1}{\sqrt{2}}(|00\rangle + e^{i \phi}|11\rangle)$ with the source interferometer, the readout interferometers at Alice and Bob transform each member of the entangled pair according to the operation \autocite{Marcikic2002}:
+
+$$|k\rangle \rightarrow \frac{1}{2}\left(|k\rangle_{(A/B)+}+e^{i \phi_{s / i} \mid}|k+1\rangle_{(A/B)+}+i|k\rangle_{(A/B)-}-i e^{i \phi_{s / i}}|k+1\rangle_{(A/B)-}\right)$$
+Where $(A/B)+$ and $(A/B)-$ denote the output ports of Alice ($A$) or Bob's ($B$) interferometer. The full state is a 28-term expression made of four so-called `branches' indexed by the four combinations of interferometer output ports: $A+ B+, A+ B- A- B+$ and $A- B-$. Each branch has a term in the following form, with amplitude dependent on the phase relationship between the interferometers:
+
+$$p\left(e^{i \phi}+qe^{i\left(\phi_s+\phi_i\right)}\right)|2\rangle_{Au}|2\rangle_{Bv} $$
+
+Where $p, q, u, v \in \{\{+1,+1, +, +\}, \{i,-1, +, -\}, \{i,-1, -, +\}, \{-1,+1, -, -\}\}$ for the four terms. These terms define the probability amplitude of the quantum state in the so-called phase basis. The modulous squared of these terms gives the phase-dependent probability of coincidences across the center time bins, as measured at interferometer outputs of Alice and Bob.
+
+All the phase terms can be grouped into one variable $\theta = \phi_s + \phi_i - \phi$, and the four $|2\rangle|2\rangle$ terms can be re-expressed in terms of the the cosine function \autocite{Marcikic2002,Kim2022}:
+$$
+\begin{align}
+P_{A+ B+} &= |\langle 2|2\rangle|^2_{A+ B+} = 2(1 + v \cos(\theta))  \label{cosines}\\
+P_{A+ B-} &= |\langle 2|2\rangle|^2_{A+ B-} = 2(1 - v \cos(\theta)) \notag \\
+P_{A- B+} &= |\langle 2|2\rangle|^2_{A- B+} = 2(1 - v \cos(\theta)) \notag \\
+P_{A- B-} &= |\langle 2|2\rangle|^2_{A- B-} = 2(1 + v \cos(\theta)) \notag \\ \notag
+\end{align}
+$$
+
+where $v$ was added to denote the visibility of the phase basis. Scanning the phase of the system and measuring coincidence rate across the center bins produces sinusoidal fringes as shown in Fig.~\ref{fig:fringes}.
+
+\hypertarget{coincidence-rate-interferometer-output-ports}{%
+\section{Coincidence Rate \& Interferometer Output Ports}\label{coincidence-rate-interferometer-output-ports}}
+
+As each readout interferometer has two output ports, the full output state observed at Alice and Bob cannot be fully measured with two SNSPDs. We label the output ports of Alice (A) and Bob's (B) interferometers with plus ($+$) and minus ($-$). The plus ports are used for most measurements. By measuring the relative loss between the plus and minus ports, all singles rates $S_i$ and coincidence rates $C_{ij}, i,j \in \{A+, A-, B+, B-\}$ across different detectors can be estimated.
+
+$R_A$ is the ratio of transmissions $t_{A-}$ over \$ t\_\{A+\}\$, where $t_{A-}$ is the transmission through the input to output $A-$ and $t_{A+}$ is the transmission through the input to output $A-$. $R_B$ is defined analogously. We measure values for $R_A$ and $R_B$ by sending a pulsed laser into the input and measuring the ratio of power transmitted across the output ports:
+
+$$R_A = 0.99 \pm 0.03, ~~~~~~ R_B = 1.04 \pm 0.03$$
+
+\hypertarget{fig:branches}{%
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth,height=\textheight]{./chapter_05/figs/branches_light.pdf}
+\caption[{Wavefunction branches}]{\textbf{Wavefunction branches} Different pairings of interferometer output ports collect different wavefunction branches}
+\label{fig:branches}
+\end{figure}
+}
+
+The coincidence rates for all wavefunction branches are the same if $\theta$ in \ref{cosines} is set to zero. With this phase state rate $C_{A+ B+, \theta=0}$ measured directly (labeled B in \ref{fig:fringes}), it's straightforward to estimate the full wavefunction coincidence rate across all interferometer outputs. As shown in table \textcite{table:rates}, the rate is $C_{A+ B+}(1 + R_A + R_B + R_AR_B)$. This estimate is used to express a full coincidence rate for figures 3 and 4 in the main text.
+
+\definecolor{color1}{HTML}{38A5BA}
+\definecolor{color2}{HTML}{6275CE}
+\definecolor{color3}{HTML}{D088BF}
+\definecolor{color4}{HTML}{F4A596}
+\begin{tabular}{ |p{2.5cm}||p{1.3cm}|p{2.9cm}|p{2.9cm}|p{3.4cm}|  }
+ \hline
+ \multicolumn{5}{|c|}{Predicted Singles and Coincidence Rates for Full Wavefunction} \\
+ \hline
+ rate metrics     &  Branch 1 & Branch 2 & Branch 3 & Branch 4 \label{table:rates}\\
+ \hline
+ singles rate 1  & $S_{A+}$ &$S_{A-}=R_A S_{A+}$    &$S_{A+}$               &$S_{A-}=R_A S_{A+}$        \\
+ singles rate 2  & $S_{B+}$ &$S_{B+}$               &$S_{B-} = R_B S_{B+}$  &$S_{B-} = R_B S_{B+}$      \\
+ coincidence rate&\textcolor{color1}{$C_{A+B+}$}&\textcolor{color3}{$C_{A-B+}=R_A C_{A+B+}$}&\textcolor{color2}{$C_{A+B-}=R_B C_{A+B+}$}&\textcolor{color4}{$C_{A-B-}=R_B R_A C_{A+B+}$}\\
+ \hline
+\end{tabular}
+
+For main-text figure 2 in particular, coincidences were measured with the center bin rate tuned to a minimum $\theta=-\frac{\pi}{2}$ (grey solid line in main-text figure 2c). The rate therefore captures the contribution from the 6 phase-independent terms for the $A\!\!+\!\!B\!+\!$ wavefunction branch. This can be extrapolated to the $\theta=0$ state by multiplying by $\frac{4}{3}$. For the rate displayed to be consistent with the measures of coupling efficiency $\eta$ (and so the interferometers aren't thought of as a source of \$\sim\$50\% loss), this rate is multiplied again by $(1 + R_AR_B)$ to represent two wavefunction branches. This results in a total scaling of:
+
+$$C_{fig. 2} = \frac{4}{3}(1 + R_AR_B)C_{measured}$$
 
 \hypertarget{conclusion}{%
 \chapter{Conclusion}\label{conclusion}}

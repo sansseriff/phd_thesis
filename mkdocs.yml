@@ -119,6 +119,8 @@ nav:
     - Introduction: chapter_05/section_03_introduction.md
     - System & Results: chapter_05/section_04_system_results.md
     - Discussion: chapter_05/section_05_discussion.md
+    - Modelling Details: chapter_05/section_06_modelling_details.md
+    - Experiment Details: chapter_05/section_07_experiment_details.md
   - "Ch. 6: Conclusion":
     - chapter_06/index.md
     - Summary: chapter_06/section_03_summary.md
