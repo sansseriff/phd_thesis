@@ -133,7 +133,7 @@ Where $a \in \{i, s\}$. Parameters of model for $|f(\omega_s, \omega_i)|^2$ were
 
 Varying MgO doping percentage and varying crystal temperature affect the Sellmeier equations in similar ways [@Gayer2008; @Jundt1997]. Therefore, crystal temperature $T$ was used as a fitting parameter, to stand in the unknown MgO doping percentage. The true crystal temperature during all measurements was $50.0^{\circ}~\mathrm{C}$, which was optimized to maximize coincidence rates.
 
-\% The waveguide/crystal used was 10 mm long, but we allow the effective length $L_g$ to converge to a shorter value. This is because we expect non-negligible group velocity mismatch $GVM = 1/n(\omega_p) - 1/n(\omega_{s(i)})$ that with the short (2 ps) pump pulse results in a shorter effective interaction length $L_g$ [@SchoberThesis2005]. We therefore accept some temporal broadening of the down-converted pulses in exchange for the higher conversion efficiency of a 10 mm crystal
+<!-- %  The waveguide/crystal used was 10 mm long, but we allow the effective length $L_g$ to converge to a shorter value. This is because we expect non-negligible group velocity mismatch $GVM = 1/n(\omega_p) - 1/n(\omega_{s(i)})$ that with the short (2 ps) pump pulse results in a shorter effective interaction length $L_g$ [@SchoberThesis2005]. We therefore accept some temporal broadening of the down-converted pulses in exchange for the higher conversion efficiency of a 10 mm crystal -->
 
 <figure markdown> 
     <a name='fig:jsi_sim'></a> 
@@ -207,7 +207,11 @@ $$
 \end{align}
 \tag{6}$$
 
-Here, $S_{s(i)}$ is the singles rate through a signal (idler) narrowband filter. $\eta_{i(s)}S_{s(i)}$ would be the coincidence rate if the idler (signal) filter was wide-band (or just colorless loss), but maintained the same efficiency as measured ($\eta_{i(s)}$). Therefore the fraction can be thought of as the ratio of a coincidence rate measurement with two narroband filters $[C_{is}]$ to a coincidence rate measurement with one narro-band and one wide-band filter $[\eta_{i(s)}S_{s(i)}]$. As we use the same bandwidth filters on the signal and idler arms, the $\delta_i$ and $\delta_s$ calculated from the measured data and JSI fitting results are similar. We use an averaged single $\delta$ value for all further analysis, unique to our JSI bandwidth and 100 GHz DWDM filters. $$\delta = 0.393 \pm 0.012$$ This is averaged from 8 $\delta_i$ and 8 $\delta_s$ values, for the 8 DWDM channel pairs along the main diagonal of the JSI.
+Here, $S_{s(i)}$ is the singles rate through a signal (idler) narrowband filter. $\eta_{i(s)}S_{s(i)}$ would be the coincidence rate if the idler (signal) filter was wide-band (or just colorless loss), but maintained the same efficiency as measured ($\eta_{i(s)}$). Therefore the fraction can be thought of as the ratio of a coincidence rate measurement with two narroband filters $[C_{is}]$ to a coincidence rate measurement with one narro-band and one wide-band filter $[\eta_{i(s)}S_{s(i)}]$. As we use the same bandwidth filters on the signal and idler arms, the $\delta_i$ and $\delta_s$ calculated from the measured data and JSI fitting results are similar. We use an averaged single $\delta$ value for all further analysis, unique to our JSI bandwidth and 100 GHz DWDM filters.
+
+$$\delta = 0.393 \pm 0.012$$
+
+This is averaged from 8 $\delta_i$ and 8 $\delta_s$ values, for the 8 DWDM channel pairs along the main diagonal of the JSI.
 
 We see Eq. [6](#eq:new_eff) is a modified form of Eq. [3](#eq:regular_eff) that includes $\delta$. With $R \mu \eta_{s(i)}=S_{s(i)}$ again, we can define a new expression for $\mu$ using singles $S_{s(i)}$ and coincidence $C_{is}$ rates.
 
@@ -247,16 +251,24 @@ We use a density matrix to calculate bounds on $E_D$, the distillable entangleme
 
 $$E_N = \mathrm{log_2}||\rho^{A}|| \quad\quad\quad I_{A\rightarrow B} = H\left(\rho^\mathrm{B}\right)-H\left(\rho^{\mathrm{AB}}\right)$$
 
-Where $||\rho^{T_A}||$ is the trace norm of the partial transpose of $\rho$, the calculated bipartite density matrix. $H$ is the base-2 von Neumann entropy [@Vidal2002negativity; @Devetak2004coherent]
+Where $||\rho^{T_A}||$ is the trace norm of the partial transpose of $\rho$, the calculated bipartite density matrix. $H$ is the base-2 von Neumann entropy [@Vidal2002negativity; @Devetak2004coherent].
 
 The entanglement rate of the experiment in ebits/s is the coincidence rate $C_{AB}$ times $E_D$. We therefore plot $C_{AB}E_N = C_N$ and $C_{AB}E_I = C_I$ in the main text as the upper and lower bounds on entangled bit rate $C_{AB}E_D = C_D$. Multiple integrations are performed at each phase and power setting, so that multiple density matrices and multiple measures of coherent information and log-negativity may be derived. The averages and standard deviations of these sets of measurements are used to define the values and error bars for figures 3 and 4 in the main text.
 
-Figure 3 in the main text also shows a lower bound on secret key rate (SKR) given reasonable assumptions for a slightly different implementation of the entanglement source. This is calculated with a key genration rate formula [@ma2007quantum]:
+Figure 3 in the main text also shows a lower bound on secret key rate (SKR) given reasonable assumptions for a slightly different implementation of the entanglement source. This is calculated with a key generation rate formula [@ma2007quantum]:
 
+$$
 \begin{align}
 C_{SKR} &= C_{AB} E_S \\
 C_{SKR} &= q C_{AB}[1-f(\mathcal{E}) H_2(\mathcal{E})-H_2(\mathcal{E})]
-\end{align} Where $E_S$ is the secret key fraction, $C_{AB}$ is the raw coincidence rate, $q$ is a basis reconciliation factor, $\mathcal{E}$ is the quantum bit error rate, and $f(x)$ is the bidirectional error correction efficiency. Quantum bit error rate $\mathcal{E}$ is $(1-V)/2$ where $V$ is visibility&#160;[@Kim2022]. We choose a constant realistic value for $f(\mathcal{E})$ of 1.1 [@ElkoussReconciliation2010]. $H_2(x)$ is the binary entropy formula defined as $$\mathrm{H}_2(x)=-x \log _2(x)-(1-x) \log _2(1-x).$$ We use a basis reconciliation factor of 0.81, thereby assuming a readout configuration at both Alice and Bob where 90% of each channel’s flux is directed to a z-basis measurement and may be used to build the shared key. The other 10% is used for phase-basis measurements with the interferometers.
+\end{align}
+$$
+
+Where $E_S$ is the secret key fraction, $C_{AB}$ is the raw coincidence rate, $q$ is a basis reconciliation factor, $\mathcal{E}$ is the quantum bit error rate, and $f(x)$ is the bidirectional error correction efficiency. Quantum bit error rate $\mathcal{E}$ is $(1-V)/2$ where $V$ is visibility&#160;[@Kim2022]. We choose a constant realistic value for $f(\mathcal{E})$ of 1.1 [@ElkoussReconciliation2010]. $H_2(x)$ is the binary entropy formula defined as
+
+$$\mathrm{H}_2(x)=-x \log _2(x)-(1-x) \log _2(1-x).$$
+
+We use a basis reconciliation factor of 0.81, thereby assuming a readout configuration at both Alice and Bob where 90% of each channel’s flux is directed to a z-basis measurement and may be used to build the shared key. The other 10% is used for phase-basis measurements with the interferometers.
 
 <!-- \begin{figure}[H]
     \centering
@@ -274,9 +286,9 @@ C_{SKR} &= q C_{AB}[1-f(\mathcal{E}) H_2(\mathcal{E})-H_2(\mathcal{E})]
 
 ## Impact of experimental imperfections on entanglement visibility
 
-***Note: the following section is primary written by Samamtha Davis. It is included here for completeness.***
+***Note: the following section is primary written by Samamtha Davis, the second author for the paper on which this chapter is based. It is included here for completeness.***
 
-The experiment employs three Michaelson interferometers with a path-length delay of 80 ps: one at the source to generate the early and late time-bins, and one prior to each detector to control the measurement basis. To determine the effect of interferometric imperfections on the entanglement visibility, we model the interferometers as equivalent Mach-Zehnder interferometers as shown in Fig. Fig. **¿fig:interf_model?**\]. Imperfections in the interferometer are captured by the transmittance $t$ of the beamsplitter and internal path (mirror) efficiencies $|\alpha|^2$ and $|\beta|^2$. An ideal Michaelson interferometer has $t = 1/\sqrt{2}$ and $|\alpha|^2 = |\beta|^2 = 1$.
+The experiment employs three Michaelson interferometers with a path-length delay of 80 ps: one at the source to generate the early and late time-bins, and one prior to each detector to control the measurement basis. To determine the effect of interferometric imperfections on the entanglement visibility, we model the interferometers as equivalent Mach-Zehnder interferometers as shown in Fig. **¿fig:interf_model?**. Imperfections in the interferometer are captured by the transmittance $t$ of the beamsplitter and internal path (mirror) efficiencies $|\alpha|^2$ and $|\beta|^2$. An ideal Michaelson interferometer has $t = 1/\sqrt{2}$ and $|\alpha|^2 = |\beta|^2 = 1$.
 
 \begin{figure}[h!]
     \centering
@@ -285,34 +297,51 @@ The experiment employs three Michaelson interferometers with a path-length delay
     \label{fig:interf_model}
 \end{figure}
 
-\subsection{Source Interferometer Imperfections}
+### Source Interferometer Imperfections
 
-In the experiment, pulses of coherent light from a mode-locked laser (MLL) are injected into the input of the source interferometer. A field $\hat{E}$ at the input of the source interferometer transforms as \begin{align}
+In the experiment, pulses of coherent light from a mode-locked laser (MLL) are injected into the input of the source interferometer. A field $\hat{E}$ at the input of the source interferometer transforms as
+
+$$
+\begin{align}
     \hat{E}_{\text{in}}  \rightarrow rt \alpha e^{i\varphi} \hat{E}_{E,1} +  r^2 \alpha e^{i\varphi}\hat{E}_{E,2} + rt\beta \hat{E}_{L,1} + t^2\beta \hat{E}_{L,2} + ir\sqrt{1-|\alpha|^2}\hat{E}_{\text{vac}_1} +it\sqrt{1-|\beta|^2}\hat{E}_{\text{vac}_2} \label{eq:source_field_transform}
-\end{align} where the early and late temporal modes are denoted by subscripts “E” and “L”, the input and output modes are denoted by subscripts “in”, “1” and “2”, and $r = i\sqrt{1-|t|^2}$. Due to imperfect path efficiencies, part of the light leaks into the vacuum field mode $\hat{E}_{\text{vac}}$, which corresponds to the last term in Eq. **¿eq:source_field_transform?**. It follows that the power of the early and late output pulses in terms of the power of the input pulse are \begin{align}
+\end{align}
+$$
+
+where the early and late temporal modes are denoted by subscripts “E” and “L”, the input and output modes are denoted by subscripts “in”, “1” and “2”, and $r = i\sqrt{1-|t|^2}$. Due to imperfect path efficiencies, part of the light leaks into the vacuum field mode $\hat{E}_{\text{vac}}$, which corresponds to the last term in Eq. **¿eq:source_field_transform?**. It follows that the power of the early and late output pulses in terms of the power of the input pulse are
+
+<a name='eq:powers'></a>
+
+$$
+\begin{align}
     &P_{E,1} = |r|^2|t|^2|\alpha|^2 P_{in},&P_{E,2} = |r|^4 |\alpha|^2 P_{in} \label{eq:powers}\\
     &P_{L,1} = |r|^2|t|^2|\beta|^2 P_{in} ,&P_{L,2} = |t|^4 |\beta|^2 P_{in}.\nonumber 
 \end{align}
+\tag{8}$$
 
-%The splitting ratio $|t|^2$ and internal path efficiencies $|\alpha|^2$ and $|\beta|^2$ can be solved from ( Eq. **¿eq:powers?** ).
+%The splitting ratio $|t|^2$ and internal path efficiencies $|\alpha|^2$ and $|\beta|^2$ can be solved from ( Eq. [8](#eq:powers) ).
 
-\% Therefore, the powers $P_1$, $P_2$ measured at output ports 1 and 2 are % \begin{align}
-%     &P_{1} =|t|^2|r|^2(|\alpha|^2+|\beta|^2)P_{in},& P_{2} =(|r|^4|\alpha|^2 + |t|^4 |\beta|^2)P_{in}
-% \end{align}
-% where $P_i = P_{E,i}+P_{L,i}$ with $i=1,2$. 
+To generate the entangled photon pairs, one of the output ports of the source interferometer is up-converted by second harmonic generation (SHG) then down-converted via spontaneous parametric down conversion (SPDC), resulting in two-mode squeezed vacuum states (TMSVs) in early and late temporal modes with mean photon numbers $\mu_E$ and $\mu_L$, respectively. The ratio of $\mu_E$ to $\mu_L$ depends on which output port of the source interferometer is used. Note that the definition of $\mu$ used in the main text is per source laser period or per experiment cycle (4.09 GHz). Therefore $\mu$ from the main text is equal to $\mu_E + \mu_L$. The output power of SHG ($P_{SHG}$) as a function of the SHG pump power ($P_p$) is [@parameswaran2002observation],
 
-To generate the entangled photon pairs, one of the output ports of the source interferometer is up-converted by second harmonic generation (SHG)
-then down-converted via spontaneous parametric down conversion (SPDC), resulting in two-mode squeezed vacuum states (TMSVs) in early and late temporal modes with mean photon numbers $\mu_E$ and $\mu_L$, respectively. The ratio of $\mu_E$ to $\mu_L$ depends on which output port of the source interferometer is used. Note that the definition of $\mu$ used in the main text is per source laser period or per experiment cycle (4.09 GHz). Therefore $\mu$ from the main text is equal to $\mu_E + \mu_L$. 
-The output power of SHG ($P_{SHG}$) as a function of the SHG pump power ($P_p$) is [@parameswaran2002observation],
+$$
 \begin{align}
     P_{SHG} = P_{p}\tanh^2{\sqrt{\eta_{SHG}P_{p}}} \approx \eta_{SHG}P_{p}^2
-\end{align} where $\eta_{SHG}$ is the conversion efficiency of the SHG crystal. After SPDC, the squeezing parameter ($\xi$) of the TMSVs in terms of the SPDC pump power ($P_{SHG}$) is $\xi = \lambda \sqrt{P_{SHG}} \approx \lambda \sqrt{\eta_{SHG}}P_p$, where $\lambda$ is proportional to the SPDC crystal length and nonlinear interaction strength [@kaiser2016fully]. The mean photon number in terms of the squeezing parameter is $\mu = \sinh^2{\xi}\approx \xi^2$. Therefore, the mean photon numbers of the TMSVs as a function of the output pulses of the source interferometer are, \begin{align}
+\end{align}
+$$
+
+where $\eta_{SHG}$ is the conversion efficiency of the SHG crystal. After SPDC, the squeezing parameter ($\xi$) of the TMSVs in terms of the SPDC pump power ($P_{SHG}$) is $\xi = \lambda \sqrt{P_{SHG}} \approx \lambda \sqrt{\eta_{SHG}}P_p$, where $\lambda$ is proportional to the SPDC crystal length and nonlinear interaction strength [@kaiser2016fully]. The mean photon number in terms of the squeezing parameter is $\mu = \sinh^2{\xi}\approx \xi^2$. Therefore, the mean photon numbers of the TMSVs as a function of the output pulses of the source interferometer are,
+
+$$
+\begin{align}
     &\mu_E \approx \lambda^2 \eta_{SHG} P_{E,i}^2 &\mu_L\approx \lambda^2 \eta_{SHG} P_{L,i}^2
-\end{align} where $i = 1(2)$ corresponds to output port 1(2) of the source interferometer.
+\end{align}
+$$
+
+where $i = 1(2)$ corresponds to output port 1(2) of the source interferometer.
 
 If output port 1 is used, $$\mu_E/\mu_L \approx P_{E,1}^2/P_{L,1}^2 = |\alpha|^4/|\beta|^4,$$ whereas if output port 2 is used, $$\mu_E/\mu_L \approx P_{E,2}^2/P_{L,2}^2 = |r|^8|\alpha|^4/|t|^8|\beta|^4.$$ When output port 1 of the source interferometer is used, if the internal path efficiencies of the source interferometer are different, there is an imbalance in the early and late mean photon numbers. When output port 2 is used, the effect of the imbalance in the internal path efficiencies on the ratio of early and late mean photon numbers can be compensated by imperfect transmittance: $\mu_E/\mu_L = 1$ when $|t|^2/|r|^2 = |\alpha|/|\beta|$.
 
-\subsection{Measurement Interferometer Imperfections}
+### Measurement Interferometer Imperfections
+
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{ent_visib_model.pdf}
@@ -320,18 +349,17 @@ If output port 1 is used, $$\mu_E/\mu_L \approx P_{E,1}^2/P_{L,1}^2 = |\alpha|^4
     \label{fig:ent_visib_model}
 \end{figure}
 
-Imperfections in the measurement interferometers limit the entanglement visibility of the experiment. As described in the previous section, early and late TMSVs are generated by pumping the SPDC with early and late pulses. Each half of each TMSV is sent to a measurement interferometer (see Fig. **¿fig:ent_visib_model?**). Let $\ket{\xi}$ denote the TMSV state, \begin{align}
-    \ket{\xi} = \sum_{n=0}^{\infty}(-1)^n \sqrt{\frac{\mu^n}{(1+\mu)^{n+1}}}\ket{n_A,n_B}
-\end{align} where $\ket{n_A,n_B}$ denotes the state with $n_A$ photons at the input of interferometer A and $n_B$ photons at the input port of interferometer B. %As in the previous section, $\mu = \sinh^2{\xi}$ is the mean photon number where $\xi$ is the squeezing parameter. We model the input state to the measurement interferometers as a product state of TMSV in early and late temporal modes, to lowest order in $\mu_E$ and $\mu_L$:
+Imperfections in the measurement interferometers limit the entanglement visibility of the experiment. As described in the previous section, early and late TMSVs are generated by pumping the SPDC with early and late pulses. Each half of each TMSV is sent to a measurement interferometer (see Fig. **¿fig:ent_visib_model?**). Let $\ket{\xi}$ denote the TMSV state,
 
-\% \begin{align}
-%     \ket{\Psi_{in}} =& \ket{\xi}_E\otimes \ket{\xi}_L \nonumber \\
-%     \approx &N\left(\ket{0,0}_E -\mu_E\ket{1,1}_E + \mu_E^2\ket{2,2}_E+\cdots\right)
-%     \otimes \left(\ket{0,0}_L -\mu_L\ket{1,1}_L + \mu_L^2\ket{2,2}_L+\cdots\right)\nonumber\\
-%     % \approx &N\Big(\ket{0,0}_E\ket{0,0}_L-\mu_E\ket{1,1}_E\ket{0,0}_L-\mu_L\ket{0,0}_E\ket{1,1}_L\\
-%     % & + \mu_E^2\ket{2,2}_E\ket{0,0}_L +  \mu_L^2 \ket{0,0}_E\ket{2,2}_L + \mu_E\mu_L\ket{1,1}_E\ket{1,1}_L + \cdots\Big)\nonumber\\
-%     =&N\Big(1+\mu_E \hat{a}_{E}^{\dagger}\hat{b}_{E}^{\dagger} + \mu_L \hat{a}_{L}^{\dagger}\hat{b}_{L}^{\dagger} + \mu_E^2 (\hat{a}_{E}^{\dagger})^2(\hat{b}_{E}^{\dagger})^2+\mu_L^2 (\hat{a}_{L}^{\dagger})^2(\hat{b}_{L}^{\dagger})^2 + \mu_E \mu_L \hat{a}_{E}^{\dagger}\hat{b}_{E}^{\dagger} \hat{a}_{L}^{\dagger}\hat{b}_{L}^{\dagger}\Big)\ket{0,0}_E\ket{0,0}_L
-% \end{align}
+$$
+\begin{align}
+    \ket{\xi} = \sum_{n=0}^{\infty}(-1)^n \sqrt{\frac{\mu^n}{(1+\mu)^{n+1}}}\ket{n_A,n_B}
+\end{align}
+$$
+
+where $\ket{n_A,n_B}$ denotes the state with $n_A$ photons at the input of interferometer A and $n_B$ photons at the input port of interferometer B. %As in the previous section, $\mu = \sinh^2{\xi}$ is the mean photon number where $\xi$ is the squeezing parameter. We model the input state to the measurement interferometers as a product state of TMSV in early and late temporal modes, to lowest order in $\mu_E$ and $\mu_L$:
+
+<a name='eq:input_state'></a>
 
 $$
 \begin{align}
@@ -339,9 +367,10 @@ $$
     = &\left(\frac{1}{\sqrt{1+\mu_E}}\ket{0,0}_E -\sqrt{\frac{\mu_E}{(1+\mu_E)^2}}\ket{1,1}_E +\cdots\right)
     \otimes \left(\frac{1}{\sqrt{1+\mu_L}}\ket{0,0}_L -\sqrt{\frac{\mu_L}{(1+\mu_L)^2}}\ket{1,1}_L +\cdots\right)\nonumber\\
     \approx& \sqrt{1-(\mu_E +\mu_L)}\ket{0,0}_E \ket{0,0}_L -\sqrt{\mu_E}\ket{1,1}_E  \ket{0,0}_L  -\sqrt{\mu_L}\ket{0,0}_E  \ket{1,1}_L\label{eq:input_state}
-\end{align} \$\$ {#eq:input_state}
+\end{align}
+\tag{9}$$
 
-We can express Eq. **¿eq:input_state?** in terms of the creation operators $\hat{a}^\dagger$ and $\hat{b}^\dagger$ of the field modes at the inputs of interferometers A and B, respectively:
+We can express Eq. [9](#eq:input_state) in terms of the creation operators $\hat{a}^\dagger$ and $\hat{b}^\dagger$ of the field modes at the inputs of interferometers A and B, respectively:
 
 <a name='eq:input_state_fields'></a>
 
@@ -349,7 +378,7 @@ $$
 \begin{align}
     \ket{\Psi_{in}} =\Big(\sqrt{1-(\mu_E+\mu_L)}-\sqrt{\mu_E} \hat{a}_{E}^{\dagger}\hat{b}_{E}^{\dagger} - \sqrt{\mu_L} \hat{a}_{L}^{\dagger}\hat{b}_{L}^{\dagger} \Big)\ket{0,0}_E\ket{0,0}_L \label{eq:input_state_fields}
 \end{align}
-\tag{8}$$
+\tag{10}$$
 
 Since the measurement interferometers are also Michaelson interferometers, the transformation relations are,
 
@@ -359,7 +388,7 @@ $$
 \begin{align}
     &\hat{a}_{E} \mapsto r_At_A \alpha e^{i\varphi} \hat{a}_{E,1} + r_A^2 \alpha e^{i\varphi}\hat{a}_{E,2} + r_At_A\beta \hat{a}_{L,1} + t_A^2\beta \hat{a}_{L,2}+c_A\hat{a}_{\text{vac}_1}+d_A\hat{a}_{\text{vac}_2},\label{eq:aE_transform} 
 \end{align}
-\tag{9}$$
+\tag{11}$$
 
 <a name='eq:bE_transform'></a>
 
@@ -367,7 +396,7 @@ $$
 \begin{align}
     &\hat{b}_{E}  \mapsto r_Bt_B \gamma e^{i\varphi} \hat{b}_{E,1} + r_B^2 \gamma e^{i\varphi}\hat{b}_{E,2} + r_Bt_B\delta \hat{b}_{L,1} + t_B^2\delta \hat{b}_{L,2}+c_B\hat{b}_{\text{vac}_1}+d_B\hat{b}_{\text{vac}_2},\label{eq:bE_transform}
 \end{align}
-\tag{10}$$
+\tag{12}$$
 
 <a name='eq:aL_transform'></a>
 
@@ -375,7 +404,7 @@ $$
 \begin{align}
     &\hat{a}_{L} \mapsto  r_A t_A \alpha e^{i\varphi} \hat{a}_{L,1}  + r_A^2 \alpha e^{i\varphi}\hat{a}_{L,2} + r_A t_A\beta \hat{a}_{L^\prime,1}+ t_A^2\beta \hat{a}_{L^\prime,2}+c_A\hat{a}_{\text{vac}_1}+d_A\hat{a}_{\text{vac}_2},\label{eq:aL_transform}
 \end{align}
-\tag{11}$$
+\tag{13}$$
 
 <a name='eq:bL_transform'></a>
 
@@ -383,7 +412,7 @@ $$
 \begin{align}
     &\hat{b}_{L}  \mapsto r_B t_B \gamma e^{i\varphi} \hat{b}_{L,1} + r_B^2 \gamma e^{i\varphi}\hat{b}_{L,2}  + r_B t_B\delta \hat{b}_{L^\prime,1}+ t_B^2\delta \hat{b}_{L^\prime,2}+c_B\hat{b}_{\text{vac}_1}+d_B\hat{b}_{\text{vac}_2},\label{eq:bL_transform}
 \end{align}
-\tag{12}$$
+\tag{14}$$
 
 $$
 \begin{align}
@@ -392,76 +421,100 @@ $$
 \end{align}
 $$
 
-where $L^\prime$ denotes the temporal mode obtained by sending a photon in the late ($L$) mode through the long arm of an interferometer, and $\hat{a}_{\text{vac}_i}$, $\hat{b}_{\text{vac}_i}$ correspond to vacuum modes. To find the state at the output of the interferometers, we combine Eq. [8](#eq:input_state_fields) with Eq. [9](#eq:aE_transform) - Eq. [12](#eq:bL_transform), and consider only terms relevant to post-selection on coincidences of the middle bins (L) of different interferometer outputs, to lowest order in $\mu_E$, $\mu_L$, \begin{align}
+where $L^\prime$ denotes the temporal mode obtained by sending a photon in the late ($L$) mode through the long arm of an interferometer, and $\hat{a}_{\text{vac}_i}$, $\hat{b}_{\text{vac}_i}$ correspond to vacuum modes. To find the state at the output of the interferometers, we combine Eq. [10](#eq:input_state_fields) with Eq. [11](#eq:aE_transform) - Eq. [14](#eq:bL_transform), and consider only terms relevant to post-selection on coincidences of the middle bins (L) of different interferometer outputs, to lowest order in $\mu_E$, $\mu_L$,
+
+<a name='eq:output_state'></a>
+
+$$
+\begin{align}
     \ket{\Psi_{\text{out}}}= %&\sqrt{1-(\mu_E+\mu_L)}\ket{0,0;0,0}_E\ket{0,0;0,0}_L\ket{0,0;0,0}_{L^\prime} \\
     \cdots&+r_A^*t_A r_B^*t_B\Big(\beta \delta\sqrt{\mu_E}+\alpha \gamma \sqrt{\mu_L} e^{-2i\varphi}  \Big)\ket{0,0;0,0}_E\ket{1,0;1,0}_L\ket{0,0;0,0}_{L^\prime}\label{eq: output_state}\\
     &+r_A^*t_A\Big(t_B^2  \beta\delta \sqrt{\mu_E} + (r_B^*)^2  \alpha \gamma \sqrt{\mu_L} e^{-2i\varphi}\Big)\ket{0,0;0,0}_E\ket{1,0;0,1}_L\ket{0,0;0,0}_{L^\prime} \nonumber\\
     &+r_B^*t_B\Big(t_A^2\beta \delta\sqrt{\mu_E}  +(r_A^*)^2 \alpha \gamma  \sqrt{\mu_L} e^{-2i\varphi}\Big)\ket{0,0;0,0}_E\ket{0,1;1,0}_L\ket{0,0;0,0}_{L^\prime} \nonumber\\
     &+\Big(t_A^2 t_B^2\beta \delta\sqrt{\mu_E} + (r_A^*)^2 (r_B^*)^2 \alpha \gamma \sqrt{\mu_L} e^{-2i\varphi}\Big)\ket{0,0;0,0}_E\ket{0,1;0,1}_L\ket{0,0;0,0}_{L^\prime} + \cdots \nonumber 
 \end{align}
+\tag{15}$$
 
-where $\ket{n_{A,1},n_{A_2};n_{B_1}, n_{B,2}}$ denotes the state with $n_{A,1}$ photons at output 1 of interferometer A, $n_{A,2}$ photons at output 2 of interferometer A, $n_{B,1}$ photons at output 1 of interferometer B, and $n_{B,2}$ photons at output 2 of interferometer B. We define the following parameters to simplify notation: \begin{align}
+where $\ket{n_{A,1},n_{A_2};n_{B_1}, n_{B,2}}$ denotes the state with $n_{A,1}$ photons at output 1 of interferometer A, $n_{A,2}$ photons at output 2 of interferometer A, $n_{B,1}$ photons at output 1 of interferometer B, and $n_{B,2}$ photons at output 2 of interferometer B. We define the following parameters to simplify notation:
+
+$$
+\begin{align}
     x \equiv \frac{\mu_E}{\mu_L},\quad\quad\quad
     \kappa_A \equiv \frac{|\beta|^2}{|\alpha|^2}, \quad\quad\quad \kappa_B \equiv \frac{|\gamma|^2}{|\delta|^2},\quad\quad\quad \epsilon_A = \frac{|t_A|^2}{|r_A|^2}, \quad\quad\quad \epsilon_B \equiv \frac{|t_B|^2}{|r_B|^2}.
-\end{align} From Eq. **¿eq:output_state?** , it follows that the coincidence probabilities for each combination of output ports are proportional to, % \begin{align}
-%     &C_{A_1, B_1}(\varphi) \propto |r_A|^2 |t_A|^2 |r_B|^2|t_B|^2\Big(|\beta|^2|\delta|^2\mu_E+|\alpha|^2|\gamma|^2\mu_L+2|\alpha||\beta||\gamma||\delta|\sqrt{\mu_E \mu_L}\cos{2\varphi}\Big)\\
-%     &C_{A_1, B_2}(\varphi) \propto |r_A|^2 |t_A|^2 \Big(|t_B|^4|\beta|^2|\delta|^2\mu_E+|r_B|^4|\alpha|^2|\gamma|^2\mu_L+2|r_B|^2|t_B|^2|\alpha||\beta||\gamma||\delta|\sqrt{\mu_E \mu_L}\cos{2\varphi}\Big)\\
-%     &C_{A_2, B_1}(\varphi) \propto |r_B|^2 |t_B|^2 \Big(|t_A|^4|\beta|^2|\delta|^2\mu_E+|r_A|^4|\alpha|^2|\gamma|^2\mu_L+2|r_A|^2|t_A|^2|\alpha||\beta||\gamma||\delta|\sqrt{\mu_E \mu_L}\cos{2\varphi}\Big)\\
-%     &C_{A_2, B_2}(\varphi) \propto |t_A|^4|t_B|^4|\beta|^2|\delta|^2\mu_E+|r_A|^4|r_B|^4|\alpha|^2|\gamma|^2\mu_L+ 2|r_A|^2 |t_A|^2 |r_B|^2|t_B|^2|\alpha||\beta||\gamma||\delta|\sqrt{\mu_E \mu_L}\cos{2\varphi}
-% \end{align}
+\end{align}
+$$
 
-% \begin{align}
-%     &C_{A_1, B_1}(\varphi) \propto \frac{|\beta||\delta|}{|\alpha||\gamma|}\frac{\mu_E}{\mu_L}+\frac{|\alpha||\gamma|}{|\beta||\delta|}+2\sqrt{\frac{\mu_E}{\mu_L}}\cos{2\varphi},\\
-%     &C_{A_1, B_2}(\varphi) \propto \frac{|t_B|^2}{|r_B|^2}\frac{|\beta||\delta|}{|\alpha||\gamma|}\frac{\mu_E}{\mu_L}+\frac{|r_B|^2}{|t_B|^2}\frac{|\alpha||\gamma|}{|\beta||\delta|}+2\sqrt{\frac{\mu_E}{\mu_L}}\cos{2\varphi},\\
-%     &C_{A_2, B_1}(\varphi) \propto \frac{|t_A|^2}{|r_A|^2}\frac{|\beta||\delta|}{|\alpha||\gamma|}\frac{\mu_E}{\mu_L}+\frac{|r_A|^2}{|t_A|^2}\frac{|\alpha||\gamma|}{|\beta||\delta|}+2\sqrt{\frac{\mu_E}{\mu_L}}\cos{2\varphi},\\
-%     &C_{A_2, B_2}(\varphi) \propto \frac{|t_A|^2|t_B|^2}{|r_A|^2|r_B|^2}\frac{|\beta||\delta|}{|\alpha||\gamma|}\frac{\mu_E}{\mu_L}+\frac{|r_A|^2|r_B|^2}{|t_A|^2|t_B|^2}\frac{|\alpha||\gamma|}{|\beta||\delta|}+2\sqrt{\frac{\mu_E}{\mu_L}}\cos{2\varphi},\\
-%     &\kappa = \frac{|\beta||\delta|}{|\alpha||\gamma|}, \quad\quad\quad \epsilon_A = \frac{|t_A|^2}{|r_A|^2}, \quad\quad\quad \epsilon_B = \frac{|t_B|^2}{|r_B|^2}
-% \end{align}
+From Eq. [15](#eq:output_state) , it follows that the coincidence probabilities for each combination of output ports are proportional to,
 
+$$
 \begin{align}
     &C_{A_1, B_1}(\varphi) \propto \sqrt{\frac{\kappa_B}{\kappa_A}}+\sqrt{\frac{\kappa_A}{\kappa_B}}x+2\sqrt{x}\cos{2\varphi},\\
     &C_{A_1, B_2}(\varphi) \propto \frac{1}{\epsilon_B}\sqrt{\frac{\kappa_B}{\kappa_A}}+\epsilon_B\sqrt{\frac{\kappa_A}{\kappa_B}}x+2\sqrt{x}\cos{2\varphi},\\
     &C_{A_2, B_1}(\varphi) \propto \frac{1}{\epsilon_A}\sqrt{\frac{\kappa_B}{\kappa_A}}+\epsilon_A\sqrt{\frac{\kappa_A}{\kappa_B}}x+2\sqrt{x}\cos{2\varphi},\\
     &C_{A_2, B_2}(\varphi) \propto  \frac{1}{\epsilon_A\epsilon_B}\sqrt{\frac{\kappa_B}{\kappa_A}}+\epsilon_A\epsilon_B\sqrt{\frac{\kappa_A}{\kappa_B}}x+2\sqrt{x}\cos{2\varphi},
 \end{align}
+$$
 
-where the phase factors in the reflectivities $r_A, r_B$ are absorbed into the definition of $\varphi$. Therefore, the entanglement visibilities, $V = \frac{\text{max}(C(\varphi))-\text{min}(C(\varphi))}{\text{max}(C(\varphi))+\text{min}(C(\varphi))}$, for each combination of output ports are: \begin{align}
-    &V_{A_1, B_1} = \frac{2\sqrt{x}}{\sqrt{\frac{\kappa_B}{\kappa_A}}+\sqrt{\frac{\kappa_A}{\kappa_B}}x}, \label{eq:FA1B1}\\
-    &V_{A_1, B_2} = \frac{2\sqrt{x}}{\frac{1}{\epsilon_B}\sqrt{\frac{\kappa_B}{\kappa_A}}+\epsilon_B\sqrt{\frac{\kappa_A}{\kappa_B}}x},\label{eq:FA1B2}\\
-    &V_{A_2, B_1} =  \frac{2\sqrt{x}}{ \frac{1}{\epsilon_A}\sqrt{\frac{\kappa_B}{\kappa_A}}+\epsilon_A\sqrt{\frac{\kappa_A}{\kappa_B}}x},\label{eq:FA2B1}\\
+where the phase factors in the reflectivities $r_A, r_B$ are absorbed into the definition of $\varphi$. Therefore, the entanglement visibilities, $V = \frac{\text{max}(C(\varphi))-\text{min}(C(\varphi))}{\text{max}(C(\varphi))+\text{min}(C(\varphi))}$, for each combination of output ports are:
+
+<a name='eq:FA1B1'></a>
+
+$$
+\begin{align}
+    &V_{A_1, B_1} = \frac{2\sqrt{x}}{\sqrt{\frac{\kappa_B}{\kappa_A}}+\sqrt{\frac{\kappa_A}{\kappa_B}}x}, \label{eq:FA1B1}
+\end{align}
+\tag{16}$$
+
+<a name='eq:FA1B2'></a>
+
+$$
+\begin{align}
+    &V_{A_1, B_2} = \frac{2\sqrt{x}}{\frac{1}{\epsilon_B}\sqrt{\frac{\kappa_B}{\kappa_A}}+\epsilon_B\sqrt{\frac{\kappa_A}{\kappa_B}}x},\label{eq:FA1B2}
+\end{align}
+\tag{17}$$
+
+<a name='eq:FA2B1'></a>
+
+$$
+\begin{align}
+    &V_{A_2, B_1} =  \frac{2\sqrt{x}}{ \frac{1}{\epsilon_A}\sqrt{\frac{\kappa_B}{\kappa_A}}+\epsilon_A\sqrt{\frac{\kappa_A}{\kappa_B}}x},\label{eq:FA2B1}
+\end{align}
+\tag{18}$$
+
+<a name='eq:FA2B2'></a>
+
+$$
+\begin{align}
     &V_{A_2, B_2} = \frac{2\sqrt{x}}{\frac{1}{\epsilon_A\epsilon_B}\sqrt{\frac{\kappa_B}{\kappa_A}}+\epsilon_A\epsilon_B\sqrt{\frac{\kappa_A}{\kappa_B}}x}.\label{eq:FA2B2}
-\end{align} % \begin{align}
-%     &F_{A_1, B_1} = \frac{4\sqrt{x}}{\sqrt{\frac{\kappa_B}{\kappa_A}}+\sqrt{\frac{\kappa_A}{\kappa_B}}x+2\sqrt{x}}, \label{eq:FA1B1}\\
-%     &F_{A_1, B_2} = \frac{4\sqrt{x}}{\frac{1}{\epsilon_B}\sqrt{\frac{\kappa_B}{\kappa_A}}+\epsilon_B\sqrt{\frac{\kappa_A}{\kappa_B}}x+2\sqrt{x}},\label{eq:FA1B2}\\
-%     &F_{A_2, B_1} =  \frac{4\sqrt{x}}{ \frac{1}{\epsilon_A}\sqrt{\frac{\kappa_B}{\kappa_A}}+\epsilon_A\sqrt{\frac{\kappa_A}{\kappa_B}}x+2\sqrt{x}},\label{eq:FA2B1}\\
-%     &F_{A_2, B_2} = \frac{4\sqrt{x}}{\frac{1}{\epsilon_A\epsilon_B}\sqrt{\frac{\kappa_B}{\kappa_A}}+\epsilon_A\epsilon_B\sqrt{\frac{\kappa_A}{\kappa_B}}x+2\sqrt{x}}.\label{eq:FA2B2}
-% \end{align}
+\end{align}
+\tag{19}$$
 
- Unity visibility is achievable for each combination of output ports: $V_{A_1, B_1} = 1$ when $x = \kappa_B/\kappa_A$, $V_{A_1, B_2} = 1$ when $x =  \kappa_B/(\kappa_A\epsilon_B^2)$, $V_{A_2, B_1} = 1$ when $x =  \kappa_B/(\kappa_A\epsilon_A^2)$, and $V_{A_2, B_2} = 1$ when $x =  \kappa_B/(\kappa_A\epsilon_A^2\epsilon_B^2)$. Therefore, the effect of imbalances in the source and measurement interferometers is to shift the optimal ratio of early to late mean photon numbers. Imbalances in the measurement interferometers can be compensated by imbalances in the source interferometer in order to obtain unity visibility. Moreover, in the single photon limit, the visibility is insensitive to the absolute path efficiencies in the experiment. The visibility depends only on the ratio of path efficiencies between the measurement interferometers ($\kappa_A/\kappa_B)$. The entanglement visibilities for each combination of output ports as a function of $x=\mu_E/\mu_L$ for various ratios of interferometric path efficiencies are shown in Fig. \ref{fig:ent_fid_single_photon}. 
- 
+Unity visibility is achievable for each combination of output ports: $V_{A_1, B_1} = 1$ when $x = \kappa_B/\kappa_A$, $V_{A_1, B_2} = 1$ when $x = \kappa_B/(\kappa_A\epsilon_B^2)$, $V_{A_2, B_1} = 1$ when $x = \kappa_B/(\kappa_A\epsilon_A^2)$, and $V_{A_2, B_2} = 1$ when $x = \kappa_B/(\kappa_A\epsilon_A^2\epsilon_B^2)$. Therefore, the effect of imbalances in the source and measurement interferometers is to shift the optimal ratio of early to late mean photon numbers. Imbalances in the measurement interferometers can be compensated by imbalances in the source interferometer in order to obtain unity visibility. Moreover, in the single photon limit, the visibility is insensitive to the absolute path efficiencies in the experiment. The visibility depends only on the ratio of path efficiencies between the measurement interferometers ( $\kappa_A/\kappa_B$ ). The entanglement visibilities for each combination of output ports as a function of $x=\mu_E/\mu_L$ for various ratios of interferometric path efficiencies are shown in Fig. **¿fig:ent_fid_single_photon?**.
+
 \begin{figure}[H]
     \includegraphics[width = \textwidth]{ent_fid_single_photon_fixed_kappa.pdf}
     \caption{Entanglement visibility as function of $\mu_E/\mu_L$ for fixed $\kappa_B/\kappa_A = 1$ and  $ \epsilon_A = \epsilon_B = 90/10$ (red), $75/25$ (blue), $50/50$ (green), $25/75$ (purple).}
     \label{fig:ent_fid_single_photon}
 \end{figure}
- 
 
- 
-\subsection{Multiphoton Effects}
+### Multiphoton Effects
+
 \begin{figure}[h!]
     \centering
     \includegraphics[width = \textwidth]{model_setup.pdf}
     \caption{Setup for phase space modeling of entanglement visibility experiment}
     \label{fig:model_setup}
 \end{figure}
-Calculating the entanglement visibility to higher order photon number contributions quickly becomes intractable with the Fock space approach in section B. To study the effect of multiphoton events on the entanglement visibility, we model the experiment using phase space methods based on a characteristic function formalism [@Davis2022; @takeoka2015full]. The model setup is shown in Fig \ref{fig:model_setup}. As in the Fock space approach, the input state is modeled as a product state of TMSV in early and late temporal modes, with mean photon numbers $\mu_E$ and $\mu_L$, respectively. The measurement interferometers are modeled as beamsplitters in the temporal domain that mix the early and late input modes with transmittances $\tau_A$ and $\tau_B$, which absorb the interferometric path efficiencies and spatial beamsplitter transmittances. Since the input state is modeled as a Gaussian state, and the measurement interferometers are modeled as Gaussian operations, we can find the symplectic transformation that maps the characteristic function of the input state to that of the state prior to detection.
+
+Calculating the entanglement visibility to higher order photon number contributions quickly becomes intractable with the Fock space approach in section B. To study the effect of multiphoton events on the entanglement visibility, we model the experiment using phase space methods based on a characteristic function formalism [@Davis2022; @takeoka2015full]. The model setup is shown in Fig. **¿fig:model_setup?**. As in the Fock space approach, the input state is modeled as a product state of TMSV in early and late temporal modes, with mean photon numbers $\mu_E$ and $\mu_L$, respectively. The measurement interferometers are modeled as beamsplitters in the temporal domain that mix the early and late input modes with transmittances $\tau_A$ and $\tau_B$, which absorb the interferometric path efficiencies and spatial beamsplitter transmittances. Since the input state is modeled as a Gaussian state, and the measurement interferometers are modeled as Gaussian operations, we can find the symplectic transformation that maps the characteristic function of the input state to that of the state prior to detection.
 
 Following Ref. [@Davis2022], the characteristic function for an $N$-mode bosonic state is
 
 $$
 \begin{align}
     \chi(\xi)=\text{Tr}\left[\hat{\rho}\exp(-i(\hat{x}_1,\hat{p}_1,\hat{x}_2,\hat{p}_2,\cdots\hat{x}_N,\hat{p}_N) \xi)\right]
-\end{align} \$\$
+\end{align}
+$$
 
 where $\xi\in \mathbb{R}^{2N}$, $\rho$ is the density matrix, and $\hat{x}_i = \frac{1}{\sqrt{2}}(\hat{a}_i^\dagger+\hat{a}_i)$ and $\hat{p}_i=\frac{1}{\sqrt{2}}(\hat{a}_i^\dagger+\hat{a}_i)$ are the quadrature operators for mode $i$ with annihilation operator $\hat{a}_i$. A Gaussian state is a state whose characteristic function that takes a Gaussian form,
 
@@ -469,34 +522,36 @@ $$
 \begin{align}
     \chi(\xi) = \exp(-\frac{1}{4}\xi^T\gamma \xi - id^T \xi),
 \end{align}
-$$ which is fully characterized by the displacement vector $d$ and covariance matrix $\gamma$, i.e. the first and second moments. For the TMSV state, the displacement vector is the null vector $d =(0,0,0,0)$ and the covariance matrix is given by
+$$
+
+which is fully characterized by the displacement vector $d$ and covariance matrix $\gamma$, i.e. the first and second moments. For the TMSV state, the displacement vector is the null vector $d =(0,0,0,0)$ and the covariance matrix is given by
 
 $$
- \begin{align}
-     \gamma_{TMSV}(\mu) = 
-     \begin{pmatrix}
-     \mathbf{A}&\mathbf{B}\\
-     \mathbf{B}&\mathbf{A}
-     \end{pmatrix}, \quad
-     \mathbf{A}=
-     \begin{pmatrix}
-         1+2\mu&0\\
-         0&1+2\mu
-     \end{pmatrix}, \quad
-     \mathbf{B}=\begin{pmatrix}
-         2\sqrt{\mu(\mu+1)}&0\\
-         0&-2\sqrt{\mu(\mu+1)}
-     \end{pmatrix}
- \end{align}
- $$
+\begin{align}
+    \gamma_{TMSV}(\mu) = 
+    \begin{pmatrix}
+    \mathbf{A}&\mathbf{B}\\
+    \mathbf{B}&\mathbf{A}
+    \end{pmatrix}, \quad
+    \mathbf{A}=
+    \begin{pmatrix}
+        1+2\mu&0\\
+        0&1+2\mu
+    \end{pmatrix}, \quad
+    \mathbf{B}=\begin{pmatrix}
+        2\sqrt{\mu(\mu+1)}&0\\
+        0&-2\sqrt{\mu(\mu+1)}
+    \end{pmatrix}
+\end{align}
+$$
 
 where $\gamma_{TMSV}(\mu)$ is written in block matrix form. Therefore, the covariance matrix for the input state of our experiment is
 
 $$
- \begin{align}
-     \gamma_{in}(\mu_E,\mu_L) = \gamma_{TMSV}(\mu_E)\oplus \gamma_{TMSV}(\mu_L)
- \end{align}
- $$
+\begin{align}
+    \gamma_{in}(\mu_E,\mu_L) = \gamma_{TMSV}(\mu_E)\oplus \gamma_{TMSV}(\mu_L)
+\end{align}
+$$
 
 The characteristic function of the input state is mapped to the characteristic function of the state prior to detection by a symplectic transformation,
 
@@ -530,44 +585,76 @@ $$
 \end{align}
 $$
 
-From the output characteristic function $\chi_{\text{out}}$, we obtain the coincidence probabilities using Eq. (9) of Ref. [@Davis2022], \begin{align}
+From the output characteristic function $\chi_{\text{out}}$, we obtain the coincidence probabilities using Eq. (9) of Ref. [@Davis2022],
+
+$$
+\begin{align}
     \text{Tr}\left[\hat{\rho}_{\text{out}}\hat{\Pi}\right] = \left(\frac{1}{2\pi}\right)^N \int {dx}^{2N}\chi_{\text{out}} (x) \chi_\Pi (-x)
-\end{align} where $\hat{\rho}_{\text{out}}$ is the state prior to detection with characteristic function $\chi_{\text{out}}$, and $\hat{\Pi}$ is the measurement operator corresponding to coincidences between detectors from different interferometers. The measurement operators for a threshold detector, which distinguishes between a detection event (at least one photon) and no detection event (zero photons), are \begin{align}
+\end{align}
+$$
+
+where $\hat{\rho}_{\text{out}}$ is the state prior to detection with characteristic function $\chi_{\text{out}}$, and $\hat{\Pi}$ is the measurement operator corresponding to coincidences between detectors from different interferometers. The measurement operators for a threshold detector, which distinguishes between a detection event (at least one photon) and no detection event (zero photons), are
+
+$$
+\begin{align}
     \hat{\Pi}_{\text{event}} = \hat{I}-\ket{0}\bra{0}, \quad  \hat{\Pi}_{\text{no event}} = \ket{0}\bra{0}
-\end{align} where $\hat{I}$ is the 2 by 2 identity matrix. The measurement operator for coincidences between e.g. detectors 1 and 4 are \begin{align}
+\end{align}
+$$
+
+where $\hat{I}$ is the 2 by 2 identity matrix. The measurement operator for coincidences between e.g. detectors 1 and 4 are
+
+$$
+\begin{align}
     \hat{\Pi}_{1,4}=\hat{\Pi}_{\text{event},1}\otimes\hat{I}_2 \otimes \hat{I}_3 \otimes \hat{\Pi}_{\text{event},4}
-\end{align} where the subscripts denote the output modes labeled in Fig. \ref{fig:model_setup}. We derive an analytical expression for the coincidence probability that encompasses all multiphoton contributions, \begin{align}
-    C(\varphi) =  \text{Tr}\left[\hat{\rho}_{\text{out}}\hat{\Pi}_{1,4}\right] &= 1-\frac{1}{|f(\mu_E, \mu_L, \tau_A)|}-\frac{1}{|g(\mu_E, \mu_L, \tau_B)|}+\frac{1}{|h(\mu_E, \mu_L, \tau_A, \tau_B,\varphi)|},\\
-    f(\mu_E, \mu_L, \tau_A) &= 1+\mu_L+\tau_A(\mu_E - \mu_L),\\
-    g(\mu_E, \mu_L, \tau_B) &= 1+\mu_E+\tau_B(\mu_L - \mu_E),\\
-    h(\mu_E, \mu_L, \tau_A, \tau_B) &=1+\mu_E + \mu_L(1 + \mu_E)(1 -\tau_A) \\
-    &-\mu_E\tau_B(1 + \mu_L) +\tau_A\tau_B(\mu_E  + \mu_L +2\mu_E\mu_L) \nonumber\\
-    &- 2\sqrt{\mu_E\mu_L\tau_A(1+\mu_E)(1+\mu_L)(1-\tau_A)}\sqrt{\tau_B(1-\tau_B)}\cos{\varphi},\nonumber
-adfs\end{align} where $\varphi = \varphi_A-\varphi_B$ is the relative phase between interferometers A and B. The different visibilities in each output port combination as a result of interferometric imbalances can be obtained by adjusting $\tau$ accordingly. To isolate the impact of multiphoton contributions to the visibility, we set $\tau_A = \tau_B = \frac{1}{\sqrt{2}}$, and obtain the following expression for the entanglement visibility:
+\end{align}
+$$
 
-\% \begin{align}
-%      F(\mu_E, \mu_L) &= 1-\frac{C(\pi)}{C(0)}=1-\frac{1-4/(2+\mu_E+\mu_L)+4/\sqrt{G_{+}(\mu_E, \mu_L)}}{1-4/(2+\mu_E+\mu_L)+4/\sqrt{G_{-}(\mu_E, \mu_L)}} ,\label{eq:fid_multiphoton}
-% \end{align}
+where the subscripts denote the output modes labeled in Fig. **¿fig:model_setup?**. We derive an analytical expression for the coincidence probability that encompasses all multiphoton contributions,
 
- \begin{align}
+$$
+\begin{align}
+C(\varphi) =  \text{Tr}\left[\hat{\rho}_{\text{out}}\hat{\Pi}_{1,4}\right] &= 1-\frac{1}{|f(\mu_E, \mu_L, \tau_A)|}-\frac{1}{|g(\mu_E, \mu_L, \tau_B)|}+\frac{1}{|h(\mu_E, \mu_L, \tau_A, \tau_B,\varphi)|},\\
+f(\mu_E, \mu_L, \tau_A) &= 1+\mu_L+\tau_A(\mu_E - \mu_L),\\
+g(\mu_E, \mu_L, \tau_B) &= 1+\mu_E+\tau_B(\mu_L - \mu_E),\\
+h(\mu_E, \mu_L, \tau_A, \tau_B) &=1+\mu_E + \mu_L(1 + \mu_E)(1 -\tau_A) \\
+&-\mu_E\tau_B(1 + \mu_L) +\tau_A\tau_B(\mu_E  + \mu_L +2\mu_E\mu_L) \nonumber\\
+&- 2\sqrt{\mu_E\mu_L\tau_A(1+\mu_E)(1+\mu_L)(1-\tau_A)}\sqrt{\tau_B(1-\tau_B)}\cos{\varphi},\nonumber
+\end{align}
+$$
+
+where $\varphi = \varphi_A-\varphi_B$ is the relative phase between interferometers A and B. The different visibilities in each output port combination as a result of interferometric imbalances can be obtained by adjusting $\tau$ accordingly. To isolate the impact of multiphoton contributions to the visibility, we set $\tau_A = \tau_B = \frac{1}{\sqrt{2}}$, and obtain the following expression for the entanglement visibility:
+
+<a name='eq:fid_multiphoton'></a>
+
+$$
+\begin{align}
     V(\mu_E, \mu_L) &= \frac{C(0)-C(\pi)}{C(0)+C(\pi)}=\frac{2/\sqrt{G_{-}(\mu_E, \mu_L)}-2/\sqrt{G_{+}(\mu_E, \mu_L)}}{1-4/(2+\mu_E+\mu_L)+2/\sqrt{G_{-}(\mu_E, \mu_L)}+2/\sqrt{G_{+}(\mu_E, \mu_L)}}\label{eq:fid_multiphoton}
 \end{align}
+\tag{20}$$
 
+where
+
+$$
 \begin{align}
      G_{\pm}(\mu_E, \mu_L)&=\mu_E^2(9+8\mu_L(2+\mu_L))\\
      &\pm(4+3\mu_L)\bigg(\pm4\pm3\mu_L+4\sqrt{\mu_E \mu_L (1+\mu_E)(1+\mu_L)}\bigg)\nonumber\\     &+2\mu_E\bigg(12\pm6\sqrt{\mu_E\mu_L(1+\mu_E)(1+\mu_L)}\bigg)\nonumber\\
      &+2\mu_E\mu_L\Big(19+8\mu_L \pm 4\sqrt{\mu_E\mu_L (1+\mu_E)(1+\mu_L)}\Big). \nonumber
- \end{align} By expanding Eq. **¿eq:fid_multiphoton?** to first order in $\mu_E$ and $\mu_L$, % \begin{align}
- %     F(\mu_E, \mu_L) = \frac{4\sqrt{\frac{\mu_E}{\mu_L}}}{\frac{\mu_E}{\mu_L}+1+2\sqrt{\frac{\mu_E}{\mu_L}}}-\frac{\sqrt{\mu_E\mu_L}(5\mu_E^2 + 6\mu_E\mu_L + 5\mu_L^2)}{(\sqrt{\mu_E}+\sqrt{\mu_L})^4}
- % \end{align}
- %  \begin{align}
- %     F(\mu_E, \mu_L) = \frac{4\sqrt{\frac{\mu_E}{\mu_L}}}{\frac{\mu_E}{\mu_L}+1+2\sqrt{\frac{\mu_E}{\mu_L}}}-\frac{\mu_E}{\mu_L}\frac{(5(\frac{\mu_E}{\mu_L}+\frac{\mu_L}{\mu_E})+6)}{(1+\sqrt{\frac{\mu_E}{\mu_L}})^{\frac{1}{4}}}\sqrt{\mu_E\mu_L}+\cdots \label{eq: fid_first_order}
- % \end{align}
- \begin{align}
-     V(\mu_E,\mu_L) = \frac{2\sqrt{\frac{\mu_E}{\mu_L}}}{1+\frac{\mu_E}{\mu_L}} - \frac{\mu_E}{\mu_L}\frac{\left(5(\frac{\mu_E}{\mu_L}+\frac{\mu_L}{\mu_E})+6\right)}{2(1+\frac{\mu_E}{\mu_L})^2}\sqrt{\mu_E\mu_L}+\cdots\label{eq: fid_first_order}
- \end{align} we see that the first term matches Eq. **¿eq:FA1B1?** - Eq. **¿eq:FA2B2?** for $t_A = t_B = \frac{1}{\sqrt{2}}$, $\beta/\alpha = \gamma/\delta = 1$. Moreover, for $\mu_{eq} \equiv \mu_E = \mu_L$, Eq. **¿eq:fid_first_order?** reduces to \$ V(\mu*{eq}) = 1 - 2\mu*{eq} \$.
+ \end{align}
+$$
 
-Thus, the upper bound on the visibility is set by the mean photon number, i.e. multiphoton effects. Entanglement visibilities of more than 90% are possible when $0.39 < \mu_E/\mu_L < 2.55$ and $\mu_L < 0.0.056$. The entanglement visibility $V(\mu_E, \mu_L)$ in Eq. **¿eq:fid_multiphoton?** is plotted for various mean photon numbers in Fig. \ref{fig:fid_multiphoton}.
+By expanding Eq. [20](#eq:fid_multiphoton) to first order in $\mu_E$ and $\mu_L$,
+
+<a name='eq:fid_first_order'></a>
+
+$$
+\begin{align}
+    V(\mu_E,\mu_L) = \frac{2\sqrt{\frac{\mu_E}{\mu_L}}}{1+\frac{\mu_E}{\mu_L}} - \frac{\mu_E}{\mu_L}\frac{\left(5(\frac{\mu_E}{\mu_L}+\frac{\mu_L}{\mu_E})+6\right)}{2(1+\frac{\mu_E}{\mu_L})^2}\sqrt{\mu_E\mu_L}+\cdots\label{eq: fid_first_order}
+\end{align}
+\tag{21}$$
+
+we see that the first term matches Eq. [16](#eq:FA1B1) - Eq. [19](#eq:FA2B2) for $t_A = t_B = \frac{1}{\sqrt{2}}$, $\beta/\alpha = \gamma/\delta = 1$. Moreover, for $\mu_{eq} \equiv \mu_E = \mu_L$, Eq. [21](#eq:fid_first_order) reduces to $V(\mu_{eq}) = 1 - 2\mu_{eq}$.
+
+Thus, the upper bound on the visibility is set by the mean photon number, i.e. multiphoton effects. Entanglement visibilities of more than 90% are possible when $0.39 < \mu_E/\mu_L < 2.55$ and $\mu_L < 0.0.056$. The entanglement visibility $V(\mu_E, \mu_L)$ in Eq. [20](#eq:fid_multiphoton) is plotted for various mean photon numbers in Fig. **¿fig:fid_multiphoton?**.
 
 \begin{figure}[H]
 \centering
