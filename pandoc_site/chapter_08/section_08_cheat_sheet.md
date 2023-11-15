@@ -17,7 +17,7 @@ P_{A- B-} &= |\langle 2|2\rangle|^2_{A- B-} = 2(1 + v \cos(\theta)) \notag \\ \n
 \end{align}
 \tag{1}$$
 
-NOTE if its NOT a numbered equation you have to switch align to aligned!!
+<!-- NOTE if its NOT a numbered equation you have to switch align to aligned!! -->
 
 <!-- and this might work? -->
 

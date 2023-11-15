@@ -24,6 +24,26 @@ document$.subscribe(function() {
         span.style.whiteSpace = "nowrap";
     });
 
+    // var containers = document.getElementsByTagName('mjx-container');
+    // console.log("this is continers: ", containers)
+    // console.log("this is length: ", containers.length)
+    // for (var i = 0; i < containers.length; i++) {
+    //     console.log(" this is width: ", containers[i].offsetWidth)
+    //     if (containers[i].offsetWidth > 200) {
+    //         containers[i].style.fontSize = '20%';
+    //     }
+    // }
+    // setTimeout(function() {
+    //     var containers = document.getElementsByTagName('mjx-container');
+    //     for (var i = 0; i < containers.length; i++) {
+    //         console.log(containers[i].offsetWidth)
+    //         // if (containers[i].offsetWidth > 200) {
+    //         //     containers[i].style.fontSize = '20%';
+    //         // }
+    //         containers[i].style.fontSize = '20%';
+    //     }
+    // }, 90);
+
 
     // // Find all sup elements on the page
     const supElements = document.querySelectorAll("sup");

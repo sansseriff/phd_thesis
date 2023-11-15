@@ -7,7 +7,7 @@ mjx-utext {
 
 .arithmatex {
     overflow-y: hidden !important;
-    overflow-x: hidden !important;
+    /* overflow-x: hidden !important; */
 }
 
 mjx-container {
