@@ -7,6 +7,7 @@ rm -r ./pandoc_site/chapter_01/* \
 && rm -r ./pandoc_site/chapter_07/* \
 && rm -r ./pandoc_site/chapter_08/* \
 && rm -r ./pandoc_site/chapter_09/* \
+&& rm -r ./pandoc_site/extra/* \
 && cp -R ./src/chapter_01/code/ ./pandoc_site/chapter_01/ \
 && cp -R ./src/chapter_02/code/ ./pandoc_site/chapter_02/ \
 && cp -R ./src/chapter_03/code/ ./pandoc_site/chapter_03/ \
@@ -28,6 +29,7 @@ rm -r ./pandoc_site/chapter_01/* \
 && cp -R ./src/frontmatter ./pandoc_site/ \
 && cp -R ./src/references.bib ./pandoc_site/ \
 && cp -R ./src/references_cleaned.bib ./pandoc_site/ \
+
 
 # the lua filter needs to go after (under) the pandoc-crossref. Otherwise,
 # padoc-crossref cannot recognize the figures.
@@ -151,6 +153,18 @@ find ./src/chapter_09/ -iname "*.md" -type f -exec sh -c 'pandoc \
     --lua-filter=parse-html.lua \
     "${0}" -o "./pandoc_site/chapter_09/$(basename ${0%.md}.md)" &&
     sed -i "s.'\\\\\\\\~'.\\&\\#160;.g" "./pandoc_site/chapter_09/$(basename ${0%.md}.md)"
+' {} \;
+
+find ./src/extra/ -iname "*.md" -type f -exec sh -c 'pandoc \
+    --from markdown \
+    --to markdown \
+    -t markdown-smart \
+    --wrap=none \
+    --filter ./src/pandoc-crossref \
+    -M "crossrefYaml=./src/ref_formatting_site.yaml" \
+    --lua-filter=parse-html.lua \
+    "${0}" -o "./pandoc_site/extra/$(basename ${0%.md}.md)" &&
+    sed -i "s.'\\\\\\\\~'.\\&\\#160;.g" "./pandoc_site/extra/$(basename ${0%.md}.md)"
 ' {} \;
 
 

@@ -1,16 +1,16 @@
 ## Software Systems and Operation
 
-### Advanced Matplotlib Layouts with the `bisect()` function
+<!-- ### Advanced Matplotlib Layouts with the `bisect()` function -->
 
 <!-- I can put a figure here from my notability note titled "Why i need bisect function" -->
 
-It can be difficult to create complex plot layouts with matplotlib, especially when the layout should have strict requirements, like neighboring axes that are aligned with one another. Before explaining a custom method for solving this problem through the use of a new function `bisect()`, its worth reviewing the more accepted methods of advanced matplotlib figure layout.
+<!-- It can be difficult to create complex plot layouts with matplotlib, especially when the layout should have strict requirements, like neighboring axes that are aligned with one another. Before explaining a custom method for solving this problem through the use of a new function `bisect()`, its worth reviewing the more accepted methods of advanced matplotlib figure layout.  -->
 
-#### Subplot Mosaic
+<!-- #### Subplot Mosaic
 
-[Subplot mosaic](https://matplotlib.org/stable/gallery/subplots_axes_and_figures/mosaic.html) is a tool for specifying the layout of a figure with a special python dictionary, demonstrated by this example from the docs:
+[Subplot mosaic](https://matplotlib.org/stable/gallery/subplots_axes_and_figures/mosaic.html)  is a tool for specifying the layout of a figure with a special python dictionary, demonstrated by this example from the docs:
 
-``` python
+```python
 fig = plt.figure(layout="constrained")
 ax_dict = fig.subplot_mosaic(
     [
@@ -24,9 +24,10 @@ ax_dict["hist"].hist(hist_data)
 ax_dict["image"].imshow([[1, 2], [2, 1]])
 identify_axes(ax_dict)
 ```
-
 ![](./figs/sphx_glr_mosaic_001_2_0x.webp){#fig:mosaic path="chapter_08"}
 
+
+```{=html}
 ??? note
 
     There also is a method for embedding one mosaic inside of another, which can be handy for complex layouts:
@@ -46,23 +47,19 @@ identify_axes(ax_dict)
     )
     identify_axes(axd, fontsize=36)
     ```
+```
 
-There are methods of changing the aspect ratios of the plots, but tools for imposing alignment constraints across plots are limited. For example, notice in the example above how the (1,1) plot axes are not vertically aligned with the (0,1) plot above.
+There are methods of changing the aspect ratios of the plots, but tools for imposing alignment constraints across plots are limited. For example, notice in the example above how the (1,1) plot axes are not vertically aligned with the (0,1) plot above.  -->
 
-#### Gridspec
+<!-- #### Gridspec
 
-[Gridspec](https://matplotlib.org/stable/gallery/lines_bars_and_markers/scatter_hist.html#sphx-glr-gallery-lines-bars-and-markers-scatter-hist-py) is a tool for more carefully specifying a grid layout. Space between plots can be specified, and the relative widths or heights of columns and rows can be customized. Gridspec offers a lot of control, but it requires many custom parameters that can be unintuitive to derive.
+[Gridspec](https://matplotlib.org/stable/gallery/lines_bars_and_markers/scatter_hist.html#sphx-glr-gallery-lines-bars-and-markers-scatter-hist-py) is a tool for more carefully specifying a grid layout. Space between plots can be specified, and the relative widths or heights of columns and rows can be customized. Gridspec offers a lot of control, but it requires many custom parameters that can be unintuitive to derive.  -->
 
-#### Add_axes
+<!-- #### Add_axes
+One of the simplest ways of adding subplots to a figure is with the `fig.add_axese(rect)` method. The `rect = [ll_x, ll_y, width, height]` specifies the x and y coordinate of the lower left corner with the first two parameters, and the width and height with the second 2 parameters. Multiple uses of `add_axese()` offers maximum control for creating advanced layouts, but specifying all the correct `rect` arrays can get very confusing. Figure @Fig:layout_sketch illustrates the types of calculations that become necessary when the specific location and size of each subplot must be specified under certain constraints. 
 
-One of the simplest ways of adding subplots to a figure is with the `fig.add_axese(rect)` method. The `rect = [ll_x, ll_y, width, height]` specifies the x and y coordinate of the lower left corner with the first two parameters, and the width and height with the second 2 parameters. Multiple uses of `add_axese()` offers maximum control for creating advanced layouts, but specifying all the correct `rect` arrays can get very confusing. Figure Fig. [1](#fig:layout_sketch) illustrates the types of calculations that become necessary when the specific location and size of each subplot must be specified under certain constraints.
+![**Sketch for layout with add_axese().**](./figs/layout_sketch.png){#fig:layout_sketch short-caption="Rough sketch for layout with add_axese()" path="chapter_08"} -->
 
-<figure markdown> 
-    <a name='fig:layout_sketch'></a> 
-    ![fig:layout_sketch](./figs/layout_sketch.png) 
-    <figcaption markdown> Figure 1: **Sketch for layout with add_axese().**</figcaption>
-    </figure>
-
-#### `bisect()` method
+<!-- #### `bisect()` method -->
 
 <script src="../../chapter_06/code/section_05.js"></script>
