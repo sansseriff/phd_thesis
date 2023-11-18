@@ -1,4 +1,7 @@
 
+\textbf{In peer review at Optica Quantum:}
+\textbf{A. Mueller}, S. Davis, B. Korzh, R. Valivarthi, A. D. Beyer, R. Youssef, N. Sinclair, M. D. Shaw, and M. Spiropulu, "High-rate multiplexed entanglement source based on time-bin qubits for advanced quantum networks," \href{https://arxiv.org/abs/2310.01804}{arXiv:2310.01804} [quant-ph](2023).
+
 \textbf{A. Mueller}, E. E. Wollman, B. Korzh, A. D. Beyer, L. Narvaez, R. Rogalin, M. Spiropulu, and M. D. Shaw, “Time-walk and jitter correction in snspds at high count rates,” \href{https://doi.org/10.1063/5.0129147}{Applied Physics Letters 122, 044001 (2023)}.
 
 \textbf{A. S. Mueller}, B. Korzh, M. Runyan, E. E. Wollman, A. D. Beyer, J. P. Allmaras, A. E. Velasco, I Craiciu, B. Bumble, R. M. Briggs, L. Narvaez, C. Peña, M. Spiropulu, and M. D. Shaw, “Free-space coupled superconducting nanowire single-photon detector with low dark counts,” \href{https://opg.optica.org/optica/fulltext.cfm?uri=optica-8-12-1586&id=465726}{Optica 8, 1586–1587 (2021)}.

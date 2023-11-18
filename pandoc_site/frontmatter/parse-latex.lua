@@ -141,6 +141,19 @@ Span = function(el)
         color= "midnightblue"
       end
 
+      -- use orange for todos
+      if color == "orange" then
+        table.insert(
+          el.content, 1,
+          pandoc.RawInline('latex', '\\textbf{\\hl{')
+        )
+        table.insert(
+          el.content,
+          pandoc.RawInline('latex', '}}')
+        )
+        return el.content
+      end
+
       table.insert(
         el.content, 1,
         pandoc.RawInline('latex', '\\textcolor{' .. color .. '}{')
