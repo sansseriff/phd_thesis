@@ -7,7 +7,7 @@ mjx-utext {
 
 .arithmatex {
     overflow-y: hidden !important;
-    /* overflow-x: hidden !important; */
+    overflow-x: hidden !important;
 }
 
 mjx-container {
@@ -145,7 +145,7 @@ h1 {
     -webkit-box-shadow: 1px 1px 18px rgba(0, 0, 0, 0.05);
     -moz-box-shadow: 1px 1px 18px rgba(0, 0, 0, 0.05); */
     /* filter: hue-rotate(0deg); */
-    filter: hue-rotate(180deg) sepia(49%) invert(.84) saturate(2.3) ;
+    filter: hue-rotate(180deg) sepia(49%) invert(.95) saturate(2.3) ;
     display: block;
     /* filter: invert(1); */
     /* filter: hue-rotate(240deg);
@@ -153,7 +153,22 @@ h1 {
     border-radius: 7px;
     /* border: solid #c7dfff 1.4px; */
     border: solid #f0d7b1 1.4px;
+}
 
+.dark_img_achromatic {
+
+    filter: hue-rotate(184deg) sepia(16%) invert(.84) saturate(1.5);
+    display: block;
+}
+
+.light_img_achromatic {
+
+    display: block;
+    border-radius: 7px;
+    filter: hue-rotate(180deg) sepia(10%) hue-rotate(180deg) saturate(1.5);
+    /* box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.03);
+    -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.03);
+    -moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.03); */
 }
 
 .light_img {
