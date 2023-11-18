@@ -1,5 +1,4 @@
 <!-- start of the appendix -->
-<span class="latex">\appendix</span>
 
 # Interferometer Imbalance Analysis
 
