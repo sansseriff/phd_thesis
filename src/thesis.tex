@@ -675,7 +675,7 @@ A novel time-walk or pulse-pileup correction technique is used to extract accura
 \hypertarget{results-1}{%
 \section{Results}\label{results-1}}
 
-By pairing up particular 100~GHz DWDM channels and recording coincidence rates, a discretized form of the JSI of our pair source is measured (Fig.~\ref{fig:figure_2nd_1} a). Due to the wide pump bandwidth, the spectrum of signal photons spans several ITU channels for a given idler photon wavelength. Pairs along the main diagonal are optimized for maximum coincidence rates by tuning the pump laser frequency, and are therefore used for all remaining measurements. In Fig.~\ref{fig:system} b, these pairs are highlighted with matching colors. Coupling efficiencies $\eta$ shown in Fig.~\ref{fig:figure_2nd_1} a are derived from a JSI fitting analysis \textbf{\hl{(see Supplementary note 6)}} and include all losses between the generation of entangled pairs in the SPDC and final photo-detection.
+By pairing up particular 100~GHz DWDM channels and recording coincidence rates, a discretized form of the JSI of our pair source is measured (Fig.~\ref{fig:figure_2nd_1} a). Due to the wide pump bandwidth, the spectrum of signal photons spans several ITU channels for a given idler photon wavelength. Pairs along the main diagonal are optimized for maximum coincidence rates by tuning the pump laser frequency, and are therefore used for all remaining measurements. In Fig.~\ref{fig:system} b, these pairs are highlighted with matching colors. Coupling efficiencies $\eta$ shown in Fig.~\ref{fig:figure_2nd_1} a are derived from in \ref{joint-spectral-intensity-analysis} and include all losses between the generation of entangled pairs in the SPDC and final photo-detection.
 
 A joint spectral analysis of the 100~GHz fiters applied to the wide-bandwidth pumped JSI shows only a fraction of idler (signal) photons that pass though one filter will be detected with their corresponding signal (idler) photon. This is true even for ideal filters that are 100\% transmissive within their passbands, which demonstrates a geometrical limit on the ratio of coincidence rates to singles rates in this regime of large bandwidth JSI and narrowband filters. For calculations of $\mu$ in terms of coincidence rate $C_{AB}$, repetition rate $R$, and singles rates $S_A, S_B$, we account for this by adding a geometric compensation factor $\delta$ to the commonly used equation:
 
@@ -1049,61 +1049,70 @@ It is not trivially clear how much the interferometer early/late imbalances shou
 \hypertarget{time-walk-correction}{%
 \section{Time-Walk Correction}\label{time-walk-correction}}
 
-SNSPD jitter increases with count rate due to properties of the nanowire reset process and features of the readout circuit. A threshold timing measurement set at a specific trigger level will `walk' along the rising edge of SNSPD pulses by varying amounts if those pulses vary in amplitude and slew rate. At low count rates, SNSPDs exhibit very uniform pulse heights and shapes. However, at high counts rates where the inter-arrival time is on the order of the reset time of the detector, current-reset and amplifier effects lead to smaller and distorted pulses in a form of pulse `pile-up'~\cite{Mueller2023}.
+SNSPD jitter increases with count rate due to properties of the nanowire reset process and features of the readout circuit. A threshold timing measurement set at a specific trigger level will `walk' along the rising edge of SNSPD pulses by varying amounts if those pulses vary in amplitude and slew rate. At low count rates, SNSPDs exhibit very uniform pulse heights and shapes. However, at high counts rates where the inter-arrival time is on the order of the reset time of the detector, current-reset and amplifier effects lead to smaller and distorted pulses in a form of pulse `pile-up'~\autocite{Mueller2023}.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{time_walk_comparison_light.pdf}
-    \caption{a) Adding 200~ns dead time (DT) to avoid high-rate jitter significantly reduces count rates at higher $\mu$. With time walk correction (TWC), the full available count rate is preseved while keeping the timing jitter low. b) The reduction in count rate for coincidences is more dramatic, because the lost efficiency at both detectors contrinbutes. }
-    \label{fig:time_walk_vs_dead_time}
+\hypertarget{fig:time_walk_vs_dead_time}{%
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth,height=\textheight]{./chapter_05/figs/time_walk_comparison_light.pdf}
+\caption[{sTime walk effect vs dead time rejection}]{\textbf{Time walk effect vs dead time rejection}a) Adding 200~ns dead time (DT) to avoid high-rate jitter significantly reduces count rates at higher $\mu$. With time walk correction (TWC), the full available count rate is preserved while keeping the timing jitter low. b) The reduction in count rate for coincidences is more dramatic, because the lost efficiency at both detectors contributes.}
+\label{fig:time_walk_vs_dead_time}
 \end{figure}
+}
 
 The effects of time walk can be filtered out by imposing a dead time following each detection. The length of the dead time is tuned so that SNSPD events arriving within it are expected to have distorted timing, and are thrown out. However, as shown in \ref{fig:time_walk_vs_dead_time}, this method can severely limit count and coincidence rates for detector types that exhibit long periods of undershoot or ringing on the falling edge of the RF pulse. For the differential SNSPDs used here, a 200~ns dead time would be necessary to filter out all time-walk effects.
 
-As detailed in \cite{Mueller2023, Craiciu23}, a calibration and correction process may be used to cancel out the effects of time walk without losing count rate. It relies on adding timing corrections $\tilde{d}$ to time-distorted SNSPD time tags based on the inter-arrival $t'$ time that precedes each tag. Building a lookup table for $\tilde{d}$ as a function of $t'$ is the objective of the calibration process. With this, real-time running software may largely cancel the increase in jitter from time-walk.
+As detailed in \autocite{Mueller2023,Craiciu23}, a calibration and correction process may be used to cancel out the effects of time walk without losing count rate. It relies on adding timing corrections $\tilde{d}$ to time-distorted SNSPD time tags based on the inter-arrival $t'$ time that precedes each tag. Building a lookup table for $\tilde{d}$ as a function of $t'$ is the objective of the calibration process. With this, real-time running software may largely cancel the increase in jitter from time-walk.
 
-Here we introduce a simplification of the calibration process from \cite{Mueller2023} that makes use of the pulse sequence already impinging on the detectors from the entanglement source. With the calibration routine written directly into our coincidence analysis software, recomputing the ideal $t'-vs-\tilde{d}$ curve takes no more than a few seconds whenever the detector bias currents or trigger levels are changed.
+Here we introduce a simplification of the calibration process from \autocite{Mueller2023} that makes use of the pulse sequence already impinging on the detectors from the entanglement source. With the calibration routine written directly into our coincidence analysis software, recomputing the ideal $t'-vs-\tilde{d}$ curve takes no more than a few seconds whenever the detector bias currents or trigger levels are changed.
 
-We have previously shown how the $t'-vs-\tilde{d}$ curve can be found by illuminating the detector with photons from a pulsed laser source \cite{Mueller2023}. We imposed the requirement that the period $p$ of the pulses sequence be larger that the largest expected jitter observed due to time walk. This way, any time-tag can be unambiguously associated with the timing of the laser pulse that created it, thereby inferring the relation between $t'$ and $\tilde{d}$ for that event.
+We have previously shown how the $t'-vs-\tilde{d}$ curve can be found by illuminating the detector with photons from a pulsed laser source \autocite{Mueller2023}. We imposed the requirement that the period $p$ of the pulses sequence be larger that the largest expected jitter observed due to time walk. This way, any time-tag can be unambiguously associated with the timing of the laser pulse that created it, thereby inferring the relation between $t'$ and $\tilde{d}$ for that event.
 
 Here we rely on a 2D histogram that plots $t'$ on the y-axis and the usual clock-referenced arrival time on the x-axis. Here, any single $t'$ and absolute arrival time measurement does not imply a correction $\tilde{d}$ when considered in isolation. This is because the time-distribution is an irregular pattern of histogram peaks of varying height, as opposed to a more uniform sequence. Also, delays $\tilde{d}$ can surpass the experiment's fundamental period (244.5~ps from the laser's 4.09~GHz rep rate), initially complicating the matching of trigger events to originating photon timing. But despite these nuances, the 2D histogram structure implies a method for extracting the $t'-vs-\tilde{d}$ calibration curve through a special analysis.
 
-Slices at the bottom of the 2D histogram (fig.~\ref{fig:time_walk}a) for large $t'$ are essentially identical to the low-count-rate 3-peak singles histograms like from figure 2c in the main text. As $t'$ decreases from here, the slice as a whole develops some linear offset or rollover (periodic every 244.5~ps). This offset is the $\tilde{d}$ offset of interest. Therefore, $t'-vs-\tilde{d}$ may be extracted by running a template matching algorithm on each horizontal slice, using the large-$t'$ slice as the template. We opt for a absolute differences algorithm (fig.~\ref{fig:time_walk}b). As the algorithm progress to smaller and smaller $t'$, the offset may approach the fundamental period length and `roll over' causing a jump-discontinuity. But this can be detected and corrected for, meaning the method may produce a $t'-vs-\tilde{d}$ curve (fig.~\ref{fig:time_walk}c) with some $\tilde{d}$ larger than the fundamental period.
+Slices at the bottom of the 2D histogram ( Fig.~\ref{fig:time_walk} a) for large $t'$ are essentially identical to the low-count-rate 3-peak singles histograms like from figure 2c in the main text. As $t'$ decreases from here, the slice as a whole develops some linear offset or rollover (periodic every 244.5~ps). This offset is the $\tilde{d}$ offset of interest. Therefore, $t'-vs-\tilde{d}$ may be extracted by running a template matching algorithm on each horizontal slice, using the large-$t'$ slice as the template. We opt for a absolute differences algorithm ( Fig.~\ref{fig:time_walk} b). As the algorithm progress to smaller and smaller $t'$, the offset may approach the fundamental period length and `roll over' causing a jump-discontinuity. But this can be detected and corrected for, meaning the method may produce a $t'-vs-\tilde{d}$ curve ( Fig.~\ref{fig:time_walk} c) with some $\tilde{d}$ larger than the fundamental period.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\linewidth]{time_walk_analysis.pdf}
-    \caption{a) The 2d histogram with clock-referenced histograms on the x-axis and inter-pulse arrival time $t'$ on the y-axis. The effect of time walk is evident in the horizontal translations of the 3-peak structure as $t'$ decreases. Slices of the 2D histogram indicated by the red and blue horizontal line are plotted as regular histograms in the lower figure. b) After applying the Sum Absolute Differences filter to horizontal slices of the 2D histogram. The $t'-vs-\tilde{d}$ delay curve (c) is extracted from this by using the index of each row with minimum mismatch value as the $\tilde{d}$ value for that row.}
-    \label{fig:time_walk}
+\hypertarget{fig:time_walk}{%
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=\textheight]{./chapter_05/figs/time_walk_analysis_light.pdf}
+\caption[{In situ time walk analysis}]{\textbf{In situ time walk analysis} a) The 2d histogram with clock-referenced histograms on the x-axis and inter-pulse arrival time $t'$ on the y-axis. The effect of time walk is evident in the horizontal translations of the 3-peak structure as $t'$ decreases. Slices of the 2D histogram indicated by the red and blue horizontal line are plotted as regular histograms in the lower figure. b) After applying the Sum Absolute Differences filter to horizontal slices of the 2D histogram. The $t'-vs-\tilde{d}$ delay curve (c) is extracted from this by using the index of each row with minimum mismatch value as the $\tilde{d}$ value for that row.}
+\label{fig:time_walk}
 \end{figure}
+}
 
 Overall, time-walk analysis based on the 2D histogram construction is straightforward to implement and user friendly because it may be applied \textit{in situ} as part of software that already creates histograms and records coincidences.
 
 \hypertarget{filter-bandwidths}{%
 \section{Filter Bandwidths}\label{filter-bandwidths}}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{filter_comparison_light.pdf}
-    \caption{Spectrums for a single DWDM channel and narroband filter, with the center wavelengths set to zero. The narroband filter is used at Bob with the 16-channel DWDM at Alice to measure coincidence rates in the main text Fig. 2b. For the 100~GHz spec. DWDM filters, 100~GHz refers to the filter spacing. The FWHM passband for each is about 82~GHz.}
+\hypertarget{fig:bandwidths}{%
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth,height=\textheight]{./chapter_05/figs/filter_comparison_light.pdf}
+\caption[{DWDM and tunable narroband filter bandwidths}]{\textbf{DWDM and tunable narroband filter bandwidths} Spectrums for a single DWDM channel and narroband filter, with the center wavelengths set to zero. The narroband filter is used at Bob with the 16-channel DWDM at Alice to measure coincidence rates in the main text Fig. 2b. For the 100~GHz spec. DWDM filters, 100~GHz refers to the filter spacing. The FWHM passband for each is about 82~GHz.}
+\label{fig:bandwidths}
 \end{figure}
+}
 
 \hypertarget{guard-regions}{%
 \section{Guard Regions}\label{guard-regions}}
 
-The width $x$ of the guard regions centered at 80 and 160 ps were set to 10~ps. As shown in Fig. \ref{fig:guard_scan}, this width increase fidelities slightly without significantly impacting coincidence rates. 10~ps was not chosen based on rigorous analysis, though it would be possible to optimize the width to maximize some metric, like secret key rate.
+The width $x$ of the guard regions centered at 80 and 160 ps were set to 10~ps. As shown in Fig. Fig.~\ref{fig:guard_scan}, this width increase fidelities slightly without significantly impacting coincidence rates. 10~ps was not chosen based on rigorous analysis, though it would be possible to optimize the width to maximize some metric, like secret key rate.
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=1\linewidth]{guard_scan_light.pdf}
-    \caption{Charts on the right show phase basis fidelities and total coincidence rates as a function of width $x$, where both guard regions stay centered at 80 \& 160~ps.}
-    \label{fig:guard_scan}
+\hypertarget{fig:guard_scan}{%
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=\textheight]{./chapter_05/figs/guard_scan_light.pdf}
+\caption[{Effect of guard regions on visibilities}]{\textbf{Effect of guard regions on visibilities} Charts on the right show phase basis fidelities and total coincidence rates as a function of width $x$, where both guard regions stay centered at 80 \& 160~ps.}
+\label{fig:guard_scan}
 \end{figure}
+}
 
 \hypertarget{incompatible-bases-accidental-coincidence-rate}{%
 \section{Incompatible Bases \& Accidental Coincidence Rate}\label{incompatible-bases-accidental-coincidence-rate}}
 
-An entangled pair can be called `spectrally compatible' with a given DWDM channel pairing if --given no losses-- it would be detected 100\% of the time across that channel pair. In the case where signal and idler modes are perfectly spectrally compatible, it has been shown that accidental coincidences still negatively impact visibilities \cite{Kim2022}. In this case and assuming negligible dark counts, visibility is reduced as:
+An entangled pair can be called `spectrally compatible' with a given DWDM channel pairing if --given no losses-- it would be detected 100\% of the time across that channel pair. In the case where signal and idler modes are perfectly spectrally compatible, it has been shown that accidental coincidences still negatively impact visibilities \autocite{Kim2022}. In this case and assuming negligible dark counts, visibility is reduced as:
 
 $$
 \begin{aligned}
@@ -1111,11 +1120,14 @@ V = \frac{1}{1+\mu}V_0
 \end{aligned}
 $$
 
-Where $V_0$ is a nominal interferometer-limited visibility \cite{Kim2022} and $\mu$ is the mean photon number per pulse (classically defined like with \ref{eq:colorless}). The accidental coincidence rate discussed in the main text $C_{Acc}$ is only partially related to this, as it specifically takes into account only accidental coincidences due to incompatible spectral modes. Such coincidences can arise from two situations, and can be assigned their own coincidence rates
+Where $V_0$ is a nominal interferometer-limited visibility \autocite{Kim2022} and $\mu$ is the mean photon number per pulse (classically defined like with Eq.~\ref{eq:colorless}). The accidental coincidence rate discussed in the main text $C_{Acc}$ is only partially related to this, as it specifically takes into account only accidental coincidences due to incompatible spectral modes. Such coincidences can arise from two situations, and can be assigned their own coincidence rates
 
 \begin{itemize}
-\item $C_{ee}$: two photons both from mutually incompatible spectral regions, like the red regions in Fig. \ref{fig:narroband}c 
-\item $C_{em}$ and $C_{me}$: one photon from the central overlapping filter region and one from an incompatible spectral region. 
+\tightlist
+\item
+  $C_{ee}$: two photons both from mutually incompatible spectral regions, like the red regions in Fig.~\ref{fig:narroband} c
+\item
+  $C_{em}$ and $C_{me}$: one photon from the central overlapping filter region and one from an incompatible spectral region.
 \end{itemize}
 
 Say one member of a spectrally compatible entanglemed pair reaches Alice, but not Bob due to loss. The photon received at Alice could form a coincidence with a spectrally incompatible photon that arrives at Bob. These are the $C_{em}$ and $C_{me}$ type coincidences. $C_{Acc}$ in the main text is the sum of $C_{ee}$, $C_{em}$ and $C_{me}$:
@@ -1126,6 +1138,7 @@ Say one member of a spectrally compatible entanglemed pair reaches Alice, but no
     C_{em}/R &= (1 - \delta)\frac{S_A}{R} * \delta (1-\eta_A) \frac{S_B}{R} \\
     C_{me}/R &= (1 - \delta)\frac{S_B}{R} * \delta (1-\eta_B) \frac{S_A}{R} \\
 \end{align}
+
 \begin{align}
 C_{Acc} = \frac{1}{R}(1 - \delta) S_A S_B \left(\delta \left(1-\eta _A\right)+\delta \left(1-\eta _B\right)+1-\delta\right)
 \end{align}
@@ -1133,18 +1146,18 @@ C_{Acc} = \frac{1}{R}(1 - \delta) S_A S_B \left(\delta \left(1-\eta _A\right)+\d
 \hypertarget{maximum-entangled-photon-source-throughput}{%
 \section{Maximum Entangled Photon Source Throughput}\label{maximum-entangled-photon-source-throughput}}
 
-We observe in the small $\mu$ limit that the metrics $V$, $E_N = C_N/C_{AB}$, $E_I = C_I/C_{AB}$, and $E_S = SKR/C_{AB}$ scale linearly with $\mu$, where $E_S$ is the secret key fraction. Raw coincidence rate is not linear with $\mu$ due to the count rate dependent efficiency of the SNSPDs. As count rate increases, the detector spends a larger fraction of time in a partially reset state where photo-detection is less efficient or not possible. We separately collect measurements of detector efficiency versus count rate extending past 10~Mcps, and use this to extrapolate coincidence rate to higher powers. Then, the metrics $E_N$, $E_I$, and $E_S$ are multiplied by the extrapolated rate to define extrapolated $C_N$, $C_I$, and $SKR$ as shown in \ref{fig:scan_extrapolate}b. Maximum values of these metrics are highlighted by colored circular markers.
+We observe in the small $\mu$ limit that the metrics $V$, $E_N = C_N/C_{AB}$, $E_I = C_I/C_{AB}$, and $E_S = SKR/C_{AB}$ scale linearly with $\mu$, where $E_S$ is the secret key fraction. Raw coincidence rate is not linear with $\mu$ due to the count rate dependent efficiency of the SNSPDs. As count rate increases, the detector spends a larger fraction of time in a partially reset state where photo-detection is less efficient or not possible. We separately collect measurements of detector efficiency versus count rate extending past 10~Mcps, and use this to extrapolate coincidence rate to higher powers. Then, the metrics $E_N$, $E_I$, and $E_S$ are multiplied by the extrapolated rate to define extrapolated $C_N$, $C_I$, and $SKR$ as shown in Fig.~\ref{fig:scan_extrapolate} b. Maximum values of these metrics are highlighted by colored circular markers.
 
-In this work we primarily study the capability of 8 DWDM channel pairs, with some analysis of 16-pair performance. However, the spectrum of entangled photon pairs produced by the type-0 SPDC is quite broad, meaning spectral multiplexing across many more channels is possible. In \ref{fig:scan_extrapolate} the spectrum of the SPDC is overlayed with sixty 100~GHz DWDM channel pairs spanning the L, C, and S ITU bands {[}L-29 (1592.1~nm) through C-20 (1543.73) and C-10 (1535.82) through S-1 (1490.76){]}. The coincidence rate through these added channels can be estimated from this spectrum and the known performance of the central 8 channel pairs. Table 1 in the main text specifies estimates for the total rate from the 60 multiplexed spectral channels.
+In this work we primarily study the capability of 8 DWDM channel pairs, with some analysis of 16-pair performance. However, the spectrum of entangled photon pairs produced by the type-0 SPDC is quite broad, meaning spectral multiplexing across many more channels is possible. In Fig.~\ref{fig:scan_extrapolate} the spectrum of the SPDC is overlayed with sixty 100~GHz DWDM channel pairs spanning the L, C, and S ITU bands {[}L-29 (1592.1~nm) through C-20 (1543.73) and C-10 (1535.82) through S-1 (1490.76){]}. The coincidence rate through these added channels can be estimated from this spectrum and the known performance of the central 8 channel pairs. Table 1 in the main text specifies estimates for the total rate from the 60 multiplexed spectral channels.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\linewidth]{scan_extrapolate_light.pdf}
-    \caption{a) and b) include data from main text Figure 3, and extrapolate it to higher $\mu$. It is notable that $C_I$ and $SRK$ reach their maximum values for only marginally higher pump powers than those used for our measurements. c) Spectrum of entangled photon pairs out of the SPDC, measured with an Anritsu MS9740B spectrum analyzer in High Dynamic Range mode. As the signal was near the instrument noise floor, many repeated spectrum measurements were point-averaged.}
-    \label{fig:scan_extrapolate}
+\hypertarget{fig:scan_extrapolate}{%
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=\textheight]{./chapter_05/figs/scan_extrapolate_light.pdf}
+\caption[{Rates with extrapolated mean photon number}]{\textbf{Rates with extrapolated mean photon number} a) and b) include data from main text Figure 3, and extrapolate it to higher $\mu$. It is notable that $C_I$ and $SRK$ reach their maximum values for only marginally higher pump powers than those used for our measurements. c) Spectrum of entangled photon pairs out of the SPDC, measured with an Anritsu MS9740B spectrum analyzer in High Dynamic Range mode. As the signal was near the instrument noise floor, many repeated spectrum measurements were point-averaged.}
+\label{fig:scan_extrapolate}
 \end{figure}
-
-block:
+}
 
 \hypertarget{conclusion}{%
 \chapter{Conclusion}\label{conclusion}}
@@ -1667,189 +1680,25 @@ The sections of code that undergo this analysis are located in the functions \te
 \hypertarget{software-systems-and-operation}{%
 \section{Software Systems and Operation}\label{software-systems-and-operation}}
 
-\hypertarget{advanced-matplotlib-layouts-with-the-bisect-function}{%
-\subsection{\texorpdfstring{Advanced Matplotlib Layouts with the \texttt{bisect()} function}{Advanced Matplotlib Layouts with the bisect() function}}\label{advanced-matplotlib-layouts-with-the-bisect-function}}
-
-It can be difficult to create complex plot layouts with matplotlib, especially when the layout should have strict requirements, like neighboring axes that are aligned with one another. Before explaining a custom method for solving this problem through the use of a new function \texttt{bisect()}, its worth reviewing the more accepted methods of advanced matplotlib figure layout.
-
-\hypertarget{subplot-mosaic}{%
-\subsubsection{Subplot Mosaic}\label{subplot-mosaic}}
-
-\href{https://matplotlib.org/stable/gallery/subplots_axes_and_figures/mosaic.html}{Subplot mosaic} is a tool for specifying the layout of a figure with a special python dictionary, demonstrated by this example from the docs:
-
-\begin{minted}
-[
-frame=lines,
-framesep=2mm,
-baselinestretch=1,
-bgcolor=extralightgray,
-fontsize=\footnotesize,
-linenos]
-{python}
-fig = plt.figure(layout="constrained")
-ax_dict = fig.subplot_mosaic(
-    [
-        ["bar", "plot"],
-        ["hist", "image"],
-    ],
-)
-ax_dict["bar"].bar(["a", "b", "c"], [5, 7, 9])
-ax_dict["plot"].plot([1, 2, 3])
-ax_dict["hist"].hist(hist_data)
-ax_dict["image"].imshow([[1, 2], [2, 1]])
-identify_axes(ax_dict)
-\end{minted}
-
-\includegraphics{./chapter_08/figs/sphx_glr_mosaic_001_2_0x.webp}
-
-There are methods of changing the aspect ratios of the plots, but tools for imposing alignment constraints across plots are limited. For example, notice in the example above how the (1,1) plot axes are not vertically aligned with the (0,1) plot above.
-
-\hypertarget{gridspec}{%
-\subsubsection{Gridspec}\label{gridspec}}
-
-\href{https://matplotlib.org/stable/gallery/lines_bars_and_markers/scatter_hist.html\#sphx-glr-gallery-lines-bars-and-markers-scatter-hist-py}{Gridspec} is a tool for more carefully specifying a grid layout. Space between plots can be specified, and the relative widths or heights of columns and rows can be customized. Gridspec offers a lot of control, but it requires many custom parameters that can be unintuitive to derive.
-
-\hypertarget{add_axes}{%
-\subsubsection{Add\_axes}\label{add_axes}}
-
-One of the simplest ways of adding subplots to a figure is with the \texttt{fig.add\_axese(rect)} method. The \texttt{rect\ =\ {[}ll\_x,\ ll\_y,\ width,\ height{]}} specifies the x and y coordinate of the lower left corner with the first two parameters, and the width and height with the second 2 parameters. Multiple uses of \texttt{add\_axese()} offers maximum control for creating advanced layouts, but specifying all the correct \texttt{rect} arrays can get very confusing. Figure Fig.~\ref{fig:layout_sketch} illustrates the types of calculations that become necessary when the specific location and size of each subplot must be specified under certain constraints.
-
-\hypertarget{fig:layout_sketch}{%
-\begin{figure}
-\centering
-\includegraphics{./chapter_08/figs/layout_sketch.png}
-\caption[{Rough sketch for layout with add\_axese()}]{\textbf{Sketch for layout with add\_axese().}}
-\label{fig:layout_sketch}
-\end{figure}
-}
-
-\hypertarget{bisect-method}{%
-\subsubsection{\texorpdfstring{\texttt{bisect()} method}{bisect() method}}\label{bisect-method}}
-
 \hypertarget{how-a-sorption-fridge-works}{%
 \section{How A Sorption Fridge Works}\label{how-a-sorption-fridge-works}}
-
-to put something only in the mkdocs/html output:
-
-to put something only in the latex output:
-
-to get numbered equations to work in both latex and html, use this format. Notice that the label is used twice, once inside the align block and once outside:
-
-\hypertarget{eq:cosines}{}{ 
-\begin{align}
-P_{A+ B+} &= |\langle 2|2\rangle|^2_{A+ B+} = 2(1 + v \cos(\theta)) \label{eq:cosines}\\
-P_{A+ B-} &= |\langle 2|2\rangle|^2_{A+ B-} = 2(1 - v \cos(\theta)) \notag \\
-P_{A- B+} &= |\langle 2|2\rangle|^2_{A- B+} = 2(1 - v \cos(\theta)) \notag \\
-P_{A- B-} &= |\langle 2|2\rangle|^2_{A- B-} = 2(1 + v \cos(\theta)) \notag \\ \notag
-\end{align}
-}
-
-You can do footnotes like this\footnote{This is a footnote}
-
-use \boldsymbol for bold latex:
-
-\textbf{Fidelity and Rates vs $\boldsymbol \mu$}
-
-Here are a few bold characters together: $\boldsymbol{\mu \quad \beta \quad \gamma}$
-
-For units, use \mathrm{nm}:
-This is a number with units: $138.3~\mathrm{nm}$
-
-Refer to a figure with Fig.~\ref{fig:figurename} or Fig.~\ref{fig:figurename} or for multiple Fig.~\ref{fig:figurename}
-
-Until I figure something more shorthand, you can set colors with ``\textless span\textgreater{}'' tags:
-
-\textcolor{midnightblue}{ This text is blue. And it changes lightness when darkmode is witched }
-
-\hypertarget{fig:figurename}{%
-\begin{figure}
-\centering
-\includegraphics[width=0.7\textwidth,height=\textheight]{./chapter_08/figs_06/fig1b_light.pdf}
-\caption[{Figure label for in thesis index here.}]{\textbf{Caption title here} a) Long caption here}
-\label{fig:figurename}
-\end{figure}
-}
-
-\hypertarget{fig:figurename2}{%
-\begin{figure}
-\centering
-\includegraphics[width=0.7\textwidth,height=\textheight]{./chapter_08/figs_06/hsps_light.pdf}
-\caption[{Figure label for in thesis index here.}]{\textbf{Caption title here} a) Long caption here}
-\label{fig:figurename2}
-\end{figure}
-}
-
-to have a ``~'' space in latex and a no break space in html\ldots{} ``\&\#160'', just use ``~''. That's a forward slash and a space.
-
-The formatting of multi-line divs is very important. This will render correctly:
-
-{\color{midnightblue} 
-
-$$math stuff 1$$
-
-}
-
-But this won't:
-
-{\color{midnightblue} 
-
-\begin{minted}
-[
-frame=lines,
-framesep=2mm,
-baselinestretch=1,
-bgcolor=extralightgray,
-fontsize=\footnotesize,
-linenos]
-{nil}
-$$math stuff 2$$
-\end{minted}
-
-}
-
-And this won't
-
-\begin{minted}
-[
-frame=lines,
-framesep=2mm,
-baselinestretch=1,
-bgcolor=extralightgray,
-fontsize=\footnotesize,
-linenos]
-{nil}
-$$math stuff 3$$
-
-</div>
-\end{minted}
-
-the file where you're working on bokeh styling is at :
-
-C:\Users\Andrew\OneDrive - California Institute of Technology\JPL.Jitterate\peacoq\src\bokeh\_hists\_js\_callbacks.ipynb
 
 \hypertarget{interferometer-imbalance-analysis-1}{%
 \chapter{Interferometer Imbalance Analysis}\label{interferometer-imbalance-analysis-1}}
 
-Note: the following section is primarily written by Samantha Davis, the second author for the paper \href{https://arxiv.org/abs/2310.01804}{High-rate multiplexed entanglement source based on time-bin qubits for advanced quantum networks}. It appears in the supplemental of this paper, and is included here to provide a wholistic overview of the research performed for this project.
+Note: the following section is primarily written by Samantha Davis, the second author of the paper \href{https://arxiv.org/abs/2310.01804}{High-rate multiplexed entanglement source based on time-bin qubits for advanced quantum networks}. It appears in the supplemental of this paper, and is included here to provide a wholistic overview of the research performed for this project.
 
 \hypertarget{impact-of-experimental-imperfections-on-entanglement-visibility}{%
 \section{Impact of experimental imperfections on entanglement visibility}\label{impact-of-experimental-imperfections-on-entanglement-visibility}}
 
 The experiment employs three Michaelson interferometers with a path-length delay of 80 ps: one at the source to generate the early and late time-bins, and one prior to each detector to control the measurement basis. To determine the effect of interferometric imperfections on the entanglement visibility, we model the interferometers as equivalent Mach-Zehnder interferometers as shown in Fig.~\ref{fig:interf_model}. Imperfections in the interferometer are captured by the transmittance $t$ of the beamsplitter and internal path (mirror) efficiencies $|\alpha|^2$ and $|\beta|^2$. An ideal Michaelson interferometer has $t = 1/\sqrt{2}$ and $|\alpha|^2 = |\beta|^2 = 1$.
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=\textwidth]{interf_model.pdf}
-    \caption{Model for Michaelson interferometers employed in the experiment. The interfomerter contains a beamsplitter with transmittance $t$ and two mirrors with efficiencies $\alpha$ and $\beta$.}
-    \label{fig:interf_model}
-\end{figure}
-
-\hypertarget{fig:fig_id}{%
+\hypertarget{fig:interf_model}{%
 \begin{figure}
 \centering
-\includegraphics[width=1\textwidth,height=\textheight]{./chapter_09/figs/fig_file_name.pdf}
+\includegraphics[width=1\textwidth,height=\textheight]{./chapter_09/figs/interf_model.png}
 \caption[{Michaelson interferometer model}]{\textbf{Michaelson interferometer model} Model for Michaelson interferometers employed in the experiment. The interfomerter contains a beamsplitter with transmittance $t$ and two mirrors with efficiencies $\alpha$ and $\beta$.}
-\label{fig:fig_id}
+\label{fig:interf_model}
 \end{figure}
 }
 
@@ -1858,9 +1707,11 @@ The experiment employs three Michaelson interferometers with a path-length delay
 
 In the experiment, pulses of coherent light from a mode-locked laser (MLL) are injected into the input of the source interferometer. A field $\hat{E}$ at the input of the source interferometer transforms as
 
+\hypertarget{eq:source_field_transform}{}{
 \begin{align}
     \hat{E}_{\text{in}}  \rightarrow rt \alpha e^{i\varphi} \hat{E}_{E,1} +  r^2 \alpha e^{i\varphi}\hat{E}_{E,2} + rt\beta \hat{E}_{L,1} + t^2\beta \hat{E}_{L,2} + ir\sqrt{1-|\alpha|^2}\hat{E}_{\text{vac}_1} +it\sqrt{1-|\beta|^2}\hat{E}_{\text{vac}_2} \label{eq:source_field_transform}
 \end{align}
+}
 
 where the early and late temporal modes are denoted by subscripts ``E'' and ``L'', the input and output modes are denoted by subscripts ``in'', ``1'' and ``2'', and $r = i\sqrt{1-|t|^2}$. Due to imperfect path efficiencies, part of the light leaks into the vacuum field mode $\hat{E}_{\text{vac}}$, which corresponds to the last term in Eq.~\ref{eq:source_field_transform}. It follows that the power of the early and late output pulses in terms of the power of the input pulse are
 
@@ -1896,12 +1747,14 @@ When output port 1 of the source interferometer is used, if the internal path ef
 \hypertarget{measurement-interferometer-imperfections}{%
 \subsection{Measurement Interferometer Imperfections}\label{measurement-interferometer-imperfections}}
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.8\textwidth]{ent_visib_model.pdf}
-    \caption{Setup for theoretical model of entanglement visibility experiment}
-    \label{fig:ent_visib_model}
+\hypertarget{fig:ent_visib_model}{%
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=\textheight]{./chapter_09/figs/ent_visib_model.png}
+\caption[{Entanglement visibility model}]{\textbf{Entanglement visibility model} Setup for theoretical model of entanglement visibility experiment}
+\label{fig:ent_visib_model}
 \end{figure}
+}
 
 Imperfections in the measurement interferometers limit the entanglement visibility of the experiment. As described in the previous section, early and late TMSVs are generated by pumping the SPDC with early and late pulses. Each half of each TMSV is sent to a measurement interferometer (see Fig.~\ref{fig:ent_visib_model}). Let $\ket{\xi}$ denote the TMSV state,
 
@@ -2016,21 +1869,26 @@ where the phase factors in the reflectivities $r_A, r_B$ are absorbed into the d
 
 Unity visibility is achievable for each combination of output ports: $V_{A_1, B_1} = 1$ when $x = \kappa_B/\kappa_A$, $V_{A_1, B_2} = 1$ when $x = \kappa_B/(\kappa_A\epsilon_B^2)$, $V_{A_2, B_1} = 1$ when $x = \kappa_B/(\kappa_A\epsilon_A^2)$, and $V_{A_2, B_2} = 1$ when $x = \kappa_B/(\kappa_A\epsilon_A^2\epsilon_B^2)$. Therefore, the effect of imbalances in the source and measurement interferometers is to shift the optimal ratio of early to late mean photon numbers. Imbalances in the measurement interferometers can be compensated by imbalances in the source interferometer in order to obtain unity visibility. Moreover, in the single photon limit, the visibility is insensitive to the absolute path efficiencies in the experiment. The visibility depends only on the ratio of path efficiencies between the measurement interferometers ( $\kappa_A/\kappa_B$ ). The entanglement visibilities for each combination of output ports as a function of $x=\mu_E/\mu_L$ for various ratios of interferometric path efficiencies are shown in Fig.~\ref{fig:ent_fid_single_photon}.
 
-\begin{figure}[H]
-    \includegraphics[width = \textwidth]{ent_fid_single_photon_fixed_kappa.pdf}
-    \caption{Entanglement visibility as function of $\mu_E/\mu_L$ for fixed $\kappa_B/\kappa_A = 1$ and  $ \epsilon_A = \epsilon_B = 90/10$ (red), $75/25$ (blue), $50/50$ (green), $25/75$ (purple).}
-    \label{fig:ent_fid_single_photon}
+\hypertarget{fig:ent_fid_single_photon}{%
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=\textheight]{./chapter_09/figs/ent_fid_single_photon_fixed_kappa.png}
+\caption[{Visibility versus \(\mu_E/\mu_L\)}]{\textbf{Visibility versus $\mu_E/\mu_L$} Entanglement visibility as function of $\mu_E/\mu_L$ for fixed $\kappa_B/\kappa_A = 1$ and $\epsilon_A = \epsilon_B = 90/10$ (red), $75/25$ (blue), $50/50$ (green), $25/75$ (purple).}
+\label{fig:ent_fid_single_photon}
 \end{figure}
+}
 
 \hypertarget{multiphoton-effects}{%
 \subsection{Multiphoton Effects}\label{multiphoton-effects}}
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width = \textwidth]{model_setup.pdf}
-    \caption{Setup for phase space modeling of entanglement visibility experiment}
-    \label{fig:model_setup}
+\hypertarget{fig:model_setup}{%
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=\textheight]{./chapter_09/figs/model_setup.png}
+\caption[{Entanglement visibility phase space modelling}]{\textbf{Entanglement visibility phase space modelling} Setup for phase space modeling of entanglement visibility experiment}
+\label{fig:model_setup}
 \end{figure}
+}
 
 Calculating the entanglement visibility to higher order photon number contributions quickly becomes intractable with the Fock space approach in section B. To study the effect of multiphoton events on the entanglement visibility, we model the experiment using phase space methods based on a characteristic function formalism \autocite{Davis2022,takeoka2015full}. The model setup is shown in Fig.~\ref{fig:model_setup}. As in the Fock space approach, the input state is modeled as a product state of TMSV in early and late temporal modes, with mean photon numbers $\mu_E$ and $\mu_L$, respectively. The measurement interferometers are modeled as beamsplitters in the temporal domain that mix the early and late input modes with transmittances $\tau_A$ and $\tau_B$, which absorb the interferometric path efficiencies and spatial beamsplitter transmittances. Since the input state is modeled as a Gaussian state, and the measurement interferometers are modeled as Gaussian operations, we can find the symplectic transformation that maps the characteristic function of the input state to that of the state prior to detection.
 
@@ -2160,20 +2018,14 @@ we see that the first term matches Eq.~\ref{eq:FA1B1} - Eq.~\ref{eq:FA2B2} for $
 
 Thus, the upper bound on the visibility is set by the mean photon number, i.e.~multiphoton effects. Entanglement visibilities of more than 90\% are possible when $0.39 < \mu_E/\mu_L < 2.55$ and $\mu_L < 0.0.056$. The entanglement visibility $V(\mu_E, \mu_L)$ in Eq.~\ref{eq:fid_multiphoton} is plotted for various mean photon numbers in Fig.~\ref{fig:fid_multiphoton}.
 
-\begin{figure}[H]
+\hypertarget{fig:fid_multiphoton}{%
+\begin{figure}
 \centering
-    \begin{subfigure}{0.75\textwidth}
-        \centering
-        \includegraphics[width = \textwidth]{Fid_vs_mu_above_1.pdf}
-    \end{subfigure}
-    \bigskip
-    \begin{subfigure}{0.75\textwidth}
-        \centering
-        \includegraphics[width = \textwidth]{Fid_vs_mu_below_1.pdf}
-    \end{subfigure}
-    \caption{Entanglement visibility as a function of mean photon number for $\tau_A = \tau_B = 1/\sqrt{2}$.}
-    \label{fig:fid_multiphoton}
+\includegraphics[width=1\textwidth,height=\textheight]{./chapter_09/figs/Fid_vs_mu_above_below.png}
+\caption[{Entanglement visibility vs photon number}]{\textbf{Entanglement visibility vs photon number} Entanglement visibility as a function of mean photon number for $\tau_A = \tau_B = 1/\sqrt{2}$.}
+\label{fig:fid_multiphoton}
 \end{figure}
+}
 
 \printbibliography
 \end{document}
