@@ -57,6 +57,11 @@ function Para(para)
     return nil
   end
 
+  local figure_beginning = "\\begin{figure}\n\\centering\n"
+  if img.attributes['sticky'] == 'True' then
+    figure_beginning = "\\begin{figure}[!htb]\n\\centering\n"
+  end
+
   local short_caption = pandoc.Span(
     pandoc.read(img.attributes['short-caption']).blocks[1].c
   )
@@ -67,7 +72,7 @@ function Para(para)
     label = string.format("\n\\label{%s}", img.identifier)
   end
   return pandoc.Para {
-    latex(hypertarget .. "\\begin{figure}\n\\centering\n"),
+    latex(hypertarget .. figure_beginning),
     img,
     latex("\n\\caption["), short_caption, latex("]"), pandoc.Span(img.caption),
     latex(label .. "\n\\end{figure}\n}\n")
