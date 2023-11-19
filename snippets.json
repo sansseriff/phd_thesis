@@ -11,7 +11,7 @@
         "div:html": "div[class='html']",
         "span:html": "span[class='html']",
         "block:figure": "{![**short caption here** long caption here](./figs/${1:fig_file_name}.svg)\\{#fig:${2:fig_id} short-caption='short caption here' width=100%\\}}",
-        "block:supplemental":"{<span class='html'>[${1:html_message}](${2:html_path}${3:section})</span><span class='latex'>section \\\\ref\\{${3:section}\\}</span>}",
+        "block:supplemental":"{<span class='html'>[${1:html_message}](${2:html_path}#${3:section})</span><span class='latex'>section \\\\ref\\{${3:section}\\}</span>}",
         "unit:um": "{~\\$\\\\upmu \\\\mathrm{m}\\$}",
         "unit:ohm": "{~$\\Upomega$}",
         "unit:kohm": "{~\\$\\\\mathrm{k}\\\\Upomega\\$}"
