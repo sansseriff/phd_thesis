@@ -52,7 +52,6 @@ The width $x$ of the guard regions centered at 80 and 160 ps were set to 10~ps. 
 ![**Effect of guard regions on visibilities** Charts on the right show phase basis fidelities and total coincidence rates as a function of width $x$, where both guard regions stay centered at 80 \& 160~ps.](./figs/guard_scan_light.svg){#fig:guard_scan short-caption='Effect of guard regions on visibilities' width=100% path="chapter_05"}
 
 ## Incompatible Bases and Accidental Coincidence Rate
-
 An entangled pair can be called 'spectrally compatible' with a given DWDM channel pairing if --given no losses-- it would be detected 100\% of the time across that channel pair. In the case where signal and idler modes are perfectly spectrally compatible, it has been shown that accidental coincidences still negatively impact visibilities [@Kim2022]. In this case and assuming negligible dark counts, visibility is reduced as: 
 
 $$
