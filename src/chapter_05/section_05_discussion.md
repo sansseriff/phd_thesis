@@ -15,7 +15,7 @@
  \makecell[l]{secret key rate, $SKR$ \\(0.007)}& 0.309 & 2.21 &  4.73  &  14.3 \\
  \hline
 \end{tabular}
-\caption[{Extrapolating entanglement rates to more channels}]{Per-channel predicted maximum values for the 4 rate metrics are shown in the column labeled `1 Channel'. Depending on the metric, the maxima are achieved for different pump powers $\mu$ (See supplemental note 11). The $\mu$ value that maximizes each metric is shown in parenthesis on the left.}
+\caption[{Extrapolating entanglement rates to more channels}]{Per-channel predicted maximum values for the 4 rate metrics are shown in the column labeled `1 Channel'. Depending on the metric, the maxima are achieved for different pump powers $\mu$ (see section \ref{maximum-entangled-photon-source-throughput}). The $\mu$ value that maximizes each metric is shown in parenthesis on the left.}
 \label{table:maximum_rates}
 \end{table}</div>
 
@@ -24,7 +24,9 @@
 
 <!-- ![**short caption here** long caption here](./figs/fig_file_name.svg){#fig:fig_id short-caption='short caption here' width=100% path="chapter_05"} -->
 
-We have demonstrated that a time-bin entanglement source based on a mode-locked laser, spectral multiplexing and low-jitter detectors produces high entangled photon rates suitable for QKD or advanced quantum networks. Still, there is potential to increase rates beyond those measured here with some straightforward changes to the setup. First, a higher power EDFA-amplified SHG module or tapered amplifier may be used. With this, we predict a single channel pair could sustain rates up to those specified in the first column of Table 1. Our measurements of 8 channel and 16 channel configurations imply the approximately multiplicative scalings in columns 2 and 3, as coincidence rates of these channels pairs are all withing 27\% of each other.  From measurements of the SPDC spectrum, it is also possible to extrapolate rates to a 60-channel 100 GHz DWDM configuration that includes channels spanning the L, C, and S ITU bands. This configuration could sustain 34.9 MHz total coincidence rate, and a distillable entanglement rate between 27.7 ($C_N$) and 15.9 Mebits/s ($C_I$).  These rates are impressive considering they are achievable with existing SNSPDs and other technology. The SPDC spectrum and extrapolation details are found in <span style="color: orange">Supplementary note 11</span>.
+We have demonstrated that a time-bin entanglement source based on a mode-locked laser, spectral multiplexing and low-jitter detectors produces high entangled photon rates suitable for QKD or advanced quantum networks. Still, there is potential to increase rates beyond those measured here with some straightforward changes to the setup. First, a higher power EDFA-amplified SHG module or tapered amplifier may be used. With this, we predict a single channel pair could sustain rates up to those specified in the first column of Table 1. Our measurements of 8 channel and 16 channel configurations imply the approximately multiplicative scalings in columns 2 and 3, as coincidence rates of these channels pairs are all withing 27\% of each other.  From measurements of the SPDC spectrum, it is also possible to extrapolate rates to a 60-channel 100 GHz DWDM configuration that includes channels spanning the L, C, and S ITU bands. This configuration could sustain 34.9 MHz total coincidence rate, and a distillable entanglement rate between 27.7 ($C_N$) and 15.9 Mebits/s ($C_I$).  These rates are impressive considering they are achievable with existing SNSPDs and other technology. The SPDC spectrum and extrapolation details are found in <span class='html'>[the source throughput extrapolation section](./section_07_experiment_details.md#maximum-entangled-photon-source-throughput)</span><span class='latex'>section \ref{maximum-entangled-photon-source-throughput}</span>.
+
+
 
 ```{=html}
 <div style="text-align: center;">
@@ -38,7 +40,7 @@ We have demonstrated that a time-bin entanglement source based on a mode-locked 
 | log negativity, $C_N$ (0.010) | 0.600 | 4.30 | 9.19 | 27.7 |
 | coherent info., $C_I$ (0.006) | 0.345 | 2.47 | 5.28 | 15.9 |
 | secret key rate, $SKR$ (0.007) | 0.309 | 2.21 | 4.73 | 14.3 |
-<figcaption markdown>**Extrapolated count rates** Per-channel predicted maximum values for the 4 rate metrics are shown in the column labeled `1 Channel'. Depending on the metric, the maxima are achieved for different pump powers $\mu$ <span style="color: orange">(See supplemental note 11)</span>. The $\mu$ value that maximizes each metric is shown in parenthesis on the left.</figcaption>
+<figcaption markdown>**Extrapolated count rates** Per-channel predicted maximum values for the 4 rate metrics are shown in the column labeled `1 Channel'. Depending on the metric, the maxima are achieved for different pump powers $\mu$ (See [the extrapolation section](./section_07_experiment_details.md#maximum-entangled-photon-source-throughput)). The $\mu$ value that maximizes each metric is shown in parenthesis on the left.</figcaption>
 </table>
 ```
 

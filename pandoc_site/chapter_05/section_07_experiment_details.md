@@ -87,9 +87,9 @@ V = \frac{1}{1+\mu}V_0
 \end{aligned}
 $$
 
-Where $V_0$ is a nominal interferometer-limited visibility [@Kim2022] and $\mu$ is the mean photon number per pulse (classically defined like with Eq. **¿eq:colorless?**). The accidental coincidence rate discussed in the main text $C_{Acc}$ is only partially related to this, as it specifically takes into account only accidental coincidences due to incompatible spectral modes. Such coincidences can arise from two situations, and can be assigned their own coincidence rates
+Where $V_0$ is a nominal interferometer-limited visibility [@Kim2022] and $\mu$ is the mean photon number per pulse (classically defined like with [the usual $\mu$ formula](./section_06_modelling_details.md#eq:colorless) ). The accidental coincidence rate discussed in the main text $C_{Acc}$ is only partially related to this, as it specifically takes into account only accidental coincidences due to incompatible spectral modes. Such coincidences can arise from two situations, and can be assigned their own coincidence rates
 
--   $C_{ee}$: two photons both from mutually incompatible spectral regions, like the red regions in Fig. **¿fig:narroband?** c
+-   $C_{ee}$: two photons both from mutually incompatible spectral regions, like the red regions in part (c) of the [JSI filtering considerations figure](./section_06_modelling_details.md#fig:narroband).
 -   $C_{em}$ and $C_{me}$: one photon from the central overlapping filter region and one from an incompatible spectral region.
 
 Say one member of a spectrally compatible entanglemed pair reaches Alice, but not Bob due to loss. The photon received at Alice could form a coincidence with a spectrally incompatible photon that arrives at Bob. These are the $C_{em}$ and $C_{me}$ type coincidences. $C_{Acc}$ in the main text is the sum of $C_{ee}$, $C_{em}$ and $C_{me}$:
