@@ -76,8 +76,6 @@ Channels 35 and 59 are chosen for an analysis of entanglement visibility and rat
 
 The raw visibility versus $\mu$ is shown in blue in @fig:shg_scan a. Relative to similar measurements [@Kim2022], this drops quickly with increasing $\mu$, and one reason is the presence of accidental coincidences across mutually incompatible spectral modes. The presence of these unwanted coincidences is a consequence of the narrowband filtering regime, and depends on factors included the singles rates $S_A$ and $S_B$, and the geometric compensation factor $\delta$ <span style="color: orange">(see <span class='html'>[the incompatible bases section](./section_07_experiment_details.md#incompatible-bases-and-accidental-coincidence-rate)</span><span class='latex'>section \ref{incompatible-bases-and-accidental-coincidence-rate}</span> for derivation)</span>. We model this type of accidental coincidence rate $C_{Acc}$ versus $\mu$, and subtract it off from coincidence measurements to produce the grey data in @fig:shg_scan a. This simulated visibility's more gradual drop with increasing $\mu$ highlights the detrimental effect of our high single-to-coincidence rates $S_A/C_{AB}$, $S_B/C_{AB}$. As detailed in the discussion section below, this motivates special source engineering techniques for future systems. 
 
-
-
 <!-- \begin{figure}
     \centering
     \includegraphics[width=0.8\linewidth]{8ch_bar_graph_high_power_light.pdf}
