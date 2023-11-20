@@ -250,6 +250,9 @@ The system was designed around the use of two each of two types of ultra-high re
 
 As initial modelling showed that 4 filters in series were required to sufficiently block mid-IR light, the cryostat design had to accommodate a several-inch thick set of filters. This thickness, and the desire to couple to a single-model fiber compatible detector with low jitter, also necessitated the use of a cryogenic lens. A 1-inch diameter lens mounted outside the cryostat with a focal length above the filter-stack thickness would not have been able to focus to a small enough spot.
 
+\hypertarget{design}{%
+\section{Design}\label{design}}
+
 A modified translatable 0.8 K stage was designed at JPL. It positioned the 0.8 K stage very close the the 4 K stage above, and was attached to the 0.8 K pot of the sorption cryocooler via a copper braid. Bendable carbon fiber rods connected teh 0.8 K stage to a 4 K mount through which an optical stack of filter and lens could be positioned.
 
 A single mode fiber was used to image onto the detector using two f = 18.75 mm lenses. One lens collimated light from an optical fiber face outside the cryostat (Photon Spot), and the other focused light onto the detector inside \autocite{Bellei:16}. In the collimated region between, the beam passed though the short pass filter stack (Fig.~\ref{fig:setup} a). One of the short-pass filters was angled to avoid ghosting or etalon effects. The 40 K radiation shield and outer cryostat housing were fitted with anti-reflection coated BK7 windows. The filters were spring loaded to prevent cracking at low temperatures. To minimize effects of stray light, the interior of the 4 K shield was painted with mid-IR absorbing paint (Aeroglaze Z306) as shown in Fig.~\ref{fig:setup} c \autocite{Persky1999}, while gaps between filters and the windows were covered with metal tape.
@@ -313,7 +316,7 @@ This work used a low-jitter SNSPD of the tapered differential design\autocite{Co
 \begin{figure}
 \centering
 \includegraphics[width=0.8\textwidth,height=\textheight]{./chapter_02/figs/thesis_main_data_light.pdf}
-\caption[{Main results}]{\textbf{Main results} a) Photon count rate vs.~bias current showing saturated system detection efficiency of 72\%. Detector jitter is also plotted, which decreases with increasing bias current. b) dark count rate vs.~bias current for fiber coupled and free space coupled setups. c) values for the H metric derived from the data above for the free space coupling configuration}
+\caption[{Main results}]{\textbf{Main results} a) Photon count rate vs.~bias current showing saturated system detection efficiency of 72\%. Detector jitter is also plotted, which decreases with increasing bias current. b) dark count rate vs.~bias current for fiber coupled and free space coupled setups. c) values for the H metric derived from the data above for the free and fiber coupled configurations.}
 \label{fig:main_data}
 \end{figure}
 }
@@ -554,27 +557,27 @@ As applications like LIDAR and quantum communication demand ever higher data rat
 \hypertarget{data-recovery-and-pulse-position-modulation-with-a-photon-number-resolving-snspd}{%
 \chapter{Data Recovery and Pulse Position Modulation with a Photon Number Resolving SNSPD}\label{data-recovery-and-pulse-position-modulation-with-a-photon-number-resolving-snspd}}
 
-A version of this chapter will be submitted the the journal optics express. A preprint is released as \textbf{\hl{arxiv citation here}}
+A version of this chapter is in preparation for submission to Optics Express.
 
 \hypertarget{abstract-2}{%
 \section{Abstract}\label{abstract-2}}
 
-Superconducting Nanowire Single Photon Detectors are a type of time-correlated photon detector with low jitter performance especially in the mid-infrared. They are useful for classical communication over high loss channels --such as across deep space-- and for quantum communication for which signals are restricted to the few-photon level. For classical communication, high photon information efficiency communication may be achieved with Pulse Position Modulation (PPM) whereby data is encoded in the arrival time of an optical pulse with respect to a clock. In the process of demonstrating PPM on a 20~Ghz clock, we study the effects of Photon Number Resolution (PNR) in new low-jitter types of SNSPDs. These PNR effects complicate fixed-threshold triggering of RF pulses from the SNSPD, and corrupt arrival time measurements if not properly managed. We demonstrate methods for simultaneous arrival time and photon number measurement which enables high clock rate PPM for space applications as well as high rate quantum communication and computing applications that benefit from photon number resolution.
+Superconducting Nanowire Single Photon Detectors have leading low-jitter performance, especially in the mid-infrared. They are useful for classical communication over high loss channels --such as across deep space-- and for quantum communication for which signals are restricted to the few-photon level. For classical communication, high photon information efficiency communication may be achieved with Pulse Position Modulation (PPM) whereby data is encoded in the arrival time of an optical pulse with respect to a clock. In the process of demonstrating PPM on a 20~Ghz clock, we study the effects of Photon Number Resolution (PNR) in new low-jitter types of SNSPDs. These PNR effects complicate fixed-threshold triggering of RF pulses from the SNSPD, and corrupt arrival time measurements if not properly managed. We demonstrate methods for simultaneous arrival time and photon number measurement which enables high clock rate PPM for space applications as well as high rate quantum communication and computing applications that benefit from photon number resolution.
 
 \hypertarget{introduction-3}{%
 \section{Introduction}\label{introduction-3}}
 
-Deep space optical communication has been a growing field of study in recent years, as space agencies look for ways to increase data rates to and from deep space missions. A key challenge in the development of this technology is closing the communication link over extremely large distances and high loss. This must be done given a restricted power budget available on the spacecraft, and therefore requires the use of photon efficient communication protocols that optimize the number of bits sent per unit of energy.
+Deep space optical communication has been a growing field of study in recent years, as space agencies look for ways to increase data rates to and from deep space missions. A key challenge in this work is closing a communication link over extremely large distances and high loss. For data transmission from a power-limited spacecraft to earth, this must be done with a restricted power budge, and therefore requires the use of photon efficient communication protocols that optimize the number of bits sent per unit of energy.
 
-In this article, we demonstrate high rate Pulse Position Modulation (PPM) applicable to future deep space communication. This starts with a transmitter that sends an optical pulse in one of $2^M$ possible time slots measured with respect to a clock. At a receiver, the arrival time of this pulse is measured to recover $M$ bits of encoded data. Each successive set of $2^M$ time slots following by a dead time constitute a PPM frame.
+In this article, we demonstrate high rate Pulse Position Modulation (PPM) applicable to future deep space communication. A transmitter sends an optical pulse in one of $2^M$ possible time slots measured with respect to a clock. At a receiver, the arrival time of this pulse is measured to recover $M$ bits of encoded data. Each successive set of $2^M$ time slots following by a dead time constitute a PPM frame.
 
-The Deep Space Optical Communicaiton (DSOC) project managed by the Jet Propulsion Laboratory (JPL) aims to demonstrate optical communication using PPM with the Psyche spacecraft from distances of 0.06 to 2.7 Au \autocite{Srinivasan2023GroundReceiver}.
+The Deep Space Optical Communicaiton (DSOC) project managed by the Jet Propulsion Laboratory (JPL) demonstrates optical communication using PPM with the Psyche spacecraft from distances of 0.06 to 2.7 Au \autocite{Srinivasan2023GroundReceiver}.
 
-For larger M, more data may be sent with a single optical pulse, thereby allowing a power limited spacecraft to send more data over a high loss optical channel back to earth. This is quantified through the photon information efficiency $c_p = C/E$ where $C$ is the link capacity and $E$ is the photon cost per optical pulse
+For larger M, more data may be sent with a single optical pulse or given spacecraft power budge. This is quantified through the photon information efficiency $c_p = C/E$ where $C$ is the link capacity and $E$ is the photon cost per optical pulse.
 
-The DSOC project uses M at least as high as 5, meaning 5 bits of data are send using 32 time slots per frame. M values as high as 19 have been demonstrated in the lab~\autocite{essiambre2023record}, but the number of time bins needed per frame scales exponentially with the number of bits transmitted per pulse. Therefore, for a given fixed clock rate and time bin duration, the PPM data rate decreases dramatically for higher M values.
+The DSOC project uses PPM with maximum M values of at least 5, meaning 5 bits of data are sent using 32 time slots per frame. M values as high as 19 have been demonstrated in the lab~\autocite{essiambre2023record}, but the number of time bins needed per frame scales exponentially with the number of bits transmitted per pulse. Therefore, for a given fixed clock rate and time bin duration, the PPM data rate decreases dramatically for higher M values.
 
-We demonstrate a high clock rate PPM protocol in the lab based on modulating a mode-locked laser and receiving pulses with a low jitter superconducting nanowire single photon detector (SNSPD) (Fig.~\ref{fig:intro} (a)).We focus on demonstrating moderately large PIE, while also increasing the clock rate of the sytem by an order of magnitude relative to the DSOC platform (2~GHz). By operating at both higher clock rate and PIE than DSOC, this system exemplifies how future iterations of DSOC may send data more quickly but also over greater distances with the same power budget.
+We demonstrate a high clock rate PPM protocol in the lab based on modulating a mode-locked laser and receiving pulses with a low jitter superconducting nanowire single photon detector (SNSPD) (Fig.~\ref{fig:intro} (a)).We focus on demonstrating moderately large PIE, while also increasing the clock rate of the sytem by an order of magnitude relative to the DSOC platform (from 2~GHz to 20~GHz). By operating at both higher clock rate and PIE than DSOC, this system exemplifies how future iterations of DSOC may send data more quickly but also over greater distances with the same power budget.
 
 The rate increase is possible due to recent advancements in Niobium Nitride SNSPDs~\autocite{Colangelo2023}. These achieve low jitter performance by incorporating impedance matching tapers for efficient RF coupling, resulting in higher slew rate pulses, and by enabling RF pulse readout from both ends of the nanowire. The dual-ended readout allows for the cancellation of jitter caused by the variable location of photon arrival along the meander when the differential signals are recombined with a balun. These detectors achieve jitter as low as 50 ps at the FW(1/100)M level, making them suitable for the demonstration of PPM with 50 ps slot widths and a 20 GHz clock.
 
@@ -587,9 +590,9 @@ The rate increase is possible due to recent advancements in Niobium Nitride SNSP
 \end{figure}
 }
 
-However, these detectors exhibit photon number number dependent responses that affect the time-correlated measurements needed for high-rate PPM. This behavior, shown in Fig.~\ref{fig:waveform} is also known as photon number resolution (PNR) -- a property that is desirable in certain applications including quantum communication and quantum computing. The SNSPD generates RF pulses with greater amplitude and slew rate when detecting optical pulses with multiple photons. Photon number effects are especially evident in this lower jitter variety of SNSPD due to the use of impedance matching tapers which more efficiently couple energy out of the nanowire and into the readout circuit. With high resolution time tagging equipment, photon number dependent effects have even been observed in SNSPDs not necessarily designed to exhibit it \autocite{schapeler2023superconducting,sauer2023resolving} like those without tapers \autocite{Cahall2017SlewRatePNR}. Therefore it is increasingly likely that future research involving low-jitter SNSPDs and multiphoton pulsed sources will have to explicitly manage the PNR response for accurate time-correlated measurements -- whether the effect it is desired or not.
+However, these detectors exhibit a photon number dependent response that affects the time-correlated measurements needed for high-rate PPM. This behavior, shown in Fig.~\ref{fig:waveform} is also known as photon number resolution (PNR) -- a property that is desirable in certain applications including quantum communication and quantum computing. The SNSPD generates RF pulses with greater amplitude and slew rate when detecting optical pulses with multiple photons. Photon number effects are especially evident in this lower jitter variety of SNSPD due to the use of impedance matching tapers which more efficiently couple energy out of the nanowire and into the readout circuit. With high resolution time tagging equipment, photon number dependent effects have even been observed in SNSPDs not necessarily designed to exhibit it \autocite{schapeler2023superconducting,sauer2023resolving} like those without tapers \autocite{Cahall2017SlewRatePNR}. Therefore it is increasingly likely that future research involving low-jitter SNSPDs and multiphoton pulsed sources will have to explicitly manage the PNR response for accurate time-correlated measurements -- whether the effect it is desired or not.
 
-For the tapered differential detectors, the PNR response affects timing of fixed threshold timetaggs at any trigger level (Fig.~\ref{fig:waveform}). However, at higher trigger levels the PNR response is less pronounced and the timing measurements are less affected. Therefore, we divide a single SNSPD readout line using an RF splitter and trigger on the RF pulse at a high and low level as shwon by the red lines in Fig.~\ref{fig:waveform}. This allows us to extract the somewhat conjugate information of pulse arrival time and photon number. From these measurements we study the PNR response in detail and present two methods for managing it. We demonstrate how the photon number information may be deconvolved from the arrival time information, and how both de-correlated degrees of freedom can be extracted simultaneously. This enables the original goal of high rate PPM, but also informs how low-jitter photon number resolving SNSPDs can be used in other classical communication and quantum applications.
+For the tapered differential detectors, the PNR response affects timing of fixed threshold timetaggs at any trigger level (Fig.~\ref{fig:waveform}). However, at lower trigger levels the PNR response is less pronounced and the timing measurements are less affected. Therefore, we divide a single SNSPD readout line using an RF splitter and trigger on the RF pulse at a high and low level as shown by the red lines in Fig.~\ref{fig:waveform}. This gives partially conjugate information on optical pulse arrival time and photon number. From these measurements we study the PNR response in detail and present two methods for managing it. We demonstrate how the photon number information may be deconvolved from the arrival time information, and how both de-correlated degrees of freedom can be extracted simultaneously. This enables the original goal of high rate PPM, but also informs how low-jitter photon number resolving SNSPDs can be used in other classical communication and quantum applications.
 
 \hypertarget{fig:waveform}{%
 \begin{figure}
@@ -599,47 +602,6 @@ For the tapered differential detectors, the PNR response affects timing of fixed
 \label{fig:waveform}
 \end{figure}
 }
-
-\hypertarget{detector-figure-of-merit}{%
-\section{Detector Figure of Merit}\label{detector-figure-of-merit}}
-
-The work here highlights the application of low jitter single-photon detectors for optical communication, which is impactful for deep-space optical communication as well as classical communication in quantum networks. Although single-photon counting is well estanblished for deep-space optical communication~\autocite{Srinivasan2023GroundReceiver} so far it has not been ulitized in quantum networks, mainly due to the use of SFP modules and DWDMs. However, with the eachievement of high data rates recently achieved with photon-counting classical communication, these approaches can now be seriously considered for quantum networks. The main driver is the reduction of optical power in neighbouring DWDM channels, which ultimately lowers the Raman scattered photons into the quantum channel \autocite{EraerdsRaman}
-\textbf{\hl{Calculate reduction in power from state of the art SFP modules}}
-
-To access the applicability of different detectors, here we compare some of the recent near infrared detectors.
-
-A useful figure of merit that includes all of the revelant detector metrics for photon timing was introduced by Bronzi and co-authors \autocite{Bronzi2016}
-
-$$FoM_T = \frac{\eta  (1 - P_{ap})\Phi_{-3 \text{dB}}}{J} \sqrt{\frac{A}{D}},$$
-
-where $\eta$ is the single photon detection efficiency, $\Phi_{-3 \text{dB}}$ is the photon flux at which the system detection efficiency drops by 3~dB, $P_{ap}$ is the afterpulsing probability, $J$ is the detector jitter evaluated as the FWHM, $T_d$ is the deadtime, $A$ is the active area and $D$ is the dark count rate. Here we have defined the maximum photon flux as the 3~dB point, for ease of standardization.
-
-In this work:
-
-\begin{itemize}
-\tightlist
-\item
-  Efficiency = 0.84
-\item
-  Afterpulsing = 0 \%
-\item
-  Jitter = 15 ps
-\item
-  Deadtime = 30 ns \textbf{\hl{measure 3dB flux}}
-\item
-  Area = 330 $\mu m^2$
-\item
-  Dark count rate = 20~Hz
-\end{itemize}
-
-$FoM_T = 7.58 \times 10^{12}$ at 1550 nm.
-
-The deadtime is calculated as the 1/MCR, which is the 3 dB point of the nominal efficiency. This is only a factor of 3.7 less than the state of the art visible Silicon SPADs (peak efficiency at 480~nm) \autocite{Gramuglia2022}
-
-In the future, the performance of the optical communication system could be improved by using, high count rate SNSPD arrays. Recently published high-count rate arrays have figures of merit of \textbf{\hl{$FoM_T$ for Peacoq and Resta2023 results}}. This would result in a proportinal increase in the data rate.
-\textbf{\hl{$FoM_T$ for fastest InGaAs/InP gated detector}}
-These devices are ideal for fiber-based optical communication. In free-space, the active area is especially important, whithout the use of an adaptive optics system.
-\textbf{\hl{$FoM_T$ for DSOC array}}
 
 \hypertarget{development-of-a-modulation-source}{%
 \subsection{Development of a modulation source}\label{development-of-a-modulation-source}}

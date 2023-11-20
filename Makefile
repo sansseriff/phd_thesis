@@ -5,7 +5,7 @@ ppm:
 	cd src/chapter_04 && \
 	cp -R figs/ dist/ && \
 	pandoc metadata.yaml \
-	section_02_abstract.md section_03_introduction.md section_04_method.md section_05_results.md section_06_discussion.md \
+	section_02_abstract.md section_03_introduction.md section_04_method.md section_05_results.md section_06_discussion.md alt/figure_of_merit.md \
 	-o dist/manuscript.tex \
 	--wrap=preserve \
 	--default-image-extension=.pdf \
