@@ -98,8 +98,9 @@ nav:
   - "Ch. 2: Low Dark Count Rate SNSPD":
     - chapter_02/index.md
     - Introduction: chapter_02/section_03_introduction.md
-    - Hardware: chapter_02/section_04_hardware.md
-    - Model: chapter_02/section_05_model.md
+    - Design & Use: chapter_02/section_04_design_and_use.md
+    - Model & Results: chapter_02/section_05_model_and_results.md
+    - Extra: chapter_02/section_05_extra.md
   - "Ch. 3: Time Walk Correction": 
     - chapter_03/index.md
     - Introduction: chapter_03/section_03_introduction.md
