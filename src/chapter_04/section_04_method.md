@@ -36,9 +36,9 @@ As shown in @fig:gmm_model c, there exists regions in the $t_A, t_B$ plane for w
 
 <span class="latex">%I could specify I pick the family of distributions based on the $t_A$ constructed timing measurement. Then, in my code, the GMM analysis produces a correction to whichever time bin was deemed most likely by the the slope-method. </span>
 
-![**Decoding probabilities vs mean photon number** long caption here](./figs/fig_file_name.svg){#fig:fig_id short-caption='short caption here' width=100% path="chapter_04"}
+<!-- ![**Decoding probabilities vs mean photon number** long caption here](./figs/fig_file_name.svg){#fig:fig_id short-caption='short caption here' width=100% path="chapter_04"} -->
 
-@fig:
+<!-- @fig: -->
 
 
 
