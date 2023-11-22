@@ -28,7 +28,7 @@ This work used a low-jitter SNSPD of the tapered differential design[@Colangelo2
     <a name='fig:main_data'></a> 
     <img alt="fig:main_data" style="width: 80%; margin: auto;" src="../figs/thesis_main_data_light.svg#only-light" >
     <img alt="fig:main_data" style="width: 80%; margin: auto;" src="../figs/thesis_main_data_dark.svg#only-dark" > 
-    <figcaption markdown> Figure 3: **Main results** a) Photon count rate vs. bias current showing saturated system detection efficiency of 72%. Detector jitter is also plotted, which decreases with increasing bias current. b) dark count rate vs. bias current for fiber coupled and free space coupled setups. c) values for the H metric derived from the data above for the free space coupling configuration</figcaption>
+    <figcaption markdown> Figure 3: **Main results** a) Photon count rate vs. bias current showing saturated system detection efficiency of 72%. Detector jitter is also plotted, which decreases with increasing bias current. b) dark count rate vs. bias current for fiber coupled and free space coupled setups. c) values for the H metric derived from the data above for the free and fiber coupled configurations.</figcaption>
     </figure>
 
 ## Results

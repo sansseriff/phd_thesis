@@ -326,11 +326,6 @@ This work used a low-jitter SNSPD of the tapered differential design\autocite{Co
 
 As also shown in Fig.~\ref{fig:main_data} a, the free-space coupling system achieves up to $72 \% \pm 3.7 \%$ SDE as measured from the fiber outside the cryostat. The reduction in efficiency is likely due to surface reflections in the free-space optics, and potential misalignment in the optical baffles. The minimum DCR ( Fig.~\ref{fig:main_data} b) at $72 \%$ SDE is about 0.1 Hz, with a bias current of 16 $\mathrm{\upmu A}$. These metrics, with the jitter measurements shown in Fig.~\ref{fig:main_data} a, give a maximum H value of $5 \times 10^{11}$ ( Fig.~\ref{fig:main_data} c). Values as high as $1.8 \times 10^{12}$ have been reported before, but at 1.5\% system detection efficiency \autocite{Shibata2015}. Our system shows a low DCR can be achieved without severe reduction of SDE or usable target wavelength bandwidth. This is paramount for the future of terrestrial and space-to-ground quantum communication, since it increases success rate with finite statistics \autocite{Boaron2018secure}. The same techniques can be applied to emerging SNSPD applications at longer wavelengths, such as laser ranging \autocite{Taylor2019}, where fiber filtering is impractical. Beyond single-mode applications, our work paves the way to scalable, low-DCR, multi-mode coupling to SNSPD arrays \autocite{Wollman2019}.
 
-\hypertarget{optical-alignment-setup}{%
-\section{Optical Alignment Setup}\label{optical-alignment-setup}}
-
-\textbf{\hl{TODO}}
-
 \hypertarget{time-walk-and-jitter-correction}{%
 \chapter{Time Walk and Jitter Correction}\label{time-walk-and-jitter-correction}}
 
@@ -573,11 +568,17 @@ In this article, we demonstrate high rate Pulse Position Modulation (PPM) applic
 
 The Deep Space Optical Communicaiton (DSOC) project managed by the Jet Propulsion Laboratory (JPL) demonstrates optical communication using PPM with the Psyche spacecraft from distances of 0.06 to 2.7 Au \autocite{Srinivasan2023GroundReceiver}.
 
-For larger M, more data may be sent with a single optical pulse or given spacecraft power budge. This is quantified through the photon information efficiency $c_p = C/E$ where $C$ is the link capacity and $E$ is the photon cost per optical pulse.
+For larger M, more data may be sent with a single optical pulse or given spacecraft power budge. This is quantified through the photon information efficiency $c_p = C/E$ where $C$ is the link capacity
+
+$$
+C=\left(1-e^{-E}\right) \log _2 M,
+$$
+
+and $E$ is the photon cost per optical pulse. DSOC relies on modulation of a CW seed laser to generate the communication signal on the spacecraft. This signal is then amplified by an Erbium Doped Fiber Amplifier (EDFA) which dominates the power budget of the spacecraft optical transmission system. Therefore, power consumption scales with the number of optical pulses sent.
 
 The DSOC project uses PPM with maximum M values of at least 5, meaning 5 bits of data are sent using 32 time slots per frame. M values as high as 19 have been demonstrated in the lab~\autocite{essiambre2023record}, but the number of time bins needed per frame scales exponentially with the number of bits transmitted per pulse. Therefore, for a given fixed clock rate and time bin duration, the PPM data rate decreases dramatically for higher M values.
 
-We demonstrate a high clock rate PPM protocol in the lab based on modulating a mode-locked laser and receiving pulses with a low jitter superconducting nanowire single photon detector (SNSPD) (Fig.~\ref{fig:intro} (a)).We focus on demonstrating moderately large PIE, while also increasing the clock rate of the sytem by an order of magnitude relative to the DSOC platform (from 2~GHz to 20~GHz). By operating at both higher clock rate and PIE than DSOC, this system exemplifies how future iterations of DSOC may send data more quickly but also over greater distances with the same power budget.
+We demonstrate a high clock rate PPM protocol in the lab based on modulating a mode-locked laser and receiving pulses with a low jitter superconducting nanowire single photon detector (SNSPD) (Fig.~\ref{fig:intro} (a)). We focus on demonstrating moderately high PIE, while also increasing the clock rate of the sytem by an order of magnitude relative to the DSOC platform (from 2~GHz to 20~GHz). By operating at both higher clock rate and PIE than DSOC, this system exemplifies how future iterations of DSOC may send data more quickly but also over greater distances with the same power budget.
 
 The rate increase is possible due to recent advancements in Niobium Nitride SNSPDs~\autocite{Colangelo2023}. These achieve low jitter performance by incorporating impedance matching tapers for efficient RF coupling, resulting in higher slew rate pulses, and by enabling RF pulse readout from both ends of the nanowire. The dual-ended readout allows for the cancellation of jitter caused by the variable location of photon arrival along the meander when the differential signals are recombined with a balun. These detectors achieve jitter as low as 50 ps at the FW(1/100)M level, making them suitable for the demonstration of PPM with 50 ps slot widths and a 20 GHz clock.
 
@@ -590,7 +591,7 @@ The rate increase is possible due to recent advancements in Niobium Nitride SNSP
 \end{figure}
 }
 
-However, these detectors exhibit a photon number dependent response that affects the time-correlated measurements needed for high-rate PPM. This behavior, shown in Fig.~\ref{fig:waveform} is also known as photon number resolution (PNR) -- a property that is desirable in certain applications including quantum communication and quantum computing. The SNSPD generates RF pulses with greater amplitude and slew rate when detecting optical pulses with multiple photons. Photon number effects are especially evident in this lower jitter variety of SNSPD due to the use of impedance matching tapers which more efficiently couple energy out of the nanowire and into the readout circuit. With high resolution time tagging equipment, photon number dependent effects have even been observed in SNSPDs not necessarily designed to exhibit it \autocite{schapeler2023superconducting,sauer2023resolving} like those without tapers \autocite{Cahall2017SlewRatePNR}. Therefore it is increasingly likely that future research involving low-jitter SNSPDs and multiphoton pulsed sources will have to explicitly manage the PNR response for accurate time-correlated measurements -- whether the effect it is desired or not.
+However, these detectors exhibit a photon number dependent response that affects the time-correlated measurements needed for high-rate PPM. This behavior, shown in Fig.~\ref{fig:waveform} also gives the detector photon number resolution (PNR) -- a property that is desirable in certain applications including quantum communication and quantum computing. The SNSPD generates RF pulses with greater amplitude and slew rate when detecting optical pulses with multiple photons. Photon number effects are especially evident in this lower jitter variety of SNSPD due to the use of impedance matching tapers which more efficiently couple energy out of the nanowire and into the readout circuit. With high resolution time tagging equipment, photon number dependent effects have even been observed in SNSPDs not necessarily designed to exhibit it \autocite{schapeler2023superconducting,sauer2023resolving} like those without tapers \autocite{Cahall2017SlewRatePNR}. Therefore it is increasingly likely that future research involving low-jitter SNSPDs and multiphoton pulsed sources will have to explicitly manage the PNR response for accurate time-correlated measurements -- whether the effect it is desired or not.
 
 For the tapered differential detectors, the PNR response affects timing of fixed threshold timetaggs at any trigger level (Fig.~\ref{fig:waveform}). However, at lower trigger levels the PNR response is less pronounced and the timing measurements are less affected. Therefore, we divide a single SNSPD readout line using an RF splitter and trigger on the RF pulse at a high and low level as shown by the red lines in Fig.~\ref{fig:waveform}. This gives partially conjugate information on optical pulse arrival time and photon number. From these measurements we study the PNR response in detail and present two methods for managing it. We demonstrate how the photon number information may be deconvolved from the arrival time information, and how both de-correlated degrees of freedom can be extracted simultaneously. This enables the original goal of high rate PPM, but also informs how low-jitter photon number resolving SNSPDs can be used in other classical communication and quantum applications.
 
@@ -606,16 +607,19 @@ For the tapered differential detectors, the PNR response affects timing of fixed
 \hypertarget{development-of-a-modulation-source}{%
 \subsection{Development of a modulation source}\label{development-of-a-modulation-source}}
 
-DSOC relies on modulation of a CW seed laser to generate the communication signal on the spacecraft. This signal is then amplified by an Erbium Doped Fiber Amplifier (EDFA) to increase its transmission power to Earth. As the EDFA amplifies the pre-generated pulses and uses most of the power of the spacecraft optical transmission system, power consumption scales with the number of optical pulses.
+We produce our PPM signal signal by carving a 1550~nm high rate mode locked laser with lithium niobate modulators. Each mode locked laser pulse has duration on the order of 0.5~ps. By modulating a mode-locked laser,
+the optical pulses do not incur timing jitter from the limited slew rate of the modulators or the RF signal that drives them. Two modulators are used in series to achieve the high extinction ratio needed to successively block up to 2047 laser pulses in a row.
 
-We produce our PPM signal signal by carving a high rate mode locked laser with lithium niobate modulators. This way, the jitter of the optical pulses themselves are not limited by the modulators or slew slew rate of the RF signal that drives them. We do two PPM demonstrations, with the source mode locked laser operating at 10.75 and 20 GHz. THe 10.75 GHz demonstration uses a M value of 10, thereby making frames with 1024 time slots of 93 ps width each. The 20 GHz demonstration uses M=11, giving 2048 time slots of 50 ps width per frame. Each frame ends with a dead time of approximately 150 ns to allow the SNSPD to fully recover before the next frame.
+We do two PPM demonstrations, with the source mode locked laser operating at 10.75 and 20 GHz. THe 10.75 GHz demonstration uses a M value of 10, thereby making frames with 1024 time slots of 93 ps width each. The 20 GHz demonstration uses M=11, giving 2048 time slots per frame of 50 ps width. Each frame ends with a dead time of approximately 150 ns to allow the SNSPD to fully recover before the next frame.
 
 Several modern free running time taggers support the averaging of multiple input channels to create fewer higher resolution channels. This implies a tradeoff between jitter or timing resolution and number of channels for a given time tagging device. Therefore, it is important to consider readout methods like that presented here that make use of 2 lower-resolution channels in place of a single higher resolution channel, as these two configurations are similarly resource efficient.
 
 \hypertarget{methods}{%
 \section{Methods}\label{methods}}
 
-Prior to the PPM demosntration, we collected data with multi-photon optical pulses repeatedly impinging on the detector at the same time with respect to a clock. This way, we study how the PNR effect in isolation is manifest in the timing measurements recorded at the low and high trigger levels. We label the measurements from the low (8~mV) and high (50~mV) trigger levels as $t_A$ and $t_B$ respectively. As shown in Fig.~\ref{fig:waveform}, histograms of these arrival events are multimodal due to the PNR response. We first present a method for recovering a symmetric arrival time response function using the the slope measurement $\Delta t_{BA} = t_B - t_A$.
+We encode a 98 kilobit \textbf{\hl{fig with images here}} image as the dataset for transmission in both the 10.75 and 20 Ghz demonstrations. Due to limitations of the AWG, the full dataset can not be transmitted sequentially. Instead, sequencies of 8 (10.75 Ghz) and 10 (20 GHz) pulses each are successively loaded into AWG memory, transmitted several times, then switched out for the next sequence.
+
+We begin by using a sequence that only consists of pulses in the $i = 0$ time slot. Before sending the actual dataset, we modulate this set multiple times, collecting data from low and high trigger levels for impinging optical pulses of varying mean photon number. This provides information on the detector's photon number response without arrival time variation. We label the measurements from the low (8~mV) and high (50~mV) trigger levels as $t_A$ and $t_B$ respectively. As shown in Fig.~\ref{fig:waveform}, histograms of these arrival events are multimodal with distinct groupings for for each photon number detection. We first present a method for recovering a symmetric arrival time response function using the the slope measurement $\Delta t_{BA} = t_B - t_A$.
 
 \hypertarget{slope-based-correction}{%
 \subsection{Slope-Based Correction}\label{slope-based-correction}}
@@ -624,19 +628,60 @@ Prior to the PPM demosntration, we collected data with multi-photon optical puls
 \begin{figure}
 \centering
 \includegraphics[width=1\textwidth,height=\textheight]{./chapter_04/figs/slope_cancellation_light.pdf}
-\caption[{PNR Slope Variation Analysis and Cancellation}]{\textbf{PNR Slope Variation Analysis and Cancellation} a) 2D histogram of RF pulse measurements. Through graphing slope $\Delta t_{BA}$ on the x-axis and arrival time $t_A$ on the y-axis, a series of groupings are visible that identify the discrete photon numbers detected.}
+\caption[{PNR Slope Variation Analysis and Cancellation}]{\textbf{PNR Slope Variation Analysis and Cancellation} a) 2D histogram of RF pulse measurements. Through graphing slope $\Delta t_{BA}$ on the x-axis and arrival time $t_A$ on the y-axis, a series of groupings are visible that identify the discrete photon numbers detected. b) Histogram of events for pulse slope $\Delta t_{BA}$ for several mean photon numbers. c) Histogram of constructed measurements $\tilde{t_A}$ from applying pulse-slope-dependent corrections $C_A$. The distribution of $\tilde{t_A}$ is symmetric, but it's FWHM width varies depending on mean photon number.}
 \label{fig:slope_correction}
 \end{figure}
 }
 
-Pairs of pulse measurements $t_A$ and $t_B$ may be graphed on a 2D plane parametrized by $\Delta t_{BA}$ on the x-axis and $t_A$. Fig.~\ref{fig:slope_correction} a shows how this protection exhibits multiple groupings that correspond the the photon number character of the impinging optical mode. The 1 and 2-photon events are clearly identifiable and seperated from other events, with $|3\rangle$, $|4\rangle$, and $|5\rangle$ events also visible with less mutual separation. While Fig.~\ref{fig:slope_correction} a is shown here for just one mean photon number $\mu$, these grouplings are collected for a full range of attenuations and corresponding $\mu$. Fig.~\ref{fig:slope_correction} a shows histograms from projecting 3 such groupings down onto the $\Delta t_{BA}$ axis.
+Pairs of pulse measurements $t_A$ and $t_B$ may be graphed on a 2D plane parametrized by $\Delta t_{BA}$ on the x-axis and $t_A$. Fig.~\ref{fig:slope_correction} a shows how this protection exhibits multiple groupings that correspond the the photon number character of the impinging optical mode. The 1 and 2-photon events are clearly identifiable and seperated from other events, with $|3\rangle$, $|4\rangle$, and $|5\rangle$ events also visible with less mutual separation. While Fig.~\ref{fig:slope_correction} a is shown here for just one mean photon number $\mu$, this response is collected for a full range of attenuations and corresponding $\mu$. Fig.~\ref{fig:slope_correction} a shows histograms from projecting 3 such measurements down onto the $\Delta t_{BA}$ axis.
 
-Thee slope correction method involves the measurement and creation of a slope-versus-arrival time line, one of which is shown in Fig.~\ref{fig:slope_correction} a. This is produced by averaging all $t_A$ measurements for a given slope $\Delta t_{BA}$. That is, the values along vertical slices of the 2D density plot in Fig.~\ref{fig:slope_correction} a are averaged to produce the y-coordinates of the slope-versus-arrival time line shown in black. By interpolating new $\Delta t_{BA}$ measurements on this curve and using it like a lookup table, PNR corrections $C_A$ are found. These may be subtracted off from $t_A$ producting $\tilde{t_A} = t_A - C_A(\Delta t_{BA})$ where $\tilde{t_A}$ is a constructed timing measurement that exhibits a symmetric arrival time response function and shown in Fig.~\ref{fig:slope_correction} c.~
+The slope-correction method involves the measurement and creation of a slope-versus-arrival time line, one of which is shown in black on Fig.~\ref{fig:slope_correction} a. This is produced by averaging all $t_A$ measurements for a given slope $\Delta t_{BA}$, or equivalently averaging across rows for each column in the 2D plotted data in Fig.~\ref{fig:slope_correction} a . By interpolating new $\Delta t_{BA}$ measurements on this curve and using it like a lookup table, PNR corrections $C_A$ are found. These may be subtracted off from $t_A$ producing $\tilde{t_A} = t_A - C_A(\Delta t_{BA})$ where $\tilde{t_A}$ is a constructed timing measurement that exhibits a symmetric arrival time response function and shown in Fig.~\ref{fig:slope_correction} c.~
 
-The data representation and calibration curve shown in Fig.~\ref{fig:slope_correction} a may be constructed with $t_B$ on the y-axis as well. Then the PNR corrections are applied the the $t_B$ measurements instead. However, the resulting histograms $\tilde{t_B}$ are virtual identical to $\tilde{t_A}$.
+The data representation and calibration curve shown in Fig.~\ref{fig:slope_correction} a may be constructed with $t_B$ on the y-axis as well. Then the PNR corrections are applied the the $t_B$ measurements instead. However, the resulting histograms $\tilde{t_B}$ are virtually identical to $\tilde{t_A}$ as they are ultimately constructed from the same data.
 
 \hypertarget{cluster-analysis}{%
 \subsection{Cluster Analysis}\label{cluster-analysis}}
+
+The photon-number dependent effects shown in Fig.~\ref{fig:waveform} are uniquely separable in terms of photon number due to the inherently pulsed nature of the source.
+
+Given the pulsed nature of the modulation source, there isn't necessarily a need to define a continuous variable like $\tilde{t_A}$ as an intermediate step before binning. Instead, PPM decoding can be generalized to the operation of matching a pair of timing measurements $t_A, t_B$ to one of multiple probability distributions in the $t_A, t_B$ space, each of which corresponds to a different time bin and models the photon number dynamics for that bin. The shape of the distributions is dependent on the mean photon number $\mu$, and they may overlap for shorter time bin lengths.
+
+We opt to use a gaussian mixture model (GMM) to model the detector response for a given time bin. This is a statistical model that represents the probability distribution of a set of data as a weighted sum of gaussian distributions. It is effective for modelling the multi-model shape of the photon number dependent detector response with a minimal number of parameters. The ellipses in Fig.~\ref{fig:gmm_model} a \& b represent gaussians used to fit the histogrammed data. We use an off-the-shelf GMM algorithm, and do not impose any limit on how many gaussians are used to faithfully model each one of the photon clusters.
+
+\hypertarget{fig:gmm_model}{%
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=\textheight]{./chapter_04/figs/gmm_intro_analysis_t_light.pdf}
+\caption[{Initial gaussian mixture model analysis}]{\textbf{Initial gaussian mixture model analysis} a) \& b) 2D histogram of multi-photon SNSPD detections parametrized by timing measurements $t_A$ and $t_B$. The shape of the data and modelled distributions depends on mean photon number $\mu$. The ellipses denote the location and shape of the gaussian components used to model the data. c) Shaded regions and overlayed contour plots for GMM-modeled detector response seperated by 50~ps, corresponding to the 20~GHz PPM demonstration. Identifying which bin a detector measurement corresponds to is equivalent to identifying which colored region a $t_A, t_B$ point should belong to. For the 20~GHz demonstration, discrimination cannot be perfect because the distributions overlap.}
+\label{fig:gmm_model}
+\end{figure}
+}
+
+Previous work has used principle component analysis (PCA) for modelling the photon-number dependent response of SNSPDs. As shown in the \textbf{\hl{supplemental:A}}, independent component analysis, a method related to PCA, is still useful for photon-number attribution for our detector and setup, and could be used in concert withe the slope-correction method above. However, as described in more detail in the discussion section, we believe the generality of the GMM approach has certain benefits, especially for future extensions to the analysis that must contend with pulse distortion effects like pile-up and time-walk \autocite{Mueller2023}. Ultimately, further exploration of both GMM methods and PCA/ICA analysis methods is promising for SNSPD response modelling.
+
+As shown in Fig.~\ref{fig:gmm_model} c, there exists regions in the $t_A, t_B$ plane for which a given GMM model for pulse $i$ is most probable. The shape or boundary of these regions is a curve made of x,y coordinates where one GMM distribution is as probable as a neighboring $i+1$ distribution. There are different approaches to computing such a curve including analytic methods and marching methods \autocite{Bajaj1988,Shankar1997}. With the boundaries defined, photon arrival time attribution becomes a point-in-polygon problem for which a computationally efficient algorithm could be developed. For this demonstration, computational efficiency is not a major concern, so we compute the probability of a $t_A, t_B$ point for a few nearest distributions and pick the one with largest probability.
+
+\%I could specify I pick the family of distributions based on the $t_A$ constructed timing measurement. Then, in my code, the GMM analysis produces a correction to whichever time bin was deemed most likely by the the slope-method.
+
+\hypertarget{fig:fig_id}{%
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=\textheight]{./chapter_04/figs/fig_file_name.pdf}
+\caption[{short caption here}]{\textbf{Decoding probabilities vs mean photon number} long caption here}
+\label{fig:fig_id}
+\end{figure}
+}
+
+\textcite{fig}:
+
+\hypertarget{photon-number-discrimination}{%
+\section{Photon number Discrimination}\label{photon-number-discrimination}}
+
+The GMM used requires a specified number of gaussians to fit the whole distributions with no constraints on the number of gaussians assigned to certain clusters. Therefore, for photon number discrimination, a method for grouping the gaussians into sets that describe specific photon number clusters is needed. We start with data from a moderate mean photon number which displays clusters for photon numbers from 1 to 5+. We specify a number of gaussians to model this distribution in the range of 15 to 20, which ensures that each cluster is faithfully modelled by the sum of a few gaussians. We observe a minimal improvement the the model accuracy if more gaussians are used.
+
+Then, we compute the symmetric Kullback--Leibler (KL) divergence divergence between all pairs of gaussians and represent this data in an adjacency matrix. The KL divergence is a measure of the similarity between two probability distributions, and may be computed from the respective means and covariance matrices of each gaussian component.
+
+The adjacency matrix can be thought of as a undirected graph where each node represents a gaussian component and each edge represents the symmetric KL divergence between two nodes. We then use a community detection algorithm to group the gaussians into sets that correspond to the photon number clusters. We use the Louvain method \autocite{Blondel2008} for this purpose, implemented in the NetworkX python package.
 
 \hypertarget{results-1}{%
 \section{Results}\label{results-1}}
@@ -655,6 +700,31 @@ We also present a 2-dimensional gaussian mixture model of the SNSPD response to 
 The full 2D treatment of photon number discrimination based on community detection of gaussian mixture groups is undeniably more complex than principle component analysis methods demonstrated in previous research\autocite{sauer2023resolving,schapeler2023superconducting}. However, it's generality may be advantageous for future SNSPD systems that gather added data about the transient state of the SNSPD and readout circuitry. For example, more than two timing measurements from each SNSPD pulse may prove to be useful. Recent research has demonstrated that photon number information is present in the falling edge of the pulse \autocite{sauer2023resolving,schapeler2023superconducting}, and, as shown here, timing measurements from two trigger levels on the rising edge are also useful. Therefore, the use of three or more unique time-correlated measurements may be advantageous. Digitizing the RF pulse with a high speed ADC or oscilloscope extends this thinking to many more measurements. Ultimately, photon number discrimination becomes a higher dimensional problem, for which gaussian mixture methods may outperform principle component analysis.
 
 Finally, higher dimensional analysis may be necessary when pulse overlap or time walk effects \autocite{Mueller2023} complicate the nuanced photon number response characteristics of each SNSPD pulse. This is important in future SNSPD systems that are designed to exhibit both high maximum count rates \autocite{Craiciu23} and photon number resolution.
+
+\hypertarget{modulation-extinction-ratio}{%
+\section{Modulation extinction ratio}\label{modulation-extinction-ratio}}
+
+We use two modulators in series for this experiment in order to achieve a sufficiently high probability that a certain large number of pulses from the seed laser will be blocked without transmission of even a single photon.
+
+The extinction ratio of the modulator(s) needed is then a function of the number of pulses that must be blocked, and the number of photons per pulse. Say we want to keep the probability of single-photon leakage below 1\% for 2047 successive pulses with mean photon number of 3. This would give an error rate per frame of 1\% for the 2048-bin 20~GHz demonstration, if the correct pulse always fell into the last bin. We solve the equation $((1 - 10^{-ER/10})^{2047})^3 = 0.99$ for extinction ratio $ER$ and find it is approximately $58$~dB.
+
+Since $\mu=3$ is at the upper range of the mean photon number we expect to use in this experiment, we opt for two 30~dB modulators in series for a total of 60~dB extinction ratio. PPM with M as high as 11 is unlikely to be practical for deep space communication due to these stringent extinction ratio requirements and the dramatic increase in frame length. However, we demonstrate them here to bring the word length on par with the single pixel detector dead time. Also, the demonstration shows that that M above 8 (256 bins) is possible and perhaps a valid option for extremely high loss and power-starved scenarios.
+
+\hypertarget{independent-component-analysis}{%
+\section{Independent component analysis}\label{independent-component-analysis}}
+
+\hypertarget{fig:ica_pnr}{%
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=\textheight]{./chapter_04/figs/ICA_component_analysis_light.pdf}
+\caption[{Photon number discrimination from independent component analysis}]{\textbf{Photon number discrimination from independent component analysis} Source data with axes defined from ICA. Projecting along the purple line (perpendicular to the larger black vector) produces a distribution of high Gaussianity. Whereas projecting along the red line (smaller vector) produces a distribution with high non-Gaussianity. b) Whitened feature space and it's projection (c) on the x-axis.}
+\label{fig:ica_pnr}
+\end{figure}
+}
+
+We observe that the photon groupings may be most separable in a whitened feature space based on non-orthogonal vectors in the original feature space. For this reason, we use independent component analysis (ICA) instead of principal component analysis (PCA).
+
+Identifying photon number based on the ICA projection is likely just as effective as the GMM-based method described above. It can be used with the slope-based method for pulse arrival time attribution. The GMM-based method may just have certain advantages for more complex attribution problems that go beyond the scope of this work.
 
 \hypertarget{synchronization-with-a-software-phase-locked-loop-pll}{%
 \section{Synchronization with a Software Phase Locked Loop (PLL)}\label{synchronization-with-a-software-phase-locked-loop-pll}}

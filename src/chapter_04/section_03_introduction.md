@@ -12,13 +12,19 @@ In this article, we demonstrate high rate Pulse Position Modulation (PPM) applic
 
 The Deep Space Optical Communicaiton (DSOC) project managed by the Jet Propulsion Laboratory (JPL) demonstrates optical communication using PPM with the Psyche spacecraft from distances of 0.06 to 2.7 Au [@Srinivasan2023GroundReceiver]. 
 
-For larger M, more data may be sent with a single optical pulse or given spacecraft power budge. This is quantified through the photon information efficiency $c_p = C/E$ where $C$ is the link capacity and $E$ is the photon cost per optical pulse. 
+For larger M, more data may be sent with a single optical pulse or given spacecraft power budge. This is quantified through the photon information efficiency $c_p = C/E$ where $C$ is the link capacity 
+
+$$
+C=\left(1-e^{-E}\right) \log _2 M,
+$$
+
+and $E$ is the photon cost per optical pulse. DSOC relies on modulation of a CW seed laser to generate the communication signal on the spacecraft. This signal is then amplified by an Erbium Doped Fiber Amplifier (EDFA) which dominates the power budget of the spacecraft optical transmission system. Therefore, power consumption scales with the number of optical pulses sent. 
 
 The DSOC project uses PPM with maximum M values of at least 5, meaning 5 bits of data are sent using 32 time slots per frame. M values as high as 19 have been demonstrated in the lab~[@essiambre2023record], but the number of time bins needed per frame scales exponentially with the number of bits transmitted per pulse. Therefore, for a given fixed clock rate and time bin duration, the PPM data rate decreases dramatically for higher M values. 
 
 <!-- PPM can achieve higher photon information efficiency than coherent detection techniques [@Dolinar2011Photon] for which the need to measure phase of the incoming optical signal limits minimum transmission power.  -->
 
-We demonstrate a high clock rate PPM protocol in the lab based on modulating a mode-locked laser and receiving pulses with a low jitter superconducting nanowire single photon detector (SNSPD) (@fig:intro (a)).We focus on demonstrating moderately high PIE, while also increasing the clock rate of the sytem by an order of magnitude relative to the DSOC platform (from 2~GHz to 20~GHz). By operating at both higher clock rate and PIE than DSOC, this system exemplifies how future iterations of DSOC may send data more quickly but also over greater distances with the same power budget. 
+We demonstrate a high clock rate PPM protocol in the lab based on modulating a mode-locked laser and receiving pulses with a low jitter superconducting nanowire single photon detector (SNSPD) (@fig:intro (a)). We focus on demonstrating moderately high PIE, while also increasing the clock rate of the sytem by an order of magnitude relative to the DSOC platform (from 2~GHz to 20~GHz). By operating at both higher clock rate and PIE than DSOC, this system exemplifies how future iterations of DSOC may send data more quickly but also over greater distances with the same power budget. 
 
 <!-- With the increase of both clock rate and PIE, this protocol suggests a potentially attractive upgrade path DSOC-like systems, as similar implementations could offer both higher data rates and operation across greater distances.  -->
 
@@ -34,19 +40,15 @@ For the tapered differential detectors, the PNR response affects timing of fixed
 
 ### Development of a modulation source
 
-DSOC relies on modulation of a CW seed laser to generate the communication signal on the spacecraft. This signal is then amplified by an Erbium Doped Fiber Amplifier (EDFA) to increase its transmission power to Earth. As the EDFA amplifies the pre-generated pulses and uses most of the power of the spacecraft optical transmission system, power consumption scales with the number of optical pulses.
-
-We produce our PPM signal signal by carving a high rate mode locked laser with lithium niobate modulators. This way, the jitter of the optical pulses themselves are not limited by the modulators or slew slew rate of the RF signal that drives them. We do two PPM demonstrations, with the source mode locked laser operating at 10.75 and 20 GHz. THe 10.75 GHz demonstration uses a M value of 10, thereby making frames with 1024 time slots of 93 ps width each. The 20 GHz demonstration uses M=11, giving 2048 time slots of 50 ps width per frame. Each frame ends with a dead time of approximately 150 ns to allow the SNSPD to fully recover before the next frame. 
-
-We encode a 98 kilobit image as the dataset for transmission in both the 10.75 and 20 Ghz demonstrations. Due to limitations of the AWG, the full dataset could not be transmitted sequentially. Instead, sequencies of XX (10.75 Ghz) and XX (20 GHz) are successively loaded into AWG memory, transmitted several times, then switched out for the next sequence. 
+We produce our PPM signal signal by carving a 1550~nm high rate mode locked laser with lithium niobate modulators. Each mode locked laser pulse has duration on the order of 0.5~ps. By modulating a mode-locked laser, 
+the optical pulses do not incur timing jitter from the limited slew rate of the modulators or the RF signal that drives them. Two modulators are used in series to achieve the high extinction ratio needed to successively block up to 2047 laser pulses in a row. 
 
 
+We do two PPM demonstrations, with the source mode locked laser operating at 10.75 and 20 GHz. THe 10.75 GHz demonstration uses a M value of 10, thereby making frames with 1024 time slots of 93 ps width each. The 20 GHz demonstration uses M=11, giving 2048 time slots per frame of 50 ps width. Each frame ends with a dead time of approximately 150 ns to allow the SNSPD to fully recover before the next frame. 
 
 
 <!-- Therefore, we chose to carve pulses from a mode-locked laser. This approach allows for extremely short pulses in time, with the modulators responsible for sufficiently reducing any surrounding unwanted pulses. The temporal width of the modulator pulse response must be extremely short and able to modulate from 'off' to 'on' within a time frame of the order of the 50 ps bin width. -->
 
-
 <!-- Extras -->
-
 
 Several modern free running time taggers support the averaging of multiple input channels to create fewer higher resolution channels. This implies a tradeoff between jitter or timing resolution and number of channels for a given time tagging device. Therefore, it is important to consider readout methods like that presented here that make use of 2 lower-resolution channels in place of a single higher resolution channel, as these two configurations are similarly resource efficient. 

@@ -25,8 +25,17 @@ theme:
   custom_dir: ./pandoc_site/overrides
   features:
     # - navigation.instant
+    # - content.action.edit
+    # - content.action.view
+    - navigation.tracking
+    - navigation.footer
+    # - navigation.sections
     - navigation.indexes
     - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - toc.follow
         
 markdown_extensions:
   - pymdownx.arithmatex:
@@ -46,6 +55,8 @@ markdown_extensions:
 extra_css:
   - ./stylesheets/extra.css
   - ./stylesheets/tippy.css
+extra:
+  generator: false
 
   
 
@@ -113,8 +124,8 @@ nav:
     - Introduction: chapter_04/section_03_introduction.md
     - Method: chapter_04/section_04_method.md
     - Results: chapter_04/section_05_results.md
-    - Phased Locked Loop: chapter_04/section_06_phased_locked_loop.md
-    - Outlook: chapter_04/section_07_outlook.md
+    - Discussion: chapter_04/section_06_discussion.md
+    - Phased Locked Loop: chapter_04/section_07_extra.md
   - "Ch. 5: High Rate Entanglement": 
     - chapter_05/index.md
     - Introduction: chapter_05/section_03_introduction.md

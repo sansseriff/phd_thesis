@@ -1,7 +1,8 @@
----
+
+<!-- ---
 hide:
-  - toc
----
+  - footer
+--- -->
 
 <div align="center" markdown>
 ##  Precise Quantum Measurements with Superconducting Nanowire Single Photon Detectors
@@ -41,3 +42,22 @@ Pasadena, California
 2024<br>
 Defended December 2023
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<script>
+  // hide the table of contents, but keep the space/padding there
+elements = document.querySelectorAll('.md-sidebar__inner');
+// console.log(elements);
+if (elements.length > 1) {
+    let element = elements[1];
+    element.style.setProperty('visibility', 'hidden', 'important');
+    console.log(element);
+} else {
+    console.log('Element not found');
+}
+</script>
