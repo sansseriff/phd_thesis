@@ -34,13 +34,9 @@ Previous work has used principle component analysis (PCA) for modelling the phot
 
 As shown in @fig:gmm_model c, there exists regions in the $t_A, t_B$ plane for which a given GMM model for pulse $i$ is most probable. The shape or boundary of these regions is a curve made of x,y coordinates where one GMM distribution is as probable as a neighboring $i+1$ distribution. There are different approaches to computing such a curve including analytic methods and marching methods [@Bajaj1988; @Shankar1997]. With the boundaries defined, photon arrival time attribution becomes a point-in-polygon problem for which a computationally efficient algorithm could be developed. For this demonstration, computational efficiency is not a major concern, so we compute the probability of a $t_A, t_B$ point for a few nearest distributions and pick the one with largest probability. 
 
-<span class="latex">%I could specify I pick the family of distributions based on the $t_A$ constructed timing measurement. Then, in my code, the GMM analysis produces a correction to whichever time bin was deemed most likely by the the slope-method. </span>
+<!-- <span class="latex">%I could specify I pick the family of distributions based on the $t_A$ constructed timing measurement. Then, in my code, the GMM analysis produces a correction to whichever time bin was deemed most likely by the the slope-method. </span> -->
 
 <!-- ![**Decoding probabilities vs mean photon number** long caption here](./figs/fig_file_name.svg){#fig:fig_id short-caption='short caption here' width=100% path="chapter_04"} -->
-
-<!-- @fig: -->
-
-
 
 
 
