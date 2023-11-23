@@ -224,7 +224,7 @@ Boriz Korzh provided extensive assistance during ideation, construction, testing
 \hypertarget{background}{%
 \subsubsection{Background}\label{background}}
 
-Superconducting nanowire single photon detectors are high sensitive devices. Any stray photons from a laboratory environment can make their way into these devices and produce a detection. These detections are commonly called dark counts or false counts. Dark counts can be present in any situation where the detector is coupled to some experiment or apparatus outside the cryogenic environment. This coupling may be through windows inside the cryostat housing and radiations shields, or through optical fibers that carry single-mode signals directly to detectors.
+Superconducting nanowire single photon detectors are high sensitive devices. Any stray photons from a laboratory environment can make their way into these devices and produce a detection called a dark count or false count. Dark counts can be present in any situation where the detector is coupled to some experiment or apparatus outside the cryogenic environment. This coupling may be through windows inside the cryostat housing and radiations shields, or through optical fibers that carry single-mode signals directly to detectors.
 
 Visible, near-infrared, and mid-infrared photons are often the main sources of dark counts, because they are ubiquitous in a laboratory environment and are transmitted through common types of fibers and windows. Assuming visible light can be blocked from entering the detector system, the blackbody emission of the room temperature laboratory environment presents is the primary source of dark counts. The spectrum of blackbody photons, defined by Planck's law, is peaked at about $10~\mathrm{\upmu m}$, though it can contribute dark counts at significant rates up through near-infrared wavelengths.
 
@@ -1165,7 +1165,7 @@ We use a basis reconciliation factor of 0.81, thereby assuming a readout configu
 \hypertarget{interferometer-imbalance-analysis}{%
 \section{Interferometer imbalance analysis}\label{interferometer-imbalance-analysis}}
 
-It is not trivially clear how much the interferometer early/late imbalances should should negatively impact entanglement visibility. The 2nd author of this paper, Samantha Davis, does a theoretical analysis to help answer this question, which is included in supplemental section \ref{interferometer-imbalance-analysis-1}.
+It is not trivially clear how much the interferometer early/late imbalances should negatively impact entanglement visibility. The 2nd author of this paper, Samantha Davis, does a theoretical analysis to help answer this question, which is included in supplemental section \ref{interferometer-imbalance-analysis-1}.
 
 \hypertarget{time-walk-correction}{%
 \section{Time-Walk Correction}\label{time-walk-correction}}
@@ -1282,6 +1282,24 @@ In this work we primarily study the capability of 8 DWDM channel pairs, with som
 
 \hypertarget{conclusion}{%
 \chapter{Conclusion}\label{conclusion}}
+
+This thesis comprises work on four major projects of somewhat disparate motivations and origins. The low dark count free space coupling project and the PPM project were partially motivated by planned improvements to deep space optical communication systems. The time-walk correction project grew naturally out of issues with SNSPD tagging that were observed in other projects. Finally, the high rate entanglement project resulted from an interest in using the differential single pixel SNSPDs to their full potential in a quantum application.
+
+One prevailing observation from my PhD research is that lessons and knowledge gained from each project have utility beyond the motivations that led to the project itself. The things you learn in the process of building can be oddly general and specific at the same time. They don't necessarily align with the delineations we usually use to categorize research for one goal versus another. This is how, for example, observations from a project on deep space optical communication can be used to improve the performance of a quantum entanglement source.
+
+The main take-ways from each of my four projects can be succinctly stated:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  From the low dark count rate free space coupling project, I learned that the use of free space optics inside a cryogenic environment isn't necessarily as unwieldy as one might expect. Optics inside a cryostat can't be directly aligned without expensive actuators that may or may not function and very low temperatures. But there are ways around this, like through moving all alignment controls outside the fridge. Beyond this project, I believe there is significant potential to capitalize on the high efficiency coupling free-space optics provide for interfacing SNSPDs and nonlinear optics devices like entangled pair generated SPDC crystals.
+\item
+  Form the time-walk correction project, I learned how effective SNSPDs continue to be even at high count rates where RF pulses overlap. Researchers may have a tendency to initially assume that the high-count rate behavior of SNSPDs is `complicated' or `corrupted' and therefore avoid operating them in this regime. But I have found through the application of time-walk correction that these detectors continue to operate in a predicable way up to the point where the high-count rate drop of efficiency becomes the limiting factor. At the highest count rates, SNSPD efficiency drops as the detector isn't allowed enough time for the bias current to recover in the nanowire before the next photon arrives. But depending on the types of amplifiers used, time-walk effects can dramatically reduce jitter before the detector has lost even a few percent of it's efficiency due to this effect. Therefor, time-walk correction can easily lead to 2-3 times higher usable count rates for single detectors, and up to an order of magnitude higher rates in quantum applications that rely on multi-detector coincidences.
+\item
+  From the PPM project, I developed a great respect for the complexity and potential utility of the photon number response in the differential single pixel SNSPDs. For better or worse, the ideal application of these detectors from quantum or classical communication applications must be fairly complex to use them to their full potential. When not planned for, the PNR effects can be a nuisance. But when properly managed, they make for highly effective photon number resolving devices -- equivalent of a large array of binary-type detectors. This will undoubtedly be useful for various photon heralding applications and commissioning of complex multi-photon states of light. The GMM method I developed for PPM decoding was a result of a general sense that working in a high dimensional space for event attribution will continue to be a fruitful approach for future work. SNSPD readout is only getting more complicated with the development of multiplexed arrays and ulta-high count rate detectors. Effects like time-walk the phon number dependent response may be easier to understand and manage it they are thought of as simply modifying how detector data appears when graphed in a high dimensional space.
+\item
+  The high rate entanglement project made for a good lesson in effective management of complexity. In the process of adopting a high repetition rate compatible with the differential single pixel detectors, some aspects of entanglement distribution became simpler (relative to a low-repetition rate system), and others became more complicated. The promise of the project then hinged on making the complex parts work reliably. One major advantage of the high repetition rate was it allowed us to use small and highly stable interferometers. With lower repetition rate time-bin entanglement sources, precise temperature control of interferometers is needed when their path length delay exceeds multiple nanoseconds \autocite{Valivarthi2020}. We were able to use interferometers with a path length delay of just 80~ps, which varied in phase by less than a few degrees over multiple hours.
+\end{enumerate}
 
 \appendix
 
