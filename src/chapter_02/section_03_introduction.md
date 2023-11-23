@@ -1,6 +1,6 @@
 #### Background
 
-Superconducting nanowire single photon detectors are high sensitive devices. Any stray photons from a laboratory environment can make their way into these devices and produce a detection. These detections are commonly called dark counts or false counts. Dark counts can be present in any situation where the detector is coupled to some experiment or apparatus outside the cryogenic environment. This coupling may be through windows inside the cryostat housing and radiations shields, or through optical fibers that carry single-mode signals directly to detectors. 
+Superconducting nanowire single photon detectors are high sensitive devices. Any stray photons from a laboratory environment can make their way into these devices and produce a detection called a dark count or false count. Dark counts can be present in any situation where the detector is coupled to some experiment or apparatus outside the cryogenic environment. This coupling may be through windows inside the cryostat housing and radiations shields, or through optical fibers that carry single-mode signals directly to detectors. 
 
 Visible, near-infrared, and mid-infrared photons are often the main sources of dark counts, because they are ubiquitous in a laboratory environment and are transmitted through common types of fibers and windows. Assuming visible light can be blocked from entering the detector system, the blackbody emission of the room temperature laboratory environment presents is the primary source of dark counts. The spectrum of blackbody photons, defined by Planck's law, is peaked at about $10~\mathrm{\upmu m}$, though it can contribute dark counts at significant rates up through near-infrared wavelengths. 
 
@@ -32,9 +32,6 @@ The highest system detection efficiencies have been achieved using self-aligned 
 The system was designed around the use of two each of two types of ultra-high rejection custom short-pass filters (semrock) with pass-bands below $1.6 \mathrm{\upmu m}$ and $1.9 \mathrm{\upmu m}$ (Andover Corp.). As shown in @fig:dcrmin_filters b, any mid-IR passbands of one filter compliment a high rejection spectral region of the other. They reject wavelengths shorter than $3 \ \mathrm{\upmu m}$ through reflective optical coatings, and attenuate longer wavelengths through material absorption in the N-BK7 glass substrate. Since the filtering depends on the attenuation of the glass itself, the filters are unusually thick -- 12.7 mm. 
 
 As initial modelling showed that 4 filters in series were required to sufficiently block mid-IR light, the cryostat design had to accommodate a several-inch thick set of filters. This thickness, and the desire to couple to a single-model fiber compatible detector with low jitter, also necessitated the use of a cryogenic lens. A 1-inch diameter lens mounted outside the cryostat with a focal length above the filter-stack thickness would not have been able to focus to a small enough spot. 
-
-
-
 
 
 

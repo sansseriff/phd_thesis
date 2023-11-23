@@ -59,3 +59,10 @@ We do two PPM demonstrations, with the source mode locked laser operating at 10.
 <!-- Extras -->
 
 Several modern free running time taggers support the averaging of multiple input channels to create fewer higher resolution channels. This implies a tradeoff between jitter or timing resolution and number of channels for a given time tagging device. Therefore, it is important to consider readout methods like that presented here that make use of 2 lower-resolution channels in place of a single higher resolution channel, as these two configurations are similarly resource efficient.
+
+<!-- ```{=html}
+*[SNSPD]: Superconducting Nanowire Single Photon Detector
+*[SNSPDs]: Superconducting Nanowire Single Photon Detector
+*[DCR]: Dark Count Rate
+*[PPM]: Pulse Position Modulation
+``` -->

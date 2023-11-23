@@ -38,10 +38,13 @@ theme:
     - toc.follow
         
 markdown_extensions:
+  - abbr
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.snippets:
       check_paths: true
+      auto_append:
+        - ./pandoc_site/abbreviations.md
   - attr_list
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
@@ -135,7 +138,7 @@ nav:
     - Experiment Details: chapter_05/section_07_experiment_details.md
   - "Ch. 6: Conclusion":
     - chapter_06/index.md
-    - Summary: chapter_06/section_03_summary.md
+    - Summary & Reflection: chapter_06/section_03_summary_and_reflection.md
     - Outlook: chapter_06/section_04_outlook.md
   - "A1: Aph 138 Homework":
     - chapter_07/index.md
