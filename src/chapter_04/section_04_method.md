@@ -2,9 +2,9 @@
 
 <!-- In paper -->
 
-We encode a 98 kilobit <span style="color: orange">fig with images here</span> image as the dataset for transmission in both the 10.75 and 20 Ghz demonstrations. Due to limitations of the AWG, the full dataset can not be transmitted sequentially. Instead, sequencies of 8 (10.75 Ghz) and 10 (20 GHz) pulses  each are successively loaded into AWG memory, transmitted several times, then switched out for the next sequence. 
+We encode a 98 kilobit <span class="html">[image](./section_05_results.md#fig:decoding_20GHz)</span><span class="latex">image (@fig:decoding_20GHz b)</span> as the dataset for transmission in both the 10.75 and 20 Ghz demonstrations. Due to limitations of the AWG, the full dataset can not be transmitted sequentially. Instead, sequencies of 8 (10.75 Ghz) and 9 (20 GHz) pulses each are successively loaded into AWG memory, transmitted several times, then switched out for the next sequence. The 98 kbit dataset is therefore transmitted with 9832 (10.75 GHz) and 8937 (20 GHz) frames across 1229 (10.75 GHz) and 993 (20 GHz) AWG sequences. 
 
-We begin by using a sequence that only consists of pulses in the $i = 0$ time slot. Before sending the actual dataset, we modulate this set multiple times, collecting data from low and high trigger levels for impinging optical pulses of varying mean photon number. This provides information on the detector's photon number response without arrival time variation. We label the measurements from the low (8~mV) and high (50~mV) trigger levels as $t_A$ and $t_B$ respectively. As shown in <span class="latex"> Fig.~\ref{fig:waveform}</span><span class="html">[the waveform figure](section_03_introduction.md#fig:waveform)</span>, histograms of these arrival events are multimodal with distinct groupings for for each photon number detection. We first present a method for recovering a symmetric arrival time response function using the the slope measurement $\Delta t_{BA} = t_B - t_A$. 
+We begin with a preamble sequence that only consists of pulses in the $i = 0$ time slot. Before sending the rest of the dataset, we modulate this set multiple times, collecting data from low and high trigger levels for impinging optical pulses of varying mean photon number. This provides information on the detector's photon number response without arrival time variation. We label the measurements from the low (8~mV) and high (50~mV) trigger levels as $t_A$ and $t_B$ respectively. As shown in <span class="latex"> Fig.~\ref{fig:waveform}</span><span class="html">[the waveform figure](section_03_introduction.md#fig:waveform)</span>, histograms of these arrival events are multimodal with distinct groupings for for each photon number detection. We first present a method for recovering a symmetric arrival time response function using the the slope measurement $\Delta t_{BA} = t_B - t_A$. 
 
 ### Slope-Based Correction
 
@@ -30,36 +30,15 @@ We opt to use a gaussian mixture model (GMM) to model the detector response for 
 
 ![**Initial gaussian mixture model analysis** a) & b) 2D histogram of multi-photon SNSPD detections parametrized by timing measurements $t_A$ and $t_B$. The shape of the data and modelled distributions depends on mean photon number $\mu$. The ellipses denote the location and shape of the gaussian components used to model the data. c) Shaded regions and overlayed contour plots for GMM-modeled detector response seperated by 50~ps, corresponding to the 20~GHz PPM demonstration. Identifying which bin a detector measurement corresponds to is equivalent to identifying which colored region a $t_A, t_B$ point should belong to. For the 20~GHz demonstration, discrimination cannot be perfect because the distributions overlap. ](./figs/gmm_intro_analysis_t_light.svg){#fig:gmm_model short-caption='Initial gaussian mixture model analysis' width=100% path="chapter_04"}
 
-Previous work has used principle component analysis (PCA) for modelling the photon-number dependent response of SNSPDs. As shown in the <span style="color: orange">supplemental:A</span>, independent component analysis, a method related to PCA,  is still useful for photon-number attribution for our detector and setup, and could be used in concert withe the slope-correction method above. However, as described in more detail in the discussion section, we believe the generality of the GMM approach has certain benefits, especially for future extensions to the analysis that must contend with pulse distortion effects like pile-up and time-walk [@Mueller2023]. Ultimately, further exploration of both GMM methods and PCA/ICA analysis methods is promising for SNSPD response modelling. 
+Previous work has used principle component analysis (PCA) for modelling the photon-number dependent response of SNSPDs. As shown in  <span class="html">[an extra section](./section_07_extra.md#independent-component-analysis]</span><span class="latex">section \ref{independent-component-analysis}</span>, Independent Component Analysis (ICA) -- a method related to PCA --  is still useful for photon-number attribution for our detector and setup, and could be used in concert withe the slope-correction method above. However, as described in more detail in the discussion section, we believe the generality of the GMM approach has certain benefits, especially for future extensions to the analysis that must contend with pulse distortion effects like pile-up and time-walk~[@Mueller2023]. Ultimately,  both GMM methods and PCA/ICA analysis methods hold promise for SNSPD further response modelling. 
 
-As shown in @fig:gmm_model c, there exists regions in the $t_A, t_B$ plane for which a given GMM model for pulse $i$ is most probable. The shape or boundary of these regions is a curve made of x,y coordinates where one GMM distribution is as probable as a neighboring $i+1$ distribution. There are different approaches to computing such a curve including analytic methods and marching methods [@Bajaj1988; @Shankar1997]. With the boundaries defined, photon arrival time attribution becomes a point-in-polygon problem for which a computationally efficient algorithm could be developed. For this demonstration, computational efficiency is not a major concern, so we compute the probability of a $t_A, t_B$ point for a few nearest distributions and pick the one with largest probability. 
+As shown in @fig:gmm_model c, there exists regions in the $t_A, t_B$ plane for which a given GMM model for pulse $i$ is most probable. The exact shape of this boundary could be computed as detailed in <span class="html">[a later section](./section_07_extra.md#computing-gmm-intersection-boundaries)</span><span class="latex"> section \ref{computing-gmm-intersection-boundaries}</span> for computationally efficiency binning in the $t_A, t_B$ plane. But for this demonstration, computational efficiency is not a major concern so we compute the probability of a $[t_A, t_B]$ point for a few nearest distributions and pick the one with largest probability. 
+
 
 <!-- <span class="latex">%I could specify I pick the family of distributions based on the $t_A$ constructed timing measurement. Then, in my code, the GMM analysis produces a correction to whichever time bin was deemed most likely by the the slope-method. </span> -->
 
 <!-- ![**Decoding probabilities vs mean photon number** long caption here](./figs/fig_file_name.svg){#fig:fig_id short-caption='short caption here' width=100% path="chapter_04"} -->
 
-
-
-## Photon number Discrimination
-
-The GMM used requires a specified number of gaussians to fit the whole distributions with no constraints on the number of gaussians assigned to certain clusters. Therefore, for photon number discrimination, a method for grouping the gaussians into sets that describe specific photon number clusters is needed. We start with data from a moderate mean photon number which displays clusters for photon numbers from 1 to 5+. We specify a number of gaussians to model this distribution in the range of 15 to 20, which ensures that each cluster is faithfully modelled by the sum of a few gaussians. We observe a minimal improvement the the model accuracy if more gaussians are used. 
-
-Then, we compute the symmetric Kullback–Leibler (KL) divergence divergence between all pairs of gaussians and represent this data in an adjacency matrix. The KL divergence is a measure of the similarity between two probability distributions, and may be computed from the respective means and covariance matrices of each gaussian component. 
-
-```{=html}
-??? note
-    Upon further study, it appears a modification to the KL divergence called the Jensen-Shannon divergence may be more appropriate for this application. The JS divergence is a symmetrized and smoothed version of the KL divergence. 
-
-    $$
-    \operatorname{JSD}(P \| Q)=\frac{1}{2} D(P \| M)+\frac{1}{2} D(Q \| M),
-    $$
-
-    where $M=\frac{1}{2}(P+Q)$ is a mixture disbribution of $P$ and $Q$, and and $D$ is the KL divergence.
-
-    For eventual publication, this metric may be adopted instead. 
-```
-
-The adjacency matrix can be thought of as a undirected graph where each node represents a gaussian component and each edge represents the symmetric KL divergence between two nodes. We then use a community detection algorithm to group the gaussians into sets that correspond to the photon number clusters. We use the Louvain method [@Blondel2008] for this purpose, implemented in the NetworkX python package. 
 
 
 

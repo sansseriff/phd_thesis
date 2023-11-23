@@ -6,6 +6,10 @@ The extinction ratio of the modulator(s) needed is then a function of the number
 
 Since $\mu=3$ is at the upper range of the mean photon number we expect to use in this experiment, we opt for two 30~dB modulators in series for a total of 60~dB extinction ratio. PPM with M as high as 11 is unlikely to be practical for deep space communication due to these stringent extinction ratio requirements and the dramatic increase in frame length. However, we demonstrate them here to bring the word length on par with the single pixel detector dead time. Also, the demonstration shows that that M above 8 (256 bins) is possible and perhaps a valid option for extremely high loss and power-starved scenarios. 
 
+## Computing GMM intersection boundaries
+
+The shape or boundary of the GMM-defined probability distributions is a curve made of x,y coordinates where one distribution is just as probable as a neighboring $i+1$ distribution. The boundary is an x,y projection of a 3d curve, which parametrizes the intersection of the 3d surface probability distributions. There are different approaches to computing such a curve including analytic methods and marching methods [@Bajaj1988; @Shankar1997]. With the boundaries defined, photon arrival time attribution becomes a point-in-polygon problem for which a computationally efficient algorithm could be developed. 
+
 ## Independent component analysis
 
 ![**Photon number discrimination from independent component analysis** Source data with axes defined from ICA. Projecting along the purple line (perpendicular to the larger black vector) produces a distribution of high Gaussianity. Whereas projecting along the red line (smaller vector) produces a distribution with high non-Gaussianity. b) Whitened feature space and it's projection (c) on the x-axis. ](./figs/ICA_component_analysis_light.svg){#fig:ica_pnr short-caption='Photon number discrimination from independent component analysis' width=100% path="chapter_04"}
