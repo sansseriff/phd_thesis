@@ -60,17 +60,57 @@ function calculateHeight(firstPara) {
     return `${height}rem`;
 }
 
+let abbrElements = document.querySelectorAll('.md-content__inner abbr');
+
+abbrElements.forEach(function(abbr) {
+    abbr.setAttribute('onmouseover', "this.title=''");
+});
+
+// try {
+//     tippy('abbr[title]', {
+//         content: (reference) => reference.getAttribute('title'),
+//         allowHTML: true,
+//         animation: 'scale-subtle',
+//         theme: 'translucent',
+//         followCursor: true,
+//         arrow: false,
+//         touch: 'hold',
+//         inlinePositioning: true,
+//         placement: position[Math.floor(Math.random() * position.length - 1)],
+//     });
+// } catch (error) {
+//     console.error(error);
+// }
+
+try {
+    tippy('abbr[title]', {
+        content: (reference) => reference.getAttribute('title'),
+        allowHTML: true,
+        animation: 'scale-subtle',
+        theme: 'custom',
+        arrow: false,
+        touch: 'hold',
+        inlinePositioning: true,
+        placement: position[0],
+    });
+} catch (error) {
+    console.error(error);
+}
+
+
+    
+
 try {
     tippy(`.md-content a[href^="${blogURL}"], a.footnote-ref, a[href^="./"]`, {
         content: "",
         allowHTML: true,
         animation: "scale-subtle",
-        theme: "translucent",
+        theme: 'custom',
         followCursor: true,
         arrow: false,
         touch: "hold",
         inlinePositioning: true,
-        placement: position[Math.floor(Math.random() * position.length - 1)],
+        placement: position[1],
         onShow(instance) {
             fetch(instance.reference.href)
                 .then((response) => response.text())
@@ -145,7 +185,7 @@ try {
                     }
 
                     instance.popper.placement =
-                        position[Math.floor(Math.random() * position.length)];
+                        position[1];
                     if (firstPara.innerText.length > 0) {
                         if (!displayType) {
                             instance.setContent(toDisplay)

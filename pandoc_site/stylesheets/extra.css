@@ -23,8 +23,8 @@ h1 {
 
 
 .bokeh {
-    display: flex; 
-    justify-content: center; 
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -46,7 +46,7 @@ h1 {
 
 :root,
 [data-md-color-scheme="slate"] {
-    --md-primary-fg-color:#886fed;
+    --md-primary-fg-color: #886fed;
     --md-default-bg-color: #24242d;
     --md-primary-fg-color--light: #ffd06f;
     --md-primary-fg-color--dark: #db9d21;
@@ -64,11 +64,12 @@ h1 {
     --pg-blue-gray: #9ab2bc;
     --md-footer-bg-color--dark: var(--md-default-bg-color);
     --orange-bg: #6e4e22;
+    --tooltip-bg: #31313d;
 }
 
 :root,
 [data-md-color-scheme="default"] {
-    --md-primary-fg-color:#506696;
+    --md-primary-fg-color: #506696;
     --md-default-bg-color: #f7f7fd;
     --md-primary-fg-color--light: #ffd06f;
     --md-primary-fg-color--dark: #db9d21;
@@ -85,6 +86,7 @@ h1 {
     --pg-green: #2e7e31;
     --pg-blue-gray: #546d78;
     --orange-bg: #ffc26c;
+    --tooltip-bg: #ffffff;
 }
 
 .blue {
@@ -99,11 +101,12 @@ h1 {
 .md-typeset__scrollwrap {
     margin: 0;
 }
+
 .md-typeset__table {
     min-width: 100%;
     margin: 0;
     padding: 0;
- }
+}
 
 .md-typeset table:not([class]) {
     display: table;
@@ -117,7 +120,8 @@ h1 {
     padding-left: 8px;
     padding-right: 8px;
     box-decoration-break: clone;
-    -webkit-box-decoration-break: clone; /* most browsers need -webkit */
+    -webkit-box-decoration-break: clone;
+    /* most browsers need -webkit */
 }
 
 .md-nav__toggle:checked~.md-nav {
@@ -145,7 +149,7 @@ h1 {
     -webkit-box-shadow: 1px 1px 18px rgba(0, 0, 0, 0.05);
     -moz-box-shadow: 1px 1px 18px rgba(0, 0, 0, 0.05); */
     /* filter: hue-rotate(0deg); */
-    filter: hue-rotate(180deg) sepia(49%) invert(.95) saturate(2.3) ;
+    filter: hue-rotate(180deg) sepia(49%) invert(.95) saturate(2.3);
     display: block;
     /* filter: invert(1); */
     /* filter: hue-rotate(240deg);
@@ -188,7 +192,7 @@ h1 {
 img {
     height: 100%;
     width: 100%;
-  }
+}
 
 figure {
     height: 100% !important;
@@ -204,9 +208,9 @@ figcaption {
     text-align: left;
     /* margin: 0; */
     margin-top: 0.5rem !important;
-    max-width:none !important;
+    max-width: none !important;
     min-width: 18rem !important;
-    background-color:var(--pg-light-border);
+    background-color: var(--pg-light-border);
     padding: 0.3rem 0.5rem;
     font-size: 0.7rem;
     border-radius: 0.3rem;
@@ -240,9 +244,9 @@ figcaption {
     z-index: 9999;
     width: 100%;
     height: 100%;
-  }
-  
-  .bg {
+}
+
+.bg {
     position: fixed;
     top: 0;
     left: 0;
@@ -251,10 +255,10 @@ figcaption {
     background-color: var(--md-default-bg-color);
     opacity: 0.8;
     z-index: -1;
-  }
-  
-  /* Backdrop covering entire screen */
-  .backdrop {
+}
+
+/* Backdrop covering entire screen */
+.backdrop {
     position: fixed;
     top: 0;
     left: 0;
@@ -262,30 +266,30 @@ figcaption {
     height: 100%;
     z-index: 1;
     display: flex;
-  }
+}
 
 /* img {
     position: relative;
     max-height: 450px; 
     width: 100%;
 } */
-  
-  /* Image container */
-  .image-container {
+
+/* Image container */
+.image-container {
     justify-content: center;
     align-items: center;
     max-width: 100%;
     max-height: 90%;
     margin: auto;
-  }
-  
-  /* Modal image */
-  .modal img {
+}
+
+/* Modal image */
+.modal img {
     max-width: 100%;
     max-height: 100%;
     display: block;
     margin: auto;
-  }
+}
 
 /* directly behind image. slightly larger than image */
 .direct-background {
@@ -300,7 +304,7 @@ figcaption {
     background-color: var(--md-default-bg-color);
     opacity: 1;
     z-index: -1;
-    }
+}
 
 .image-with-caption {
     display: flex;
@@ -311,7 +315,7 @@ figcaption {
     /* margin: 0; */
     /* max-width:none !important;
     min-width: 18rem !important; */
-    background-color:var(--pg-light-border);
+    background-color: var(--pg-light-border);
     padding: 0.5rem 0.8rem;
     font-size: 0.7rem;
     border-radius: 0.3rem;
@@ -334,4 +338,9 @@ sup {
     font-size: inherit;
     vertical-align: inherit;
     margin-right: 0.1em;
-  }
+}
+
+.tippy-box[data-theme~='custom'] {
+    background-color: var(--tooltip-bg);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}

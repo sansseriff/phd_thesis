@@ -110,12 +110,14 @@ document$.subscribe(function () {
 
       // Check the aspect ratio of the image
       const aspectRatio = modalImage.naturalWidth / modalImage.naturalHeight;
-      if (aspectRatio > 1.5 || window.innerWidth <= 1300) {
+      console.log(aspectRatio)
+      if (aspectRatio > 1.6 || window.innerWidth <= 1300) {
         imageWithCaption.style.flexDirection = 'column';
         figcaption.style.marginTop = '1rem';
         figcaption.style.width = "50rem";
         if (window.innerWidth <= 1300) {
           figcaption.style.width = "100%";
+          
         }
       } else {
         imageWithCaption.style.flexDirection = 'row-reverse';
