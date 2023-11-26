@@ -15,7 +15,7 @@ with the permission of Optica Publishing Group.
 
 ### Acknowledgements
 
-Boriz Korzh provided extensive assistance during ideation, construction, testing, and copyediting phases of the experiment. Bruce Bumble designed the elevated 0.8 K stage and innovated translation system using flexible carbon fiber rods. Jason Trevor provided technical assistance with the implementation of a nitrogen flow bag. Sahil Patel assisted with editing the manuscript.
+Boris Korzh provided extensive assistance during ideation, construction, testing, and copyediting phases of the experiment. Marcus Runyan designed the elevated 0.8 K stage and invented a translation system using flexible carbon fiber rods. Jason Trevor provided technical assistance with implementing a nitrogen flow bag. Sahil Patel assisted with editing the manuscript.
 ## Abstract
 
 *A free-space coupled superconducting nanowire single photon detector with high efficiency at 1550 nm, sub-0.1 Hz dark count rate, and sub-15 ps timing jitter is demonstrated.*

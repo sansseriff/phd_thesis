@@ -28,4 +28,6 @@ Then, we compute the symmetric Kullback–Leibler (KL) divergence divergence bet
 
 The adjacency matrix can be thought of as a undirected graph where each node represents a gaussian component and each edge represents the symmetric KL divergence between two nodes. We then use a community detection algorithm to group the gaussians into sets that correspond to the photon number clusters. We use the Louvain method [@Blondel2008] for this purpose, implemented in the NetworkX python package.
 
-<span class='bokeh' id='../code/pnr_gmm'></span> <!-- to reactively change slider: --> <!-- Bokeh.embed.index.p3095.layout.children._items[0].data.child_models[1].value = 200 -->
+<!-- to reactively change slider: -->
+
+<!-- Bokeh.embed.index.p3095.layout.children._items[0].data.child_models[1].value = 200 -->
