@@ -104,6 +104,7 @@ repo_url: https://github.com/sansseriff/phd_thesis
 
 nav:
   - index.md
+  - published.md
   - "Ch. 1: Introduction":
     - chapter_01/index.md
     - SNSPD background: chapter_01/section_03_snspd_background.md
