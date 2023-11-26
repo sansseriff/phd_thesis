@@ -64,7 +64,7 @@ iframe {
 <figure markdown>
 <a name='fig:interactive_gmm_overlap'></a> 
 <iframe src="../code/3_high_mfn.html" onload="resizeIframe(this)" scrolling="no"></iframe>
-<figcaption markdown>caption here</figcaption>
+<figcaption markdown>With the 20 GHz repetition rate, some overlap of the detector probability distributions is expected. Here, surfaces of different colors represent different time bins spaced by 50 ps. The way the surfaces overlap explains why it can be ambiguous if some events are 2-photon events in time slot $i$, or 3-photon events in time slot $i+1$. </figcaption>
 </figure>
 ```
 

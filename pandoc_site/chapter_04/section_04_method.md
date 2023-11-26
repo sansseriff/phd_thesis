@@ -41,6 +41,7 @@ We opt to use a gaussian mixture model (GMM) to model the detector response for 
 It can be hard to get a sense of how the gaussian mixture model fits to the 2D data in @fig:gmm_model a & b. The following interactive plot shows slices of the data and fitted model on the right, and the full 2D data on the left. 
 
 <figure markdown> 
+<a name='fig:interactive_gmm'></a> 
 <span class="bokeh" id="../code/pnr_gmm"></span>
 <figcaption markdown>Data in the $t_A, t_B$ plane for $\mu = 3.48$. The red line indicates where the slice at a particular $t_A$ value is made. The right-hand plot shows data counts and scaled amplitude of the GMM model at that $t_A$ slice. </figcaption>
 </figure>
@@ -66,9 +67,10 @@ iframe {
             border: none;
         }
 </style>
-<figure markdown> 
+<figure markdown>
+<a name='fig:interactive_gmm_overlap'></a> 
 <iframe src="../code/3_high_mfn.html" onload="resizeIframe(this)" scrolling="no"></iframe>
-<figcaption markdown>caption here</figcaption>
+<figcaption markdown>With the 20 GHz repetition rate, some overlap of the detector probability distributions is expected. Here, surfaces of different colors represent different time bins spaced by 50 ps. The way the surfaces overlap explains why it can be ambiguous if some events are 2-photon events in time slot $i$, or 3-photon events in time slot $i+1$. </figcaption>
 </figure>
 
 <!-- <span class="latex">%I could specify I pick the family of distributions based on the $t_A$ constructed timing measurement. Then, in my code, the GMM analysis produces a correction to whichever time bin was deemed most likely by the the slope-method. </span> -->
