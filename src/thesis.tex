@@ -673,7 +673,7 @@ We opt to use a gaussian mixture model (GMM) to model the detector response for 
 
 Previous work has used principle component analysis (PCA) for modelling the photon-number dependent response of SNSPDs. As shown in section \ref{independent-component-analysis}, Independent Component Analysis (ICA) -- a method related to PCA -- is still useful for photon-number attribution for our detector and setup, and could be used in concert withe the slope-correction method above. However, as described in more detail in the discussion section, we believe the generality of the GMM approach has certain benefits, especially for future extensions to the analysis that must contend with pulse distortion effects like pile-up and time-walk~\autocite{Mueller2023}. Ultimately, both GMM methods and PCA/ICA analysis methods hold promise for SNSPD further response modelling.
 
-As shown in Fig.~\ref{fig:gmm_model} c, there exists regions in the $t_A, t_B$ plane for which a given GMM model for pulse $i$ is most probable. The exact shape of this boundary could be computed as detailed in section \ref{computing-gmm-intersection-boundaries} for computationally efficiency binning in the $t_A, t_B$ plane. But for this demonstration, computational efficiency is not a major concern so we compute the probability of a $[t_A, t_B]$ point for a few nearest distributions and pick the one with largest probability.
+As shown in Fig.~\ref{fig:gmm_model} c, there exists regions in the $t_A, t_B$ plane for which a given GMM model for pulse $i$ is most probable. The exact shape of this boundary could be computed as detailed in section \ref{computing-gmm-intersection-boundaries} for computationally efficient binning in the $t_A, t_B$ plane. But for this demonstration computational overhead this is not a major concern, so we compute the probability of a $[t_A, t_B]$ point for a few nearest distributions and pick the one with largest probability.
 
 \hypertarget{results-1}{%
 \section{Results}\label{results-1}}
@@ -698,8 +698,6 @@ The GMM used requires a specified number of gaussians to fit the whole distribut
 Then, we compute the symmetric Kullback--Leibler (KL) divergence divergence between all pairs of gaussians and represent this data in an adjacency matrix. The KL divergence is a measure of the similarity between two probability distributions, and may be computed from the respective means and covariance matrices of each gaussian component.
 
 The adjacency matrix can be thought of as a undirected graph where each node represents a gaussian component and each edge represents the symmetric KL divergence between two nodes. We then use a community detection algorithm to group the gaussians into sets that correspond to the photon number clusters. We use the Louvain method \autocite{Blondel2008} for this purpose, implemented in the NetworkX python package.
-
-{}
 
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
@@ -1308,6 +1306,26 @@ The main take-ways from each of my four projects can be succinctly stated:
 \item
   The high rate entanglement project made for a good lesson in effective management of complexity. In the process of adopting a high repetition rate compatible with the differential single pixel detectors, some aspects of entanglement distribution became simpler (relative to a low-repetition rate system), and others became more complicated. The promise of the project then hinged on making the complex parts work reliably. One major advantage of the high repetition rate was it allowed us to use small and highly stable interferometers. With lower repetition rate time-bin entanglement sources, precise temperature control of interferometers is needed when their path length delay exceeds multiple nanoseconds \autocite{Valivarthi2020}. We were able to use interferometers with a path length delay of just 80~ps, which varied in phase by less than a few degrees over multiple hours.
 \end{enumerate}
+
+Capabilities uncovered and lessons learned from the previous chapters of this thesis:
+1. free space coupling in a cryostat isn't so bad
+2. Time walk and PNR correction are necessary for high rate photon number resolving SNSPDs
+3. These new capabilities should be implemented in such a way that they don't require much added complexity or seperate calibration efforts. Software that supports in-situ calibration and event-corruption management is key.
+
+Okay so there is precendent fro developing a system for high rate heralding of SPDC. This design could be adapted for QKD, a high rate single phton source, or for a heralded EPR/entanglement source. The high rate single photon source and EPR source ideas would be especially impactful. One of hte issues facing the developement of linear optics quantum computing is the lack of such high rate high purity single photon sources. There has been less research into high rate entanglement source, but I believe that this is a very promising direction for future reseach. The high rate entanglement distribution system we demonstrate, and all other such system, must operate at low $\mu$ in order to minimize the detrimental effect of multi-pair events on entanglement visibility. A heralded single-pair entanglement source would support drastically higher rates of entanglement distribution.
+
+We discussed in the chapter 5 that the future of SPDC multiplexing may involve cavity coupled pair sources. With that, any DWDM filter serves just to separate out the different wavelengths and should not a source of much loss. That idea can be extended further, with other insights from the other chapters:
+
+Here we present a model for a future SPDC \& SNSPD system that supports high-rate heralding of a range of idler frequencies from a cavity-enhansed SPDC all onto a single SNSPD array. From the low dark count rate chapter, we observed the use of free space optics inside a cryostat isn't as finicky as one might expect.
+Given that, here we envison pumping an SPDC cystal in free space and then coupling one arm to an SNSD array, also in free-space. The idler arm is reflected off a diffraction grating, which separates different idler frequencies into different spatial modes imaged onto the SNSPD at different locations. This makes for a compact system that should have excellent SPDC - detector coupling efficiency. All the lessons learned about high rate PNR heralding could be incorporated into this array, including time-walk correction as well as accurate simultaneous arrival time and photon number attribution.
+
+One open area of research is how to do both time-walk correction and the PNR attribution techniques simultaneously. This is important for soon to be deveoped high rate SNDD arrays with impedance matching tapers. These will support some degree of photn number reoslution purely by virtue of being made from multiple wires. But for excellent PNR, single-wire multi and single-photon event discrimination is necessary. For such arrays, operation at high count rates is most useful for high rate quantum networks. Therefore, single wires of hihg-rate arrays themselves will be operating at high count rates, and should support PNR attribution capability.
+
+The question of how to achieve the time-walk correction and PNR attribution simultaneously goes beyond the scope of this thesis. However as discussed in chapter 4, I believe that high-dimensional modelling of the the SNDPD response is useful for overcoming this challenge. Both multi-photon and singel-photn events will suffer from time-walk effects for SNSPD pulses that arrive soon after previous pulses. But graphing such data in a high dimensional space spanned by timing measurements from multliple trigger levels and the inter-pulse time $t'$ may show certain groupings of events thats can be distinguished across varied $t'$ as single and multi-photon events. This is a promising direction for future research.
+
+SNSPD technology continues an ongoing trend of rapid improvement. This detector technology therefore is well positioned to dictate certain engineering features of emerging quantum communication and computing systems. Perhaps existing problems in quantum transduction and interconnects can be solved through the use of SNSPDs for high-rate high-efficiency bell state measurements.
+
+Standout quantum memories, for example, may function best when interfaced with low-bandwidth, low-rate channels at wavelengths that aren't well supported for long-hawl transmission. This means there may be certain design choices for quantum repeaters and quantum computers that use bandwidth, and frequncy conversion processes to interfaces high rate wide-bandwidth transmission channels with large banks of quantum memories. High rate SNSPDs could be pivotal in such conversion systems, and help bring about a robust system for interconnects between diverse quantum systems.
 
 \appendix
 

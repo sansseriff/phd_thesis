@@ -40,11 +40,10 @@ It can be hard to get a sense of how the gaussian mixture model fits to the 2D d
 </figure>
 ```
 
-Previous work has used principle component analysis (PCA) for modelling the photon-number dependent response of SNSPDs. As shown in  <span class="html">[an extra section](./section_07_extra.md#independent-component-analysis]</span><span class="latex">section \ref{independent-component-analysis}</span>, Independent Component Analysis (ICA) -- a method related to PCA --  is still useful for photon-number attribution for our detector and setup, and could be used in concert withe the slope-correction method above. However, as described in more detail in the discussion section, we believe the generality of the GMM approach has certain benefits, especially for future extensions to the analysis that must contend with pulse distortion effects like pile-up and time-walk~[@Mueller2023]. Ultimately,  both GMM methods and PCA/ICA analysis methods hold promise for SNSPD further response modelling. 
+Previous work has used principle component analysis (PCA) for modelling the photon-number dependent response of SNSPDs. As shown in <span class="html">[an extra section](./section_07_extra.md#independent-component-analysis)</span><span class="latex">section \ref{independent-component-analysis}</span>, Independent Component Analysis (ICA) -- a method related to PCA --  is still useful for photon-number attribution for our detector and setup, and could be used in concert withe the slope-correction method above. However, as described in more detail in the discussion section, we believe the generality of the GMM approach has certain benefits, especially for future extensions to the analysis that must contend with pulse distortion effects like pile-up and time-walk~[@Mueller2023]. Ultimately,  both GMM methods and PCA/ICA analysis methods hold promise for SNSPD further response modelling. 
 
 As shown in @fig:gmm_model c, there exists regions in the $t_A, t_B$ plane for which a given GMM model for pulse $i$ is most probable. The exact shape of this boundary could be computed as detailed in <span class="html">[a later section](./section_07_extra.md#computing-gmm-intersection-boundaries)</span><span class="latex"> section \ref{computing-gmm-intersection-boundaries}</span> for computationally efficient binning in the $t_A, t_B$ plane. But for this demonstration computational overhead this is not a major concern, so we compute the probability of a $[t_A, t_B]$ point for a few nearest distributions and pick the one with largest probability. 
 
-<!-- ??? note -->
 ```{=html}
 A 3D representation of the overlapping gaussian mixture models is shown here. This is acts as an alternative to Fig. [2](#fig:gmm_model) c. The 3D plot is interactive, and can be rotated and zoomed.
 <script>
@@ -68,10 +67,4 @@ iframe {
 </figure>
 ```
 
-
-
-
-<!-- <span class="latex">%I could specify I pick the family of distributions based on the $t_A$ constructed timing measurement. Then, in my code, the GMM analysis produces a correction to whichever time bin was deemed most likely by the the slope-method. </span> -->
-
-<!-- ![**Decoding probabilities vs mean photon number** long caption here](./figs/fig_file_name.svg){#fig:fig_id short-caption='short caption here' width=100% path="chapter_04"} -->
 
