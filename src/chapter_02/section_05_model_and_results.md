@@ -8,7 +8,6 @@ The filtering of the optical stack was modeled by assuming a black-body emitter 
 
 While the bandpass filter (FWHM = 7 nm) was found to blue-shift by about 2 nm at cryogenic temperatures, the passband was wide enough such that significant attenuation was not observed at the original target wavelength of 1550 nm. This filter is also sufficiently wide to avoid Fourier-limited broadening of ultra-short laser pulses. 
 
-
 Also evident in @fig:simulation_filter a is the strong dependence of DCR on the temperature of the final surface outside the cryostat emitting thermal radiation. This motivated the exterior cooling apparatus sketched in <span class="html"> the [previous full-system figure](./section_04_design_and_use.md#fig:setup)</span><span class="latex"> @fig:setup a</span> and shown in @fig:cooling b and c. The bulkhead holding the fiber connector is cooled to around -2$^\circ$C using a Peltier element and liquid cooling block. This addition reduced the system DCR from 0.4 Hz to below 0.1 Hz. While dark counts from multiple spatial modes are present in this system — modes that would not be present in a purely fiber based approach — the external cooling technique works to minimize their effect. Compared with the use of piezo-electric actuators or servos inside the cryostat for optical alignment, the external cooling approach is simple and cost-effective.
 
 
