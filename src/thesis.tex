@@ -161,10 +161,10 @@ In addition to these specific applications, SNSPDs have been extensively used in
 
 This brief overview highlights the wide range of applications that have utilized SNSPDs, showcasing their potential to advance various fields of science and technology. With ongoing advancements in SNSPD technology and further optimization, these detectors will continue to play a vital role in enabling groundbreaking research and innovation.
 
-\hypertarget{the-differential-readout-and-impedance-matching-taper-design-for-snspds}{%
-\section{The differential readout and impedance matching taper design for SNSPDs}\label{the-differential-readout-and-impedance-matching-taper-design-for-snspds}}
+\hypertarget{the-differential-single-pixel-snspd}{%
+\section{The differential single pixel SNSPD}\label{the-differential-single-pixel-snspd}}
 
-Superconducting nanowire single-photon detectors (SNSPDs) offer high efficiency, low dark count rates, high count rates, and low timing jitter. However, traditional SNSPD designs face challenges in achieving both high detection efficiency and low jitter, especially for large-area detectors. Marco Colangelo et al. \autocite{Colangelo2023} proposed a new device design for SNSPDs that combines differential readout and impedance matching tapers to overcome these challenges. This design enables high detection efficiency and low jitter simultaneously along with pixel-level imaging capabilities and photon-number resolution.
+SNSPDs offer high efficiency, low dark count rates, high count rates, and low timing jitter. However, traditional SNSPD designs face challenges in achieving both high detection efficiency and low jitter, especially for large-area detectors. Marco Colangelo et al. \autocite{Colangelo2023} proposed a new device design for SNSPDs that combines differential readout and impedance matching tapers to overcome these challenges. This design enables high detection efficiency and low jitter simultaneously along with pixel-level imaging capabilities and photon-number resolution.
 
 Detectors of the type demonstrated by Colangelo et al.~have been fabricated at JPL (Fig.~\ref{fig:diff} a) for the duration of this PhD research, and are used primarily for three projects detailed in this thesis: the low dark count rate project, the position modulation and photon number resolution project, and the high rate entanglement project. Given the significance of the differential tapered SNSPD to much of this PhD research, it's key design design and performance features are reviewed here.
 
@@ -177,8 +177,8 @@ Detectors of the type demonstrated by Colangelo et al.~have been fabricated at J
 \end{figure}
 }
 
-\hypertarget{geometric-jitter-cancellation-through-differential-readout}{%
-\subsection{Geometric jitter cancellation through differential readout}\label{geometric-jitter-cancellation-through-differential-readout}}
+\hypertarget{jitter-cancellation-through-differential-readout}{%
+\subsection{Jitter cancellation through differential readout}\label{jitter-cancellation-through-differential-readout}}
 
 Two main types of jitter arise in high efficiency SNSPD designs; amplifier jitter and geometric jitter. Amplifier jitter is where the readout electrical noise impacts the timing jitter, while geometric jitter emerges from the propagation delays created by detection events at various locations along the nanowire meander. Nanowires made of thin-film materials exhibit high kinetic inductance and behave like transmission lines with high characteristic impedance and slow phase velocity. These transmission line properties result in pulse propagation delays that contribute to the timing jitter of the detector. The arrival time of voltage pulses from the detector to time tagging equipment depends on the location of photon absorption in the nanowire, as detections closer to the ground termination and farther from the single readout must travel farther at low phase velocity through the nanowire before exiting. For large detectors, geometric jitter can contribute tens of picoseconds to the total system jitter. As detector size is often correlated with coupling efficiency to a given optical mode, the use of single-ended readout implies a trade-off between system detection efficiency and jitter due to longitudinal geometric effects.
 
@@ -186,8 +186,8 @@ The implementation of a differential readout approach offers a solution to these
 
 If the measurements of arrival time $t_F$ and absorption location along the nanowire are both of interest, then the timing of the $t_{neg}$ negative and positive $t_{pos}$ voltage pulses may be read out with 2 time taggers or high-speed oscilloscope channels. The difference of arrival time $t_{pos} - t_{neg}$ of these signals constitutes the photon absorption location information, while the average $1/2(t_{pos} - t_{neg})$ of the arrival times constitutes the photon arrival time information. For practical single photon counting applications, however, the photon arrival time information is typically sufficient and real-time processing of two time tags per detection event is not practical. Therefore, a 2:1 balun transformer can be used to perform an equivalent hardware difference of the complementary pulses (analogous to the averaging of timetags $t_{pos}, t_{neg}$). After amplification, the two sides of the detector are connected to the differential inputs of the balun, with the output being sent to a TCSPC or equivalent time tagging module. The threshold voltage of the time tagger can be set to minimize the spread of time tag distribution, corresponding to the condition where the timing measurement $t_{tagger} \approx t_F$ so that the photon arrival location information is cancelled out.
 
-\hypertarget{increased-snr-with-impedance-matching-tapers}{%
-\subsection{Increased SNR with impedance matching tapers}\label{increased-snr-with-impedance-matching-tapers}}
+\hypertarget{impedance-matching-tapers}{%
+\subsection{Impedance matching tapers}\label{impedance-matching-tapers}}
 
 In a usual SNSPD, the nanowire exibits impedance on the order of $\mathrm{k} \Upomega$, while the readout circuit has an impedance of 50~$\Upomega$. This mismatch can lead to RF pulses that exhibit reflections and distortions. These effects reduce slew rate and and lower Signal to Noise Ratio, bringing about higher amplifier jitter~\autocite{Korzh2020,santavicca2019jitter}.
 
