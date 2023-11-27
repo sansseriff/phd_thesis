@@ -147,7 +147,7 @@ nav:
     - chapter_08/index.md
     - Experiment Control Software: chapter_08/section_04_experiment_control.md
     - Data Analysis Software: chapter_08/section_05_data_analysis_visualization.md
-    - TOF Spectrometer: chapter_08/section_06_tof_spectrometer.md
+    # - TOF Spectrometer: chapter_08/section_06_tof_spectrometer.md
     # - Cheat Sheet: chapter_08/section_08_cheat_sheet.md
   - "A3: Interferometer Imbalance Analysis":
     - chapter_09/index.md
