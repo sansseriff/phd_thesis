@@ -98,7 +98,7 @@ function Div(el)
     return el.content
   end
 
-  if el.classes[1] == "html" then
+  if el.classes[1] == "html" or el.classes[1] == "html_lineskip" then
     return pandoc.RawInline('latex', "")
   end
 

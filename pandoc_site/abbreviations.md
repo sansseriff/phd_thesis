@@ -17,5 +17,6 @@
 *[GLR]: Ground Laser Receiver
 *[DWDM]: Dense Wavelength Division Multiplexer
 *[CWDM]: Coarse Wavelength Division Multiplexer
+*[PEACOQ]: Performance Enhanced Array for Counting Optical Quanta
 
 

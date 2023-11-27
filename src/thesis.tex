@@ -1307,25 +1307,38 @@ The main take-ways from each of my four projects can be succinctly stated:
   The high rate entanglement project made for a good lesson in effective management of complexity. In the process of adopting a high repetition rate compatible with the differential single pixel detectors, some aspects of entanglement distribution became simpler (relative to a low-repetition rate system), and others became more complicated. The promise of the project then hinged on making the complex parts work reliably. One major advantage of the high repetition rate was it allowed us to use small and highly stable interferometers. With lower repetition rate time-bin entanglement sources, precise temperature control of interferometers is needed when their path length delay exceeds multiple nanoseconds \autocite{Valivarthi2020}. We were able to use interferometers with a path length delay of just 80~ps, which varied in phase by less than a few degrees over multiple hours.
 \end{enumerate}
 
-Capabilities uncovered and lessons learned from the previous chapters of this thesis:
-1. free space coupling in a cryostat isn't so bad
-2. Time walk and PNR correction are necessary for high rate photon number resolving SNSPDs
-3. These new capabilities should be implemented in such a way that they don't require much added complexity or seperate calibration efforts. Software that supports in-situ calibration and event-corruption management is key.
+\hypertarget{outlook}{%
+\section{Outlook}\label{outlook}}
 
-Okay so there is precendent fro developing a system for high rate heralding of SPDC. This design could be adapted for QKD, a high rate single phton source, or for a heralded EPR/entanglement source. The high rate single photon source and EPR source ideas would be especially impactful. One of hte issues facing the developement of linear optics quantum computing is the lack of such high rate high purity single photon sources. There has been less research into high rate entanglement source, but I believe that this is a very promising direction for future reseach. The high rate entanglement distribution system we demonstrate, and all other such system, must operate at low $\mu$ in order to minimize the detrimental effect of multi-pair events on entanglement visibility. A heralded single-pair entanglement source would support drastically higher rates of entanglement distribution.
+To recapitulate the insights derived from the previous chapters, three principal points stand out:
+1. With proper mounting and thermalisation techniques, the use of free space optical components inside a cryostat is not prohibitively challenging.
+2. Time walk and PNR correction will likely be necessary for high count rate photon number resolving SNSPDs
+3. The new capabilities, as discussed, should be incorporated into a design that does not necessitate substantial complication or discrete calibration endeavors. The key is to develop software supportive of in-situ calibration and event-corruption management.
 
-We discussed in the chapter 5 that the future of SPDC multiplexing may involve cavity coupled pair sources. With that, any DWDM filter serves just to separate out the different wavelengths and should not a source of much loss. That idea can be extended further, with other insights from the other chapters:
+Our findings can be leveraged in the development of future high-rate heralded SPDC sources. In this context, we see a particular design for such a source, as shown in Fig.~\ref{fig:final_setup}, to be particularly promising.
 
-Here we present a model for a future SPDC \& SNSPD system that supports high-rate heralding of a range of idler frequencies from a cavity-enhansed SPDC all onto a single SNSPD array. From the low dark count rate chapter, we observed the use of free space optics inside a cryostat isn't as finicky as one might expect.
-Given that, here we envison pumping an SPDC cystal in free space and then coupling one arm to an SNSD array, also in free-space. The idler arm is reflected off a diffraction grating, which separates different idler frequencies into different spatial modes imaged onto the SNSPD at different locations. This makes for a compact system that should have excellent SPDC - detector coupling efficiency. All the lessons learned about high rate PNR heralding could be incorporated into this array, including time-walk correction as well as accurate simultaneous arrival time and photon number attribution.
+\hypertarget{fig:final_setup}{%
+\begin{figure}
+\centering
+\includegraphics[width=0.78\textwidth,height=\textheight]{./chapter_06/figs/final_setup_light.png}
+\caption[{Proposed multiplexed SPDC heralding system}]{\textbf{Proposed multiplexed SPDC heralding system} A design for high efficiency heralding of SPDC. A diffraction grating separates spectral modes out of the cavity enhanced SPDC into spatial modes, which are focused onto an SNSPD array in different locations. The idler-arm fiber coupling stands in for whatever type of output coupling is required for the application.}
+\label{fig:final_setup}
+\end{figure}
+}
 
-One open area of research is how to do both time-walk correction and the PNR attribution techniques simultaneously. This is important for soon to be deveoped high rate SNDD arrays with impedance matching tapers. These will support some degree of photn number reoslution purely by virtue of being made from multiple wires. But for excellent PNR, single-wire multi and single-photon event discrimination is necessary. For such arrays, operation at high count rates is most useful for high rate quantum networks. Therefore, single wires of hihg-rate arrays themselves will be operating at high count rates, and should support PNR attribution capability.
+We propose a design for a future SPDC \& SNSPD system that supports high-rate heralding of a range of idler frequencies from a cavity-enhanced SPDC all onto a single SNSPD array. We envision pumping the pair generating crystal in free space and then coupling one arm to an SNSPD array, also in free-space, with the whole setup located inside a cryostat with the detector.
 
-The question of how to achieve the time-walk correction and PNR attribution simultaneously goes beyond the scope of this thesis. However as discussed in chapter 4, I believe that high-dimensional modelling of the the SNDPD response is useful for overcoming this challenge. Both multi-photon and singel-photn events will suffer from time-walk effects for SNSPD pulses that arrive soon after previous pulses. But graphing such data in a high dimensional space spanned by timing measurements from multliple trigger levels and the inter-pulse time $t'$ may show certain groupings of events thats can be distinguished across varied $t'$ as single and multi-photon events. This is a promising direction for future research.
+The signal arm is reflected off a diffraction grating, which separates different signal frequencies into different spatial modes imaged onto the SNSPD. This makes for a compact system that should have excellent SPDC - detector coupling efficiency. All the lessons learned about high rate PNR heralding could be incorporated into this array, including time-walk correction as well as accurate simultaneous arrival time and photon number attribution.
+
+This design could be adapted for use in entanglement-based QKD, for a high-rate single photon source \autocite{MeyerScott2020Single,MeyerScott2017,Andreas:12}, as part of a heralded EPR/entanglement source \autocite{barz2010heralded,barz2010heralded}, or for preparation of non-Gaussian states \autocite{Walschaers2021,AsavanantBook,Walschaers2021}. For heralded single photon and entangled pair sources, the spectral multiplexed herald design supports certain methods for increasing output rates without sacrificing state purity \autocite[\textcite{Grimau2017Heralded}]{Hiemstra2020}. One of the issues facing the development of linear optics quantum computing is the lack of such high-rate high purity sources of non-Gaussian states of light, such a single-photon states. Heralded sources of entanglement are related, and these is a promising path towards demonstrating these at high rate. This is needed because the entanglement distribution system from chapter 5, and all other such systems, must operate at low pump power and low mean photon number $\mu$ in order to minimize the detrimental effects of SPDC multi-pair events on entanglement visibility. A heralded single-pair entanglement source would support drastically higher pair generation rates.
+
+One open question is how to apply both the time-walk correction and the PNR attribution techniques simultaneously. This is important for in-development high-rate SNSPD arrays, successors to the PEACOQ \autocite{Craiciu23}, which incorporate impedance matching tapers. These will support some degree of photon number resolution simply by spreading out the optical mode over multiple nanowires. But for excellent PNR, single-wire multi and single-photon event discrimination is necessary. For such arrays that must operate at very high rates for emerging quantum networking applications, single wires must support PNR attribution at high count rates as well.
+
+The development of a method for time-walk correction and simultaneous PNR attribution goes beyond the scope of this thesis. However, as discussed in chapter 4, we believe that high-dimensional modelling of the the SNDPD response is useful for overcoming this challenge. Both multi-photon and single-photon events will suffer from time-walk effects for SNSPD pulses that arrive soon after previous pulses. But graphing such data in a high dimensional space spanned by timing measurements from multiple trigger levels and the inter-pulse time $t'$ may show seperated $|1\rangle$ and $|2+\rangle$ event groups. This is a promising direction for future research.
 
 SNSPD technology continues an ongoing trend of rapid improvement. This detector technology therefore is well positioned to dictate certain engineering features of emerging quantum communication and computing systems. Perhaps existing problems in quantum transduction and interconnects can be solved through the use of SNSPDs for high-rate high-efficiency bell state measurements.
 
-Standout quantum memories, for example, may function best when interfaced with low-bandwidth, low-rate channels at wavelengths that aren't well supported for long-hawl transmission. This means there may be certain design choices for quantum repeaters and quantum computers that use bandwidth, and frequncy conversion processes to interfaces high rate wide-bandwidth transmission channels with large banks of quantum memories. High rate SNSPDs could be pivotal in such conversion systems, and help bring about a robust system for interconnects between diverse quantum systems.
+Certain types of quantum memories, for example, function best when interfaced with low-bandwidth, low-rate channels at wavelengths that aren't well supported for long-haul transmission through fiber. This means there may be certain design choices for quantum repeaters and quantum computers that use bandwidth, and frequency conversion processes to interfaces high rate wide-bandwidth transmission channels with large banks of quantum memories. High rate SNSPDs could be pivotal in such conversion systems, and help bring about a robust system of interconnects between diverse quantum systems.
 
 \appendix
 
@@ -1844,9 +1857,6 @@ The sections of code that undergo this analysis are located in the functions \te
 
 \hypertarget{software-systems-and-operation}{%
 \section{Software Systems and Operation}\label{software-systems-and-operation}}
-
-\hypertarget{how-a-sorption-fridge-works}{%
-\section{How A Sorption Fridge Works}\label{how-a-sorption-fridge-works}}
 
 \hypertarget{interferometer-imbalance-analysis-1}{%
 \chapter{Interferometer Imbalance Analysis}\label{interferometer-imbalance-analysis-1}}

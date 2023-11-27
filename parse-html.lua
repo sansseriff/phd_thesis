@@ -300,6 +300,12 @@ function Span(el)
         return el.content
       end
 
+    if el.classes[1] == "html_lineskip" then
+    -- print(el.content[1].text)
+    el.content[1].text = "\n" .. el.content[1].text
+    return el.content
+    end
+
 
     -- ignore stuff like <span class="latex"></span> that's only for latex output
     if el.classes[1] == "latex" then
