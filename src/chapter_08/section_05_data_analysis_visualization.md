@@ -8,9 +8,6 @@ The package can be installed with:
 pip install snsphd
 ```
 
-This is a comment <span class="html">with a website part</span><span class="latex">a latex part</span>
-
-
 ```{=html}
 
 <div style="display: flex; flex-direction: row; justify-content: space-between">
