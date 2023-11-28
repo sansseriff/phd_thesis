@@ -37,13 +37,35 @@ Fig. [2](#fig:pnr_groupings) a shows the result of dividing the gaussian compon
     <figcaption markdown> Figure 2: **Photon number attribution** a) Ellipses represent gaussians whose sum models the detector response for specific mean photon numbers. Ellipse opacity represents the gaussian weight in the mixture. b) Photon number attribution with the 20&#160;GHz dataset. Grey distributions are copies of the colored data for timeslot $i$ translated by $50~ps$ to show overlap c) Photon numbers assignments only for events that fall into the correct time bin.</figcaption>
     </figure>
 
+<script>
+            function resizeIframe(iframe) {
+                iframe.style.height = iframe.contentWindow.document.documentElement.scrollHeight + 'px';
+                iframe.style.width = iframe.contentWindow.document.documentElement.scrollWidth + 'px';
+            }
+</script>
+
+<style>
+iframe {
+            display: block;
+            width: 100%;
+            border: none;
+        }
+</style>
+
+???+ info
+    <figure markdown>
+    <a name='fig:interactive_pnr_groupings'></a> 
+    <iframe src="../code/normalized_photon_groupings.html" onload="resizeIframe(this)" scrolling="no"></iframe>
+    <figcaption markdown>A 3D representation of the photon number groupings built from the gaussian mixture models. The scaling of each grouping match a mean photon number of $\mu = 3.48$. This is acts as an alternative to Fig. [2](#fig:pnr_groupings) a. The 3D plot is interactive, and can be rotated and zoomed. </figcaption>
+    </figure>
+
 With measurements of photon number for each PPM event, the relative statistics of these events and vacuum events can be compared with the expected poisson statistics. Fig. [3](#fig:photon_statistics) shows the results of this comparison for the 20&#160;GHz dataset. The measured statistics are in good agreement with the expected poisson statistics for the range of mean photon numbers tested.
 
 <figure markdown> 
     <a name='fig:photon_statistics'></a> 
     <img alt="fig:photon_statistics" style="width: 100%; margin: auto;" src="../figs/pnr_stats_light.svg#only-light" >
     <img alt="fig:photon_statistics" style="width: 100%; margin: auto;" src="../figs/pnr_stats_dark.svg#only-dark" > 
-    <figcaption markdown> Figure 3: **Photon number statistics** measured (markers $M_j$) photon statistics overlayed with expected poisson statistics (lines $P_j$) for the range of photon numbers tested. a) uses log-log scale, b) uses linear scale</figcaption>
+    <figcaption markdown> Figure 3: **Photon number statistics** Measured ( markers $M_j$ ) photon statistics overlayed with expected poisson statistics ( lines $P_j$ ) for the range of photon numbers tested. a) uses log-log scale, b) uses linear scale</figcaption>
     </figure>
 
 <!-- to reactively change slider: -->

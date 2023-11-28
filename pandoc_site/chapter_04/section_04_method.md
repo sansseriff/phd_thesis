@@ -50,23 +50,24 @@ Previous work has used principle component analysis (PCA) for modelling the phot
 
 As shown in Fig. [2](#fig:gmm_model) c, there exists regions in the $t_A, t_B$ plane for which a given GMM model for pulse $i$ is most probable. The exact shape of this boundary could be computed as detailed in [a later section](./section_07_extra.md#computing-gmm-intersection-boundaries) for computationally efficient binning in the $t_A, t_B$ plane. But for this demonstration computational overhead this is not a major concern, so we compute the probability of a $[t_A, t_B]$ point for a few nearest distributions and pick the one with largest probability.
 
-A 3D representation of the overlapping gaussian mixture models is shown here. This is acts as an alternative to Fig. [2](#fig:gmm_model) c. The 3D plot is interactive, and can be rotated and zoomed.
-<script>
-            function resizeIframe(iframe) {
-                iframe.style.height = iframe.contentWindow.document.documentElement.scrollHeight + 'px';
-                iframe.style.width = iframe.contentWindow.document.documentElement.scrollWidth + 'px';
-            }
-</script>
+???+ info
+    A 3D representation of the overlapping gaussian mixture models is shown here. This is acts as an alternative to Fig. [2](#fig:gmm_model) c. The 3D plot is interactive, and can be rotated and zoomed.
+    <script>
+                function resizeIframe(iframe) {
+                    iframe.style.height = iframe.contentWindow.document.documentElement.scrollHeight + 'px';
+                    iframe.style.width = iframe.contentWindow.document.documentElement.scrollWidth + 'px';
+                }
+    </script>
 
-<style>
-iframe {
-            display: block;
-            width: 100%;
-            border: none;
-        }
-</style>
-<figure markdown>
-<a name='fig:interactive_gmm_overlap'></a> 
-<iframe src="../code/3_high_mfn.html" onload="resizeIframe(this)" scrolling="no"></iframe>
-<figcaption markdown>With the 20 GHz repetition rate, some overlap of the detector probability distributions is expected. Here, surfaces of different colors represent different time bins spaced by 50 ps. The way the surfaces overlap explains why it can be ambiguous if some events are 2-photon events in time slot $i$, or 3-photon events in time slot $i+1$. </figcaption>
-</figure>
+    <style>
+    iframe {
+                display: block;
+                width: 100%;
+                border: none;
+            }
+    </style>
+    <figure markdown>
+    <a name='fig:interactive_gmm_overlap'></a> 
+    <iframe src="../code/3_high_mfn.html" onload="resizeIframe(this)" scrolling="no"></iframe>
+    <figcaption markdown>With the 20 GHz repetition rate, some overlap of the detector probability distributions is expected. Here, surfaces of different colors represent different time bins spaced by 50 ps. The way the surfaces overlap explains why it can be ambiguous if some events are 2-photon events in time slot $i$, or 3-photon events in time slot $i+1$. </figcaption>
+    </figure>

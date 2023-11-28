@@ -33,6 +33,29 @@ The adjacency matrix can be thought of as a undirected graph where each node rep
 
 ![**Photon number attribution** a) Ellipses represent gaussians whose sum models the detector response for specific mean photon numbers. Ellipse opacity represents the gaussian weight in the mixture. b) Photon number attribution with the 20~GHz dataset. Grey distributions are copies of the colored data for timeslot $i$ translated by $50~ps$ to show overlap c) Photon numbers assignments only for events that fall into the correct time bin. ](./figs/pnr_resolved_arrival_time_groupings_light.svg){#fig:pnr_groupings short-caption='Photon number attribution' width=100% path="chapter_04"}
 
+```{=html}
+<script>
+            function resizeIframe(iframe) {
+                iframe.style.height = iframe.contentWindow.document.documentElement.scrollHeight + 'px';
+                iframe.style.width = iframe.contentWindow.document.documentElement.scrollWidth + 'px';
+            }
+</script>
+
+<style>
+iframe {
+            display: block;
+            width: 100%;
+            border: none;
+        }
+</style>
+
+???+ info
+    <figure markdown>
+    <a name='fig:interactive_pnr_groupings'></a> 
+    <iframe src="../code/normalized_photon_groupings.html" onload="resizeIframe(this)" scrolling="no"></iframe>
+    <figcaption markdown>A 3D representation of the photon number groupings built from the gaussian mixture models. The scaling of each grouping match a mean photon number of $\mu = 3.48$. This is acts as an alternative to Fig. [2](#fig:pnr_groupings) a. The 3D plot is interactive, and can be rotated and zoomed. </figcaption>
+    </figure>
+```
 
 With measurements of photon number for each PPM event, the relative statistics of these events and vacuum events can be compared with the expected poisson statistics. @fig:photon_statistics shows the results of this comparison for the 20~GHz dataset. The measured statistics are in good agreement with the expected poisson statistics for the range of mean photon numbers tested.
 
