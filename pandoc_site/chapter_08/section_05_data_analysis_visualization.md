@@ -1,65 +1,19 @@
-## Software Systems and Operation
+## SNSPhD
 
-<!-- ### Advanced Matplotlib Layouts with the `bisect()` function -->
+The SNSPhD python package includes a number of utility functions and presets used for managing data and generating figures for this thesis. It is based on the `phd` package from [Griffin Chure](https://github.com/gchure/phd#phd-1). Notably, it includes the `vis.phd_style()` function for setting up nice looking matplotlib defaults in my personal style, and the `viz.save_light_dark_all()` function for saving light-mode svg, dark-mode svg, and pdf versions of a figure. The svgs are used to populate the [thesis website](https://snsphd.online), and the pdfs are used for the latex thesis itself. The `layout.bisect` function is also useful for making laying out subfigures in a straightforward way.
 
-<!-- I can put a figure here from my notability note titled "Why i need bisect function" -->
+The package can be installed with:
 
-<!-- It can be difficult to create complex plot layouts with matplotlib, especially when the layout should have strict requirements, like neighboring axes that are aligned with one another. Before explaining a custom method for solving this problem through the use of a new function `bisect()`, its worth reviewing the more accepted methods of advanced matplotlib figure layout.  -->
-
-<!-- #### Subplot Mosaic
-
-[Subplot mosaic](https://matplotlib.org/stable/gallery/subplots_axes_and_figures/mosaic.html)  is a tool for specifying the layout of a figure with a special python dictionary, demonstrated by this example from the docs:
-
-```python
-fig = plt.figure(layout="constrained")
-ax_dict = fig.subplot_mosaic(
-    [
-        ["bar", "plot"],
-        ["hist", "image"],
-    ],
-)
-ax_dict["bar"].bar(["a", "b", "c"], [5, 7, 9])
-ax_dict["plot"].plot([1, 2, 3])
-ax_dict["hist"].hist(hist_data)
-ax_dict["image"].imshow([[1, 2], [2, 1]])
-identify_axes(ax_dict)
-```
-![](./figs/sphx_glr_mosaic_001_2_0x.webp){#fig:mosaic path="chapter_08"}
-
-
-```{=html}
-??? note
-
-    There also is a method for embedding one mosaic inside of another, which can be handy for complex layouts:
-
-    ```python
-    inner = [
-        ["inner A"],
-        ["inner B"],
-    ]
-
-    outer_nested_mosaic = [
-        ["main", inner],
-        ["bottom", "bottom"],
-    ]
-    axd = plt.figure(layout="constrained").subplot_mosaic(
-        outer_nested_mosaic, empty_sentinel=None
-    )
-    identify_axes(axd, fontsize=36)
-    ```
+``` bash
+pip install snsphd
 ```
 
-There are methods of changing the aspect ratios of the plots, but tools for imposing alignment constraints across plots are limited. For example, notice in the example above how the (1,1) plot axes are not vertically aligned with the (0,1) plot above.  -->
+This is a comment with a website part
 
-<!-- #### Gridspec
+<div style="display: flex; flex-direction: row; justify-content: space-between">
+<a class="md-button" style="width: 30%; display: block; margin: auto; text-align: center;" href="https://github.com/sansseriff/snsphd">Repository <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg></span></a>
 
-[Gridspec](https://matplotlib.org/stable/gallery/lines_bars_and_markers/scatter_hist.html#sphx-glr-gallery-lines-bars-and-markers-scatter-hist-py) is a tool for more carefully specifying a grid layout. Space between plots can be specified, and the relative widths or heights of columns and rows can be customized. Gridspec offers a lot of control, but it requires many custom parameters that can be unintuitive to derive.  -->
+<a class="md-button" style="width: 30%; display: block; margin: auto; text-align: center;" href="https://pypi.org/project/snsphd/">PyPI </a>
+</div>
 
-<!-- #### Add_axes
-One of the simplest ways of adding subplots to a figure is with the `fig.add_axese(rect)` method. The `rect = [ll_x, ll_y, width, height]` specifies the x and y coordinate of the lower left corner with the first two parameters, and the width and height with the second 2 parameters. Multiple uses of `add_axese()` offers maximum control for creating advanced layouts, but specifying all the correct `rect` arrays can get very confusing. Figure @Fig:layout_sketch illustrates the types of calculations that become necessary when the specific location and size of each subplot must be specified under certain constraints. 
-
-![**Sketch for layout with add_axese().**](./figs/layout_sketch.png){#fig:layout_sketch short-caption="Rough sketch for layout with add_axese()" path="chapter_08"} -->
-
-<!-- #### `bisect()` method -->
-
-<script src="../../chapter_06/code/section_05.js"></script>
+<!-- <script src="../../chapter_06/code/section_05.js"></script> -->

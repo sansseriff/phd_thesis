@@ -24,9 +24,11 @@ theme:
         name: Switch to light mode
   custom_dir: ./pandoc_site/overrides
   features:
+
     # - navigation.instant
     # - content.action.edit
     # - content.action.view
+    - content.code.copy
     - navigation.tracking
     - navigation.footer
     # - navigation.sections
@@ -146,7 +148,7 @@ nav:
   - "A2: Software Tools":
     - chapter_08/index.md
     - Experiment Control Software: chapter_08/section_04_experiment_control.md
-    - Data Analysis Software: chapter_08/section_05_data_analysis_visualization.md
+    - Visualization: chapter_08/section_05_data_analysis_visualization.md
     # - TOF Spectrometer: chapter_08/section_06_tof_spectrometer.md
     # - Cheat Sheet: chapter_08/section_08_cheat_sheet.md
   - "A3: Interferometer Imbalance Analysis":

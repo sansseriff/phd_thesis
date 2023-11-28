@@ -1828,22 +1828,77 @@ Much of my time during the phd was spent writing software. While the main produc
 
 For these reasons I include introductions to the software tools on which I spent the most time and gained the most benefit. Perhaps these repositories provide insight that the thesis so far has not.
 
+\hypertarget{experiment-and-control-software}{%
+\section{Experiment and Control Software}\label{experiment-and-control-software}}
+
 \hypertarget{sequence-generator}{%
-\section{Sequence Generator}\label{sequence-generator}}
+\subsection{Sequence Generator}\label{sequence-generator}}
 
-The Sequence Generator repository is for generating AWG sequences that are synchronized with the Pritel OAC fast mode locked laser. This is needed for carving the mode locked laser signal with intensity modulators. This toolset was useful for my PPM project as well as a concurrent high rate QKD project with slightly different requirements.
+The Sequence Generator repository is for generating AWG sequences that are synchronized with the Pritel OAC fast mode locked laser. This is needed for carving the mode locked laser signal with intensity modulators. This toolkit was useful for my PPM project as well as a concurrent high rate QKD project with slightly different requirements.
 
-The most important feature of this toolset is the ability to determine compatible AWG sample rates and sequence lengths for a given laser repetition rate, while imposing certain requirements, like that the AWG sequence length must be a multiple of 128 samples. The script supports situations where a small integer number of laser pulses does not math in time an integer number of AWG samples. The main requirement is that the time for the full AWG sequence to run must be an integer multiple of the laser repetition period, so that the AWG sequence can be repeated indefinitely without drifting out of sync with the laser.
+The most important feature of this codebase is the ability to determine compatible AWG sample rates and sequence lengths for a given laser repetition rate, while imposing certain requirements, like that the AWG sequence length must be a multiple of 128 samples. The script supports situations where a small integer number of laser pulses does not match in time with an integer number of AWG samples. The main requirement is that the time for the full AWG sequence to run must be an integer multiple of the laser repetition period, so that the AWG sequence can be repeated indefinitely without drifting out of sync with the laser.
 
 The sections of code that undergo this analysis are located in the functions \texttt{determine\_ppm\_properties} and \texttt{determine\_regular\_properties} for the PPM and QKD applications respectively.
 
 \href{https://github.com/sansseriff/sequence_generator/tree/main}{Sequence Generator Repository}
 
-\hypertarget{section}{%
-\section{}\label{section}}
+\hypertarget{time-walk-correction-1}{%
+\subsection{Time-Walk Correction}\label{time-walk-correction-1}}
 
-\hypertarget{software-systems-and-operation}{%
-\section{Software Systems and Operation}\label{software-systems-and-operation}}
+A repository of tools for performing time-walk calibration and correction on timetag data files. It is set up to use the binary format \texttt{.ttbin} from swabian timetaggers, but can be easily adapted to other formats.
+
+\href{https://github.com/sansseriff/SNSPD-time-walk-and-jitter-correction}{Time walk correction repository}
+
+\hypertarget{bias-controll-user-interface}{%
+\subsection{Bias Controll User Interface}\label{bias-controll-user-interface}}
+
+A web-based user interfaces for controlling isolated voltage sources used for SNSPD biasing. Is is an improvement over a previous web interface which is based on the \href{https://svelte.dev/}{svelte frontend framework} and should be much easier to maintain and extend than the \href{https://github.com/sansseriff/Isolated_Vsource}{previous web interface}.
+
+\href{https://github.com/sansseriff/snspd-bias-controll-svelte}{Svelte bias control repository}
+
+\hypertarget{entanglement-analysis-repositories}{%
+\subsection{Entanglement Analysis Repositories}\label{entanglement-analysis-repositories}}
+
+This master repository contains submodules for all the repositories used for analyzing data from the high-rate entanglement distribution system. It includes a script for automatically populating each repository with the original raw data stored or figshare.
+
+\href{https://github.com/sansseriff/highrate_origin}{Entanglement analysis repository}
+
+\hypertarget{entanglement-control-software}{%
+\subsection{Entanglement Control Software}\label{entanglement-control-software}}
+
+Based on an example file shipped with the swabian timetagger, this leverages the swabian python api for collecting entanglement data for the high-rate entanglement distribution system. It incorporates an innovative method for defining long running measurements based on a construct called \texttt{Actions}. \texttt{Actions} are objects that perform some operation at one stage in the script's main event loop (e.g.~change an interferometer voltage to a specific value), or over multiple event loop iterations (e.g.~integrate coincidences). Actions may also contain and run other actions, so that successively more complex measurements can be built from simple reusable components. This is done through an \texttt{evaluate} method that all \texttt{Action} methods share. The base class for all actions is located in \texttt{measurements/measurement\_management.py}. When a complex measurement is finished, a highly nested construct of actions may export it's internal data to a \texttt{.json} file. The high-rate experiment \href{https://github.com/sansseriff/highrate_origin}{analysis repositories} start with loading and analyzing these \texttt{.json} files.
+
+\href{https://github.com/sansseriff/swabian_entanglement_gui}{Entanglement control software repository}
+
+\hypertarget{dark-count-rate-through-filters-simulation}{%
+\subsection{Dark Count Rate Through Filters Simulation}\label{dark-count-rate-through-filters-simulation}}
+
+Based on the known lens f-number, aperture size, detector size, and filter transmissions for the dark count minimization project, the rate of dark counts due to transmitted blackbody photons can be estimated. With this simulation we determined that 4 thick custom short-pass filters, and one bandpass filter were ideal for our experiment.
+
+\href{https://github.com/sansseriff/dark_count_simulation}{Dark count rate simulation repository}
+
+\hypertarget{snsphd}{%
+\section{SNSPhD}\label{snsphd}}
+
+The SNSPhD python package includes a number of utility functions and presets used for managing data and generating figures for this thesis. It is based on the \texttt{phd} package from \href{https://github.com/gchure/phd\#phd-1}{Griffin Chure}. Notably, it includes the \texttt{vis.phd\_style()} function for setting up nice looking matplotlib defaults in my personal style, and the \texttt{viz.save\_light\_dark\_all()} function for saving light-mode svg, dark-mode svg, and pdf versions of a figure. The svgs are used to populate the \href{https://snsphd.online}{thesis website}, and the pdfs are used for the latex thesis itself. The \texttt{layout.bisect} function is also useful for making laying out subfigures in a straightforward way.
+
+The package can be installed with:
+
+\begin{minted}
+[
+frame=lines,
+framesep=2mm,
+baselinestretch=1,
+bgcolor=extralightgray,
+fontsize=\footnotesize,
+linenos]
+{bash}
+pip install snsphd
+\end{minted}
+
+This is a comment a latex part
+
+\href{https://github.com/sansseriff/snsphd}{SNSPhD package repository}
 
 \hypertarget{interferometer-imbalance-analysis-1}{%
 \chapter{Interferometer Imbalance Analysis}\label{interferometer-imbalance-analysis-1}}
