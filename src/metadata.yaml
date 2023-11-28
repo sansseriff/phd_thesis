@@ -10,7 +10,7 @@ degree:
 rights_statement: |
     Some rights reserved. This thesis is distributed under a
     Creative Commons Attribution License CC-BY 4.0. A digital version of this thesis can be
-    acceessed via \href{https://github.com/sansseriff/phd_thesis}{github.com/sansseriff/phd\textunderscore thesis}
+    accessed via \href{https://github.com/sansseriff/phd_thesis}{github.com/sansseriff/phd\textunderscore thesis}
     
 logo: true
 bibliography: references_cleaned.bib
