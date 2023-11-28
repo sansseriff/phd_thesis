@@ -1,11 +1,10 @@
 
-
-```{=html}
-<figure markdown>
+<!-- <figure markdown>
 <img  alt="snspdd" src="figs/snspdd_light.svg#only-light" style="margin-left: auto; margin-right: auto; width: 30%; opacity: 0.5"/>
 <img  alt="snspdd" src="figs/snspdd_dark.svg#only-dark" style="margin-left: auto; margin-right: auto; width: 30%"/>
-</figure>
+</figure> -->
 
+```{=html}
 ## Abstract 
 
 Superconducting Nanowire Single-Photon Detectors (SNSPDs) are a type of high-performance time-correlated photon counting detector. Usually operated just a few degrees above absolute zero, they are made from a current-biased and often meandering nanowire that partially transitions between a superconducting and resistive state when a photon is absorbed. This produces a voltage pulse, which is amplified and time-tagged, providing an accurate measurement of the photon arrival time.

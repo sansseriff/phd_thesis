@@ -2,10 +2,10 @@
 
 <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](./figs_04/high_rate_entanglement.svg) -->
 
-<figure markdown>
+<!-- <figure markdown>
 <img  alt="snspdd" src="figs/snspdd_light.svg#only-light" style="margin-left: auto; margin-right: auto; width: 30%; opacity: 0.5"/>
 <img  alt="snspdd" src="figs/snspdd_dark.svg#only-dark" style="margin-left: auto; margin-right: auto; width: 30%"/>
-</figure>
+</figure> -->
 
 ## Abstract 
 
