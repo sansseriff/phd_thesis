@@ -10,7 +10,7 @@ To my main advisors, Maria Spiropulu, your daring and passionate mentorship made
 
 I wish to thank the others who played pivotal roles in this journey. Jason Trevor, your expertise in lab logistics and engineering proved invaluable. Alex Walter, thank you for guiding me through the intricacies of Python. Fiona Fleming, I very much enjoyed sharing equipment with you and getting to know you. Andrew Beyer, your exceptional wafers laid the foundation for all the work accomplished here. Hannah Rana, your voice of reason during our lunches was truly appreciated. And finally a special thanks to Tracy Sheffer for meticulously organizing the logistics of my travel, conferences, and final defense.
 
-Lastly, I wish to thank my family. Mom and Dad, I never express it enough, but I am so grateful for your unwavering love and support. 
+Lastly, I wish to thank my family. Mom and Dad, I am so grateful for your always-present love and support. 
 
 To all those mentioned and, and to all I have failed to include, thank you for contributing to my academic journey in your unique ways. Each of you has left an indelible mark on this chapter of my life, and for that, I am sincerely grateful.
 
