@@ -42,18 +42,18 @@ Like the 1st-order correction, the 2nd-order method makes the assumption that th
 
 <figure markdown> 
     <a name='fig:single_wire_correction'></a> 
-    <img alt="fig:single_wire_correction" style="width: 90%; margin: auto;" src="../figs/single_wire_results_light.svg#only-light" >
-    <img alt="fig:single_wire_correction" style="width: 90%; margin: auto;" src="../figs/single_wire_results_dark.svg#only-dark" > 
+    <img alt="fig:single_wire_correction" style="width: 100%; margin: auto;" src="../figs/single_wire_results_light.svg#only-light" >
+    <img alt="fig:single_wire_correction" style="width: 100%; margin: auto;" src="../figs/single_wire_results_dark.svg#only-dark" > 
     <figcaption markdown> Figure 3: **PEACOQ single wire time-walk correction**Jitter response functions for 3 count rates from one wire of the PEACOQ detector.</figcaption>
     </figure>
 
-Fig. [3](#fig:single_wire_correction) shows how the 1st and 2nd order corrections improve jitter of the one wire of the PEACOQ detector tested. Each of these response functions have full width at half maximum (FWHM), full width at one tenth maximum (FW1/10M) and full width at one hundreth maximum (FW1/100M) metrics. The FW1/100M width is relevant for quantum communication applications that design the fundamental experiment repetition rate or bin size based on this metric. We plot how these metrics scale with count rate for the single nanowire as shown in Fig. [4](#fig:single_wire_width_metrics).
+Fig. [3](#fig:single_wire_correction) shows how the 1st and 2nd order corrections improve jitter of the one wire of the PEACOQ detector tested. Each of these response functions have full width at half maximum (FWHM), full width at one tenth maximum (FW1/10M) and full width at one hundredth maximum (FW1/100M) metrics. The FW1/100M width is relevant for quantum communication applications that design the fundamental experiment repetition rate or bin size based on this metric. We plot how these metrics scale with count rate for the single nanowire as shown in Fig. [4](#fig:single_wire_width_metrics).
 
 <figure markdown> 
     <a name='fig:single_wire_width_metrics'></a> 
-    <img alt="fig:single_wire_width_metrics" style="width: 90%; margin: auto;" src="../figs/width_metrics_single_wire_light.svg#only-light" >
-    <img alt="fig:single_wire_width_metrics" style="width: 90%; margin: auto;" src="../figs/width_metrics_single_wire_dark.svg#only-dark" > 
-    <figcaption markdown> Figure 4: **PEACOQ single wire width metrics** Width metrics versus count rate. The FW1/100M metric benefits greatly from both the 1st and 2nd order time-walk correction. Only when count rate is sufficiently high and pulses are very close tother does it become more likely that any one pulse can be corrupted by its previous-previous pulse.</figcaption>
+    <img alt="fig:single_wire_width_metrics" style="width: 100%; margin: auto;" src="../figs/width_metrics_single_wire_light.svg#only-light" >
+    <img alt="fig:single_wire_width_metrics" style="width: 100%; margin: auto;" src="../figs/width_metrics_single_wire_dark.svg#only-dark" > 
+    <figcaption markdown> Figure 4: **PEACOQ single wire width metrics** Width metrics versus count rate. The FW1/100M metric benefits greatly from both the 1st and 2nd order time-walk correction. Only when count rate is sufficiently high and pulses are very close together does it become more likely that any one pulse can be corrupted by its previous-previous pulse.</figcaption>
     </figure>
 
 With data available over a wide range of single-wire count rates, and the correction method, we simulate the performance of the whole PEACOQ detector with time walk correction. This is based on matching count rate measurements ( Fig. [5](#fig:matching) ) from the full array to count rates available in the single-wire dataset used for calibration and correction. The full-array rate measurements are from another cryostat and time tagger setup that supports full-readout of the PEACOQ
@@ -62,18 +62,19 @@ With data available over a wide range of single-wire count rates, and the correc
     <a name='fig:matching'></a> 
     <img alt="fig:matching" style="width: 90%; margin: auto;" src="../figs/peacoq_array_sim_light.svg#only-light" >
     <img alt="fig:matching" style="width: 90%; margin: auto;" src="../figs/peacoq_array_sim_dark.svg#only-dark" > 
-    <figcaption markdown> Figure 5: \*\*Matching PEACOQ wire count rates to calibration dataset\* Blue bars represent count rates of data files for which the time-wak correction can be performed. Grey bars represent unique wire count rates from an integrated full-array measurement of the PEACOQ in another experiment setup. The count rates have a gaussian shape with respect to wire number as the coupled optical fiber has a lateral intensity profile that is roughly gaussian.</figcaption>
+    <figcaption markdown> Figure 5: \*\*Matching PEACOQ wire count rates to calibration dataset\* Blue bars represent count rates of data files for which the time-walk correction can be performed. Grey bars represent unique wire count rates from an integrated full-array measurement of the PEACOQ in another experiment setup. The count rates have a gaussian shape with respect to wire number as the coupled optical fiber has a lateral intensity profile that is roughly gaussian.</figcaption>
     </figure>
 
 Fig. [6](#fig:simulation_results) a shows simulated full-array jitter response functions for 3 choice count rates, normalized from their peaks. The FWHM, FW1/10M, and FW1/100M width metrics are indicated with continuous, dashed, and dotted lines respectively.
 
 <figure markdown> 
     <a name='fig:simulation_results'></a> 
-    <img alt="fig:simulation_results" style="width: 90%; margin: auto;" src="../figs/array_simulation_results_light.svg#only-light" >
-    <img alt="fig:simulation_results" style="width: 90%; margin: auto;" src="../figs/array_simulation_results_dark.svg#only-dark" > 
+    <img alt="fig:simulation_results" style="width: 100%; margin: auto;" src="../figs/array_simulation_results_light.svg#only-light" >
+    <img alt="fig:simulation_results" style="width: 100%; margin: auto;" src="../figs/array_simulation_results_dark.svg#only-dark" > 
     <figcaption markdown> Figure 6: \*\*Simulated full PEACOQ array jitter performance with time-walk correction\* Each simulated jitter histogram (2D corrected, 1D corrected, or uncorrected) is a weighted sum of 32 response functions for the 32 wires, each with count rate representative of a certain wire in the array ( Fig. [5](#fig:matching) ).</figcaption>
     </figure>
 
-The codebase supporting our findings with the 1st and 2nd order correction is available at [SNSPD-time-walk-and-jitter-correction](https://github.com/sansseriff/SNSPD-time-walk-and-jitter-correction).
+<!-- The codebase supporting our findings with the 1st and 2nd order correction is 
+available at [SNSPD-time-walk-and-jitter-correction](https://github.com/sansseriff/SNSPD-time-walk-and-jitter-correction). -->
 
 <!-- <span class="bokeh" path="../code/test_1"></span> -->
