@@ -19,7 +19,7 @@ Entanglement distribution and entanglement-based QKD have been demonstrated with
 
 <!-- % There has been less community focus on the use of time-bin entanglement to achieve these goals.  -->
 
-A time-bin entangled photon source has certain advantages over a polarization-based system&#160;[@marcikic2002time]. Time-bin entanglement can be measured with no moving hardware and does not require precise polarization tracking to maximize visibility&#160;[@Dong2018PolarizationControll; @Fitzke2022TimeBinVsPol]. Also, with suitable equipment, robust time-bin modulation is possible over free space links with turbulence&#160;[@Jin2019]. Therefore, the possibility of simplified fiber-to-free-space interconnects and larger quantum networks based on a shared time-bin protocol motivates development of improved time-bin sources. Furthermore, time-bin encoding is suited for single-polarization light-matter interfaces [@simon2010quantum, @lauk2020perspectives].
+A time-bin entangled photon source has certain advantages over a polarization-based system&#160;[@marcikic2002time]. Time-bin entanglement can be measured with no moving hardware and does not require precise polarization tracking to maximize visibility&#160;[@Dong2018PolarizationControll; @Fitzke2022TimeBinVsPol]. Also, with suitable equipment, robust time-bin modulation is possible over free space links with turbulence&#160;[@Jin2019]. Therefore, the possibility of simplified fiber-to-free-space interconnects and larger quantum networks based on a shared time-bin protocol motivates development of improved time-bin sources. Furthermore, time-bin encoding is suited for single-polarization light-matter interfaces [@simon2010quantum; @lauk2020perspectives].
 
 <!-- %## Short system overview -->
 
