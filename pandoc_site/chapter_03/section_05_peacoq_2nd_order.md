@@ -44,7 +44,7 @@ Like the 1st-order correction, the 2nd-order method makes the assumption that th
     <a name='fig:single_wire_correction'></a> 
     <img alt="fig:single_wire_correction" style="width: 100%; margin: auto;" src="../figs/single_wire_results_light.svg#only-light" >
     <img alt="fig:single_wire_correction" style="width: 100%; margin: auto;" src="../figs/single_wire_results_dark.svg#only-dark" > 
-    <figcaption markdown> Figure 3: **PEACOQ single wire time-walk correction**Jitter response functions for 3 count rates from one wire of the PEACOQ detector.</figcaption>
+    <figcaption markdown> Figure 3: **PEACOQ single wire time-walk correction** Jitter response functions for 3 count rates from one wire of the PEACOQ detector.</figcaption>
     </figure>
 
 Fig. [3](#fig:single_wire_correction) shows how the 1st and 2nd order corrections improve jitter of the one wire of the PEACOQ detector tested. Each of these response functions have full width at half maximum (FWHM), full width at one tenth maximum (FW1/10M) and full width at one hundredth maximum (FW1/100M) metrics. The FW1/100M width is relevant for quantum communication applications that design the fundamental experiment repetition rate or bin size based on this metric. We plot how these metrics scale with count rate for the single nanowire as shown in Fig. [4](#fig:single_wire_width_metrics).
@@ -62,7 +62,7 @@ With data available over a wide range of single-wire count rates, and the correc
     <a name='fig:matching'></a> 
     <img alt="fig:matching" style="width: 90%; margin: auto;" src="../figs/peacoq_array_sim_light.svg#only-light" >
     <img alt="fig:matching" style="width: 90%; margin: auto;" src="../figs/peacoq_array_sim_dark.svg#only-dark" > 
-    <figcaption markdown> Figure 5: \*\*Matching PEACOQ wire count rates to calibration dataset\* Blue bars represent count rates of data files for which the time-walk correction can be performed. Grey bars represent unique wire count rates from an integrated full-array measurement of the PEACOQ in another experiment setup. The count rates have a gaussian shape with respect to wire number as the coupled optical fiber has a lateral intensity profile that is roughly gaussian.</figcaption>
+    <figcaption markdown> Figure 5: **Matching PEACOQ wire count rates to calibration dataset** Blue bars represent count rates of data files for which the time-walk correction can be performed. Grey bars represent unique wire count rates from an integrated full-array measurement of the PEACOQ in another experiment setup. The count rates have a gaussian shape with respect to wire number as the coupled optical fiber has a lateral intensity profile that is roughly gaussian.</figcaption>
     </figure>
 
 Fig. [6](#fig:simulation_results) a shows simulated full-array jitter response functions for 3 choice count rates, normalized from their peaks. The FWHM, FW1/10M, and FW1/100M width metrics are indicated with continuous, dashed, and dotted lines respectively.
@@ -71,7 +71,7 @@ Fig. [6](#fig:simulation_results) a shows simulated full-array jitter response 
     <a name='fig:simulation_results'></a> 
     <img alt="fig:simulation_results" style="width: 100%; margin: auto;" src="../figs/array_simulation_results_light.svg#only-light" >
     <img alt="fig:simulation_results" style="width: 100%; margin: auto;" src="../figs/array_simulation_results_dark.svg#only-dark" > 
-    <figcaption markdown> Figure 6: \*\*Simulated full PEACOQ array jitter performance with time-walk correction\* Each simulated jitter histogram (2D corrected, 1D corrected, or uncorrected) is a weighted sum of 32 response functions for the 32 wires, each with count rate representative of a certain wire in the array ( Fig. [5](#fig:matching) ).</figcaption>
+    <figcaption markdown> Figure 6: **Simulated full PEACOQ array jitter performance with time-walk correction** Each simulated jitter histogram (2D corrected, 1D corrected, or uncorrected) is a weighted sum of 32 response functions for the 32 wires, each with count rate representative of a certain wire in the array ( Fig. [5](#fig:matching) ).</figcaption>
     </figure>
 
 <!-- The codebase supporting our findings with the 1st and 2nd order correction is 
