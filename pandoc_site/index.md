@@ -5,7 +5,7 @@ hide:
 --- -->
 
 <div align="center" markdown>
-##  Precise Quantum Measurements with Superconducting Nanowire Single Photon Detectors
+##  Quantum Measurements with Superconducting Nanowire Single Photon Detectors
 </div>
 
 <br>
