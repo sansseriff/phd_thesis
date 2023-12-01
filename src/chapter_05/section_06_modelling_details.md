@@ -59,7 +59,7 @@ $$R_A = 0.99 \pm 0.03, ~~~~~~ R_B = 1.04 \pm 0.03$$
 
 ![**Wavefunction branches** Different pairings of interferometer output ports collect different wavefunction branches](./figs/branches_light.svg){#fig:branches short-caption='Wavefunction branches' width=70% path="chapter_05"}
 
-The coincidence rates for all wavefunction branches are the same if $\theta$ in @eq:cosines is set to zero. With this phase state rate $C_{A+ B+, \theta=0}$ measured directly (labeled B in @fig:fringes), it's straightforward to estimate the full wavefunction coincidence rate across all interferometer outputs. As shown in table @table:rates, the rate is $C_{A+ B+}(1 + R_A + R_B + R_AR_B)$. This estimate is used to express a full coincidence rate for figures 3 and 4 in the main text. 
+The coincidence rates for all wavefunction branches are the same if $\theta$ in @eq:cosines is set to zero. With this phase state rate $C_{A+ B+, \theta=0}$ measured directly (labeled B in @fig:fringes), it's straightforward to estimate the full wavefunction coincidence rate across all interferometer outputs. As shown in table @table:branches, the rate is $C_{A+ B+}(1 + R_A + R_B + R_AR_B)$. This estimate is used to express a full coincidence rate for figures 3 and 4 in the main text. 
 
 <div class="latex">
 \definecolor{color1}{HTML}{38A5BA}
