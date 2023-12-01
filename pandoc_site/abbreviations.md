@@ -18,5 +18,6 @@
 *[DWDM]: Dense Wavelength Division Multiplexer
 *[CWDM]: Coarse Wavelength Division Multiplexer
 *[PEACOQ]: Performance Enhanced Array for Counting Optical Quanta
+*[SPDC]: Spontaneous Parametric Down Conversion
 
 
