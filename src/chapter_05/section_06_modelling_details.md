@@ -277,4 +277,10 @@ We use a basis reconciliation factor of 0.81, thereby assuming a readout configu
 
 ## Interferometer imbalance analysis
 
-It is not trivially clear how much the interferometer early/late imbalances should negatively impact entanglement visibility. The 2nd author of this paper, Samantha Davis, does a theoretical analysis to help answer this question, which is included <span class="latex"> in supplemental section \ref{interferometer-imbalance-analysis-1}</span><span class="html">[in the supplemental](../chapter_09/index.md)</span>. 
+It is not trivially clear how much the interferometer early/late imbalances should negatively impact entanglement visibility. The 2nd author of this paper, Samantha Davis, does a theoretical analysis to help answer this question in the supplemental of the manuscript <span class="html">[here](https://arxiv.org/abs/2310.01804)</span> [@Mueller2023] . 
+
+
+```{=html}
+!!! note
+    **The interferometer imbalance analysis section is not part of this thesis** and is not part of the thesis .pdf, as it does not primarily represent my work. However, it is included [as a supplemental](../removed_chapter_09/index.md) on this site for convenience and completeness.
+```

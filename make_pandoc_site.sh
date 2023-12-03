@@ -26,6 +26,9 @@ rm -r ./pandoc_site/chapter_01/* \
 && cp -R ./src/frontmatter ./pandoc_site/ \
 && cp -R ./src/references.bib ./pandoc_site/ \
 && cp -R ./src/references_cleaned.bib ./pandoc_site/ \
+&& rm -r ./pandoc_site/removed_chapter_09/* \
+&& cp -R ./src/removed_chapter_09/code/ ./pandoc_site/removed_chapter_09/ \
+&& cp -R ./src/removed_chapter_09/figs/ ./pandoc_site/removed_chapter_09/ \
 
 
 # the lua filter needs to go after (under) the pandoc-crossref. Otherwise,
@@ -140,17 +143,17 @@ find ./src/chapter_08/ -iname "*.md" -type f -exec sh -c 'pandoc \
     sed -i "s.'\\\\\\\\~'.\\&\\#160;.g" "./pandoc_site/chapter_08/$(basename ${0%.md}.md)"
 ' {} \;
 
-# find ./src/chapter_09/ -iname "*.md" -type f -exec sh -c 'pandoc \
-#     --from markdown \
-#     --to markdown \
-#     -t markdown-smart \
-#     --wrap=none \
-#     --filter ./src/pandoc-crossref \
-#     -M "crossrefYaml=./src/ref_formatting_site.yaml" \
-#     --lua-filter=parse-html.lua \
-#     "${0}" -o "./pandoc_site/chapter_09/$(basename ${0%.md}.md)" &&
-#     sed -i "s.'\\\\\\\\~'.\\&\\#160;.g" "./pandoc_site/chapter_09/$(basename ${0%.md}.md)"
-# ' {} \;
+find ./src/removed_chapter_09/ -iname "*.md" -type f -exec sh -c 'pandoc \
+    --from markdown \
+    --to markdown \
+    -t markdown-smart \
+    --wrap=none \
+    --filter ./src/pandoc-crossref \
+    -M "crossrefYaml=./src/ref_formatting_site.yaml" \
+    --lua-filter=parse-html.lua \
+    "${0}" -o "./pandoc_site/removed_chapter_09/$(basename ${0%.md}.md)" &&
+    sed -i "s.'\\\\\\\\~'.\\&\\#160;.g" "./pandoc_site/removed_chapter_09/$(basename ${0%.md}.md)"
+' {} \;
 
 find ./src/extra/ -iname "*.md" -type f -exec sh -c 'pandoc \
     --from markdown \
@@ -178,14 +181,10 @@ cat ./pandoc_site/chapter_01/section_00_title.md ./pandoc_site/chapter_01/sectio
 && rm ./pandoc_site/chapter_07/section_06_aph_hw.md \
 && rm ./pandoc_site/chapter_07/section_02_abstract.md \
 && mv ./pandoc_site/chapter_08/section_02_abstract.md ./pandoc_site/chapter_08/index.md \
-
-# && rm -r ./pandoc_site/chapter_09/* \
-# && cp -R ./src/chapter_09/code/ ./pandoc_site/chapter_09/ \
-# && cp -R ./src/chapter_09/figs/ ./pandoc_site/chapter_09/ \
-# && cat ./pandoc_site/chapter_09/section_02_abstract.md ./pandoc_site/chapter_09/section_03_sams_work.md > ./pandoc_site/chapter_09/index.md \
-# && rm ./pandoc_site/chapter_09/section_00_title.md \
-# && rm ./pandoc_site/chapter_09/section_03_sams_work.md \
-# && rm ./pandoc_site/chapter_09/section_02_abstract.md \
+&& cat ./pandoc_site/removed_chapter_09/section_02_abstract.md ./pandoc_site/removed_chapter_09/section_03_sams_work.md > ./pandoc_site/removed_chapter_09/index.md \
+&& rm ./pandoc_site/removed_chapter_09/section_00_title.md \
+&& rm ./pandoc_site/removed_chapter_09/section_03_sams_work.md \
+&& rm ./pandoc_site/removed_chapter_09/section_02_abstract.md \
 
 
 # && mv ./pandoc_site/chapter_05/section_02_abstract.md ./pandoc_site/chapter_05/index.md \
