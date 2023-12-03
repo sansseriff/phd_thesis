@@ -72,7 +72,7 @@ tex:
 	--bibliography=references_cleaned.bib \
 	--lua-filter=frontmatter/parse-latex.lua \
 	--top-level-division chapter \
-	--resource-path='.:chapter_01/figs:chapter_02/figs:chapter_03/figs:chapter_04/figs:chapter_05/figs:chapter_06/figs:chapter_07/figs:chapter_08/figs:chapter_09/figs:' \
+	--resource-path='.:chapter_01/figs:chapter_02/figs:chapter_03/figs:chapter_04/figs:chapter_05/figs:chapter_06/figs:chapter_07/figs:chapter_08/figs:' \
 	&& sed -i "s.\\\textasciitilde{}.~.g" thesis.tex \
 	&& sed -i "s.\\\textasciitilde .~.g" thesis.tex \
 	&& sed -i 's/\\begin{equation}\\protect//g' thesis.tex \
