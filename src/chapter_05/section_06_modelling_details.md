@@ -282,5 +282,5 @@ It is not trivially clear how much the interferometer early/late imbalances shou
 
 ```{=html}
 !!! note
-    **The interferometer imbalance analysis section is not part of this thesis** and is not part of the thesis .pdf, as it does not primarily represent my work. However, it is included [as a supplemental](../removed_chapter_09/index.md) on this site for convenience and completeness.
+    **The interferometer imbalance analysis section is not part of this thesis** (and not part of the thesis .pdf), as it does not primarily represent my work. However, it is included [as a supplemental](../removed_chapter_09/index.md) on this site for convenience and completeness.
 ```
