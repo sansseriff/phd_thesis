@@ -19,4 +19,5 @@
         "seperated"
     ],
     "svg.preview.background": "black",
+    "CodeGPT.apiKey": "OpenAI",
 }
