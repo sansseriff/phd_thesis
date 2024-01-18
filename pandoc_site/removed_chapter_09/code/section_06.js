@@ -56,6 +56,7 @@ function dmode_b(e) {
     switchMode('dark_img_achromatic', 'light_img_achromatic');
 }
 
+
 function update_sizes() {
     // if math containers are too wide, reduce font size
     // console.log("Updating sizes")
