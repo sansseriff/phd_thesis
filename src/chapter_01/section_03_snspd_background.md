@@ -1,6 +1,8 @@
 
 ## Introduction to SNSPDs
 
+[@01_chang2023experimental; @02_mueller2023highrate; @03_Cheng2023; @04_Colangelo2023; @05_Craiciu23; @06_Kapoor23; @Mueller2023; @Davis2022; @Valivarthi2022; @Mueller:21; @Valivarthi2020]
+
 Superconducting Nanowire Single Photon Detectors (SNSPDs) are high performance single-photon detectors that operate at cryogenic temperatures. They stand out as the most capable single photon detection technology for near-infrared and increasingly mid-infrared wavelengths. They may be customized to exhibit extraordinary performance along a number of metrics including count rate~[@Craiciu23], detection efficiency~[@marsili2013detecting; @reddy2020superconducting], dark count rate~[@Shibata2015; @Mueller:21], and timing resolution~[@Korzh2020]. Some designs achieve excellent performance across all such metrics simultaneously, which makes them uniquely qualified for certain quantum communication and optics applications [@Colangelo2023]. This section elaborates on the fundamental principles underlying SNSPD operation, and reviews some recent SNSPD advancements and their relevance to certain applications. 
 
 ### Operating Principles
@@ -14,7 +16,7 @@ The readout scheme typically adopted for the detection of these electrical signa
 
 ### Recent Advancements
 
-[@01_chang2023experimental; @02_mueller2023highrate; @03_Cheng2023; @04_Colangelo2023; @05_Craiciu23; @06_Kapoor23; @Mueller2023; @Davis2022; @Valivarthi2022; @Mueller:21; @Valivarthi2020]
+
 
 Recent SNSPDs advancements revolve around improving the detection efficiency, count rate, timing jitter, sensitive wavelength range, and scalability to large arrays. Ultra-fast measurements of short superconducting wires have demonstrated timing jitters as low as 3~ps and illuminated the relationship between timing jitter and intrinsic detection latency effects [@Korzh2020]. System detection efficiencies from 98% to 99.5% have been demonstrated as well, and highlight the necessity to enhance the quality of the optical cavity surrounding the detector by using ultra-high reflectivity mirrors or distributed Bragg reflectors [@reddy2020superconducting; @99.5_Chang_2021]. More recently, single photon sensitivity has been demonstrated out to 29~$\upmu \mathrm{m}$ in thin silicon-rich WSi nanowires, paving the way for unique new SNSPD applications in astronomy and dark matter detection [@taylor2023lownoise]. Finally, with the development of a novel thermally coupled readout architecture, a 400,000 pixel SNSPD array has been demonstrated -- more than doubling the number of pixels from any previous superconducting detector array [@Oripov2023]. 
 
