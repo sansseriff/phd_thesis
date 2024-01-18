@@ -1,0 +1,20 @@
+[1mdiff --git a/manuscript.tex b/manuscript.tex[m
+[1mindex be99967..b0edcd8 100644[m
+[1m--- a/manuscript.tex[m
+[1m+++ b/manuscript.tex[m
+[36m@@ -25,14 +25,15 @@[m
+% use {asbstract*} to suppress the copyright line. Copyright information will be added in production[m
+
+\begin{abstract*} [m
+Photon number resolution is an emerging capability of advanced Superconducting Nanowire Single Photon Detectors. If leveraged to it's full potential, PNR [31mcapabilty[m[32mcapability[m can have a profound impact on the usefulness of SNSPDs is certain quantum applications including linear optical quantum computing, quantum networks, and quantum sensing. Discrimination of not just the number of photons in an optical pulse but also pulse arrival time with high accuracy is an open problem, complicated by the nuanced way in which these two degrees of freedom are intertwined in the response function of these detectors. In this work we put a differential readout SNSPD to the ultimate test. We test it's capabilities in a Pulse Position Modulation experiment whereby data is sent in the arrival time of optical pulses derived from a 20~GHz optical clock. We show the detector is capable of discriminating the arrival time of photons to 50~ps wide bins with high accuracy while simultaneously providing photon number information about the impinging optical pulses. We find that a careful statistical analysis of the PNR response is necessary to back-out a precise measurement of pulse arrival time.
+\end{abstract*}[m
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%  body  %%%%%%%%%%%%%%%%%%%%%%%%%%[m
+\hypertarget{introduction}{%[m
+\section{Introduction}\label{introduction}}[m
+
+[31m\textcolor{red}{[m[32m\textcolor{green}{[m The following is very rough, taken from years ago when I first started writing the manuscript }
+
+This study aimed to evaluate the feasibility of transmitting high clock-rate pulse position modulated (PPM) data using a mode-locked laser and receiving it with a low jitter superconducting nanowire single-photon detector (SNSPD). The investigation was driven by recent advancements in NbN SNSPDs, which have achieved a jitter as low as 50 ps at the FW(1/100)M level, enabling the demonstration of PPM with 50 ps slot widths and a 20 GHz clock. The aim was to increase the data rate by a factor of 10, from 2 GHz to 20 GHz, in the next generation of the Deep Space Optical Communication (DSOC) project.[m
+
+During the course of this study, the focus shifted towards investigating the impact of photon number resolution (PNR) on the low jitter detection of optical pulses. PNR can have an unintended impact on the demonstration of high-rate PPM, and therefore a thorough study of its effects was deemed crucial. A novel PNR cancellation technique was developed and applied to successfully demonstrate high-rate PPM. This technique is considered essential for future low-jitter applications of SNSPDs that exhibit photon-number effects.[m
