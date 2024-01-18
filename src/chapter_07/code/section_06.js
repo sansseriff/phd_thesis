@@ -10,8 +10,8 @@ function toggle_solutions() {
     }
 }
 
-const signal1 = document.querySelector(".md-option#__palette_2").addEventListener('click', dmode_a)
-const signal2 = document.querySelector(".md-option#__palette_1").addEventListener('click', dmode_b)
+const signal1 = document.querySelector("input#__palette_1.md-option").addEventListener('click', dmode_a)
+const signal2 = document.querySelector("input#__palette_0.md-option").addEventListener('click', dmode_b)
 
 function switchMode(fromClass, toClass) {
     console.log("Switching from", fromClass, "to", toClass);

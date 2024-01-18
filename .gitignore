@@ -21,8 +21,8 @@ src/frontmatter/other/*
 mkdocs/
 # pandoc_site/
 
-src/chapter_04/dist/.git
-src/chapter_04/dist/
+# src/chapter_04/dist/.git
+# src/chapter_04/dist/
 
 src/chatper_07/old/
 

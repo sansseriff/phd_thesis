@@ -37,9 +37,9 @@ function RawInline(raw)
 end
 
 function figure_image(elem)
-    -- print(elem)
     local image = elem.content and elem.content[1]
-    return (image.t == 'Image' and image.title == 'fig:')
+
+    return (image.t == "Image" and image.title == 'fig:')
         and image
         or nil
 end
@@ -78,6 +78,7 @@ end
 -- end
 
 function Para(para)
+    
 
     if para.content[1].identifier and string.sub(para.content[1].identifier, 1, 2) == "eq" then
         -- fix equations
@@ -108,7 +109,6 @@ function Para(para)
     end
 
     local img = figure_image(para)
-
     -- if img.attributes['style'] then
     --     print(img.attributes['style'])
     -- end
@@ -130,6 +130,7 @@ function Para(para)
     )
 
     -- print(img.attributes['width'])
+    
 
 
     local hypertarget = "{%%\n"

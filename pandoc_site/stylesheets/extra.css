@@ -5,7 +5,7 @@ mjx-utext {
     top: .025rem !important;
 }
 
-.arithmatex {
+/* .arithmatex {
     overflow-y: hidden !important;
     overflow-x: hidden !important;
 }
@@ -13,7 +13,7 @@ mjx-utext {
 mjx-container {
     overflow-y: hidden !important;
     overflow-x: hidden !important;
-}
+} */
 
 
 

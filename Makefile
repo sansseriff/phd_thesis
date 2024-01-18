@@ -1,6 +1,30 @@
 PY=python
 PANDOC=pandoc
 
+
+# ppm:
+# 	cd src/chapter_04 && \
+# 	cp -R figs/ dist/ && \
+# 	pandoc metadata.yaml \
+# 	section_02_abstract.md section_03_introduction.md section_04_method.md section_05_results.md section_06_discussion.md alt/figure_of_merit.md \
+# 	-o dist/manuscript.tex \
+# 	--wrap=preserve \
+# 	--default-image-extension=.pdf \
+# 	--filter ../pandoc-crossref \
+# 	--natbib \
+# 	--bibliography=dist/references.bib \
+# 	--template=template.tex \
+# 	--lua-filter=parse-latex.lua \
+# 	--lua-filter abstract-section.lua \
+# 	--resource-path='.:chapter_04/figs:' && \
+# 	sed -i 's/\\cite[t,p]{/\\cite{/g' dist/manuscript.tex && \
+# 	sed -i 's/{natbib}/{cite}/' dist/manuscript.tex && \
+# 	sed -i 's/,height=\\textheight//g' dist/manuscript.tex && \
+# 	sed -i 's/subsection{/section{/g' dist/manuscript.tex && \
+# 	sed -i 's/\\%/%/g' dist/manuscript.tex && \
+# 	sed -i "s.\\\textasciitilde{}.~.g" dist/manuscript.tex && \
+# 	sed -i "s.\\\textasciitilde .~.g" dist/manuscript.tex
+
 ppm:
 	cd src/chapter_04 && \
 	cp -R figs/ dist/ && \
@@ -16,13 +40,13 @@ ppm:
 	--lua-filter=parse-latex.lua \
 	--lua-filter abstract-section.lua \
 	--resource-path='.:chapter_04/figs:' && \
-	sed -i 's/\\cite[t,p]{/\\cite{/g' dist/manuscript.tex && \
-	sed -i 's/{natbib}/{cite}/' dist/manuscript.tex && \
-	sed -i 's/,height=\\textheight//g' dist/manuscript.tex && \
-	sed -i 's/subsection{/section{/g' dist/manuscript.tex && \
-	sed -i 's/\\%/%/g' dist/manuscript.tex && \
-	sed -i "s.\\\textasciitilde{}.~.g" dist/manuscript.tex && \
-	sed -i "s.\\\textasciitilde .~.g" dist/manuscript.tex
+	sed -i '' 's/\\cite[t,p]{/\\cite{/g' dist/manuscript.tex && \
+    sed -i '' 's/{natbib}/{cite}/' dist/manuscript.tex && \
+    sed -i '' 's/,height=\\textheight//g' dist/manuscript.tex && \
+    sed -i '' 's/subsection{/section{/g' dist/manuscript.tex && \
+    sed -i '' 's/\\%/%/g' dist/manuscript.tex && \
+    sed -i '' "s.\\\textasciitilde{}.~.g" dist/manuscript.tex && \
+    sed -i '' "s.\\\textasciitilde .~.g" dist/manuscript.tex
 
 # -r markdown-auto_identifiers # messes up abstract-section.lua
 
@@ -55,6 +79,31 @@ ref-update:
 	cd src && \
 	python clean_references.py
 
+# tex:
+# 	cd src && \
+# 	python clean_references.py && \
+# 	pandoc metadata.yaml \
+# 	chapter*/*.md \
+# 	ref_heading.md \
+# 	-o thesis.tex \
+# 	--wrap=preserve \
+# 	--default-image-extension=.pdf \
+# 	--template=styles/template.tex \
+# 	--filter pandoc-crossref \
+# 	--filter pandoc-latex-color \
+# 	-M "crossrefYaml=ref_formatting.yaml" \
+# 	--biblatex \
+# 	--bibliography=references_cleaned.bib \
+# 	--lua-filter=frontmatter/parse-latex.lua \
+# 	--top-level-division chapter \
+# 	--resource-path='.:chapter_01/figs:chapter_02/figs:chapter_03/figs:chapter_04/figs:chapter_05/figs:chapter_06/figs:chapter_07/figs:chapter_08/figs:chapter_09/figs:' \
+# 	&& sed -i "s.\\\textasciitilde{}.~.g" thesis.tex \
+# 	&& sed -i "s.\\\textasciitilde .~.g" thesis.tex \
+# 	&& sed -i 's/\\begin{equation}\\protect//g' thesis.tex \
+# 	&& sed -i 's/\\label{eq:[^ ]*}\\end{equation}//g' thesis.tex \
+# 	&& cd - \
+
+# mac version
 tex:
 	cd src && \
 	python clean_references.py && \
@@ -73,10 +122,10 @@ tex:
 	--lua-filter=frontmatter/parse-latex.lua \
 	--top-level-division chapter \
 	--resource-path='.:chapter_01/figs:chapter_02/figs:chapter_03/figs:chapter_04/figs:chapter_05/figs:chapter_06/figs:chapter_07/figs:chapter_08/figs:chapter_09/figs:' \
-	&& sed -i "s.\\\textasciitilde{}.~.g" thesis.tex \
-	&& sed -i "s.\\\textasciitilde .~.g" thesis.tex \
-	&& sed -i 's/\\begin{equation}\\protect//g' thesis.tex \
-	&& sed -i 's/\\label{eq:[^ ]*}\\end{equation}//g' thesis.tex \
+	&& sed -i '' "s.\\\textasciitilde{}.~.g" thesis.tex \
+	&& sed -i '' "s.\\\textasciitilde .~.g" thesis.tex \
+	&& sed -i '' 's/\\begin{equation}\\protect//g' thesis.tex \
+	&& sed -i '' 's/\\label{eq:[^ ]*}\\end{equation}//g' thesis.tex \
 	&& cd - \
 
 md_test:

@@ -11,8 +11,8 @@ console.log("Loaded section_06.js")
 //     }
 // }
 
-const signal1 = document.querySelector(".md-option#__palette_2").addEventListener('click', dmode_a)
-const signal2 = document.querySelector(".md-option#__palette_1").addEventListener('click', dmode_b)
+const signal1 = document.querySelector("input#__palette_1.md-option").addEventListener('click', dmode_a)
+const signal2 = document.querySelector("input#__palette_0.md-option").addEventListener('click', dmode_b)
 
 function switchMode(fromClass, toClass) {
     console.log("Switching from", fromClass, "to", toClass);
@@ -59,8 +59,11 @@ function dmode_b(e) {
 function update_sizes() {
     // if math containers are too wide, reduce font size
     // console.log("Updating sizes")
+    console.log("update_sizes")
     page_container = document.querySelector(".md-content")
+    console.log("page_container", page_container)
     var containers = document.querySelectorAll('mjx-container');
+    console.log("containers", containers)
     containers.forEach(container => {
         var width = container.offsetWidth;
         // if (width > 420) {
@@ -68,8 +71,8 @@ function update_sizes() {
         //     percentage = Math.max(percentage, 0); // Ensure the percentage doesn't go below 0
         //     container.style.fontSize = percentage + '%';
         // }
-        if (width > page_container.offsetWidth*0.9) {
-            var scale = (page_container.offsetWidth*0.9) / width;
+        if (width > page_container.offsetWidth*0.93) {
+            var scale = (page_container.offsetWidth*0.93) / width;
             container.style.transform = 'scale(' + scale + ')';
             container.style.transformOrigin = 'left';
         }

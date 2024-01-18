@@ -79,6 +79,13 @@ And this won’t
 
     </div>
 
+<figure markdown> 
+    <a name='fig:cryostat_concept'></a> 
+    <img alt="fig:cryostat_concept" style="width: nil; margin: auto;" src="../figs/fig1b_light.svg#only-light" >
+    <img alt="fig:cryostat_concept" style="width: nil; margin: auto;" src="../figs/fig1b_dark.svg#only-dark" > 
+    <figcaption markdown> Figure 3: **Cryostat free space coupling options.**</figcaption>
+    </figure>
+
 the file where you’re working on bokeh styling is at :
 
 C:\Users\Andrew\OneDrive - California Institute of Technology\JPL.Jitterate\peacoq\src\bokeh\_hists_js_callbacks.ipynb

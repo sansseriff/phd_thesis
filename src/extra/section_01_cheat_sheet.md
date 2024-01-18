@@ -83,6 +83,9 @@ And this won't
     </div>
 
 
+![**Cryostat free space coupling options.**](./figs/fig1b_light.svg){#fig:cryostat_concept short-caption="Cryostat optical coupling" path="chapter_07"}
+
+
 the file where you're working on bokeh styling is at :
 
 C:\Users\Andrew\OneDrive - California Institute of Technology\JPL\.Jitterate\peacoq\src\bokeh_hists_js_callbacks.ipynb

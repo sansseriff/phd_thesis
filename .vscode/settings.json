@@ -2,7 +2,7 @@
     "python.pythonPath": "/Users/gchure/anaconda3/bin/python",
     "[markdown]": {
         "editor.fontFamily": "Calibri",
-        "editor.fontSize": 18
+        "editor.fontSize": 12
     },
     "emmet.excludeLanguages": [],
     "emmet.includeLanguages": {

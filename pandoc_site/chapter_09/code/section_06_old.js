@@ -68,8 +68,8 @@ function update_sizes() {
         //     percentage = Math.max(percentage, 0); // Ensure the percentage doesn't go below 0
         //     container.style.fontSize = percentage + '%';
         // }
-        if (width > page_container.offsetWidth*0.9) {
-            var scale = (page_container.offsetWidth*0.9) / width;
+        if (width > page_container.offsetWidth*0.84) {
+            var scale = (page_container.offsetWidth*0.84) / width;
             container.style.transform = 'scale(' + scale + ')';
             container.style.transformOrigin = 'left';
         }
