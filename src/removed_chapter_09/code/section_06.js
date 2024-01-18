@@ -57,7 +57,6 @@ function dmode_b(e) {
 }
 
 
-
 function update_sizes() {
     // if math containers are too wide, reduce font size
     // console.log("Updating sizes")
