@@ -83,11 +83,10 @@ A.S.M. did foundational work underlying this paper at the Fermilab D0 laboratory
 
 
 
-
 % \item \textbf{Mueller, ~A.~S.}, Korzh,~B., Runyan,~M., Wollman,~E.~E., Beyer,~A.~D., Allmaras,~J.~P., ... \& Shaw,~M.~D. (2021). Free-space coupled superconducting nanowire single-photon detector with low dark counts. \href{https://opg.optica.org/optica/fulltext.cfm?uri=optica-8-12-1586&id=465726}{Optica, 8(12), 1586-1587}. \\
 % A.S.M. supervised this project, developed alignment and optical shrouding techniques, collected all data, and drafted the manuscript. 
 
-\item \textbf{A. S. Mueller}, B. Korzh, M. Runyan, et al., “Free-space coupled superconducting nanowire single-photon detector with low dark counts,” Optica, vol. 8, no. 12, pp. 1586–1587, Dec. 2021. DOI: 10.1364/OPTICA.444108. [Online]. Available: https://opg.optica.org/optica/abstract.cfm?URI=optica-8-12-1586. \\ 
+\item \textbf{A. S. Mueller}, B. Korzh, M. Runyan, et al., “Free-space coupled superconducting nanowire single-photon detector with low dark counts,” Optica, vol. 8, no. 12, pp. 1586–1587, Dec. 2021. DOI: 10.1364/OPTICA.444108. [Online]. Available: \href{https://opg.optica.org/optica/abstract.cfm?URI=optica-8-12-1586}{https://opg.optica.org/optica/abstract.cfm?URI=optica-8-12-1586}. \\ 
 A.S.M. supervised this project, developed alignment and optical shrouding techniques, collected all data, and drafted the manuscript. 
 
 
@@ -95,7 +94,7 @@ A.S.M. supervised this project, developed alignment and optical shrouding techni
 % \item Valivarthi,~R., Davis,~S.~I., Peña,~C., Xie,~S., Lauk,~N., Narváez,~L., Allmaras,~J.~P., Beyer,~A.~D., Gim,~Y., Hussein,~M., Iskander,~G., Kim,~H.~L., Korzh,~B., \textbf{Mueller,~A.}, Rominsky,~M., Shaw,~M., Tang,~D., Wollman,~E.~E., Simon,~C., … Spiropulu,~M. (2020). Teleportation systems toward a quantum internet. \href{https://doi.org/10.1103/PRXQuantum.1.020317}{PRX Quantum, 1(2), 020317}.  \\
 % A.S.M. assisted from setup of the experiment and data collection while at Fermilab D0. 
 
-\item R. Valivarthi, S. I. Davis, C. Peña,... \textbf{A. Mueller}, et al., “Teleportation systems toward a quantum internet,” PRX Quantum, vol. 1, p. 020 317, 2 Dec. 2020. DOI: 10.1103/PRXQuantum.1.020317. [Online]. Available: https://link.aps.org/doi/10.1103/PRXQuantum.1.020317. \\ 
+\item R. Valivarthi, S. I. Davis, C. Peña,... \textbf{A. Mueller}, et al., “Teleportation systems toward a quantum internet,” PRX Quantum, vol. 1, p. 020 317, 2 Dec. 2020. DOI: 10.1103/PRXQuantum.1.020317. [Online]. Available: \href{https://link.aps.org/doi/10.1103/PRXQuantum.1.020317}{https://link.aps.org/doi/10.1103/PRXQuantum.1.020317}. \\ 
 A.S.M. assisted from setup of the experiment and data collection while at Fermilab D0. 
 
 \end{enumerate} 
