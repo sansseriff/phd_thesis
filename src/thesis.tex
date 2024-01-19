@@ -20,6 +20,8 @@
 \usepackage{soul}
 \usepackage{physics}
 \usepackage{upgreek} % for non-italic greek letters (units)
+\widowpenalty10000
+\clubpenalty10000
 \usepackage[outputdir=../]{minted} % for code highlighting
 \definecolor{CaltechOrange}{HTML}{BD6024}
 \definecolor{midnightblue}{HTML}{3F3F9E}
@@ -163,7 +165,7 @@ This brief overview highlights the wide range of applications that have utilized
 
 SNSPDs offer high efficiency, low dark count rates, high count rates, and low timing jitter. However, traditional SNSPD designs face challenges in achieving both high detection efficiency and low jitter, especially for large-area detectors. Marco Colangelo et al. \autocite{Colangelo2023} proposed a new device design for SNSPDs that combines differential readout and impedance matching tapers to overcome these challenges. This design enables high detection efficiency and low jitter simultaneously along with pixel-level imaging capabilities and photon-number resolution.
 
-Detectors of the type demonstrated by Colangelo et al.~have been fabricated at JPL (Fig.~\ref{fig:diff} a) for the duration of this PhD research, and are used primarily for three projects detailed in this thesis: the low dark count rate project, the position modulation and photon number resolution project, and the high rate entanglement project. Given the significance of the differential tapered SNSPD to much of this body of work, we review its key design and performance features here.
+Detectors of the type demonstrated by Colangelo et al. \autocite{Colangelo2023} have been fabricated at JPL (Fig.~\ref{fig:diff} a) for the duration of this PhD research, and are used primarily for three projects detailed in this thesis: the low dark count rate project, the position modulation and photon number resolution project, and the high rate entanglement project. Given the significance of the differential tapered SNSPD to much of this body of work, we review its key design and performance features here.
 
 \hypertarget{fig:diff}{%
 \begin{figure}
@@ -215,12 +217,14 @@ A version of this chapter is published as:
 
 Andrew S. Mueller, Boris Korzh, Marcus Runyan, Emma E. Wollman, Andrew D. Beyer, Jason P. Allmaras, Angel E. Velasco, Ioana Craiciu, Bruce Bumble, Ryan M. Briggs, Lautaro Narvaez, Cristián Peña, Maria Spiropulu, and Matthew D. Shaw, ``Free-space coupled superconducting nanowire single-photon detector with low dark counts,'' \href{https://opg.optica.org/optica/fulltext.cfm?uri=optica-8-12-1586\&id=465726}{Optica 8, 1586-1587 (2021)},
 
+A. S. Mueller, B. Korzh, M. Runyan, et al., ``Free-space coupled superconducting nanowire single-photon detector with low dark counts,'' Optica, vol.~8, no. 12, pp.~1586--1587, Dec.~2021. DOI: 10.1364/OPTICA.444108. {[}Online{]}. Available: \url{https://opg.optica.org/optica/abstract.cfm?URI=optica-8-12-1586}.
+
 with the permission of Optica Publishing Group.
 
 \hypertarget{acknowledgements}{%
 \subsection{Acknowledgements}\label{acknowledgements}}
 
-Boris Korzh provided extensive assistance during ideation, construction, testing, and copyediting phases of the experiment. Marcus Runyan designed the elevated 0.8 K stage and invented a translation system using flexible carbon fiber rods. Jason Trevor provided technical assistance with implementing a nitrogen flow bag. Sahil Patel assisted with editing the manuscript.
+Boris Korzh provided extensive assistance during the ideation, construction, testing, and copyediting phases of the experiment. Marcus Runyan designed the elevated 0.8 K stage and invented a translation system using flexible carbon fiber rods. Jason Trevor provided technical assistance with implementing a nitrogen flow bag. Sahil Patel assisted with editing the manuscript.
 
 \hypertarget{abstract}{%
 \section{Abstract}\label{abstract}}
@@ -701,7 +705,7 @@ We opt to use a gaussian mixture model (GMM) to model the detector response for 
 \begin{figure}
 \centering
 \includegraphics[width=1\textwidth,height=\textheight]{./chapter_04/figs/gmm_intro_analysis_t_light.pdf}
-\caption[{Initial gaussian mixture model analysis}]{\textbf{Initial gaussian mixture model analysis} a) \& b) 2D histogram of multi-photon SNSPD detections parametrized by timing measurements $t_A$ and $t_B$. The shape of the data and modelled distributions depends on mean photon number $\mu$. The ellipses denote the location and shape of the gaussian components used to model the data. c) Shaded regions and overlayed contour plots for GMM-modeled detector response seperated by 50~ps, corresponding to the 20~GHz PPM demonstration. Identifying which bin a detector measurement corresponds to is equivalent to identifying which colored region a $t_A, t_B$ point should belong to. For the 20~GHz demonstration, discrimination cannot be perfect because the distributions overlap.}
+\caption[{Initial gaussian mixture model analysis}]{\textbf{Initial Gaussian mixture model analysis} a) \& b) 2D histogram of multi-photon SNSPD detections parametrized by timing measurements $t_A$ and $t_B$. The shape of the data and modelled distributions depends on mean photon number $\mu$. The ellipses denote the location and shape of the gaussian components used to model the data. c) Shaded regions and overlayed contour plots for GMM-modeled detector response seperated by 50~ps, corresponding to the 20~GHz PPM demonstration. Identifying which bin a detector measurement corresponds to is equivalent to identifying which colored region a $t_A, t_B$ point should belong to. For the 20~GHz demonstration, discrimination cannot be perfect because the distributions overlap.}
 \label{fig:gmm_model}
 \end{figure}
 }
