@@ -19,8 +19,6 @@ A.S.M. managed the project, collected all data, drafted the manuscript. \textbf{
 
 
 
-
-
 % \item Cheng,~X., Chang,~K.-C., Sarihan,~M.~C., \textbf{Mueller,~A.}, Spiropulu,~M., Shaw, ~M.~D., Korzh,~B., Faraon,~A., Wong,~F.~N. C., Shapiro,~J.~H., \& Wong,~C.~W. (2023). High-dimensional time-frequency entanglement in a singly-filtered biphoton frequency comb. \href{https://doi.org/10.1038/s42005-023-01370-2}{Communications Physics, 6(1), 1–12.} \\
 % A.S.M. assisted with configuring and operating the low jitter SNSPDs used. 
 
