@@ -62,7 +62,7 @@ A.S.M. did foundational work underlying this paper at the Fermilab D0 laboratory
 % \item \textbf{Mueller,~A}., Wollman,~E.~E., Korzh,~B., Beyer,~A.~D., Narvaez,~L., Rogalin,~R.,~... \& Shaw,~M.~D. (2023). Time-walk and jitter correction in SNSPDs at high count rates. \href{https://pubs.aip.org/aip/apl/article/122/4/044001/2870246}{Applied Physics Letters, 122(4)}. \\
 % A.S.M. supervised this project, developed the initial time-walk method, collected all data, and drafted the manuscript. 
 
-\item \textbf{A. Mueller}, E. E. Wollman, B. Korzh, et al., “Time-walk and jitter correction in SNSPDs at high count rates,” Applied Physics Letters, vol. 122, no. 4, Jan. 2023, 044001, ISSN: 0003-6951. DOI: 10.1063/5.0129147. eprint: https://pubs.aip.org/aip/apl/article-pdf/doi/10.1063/5.0129147/16690545/044001\_1\_online.pdf. [Online]. Available: https://doi.org/10.1063/5.0129147. \\
+\item \textbf{A. Mueller}, E. E. Wollman, B. Korzh, et al., “Time-walk and jitter correction in SNSPDs at high count rates,” Applied Physics Letters, vol. 122, no. 4, Jan. 2023, 044001, ISSN: 0003-6951. DOI: 10.1063/5.0129147. [Online]. Available: https://doi.org/10.1063/5.0129147. \\
 A.S.M. supervised this project, developed the initial time-walk method, collected all data, and drafted the manuscript. 
 
 
