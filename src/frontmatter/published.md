@@ -60,7 +60,7 @@ A.S.M. did foundational work underlying this paper at the Fermilab D0 laboratory
 % \item \textbf{Mueller,~A}., Wollman,~E.~E., Korzh,~B., Beyer,~A.~D., Narvaez,~L., Rogalin,~R.,~... \& Shaw,~M.~D. (2023). Time-walk and jitter correction in SNSPDs at high count rates. \href{https://pubs.aip.org/aip/apl/article/122/4/044001/2870246}{Applied Physics Letters, 122(4)}. \\
 % A.S.M. supervised this project, developed the initial time-walk method, collected all data, and drafted the manuscript. 
 
-\item \textbf{A. Mueller}, E. E. Wollman, B. Korzh, et al., “Time-walk and jitter correction in SNSPDs at high count rates,” Applied Physics Letters, vol. 122, no. 4, Jan. 2023, 044001, ISSN: 0003-6951. DOI: 10.1063/5.0129147. [Online]. Available: https://doi.org/10.1063/5.0129147. \\
+\item \textbf{A. Mueller}, E. E. Wollman, B. Korzh, et al., “Time-walk and jitter correction in SNSPDs at high count rates,” Applied Physics Letters, vol. 122, no. 4, Jan. 2023, 044001, ISSN: 0003-6951. DOI: 10.1063/5.0129147. [Online]. Available: \href{https://doi.org/10.1063/5.0129147}{https://doi.org/10.1063/5.0129147}. \\
 A.S.M. supervised this project, developed the initial time-walk method, collected all data, and drafted the manuscript. 
 
 
@@ -68,7 +68,7 @@ A.S.M. supervised this project, developed the initial time-walk method, collecte
 % \item Davis,~S.~I., \textbf{Mueller,~A.}, Valivarthi,~R., Lauk,~N., Narvaez,~L., Korzh,~B., Beyer,~A.~D., Cerri,~O., Colangelo,~M., Berggren,~K.~K., Shaw,~M.~D., Xie,~S., Sinclair,~N., \& Spiropulu,~M. (2022). Improved heralded single-photon source with a photon-number-resolving superconducting nanowire detector. \href{https://doi.org/10.1103/PhysRevApplied.18.064007}{Physical Review Applied, 18(6), 064007}. \\
 % A.S.M. developed the high-threshold triggering method for resolving photon-number dependence in the differential single pixel SNSPD.
 
-\item S. I. Davis, \textbf{A. Mueller}, R. Valivarthi, et al., “Improved heralded single-photon source with a photon-number-resolving superconducting nanowire detector,” Phys. Rev. Appl., vol. 18, p. 064 007, 6 Dec. 2022. DOI: 10.1103/PhysRevApplied.18.064007. [Online]. Available: https://link.aps.org/doi/10.1103/PhysRevApplied.18.064007.\\
+\item S. I. Davis, \textbf{A. Mueller}, R. Valivarthi, et al., “Improved heralded single-photon source with a photon-number-resolving superconducting nanowire detector,” Phys. Rev. Appl., vol. 18, p. 064 007, 6 Dec. 2022. DOI: 10.1103/PhysRevApplied.18.064007. [Online]. Available: \href{https://link.aps.org/doi/10.1103/PhysRevApplied.18.064007}{https://link.aps.org/doi/10.1103/PhysRevApplied.18.064007}.\\
 A.S.M. developed the high-threshold triggering method for resolving photon-number dependence in the differential single pixel SNSPD.
 
 
