@@ -42,7 +42,7 @@ $$
 where $v$ was added to denote the visibility of the phase basis. Scanning the phase of the system and measuring coincidence rate across the center bins produces sinusoidal fringes as shown in @fig:fringes. 
 
 
-## Coincidence Rate \& Interferometer Output Ports 
+## Coincidence rate \& interferometer output ports 
 
 As each readout interferometer has two output ports, the full output state observed at Alice and Bob cannot be fully measured with two SNSPDs. We label the output ports of Alice (A) and Bob's (B) interferometers with plus ($+$) and minus ($-$). The plus ports are used for most measurements. By measuring the relative loss between the plus and minus ports, all singles rates $S_i$ and coincidence rates $C_{ij}, i,j \in \{A+, A-, B+, B-\}$ across different detectors can be estimated. 
 
@@ -108,7 +108,7 @@ For main-text figure 2 in particular, coincidences were measured with the center
 $$C_{fig. 2} = \frac{4}{3}(1 + R_AR_B)C_{measured}$$
 
 
-## Joint Spectral Intensity Analysis
+## Joint spectral intensity analysis
 
 This entanglement source is potentially useful for future quantum communication systems that make use of two-photon interference, such as teleportation or entanglement swapping. These require the generation of highly pure and indistinguishable photons. The type-0 SPDC crystal used in this source shows strong spectral correlations that make it inappropriate for two-photon interference demonstrations by itself. However, with the application of the DWDM filtering, we create a series of spectral channel pairings that are potentially good individual sources of fairly pure single mode photons. To investigate this, we model the joint spectral intensity function (JSI) produced by the SPDC and fit it to data. Then we and apply a Schmidt decomposition to the spectral modes produced when pairs of DWDM filter channels are applied to the modeled JSI. We derive an inverse Shmidt number which is equal to single photon purity $P$ as well as visibility $V$ of Hong-Ou-Mandel (HOM) interference. An inverse Schmidt number approaching 1 indicates that the source is effective for two-photon interference measurements like HOM and Bell State measurements. 
 
@@ -162,7 +162,7 @@ $$1/K = \sum_i \lambda_i^2$$
 
 where $\lambda_i$ are the Schmidt coefficients [@ZielnickiKwiat2018SPDCmodel]. The inverse Schmidt numbers for all 8 channel pairs are similar, and are not expected for vary due to any phenomena beyond inaccuracies of the model. Therefore, we quote single values for $1/K$ in the main text. 
 
-## Consequences of Narroband Filtering
+## Consequences of narroband filtering
 ### Calculation of mean photon number per pulse <span class="html">μ</span><span class="latex">\texorpdfstring{$\mu$}{mu}</span>
 
 
@@ -229,7 +229,7 @@ $$
 
 This is used to compute $\mu$ in the main text. 
 
-## Quantum State Tomography
+## Quantum state tomography
 
 We perform quantum state tomography of individual channel pairs in order to resolve the full density matrix and calculate bounding terms for the distillable entanglement rate. 
 

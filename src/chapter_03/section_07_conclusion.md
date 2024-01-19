@@ -1,4 +1,4 @@
-## Conclusion & Outlook
+## Conclusion & outlook
 
 The original research paper on time walk analysis [@Mueller2023] included comments on the potential for time walk correction in situations where the reset reset time of the nanowire is considerably shorter than the reset dynamics of the amplifier chain: 
 

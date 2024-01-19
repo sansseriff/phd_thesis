@@ -1,4 +1,4 @@
-## Modelling & External Cooling
+## Modelling & external cooling
 
 <!-- <span style="color: orange">stuff here about the numbers in the model. Could include the equation with the angular dependance of the lens</span> -->
 

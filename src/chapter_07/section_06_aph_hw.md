@@ -10,7 +10,7 @@
 ### 1. Free space coupling with low dark counts (50 points)
 An experimental apparatus emits a collimated beam of $1550~\mathrm{nm}$ photons with gaussian beam waist $w_0 = 3~\mathrm{mm}$. You wish to focus the beam onto an SNSPD directly through a window in a cryostat. 
 
-![**Cryostat free space coupling options.**](./figs/fig1b_light.svg){#fig:cryostat_concept short-caption="Cryostat optical coupling" path="chapter_07"}
+![**Cryostat free space coupling options**](./figs/fig1b_light.svg){#fig:cryostat_concept short-caption="Cryostat free space coupling options" path="chapter_07"}
 
 As we will see later on, a set of filters will be needed between the detector and the window to minimize dark counts. In practice, the set of filters can be quite thick. Say a $f = 100~\mathrm{mm}$ lens is used right outside the cryostat to focus the beam onto the detector though a set of filters (@Fig:cryostat_concept a). The long focal length makes room for a few inches of filters between the external lens and focused spot. 
 
@@ -70,7 +70,7 @@ If the detector has a circular active area with radius $5~\mathrm{\upmu m}$, wha
 
     Without filtering, the mid-infrared photons coupled to the detector from the room temperature laboratory are a dominant source of dark counts. Think of the environment outside the window as an isotropic blackbody emitter. Consider 3 cases, where the shaded red regions illustrate the light field of thermal radiation that could couple to the detector:
 
-    ![**Three Coupling Options**](./figs/fig2b_light.svg){#fig:coupling_options short-caption="Cryostat coupling options" path="chapter_07"}
+    ![**Three coupling options**](./figs/fig2b_light.svg){#fig:coupling_options short-caption="Three coupling options" path="chapter_07"}
 
     i) There is no lens; the detector is distance $l$ inside the cryostat, and the first window with diameter $d$ defines an entrance pupil. <br>
     ii) Same as (i), but a lens with focal length $l$ is placed right outside the first window. The detector is at the focal point. <br>
@@ -260,7 +260,7 @@ If the detector has a circular active area with radius $5~\mathrm{\upmu m}$, wha
     <span style="color:blue" markdown>3 points for writing and solving the equation that matches the jitter bound to the quadrature sum </span>
     <span style="color:blue" markdown>5 points for correct filter width and dark count rate</span>
 
-### 2. SPDC Coupling and Single Photon Sources (50 points)
+### 2. SPDC coupling and single photon sources (50 points)
 A Spontaneous Parametric Down Conversion (SPDC) crystal is known to generate a twin beam squeezed state of the form: 
 
 
@@ -274,7 +274,7 @@ $$|\psi\rangle= \sqrt{1 - \gamma^2} \sum_{n=0}^{\infty} \gamma^{n}\left|n_{s}, n
 
 Where $n_s$ and $n_i$ are the number of photons corresponding to the signal and idler parts of the wavefunction. Consider @fig:hsps a, where the crystal is pumped with a pulsed laser, and the the signal and idler components that emerge are separated either by polarization or frequency. The idler arm is sent to an SNSPD. This configuration can be used as a heralded single photon source (HSPS). A click on the detector on the idler arm `heralds' a non-vacuum state in the signal arm. High fidelity and probability single photon sources are very useful for various quantum optics experiments and technologies, including linear optical quantum computing. 
 
-![**Heralded single photon sources**](./figs/hsps_light.svg){#fig:hsps short-caption="Heralded single photon source designs" path="chapter_07"}
+![**Heralded single photon source designs**](./figs/hsps_light.svg){#fig:hsps short-caption="Heralded single photon source designs" path="chapter_07"}
 
 Most SNSPDs are *binary*-type single photon detectors, meaning they differentiate between zero and one or more photons arriving in a given light pulse. A positive operator value measure (POVM) quantifies how a `click' from a binary SPD updates our knowledge of the incident state: 
 

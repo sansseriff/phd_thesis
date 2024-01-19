@@ -1,4 +1,4 @@
-## Method and Results
+## Method and results
 
 ### Experimental setup
 

@@ -4,7 +4,7 @@ SNSPDs offer high efficiency, low dark count rates, high count rates, and low ti
 
 Detectors of the type demonstrated by Colangelo et al. have been fabricated at JPL (@fig:diff a) for the duration of this PhD research, and are used primarily for three projects detailed in this thesis: the low dark count rate project, the position modulation and photon number resolution project, and the high rate entanglement project. Given the significance of the differential tapered SNSPD to much of this body of work, we review its key design and performance features here. 
 
-![**Differential Single Pixel** a) Two packaged differential single pixel detectors. Coupled fibers highlighted in green, differential SMA readout highlighted in red b) Magnified images of the detector lolipop-shape waver, highlighting where the tapers and efficiency-enhancing optical stack are located c) Integrated 2D histogram showing different heights and shapes of RF pulse rising edge in response to incident multi-photon optical pulses.](./figs/diff_light.png){#fig:diff short-caption="Differential Single Pixel" path="chapter_01"}
+![**Differential single pixel** a) Two packaged differential single pixel detectors. Coupled fibers highlighted in green, differential SMA readout highlighted in red b) Magnified images of the detector lolipop-shape waver, highlighting where the tapers and efficiency-enhancing optical stack are located c) Integrated 2D histogram showing different heights and shapes of RF pulse rising edge in response to incident multi-photon optical pulses.](./figs/diff_light.png){#fig:diff short-caption="Differential Single Pixel" path="chapter_01"}
 
 ### Jitter cancellation through differential readout
 

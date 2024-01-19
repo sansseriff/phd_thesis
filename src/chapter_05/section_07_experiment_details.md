@@ -1,4 +1,4 @@
-## Time-Walk Correction
+## Time-walk correction
 SNSPD jitter increases with count rate due to properties of the nanowire reset process and features of the readout circuit. A threshold timing measurement set at a specific trigger level will 'walk' along the rising edge of SNSPD pulses by varying amounts if those pulses vary in amplitude and slew rate. At low count rates, SNSPDs exhibit very uniform pulse heights and shapes. However, at high counts rates where the inter-arrival time is on the order of the reset time of the detector, current-reset and amplifier effects lead to smaller and distorted pulses in a form of pulse 'pile-up'~[@Mueller2023]. 
 
 <!-- \begin{figure}[H]
@@ -31,7 +31,7 @@ Slices at the bottom of the 2D histogram ( @fig:time_walk a ) for large $t'$ are
 
 Overall, time-walk analysis based on the 2D histogram construction is straightforward to implement and user friendly because it may be applied <span class="latex">\textit{in situ}</span><span class="html">*in situ*</span>  as part of software that already creates histograms and records coincidences.
 
-## Filter Bandwidths
+## Filter bandwidths
 <!-- \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\linewidth]{filter_comparison_light.pdf}
@@ -39,7 +39,7 @@ Overall, time-walk analysis based on the 2D histogram construction is straightfo
 \end{figure} -->
 ![**DWDM and tunable narroband filter bandwidths** Spectrums for a single DWDM channel and narroband filter, with the center wavelengths set to zero. The narroband filter is used at Bob with the 16-channel DWDM at Alice to measure coincidence rates in the main text Fig. 2b. For the 100~GHz spec. DWDM filters, 100~GHz refers to the filter spacing. The FWHM passband for each is about 82~GHz.](./figs/filter_comparison_light.svg){#fig:bandwidths short-caption='DWDM and tunable narroband filter bandwidths' width=80% sticky="True" path="chapter_05"}
 
-## Guard Regions
+## Guard regions
 The width $x$ of the guard regions centered at 80 and 160 ps were set to 10~ps. As shown in Fig. @fig:guard_scan, this width increase fidelities slightly without significantly impacting coincidence rates. 10~ps was not chosen based on rigorous analysis, though it would be possible to optimize the width to maximize some metric, like secret key rate. 
 
 <!-- \begin{figure}[h]
@@ -51,7 +51,7 @@ The width $x$ of the guard regions centered at 80 and 160 ps were set to 10~ps. 
 
 ![**Effect of guard regions on visibilities** Charts on the right show phase basis fidelities and total coincidence rates as a function of width $x$, where both guard regions stay centered at 80 \& 160~ps.](./figs/guard_scan_light.svg){#fig:guard_scan short-caption='Effect of guard regions on visibilities' width=100% path="chapter_05"}
 
-## Incompatible Bases \& Accidental Coincidence Rate
+## Incompatible bases \& accidental coincidence rate
 
 An entangled pair can be called 'spectrally compatible' with a given DWDM channel pairing if --given no losses-- it would be detected 100\% of the time across that channel pair. In the case where signal and idler modes are perfectly spectrally compatible, it has been shown that accidental coincidences still negatively impact visibilities [@Kim2022]. In this case and assuming negligible dark counts, visibility is reduced as: 
 
@@ -84,7 +84,7 @@ C_{Acc} = \frac{1}{R}(1 - \delta) S_A S_B \left(\delta \left(1-\eta _A\right)+\d
 $$
 
 
-## Maximum Entangled Photon Source Throughput
+## Maximum entangled photon source throughput
 We observe in the small $\mu$ limit that the metrics $V$, $E_N = C_N/C_{AB}$, $E_I = C_I/C_{AB}$, and $E_S = SKR/C_{AB}$ scale linearly with $\mu$, where $E_S$ is the secret key fraction. Raw coincidence rate is not linear with $\mu$ due to the count rate dependent efficiency of the SNSPDs. As count rate increases, the detector spends a larger fraction of time in a partially reset state where photo-detection is less efficient or not possible. We separately collect measurements of detector efficiency versus count rate extending past 10~Mcps, and use this to extrapolate coincidence rate to higher powers. Then, the metrics $E_N$, $E_I$, and $E_S$ are multiplied by the extrapolated rate to define extrapolated $C_N$, $C_I$, and $SKR$ as shown in @fig:scan_extrapolate b. Maximum values of these metrics are highlighted by colored circular markers.
 
 In this work we primarily study the capability of 8 DWDM channel pairs, with some analysis of 16-pair performance. However, the spectrum of entangled photon pairs produced by the type-0 SPDC is quite broad, meaning spectral multiplexing across many more channels is possible. In @fig:scan_extrapolate the spectrum of the SPDC is overlayed with sixty 100~GHz DWDM channel pairs spanning the L, C, and S ITU bands [L-29 (1592.1~nm) through C-20 (1543.73) and C-10 (1535.82) through S-1 (1490.76)]. The coincidence rate through these added channels can be estimated from this spectrum and the known performance of the central 8 channel pairs. Table 1 in the main text specifies estimates for the total rate from the 60 multiplexed spectral channels.

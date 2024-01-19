@@ -6,9 +6,9 @@ We encode a 98 kilobit <span class="html">[image](./section_05_results.md#fig:de
 
 We begin with a preamble sequence that only consists of pulses in the $i = 0$ time slot. Before sending the rest of the dataset, we modulate this set multiple times, collecting data from low and high trigger levels for impinging optical pulses of varying mean photon number. This provides information on the detector's photon number response without arrival time variation. We label the measurements from the low (8~mV) and high (50~mV) trigger levels as $t_A$ and $t_B$ respectively. As shown in <span class="latex"> Fig.~\ref{fig:waveform}</span><span class="html">[the waveform figure](section_03_introduction.md#fig:waveform)</span>, histograms of these arrival events are multimodal with distinct groupings for for each photon number detection. We first present a method for recovering a symmetric arrival time response function using the the slope measurement $\Delta t_{BA} = t_B - t_A$. 
 
-### Slope-Based Correction
+### Slope-based correction
 
-![**PNR Slope Variation Analysis and Cancellation** a) 2D histogram of RF pulse measurements. Through graphing slope $\Delta t_{BA}$ on the x-axis and arrival time $t_A$ on the y-axis, a series of groupings are visible that identify the discrete photon numbers detected. b) Histogram of events for pulse slope $\Delta t_{BA}$ for several mean photon numbers. c)  Histogram of constructed measurements $\tilde{t_A}$ from applying pulse-slope-dependent corrections $C_A$. The distribution of $\tilde{t_A}$ is symmetric, but it's FWHM width varies depending on mean photon number. ](./figs/slope_cancellation_light.svg){#fig:slope_correction short-caption="PNR Slope Variation Analysis and Cancellation" width=100% path="chapter_04"}
+![**PNR slope variation analysis and cancellation** a) 2D histogram of RF pulse measurements. Through graphing slope $\Delta t_{BA}$ on the x-axis and arrival time $t_A$ on the y-axis, a series of groupings are visible that identify the discrete photon numbers detected. b) Histogram of events for pulse slope $\Delta t_{BA}$ for several mean photon numbers. c)  Histogram of constructed measurements $\tilde{t_A}$ from applying pulse-slope-dependent corrections $C_A$. The distribution of $\tilde{t_A}$ is symmetric, but it's FWHM width varies depending on mean photon number. ](./figs/slope_cancellation_light.svg){#fig:slope_correction short-caption="PNR Slope Variation Analysis and Cancellation" width=100% path="chapter_04"}
 
 
 Pairs of pulse measurements $t_A$ and $t_B$ may be graphed on a 2D plane parametrized by  $\Delta t_{BA}$ on the x-axis and $t_A$. @fig:slope_correction a shows how this protection exhibits multiple groupings that correspond the the photon number character of the impinging optical mode. The 1 and 2-photon events are clearly identifiable and seperated from other events, with $|3\rangle$, $|4\rangle$, and $|5\rangle$ events also visible with less mutual separation. While @fig:slope_correction a is shown here for just one mean photon number $\mu$, this response is collected for a full range of attenuations and corresponding $\mu$. @fig:slope_correction a shows histograms from projecting 3 such measurements down onto the $\Delta t_{BA}$ axis. 
@@ -18,7 +18,7 @@ The slope-correction method involves the measurement and creation of a slope-ver
 The data representation and calibration curve shown in @fig:slope_correction a may be constructed with $t_B$ on the y-axis as well. Then the PNR corrections are applied the the $t_B$ measurements instead. However, the resulting histograms $\tilde{t_B}$ are virtually identical to $\tilde{t_A}$ as they are ultimately constructed from the same data. 
 
 
-### Cluster Analysis
+### Cluster analysis
 
 The photon-number dependent effects shown in <span class="latex"> Fig.~\ref{fig:waveform}</span><span class="html">[the waveform figure](section_03_introduction.md#fig:waveform)</span> are uniquely separable in terms of photon number due to the inherently pulsed nature of the source. 
 

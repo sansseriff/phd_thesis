@@ -1,4 +1,4 @@
-### Performance Regime of the Tungsten Silicide detector
+### Performance regime of the tungsten silicide detector
 
 When our calibration and correction method is applied to the Tungsten Silicide SNSPD, the walk-cancellation method primarily corrects for pulse height variations. These variations are caused by varying levels of bias current in the device at the time of photo-detection. An oscilloscope trace shows an exponentially decaying increase in SNSPD pulse height following a previous detection. This exponential recovery shape reinforces evidence that this detector operates in this 'bias current recovery' regime, rather than the regime where amplifier reset dynamics dominate. 
 

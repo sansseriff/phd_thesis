@@ -1,6 +1,6 @@
-## Experiment and Control Software
+## Experiment and control software
 
-### Sequence Generator
+### Sequence generator
 
 The Sequence Generator repository is for generating AWG sequences that are synchronized with the Pritel OAC fast mode locked laser. This is needed for carving the mode locked laser signal with intensity modulators. This toolkit was useful for my PPM project as well as a concurrent high rate QKD project with slightly different requirements. 
 
@@ -13,7 +13,7 @@ The sections of code that undergo this analysis are located in the functions `de
 ```
 <span class="latex">\href{https://github.com/sansseriff/sequence_generator/tree/main}{Sequence Generator Repository}</span>
 
-### Time-Walk Correction
+### Time-walk correction
 
 A repository of tools for performing time-walk calibration and correction on timetag data files. It is set up to use the binary format `.ttbin` from swabian timetaggers, but can be easily adapted to other formats.
 
@@ -23,7 +23,7 @@ A repository of tools for performing time-walk calibration and correction on tim
 <span class="latex">\href{https://github.com/sansseriff/SNSPD-time-walk-and-jitter-correction}{Time walk correction repository}</span>
 
 
-### Bias Controll User Interface
+### Bias controll user interface
 
 A web-based user interfaces for controlling isolated voltage sources used for SNSPD biasing. Is is an improvement over a previous web interface which is based on the [svelte frontend framework](https://svelte.dev/) and should be much easier to maintain and extend than the [previous web interface](https://github.com/sansseriff/Isolated_Vsource).
 
@@ -32,7 +32,7 @@ A web-based user interfaces for controlling isolated voltage sources used for SN
 ```
 <span class="latex">\href{https://github.com/sansseriff/snspd-bias-controll-svelte}{Svelte bias control repository}</span>
 
-### Entanglement Analysis Repositories
+### Entanglement analysis repositories
 
 This master repository contains submodules for all the repositories used for analyzing data from the high-rate entanglement distribution system. It includes a script for automatically populating each repository with the original raw data stored or figshare. 
 
@@ -42,7 +42,7 @@ This master repository contains submodules for all the repositories used for ana
 <span class="latex">\href{https://github.com/sansseriff/highrate_origin}{Entanglement analysis repository}</span>
 
 
-### Entanglement Control Software
+### Entanglement control software
 
 Based on an example file shipped with the swabian timetagger, this leverages the swabian python api for collecting entanglement data for the high-rate entanglement distribution system. It incorporates an innovative method for defining long running measurements based on a construct called `Actions`. `Actions` are objects that perform some operation at one stage in the script's main event loop (e.g. change an interferometer voltage to a specific value), or over multiple event loop iterations (e.g. integrate coincidences). Actions may also contain and run other actions, so that successively more complex measurements can be built from simple reusable components. This is done through an `evaluate` method that all `Action` methods share. The base class for all actions is located in `measurements/measurement_management.py`. When a complex measurement is finished, a highly nested construct of actions may export it's internal data to a `.json` file. The high-rate experiment [analysis repositories](https://github.com/sansseriff/highrate_origin) start with loading and analyzing these `.json` files. 
 
@@ -53,7 +53,7 @@ Based on an example file shipped with the swabian timetagger, this leverages the
 <span class="latex">\href{https://github.com/sansseriff/swabian_entanglement_gui}{Entanglement control software repository}</span>
 
 
-### Dark Count Rate Through Filters Simulation
+### Dark count rate through filters simulation
 
 Based on the known lens f-number, aperture size, detector size, and filter transmissions for the dark count minimization project, the rate of dark counts due to transmitted blackbody photons can be estimated. With this simulation we determined that 4 thick custom short-pass filters, and one bandpass filter were ideal for our experiment. 
 

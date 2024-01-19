@@ -13,7 +13,7 @@ The calibration process for the PEACOQ showed that high-rate pulse distortions a
 As before with the meandered SNSPD, there is no requirement that the calibration only be used in an application that's based on the same repetition rate of 1 Ghz. As interpolation between points on the delay vs.~$t'$ vs lookup curve is possible, delay corrections for arbitrary $t'$ measurements may be found. 
 
 
-#### Second Order Calibration
+#### Second order calibration
 
 The 2nd order time-walk correction is a new technique that builds on the methods previously introduced in this chapter.  The intrinsic reset time of the PEACOQ nanowires is considerably shorter than the time it takes an RF pulse to return to a steady zero voltage. So multiple pulses can arrive in the time it takes one RF pulse to fully decay as seen by the timing electronics. Therefore, a given RF pulse can be level shifted not only by the presence of one pulse before, but even two or three before. The calibration and correction process was extended to correct a given pulse timing measurement based on two inter-pulse time measurements $t'$ and $t''$ as shown in @fig:order_2nd a. The calibration process uses the same mode-locked laser derived pulse train as the 1st order calibration. For each $t'$ there is a full range of possible $t''$ times and vice versa, so the result of calibration becomes a 2D grid of delay corrections indexed by $t'$ and $t''$. $t'$ is always less than $t''$ for the parameterization chosen, where both are measured from the latest or ‘current’ time tag (@fig:order_2nd a). Therefore, the space of valid measurements is triangular as shown in @fig:order_2nd b.
 
