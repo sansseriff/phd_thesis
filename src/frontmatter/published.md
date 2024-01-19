@@ -24,7 +24,7 @@ A.S.M. managed the project, collected all data, drafted the manuscript. \textbf{
 % \item Cheng,~X., Chang,~K.-C., Sarihan,~M.~C., \textbf{Mueller,~A.}, Spiropulu,~M., Shaw, ~M.~D., Korzh,~B., Faraon,~A., Wong,~F.~N. C., Shapiro,~J.~H., \& Wong,~C.~W. (2023). High-dimensional time-frequency entanglement in a singly-filtered biphoton frequency comb. \href{https://doi.org/10.1038/s42005-023-01370-2}{Communications Physics, 6(1), 1–12.} \\
 % A.S.M. assisted with configuring and operating the low jitter SNSPDs used. 
 
-\item X. Cheng, K.-C. Chang, M. C. Sarihan,... \textbf{A. Mueller}, et al., “High-dimensional time-frequency entanglement in a singly-filtered biphoton frequency comb,” Communications Physics, vol. 6, no. 1, p. 278, Sep. 2023, ISSN: 2399-3650. DOI: 10.1038/s42005-023-01370-2. [Online]. Available: https://doi.org/10.1038/s42005-023-01370-2. \\
+\item X. Cheng, K.-C. Chang, M. C. Sarihan,... \textbf{A. Mueller}, et al., “High-dimensional time-frequency entanglement in a singly-filtered biphoton frequency comb,” Communications Physics, vol. 6, no. 1, p. 278, Sep. 2023, ISSN: 2399-3650. DOI: 10.1038/s42005-023-01370-2. [Online]. Available: \href{https://doi.org/10.1038/s42005-023-01370-2}{https://doi.org/10.1038/s42005-023-01370-2}. \\
 A.S.M. assisted with configuring and operating the low jitter SNSPDs used. 
 
 
@@ -33,7 +33,7 @@ A.S.M. assisted with configuring and operating the low jitter SNSPDs used.
 % \item Colangelo,~M., Korzh,~B., Allmaras,~J.~P., Beyer,~A.~D.,\textbf{Mueller,~A.~S.}, Briggs,~R.~M., Bumble,~B., Runyan,~M., Stevens,~M.~J., McCaughan,~A.~N., Zhu,~D., Smith,~S., Becker,~W., Narváez,~L., Bienfang,~J.~C., Frasca,~S., Velasco,~A.~E., Ramirez,~E.~E., Walter,~A.~B.,~… Shaw,~M.~D. (2023). Impedance-matched differential superconducting nanowire detectors. \href{https://doi.org/10.1103/PhysRevApplied.19.044093}{Physical Review Applied, 19(4), 044093}. \\
 % A.S.M. assisted with jitter measurements using a low-jitter time correlated single photon counting (TCSPC) system. 
 
-\item M. Colangelo, B. Korzh, J. P. Allmaras,... \textbf{A. Mueller}, et al., “Impedance-matched differential superconducting nanowire detectors,” Phys. Rev. Appl., vol. 19, p. 044 093, 4 Apr. 2023. DOI: 10.1103/PhysRevApplied .19.044093. [Online]. Available: https://link.aps.org/doi/10.1103/PhysRevApplied.19.044093. \\
+\item M. Colangelo, B. Korzh, J. P. Allmaras,... \textbf{A. Mueller}, et al., “Impedance-matched differential superconducting nanowire detectors,” Phys. Rev. Appl., vol. 19, p. 044 093, 4 Apr. 2023. DOI: 10.1103/PhysRevApplied .19.044093. [Online]. Available: \href{https://link.aps.org/doi/10.1103/PhysRevApplied.19.044093}{https://link.aps.org/doi/10.1103/PhysRevApplied.19.044093}. \\
 A.S.M. assisted with jitter measurements using a low-jitter time correlated single photon counting (TCSPC) system. 
 
 
@@ -43,7 +43,7 @@ A.S.M. assisted with jitter measurements using a low-jitter time correlated sing
 % \item Craiciu,~I., Korzh,~B., Beyer,~A.~D., \textbf{Mueller,~A.}, Allmaras,~J.~P., Narváez,~L.,~... \& Shaw,~M.~D. (2023). High-speed detection of 1550 nm single photons with superconducting nanowire detectors. \href{https://opg.optica.org/optica/fulltext.cfm?uri=optica-10-2-183&id=525546}{Optica, 10(2), 183-190}. \\
 % A.S.M. assisted collecting jitter measurements and applied the demonstrated time-walk correction. 
 
-\item I. Craiciu, B. Korzh, A. D. Beyer,... \textbf{A. Mueller}, et al., “High-speed detection of 1550 nm single photons with superconducting nanowire detectors,” Optica, vol. 10, no. 2, pp. 183–190, Feb. 2023. DOI: 10.1364/OPTICA.478960. [Online]. Available: https://opg.optica.org/optica/abstract.cfm?URI=optica-10-2-183. \\
+\item I. Craiciu, B. Korzh, A. D. Beyer,... \textbf{A. Mueller}, et al., “High-speed detection of 1550 nm single photons with superconducting nanowire detectors,” Optica, vol. 10, no. 2, pp. 183–190, Feb. 2023. DOI: 10.1364/OPTICA.478960. [Online]. Available: \ref{https://opg.optica.org/optica/abstract.cfm?URI=optica-10-2-183}{https://opg.optica.org/optica/abstract.cfm?URI=optica-10-2-183}. \\
 A.S.M. assisted collecting jitter measurements and applied the demonstrated time-walk correction. 
 
 
