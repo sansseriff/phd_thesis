@@ -48,7 +48,7 @@ replacements = {
     'Sci.': 'Science',
     'Sci ': 'Science ',
     'Opt.': 'Optics',
-    'Netw.': 'Networks',
+    'Netw.': 'Networking',
     '{J.': '{Journal of',
     'Commun.': 'Communications',
     'Comm.': 'Communications',
