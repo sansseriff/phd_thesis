@@ -38,17 +38,30 @@ lines.append("\n")
 # pandoc is sensitive to errant percent symbols '%' showing up in the .bib file. 
 # These are sometimes found in the abstract section of bib entries.  
 # this fixes the error when running mkdocs: "Pandoc died with exitcode "65" during conversion: Error at (line 17, column 1):"
+replacements = {
+    '%': 'percent',
+    'Appl.': 'Applied',
+    'Phys.': 'Physics',
+    'Rev.': 'Review',
+    'Rev. Mod. Phys.': 'Reviews of Modern Physics',
+    'Lett.': 'Letters',
+    'Sci.': 'Science',
+    'Sci ': 'Science ',
+    'Opt.': 'Optics',
+    'Commun.': 'Communications',
+    'Comm.': 'Communications',
+    'Nature photonics': 'Nature Photonics',
+    '{\percent}': ' percent ',
+    '\percent': ' percent '
+}
+
 with open('_references_inter.bib', 'w') as f:
     for line in lines:
-        new_line = line.replace('%', 'percent')
-        new_line = new_line.replace('{\percent}', ' percent ')
-        new_line = new_line.replace('\percent', ' percent ')
-
-        # can keep the lines that start with %
-        if line.startswith('%'):
-            f.write(line)
-        else:
-            f.write(new_line)
+        # Only do replacements if the line doesn't start with %
+        if not line.startswith('%'):
+            for old, new in replacements.items():
+                line = line.replace(old, new)
+        f.write(line)
 
 
 #-------- control parameter ---------
