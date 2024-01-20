@@ -48,6 +48,8 @@ replacements = {
     'Sci.': 'Science',
     'Sci ': 'Science ',
     'Opt.': 'Optics',
+    'Netw.': 'Networks',
+    '{J.': '{Journal of',
     'Commun.': 'Communications',
     'Comm.': 'Communications',
     'Nature photonics': 'Nature Photonics',
