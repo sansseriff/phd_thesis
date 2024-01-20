@@ -363,9 +363,6 @@ Superconducting nanowire single-photon detectors (SNSPDs) are a leading detector
 \hypertarget{introduction-2}{%
 \section{Introduction}\label{introduction-2}}
 
-\hypertarget{origin-of-time-walk}{%
-\subsection{Origin of time walk}\label{origin-of-time-walk}}
-
 Over the last decade, SNSPDs have advanced rapidly to become essential components in many optical systems and technologies, owing to their high efficiency $(>90\%)$~\autocite{99.5_Chang_2021,reddy2020superconducting}, fast reset times ($< 1~\mathrm{ns}$)~\autocite{Vetter2016Cavity} and scalability to kilopixel arrays~\autocite{Wollman2019}. The timing jitter of SNSPDs is also best-in-class -- values as low as 3~ps have been demonstrated in short nanowires~\autocite{Korzh2020}, and new high-efficiency designs exhibit sub-10 ps jitter~\autocite{EsmaeilZadeh2020,Colangelo2021}.
 
 SNSPD jitter increases with count rate due to properties of the nanowire reset process and features of the readout circuit. The effect bears resemblance to time walk observed in silicon avalanche diodes and other detectors where the pulses have varying heights and slew rates~\autocite{SPAD_walk_Kirchnir_1997} thereby causing a timing measurement using a fixed threshold to `walk' along the rising edge of the pulse (the labeled delay in Fig.~\ref{fig:jitterate_intro} a).
@@ -375,7 +372,7 @@ At low count rates SNSPDs exhibit very uniform pulse heights. However, at high c
 \begin{figure}
 \centering
 \includegraphics[width=0.7\textwidth,height=\textheight]{./chapter_03/figs/intro_jitterate_light.pdf}
-\caption[{Introduction to the time walk effect}]{\textbf{Introduction to the time walk effect} a) Diagram illustrating two major sources of correlated high count rate jitter. First, detections may occur during the reset time of a previous detection. At this time the bias current in the nanowire is below its saturated value so that a photodetection triggers an RF pulse with correspondingly lower amplitude. Second, an RF pulse may arrive in the undershoot region of a previous pulse, where the undershoot is a period of negative voltage induced by the low-frequency cutoff properties of the readout amplifier chain. (b) Measured histograms of detections from short $3~\mathrm{ps}$ mode-locked laser pulses. With lower attenuation and higher count rate, the observed timing uncertainty is greater. Inset shows where respective count rates fall on a maximum count rate (MCR) curve \autocite{Zhang_MCR_2019}. The MCR of an SNSPD is often quoted at the $3~\mathrm{dB}$ point, where the normalized efficiency drops to $-3~\mathrm{dB}$ of its maximum value. The jitter increase due to time walk manifests as a tail in the instrument response functions (inside dashed black box) even at count rates significantly below the 3-dB point where detector efficiency has not started to drop significantly (e.g.~the 1.7 Mcps data)}
+\caption[{Introduction to the time walk effect}]{\textbf{Introduction to the time walk effect} a) Diagram illustrating two major sources of correlated high count rate jitter. First, detections may occur during the reset time of a previous detection. At this time the bias current in the nanowire is below its saturated value so that a photodetection triggers an RF pulse with correspondingly lower amplitude. Second, an RF pulse may arrive in the undershoot region of a previous pulse, where the undershoot is a period of negative voltage induced by the low-frequency cutoff properties of the readout amplifier chain. (b) Measured histograms of detections from short $3~\mathrm{ps}$ mode-locked laser pulses. With lower attenuation and higher count rate, the observed timing uncertainty is greater. Inset shows where respective count rates fall on a maximum count rate (MCR) curve \autocite{Zhang_MCR_2019}. The MCR of an SNSPD is often quoted at the $3~\mathrm{dB}$ point, where the normalized efficiency drops to $-3~\mathrm{dB}$ of its maximum value. The jitter increase due to time walk manifests as a tail in the instrument response functions (inside dashed black box) even at count rates significantly below the 3-dB point where detector efficiency has not started to drop significantly (e.g., the 1.7 Mcps data).}
 \label{fig:jitterate_intro}
 \end{figure}
 }
@@ -405,9 +402,6 @@ We calculate the time between a given \emph{current} SNSPD detection event and a
 
 \hypertarget{method-and-results}{%
 \section{Method and results}\label{method-and-results}}
-
-\hypertarget{experimental-setup}{%
-\subsection{Experimental setup}\label{experimental-setup}}
 
 The measurements used for calibration and correction were acquired with a high rate mode locked laser (\emph{Pritel}). The minimum repetition rate of this laser was too high to produce a calibration dataset for the Tungsten Silicide detector at highest count rate, given the constraints addressed in the main text. Therefore, the laser was set at a repetition rate of 10.75 GHz and modulated down to 537.5 MHz using two lithium niobate intensity modulators in series. Residual peaks from suppressed mode-locked laser pulses are not observed above the noise floor in the collected data, so their effect was not further considered. Clock jitter is minimized in post-processing with the help of a software-based Phase Locked Loop.
 
