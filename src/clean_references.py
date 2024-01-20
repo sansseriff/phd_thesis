@@ -54,7 +54,7 @@ replacements = {
     'Comm.': 'Communications',
     'Nature photonics': 'Nature Photonics',
     '{\percent}': ' percent ',
-    '\percent': ' percent '
+    '\percent': ' percent ',
 }
 
 with open('_references_inter.bib', 'w') as f:
