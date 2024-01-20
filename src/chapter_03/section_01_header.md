@@ -1,6 +1,6 @@
 A version of this chapter is published as:
 
-Andrew Mueller, Emma E. Wollman, Boris Korzh, Andrew D. Beyer, Lautaro Narvaez, Ryan Rogalin, Maria Spiropulu, Matthew D. Shaw; [Time-walk and jitter correction in SNSPDs at high count rates](https://pubs.aip.org/aip/apl/article/122/4/044001/2870246/Time-walk-and-jitter-correction-in-SNSPDs-at-high). Appl. Phys. Lett. 23 January 2023; 122 (4): 044001,
+**A. Mueller**, E. E. Wollman, B. Korzh, et al., “Time-walk and jitter correction in SNSPDs at high count rates,” Applied Physics Letters, vol. 122, no. 4, Jan. 2023, 044001, ISSN: 0003-6951. DOI: 10.1063/5.0129147. [Online]. Available: [https://doi.org/10.1063/5.0129147](https://doi.org/10.1063/5.0129147).
 
 with the permission of AIP Publishing.
 
@@ -8,6 +8,8 @@ with the permission of AIP Publishing.
 <br>
 Portions of this chapter appear in: 
 
-Ioana Craiciu, Boris Korzh, Andrew D. Beyer, Andrew Mueller, Jason P. Allmaras, Lautaro Narváez, Maria Spiropulu, Bruce Bumble, Thomas Lehner, Emma E. Wollman, & Matthew D. Shaw (2023). [High-speed detection of 1550 nm single photons with superconducting nanowire detectors](https://opg.optica.org/optica/fulltext.cfm?uri=optica-10-2-183&id=525546). Optica, 10(2), 183–190,
+I. Craiciu, B. Korzh, A. D. Beyer,... **A. Mueller**, et al., “High-speed detection of 1550 nm single photons with superconducting nanowire detectors,” Optica, vol. 10, no. 2, pp. 183–190, Feb. 2023. DOI: 10.1364/OPTICA.478960. [Online]. Available: [https://opg.optica.org/optica/abstract.cfm?URI=optica-10-2-183](https://opg.optica.org/optica/abstract.cfm?URI=optica-10-2-183).  
 
 with the permission of Optica Publishing Group.
+
+

@@ -258,9 +258,9 @@ Here, we focused on lowering the Dark Count Rate (DCR) of a telecom-band SNSPD s
 
 The highest system detection efficiencies have been achieved using self-aligned fiber coupling where dark counts can be reduced using cryogenic fiber looping \autocite{Cohen2015} or spliced narrow-band filters \autocite{Boaron2018secure}. But it is difficult to achieve strong filtering without losses at the target wavelength. Low-loss, high-rejection filters are typically available as free-space components, so some of the highest reported H-values were achieved with cryogenic, fiber to free-space to fiber coupling, but exhibit an SDE of only a few percent \autocite{Shibata2015}. The filtering method presented here takes advantage of commercially-available filters, achieves a high free-space coupling efficiency using a cryogenic lens, and is compatible with both fiber and free-space optical inputs.
 
-The system was designed around the use of two each of two types of ultra-high rejection custom short-pass filters (semrock) with pass-bands below $1.6 \mathrm{\upmu m}$ and $1.9 \mathrm{\upmu m}$ (Andover Corp.). As shown in Fig.~\ref{fig:dcrmin_filters} b, any mid-IR passbands of one filter compliment a high rejection spectral region of the other. They reject wavelengths shorter than $3 \ \mathrm{\upmu m}$ through reflective optical coatings, and attenuate longer wavelengths through material absorption in the N-BK7 glass substrate. Since the filtering depends on the attenuation of the glass itself, the filters are unusually thick -- 12.7 mm.
+The system was designed around the use of two each of two types of ultra-high rejection custom short-pass filters (semrock) with pass-bands below $1.6 \mathrm{\upmu m}$ and $1.9 \mathrm{\upmu m}$ (Andover Corp.). As shown in Fig.~\ref{fig:dcrmin_filters} b, any mid-IR passbands of one filter compliment a high rejection spectral region of the other. They reject wavelengths shorter than $3 \ \mathrm{\upmu m}$ through reflective optical coatings, and attenuate longer wavelengths through material absorption in the N-BK7 glass substrate. Since the filtering depends on the attenuation of the glass itself, the filters are unusually thick --- 12.7 mm.
 
-As initial modelling showed that 4 filters in series were required to sufficiently block mid-IR light, the cryostat design had to accommodate a several-inch thick set of filters. This thickness, and the desire to couple to a single-model fiber compatible detector with low jitter, also necessitated the use of a cryogenic lens. A 1-inch diameter lens, if mounted outside the cryostat with a focal length surpassing the filter-stack thickness, couldn't have focused to a sufficiently small spot.
+As initial modelling showed that 4 filters in series were required to sufficiently block mid-IR light, the cryostat design had to accommodate a several-inch thick set of filters. This thickness, and the desire to couple to a single-model fiber compatible detector with low jitter, also necessitated the use of a cryogenic lens. A 1-inch diameter lens, if mounted outside the cryostat with a focal length surpassing the filter-stack thickness, could not have focused to a sufficiently small spot.
 
 \hypertarget{design}{%
 \section{Design}\label{design}}
@@ -290,7 +290,7 @@ The cryo-lens and 0.8 K optical stage had to align using a configuration that wo
 \begin{figure}
 \centering
 \includegraphics[width=1\textwidth,height=\textheight]{./chapter_02/figs/dcrmin_alignment_light.png}
-\caption[{Method of optical alignment}]{\textbf{Method of optical alignment} a) Configuration used for checking alignment of the cryo-lens with the fridge open. b) Diagram of the optics in the same configuration. The 4 K radiation shield (not shown in full) supports 2 of the short pass filters and bandpass filter (pink)}
+\caption[{Method of optical alignment}]{\textbf{Method of optical alignment} a) Configuration used for checking alignment of the cryo-lens with the fridge open. b) Diagram of the optics in the same configuration. The 4 K radiation shield (not shown in full) supports 2 of the short pass filters and bandpass filter (pink).}
 \label{fig:optics_alignment}
 \end{figure}
 }
@@ -304,25 +304,25 @@ The filtering of the optical stack was modeled by assuming a black-body emitter 
 \begin{figure}
 \centering
 \includegraphics[width=1\textwidth,height=\textheight]{./chapter_02/figs/simulation_filter_thesis_light.pdf}
-\caption[{Dark count rate simulation \& bandpass transmission}]{\textbf{Dark count rate simulation \& bandpass transmission} a) Simulated photon flux at various laboratory temperatures with and without the 1550 nm bandpass filter (BP). b) Normalized transmission spectrum of the bandpass filter. Plotted at low temperature by measuring SNSPD count rate versus frequency of the illuminating laser}
+\caption[{Dark count rate simulation \& bandpass transmission}]{\textbf{Dark count rate simulation \& bandpass transmission} a) Simulated photon flux at various laboratory temperatures with and without the 1550 nm bandpass filter (BP). b) Normalized transmission spectrum of the bandpass filter. Plotted at low temperature by measuring SNSPD count rate versus frequency of the illuminating laser.}
 \label{fig:simulation_filter}
 \end{figure}
 }
 
 While the bandpass filter (FWHM = 7 nm) was found to blue-shift by about 2 nm at cryogenic temperatures, the passband was wide enough such that significant attenuation was not observed at the original target wavelength of 1550 nm. This filter is also sufficiently wide to avoid Fourier-limited broadening of ultra-short laser pulses.
 
-Also evident in Fig.~\ref{fig:simulation_filter} a is the strong dependence of DCR on the temperature of the final surface outside the cryostat emitting thermal radiation. This motivated the exterior cooling apparatus sketched in Fig.~\ref{fig:setup} a and shown in Fig.~\ref{fig:cooling} b and c.~The bulkhead holding the fiber connector is cooled to around -2$^\circ$C using a Peltier element and liquid cooling block. This addition reduced the system DCR from 0.4 Hz to below 0.1 Hz. While dark counts from multiple spatial modes are present in this system --- modes that would not be present in a purely fiber based approach --- the external cooling technique works to minimize their effect. Compared with the use of piezo-electric actuators or servos inside the cryostat for optical alignment, the external cooling approach is simple and cost-effective.
+Also evident in Fig.~\ref{fig:simulation_filter} a is the strong dependence of DCR on the temperature of the final surface outside the cryostat emitting thermal radiation. This motivated the exterior cooling apparatus sketched in Fig.~\ref{fig:setup} a and shown in Fig.~\ref{fig:cooling} b and c.~The bulkhead holding the fiber connector is cooled to around $-2^\circ$ C using a Peltier element and liquid cooling block. This addition reduced the system DCR from 0.4 Hz to below 0.1 Hz. While dark counts from multiple spatial modes are present in this system --- modes that would not be present in a purely fiber based approach --- the external cooling technique works to minimize their effect. Compared with the use of piezo-electric actuators or servos inside the cryostat for optical alignment, the external cooling approach is simple and cost-effective.
 
 \hypertarget{fig:cooling}{%
 \begin{figure}
 \centering
 \includegraphics[width=1\textwidth,height=\textheight]{./chapter_02/figs/exterior_optics_and_cooling_light.png}
-\caption[{External optics and cooling}]{\textbf{External optics and cooling} a) The mirror and XYZ translation fiber mount used on the exterior of the cryostat during normal low-dark-count operation. b) The liquid cooling block attached over a thermoelectric element onto the XYZ translation mount. Cooling a surface as close as possible to the fiber output reduced dark counts the best. Other visible wires power thermal probes. c) Infrared image showing the cooling effect on the XYZ mount}
+\caption[{External optics and cooling}]{\textbf{External optics and cooling} a) The mirror and XYZ translation fiber mount used on the exterior of the cryostat during normal low-dark-count operation. b) The liquid cooling block attached over a thermoelectric element onto the XYZ translation mount. Cooling a surface as close as possible to the fiber output reduced dark counts the best. Other visible wires power thermal probes. c) Infrared image showing the cooling effect on the XYZ mount.}
 \label{fig:cooling}
 \end{figure}
 }
 
-This work used a low-jitter SNSPD of the tapered differential design\autocite{Colangelo2023}, with an active area of $22 \times 15 \ \mathrm{\upmu m}$, formed by a meander of 100 nm-wide and 5-nm-thick niobium nitride (NbN) nanowires on a 500 nm pitch. A more conventional single-ended readout SNSPD of similar area would also achieve low DCR in this coupling system, but would likely achieve a lower performance metric $H$ from correspondingly higher jitter. The nanowire is embedded in an efficiency-enhancing optical stack made of alternating layers of TiO$_2$ and SiO$_2$ and a gold mirror layer. As shown in Fig.~\ref{fig:main_data} a and b, when fiber coupled (without any fiber-based filtering methods applied), this detector achieved a saturated SDE of $84\% \pm 4.4 \%$ and a DCR of 20 Hz at a bias current of $16\ \mathrm{\upmu A}$.
+This work used a low-jitter SNSPD of the tapered differential design \autocite{Colangelo2023}, with an active area of $22 \times 15 \ \mathrm{\upmu m}$, formed by a meander of 100 nm-wide and 5-nm-thick niobium nitride (NbN) nanowires on a 500 nm pitch. A more conventional single-ended readout SNSPD of similar area would also achieve low DCR in this coupling system, but would likely achieve a lower performance metric $H$ from correspondingly higher jitter. The nanowire is embedded in an efficiency-enhancing optical stack made of alternating layers of TiO$_2$ and SiO$_2$ and a gold mirror layer. As shown in Fig.~\ref{fig:main_data} a and b, when fiber coupled (without any fiber-based filtering methods applied), this detector achieved a saturated SDE of $84\% \pm 4.4 \%$ and a DCR of 20 Hz at a bias current of $16\ \mathrm{\upmu A}$.
 
 \hypertarget{results}{%
 \section{Results}\label{results}}
@@ -343,13 +343,13 @@ As also shown in Fig.~\ref{fig:main_data} a, the free-space coupling system achi
 
 A version of this chapter is published as:
 
-Andrew Mueller, Emma E. Wollman, Boris Korzh, Andrew D. Beyer, Lautaro Narvaez, Ryan Rogalin, Maria Spiropulu, Matthew D. Shaw; \href{https://pubs.aip.org/aip/apl/article/122/4/044001/2870246/Time-walk-and-jitter-correction-in-SNSPDs-at-high}{Time-walk and jitter correction in SNSPDs at high count rates}. Appl. Phys. Lett. 23 January 2023; 122 (4): 044001,
+\textbf{A. Mueller}, E. E. Wollman, B. Korzh, et al., ``Time-walk and jitter correction in SNSPDs at high count rates,'' Applied Physics Letters, vol.~122, no. 4, Jan.~2023, 044001, ISSN: 0003-6951. DOI: 10.1063/5.0129147. {[}Online{]}. Available: \url{https://doi.org/10.1063/5.0129147}.
 
 with the permission of AIP Publishing.
 
 Portions of this chapter appear in:
 
-Ioana Craiciu, Boris Korzh, Andrew D. Beyer, Andrew Mueller, Jason P. Allmaras, Lautaro Narváez, Maria Spiropulu, Bruce Bumble, Thomas Lehner, Emma E. Wollman, \& Matthew D. Shaw (2023). \href{https://opg.optica.org/optica/fulltext.cfm?uri=optica-10-2-183\&id=525546}{High-speed detection of 1550 nm single photons with superconducting nanowire detectors}. Optica, 10(2), 183--190,
+I. Craiciu, B. Korzh, A. D. Beyer,\ldots{} \textbf{A. Mueller}, et al., ``High-speed detection of 1550 nm single photons with superconducting nanowire detectors,'' Optica, vol.~10, no. 2, pp.~183--190, Feb.~2023. DOI: 10.1364/OPTICA.478960. {[}Online{]}. Available: \url{https://opg.optica.org/optica/abstract.cfm?URI=optica-10-2-183}.
 
 with the permission of Optica Publishing Group.
 
