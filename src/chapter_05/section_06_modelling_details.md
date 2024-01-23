@@ -59,7 +59,7 @@ $$R_A = 0.99 \pm 0.03, ~~~~~~ R_B = 1.04 \pm 0.03.$$
 
 ![**Wavefunction branches** Different pairings of interferometer output ports collect different wavefunction branches.](./figs/branches_light.svg){#fig:branches short-caption='Wavefunction branches' width=70% path="chapter_05"}
 
-The coincidence rates for all wavefunction branches are the same if $\theta$ in @eq:cosines is set to zero. With this phase state rate $C_{A+ B+, \theta=0}$ measured directly (labeled B in @fig:fringes), it's straightforward to estimate the full wavefunction coincidence rate across all interferometer outputs. As shown in table <span class="html">[1](#table:branches)</span><span class="latex"> \ref{table:branches}</span>, the rate is $C_{A+ B+}(1 + R_A + R_B + R_AR_B)$. This estimate is used to express a full coincidence rate for <span class="html">Figures [system:2](./section_04_system_results.md/#fig:shg_scan) and [system:3](./section_04_system_results.md/#fig:channel_data)</span><span class="latex">\ref{fig:shg_scan} and \ref{fig:channel_data}</span>. 
+The coincidence rates for all wavefunction branches are the same if $\theta$ in @eq:cosines is set to zero. With this phase state rate $C_{A+ B+, \theta=0}$ measured directly (labeled B in @fig:fringes), it's straightforward to estimate the full wavefunction coincidence rate across all interferometer outputs. As shown in table <span class="html">[1](#table:branches)</span><span class="latex"> \ref{table:branches}</span>, the rate is $C_{A+ B+}(1 + R_A + R_B + R_AR_B)$. This estimate is used to express a full coincidence rate for <span class="html">Figures [system:2](./section_04_system_results.md/#fig:shg_scan) and [system:3](./section_04_system_results.md/#fig:channel_data)</span><span class="latex">Figures \ref{fig:shg_scan} and \ref{fig:channel_data}</span>. 
 
 <div class="latex">
 \definecolor{color1}{HTML}{38A5BA}
@@ -103,7 +103,7 @@ $$
 </table>
 ```
 
-For main-text figure 2 in particular, coincidences were measured with the center bin rate tuned to a minimum $\theta=-\frac{\pi}{2}$ (grey solid line in main-text figure 2c). The rate therefore captures the contribution from the 6 phase-independent terms for the $A\!\!+\!\!B\!+\!$ wavefunction branch. This can be extrapolated to the $\theta=0$ state by multiplying by $\frac{4}{3}$. For the rate displayed to be consistent with the measures of coupling efficiency $\eta$ (and so the interferometers aren't thought of as a source of $\sim$ 50\% loss), this rate is multiplied again by $(1 + R_AR_B)$ to represent two wavefunction branches. This results in a total scaling of: 
+For <span class="html"> Figure [system:1](./section_04_system_results.md#fig:figure_2nd_1)</span><span class="latex">Figure \ref{fig:figure_2nd_1}</span> in particular, coincidences were measured with the center bin rate tuned to a minimum $\theta=-\frac{\pi}{2}$ (grey solid line in main-text figure 2c). The rate therefore captures the contribution from the 6 phase-independent terms for the $A\!\!+\!\!B\!+\!$ wavefunction branch. This can be extrapolated to the $\theta=0$ state by multiplying by $\frac{4}{3}$. For the rate displayed to be consistent with the measures of coupling efficiency $\eta$ (and so the interferometers aren't thought of as a source of $\sim$ 50\% loss), this rate is multiplied again by $(1 + R_AR_B)$ to represent two wavefunction branches. This results in a total scaling of: 
 
 $$C_{fig. 2} = \frac{4}{3}(1 + R_AR_B)C_{measured}$$
 
