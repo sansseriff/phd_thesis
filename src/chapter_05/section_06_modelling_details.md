@@ -79,7 +79,7 @@ singles rate 2  & $S_{B+}$ &$S_{B+}$               &$S_{B-} = R_B S_{B+}$  &$S_{
 coincidence rate&\textcolor{color1}{$C_{A+B+}$}&\textcolor{color3}{$C_{A-B+}=R_A C_{A+B+}$}&\textcolor{color2}{$C_{A+B-}=R_B C_{A+B+}$}&\textcolor{color4}{$C_{A-B-}=R_B R_A C_{A+B+}$}\\
 \hline
 \end{tabular}
-\caption[{Rates for wavefunction branches}]{Singles and coincidence rates for wavefunction branches. The $A+, B+$ branch was measured, and the rates of other branches are predicted using relative transmission factors $R_A, R_B$}
+\caption[{Rates for wavefunction branches}]{Singles and coincidence rates for wavefunction branches. The $A+, B+$ branch was measured, and the rates of other branches are predicted using relative transmission factors $R_A, R_B$.}
 \end{table}
 </div>
 ```{=html}
@@ -99,13 +99,13 @@ $$
 | singles rate 1 | $\small{S_{A+}}$ | $\small{S_{A-}=R_A S_{A+}}$ | $\small{S_{A+}}$ | $\small{S_{A-}=R_A S_{A+}}$ |
 | singles rate 2 | $\small{S_{B+}}$ | $\small{S_{B+}}$ | $\small{S_{B-} = R_B S_{B+}}$ | $\small{S_{B-} = R_B S_{B+}}$ |
 | coincidence rate | ${\color{color1}\small{C_{A+B+}}}$ | ${\color{color3}\small{C_{A-B+}=R_A C_{A+B+}}}$ | ${\color{color2}\small{C_{A+B-}=R_B C_{A+B+}}}$ | ${\color{color4}\small{C_{A-B-}=R_B R_A C_{A+B+}}}$ |
-<figcaption markdown>**Rates for wavefunction branches** Singles and coincidence rates for wavefunction branches. The $A+, B+$ branch was measured, and the rates of other branches are predicted using relative transmission factors $R_A, R_B$ </figcaption>
+<figcaption markdown>**Rates for wavefunction branches** Singles and coincidence rates for wavefunction branches. The $A+, B+$ branch was measured, and the rates of other branches are predicted using relative transmission factors $R_A, R_B$. </figcaption>
 </table>
 ```
 
-For <span class="html"> Figure [system:1](./section_04_system_results.md#fig:figure_2nd_1)</span><span class="latex">Figure \ref{fig:figure_2nd_1}</span> in particular, coincidences were measured with the center bin rate tuned to a minimum $\theta=-\frac{\pi}{2}$ (grey solid line in main-text figure 2c). The rate therefore captures the contribution from the 6 phase-independent terms for the $A\!\!+\!\!B\!+\!$ wavefunction branch. This can be extrapolated to the $\theta=0$ state by multiplying by $\frac{4}{3}$. For the rate displayed to be consistent with the measures of coupling efficiency $\eta$ (and so the interferometers aren't thought of as a source of $\sim$ 50\% loss), this rate is multiplied again by $(1 + R_AR_B)$ to represent two wavefunction branches. This results in a total scaling of: 
+For <span class="html"> Fig. [system:1](./section_04_system_results.md#fig:figure_2nd_1)</span><span class="latex">Fig. \ref{fig:figure_2nd_1}</span> in particular, coincidences were measured with the center bin rate tuned to a minimum $\theta=-\frac{\pi}{2}$ (grey solid line in main-text <span class="html"> Fig. [system:1](./section_04_system_results.md#fig:figure_2nd_1)c</span><span class="latex">Fig. \ref{fig:figure_2nd_1}c</span>). The rate therefore captures the contribution from the 6 phase-independent terms for the $A\!\!+\!\!B\!+\!$ wavefunction branch. This can be extrapolated to the $\theta=0$ state by multiplying by $\frac{4}{3}$. For the rate displayed to be consistent with the measures of coupling efficiency $\eta$ (and so the interferometers are not thought of as a source of $\sim$ 50\% loss), this rate is multiplied again by $(1 + R_AR_B)$ to represent two wavefunction branches. This results in a total scaling of: 
 
-$$C_{fig. 2} = \frac{4}{3}(1 + R_AR_B)C_{measured}$$
+$$C_{Fig. \ref{fig:figure_2nd_1}} = \frac{4}{3}(1 + R_AR_B)C_{measured}.$$
 
 
 ## Joint spectral intensity analysis
