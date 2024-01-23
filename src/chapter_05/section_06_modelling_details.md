@@ -118,7 +118,7 @@ This entanglement source is potentially useful for future quantum communication 
 
 ### JSI modelling
 
-We follow an analysis for co-linear quasi-phase matching inside a waveguide packaged SPDC crystal [@Davis2022; @ZielnickiKwiat2018SPDCmodel]. The joint spectral intensity $|f(\omega_s, \omega_i)|^2$  is modelled as a product of phase matching and pump envelope intensities |$\psi_{\mathrm{ph}}\left(\omega_s, \omega_i\right)|^2$ and $|\psi_p\left(\omega_s, \omega_i\right)|^2$, where $\omega_s$ and $\omega_i$ are the frequencies of the signal and idler models respectively. The phase matching envelope intensity takes the form:
+We follow an analysis for co-linear quasi-phase matching inside a waveguide packaged SPDC crystal [@Davis2022; @ZielnickiKwiat2018SPDCmodel]. The joint spectral intensity $|f(\omega_s, \omega_i)|^2$  is modelled as a product of phase matching and pump envelope intensities |$\psi_{\mathrm{ph}}\left(\omega_s, \omega_i\right)|^2$ and $|\psi_p\left(\omega_s, \omega_i\right)|^2$, where $\omega_s$ and $\omega_i$ are the frequencies of the signal and idler models, respectively. The phase matching envelope intensity takes the form:
 
 $$
 \left|\psi_{\mathrm{ph}}\left(\omega_s, \omega_i\right)\right|^2=\operatorname{sinc}^2\left(\frac{\Delta k L}{2}\right),\;\;\;\;\;\; \Delta k=2 \pi\left(\frac{n\left(\lambda_p\right)}{\lambda_p}-\frac{n\left(\lambda_s\right)}{\lambda_s}-\frac{n\left(\lambda_i\right)}{\lambda_i}-\Gamma\right)
@@ -134,7 +134,7 @@ $$|\psi_p\left(\omega_s, \omega_i\right)|^2=\exp \left(-\frac{\left(\omega_p-\om
 where $\omega_p$ and $\sigma_p$ are the center frequency and bandwidth of the pump signal out of the EDFA/SHG module. Unlike $\lambda_p$ in the phase matching expression above, $\omega_p$ and $\sigma_p$ are fixed to known values or chosen as floating fitting parameters. 
 
 ### JSI fitting
-The JSI model is fitted to the the 8x8 DWDM data from Fig.~2a in the main text. The transmission spectrum of one DWDM channel was measured and used to estimate the transmission properties for all pairs of 8 channels. For each measurement of coincidence rate from Fig.~2a we define an integration over the joint spectral intensity and the corresponding filter passbands:
+The JSI model is fitted to the the 8x8 DWDM data from <span class="html"> Fig. [system:1](./section_04_system_results.md#fig:figure_2nd_1)a</span><span class="latex">Fig. \ref{fig:figure_2nd_1}a</span>. The transmission spectrum of one DWDM channel was measured and used to estimate the transmission properties for all pairs of 8 channels. For each measurement of coincidence rate from <span class="html"> Fig. [system:1](./section_04_system_results.md#fig:figure_2nd_1)a</span><span class="latex">Fig. \ref{fig:figure_2nd_1}a</span> we define an integration over the joint spectral intensity and the corresponding filter passbands:
 
 $$
 \begin{align}
@@ -160,11 +160,11 @@ Varying MgO doping percentage and varying crystal temperature affect the Sellmei
 
 ![**JSI simulation results** a) \& b) For type-0 SPDC, the relationship between refractive indices of pump and down-converted wavelengths produces an intensity profile roughly parallel with the pump envelope. This is responsible for the broad output spectrum of these crystals. c) the coincidence rates in Kcounts/s that are fit to filter-defined integrations of the JSI. d) Joint spectral distributions of coincidences expected from the filter pairings that correspond to the main diagonal. Here the joint spectrums of 8 DWDM channels pairs are shown summed together, where each component of the sum is an expression like the integrand of $C_{u,v}$ above.](./figs/JSI_sim_results_light.svg){#fig:jsi_sim short-caption='JSI simulation results' width=100% path="chapter_05"}
 
-An ideal photon pair source for scalable optical quantum information processing would not exhibit joint spectral correlations between the signal and idler photons. The Schmidt decomposition, which is equivalent to the singular value decomposition in our computational model, can be used to quantify these correlations [@ZielnickiKwiat2018SPDCmodel]. We apply the Schmidt decomposition to the filtered JSIs for filter pairings along the main diagonal in Fig.~2a in the main text, and derive the inverse Schmidt number for these modes
+An ideal photon pair source for scalable optical quantum information processing would not exhibit joint spectral correlations between the signal and idler photons. The Schmidt decomposition, which is equivalent to the singular value decomposition in our computational model, can be used to quantify these correlations [@ZielnickiKwiat2018SPDCmodel]. We apply the Schmidt decomposition to the filtered JSIs for filter pairings along the main diagonal in <span class="html"> Fig. [system:1](./section_04_system_results.md#fig:figure_2nd_1)a</span><span class="latex">Fig. \ref{fig:figure_2nd_1}a</span>, and derive the inverse Schmidt number for these modes
 
 $$1/K = \sum_i \lambda_i^2$$
 
-where $\lambda_i$ are the Schmidt coefficients [@ZielnickiKwiat2018SPDCmodel]. The inverse Schmidt numbers for all 8 channel pairs are similar, and are not expected for vary due to any phenomena beyond inaccuracies of the model. Therefore, we quote single values for $1/K$ in the main text. 
+where $\lambda_i$ are the Schmidt coefficients [@ZielnickiKwiat2018SPDCmodel]. The inverse Schmidt numbers for all 8 channel pairs are similar, and are not expected for vary due to any phenomena beyond inaccuracies of the model. Therefore, we quote single values for $1/K$ in the <span class="html">[system & results section](./section_04_system_results.md)<span><span class="latex">section \ref{results-2}</span>. 
 
 ## Consequences of narroband filtering
 ### Calculation of mean photon number per pulse <span class="html">μ</span><span class="latex">\texorpdfstring{$\mu$}{mu}</span>
