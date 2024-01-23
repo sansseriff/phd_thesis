@@ -105,8 +105,12 @@ $$
 
 For <span class="html"> Fig. [system:1](./section_04_system_results.md#fig:figure_2nd_1)</span><span class="latex">Fig. \ref{fig:figure_2nd_1}</span> in particular, coincidences were measured with the center bin rate tuned to a minimum $\theta=-\frac{\pi}{2}$ (grey solid line in main-text <span class="html"> Fig. [system:1](./section_04_system_results.md#fig:figure_2nd_1)c</span><span class="latex">Fig. \ref{fig:figure_2nd_1}c</span>). The rate therefore captures the contribution from the 6 phase-independent terms for the $A\!\!+\!\!B\!+\!$ wavefunction branch. This can be extrapolated to the $\theta=0$ state by multiplying by $\frac{4}{3}$. For the rate displayed to be consistent with the measures of coupling efficiency $\eta$ (and so the interferometers are not thought of as a source of $\sim$ 50\% loss), this rate is multiplied again by $(1 + R_AR_B)$ to represent two wavefunction branches. This results in a total scaling of: 
 
-$$C_{Fig. \ref{fig:figure_2nd_1}} = \frac{4}{3}(1 + R_AR_B)C_{measured}.$$
-
+<span class="latex">
+$$C_{Fig. \: \ref{fig:figure_2nd_1}} = \frac{4}{3}(1 + R_AR_B)C_{measured}.$$
+</span>
+<span class="html">
+$$C_{Fig. \: system:1} = \frac{4}{3}(1 + R_AR_B)C_{measured}.$$
+</span>
 
 ## Joint spectral intensity analysis
 
