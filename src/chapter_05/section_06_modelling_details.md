@@ -20,11 +20,11 @@ This section uses numbers in kets to signify time delays, such that the notation
 
 $$|k\rangle \rightarrow \frac{1}{2}\left(|k\rangle_{(A/B)+}+e^{i \phi_{s / i} \mid}|k+1\rangle_{(A/B)+}+i|k\rangle_{(A/B)-}-i e^{i \phi_{s / i}}|k+1\rangle_{(A/B)-}\right)$$
 
-Where $(A/B)+$ and $(A/B)-$ denote the output ports of Alice ($A$) or Bob's ($B$) interferometer. The full state is a 28-term expression made of four so-called 'branches' indexed by the four combinations of interferometer output ports: $A+ B+, A+ B- A- B+$ and $A- B-$. Each branch has a term in the following form, with amplitude dependent on the phase relationship between the interferometers:
+where $(A/B)+$ and $(A/B)-$ denote the output ports of Alice ($A$) or Bob's ($B$) interferometer. The full state is a 28-term expression made of four so-called 'branches' indexed by the four combinations of interferometer output ports: $A+ B+, A+ B- A- B+$ and $A- B-$. Each branch has a term in the following form, with amplitude dependent on the phase relationship between the interferometers:
 
 $$p\left(e^{i \phi}+qe^{i\left(\phi_s+\phi_i\right)}\right)|2\rangle_{Au}|2\rangle_{Bv} $$
 
-Where $p, q, u, v \in \{\{+1,+1, +, +\}, \{i,-1, +, -\}, \{i,-1, -, +\}, \{-1,+1, -, -\}\}$ for the four terms. These terms define the probability amplitude of the quantum state in the so-called phase basis. The modulous squared of these terms gives the phase-dependent probability of coincidences across the center time bins, as measured at interferometer outputs of Alice and Bob. 
+where $p, q, u, v \in \{\{+1,+1, +, +\}, \{i,-1, +, -\}, \{i,-1, -, +\}, \{-1,+1, -, -\}\}$ for the four terms. These terms define the probability amplitude of the quantum state in the so-called phase basis. The modulous squared of these terms gives the phase-dependent probability of coincidences across the center time bins, as measured at interferometer outputs of Alice and Bob. 
 
 All the phase terms can be grouped into one variable $\theta = \phi_s + \phi_i - \phi$, and the four $|2\rangle|2\rangle$ terms can be re-expressed in terms of the the cosine function [@Marcikic2002; @Kim2022]:
 
@@ -48,7 +48,7 @@ As each readout interferometer has two output ports, the full output state obser
 
 $R_A$ is the ratio of transmissions $t_{A-}$ over $t_{A+}$, where $t_{A-}$ is the transmission through the input to output $A-$ and $t_{A+}$ is the transmission through the input to output $A-$. $R_B$ is defined analogously. We measure values for $R_A$ and $R_B$ by sending a pulsed laser into the input and measuring the ratio of power transmitted across the output ports:
 
-$$R_A = 0.99 \pm 0.03, ~~~~~~ R_B = 1.04 \pm 0.03$$
+$$R_A = 0.99 \pm 0.03, ~~~~~~ R_B = 1.04 \pm 0.03.$$
 
 <!-- \begin{figure}[H]
     \centering
@@ -57,9 +57,9 @@ $$R_A = 0.99 \pm 0.03, ~~~~~~ R_B = 1.04 \pm 0.03$$
     % \label{fig:branches}
 \end{figure} -->
 
-![**Wavefunction branches** Different pairings of interferometer output ports collect different wavefunction branches](./figs/branches_light.svg){#fig:branches short-caption='Wavefunction branches' width=70% path="chapter_05"}
+![**Wavefunction branches** Different pairings of interferometer output ports collect different wavefunction branches.](./figs/branches_light.svg){#fig:branches short-caption='Wavefunction branches' width=70% path="chapter_05"}
 
-The coincidence rates for all wavefunction branches are the same if $\theta$ in @eq:cosines is set to zero. With this phase state rate $C_{A+ B+, \theta=0}$ measured directly (labeled B in @fig:fringes), it's straightforward to estimate the full wavefunction coincidence rate across all interferometer outputs. As shown in table @table:branches, the rate is $C_{A+ B+}(1 + R_A + R_B + R_AR_B)$. This estimate is used to express a full coincidence rate for figures 3 and 4 in the main text. 
+The coincidence rates for all wavefunction branches are the same if $\theta$ in @eq:cosines is set to zero. With this phase state rate $C_{A+ B+, \theta=0}$ measured directly (labeled B in @fig:fringes), it's straightforward to estimate the full wavefunction coincidence rate across all interferometer outputs. As shown in table <span class="html">[1](#table:branches)</span><span class="latex"> \ref{table:branches}</span>, the rate is $C_{A+ B+}(1 + R_A + R_B + R_AR_B)$. This estimate is used to express a full coincidence rate for <span class="html">Figures [system:2](./section_04_system_results.md/#fig:shg_scan) and [system:3](./section_04_system_results.md/#fig:channel_data)</span><span class="latex">\ref{fig:shg_scan} and \ref{fig:channel_data}</span>. 
 
 <div class="latex">
 \definecolor{color1}{HTML}{38A5BA}

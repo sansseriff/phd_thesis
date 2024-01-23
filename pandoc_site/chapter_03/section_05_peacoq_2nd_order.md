@@ -15,9 +15,9 @@ The calibration process for the PEACOQ showed that high-rate pulse distortions a
     <figcaption markdown> Figure 1: **PEACOQ RF pulse and calibration curve** a) The RF pulse of one of the PEACOQ nanowires. The effect of an impedance mismatch reflection is visible at 25&#160;ns. b) The delay vs $t'$ curve for wire 1 of the PEACOQ. The peak at 25&#160;ns lines up in time with the RF reflection visible in (a), and works to correct for the time-walk delays it causes.</figcaption>
     </figure>
 
-As before with the meandered SNSPD, there is no requirement that the calibration only be used in an application that’s based on the same repetition rate of 1 Ghz. As interpolation between points on the delay vs.&#160;$t'$ vs lookup curve is possible, delay corrections for arbitrary $t'$ measurements may be found.
+As before with the meandered SNSPD, there is no requirement that the calibration only be used in an application that is based on the same repetition rate of 1 Ghz. As interpolation between points on the delay vs.&#160;$t'$ vs lookup curve is possible, delay corrections for arbitrary $t'$ measurements may be found.
 
-#### Second Order Calibration
+#### Second order calibration
 
 The 2nd order time-walk correction is a new technique that builds on the methods previously introduced in this chapter. The intrinsic reset time of the PEACOQ nanowires is considerably shorter than the time it takes an RF pulse to return to a steady zero voltage. So multiple pulses can arrive in the time it takes one RF pulse to fully decay as seen by the timing electronics. Therefore, a given RF pulse can be level shifted not only by the presence of one pulse before, but even two or three before. The calibration and correction process was extended to correct a given pulse timing measurement based on two inter-pulse time measurements $t'$ and $t''$ as shown in Fig. [2](#fig:order_2nd) a. The calibration process uses the same mode-locked laser derived pulse train as the 1st order calibration. For each $t'$ there is a full range of possible $t''$ times and vice versa, so the result of calibration becomes a 2D grid of delay corrections indexed by $t'$ and $t''$. $t'$ is always less than $t''$ for the parameterization chosen, where both are measured from the latest or ‘current’ time tag (Fig. [2](#fig:order_2nd) a). Therefore, the space of valid measurements is triangular as shown in Fig. [2](#fig:order_2nd) b.
 
@@ -62,10 +62,10 @@ With data available over a wide range of single-wire count rates, and the correc
     <a name='fig:matching'></a> 
     <img alt="fig:matching" style="width: 90%; margin: auto;" src="../figs/peacoq_array_sim_light.svg#only-light" >
     <img alt="fig:matching" style="width: 90%; margin: auto;" src="../figs/peacoq_array_sim_dark.svg#only-dark" > 
-    <figcaption markdown> Figure 5: **Matching PEACOQ wire count rates to calibration dataset** Blue bars represent count rates of data files for which the time-walk correction can be performed. Grey bars represent unique wire count rates from an integrated full-array measurement of the PEACOQ in another experiment setup. The count rates have a gaussian shape with respect to wire number as the coupled optical fiber has a lateral intensity profile that is roughly gaussian.</figcaption>
+    <figcaption markdown> Figure 5: **Matching PEACOQ wire count rates to calibration dataset** Blue bars represent count rates of data files for which the time-walk correction can be performed. Grey bars represent unique wire count rates from an integrated full-array measurement of the PEACOQ in another experiment setup. The count rates have a Gaussian shape with respect to wire number as the coupled optical fiber has a lateral intensity profile that is roughly Gaussian.</figcaption>
     </figure>
 
-Fig. [6](#fig:simulation_results) a shows simulated full-array jitter response functions for 3 choice count rates, normalized from their peaks. The FWHM, FW1/10M, and FW1/100M width metrics are indicated with continuous, dashed, and dotted lines respectively.
+Fig. [6](#fig:simulation_results) a shows simulated full-array jitter response functions for 3 choice count rates, normalized from their peaks. The FWHM, FW1/10M, and FW1/100M width metrics are indicated with continuous, dashed, and dotted lines, respectively.
 
 <figure markdown> 
     <a name='fig:simulation_results'></a> 

@@ -29,5 +29,5 @@ The cryo-lens and 0.8 K optical stage had to align using a configuration that wo
     <a name='fig:optics_alignment'></a> 
     <img alt="fig:optics_alignment" style="width: 100%; margin: auto;" src="../figs/dcrmin_alignment_light.png#only-light" >
     <img alt="fig:optics_alignment" style="width: 100%; margin: auto;" src="../figs/dcrmin_alignment_dark.png#only-dark" > 
-    <figcaption markdown> Figure 2: **Method of optical alignment** a) Configuration used for checking alignment of the cryo-lens with the fridge open. b) Diagram of the optics in the same configuration. The 4 K radiation shield (not shown in full) supports 2 of the short pass filters and bandpass filter (pink)</figcaption>
+    <figcaption markdown> Figure 2: **Method of optical alignment** a) Configuration used for checking alignment of the cryo-lens with the fridge open. b) Diagram of the optics in the same configuration. The 4 K radiation shield (not shown in full) supports 2 of the short pass filters and bandpass filter (pink).</figcaption>
     </figure>

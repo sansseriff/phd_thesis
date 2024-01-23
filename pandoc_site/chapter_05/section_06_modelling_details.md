@@ -18,11 +18,11 @@ This section uses numbers in kets to signify time delays, such that the notation
 
 $$|k\rangle \rightarrow \frac{1}{2}\left(|k\rangle_{(A/B)+}+e^{i \phi_{s / i} \mid}|k+1\rangle_{(A/B)+}+i|k\rangle_{(A/B)-}-i e^{i \phi_{s / i}}|k+1\rangle_{(A/B)-}\right)$$
 
-Where $(A/B)+$ and $(A/B)-$ denote the output ports of Alice ($A$) or Bob’s ($B$) interferometer. The full state is a 28-term expression made of four so-called ‘branches’ indexed by the four combinations of interferometer output ports: $A+ B+, A+ B- A- B+$ and $A- B-$. Each branch has a term in the following form, with amplitude dependent on the phase relationship between the interferometers:
+where $(A/B)+$ and $(A/B)-$ denote the output ports of Alice ($A$) or Bob’s ($B$) interferometer. The full state is a 28-term expression made of four so-called ‘branches’ indexed by the four combinations of interferometer output ports: $A+ B+, A+ B- A- B+$ and $A- B-$. Each branch has a term in the following form, with amplitude dependent on the phase relationship between the interferometers:
 
 $$p\left(e^{i \phi}+qe^{i\left(\phi_s+\phi_i\right)}\right)|2\rangle_{Au}|2\rangle_{Bv} $$
 
-Where $p, q, u, v \in \{\{+1,+1, +, +\}, \{i,-1, +, -\}, \{i,-1, -, +\}, \{-1,+1, -, -\}\}$ for the four terms. These terms define the probability amplitude of the quantum state in the so-called phase basis. The modulous squared of these terms gives the phase-dependent probability of coincidences across the center time bins, as measured at interferometer outputs of Alice and Bob.
+where $p, q, u, v \in \{\{+1,+1, +, +\}, \{i,-1, +, -\}, \{i,-1, -, +\}, \{-1,+1, -, -\}\}$ for the four terms. These terms define the probability amplitude of the quantum state in the so-called phase basis. The modulous squared of these terms gives the phase-dependent probability of coincidences across the center time bins, as measured at interferometer outputs of Alice and Bob.
 
 All the phase terms can be grouped into one variable $\theta = \phi_s + \phi_i - \phi$, and the four $|2\rangle|2\rangle$ terms can be re-expressed in terms of the the cosine function [@Marcikic2002; @Kim2022]:
 
@@ -39,13 +39,13 @@ P_{A- B-} &= |\langle 2|2\rangle|^2_{A- B-} = 2(1 + v \cos(\theta)) \notag \\ \n
 
 where $v$ was added to denote the visibility of the phase basis. Scanning the phase of the system and measuring coincidence rate across the center bins produces sinusoidal fringes as shown in Fig. [5](#fig:fringes).
 
-## Coincidence Rate & Interferometer Output Ports
+## Coincidence rate & interferometer output ports
 
 As each readout interferometer has two output ports, the full output state observed at Alice and Bob cannot be fully measured with two SNSPDs. We label the output ports of Alice (A) and Bob’s (B) interferometers with plus ($+$) and minus ($-$). The plus ports are used for most measurements. By measuring the relative loss between the plus and minus ports, all singles rates $S_i$ and coincidence rates $C_{ij}, i,j \in \{A+, A-, B+, B-\}$ across different detectors can be estimated.
 
 $R_A$ is the ratio of transmissions $t_{A-}$ over $t_{A+}$, where $t_{A-}$ is the transmission through the input to output $A-$ and $t_{A+}$ is the transmission through the input to output $A-$. $R_B$ is defined analogously. We measure values for $R_A$ and $R_B$ by sending a pulsed laser into the input and measuring the ratio of power transmitted across the output ports:
 
-$$R_A = 0.99 \pm 0.03, ~~~~~~ R_B = 1.04 \pm 0.03$$
+$$R_A = 0.99 \pm 0.03, ~~~~~~ R_B = 1.04 \pm 0.03.$$
 
 <!-- \begin{figure}[H]
     \centering
@@ -58,10 +58,10 @@ $$R_A = 0.99 \pm 0.03, ~~~~~~ R_B = 1.04 \pm 0.03$$
     <a name='fig:branches'></a> 
     <img alt="fig:branches" style="width: 70%; margin: auto;" src="../figs/branches_light.svg#only-light" >
     <img alt="fig:branches" style="width: 70%; margin: auto;" src="../figs/branches_dark.svg#only-dark" > 
-    <figcaption markdown> Figure 1: **Wavefunction branches** Different pairings of interferometer output ports collect different wavefunction branches</figcaption>
+    <figcaption markdown> Figure 1: **Wavefunction branches** Different pairings of interferometer output ports collect different wavefunction branches.</figcaption>
     </figure>
 
-The coincidence rates for all wavefunction branches are the same if $\theta$ in Eq. [1](#eq:cosines) is set to zero. With this phase state rate $C_{A+ B+, \theta=0}$ measured directly (labeled B in Fig. [5](#fig:fringes)), it’s straightforward to estimate the full wavefunction coincidence rate across all interferometer outputs. As shown in table @table:branches, the rate is $C_{A+ B+}(1 + R_A + R_B + R_AR_B)$. This estimate is used to express a full coincidence rate for figures 3 and 4 in the main text.
+The coincidence rates for all wavefunction branches are the same if $\theta$ in Eq. [1](#eq:cosines) is set to zero. With this phase state rate $C_{A+ B+, \theta=0}$ measured directly (labeled B in Fig. [5](#fig:fringes)), it’s straightforward to estimate the full wavefunction coincidence rate across all interferometer outputs. As shown in table [1](#table:branches), the rate is $C_{A+ B+}(1 + R_A + R_B + R_AR_B)$. This estimate is used to express a full coincidence rate for Figures [system:2](./section_04_system_results.md/#fig:shg_scan) and [system:3](./section_04_system_results.md/#fig:channel_data).
 
 $$
 \definecolor{color1}{RGB}{56, 165, 186}
@@ -86,7 +86,7 @@ For main-text figure 2 in particular, coincidences were measured with the center
 
 $$C_{fig. 2} = \frac{4}{3}(1 + R_AR_B)C_{measured}$$
 
-## Joint Spectral Intensity Analysis
+## Joint spectral intensity analysis
 
 This entanglement source is potentially useful for future quantum communication systems that make use of two-photon interference, such as teleportation or entanglement swapping. These require the generation of highly pure and indistinguishable photons. The type-0 SPDC crystal used in this source shows strong spectral correlations that make it inappropriate for two-photon interference demonstrations by itself. However, with the application of the DWDM filtering, we create a series of spectral channel pairings that are potentially good individual sources of fairly pure single mode photons. To investigate this, we model the joint spectral intensity function (JSI) produced by the SPDC and fit it to data. Then we and apply a Schmidt decomposition to the spectral modes produced when pairs of DWDM filter channels are applied to the modeled JSI. We derive an inverse Shmidt number which is equal to single photon purity $P$ as well as visibility $V$ of Hong-Ou-Mandel (HOM) interference. An inverse Schmidt number approaching 1 indicates that the source is effective for two-photon interference measurements like HOM and Bell State measurements.
 
@@ -148,7 +148,7 @@ $$1/K = \sum_i \lambda_i^2$$
 
 where $\lambda_i$ are the Schmidt coefficients [@ZielnickiKwiat2018SPDCmodel]. The inverse Schmidt numbers for all 8 channel pairs are similar, and are not expected for vary due to any phenomena beyond inaccuracies of the model. Therefore, we quote single values for $1/K$ in the main text.
 
-## Consequences of Narroband Filtering
+## Consequences of narroband filtering
 
 ### Calculation of mean photon number per pulse μ
 
@@ -225,7 +225,7 @@ $$
 
 This is used to compute $\mu$ in the main text.
 
-## Quantum State Tomography
+## Quantum state tomography
 
 We perform quantum state tomography of individual channel pairs in order to resolve the full density matrix and calculate bounding terms for the distillable entanglement rate.
 

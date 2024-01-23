@@ -25,7 +25,7 @@ An experimental apparatus emits a collimated beam of $1550~\mathrm{nm}$ photons 
     <a name='fig:cryostat_concept'></a> 
     <img alt="fig:cryostat_concept" style="width: nil; margin: auto;" src="./figs/fig1b_light.svg#only-light" >
     <img alt="fig:cryostat_concept" style="width: nil; margin: auto;" src="./figs/fig1b_dark.svg#only-dark" > 
-    <figcaption markdown> Figure 1: **Cryostat free space coupling options.**</figcaption>
+    <figcaption markdown> Figure 1: **Cryostat free space coupling options**</figcaption>
     </figure>
 
 As we will see later on, a set of filters will be needed between the detector and the window to minimize dark counts. In practice, the set of filters can be quite thick. Say a $f = 100~\mathrm{mm}$ lens is used right outside the cryostat to focus the beam onto the detector though a set of filters (Fig. [1](#fig:cryostat_concept) a). The long focal length makes room for a few inches of filters between the external lens and focused spot.
@@ -86,7 +86,7 @@ As we will see later on, a set of filters will be needed between the detector an
         <a name='fig:coupling_options'></a> 
         <img alt="fig:coupling_options" style="width: nil; margin: auto;" src="./figs/fig2b_light.svg#only-light" >
         <img alt="fig:coupling_options" style="width: nil; margin: auto;" src="./figs/fig2b_dark.svg#only-dark" > 
-        <figcaption markdown> Figure 2: **Three Coupling Options**</figcaption>
+        <figcaption markdown> Figure 2: **Three coupling options**</figcaption>
         </figure>
 
     i)  There is no lens; the detector is distance $l$ inside the cryostat, and the first window with diameter $d$ defines an entrance pupil. <br>
@@ -259,7 +259,7 @@ As we will see later on, a set of filters will be needed between the detector an
     </div>
     <span class=blue markdown>3 points for writing and solving the equation that matches the jitter bound to the quadrature sum </span> <span class=blue markdown>5 points for correct filter width and dark count rate</span>
 
-### 2. SPDC Coupling and Single Photon Sources (50 points)
+### 2. SPDC coupling and single photon sources (50 points)
 
 A Spontaneous Parametric Down Conversion (SPDC) crystal is known to generate a twin beam squeezed state of the form:
 
@@ -275,7 +275,7 @@ Where $n_s$ and $n_i$ are the number of photons corresponding to the signal and 
     <a name='fig:hsps'></a> 
     <img alt="fig:hsps" style="width: nil; margin: auto;" src="./figs/hsps_light.svg#only-light" >
     <img alt="fig:hsps" style="width: nil; margin: auto;" src="./figs/hsps_dark.svg#only-dark" > 
-    <figcaption markdown> Figure 3: **Heralded single photon sources**</figcaption>
+    <figcaption markdown> Figure 3: **Heralded single photon source designs**</figcaption>
     </figure>
 
 Most SNSPDs are *binary*-type single photon detectors, meaning they differentiate between zero and one or more photons arriving in a given light pulse. A positive operator value measure (POVM) quantifies how a \`click’ from a binary SPD updates our knowledge of the incident state:
