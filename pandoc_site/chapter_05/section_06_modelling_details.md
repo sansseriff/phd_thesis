@@ -14,7 +14,7 @@ mjx-container {
 
 ## Phase basis readout
 
-This section uses numbers in kets to signify time delays, such that the notation from section <span class="html">[system & results](./section_04_system_results.md)<span> transforms as $|e\rangle, |l\rangle \longrightarrow |0\rangle, |1\rangle$. Following the creation of the bell pair $\frac{1}{\sqrt{2}}(|00\rangle + e^{i \phi}|11\rangle)$ with the source interferometer, the readout interferometers at Alice and Bob transform each member of the entangled pair according to the operation [@Marcikic2002]:
+This section uses numbers in kets to signify time delays, such that the notation from section [system & results](./section_04_system_results.md) transforms as $|e\rangle, |l\rangle \longrightarrow |0\rangle, |1\rangle$. Following the creation of the bell pair $\frac{1}{\sqrt{2}}(|00\rangle + e^{i \phi}|11\rangle)$ with the source interferometer, the readout interferometers at Alice and Bob transform each member of the entangled pair according to the operation [@Marcikic2002]:
 
 $$|k\rangle \rightarrow \frac{1}{2}\left(|k\rangle_{(A/B)+}+e^{i \phi_{s / i} \mid}|k+1\rangle_{(A/B)+}+i|k\rangle_{(A/B)-}-i e^{i \phi_{s / i}}|k+1\rangle_{(A/B)-}\right)$$
 
@@ -146,7 +146,7 @@ An ideal photon pair source for scalable optical quantum information processing 
 
 $$1/K = \sum_i \lambda_i^2$$
 
-where $\lambda_i$ are the Schmidt coefficients [@ZielnickiKwiat2018SPDCmodel]. The inverse Schmidt numbers for all 8 channel pairs are similar, and are not expected for vary due to any phenomena beyond inaccuracies of the model. Therefore, we quote single values for $1/K$ in section <span class="html">[system & results](./section_04_system_results.md)<span>.
+where $\lambda_i$ are the Schmidt coefficients [@ZielnickiKwiat2018SPDCmodel]. The inverse Schmidt numbers for all 8 channel pairs are similar, and are not expected for vary due to any phenomena beyond inaccuracies of the model. Therefore, we quote single values for $1/K$ in section [system & results](./section_04_system_results.md).
 
 ## Consequences of narroband filtering
 
@@ -193,7 +193,7 @@ $$
 
 where $W_u$ and $W_v$ have the spectrums of filters $T_u$ and $T_v$ but maximum transmissions of 100%. This is an integration of $|f(\omega_s, \omega_i)|^2$ over the bipartite spectral region where filter transmission is non-negligible. As the JSI model is defined, $|f(\omega_s, \omega_i)|^2$ has units of entangled pairs per $\mathrm{nm}^2$.
 
-Going forward, we use the Eq. [5](#eq:newmu) definition of $\mu$ in section <span class="html">[system & results](./section_04_system_results.md)<span>, and do a separate analysis of the effect of the mutually incompatible spectral modes when necessary. Note that in section <span class="html">[system & results](./section_04_system_results.md)<span>, Alice receives idler photons and Bob receives signal photons, so variables transform as $C_{is} \rightarrow C_{AB}$, $S_{i} \rightarrow S_{A}$, and $S_{s} \rightarrow S_{B}$.
+Going forward, we use the Eq. [5](#eq:newmu) definition of $\mu$ in section [system & results](./section_04_system_results.md), and do a separate analysis of the effect of the mutually incompatible spectral modes when necessary. Note that in section [system & results](./section_04_system_results.md), Alice receives idler photons and Bob receives signal photons, so variables transform as $C_{is} \rightarrow C_{AB}$, $S_{i} \rightarrow S_{A}$, and $S_{s} \rightarrow S_{B}$.
 
 ### Estimating μ from coincidence and singles rates
 
@@ -223,7 +223,7 @@ $$
 \end{align}
 \tag{7}$$
 
-This is used to compute $\mu$ in section <span class="html">[system & results](./section_04_system_results.md)<span>.
+This is used to compute $\mu$ in section [system & results](./section_04_system_results.md).
 
 ## Quantum state tomography
 
