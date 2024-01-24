@@ -14,7 +14,7 @@ mjx-container {
 
 ## Phase basis readout
 
-This section uses numbers in kets to signify time delays, such that the notation from the main text transforms as $|e\rangle, |l\rangle \longrightarrow |0\rangle, |1\rangle$. Following the creation of the bell pair $\frac{1}{\sqrt{2}}(|00\rangle + e^{i \phi}|11\rangle)$ with the source interferometer, the readout interferometers at Alice and Bob transform each member of the entangled pair according to the operation [@Marcikic2002]:
+This section uses numbers in kets to signify time delays, such that the notation from section <span class="html">[system & results](./section_04_system_results.md)<span> transforms as $|e\rangle, |l\rangle \longrightarrow |0\rangle, |1\rangle$. Following the creation of the bell pair $\frac{1}{\sqrt{2}}(|00\rangle + e^{i \phi}|11\rangle)$ with the source interferometer, the readout interferometers at Alice and Bob transform each member of the entangled pair according to the operation [@Marcikic2002]:
 
 $$|k\rangle \rightarrow \frac{1}{2}\left(|k\rangle_{(A/B)+}+e^{i \phi_{s / i} \mid}|k+1\rangle_{(A/B)+}+i|k\rangle_{(A/B)-}-i e^{i \phi_{s / i}}|k+1\rangle_{(A/B)-}\right)$$
 
@@ -61,7 +61,7 @@ $$R_A = 0.99 \pm 0.03, ~~~~~~ R_B = 1.04 \pm 0.03.$$
     <figcaption markdown> Figure 1: **Wavefunction branches** Different pairings of interferometer output ports collect different wavefunction branches.</figcaption>
     </figure>
 
-The coincidence rates for all wavefunction branches are the same if $\theta$ in Eq. [1](#eq:cosines) is set to zero. With this phase state rate $C_{A+ B+, \theta=0}$ measured directly (labeled B in Fig. [5](#fig:fringes)), it’s straightforward to estimate the full wavefunction coincidence rate across all interferometer outputs. As shown in table [1](#table:branches), the rate is $C_{A+ B+}(1 + R_A + R_B + R_AR_B)$. This estimate is used to express a full coincidence rate for Figures [system:2](./section_04_system_results.md/#fig:shg_scan) and [system:3](./section_04_system_results.md/#fig:channel_data).
+The coincidence rates for all wavefunction branches are the same if $\theta$ in Eq. [1](#eq:cosines) is set to zero. With this phase state rate $C_{A+ B+, \theta=0}$ measured directly (labeled B in Fig. [5](#fig:fringes)), it is straightforward to estimate the full wavefunction coincidence rate across all interferometer outputs. As shown in table [1](#table:branches), the rate is $C_{A+ B+}(1 + R_A + R_B + R_AR_B)$. This estimate is used to express a full coincidence rate for Figures [system:2](./section_04_system_results.md/#fig:shg_scan) and [system:3](./section_04_system_results.md/#fig:channel_data).
 
 $$
 \definecolor{color1}{RGB}{56, 165, 186}
@@ -92,7 +92,7 @@ This entanglement source is potentially useful for future quantum communication 
 
 ### JSI modelling
 
-We follow an analysis for co-linear quasi-phase matching inside a waveguide packaged SPDC crystal [@Davis2022; @ZielnickiKwiat2018SPDCmodel]. The joint spectral intensity $|f(\omega_s, \omega_i)|^2$ is modelled as a product of phase matching and pump envelope intensities \|$\psi_{\mathrm{ph}}\left(\omega_s, \omega_i\right)|^2$ and $|\psi_p\left(\omega_s, \omega_i\right)|^2$, where $\omega_s$ and $\omega_i$ are the frequencies of the signal and idler models respectively. The phase matching envelope intensity takes the form:
+We follow an analysis for co-linear quasi-phase matching inside a waveguide packaged SPDC crystal [@Davis2022; @ZielnickiKwiat2018SPDCmodel]. The joint spectral intensity $|f(\omega_s, \omega_i)|^2$ is modelled as a product of phase matching and pump envelope intensities \|$\psi_{\mathrm{ph}}\left(\omega_s, \omega_i\right)|^2$ and $|\psi_p\left(\omega_s, \omega_i\right)|^2$, where $\omega_s$ and $\omega_i$ are the frequencies of the signal and idler models, respectively. The phase matching envelope intensity takes the form:
 
 $$
 \left|\psi_{\mathrm{ph}}\left(\omega_s, \omega_i\right)\right|^2=\operatorname{sinc}^2\left(\frac{\Delta k L}{2}\right),\;\;\;\;\;\; \Delta k=2 \pi\left(\frac{n\left(\lambda_p\right)}{\lambda_p}-\frac{n\left(\lambda_s\right)}{\lambda_s}-\frac{n\left(\lambda_i\right)}{\lambda_i}-\Gamma\right)
@@ -108,7 +108,7 @@ where $\omega_p$ and $\sigma_p$ are the center frequency and bandwidth of the pu
 
 ### JSI fitting
 
-The JSI model is fitted to the the 8x8 DWDM data from Fig.&#160;2a in the main text. The transmission spectrum of one DWDM channel was measured and used to estimate the transmission properties for all pairs of 8 channels. For each measurement of coincidence rate from Fig.&#160;2a we define an integration over the joint spectral intensity and the corresponding filter passbands:
+The JSI model is fitted to the the 8x8 DWDM data from Fig. [system:1](./section_04_system_results.md#fig:figure_2nd_1)a. The transmission spectrum of one DWDM channel was measured and used to estimate the transmission properties for all pairs of 8 channels. For each measurement of coincidence rate from Fig. [system:1](./section_04_system_results.md#fig:figure_2nd_1)a, we define an integration over the joint spectral intensity and the corresponding filter passbands:
 
 <a name='eq:c_uv'></a>
 
@@ -118,11 +118,11 @@ $$
 \end{align}
 \tag{2}$$
 
-where $T_{u(v)}$ is the transmission spectrum for filter with ITU channel $u (v)$, and the integrations are over the signal and idler wavelengths. Efficiency parameters $\eta_i$ scale the DWDM filter spectrums, and are used to model all loss between pair generation in the SPDC crystal and detection in the SNSPDs. To fit the $\eta_i$ values, the singles rates from Fig.&#160;2a were also included, and fitted to single-filter integrations:
+where $T_{u(v)}$ is the transmission spectrum for filter with ITU channel $u (v)$, and the integrations are over the signal and idler wavelengths. Efficiency parameters $\eta_i$ scale the DWDM filter spectrums, and are used to model all loss between pair generation in the SPDC crystal and detection in the SNSPDs. To fit the $\eta_i$ values, the singles rates from Fig. [system:1](./section_04_system_results.md#fig:figure_2nd_1)a were also included, and fitted to single-filter integrations:
 
 $$S_{u} = \int_{s}\int_{i}T_{u}(\lambda_a)|f(\omega_s, \omega_i)|^2 d\lambda_s d\lambda_i$$
 
-Where $a \in \{i, s\}$. Parameters of model for $|f(\omega_s, \omega_i)|^2$ were optimized to minimize the error between estimates $C_{u,v}$ and $S_u$ and the measured coincidence and singles rates. The following parameters were either set explicitly based on measurements and known constants (black), or optimized in the fitting process (blue):
+where $a \in \{i, s\}$. Parameters of model for $|f(\omega_s, \omega_i)|^2$ were optimized to minimize the error between estimates $C_{u,v}$ and $S_u$ and the measured coincidence and singles rates. The parameters in Fig. [2](#fig:parameters) were either set explicitly based on measurements and known constants (black), or optimized in the fitting process (blue).
 
 <figure markdown> 
     <a name='fig:parameters'></a> 
@@ -142,11 +142,11 @@ Varying MgO doping percentage and varying crystal temperature affect the Sellmei
     <figcaption markdown> Figure 3: **JSI simulation results** a) & b) For type-0 SPDC, the relationship between refractive indices of pump and down-converted wavelengths produces an intensity profile roughly parallel with the pump envelope. This is responsible for the broad output spectrum of these crystals. c) the coincidence rates in Kcounts/s that are fit to filter-defined integrations of the JSI. d) Joint spectral distributions of coincidences expected from the filter pairings that correspond to the main diagonal. Here the joint spectrums of 8 DWDM channels pairs are shown summed together, where each component of the sum is an expression like the integrand of $C_{u,v}$ above.</figcaption>
     </figure>
 
-An ideal photon pair source for scalable optical quantum information processing would not exhibit joint spectral correlations between the signal and idler photons. The Schmidt decomposition, which is equivalent to the singular value decomposition in our computational model, can be used to quantify these correlations [@ZielnickiKwiat2018SPDCmodel]. We apply the Schmidt decomposition to the filtered JSIs for filter pairings along the main diagonal in Fig.&#160;2a in the main text, and derive the inverse Schmidt number for these modes
+An ideal photon pair source for scalable optical quantum information processing would not exhibit joint spectral correlations between the signal and idler photons. The Schmidt decomposition, which is equivalent to the singular value decomposition in our computational model, can be used to quantify these correlations [@ZielnickiKwiat2018SPDCmodel]. We apply the Schmidt decomposition to the filtered JSIs for filter pairings along the main diagonal in Fig. [system:1](./section_04_system_results.md#fig:figure_2nd_1)a , and derive the inverse Schmidt number for these modes
 
 $$1/K = \sum_i \lambda_i^2$$
 
-where $\lambda_i$ are the Schmidt coefficients [@ZielnickiKwiat2018SPDCmodel]. The inverse Schmidt numbers for all 8 channel pairs are similar, and are not expected for vary due to any phenomena beyond inaccuracies of the model. Therefore, we quote single values for $1/K$ in the main text.
+where $\lambda_i$ are the Schmidt coefficients [@ZielnickiKwiat2018SPDCmodel]. The inverse Schmidt numbers for all 8 channel pairs are similar, and are not expected for vary due to any phenomena beyond inaccuracies of the model. Therefore, we quote single values for $1/K$ in section <span class="html">[system & results](./section_04_system_results.md)<span>.
 
 ## Consequences of narroband filtering
 
@@ -169,17 +169,17 @@ $$
 \end{align}
 \tag{3}$$
 
-Where $\eta_{s(i)}$ is coupling efficiency of the signal (idler) arm, $C_{s i}$ is the coincidence rate, and $S_{i(s)}$ is the singles rate on the idler (signal) arm. $\mu$, the mean pair rate per period or cycle, may also be defined in terms of the repetition rate $R$ as $R \mu \eta_{s(i)}=S_{s(i)}$. With these, one can define $\mu$ in terms of coincidence rate $C_{s i}$ and singles rates $S_s$ and $S_i$:
+where $\eta_{s(i)}$ is coupling efficiency of the signal (idler) arm, $C_{s i}$ is the coincidence rate, and $S_{i(s)}$ is the singles rate on the idler (signal) arm. $\mu$, the mean pair rate per period or cycle, may also be defined in terms of the repetition rate $R$ as $R \mu \eta_{s(i)}=S_{s(i)}$. With these, one can define $\mu$ in terms of coincidence rate $C_{s i}$ and singles rates $S_s$ and $S_i$:
 
 <a name='eq:colorless'></a>
 
 $$
 \begin{align}
-    \mu=\frac{S_s S_i}{C_{s i} R} \label{eq:colorless}
+    \mu=\frac{S_s S_i}{C_{s i} R}. \label{eq:colorless}
 \end{align}
 \tag{4}$$
 
-However, this definition breaks down in the limit of narroband filtering, or when the losses on the signal and ider arm cannot be thought of as ‘colorless’. Consider the situation of two very-narroband filters, as illustrated in figure Fig. [4](#fig:narroband) a. This situation can be simulated using the JSI model. We set signal and idler filter bandwidth to 5% of the 100 GHz DWDM bandwidths. Pump power is scaled by 200x. Transmission of the filters at their maximum is set to 100%. This results in $S_s = 58.0~\mathrm{MHz}$, $S_i = 57.6~\mathrm{MHz}$, and $C_{s i} = 567~\mathrm{KHz}$. With these values, Eq. [4](#eq:colorless) suggests a $\mu$ value of 1.47. This is misleading because it’s unreasonable to expect the red outlined region at the intersection of the filters in Fig. [4](#fig:narroband) a –which is responsible for all true detections of entangled pairs– to be the source of more than one entangled pair per pulse. Rather, the high singles rates $S_s$ and $S_i$ are having an adverse effect on the $\mu$ calculation. Most of the singles detections are from mutually incompatible spectral modes – the 4 regions that form a cross shape above, below, and to the sides of the red outlined square.
+However, this definition breaks down in the limit of narroband filtering, or when the losses on the signal and ider arm cannot be thought of as ‘colorless.’ Consider the situation of two very-narroband filters, as illustrated in Fig. [4](#fig:narroband) a. This situation can be simulated using the JSI model. We set signal and idler filter bandwidth to 5% of the 100 GHz DWDM bandwidths. Pump power is scaled by 200x. Transmission of the filters at their maximum is set to 100%. This results in $S_s = 58.0~\mathrm{MHz}$, $S_i = 57.6~\mathrm{MHz}$, and $C_{s i} = 567~\mathrm{KHz}$. With these values, Eq. [4](#eq:colorless) suggests a $\mu$ value of 1.47. This is misleading because it is unreasonable to expect the red outlined region at the intersection of the filters in Fig. [4](#fig:narroband) a — which is responsible for all true detections of entangled pairs — to be the source of more than one entangled pair per pulse. Rather, the high singles rates $S_s$ and $S_i$ are having an adverse effect on the $\mu$ calculation. Most of the singles detections are from mutually incompatible spectral modes — the 4 regions that form a cross shape above, below, and to the sides of the red outlined square.
 
 We propose a definition of $\mu$ similar to the form of Eq. [2](#eq:c_uv):
 
@@ -193,7 +193,7 @@ $$
 
 where $W_u$ and $W_v$ have the spectrums of filters $T_u$ and $T_v$ but maximum transmissions of 100%. This is an integration of $|f(\omega_s, \omega_i)|^2$ over the bipartite spectral region where filter transmission is non-negligible. As the JSI model is defined, $|f(\omega_s, \omega_i)|^2$ has units of entangled pairs per $\mathrm{nm}^2$.
 
-Going forward, we use the Eq. [5](#eq:newmu) definition of $\mu$ in the main text, and do a separate analysis of the effect of the mutually incompatible spectral modes when necessary. Note that in the main text, Alice receives idler photons and Bob receives signal photons, so variables transform as $C_{is} \rightarrow C_{AB}$, $S_{i} \rightarrow S_{A}$, and $S_{s} \rightarrow S_{B}$
+Going forward, we use the Eq. [5](#eq:newmu) definition of $\mu$ in section <span class="html">[system & results section](./section_04_system_results.md)<span>, and do a separate analysis of the effect of the mutually incompatible spectral modes when necessary. Note that in section <span class="html">[system & results](./section_04_system_results.md)<span>, Alice receives idler photons and Bob receives signal photons, so variables transform as $C_{is} \rightarrow C_{AB}$, $S_{i} \rightarrow S_{A}$, and $S_{s} \rightarrow S_{B}$.
 
 ### Estimating μ from coincidence and singles rates
 
@@ -203,7 +203,7 @@ As Eq. [4](#eq:colorless) is problematic for the narroband filtering regime, a 
 
 $$
 \begin{align} 
-\delta_{i(s)} = \frac{C_{is}}{\eta_{i(s)}S_{s(i)}} \label{eq:new_eff}
+    \delta_{i(s)} = \frac{C_{is}}{\eta_{i(s)}S_{s(i)}}. \label{eq:new_eff}
 \end{align}
 \tag{6}$$
 
@@ -223,7 +223,7 @@ $$
 \end{align}
 \tag{7}$$
 
-This is used to compute $\mu$ in the main text.
+This is used to compute $\mu$ in section <span class="html">[system & results](./section_04_system_results.md)<span>.
 
 ## Quantum state tomography
 
@@ -251,11 +251,11 @@ We use a density matrix to calculate bounds on $E_D$, the distillable entangleme
 
 $$E_N = \mathrm{log_2}||\rho^{A}|| \quad\quad\quad I_{A\rightarrow B} = H\left(\rho^\mathrm{B}\right)-H\left(\rho^{\mathrm{AB}}\right)$$
 
-Where $||\rho^{T_A}||$ is the trace norm of the partial transpose of $\rho$, the calculated bipartite density matrix. $H$ is the base-2 von Neumann entropy [@Vidal2002negativity; @Devetak2004coherent].
+where $||\rho^{T_A}||$ is the trace norm of the partial transpose of $\rho$, the calculated bipartite density matrix. $H$ is the base-2 von Neumann entropy [@Vidal2002negativity; @Devetak2004coherent].
 
-The entanglement rate of the experiment in ebits/s is the coincidence rate $C_{AB}$ times $E_D$. We therefore plot $C_{AB}E_N = C_N$ and $C_{AB}E_I = C_I$ in the main text as the upper and lower bounds on entangled bit rate $C_{AB}E_D = C_D$. Multiple integrations are performed at each phase and power setting, so that multiple density matrices and multiple measures of coherent information and log-negativity may be derived. The averages and standard deviations of these sets of measurements are used to define the values and error bars for figures 3 and 4 in the main text.
+The entanglement rate of the experiment in ebits/s is the coincidence rate $C_{AB}$ times $E_D$. We therefore plot $C_{AB}E_N = C_N$ and $C_{AB}E_I = C_I$ in Fig. [system:2](./section_04_system_results.md#fig:shg_scan) , as the upper and lower bounds on entangled bit rate $C_{AB}E_D = C_D$. Multiple integrations are performed at each phase and power setting, so that multiple density matrices and multiple measures of coherent information and log-negativity may be derived. The averages and standard deviations of these sets of measurements are used to define the values and error bars for Fig. [system:2](./section_04_system_results.md#fig:shg_scan) and Fig. [system:3](./section_04_system_results.md#fig:channel_data) .
 
-Figure 3 in the main text also shows a lower bound on secret key rate (SKR) given reasonable assumptions for a slightly different implementation of the entanglement source. This is calculated with a key generation rate formula [@ma2007quantum]:
+Fig. [system:2](./section_04_system_results.md#fig:shg_scan) also shows a lower bound on secret key rate (SKR) given reasonable assumptions for a slightly different implementation of the entanglement source. This is calculated with a key generation rate formula [@ma2007quantum]:
 
 $$
 \begin{align}
