@@ -1270,7 +1270,7 @@ Overall, time-walk analysis based on the 2D histogram construction is straightfo
 \hypertarget{guard-regions}{%
 \section{Guard regions}\label{guard-regions}}
 
-The width $x$ of the guard regions centered at 80 and 160 ps were set to 10~ps. As shown in Fig. Fig.~\ref{fig:guard_scan}, this width increase fidelities slightly without significantly impacting coincidence rates. 10~ps was not chosen based on rigorous analysis, though it would be possible to optimize the width to maximize some metric, like secret key rate.
+The width $x$ of the guard regions centered at 80 and 160 ps were set to 10~ps. As shown in Fig.~\ref{fig:guard_scan}, this width increase fidelities slightly without significantly impacting coincidence rates. 10~ps was not chosen based on rigorous analysis, though it would be possible to optimize the width to maximize some metric, like secret key rate.
 
 \hypertarget{fig:guard_scan}{%
 \begin{figure}
@@ -1292,17 +1292,17 @@ V = \frac{1}{1+\mu}V_0
 \end{aligned}
 $$
 
-Where $V_0$ is a nominal interferometer-limited visibility \autocite{Kim2022} and $\mu$ is the mean photon number per pulse (classically defined like with \ref{eq:colorless} ). The accidental coincidence rate discussed in section \ref{results-2} $C_{Acc}$ is only partially related to this, as it specifically takes into account only accidental coincidences due to incompatible spectral modes. Such coincidences can arise from two situations, and can be assigned their own coincidence rates
+where $V_0$ is a nominal interferometer-limited visibility \autocite{Kim2022} and $\mu$ is the mean photon number per pulse (classically defined like with \ref{eq:colorless} ). The accidental coincidence rate $C_{Acc}$ --- discussed in section \ref{results-2} --- is only partially related to this, as it specifically takes into account only accidental coincidences due to incompatible spectral modes. Such coincidences can arise from two situations, and can be assigned their own coincidence rates
 
 \begin{itemize}
 \tightlist
 \item
-  $C_{ee}$: two photons both from mutually incompatible spectral regions, like the red regions in figure \ref{fig:narroband} c.
+  $C_{ee}$: two photons both from mutually incompatible spectral regions, like the red regions in Fig. \ref{fig:narroband} c.
 \item
   $C_{em}$ and $C_{me}$: one photon from the central overlapping filter region and one from an incompatible spectral region.
 \end{itemize}
 
-Say one member of a spectrally compatible entanglemed pair reaches Alice, but not Bob due to loss. The photon received at Alice could form a coincidence with a spectrally incompatible photon that arrives at Bob. These are the $C_{em}$ and $C_{me}$ type coincidences. $C_{Acc}$ in the main text is the sum of $C_{ee}$, $C_{em}$ and $C_{me}$:
+Say one member of a spectrally compatible entanglemed pair reaches Alice, but not Bob due to loss. The photon received at Alice could form a coincidence with a spectrally incompatible photon that arrives at Bob. These are the $C_{em}$ and $C_{me}$ type coincidences. $C_{Acc}$ in section \ref{results-2} is the sum of $C_{ee}$, $C_{em}$ and $C_{me}$:
 
 \begin{align}
     C_{Acc} &= C_{ee} + C_{em} + C_{me} \\
@@ -1320,7 +1320,7 @@ C_{Acc} = \frac{1}{R}(1 - \delta) S_A S_B \left(\delta \left(1-\eta _A\right)+\d
 
 We observe in the small $\mu$ limit that the metrics $V$, $E_N = C_N/C_{AB}$, $E_I = C_I/C_{AB}$, and $E_S = SKR/C_{AB}$ scale linearly with $\mu$, where $E_S$ is the secret key fraction. Raw coincidence rate is not linear with $\mu$ due to the count rate dependent efficiency of the SNSPDs. As count rate increases, the detector spends a larger fraction of time in a partially reset state where photo-detection is less efficient or not possible. We separately collect measurements of detector efficiency versus count rate extending past 10~Mcps, and use this to extrapolate coincidence rate to higher powers. Then, the metrics $E_N$, $E_I$, and $E_S$ are multiplied by the extrapolated rate to define extrapolated $C_N$, $C_I$, and $SKR$ as shown in Fig.~\ref{fig:scan_extrapolate} b. Maximum values of these metrics are highlighted by colored circular markers.
 
-In this work we primarily study the capability of 8 DWDM channel pairs, with some analysis of 16-pair performance. However, the spectrum of entangled photon pairs produced by the type-0 SPDC is quite broad, meaning spectral multiplexing across many more channels is possible. In Fig.~\ref{fig:scan_extrapolate} the spectrum of the SPDC is overlayed with sixty 100~GHz DWDM channel pairs spanning the L, C, and S ITU bands {[}L-29 (1592.1~nm) through C-20 (1543.73) and C-10 (1535.82) through S-1 (1490.76){]}. The coincidence rate through these added channels can be estimated from this spectrum and the known performance of the central 8 channel pairs. Table 1 in the main text specifies estimates for the total rate from the 60 multiplexed spectral channels.
+In this work we primarily study the capability of 8 DWDM channel pairs, with some analysis of 16-pair performance. However, the spectrum of entangled photon pairs produced by the type-0 SPDC is quite broad, meaning spectral multiplexing across many more channels is possible. In Fig.~\ref{fig:scan_extrapolate} the spectrum of the SPDC is overlayed with sixty 100~GHz DWDM channel pairs spanning the L, C, and S ITU bands {[}L-29 (1592.1~nm) through C-20 (1543.73) and C-10 (1535.82) through S-1 (1490.76){]}. The coincidence rate through these added channels can be estimated from this spectrum and the known performance of the central 8 channel pairs. Table \ref{maximum_rates} specifies estimates for the total rate from the 60 multiplexed spectral channels.
 
 \hypertarget{fig:scan_extrapolate}{%
 \begin{figure}

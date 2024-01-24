@@ -193,7 +193,7 @@ $$
 
 where $W_u$ and $W_v$ have the spectrums of filters $T_u$ and $T_v$ but maximum transmissions of 100%. This is an integration of $|f(\omega_s, \omega_i)|^2$ over the bipartite spectral region where filter transmission is non-negligible. As the JSI model is defined, $|f(\omega_s, \omega_i)|^2$ has units of entangled pairs per $\mathrm{nm}^2$.
 
-Going forward, we use the Eq. [5](#eq:newmu) definition of $\mu$ in section <span class="html">[system & results section](./section_04_system_results.md)<span>, and do a separate analysis of the effect of the mutually incompatible spectral modes when necessary. Note that in section <span class="html">[system & results](./section_04_system_results.md)<span>, Alice receives idler photons and Bob receives signal photons, so variables transform as $C_{is} \rightarrow C_{AB}$, $S_{i} \rightarrow S_{A}$, and $S_{s} \rightarrow S_{B}$.
+Going forward, we use the Eq. [5](#eq:newmu) definition of $\mu$ in section <span class="html">[system & results](./section_04_system_results.md)<span>, and do a separate analysis of the effect of the mutually incompatible spectral modes when necessary. Note that in section <span class="html">[system & results](./section_04_system_results.md)<span>, Alice receives idler photons and Bob receives signal photons, so variables transform as $C_{is} \rightarrow C_{AB}$, $S_{i} \rightarrow S_{A}$, and $S_{s} \rightarrow S_{B}$.
 
 ### Estimating μ from coincidence and singles rates
 
@@ -281,7 +281,7 @@ We use a basis reconciliation factor of 0.81, thereby assuming a readout configu
     <a name='fig:density_matrix'></a> 
     <img alt="fig:density_matrix" style="width: 90%; margin: auto;" src="../figs/density_matrix_light.svg#only-light" >
     <img alt="fig:density_matrix" style="width: 90%; margin: auto;" src="../figs/density_matrix_dark.svg#only-dark" > 
-    <figcaption markdown> Figure 7: **Density matrix at low $\mu$** Density matrix data from channels 35 and 59 at 1.2 A SHG pump power. The $|ee\rangle$ state is higher than all other states due to the interferometer imbalances. For the matrix shown here, $E_N = 0.971$ and $I_{A\rightarrow B} = 0.904$</figcaption>
+    <figcaption markdown> Figure 7: **Density matrix at low $\mu$** Density matrix data from channels 35 and 59 at 1.2 A SHG pump power. The $|ee\rangle$ state is higher than all other states due to the interferometer imbalances. For the matrix shown here, $E_N = 0.971$ and $I_{A\rightarrow B} = 0.904$.</figcaption>
     </figure>
 
 ## Interferometer imbalance analysis
