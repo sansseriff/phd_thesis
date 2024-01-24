@@ -1,5 +1,6 @@
+## Future directions
 
-## Distributed Data Acquisition and Control Software (DDAQ)
+### Distributed Data Acquisition and Control Software (DDAQ)
 
 
 ![**DDAQ system architecture**](./figs/DDAQ_light.svg){#fig:ddaq short-caption="DDAQ system architecture" path="chapter_09"}
