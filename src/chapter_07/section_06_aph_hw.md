@@ -8,7 +8,7 @@
 <span style="color:blue">Contact [Andrew Mueller](mailto:andrewstermueller@gmail.com) with any questions about the homework or solution manual. The solutions to some sections specify finer-grained point values when there are multiple answers per section. As the grader, feel free to use these or not. </span>
 
 ### 1. Free space coupling with low dark counts (50 points)
-An experimental apparatus emits a collimated beam of $1550~\mathrm{nm}$ photons with gaussian beam waist $w_0 = 3~\mathrm{mm}$. You wish to focus the beam onto an SNSPD directly through a window in a cryostat. 
+An experimental apparatus emits a collimated beam of $1550~\mathrm{nm}$ photons with Gaussian beam waist $w_0 = 3~\mathrm{mm}$. You wish to focus the beam onto an SNSPD directly through a window in a cryostat. 
 
 ![**Cryostat free space coupling options**](./figs/fig1b_light.svg){#fig:cryostat_concept short-caption="Cryostat free space coupling options" path="chapter_07"}
 
@@ -22,7 +22,7 @@ If the detector has a circular active area with radius $5~\mathrm{\upmu m}$, wha
     <div style="color:blue" markdown>**Answer:**</div>
     <div style="color:blue" markdown>
     
-    The divergence angle of the guassian beam: $\theta = \tan^{-1}({\frac{3}{100}})$. 
+    The divergence angle of the Gaussian beam: $\theta = \tan^{-1}({\frac{3}{100}})$. 
     
     </div>
     
@@ -32,25 +32,25 @@ If the detector has a circular active area with radius $5~\mathrm{\upmu m}$, wha
     <span style="color:blue" markdown>  Combining and plugging in, the waist radius at focus is $\frac{1550~\mathrm{nm}}{\pi \tan^{-1}(\frac{3}{100})} \approx 16.5~ \mathrm{\upmu m}$ </span>
 
 
-    <span style="color:blue" markdown> The formula for power inside an aperture at $w(z)$ for a guassian beam:</span>
+    <span style="color:blue" markdown> The formula for power inside an aperture at $w(z)$ for a Gaussian beam:</span>
 
     <div style="color:blue" markdown >
 
-    $$P(r, z)=P_{0}\left[1-e^{-2 r^{2} / w^{2}(z)}\right]$$ 
+    $$P(r, z)=P_{0}\left[1-e^{-2 r^{2} / w^{2}(z)}\right].$$ 
 
     </div>
 
     <span style="color:blue" markdown>We are interested in the ratio of power collected at $w(z=0) = w_0$ which may be expressed as:</span>
     <div style="color:blue" markdown> 
 
-    $$P(r, z=0)=1-e^{-2 r^{2} / w_0^{2}}$$
+    $$P(r, z=0)=1-e^{-2 r^{2} / w_0^{2}}.$$
 
     </div>
 
     <span style="color:blue" markdown>Plugging in: </span>
     <div style="color:blue" markdown> 
 
-    $$P(r, z=0)=1-e^{-2(5^{2}) / 16.5^{2}} \approx  \boxed{0.17} $$
+    $$P(r, z=0)=1-e^{-2(5^{2}) / 16.5^{2}} \approx  \boxed{0.17}. $$
 
     </div>
 
@@ -64,7 +64,7 @@ If the detector has a circular active area with radius $5~\mathrm{\upmu m}$, wha
     <span style="color:blue" markdown>Ratio of power within the $10~\mathrm{\upmu m}$ radius active area: </span>
     <div style="color:blue" markdown> 
 
-    $$P(r, z=0)=1-e^{-2(5^{2}) / 2.98^{2}} \approx \boxed{0.996} $$
+    $$P(r, z=0)=1-e^{-2(5^{2}) / 2.98^{2}} \approx \boxed{0.996}. $$
 
     </div>
 
@@ -77,10 +77,10 @@ If the detector has a circular active area with radius $5~\mathrm{\upmu m}$, wha
     iii) Same as (ii) but the lens is placed inside the cryostat with the detector still at the focal length. Equivalent to @Fig:cryostat_concept b above. <br>
 
 3. (6 pts) Does (ii) couple more, less, or equal dark counts to the detector than (i)? What about case (iii)? Why? No calculations should be needed. 
-(Hint: Consider the units of radiance, which characterizes a black body emitter. Etendue or beam parameter product may be useful concepts to consider) 
+(Hint: Consider the units of radiance, which characterizes a black body emitter. Etendue or beam parameter product may be useful concepts to consider). 
 
     <span style="color:blue" markdown> **Answer:** </span>
-    <span style="color:blue" markdown> The three cases couple the same amount of light to the detector. (ii) couples the same amount of power as (i) because a blackbody source can't be focused to higher intensity with a lens. The solid angle subtended by the entrance pupil as seen by the detector is the same in all cases. The detector area stays the same as well so the etendue is conserved across all three cases. This implies the same radiant power is coupled. </span>
+    <span style="color:blue" markdown> The three cases couple the same amount of light to the detector. (ii) couples the same amount of power as (i) because a blackbody source cannot be focused to higher intensity with a lens. The solid angle subtended by the entrance pupil as seen by the detector is the same in all cases. The detector area stays the same as well so the etendue is conserved across all three cases. This implies the same radiant power is coupled. </span>
 
     <span style="color:blue" markdown> 3 points for saying all situations couple the same rate; 3 points for some explanation. </span>
 
@@ -95,11 +95,11 @@ If the detector has a circular active area with radius $5~\mathrm{\upmu m}$, wha
 
     </div>
 
-    <span style="color:blue" markdown> Where $P = \frac{\lambda}{hc}$ is the number of photons per unit energy, $\Omega$ is the solid angle of blackbody radiation as seen by the detector, $D_{area} = \pi r^2$ is the area of the detector, and $B_{\lambda}$ is Planck's law. </span>
+    <span style="color:blue" markdown> where $P = \frac{\lambda}{hc}$ is the number of photons per unit energy, $\Omega$ is the solid angle of blackbody radiation as seen by the detector, $D_{area} = \pi r^2$ is the area of the detector, and $B_{\lambda}$ is Planck's law. </span>
     <span style="color:blue" markdown>Planck's law:</span>
     <div style="color:blue" markdown> 
 
-    $$B_{\lambda}(\lambda, T)=\frac{2 h c^{2}}{\lambda^{5}} \frac{1}{e^{h c /\left(\lambda k_{\mathrm{B}} T\right)}-1}$$
+    $$B_{\lambda}(\lambda, T)=\frac{2 h c^{2}}{\lambda^{5}} \frac{1}{e^{h c /\left(\lambda k_{\mathrm{B}} T\right)}-1}.$$
 
     </div>
 
@@ -108,20 +108,20 @@ If the detector has a circular active area with radius $5~\mathrm{\upmu m}$, wha
     <span style="color:blue" markdown>The full expression: </span>
     <div style="color:blue" markdown> 
 
-     $$\text{Flux}[\lambda] = \frac{\lambda \pi^2 r^2 \sin{\theta^2}}{hc} \frac{2 h c^{2}}{\lambda^{5}} \frac{1}{e^{h c /\left(\lambda k_{\mathrm{B}} T\right)}-1}, \,\,\,\,\,\,\,\,\,\,\,\theta = \tan^{-1}(\frac{(d/2)}{l})$$
+     $$\text{Flux}[\lambda] = \frac{\lambda \pi^2 r^2 \sin{\theta^2}}{hc} \frac{2 h c^{2}}{\lambda^{5}} \frac{1}{e^{h c /\left(\lambda k_{\mathrm{B}} T\right)}-1}, \,\,\,\,\,\,\,\,\,\,\,\theta = \tan^{-1}(\frac{(d/2)}{l}).$$
 
      </div>
      
      <span style="color:blue" markdown> Since the expression asked for can be written many ways, just verify the student has taken into account all the terms in equation (1) above, and has the correct expressions for</span> <span style="color:red" markdown>$\Omega$ (3 pts), $\theta$ (3 pts), and P (3 pts).</span>
 
-5. (6 pts) Consider the configuration in Fig. 1b).  The detector has an internal quantum efficiency approximated by: 
+5. (6 pts) Consider the configuration in @fig:cryostat_concept b.  The detector has an internal quantum efficiency approximated by: 
 
     ```{=html}
     ???+ note
 
         A more accurate model would include the transmission spectrum of the optical stack in which the nanowire is embedded, along with a non-unity coupling efficiency
     ```
-    $$\eta(\lambda) = \frac{1}{2}(1 - \text{erf}[\lambda - 3~\mathrm{\upmu m}]) $$
+    $$\eta(\lambda) = \frac{1}{2}(1 - \text{erf}[\lambda - 3~\mathrm{\upmu m}]).$$
 
     $\lambda$ is measured in $\mathrm{\upmu m}$ and $\text{erf}()$ is the error function. Using your conclusions from (1.3) and expression from (1.4), write a formula $N_{photons}[\lambda]$ for the number of detectable dark counts with respect to $\lambda$, then numerically integrate it to find the dark count rate with no filtering. The laboratory temperature $T$ is 293 K, lens focal length $l$ is $18~\text{mm}$, detector radius $r$ is $5~\mathrm{\upmu m}$, and the diameter $d$ of all optics is 1 inch. The maximum count rate of this SNSPD is 10 MHz. Is the detector usable or overexposed? 
 
@@ -130,7 +130,7 @@ If the detector has a circular active area with radius $5~\mathrm{\upmu m}$, wha
         
     <div style="color:blue" markdown> 
 
-    $$N_{photons}[\lambda] = P \Omega D_{area} \eta(\lambda) B_{\lambda}(\lambda, T=293)$$
+    $$N_{photons}[\lambda] = P \Omega D_{area} \eta(\lambda) B_{\lambda}(\lambda, T=293).$$
 
     </div>
 
@@ -147,7 +147,7 @@ If the detector has a circular active area with radius $5~\mathrm{\upmu m}$, wha
 
     $$F(\lambda, E_t) = \frac{1}{E_t}[(E_t - 1)H(\lambda_c - \lambda) + 1]$$
 
-    Where H is the Heaviside step function, $\lambda_c$ is the cutoff wavelength of the filter, and $E_t$ is the extinction ratio of the filter. Use this with $N_{photons}[\lambda]$ from (d). How many filters with $\lambda_c = 1560~\text{nm}$ and $E_t = 30~\text{dB}$ are necessary to suppress the spectral region of detectable dark counts longer than 1560 nm so that it is not the dominant source of dark counts?
+    where H is the Heaviside step function, $\lambda_c$ is the cutoff wavelength of the filter, and $E_t$ is the extinction ratio of the filter. Use this with $N_{photons}[\lambda]$ from (d). How many filters with $\lambda_c = 1560~\text{nm}$ and $E_t = 30~\text{dB}$ are necessary to suppress the spectral region of detectable dark counts longer than 1560 nm so that it is not the dominant source of dark counts?
 
     <span style="color:blue" markdown> **Answer:** </span>
 
@@ -204,13 +204,13 @@ If the detector has a circular active area with radius $5~\mathrm{\upmu m}$, wha
 
     <span style="color:blue" markdown>4 pts for a similar equation, 3 pts for finding the dark count rate roughly doubles. </span>
 
-    A quantum communication experiment requires time-tagging photons with respect to a 50 GHz clock with 95% fidelity. That is, 95% of the timing measurements of detected photons emitted at the same time with respect to a clock fall within a 20 ps bin. Say the detector and readout electronics have a combined jitter of 10 ps FWHM, and a mode locked laser is used for the experiment that generates transform-limited Gaussian pulses. You tune it's temporal length to a value for which the total timing uncertainty of time-tagged photons — including system jitter and pulse temporal length — matches the 95 % fidelity at 50 GHz requirement. Assume detector jitter has a Gaussian shape as well.
+    A quantum communication experiment requires time-tagging photons with respect to a 50 GHz clock with 95% fidelity. That is, 95% of the timing measurements of detected photons emitted at the same time with respect to a clock fall within a 20 ps bin. Say the detector and readout electronics have a combined jitter of 10 ps FWHM, and a mode locked laser is used for the experiment that generates transform-limited Gaussian pulses. You tune its temporal length to a value for which the total timing uncertainty of time-tagged photons — including system jitter and pulse temporal length — matches the 95 % fidelity at 50 GHz requirement. Assume detector jitter has a Gaussian shape as well.
 
 8. (8 pts) Find the spectral width of a filter that would transmit 95% of the photons from the mode locked laser. What is the dark count rate with this filter, using the expression from (1.7) and T = 293 K?
 
     <span style="color:blue" markdown> **Answer:** </span>
 
-    <span style="color:blue" markdown>For transform limited guassian pulses, the product of temporal and spectral width at a FWHM level is [about 0.441](https://www.lasercalculator.com/transform-limited-pulse-calculator/). There's a derivation of this [here](https://www.physicsforums.com/threads/time-bandwidth-product-ideal-mode-locking.171404/post-1339948), but students don't need to show it. </span>
+    <span style="color:blue" markdown>For transform limited Gaussian pulses, the product of temporal and spectral width at a FWHM level is [about 0.441](https://www.lasercalculator.com/transform-limited-pulse-calculator/). There is a derivation of this [here](https://www.physicsforums.com/threads/time-bandwidth-product-ideal-mode-locking.171404/post-1339948), but students do not need to show it. </span>
 
     <div style="color:blue" markdown> 
 
@@ -218,7 +218,7 @@ If the detector has a circular active area with radius $5~\mathrm{\upmu m}$, wha
 
     </div>
 
-    <span style="color:blue" markdown> Since this uses the FWHM level, all the 95% metrics need to be converted. About 95% of the area under a guassian falls within $\pm 2 \sigma$. </span>
+    <span style="color:blue" markdown> Since this uses the FWHM level, all the 95% metrics need to be converted. About 95% of the area under a Gaussian falls within $\pm 2 \sigma$. </span>
 
     <span style="color:blue" markdown> Bound on total system timing uncertainty: $20~\text{ps}_{95\%} = (20/4)*2.35 = 11.75~\text{ps}_{FWHM}$ </span>
 

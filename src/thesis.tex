@@ -1336,18 +1336,18 @@ In this work we primarily study the capability of 8 DWDM channel pairs, with som
 
 This thesis comprises work on four major projects of somewhat disparate motivations and origins. The low dark count free space coupling project and the PPM project were partially motivated by planned improvements to deep space optical communication systems. The time-walk correction project grew naturally out of issues with SNSPD tagging that were observed in other projects. Finally, the high rate entanglement project resulted from an interest in using the differential single pixel SNSPDs to their full potential in a quantum application.
 
-One prevailing observation from this body of work is that lessons and insights gained from each project have utility beyond the motivations that led to the project itself. These insights can be oddly general and specific at the same time. They don't necessarily align with the delineations usually used to categorize research for one goal versus another. This is how, for example, observations from a project on deep space optical communication can be used to improve the performance of a quantum entanglement source.
+One prevailing observation from this body of work is that lessons and insights gained from each project have utility beyond the motivations that led to the project itself. These insights can be oddly general and specific at the same time. They do not necessarily align with the delineations usually used to categorize research for one goal versus another. This is how, for example, observations from a project on deep space optical communication can be used to improve the performance of a quantum entanglement source.
 
 Here we state predominant insights gained from the four major projects of this thesis:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  From the low dark count rate free space coupling project, we learn that the use of free space optics inside a cryogenic environment isn't necessarily as unwieldy as one might expect. Optics inside a cryostat can't be directly aligned without expensive actuators that may or may not function and very low temperatures. But there are ways around this, like by moving all alignment controls outside the fridge and couping in though windows. Such designs may even have dark count rates comparable or superior to fiber coupled SNSPD systems, as we demonstrate.
+  From the low dark count rate free space coupling project, we learn that the use of free space optics inside a cryogenic environment is not necessarily as unwieldy as one might expect. Optics inside a cryostat cannot be directly aligned without expensive actuators that may or may not function and very low temperatures. But there are ways around this, like by moving all alignment controls outside the fridge and couping in though windows. Such designs may even have dark count rates comparable or superior to fiber coupled SNSPD systems, as we demonstrate.
 \item
-  The time-walk correction project demonstrated how effective SNDPDs continue to be even at high count rates where their RF pulses overlap. Researchers may initially assume that the high count rate behavior of SNSPDs is `complicated' or `corrupted', and that the detectors fail to operate well in this regime. But we have found, with the calibration and correction methodology, that they continue to respond predictably and with good jitter up to rates where the bias current has insufficient time to recover, thereby reducing the detector efficiency. Depending on the types of amplifiers used, time-walk effects can dramatically reduce jitter before the detector has lost even a few percent of it's efficiency due to incomplete bias-current reset. Therefor, time-walk correction can easily lead to 2-3 times higher usable count rates for single detectors, and up to an order of magnitude higher rates in quantum applications that rely on multi-detector coincidences.
+  The time-walk correction project demonstrated how effective SNDPDs continue to be even at high count rates where their RF pulses overlap. Researchers may initially assume that the high count rate behavior of SNSPDs is `complicated' or `corrupted,' and that the detectors fail to operate well in this regime. But we have found, with the calibration and correction methodology, that they continue to respond predictably and with good jitter up to rates where the bias current has insufficient time to recover, thereby reducing the detector efficiency. Depending on the types of amplifiers used, time-walk effects can dramatically reduce jitter before the detector has lost even a few percent of its efficiency due to incomplete bias-current reset. Therefor, time-walk correction can easily lead to 2-3 times higher usable count rates for single detectors, and up to an order of magnitude higher rates in quantum applications that rely on multi-detector coincidences.
 \item
-  The PPM project demonstrated the complexity and potential utility of the photon number response in the differential single pixel SNSPDs. For better or worse, the ideal application of these detectors from quantum or classical communication will require nuanced digital processing methods. When not planned for, the PNR effects can be a nuisance. But when properly managed, it makes these detectors into highly effective photon number resolving devices -- equivalent to a large array of binary-type SNSPDs. This will be useful for various photon heralding applications, and for commissioning of complex multi-photon states of light. We introduced the GMM method for PPM decoding, based on a general sense that working in a high dimensional space for event attribution will continue to be a fruitful approach for future work. SNSPD readout will only becomes more complex with the emergence of multiplexed arrays and ulta-high count rate versions. Effects like time-walk the phon number dependent response may be easier to understand and manage it they are thought of as simply modifying how detector data appears when graphed in a high dimensional space.
+  The PPM project demonstrated the complexity and potential utility of the photon number response in the differential single pixel SNSPDs. For better or worse, the ideal application of these detectors from quantum or classical communication will require nuanced digital processing methods. When not planned for, the PNR effects can be a nuisance. But when properly managed, it makes these detectors into highly effective photon number resolving devices --- equivalent to a large array of binary-type SNSPDs. This will be useful for various photon heralding applications, and for commissioning of complex multi-photon states of light. We introduced the GMM method for PPM decoding, based on a general sense that working in a high dimensional space for event attribution will continue to be a fruitful approach for future work. SNSPD readout will only becomes more complex with the emergence of multiplexed arrays and ulta-high count rate versions. Effects like time-walk the phon number dependent response may be easier to understand and manage it they are thought of as simply modifying how detector data appears when graphed in a high dimensional space.
 \item
   Work on the high rate entanglement system highlighted how important it is to intelligently manage a complex experiment. By transitioning a time-bin entanglement source to a high repetition rate compatible with the differential single pixel detectors, some aspects became simpler (relative to a low-repetition rate system), and others became more complicated. The promise of this project then hinged on managing the complex aspects reliably. One major advantage of the high repetition rate was it allowed us to use small and highly stable interferometers. With lower repetition rate time-bin entanglement sources, precise temperature control of interferometers is needed when their path length delay exceeds multiple nanoseconds \autocite{Valivarthi2020}. Here we were able to use interferometers with a path length delay of just 80~ps, which varied in phase by less than a few degrees over multiple hours. On the other hand, the high rate system required time-walk correction for the SNSPDs in order to operate the system at state-of-the art rates. Enabling this correction method in a full system was a new challenge, and it brought about the much more elegant the in-situ calibration method from section \ref{time-walk-correction}. The improved and mostly automated procedure for cancelling SNSPD time walk added minimal complexity for the system user, and further supported the move towards high repetition rate sources for emerging quantum networks.
 \end{enumerate}
@@ -1383,7 +1383,7 @@ The development of a method for time-walk correction and simultaneous PNR attrib
 
 SNSPD technology continues an ongoing trend of rapid improvement. This detector technology therefore is well positioned to dictate certain engineering features of emerging quantum communication and computing systems. Perhaps existing problems in quantum transduction and interconnects can be solved through the use of SNSPDs for high-rate high-efficiency bell state measurements.
 
-Certain types of quantum memories, for example, function best when interfaced with low-bandwidth, low-rate channels at wavelengths that aren't well supported for long-haul transmission through fiber. This means there may be certain design choices for quantum repeaters and quantum computers that use bandwidth, and frequency conversion processes to interfaces high rate wide-bandwidth transmission channels with large banks of quantum memories. High rate SNSPDs could be pivotal in such conversion systems, and help bring about a robust system of interconnects between diverse quantum technologies.
+Certain types of quantum memories, for example, function best when interfaced with low-bandwidth, low-rate channels at wavelengths that are not well supported for long-haul transmission through fiber. This means there may be certain design choices for quantum repeaters and quantum computers that use bandwidth, and frequency conversion processes to interfaces high rate wide-bandwidth transmission channels with large banks of quantum memories. High rate SNSPDs could be pivotal in such conversion systems, and help bring about a robust system of interconnects between diverse quantum technologies.
 
 \appendix
 
@@ -1401,7 +1401,7 @@ The second problem explores a potential use case of a photon number resolving SN
 \hypertarget{free-space-coupling-with-low-dark-counts-50-points}{%
 \subsection{1. Free space coupling with low dark counts (50 points)}\label{free-space-coupling-with-low-dark-counts-50-points}}
 
-An experimental apparatus emits a collimated beam of $1550~\mathrm{nm}$ photons with gaussian beam waist $w_0 = 3~\mathrm{mm}$. You wish to focus the beam onto an SNSPD directly through a window in a cryostat.
+An experimental apparatus emits a collimated beam of $1550~\mathrm{nm}$ photons with Gaussian beam waist $w_0 = 3~\mathrm{mm}$. You wish to focus the beam onto an SNSPD directly through a window in a cryostat.
 
 \hypertarget{fig:cryostat_concept}{%
 \begin{figure}
@@ -1428,7 +1428,7 @@ As we will see later on, a set of filters will be needed between the detector an
 
   \textcolor{midnightblue}{
 
-  The divergence angle of the guassian beam: $\theta = \tan^{-1}({\frac{3}{100}})$.
+  The divergence angle of the Gaussian beam: $\theta = \tan^{-1}({\frac{3}{100}})$.
 
   }
 
@@ -1436,11 +1436,11 @@ As we will see later on, a set of filters will be needed between the detector an
 
   \textcolor{midnightblue}{ Combining and plugging in, the waist radius at focus is $\frac{1550~\mathrm{nm}}{\pi \tan^{-1}(\frac{3}{100})} \approx 16.5~ \mathrm{\upmu m}$ }
 
-  \textcolor{midnightblue}{ The formula for power inside an aperture at $w(z)$ for a guassian beam:}
+  \textcolor{midnightblue}{ The formula for power inside an aperture at $w(z)$ for a Gaussian beam:}
 
   \textcolor{midnightblue}{
 
-  $$P(r, z)=P_{0}\left[1-e^{-2 r^{2} / w^{2}(z)}\right]$$
+  $$P(r, z)=P_{0}\left[1-e^{-2 r^{2} / w^{2}(z)}\right].$$
 
   }
 
@@ -1448,7 +1448,7 @@ As we will see later on, a set of filters will be needed between the detector an
 
   \textcolor{midnightblue}{
 
-  $$P(r, z=0)=1-e^{-2 r^{2} / w_0^{2}}$$
+  $$P(r, z=0)=1-e^{-2 r^{2} / w_0^{2}}.$$
 
   }
 
@@ -1456,7 +1456,7 @@ As we will see later on, a set of filters will be needed between the detector an
 
   \textcolor{midnightblue}{
 
-  $$P(r, z=0)=1-e^{-2(5^{2}) / 16.5^{2}} \approx  \boxed{0.17} $$
+  $$P(r, z=0)=1-e^{-2(5^{2}) / 16.5^{2}} \approx  \boxed{0.17}. $$
 
   }
 \item
@@ -1469,7 +1469,7 @@ As we will see later on, a set of filters will be needed between the detector an
 
   \textcolor{midnightblue}{
 
-  $$P(r, z=0)=1-e^{-2(5^{2}) / 2.98^{2}} \approx \boxed{0.996} $$
+  $$P(r, z=0)=1-e^{-2(5^{2}) / 2.98^{2}} \approx \boxed{0.996}. $$
 
   }
 
@@ -1496,10 +1496,10 @@ As we will see later on, a set of filters will be needed between the detector an
   \end{enumerate}
 \item
   (6 pts) Does (ii) couple more, less, or equal dark counts to the detector than (i)? What about case (iii)? Why? No calculations should be needed.
-  (Hint: Consider the units of radiance, which characterizes a black body emitter. Etendue or beam parameter product may be useful concepts to consider)
+  (Hint: Consider the units of radiance, which characterizes a black body emitter. Etendue or beam parameter product may be useful concepts to consider).
 
   \textcolor{midnightblue}{ \textbf{Answer:} }
-  \textcolor{midnightblue}{ The three cases couple the same amount of light to the detector. (ii) couples the same amount of power as (i) because a blackbody source can't be focused to higher intensity with a lens. The solid angle subtended by the entrance pupil as seen by the detector is the same in all cases. The detector area stays the same as well so the etendue is conserved across all three cases. This implies the same radiant power is coupled. }
+  \textcolor{midnightblue}{ The three cases couple the same amount of light to the detector. (ii) couples the same amount of power as (i) because a blackbody source cannot be focused to higher intensity with a lens. The solid angle subtended by the entrance pupil as seen by the detector is the same in all cases. The detector area stays the same as well so the etendue is conserved across all three cases. This implies the same radiant power is coupled. }
 
   \textcolor{midnightblue}{ 3 points for saying all situations couple the same rate; 3 points for some explanation. }
 \item
@@ -1514,12 +1514,12 @@ As we will see later on, a set of filters will be needed between the detector an
 
   }
 
-  \textcolor{midnightblue}{ Where $P = \frac{\lambda}{hc}$ is the number of photons per unit energy, $\Omega$ is the solid angle of blackbody radiation as seen by the detector, $D_{area} = \pi r^2$ is the area of the detector, and $B_{\lambda}$ is Planck's law. }
+  \textcolor{midnightblue}{ where $P = \frac{\lambda}{hc}$ is the number of photons per unit energy, $\Omega$ is the solid angle of blackbody radiation as seen by the detector, $D_{area} = \pi r^2$ is the area of the detector, and $B_{\lambda}$ is Planck's law. }
   \textcolor{midnightblue}{Planck's law:}
 
   \textcolor{midnightblue}{
 
-  $$B_{\lambda}(\lambda, T)=\frac{2 h c^{2}}{\lambda^{5}} \frac{1}{e^{h c /\left(\lambda k_{\mathrm{B}} T\right)}-1}$$
+  $$B_{\lambda}(\lambda, T)=\frac{2 h c^{2}}{\lambda^{5}} \frac{1}{e^{h c /\left(\lambda k_{\mathrm{B}} T\right)}-1}.$$
 
   }
 
@@ -1529,15 +1529,15 @@ As we will see later on, a set of filters will be needed between the detector an
 
   \textcolor{midnightblue}{
 
-  $$\text{Flux}[\lambda] = \frac{\lambda \pi^2 r^2 \sin{\theta^2}}{hc} \frac{2 h c^{2}}{\lambda^{5}} \frac{1}{e^{h c /\left(\lambda k_{\mathrm{B}} T\right)}-1}, \,\,\,\,\,\,\,\,\,\,\,\theta = \tan^{-1}(\frac{(d/2)}{l})$$
+  $$\text{Flux}[\lambda] = \frac{\lambda \pi^2 r^2 \sin{\theta^2}}{hc} \frac{2 h c^{2}}{\lambda^{5}} \frac{1}{e^{h c /\left(\lambda k_{\mathrm{B}} T\right)}-1}, \,\,\,\,\,\,\,\,\,\,\,\theta = \tan^{-1}(\frac{(d/2)}{l}).$$
 
   }
 
   \textcolor{midnightblue}{ Since the expression asked for can be written many ways, just verify the student has taken into account all the terms in equation (1) above, and has the correct expressions for} \textcolor{darkred}{$\Omega$ (3 pts), $\theta$ (3 pts), and P (3 pts).}
 \item
-  (6 pts) Consider the configuration in Fig. 1b). The detector has an internal quantum efficiency approximated by:
+  (6 pts) Consider the configuration in Fig.~\ref{fig:cryostat_concept} b. The detector has an internal quantum efficiency approximated by:
 
-  $$\eta(\lambda) = \frac{1}{2}(1 - \text{erf}[\lambda - 3~\mathrm{\upmu m}]) $$
+  $$\eta(\lambda) = \frac{1}{2}(1 - \text{erf}[\lambda - 3~\mathrm{\upmu m}]).$$
 
   $\lambda$ is measured in $\mathrm{\upmu m}$ and $\text{erf}()$ is the error function. Using your conclusions from (1.3) and expression from (1.4), write a formula $N_{photons}[\lambda]$ for the number of detectable dark counts with respect to $\lambda$, then numerically integrate it to find the dark count rate with no filtering. The laboratory temperature $T$ is 293 K, lens focal length $l$ is $18~\text{mm}$, detector radius $r$ is $5~\mathrm{\upmu m}$, and the diameter $d$ of all optics is 1 inch. The maximum count rate of this SNSPD is 10 MHz. Is the detector usable or overexposed?
 
@@ -1546,7 +1546,7 @@ As we will see later on, a set of filters will be needed between the detector an
 
   \textcolor{midnightblue}{
 
-  $$N_{photons}[\lambda] = P \Omega D_{area} \eta(\lambda) B_{\lambda}(\lambda, T=293)$$
+  $$N_{photons}[\lambda] = P \Omega D_{area} \eta(\lambda) B_{\lambda}(\lambda, T=293).$$
 
   }
 
@@ -1563,7 +1563,7 @@ As we will see later on, a set of filters will be needed between the detector an
 
   $$F(\lambda, E_t) = \frac{1}{E_t}[(E_t - 1)H(\lambda_c - \lambda) + 1]$$
 
-  Where H is the Heaviside step function, $\lambda_c$ is the cutoff wavelength of the filter, and $E_t$ is the extinction ratio of the filter. Use this with $N_{photons}[\lambda]$ from (d). How many filters with $\lambda_c = 1560~\text{nm}$ and $E_t = 30~\text{dB}$ are necessary to suppress the spectral region of detectable dark counts longer than 1560 nm so that it is not the dominant source of dark counts?
+  where H is the Heaviside step function, $\lambda_c$ is the cutoff wavelength of the filter, and $E_t$ is the extinction ratio of the filter. Use this with $N_{photons}[\lambda]$ from (d). How many filters with $\lambda_c = 1560~\text{nm}$ and $E_t = 30~\text{dB}$ are necessary to suppress the spectral region of detectable dark counts longer than 1560 nm so that it is not the dominant source of dark counts?
 
   \textcolor{midnightblue}{ \textbf{Answer:} }
 
@@ -1621,13 +1621,13 @@ As we will see later on, a set of filters will be needed between the detector an
 
   \textcolor{midnightblue}{4 pts for a similar equation, 3 pts for finding the dark count rate roughly doubles. }
 
-  A quantum communication experiment requires time-tagging photons with respect to a 50 GHz clock with 95\% fidelity. That is, 95\% of the timing measurements of detected photons emitted at the same time with respect to a clock fall within a 20 ps bin. Say the detector and readout electronics have a combined jitter of 10 ps FWHM, and a mode locked laser is used for the experiment that generates transform-limited Gaussian pulses. You tune it's temporal length to a value for which the total timing uncertainty of time-tagged photons --- including system jitter and pulse temporal length --- matches the 95 \% fidelity at 50 GHz requirement. Assume detector jitter has a Gaussian shape as well.
+  A quantum communication experiment requires time-tagging photons with respect to a 50 GHz clock with 95\% fidelity. That is, 95\% of the timing measurements of detected photons emitted at the same time with respect to a clock fall within a 20 ps bin. Say the detector and readout electronics have a combined jitter of 10 ps FWHM, and a mode locked laser is used for the experiment that generates transform-limited Gaussian pulses. You tune its temporal length to a value for which the total timing uncertainty of time-tagged photons --- including system jitter and pulse temporal length --- matches the 95 \% fidelity at 50 GHz requirement. Assume detector jitter has a Gaussian shape as well.
 \item
   (8 pts) Find the spectral width of a filter that would transmit 95\% of the photons from the mode locked laser. What is the dark count rate with this filter, using the expression from (1.7) and T = 293 K?
 
   \textcolor{midnightblue}{ \textbf{Answer:} }
 
-  \textcolor{midnightblue}{For transform limited guassian pulses, the product of temporal and spectral width at a FWHM level is \href{https://www.lasercalculator.com/transform-limited-pulse-calculator/}{about 0.441}. There's a derivation of this \href{https://www.physicsforums.com/threads/time-bandwidth-product-ideal-mode-locking.171404/post-1339948}{here}, but students don't need to show it. }
+  \textcolor{midnightblue}{For transform limited Gaussian pulses, the product of temporal and spectral width at a FWHM level is \href{https://www.lasercalculator.com/transform-limited-pulse-calculator/}{about 0.441}. There is a derivation of this \href{https://www.physicsforums.com/threads/time-bandwidth-product-ideal-mode-locking.171404/post-1339948}{here}, but students do not need to show it. }
 
   \textcolor{midnightblue}{
 
@@ -1635,7 +1635,7 @@ As we will see later on, a set of filters will be needed between the detector an
 
   }
 
-  \textcolor{midnightblue}{ Since this uses the FWHM level, all the 95\% metrics need to be converted. About 95\% of the area under a guassian falls within $\pm 2 \sigma$. }
+  \textcolor{midnightblue}{ Since this uses the FWHM level, all the 95\% metrics need to be converted. About 95\% of the area under a Gaussian falls within $\pm 2 \sigma$. }
 
   \textcolor{midnightblue}{ Bound on total system timing uncertainty: $20~\text{ps}_{95\%} = (20/4)*2.35 = 11.75~\text{ps}_{FWHM}$ }
 
