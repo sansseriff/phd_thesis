@@ -245,7 +245,7 @@ If the detector has a circular active area with radius $5~\mathrm{\upmu m}$, wha
     <span style="color:blue" markdown>Filter width: </span>
     <div style="color:blue" markdown> 
 
-    $$\Delta \lambda_{95\%} = \frac{4 \Delta \lambda}{2.35} \approx \boxed{1~\text{nm}} $$
+    $$\Delta \lambda_{95\%} = \frac{4 \Delta \lambda}{2.35} \approx \boxed{1~\text{nm}}.$$
 
     </div>
 
@@ -253,12 +253,12 @@ If the detector has a circular active area with radius $5~\mathrm{\upmu m}$, wha
 
     <div style="color:blue" markdown> 
 
-    $$\boxed{N_{filter} \approx 9.26e12 (1~\text{nm}) e^{-9290/T} (\frac{\text{photons}}{\text{s*nm}})} \approx 0.15~\text{photons/s} $$
+    $$\boxed{N_{filter} \approx 9.26e12 (1~\text{nm}) e^{-9290/T} (\frac{\text{photons}}{\text{s*nm}})} \approx 0.15~\text{photons/s}.$$
 
     </div>
 
     <span style="color:blue" markdown>3 points for writing and solving the equation that matches the jitter bound to the quadrature sum </span>
-    <span style="color:blue" markdown>5 points for correct filter width and dark count rate</span>
+    <span style="color:blue" markdown>5 points for correct filter width and dark count rate.</span>
 
 ### 2. SPDC coupling and single photon sources (50 points)
 A Spontaneous Parametric Down Conversion (SPDC) crystal is known to generate a twin beam squeezed state of the form: 
@@ -272,7 +272,7 @@ $$|\psi\rangle= \sqrt{1 - \gamma^2} \sum_{n=0}^{\infty} \gamma^{n}\left|n_{s}, n
     $\gamma = \sqrt{\mu/(1 + \mu)}$ where $\mu$ is the mean photon number per pulse which is proportional to pump power.
 ```
 
-Where $n_s$ and $n_i$ are the number of photons corresponding to the signal and idler parts of the wavefunction. Consider @fig:hsps a, where the crystal is pumped with a pulsed laser, and the the signal and idler components that emerge are separated either by polarization or frequency. The idler arm is sent to an SNSPD. This configuration can be used as a heralded single photon source (HSPS). A click on the detector on the idler arm `heralds' a non-vacuum state in the signal arm. High fidelity and probability single photon sources are very useful for various quantum optics experiments and technologies, including linear optical quantum computing. 
+where $n_s$ and $n_i$ are the number of photons corresponding to the signal and idler parts of the wavefunction. Consider @fig:hsps a, where the crystal is pumped with a pulsed laser, and the signal and idler components that emerge are separated either by polarization or frequency. The idler arm is sent to an SNSPD. This configuration can be used as a heralded single photon source (HSPS). A click on the detector on the idler arm `heralds' a non-vacuum state in the signal arm. High fidelity and probability single photon sources are very useful for various quantum optics experiments and technologies, including linear optical quantum computing. 
 
 ![**Heralded single photon source designs**](./figs/hsps_light.svg){#fig:hsps short-caption="Heralded single photon source designs" path="chapter_07"}
 
@@ -280,7 +280,7 @@ Most SNSPDs are *binary*-type single photon detectors, meaning they differentiat
 
 $$\hat{\Pi}_{\text {binary}} = \sum_{n=0}^{\infty}\left[1-(1-\eta)^{n}\right]|n\rangle\langle n|$$
 
-Where $\eta$ is the coupling efficiency between the state of interest and the detector. 
+where $\eta$ is the coupling efficiency between the state of interest and the detector. 
 
 ```{=html}
 ??? note
@@ -296,7 +296,7 @@ Where $\eta$ is the coupling efficiency between the state of interest and the de
 
     $$\begin{aligned}
     \langle \psi | \Pi_{\text {binary}} | \psi \rangle &= (1- \gamma^2) \sum_{\tilde{n}=0}^{\infty} \langle \tilde{n}_s \tilde{n}_i | \gamma^{\tilde{n}} \sum_{n=0}^{\infty}[1 - (1-\eta)^{n}] \gamma^n | n_s n_i \rangle \\
-    \langle \psi | \Pi_{\text {binary}} | \psi \rangle &= p_{binary}(\gamma, \eta) =  \boxed{(1-\gamma^2) \sum_{n_s=0}^{\infty} \gamma^{2n_s} [1 - (1 - \eta)^{n_s}]}
+    \langle \psi | \Pi_{\text {binary}} | \psi \rangle &= p_{binary}(\gamma, \eta) =  \boxed{(1-\gamma^2) \sum_{n_s=0}^{\infty} \gamma^{2n_s} [1 - (1 - \eta)^{n_s}]}.
     \end{aligned}$$
 
     </div>
@@ -305,11 +305,11 @@ Where $\eta$ is the coupling efficiency between the state of interest and the de
 
     <span style="color:blue" markdown> To lowest order in $\gamma$, $p \sim \gamma^{2}\eta$. The single photon fock state dominates for $\gamma << 1$. </span>
 
-    <span style="color:blue" markdown> 3 pts for correct $p_{binary}(\gamma, \eta)$; 3 pts for saying the leading term is from single photons </span>
+    <span style="color:blue" markdown> 3 pts for correct $p_{binary}(\gamma, \eta)$; 3 pts for saying the leading term is from single photons. </span>
 
 2. (6 pts) A general form for the density matrix of the signal mode given a herald event is:
 
-    $$\rho_{s}\left(\gamma, \eta\right)=\frac{\operatorname{Tr}_{i}\left(\hat{\Pi}|\psi\rangle\langle\psi|\right)}{\left\langle\psi\left|\hat{\Pi}\right| \psi\right\rangle}$$
+    $$\rho_{s}\left(\gamma, \eta\right)=\frac{\operatorname{Tr}_{i}\left(\hat{\Pi}|\psi\rangle\langle\psi|\right)}{\left\langle\psi\left|\hat{\Pi}\right| \psi\right\rangle}.$$
 
     Write down the $|1\rangle\langle1|$ term of this matrix, and simplify any infinite sums. This is the single photon fidelity $F_{binary}(\gamma, \eta)$. Why does $F_{binary}$ approach zero for $\gamma$ approaching 1? What types of states is the SPDC generating in this limit?  
 
@@ -325,14 +325,14 @@ Where $\eta$ is the coupling efficiency between the state of interest and the de
     &= \frac{\gamma^2 \eta}{\frac{1}{1 - \gamma^2} - \frac{1}{1 - \gamma^2(1 - \eta)}}\\
     &= \frac{\gamma^2 \eta (1 - \gamma^2)}{1 - \frac{1 - \gamma^2}{1 - \gamma^2(1 - \eta)}}\\
     &= \frac{\cancel{\gamma^2 \eta} (1 - \gamma^2) (1 - \gamma^2 (1 - \eta))}{\cancel{1 - \gamma^2 (1 - \eta) - 1 + \gamma^2}} \\
-    F_{binary}(\gamma, \eta) &= \boxed{(1 - \gamma^2)(1 - \gamma^2(1 - \eta))}
+    F_{binary}(\gamma, \eta) &= \boxed{(1 - \gamma^2)(1 - \gamma^2(1 - \eta))}.
     \end{aligned}$$
 
     </div>
 
     <span style="color:blue" markdown>As $\gamma$ approaches 1, the denominator in the original expression for $\rho_s(\gamma,\eta)$ approaches infinity while the numerator approaches $\eta$. In this limit, the SPDC is generating predominantly multi-photon states. For $\gamma$ approaching 1, the probability of the generated state being a single photon state goes to zero. Because the binary POVM was used, multi-photon states are 'included' in $\rho_s(\gamma,\eta)$. For  $\rho_s$ from the PNR POVM shown below, multi-photon states will be included to a much lesser extent, depending on the value for $\eta$.</span>
 
-    <span style="color:blue" markdown>3 pts for correct $F_{binary}(\gamma, \eta)$; 3 pts for similar explanation</span>
+    <span style="color:blue" markdown>3 pts for correct $F_{binary}(\gamma, \eta)$; 3 pts for similar explanation.</span>
 
     An HSPS with high single photon fidelity and probability is most useful, but you see these metrics are maximized for opposite limits of $\gamma$. One approach to achieving high probability and fidelity simultaneously is to link multiple SPDC sources and heralding detectors as shown in @Fig:hsps b. A click from the detector $j$ triggers the switch to move to position $j$ and let the heralded state pass through. This way, $\gamma$ for each source can be kept low to maximize fidelity, while heralding probability increases with the number of sources.
 
@@ -350,7 +350,7 @@ Where $\eta$ is the coupling efficiency between the state of interest and the de
 
     <div style="color:blue" markdown>
 
-    $$0.98 = F_{binary}(\gamma, \eta) = (1 - \gamma^2)(1 - \gamma^2(1 - \eta)\,\,\,\,\,\,\,\, \eta = 0.8$$
+    $$0.98 = F_{binary}(\gamma, \eta) = (1 - \gamma^2)(1 - \gamma^2(1 - \eta)\,\,\,\,\,\,\,\, \eta = 0.8.$$
 
     </div>
 
@@ -362,14 +362,14 @@ Where $\eta$ is the coupling efficiency between the state of interest and the de
 
     <div style="color:blue" markdown>
 
-    $$P(\text{no herald}|N) = (1 - p_{binary}\left(\gamma, \eta\right))^N$$
+    $$P(\text{no herald}|N) = (1 - p_{binary}\left(\gamma, \eta\right))^N.$$
 
     </div>
 
     <span style="color:blue" markdown>Then the probability of at least one herald is 1 minus the previous expression:</span>
     <div style="color:blue" markdown>
 
-    $$P(\text{at least one herald}|N) = 1 - (1 - p_{binary}\left(\gamma, \eta\right))^N$$
+    $$P(\text{at least one herald}|N) = 1 - (1 - p_{binary}\left(\gamma, \eta\right))^N.$$
 
     </div>
 
@@ -378,9 +378,9 @@ Where $\eta$ is the coupling efficiency between the state of interest and the de
     <span style="color:blue" markdown>About $\boxed{N = 290}$ sources are needed.</span>
 
     <span style="color:blue" markdown>3 pts for correct form of the multiplexing expression
-    $P(\text{at least one herald}|N)$; 3 pts for similar number of sources $N$</span>
+    $P(\text{at least one herald}|N)$; 3 pts for similar number of sources $N$.</span>
 
-A photon number resolving (PNR) SNSPD is able to discriminate the number of photons in a light pulse*. By heralding the idler mode with a PNR SNSPD, the generation of multi-photon signal pulses can be identified and discarded. There's a POVM for an ideal PNR single photon detector, where $i$ is the number of photons detected**:
+A photon number resolving (PNR) SNSPD is able to discriminate the number of photons in a light pulse*. By heralding the idler mode with a PNR SNSPD, the generation of multi-photon signal pulses can be identified and discarded. There is a POVM for an ideal PNR single photon detector, where $i$ is the number of photons detected:
 
 ```{=html}
 ??? note
@@ -389,7 +389,7 @@ A photon number resolving (PNR) SNSPD is able to discriminate the number of phot
 
     **A PNR SNSPD can be made from an array of binary SNSPS, or from a single nanowire with efficient impedance matching to its readout circuit (like JPL's Differential Single Pixel (DSP) shown in lecture that exhibits photon number information in the slope or height of the RF pulse rising edge). The POVM is idealized in the sense that detector efficiency is independent of the number of photons detected. In practice this is not the case, but for the latest types of PNR SNSPDs, this POVM is good approximation.
 ```
-$$\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\rangle\langle n|$$
+$$\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\rangle\langle n|.$$
 
 4. (12 pts) Derive a herald probability $p_{PNR}$ and fidelity $F_{PNR}$ for the PNR POVM, following the steps in the previous sections with $i$ set to 1. You can use symbolic math tools to simplify them if you wish. The probability of successfully heralding states in the signal arm $p_{PNR}$ should now approach zero for $\gamma$ near one. Why is this? 
    
@@ -409,7 +409,7 @@ $$\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\ra
     $$\begin{aligned}
         p_{PNR}(\gamma, \eta) =\langle \psi | \Pi_{\text {PNR}} | \psi \rangle &= (1- \gamma^2) \sum_{\tilde{n}=0}^{\infty} \langle \tilde{n}_s \tilde{n}_i | \gamma^{\tilde{n}} \sum_{n=1}^{\infty}n(1-\eta)^{n-1} \eta|n\rangle\langle n| | n_s n_i \rangle \\
         \langle \psi | \Pi_{\text {PNR}} | \psi \rangle &= p_{PNR}\left(\gamma, \eta\right) =  \boxed{(1-\gamma^2) \sum_{n_s=0}^{\infty} \gamma^{2n_s} n_s(1-\eta)^{n_s-1}}\\
-        p_{PNR}\left(\gamma, \eta\right) &=  \boxed{\frac{\gamma ^2 (1 - \gamma ^2) \eta }{(\gamma ^2 (\eta -1)+1)^2}}
+        p_{PNR}\left(\gamma, \eta\right) &=  \boxed{\frac{\gamma ^2 (1 - \gamma ^2) \eta }{(\gamma ^2 (\eta -1)+1)^2}}.
     \end{aligned}$$
 
     </div>
@@ -418,7 +418,7 @@ $$\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\ra
 
     <span style="color:blue" markdown>![](./figs/simplify_ppnr.PNG){#fig:simplify_pnnr path="chapter_07"}</span>
 
-    <span style="color:red" markdown>4 pts for $p_{PNR}\left(\gamma, \eta\right)$</span>
+    <span style="color:red" markdown>4 pts for $p_{PNR}\left(\gamma, \eta\right)$.</span>
 
     <span style="color:blue" markdown>Second, derive the single photon fidelity, staring with the density matrix for the signal photon given a PNR herald event. Using (15) above for $\langle \psi | \Pi_{\text {PNR}} | \psi \rangle$ in the denominator helps simplify it significantly. </span>
 
@@ -433,11 +433,11 @@ $$\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\ra
 
     </div>
 
-    <span style="color:blue" markdown>4 pts for $F_{PNR}(\gamma, \eta)$</span>
+    <span style="color:blue" markdown>4 pts for $F_{PNR}(\gamma, \eta)$.</span>
 
     <span style="color:blue" markdown>For $\gamma$ near one, the SPDC is under strong pump power and is generating predominantly multi-pair states. A vanishing fraction of those states are single photon states that the PNR detector is able to distinguish and single-photon. Therefore, the PNR detector is signaling the generation of multi-pair states most of the time which should be discarded and do not contribute to $p_{PNR}$. For high efficiency $\eta$, only the vanishing single-pair creation rate contributes predominantly to $p_{PNR}$.</span>
 
-    <span style="color:red" markdown>4 pts for similar explanation</span>
+    <span style="color:red" markdown>4 pts for similar explanation.</span>
 
 5. (12 pts) Make a parametric plot for $0<\gamma<1$ with $F_{PNR}$ on the x-axis and $p_{PNR}$ on the y-axis. Plot the curve for a few different values of idler arm efficiency $0<\eta<1$. All curves should reach the same maximum herald probability. What is it? 
    
@@ -449,7 +449,7 @@ $$\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\ra
 ```{=latex}
 \end{center}
 ```
-    <span style="color:blue" markdown> The the herald probability regardless of idler arm efficiency is 25\%. </span>
+    <span style="color:blue" markdown> The herald probability regardless of idler arm efficiency is 25\%. </span>
 
     <span style="color:red" markdown> 4 points for the 25\% limit; 8 points for a few plots at different $\eta$ </span>
 

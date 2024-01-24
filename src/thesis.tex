@@ -1663,7 +1663,7 @@ As we will see later on, a set of filters will be needed between the detector an
 
   \textcolor{midnightblue}{
 
-  $$\Delta \lambda_{95\%} = \frac{4 \Delta \lambda}{2.35} \approx \boxed{1~\text{nm}} $$
+  $$\Delta \lambda_{95\%} = \frac{4 \Delta \lambda}{2.35} \approx \boxed{1~\text{nm}}.$$
 
   }
 
@@ -1671,12 +1671,12 @@ As we will see later on, a set of filters will be needed between the detector an
 
   \textcolor{midnightblue}{
 
-  $$\boxed{N_{filter} \approx 9.26e12 (1~\text{nm}) e^{-9290/T} (\frac{\text{photons}}{\text{s*nm}})} \approx 0.15~\text{photons/s} $$
+  $$\boxed{N_{filter} \approx 9.26e12 (1~\text{nm}) e^{-9290/T} (\frac{\text{photons}}{\text{s*nm}})} \approx 0.15~\text{photons/s}.$$
 
   }
 
   \textcolor{midnightblue}{3 points for writing and solving the equation that matches the jitter bound to the quadrature sum }
-  \textcolor{midnightblue}{5 points for correct filter width and dark count rate}
+  \textcolor{midnightblue}{5 points for correct filter width and dark count rate.}
 \end{enumerate}
 
 \hypertarget{spdc-coupling-and-single-photon-sources-50-points}{%
@@ -1686,7 +1686,7 @@ A Spontaneous Parametric Down Conversion (SPDC) crystal is known to generate a t
 
 $$|\psi\rangle= \sqrt{1 - \gamma^2} \sum_{n=0}^{\infty} \gamma^{n}\left|n_{s}, n_{i}\right\rangle $$
 
-Where $n_s$ and $n_i$ are the number of photons corresponding to the signal and idler parts of the wavefunction. Consider Fig.~\ref{fig:hsps} a, where the crystal is pumped with a pulsed laser, and the the signal and idler components that emerge are separated either by polarization or frequency. The idler arm is sent to an SNSPD. This configuration can be used as a heralded single photon source (HSPS). A click on the detector on the idler arm `heralds' a non-vacuum state in the signal arm. High fidelity and probability single photon sources are very useful for various quantum optics experiments and technologies, including linear optical quantum computing.
+where $n_s$ and $n_i$ are the number of photons corresponding to the signal and idler parts of the wavefunction. Consider Fig.~\ref{fig:hsps} a, where the crystal is pumped with a pulsed laser, and the signal and idler components that emerge are separated either by polarization or frequency. The idler arm is sent to an SNSPD. This configuration can be used as a heralded single photon source (HSPS). A click on the detector on the idler arm `heralds' a non-vacuum state in the signal arm. High fidelity and probability single photon sources are very useful for various quantum optics experiments and technologies, including linear optical quantum computing.
 
 \hypertarget{fig:hsps}{%
 \begin{figure}
@@ -1701,7 +1701,7 @@ Most SNSPDs are \emph{binary}-type single photon detectors, meaning they differe
 
 $$\hat{\Pi}_{\text {binary}} = \sum_{n=0}^{\infty}\left[1-(1-\eta)^{n}\right]|n\rangle\langle n|$$
 
-Where $\eta$ is the coupling efficiency between the state of interest and the detector.
+where $\eta$ is the coupling efficiency between the state of interest and the detector.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1714,7 +1714,7 @@ Where $\eta$ is the coupling efficiency between the state of interest and the de
 
   $$\begin{aligned}
    \langle \psi | \Pi_{\text {binary}} | \psi \rangle &= (1- \gamma^2) \sum_{\tilde{n}=0}^{\infty} \langle \tilde{n}_s \tilde{n}_i | \gamma^{\tilde{n}} \sum_{n=0}^{\infty}[1 - (1-\eta)^{n}] \gamma^n | n_s n_i \rangle \\
-   \langle \psi | \Pi_{\text {binary}} | \psi \rangle &= p_{binary}(\gamma, \eta) =  \boxed{(1-\gamma^2) \sum_{n_s=0}^{\infty} \gamma^{2n_s} [1 - (1 - \eta)^{n_s}]}
+   \langle \psi | \Pi_{\text {binary}} | \psi \rangle &= p_{binary}(\gamma, \eta) =  \boxed{(1-\gamma^2) \sum_{n_s=0}^{\infty} \gamma^{2n_s} [1 - (1 - \eta)^{n_s}]}.
    \end{aligned}$$
 
   }
@@ -1723,11 +1723,11 @@ Where $\eta$ is the coupling efficiency between the state of interest and the de
 
   \textcolor{midnightblue}{ To lowest order in $\gamma$, $p \sim \gamma^{2}\eta$. The single photon fock state dominates for $\gamma << 1$. }
 
-  \textcolor{midnightblue}{ 3 pts for correct $p_{binary}(\gamma, \eta)$; 3 pts for saying the leading term is from single photons }
+  \textcolor{midnightblue}{ 3 pts for correct $p_{binary}(\gamma, \eta)$; 3 pts for saying the leading term is from single photons. }
 \item
   (6 pts) A general form for the density matrix of the signal mode given a herald event is:
 
-  $$\rho_{s}\left(\gamma, \eta\right)=\frac{\operatorname{Tr}_{i}\left(\hat{\Pi}|\psi\rangle\langle\psi|\right)}{\left\langle\psi\left|\hat{\Pi}\right| \psi\right\rangle}$$
+  $$\rho_{s}\left(\gamma, \eta\right)=\frac{\operatorname{Tr}_{i}\left(\hat{\Pi}|\psi\rangle\langle\psi|\right)}{\left\langle\psi\left|\hat{\Pi}\right| \psi\right\rangle}.$$
 
   Write down the $|1\rangle\langle1|$ term of this matrix, and simplify any infinite sums. This is the single photon fidelity $F_{binary}(\gamma, \eta)$. Why does $F_{binary}$ approach zero for $\gamma$ approaching 1? What types of states is the SPDC generating in this limit?
 
@@ -1743,14 +1743,14 @@ Where $\eta$ is the coupling efficiency between the state of interest and the de
    &= \frac{\gamma^2 \eta}{\frac{1}{1 - \gamma^2} - \frac{1}{1 - \gamma^2(1 - \eta)}}\\
    &= \frac{\gamma^2 \eta (1 - \gamma^2)}{1 - \frac{1 - \gamma^2}{1 - \gamma^2(1 - \eta)}}\\
    &= \frac{\cancel{\gamma^2 \eta} (1 - \gamma^2) (1 - \gamma^2 (1 - \eta))}{\cancel{1 - \gamma^2 (1 - \eta) - 1 + \gamma^2}} \\
-   F_{binary}(\gamma, \eta) &= \boxed{(1 - \gamma^2)(1 - \gamma^2(1 - \eta))}
+   F_{binary}(\gamma, \eta) &= \boxed{(1 - \gamma^2)(1 - \gamma^2(1 - \eta))}.
    \end{aligned}$$
 
   }
 
   \textcolor{midnightblue}{As $\gamma$ approaches 1, the denominator in the original expression for $\rho_s(\gamma,\eta)$ approaches infinity while the numerator approaches $\eta$. In this limit, the SPDC is generating predominantly multi-photon states. For $\gamma$ approaching 1, the probability of the generated state being a single photon state goes to zero. Because the binary POVM was used, multi-photon states are `included' in $\rho_s(\gamma,\eta)$. For $\rho_s$ from the PNR POVM shown below, multi-photon states will be included to a much lesser extent, depending on the value for $\eta$.}
 
-  \textcolor{midnightblue}{3 pts for correct $F_{binary}(\gamma, \eta)$; 3 pts for similar explanation}
+  \textcolor{midnightblue}{3 pts for correct $F_{binary}(\gamma, \eta)$; 3 pts for similar explanation.}
 
   An HSPS with high single photon fidelity and probability is most useful, but you see these metrics are maximized for opposite limits of $\gamma$. One approach to achieving high probability and fidelity simultaneously is to link multiple SPDC sources and heralding detectors as shown in Fig.~\ref{fig:hsps} b. A click from the detector $j$ triggers the switch to move to position $j$ and let the heralded state pass through. This way, $\gamma$ for each source can be kept low to maximize fidelity, while heralding probability increases with the number of sources.
 \item
@@ -1762,7 +1762,7 @@ Where $\eta$ is the coupling efficiency between the state of interest and the de
 
   \textcolor{midnightblue}{
 
-  $$0.98 = F_{binary}(\gamma, \eta) = (1 - \gamma^2)(1 - \gamma^2(1 - \eta)\,\,\,\,\,\,\,\, \eta = 0.8$$
+  $$0.98 = F_{binary}(\gamma, \eta) = (1 - \gamma^2)(1 - \gamma^2(1 - \eta)\,\,\,\,\,\,\,\, \eta = 0.8.$$
 
   }
 
@@ -1774,7 +1774,7 @@ Where $\eta$ is the coupling efficiency between the state of interest and the de
 
   \textcolor{midnightblue}{
 
-  $$P(\text{no herald}|N) = (1 - p_{binary}\left(\gamma, \eta\right))^N$$
+  $$P(\text{no herald}|N) = (1 - p_{binary}\left(\gamma, \eta\right))^N.$$
 
   }
 
@@ -1782,7 +1782,7 @@ Where $\eta$ is the coupling efficiency between the state of interest and the de
 
   \textcolor{midnightblue}{
 
-  $$P(\text{at least one herald}|N) = 1 - (1 - p_{binary}\left(\gamma, \eta\right))^N$$
+  $$P(\text{at least one herald}|N) = 1 - (1 - p_{binary}\left(\gamma, \eta\right))^N.$$
 
   }
 
@@ -1791,12 +1791,12 @@ Where $\eta$ is the coupling efficiency between the state of interest and the de
   \textcolor{midnightblue}{About $\boxed{N = 290}$ sources are needed.}
 
   \textcolor{midnightblue}{3 pts for correct form of the multiplexing expression
-  $P(\text{at least one herald}|N)$; 3 pts for similar number of sources $N$}
+  $P(\text{at least one herald}|N)$; 3 pts for similar number of sources $N$.}
 \end{enumerate}
 
-A photon number resolving (PNR) SNSPD is able to discriminate the number of photons in a light pulse*. By heralding the idler mode with a PNR SNSPD, the generation of multi-photon signal pulses can be identified and discarded. There's a POVM for an ideal PNR single photon detector, where $i$ is the number of photons detected**:
+A photon number resolving (PNR) SNSPD is able to discriminate the number of photons in a light pulse*. By heralding the idler mode with a PNR SNSPD, the generation of multi-photon signal pulses can be identified and discarded. There is a POVM for an ideal PNR single photon detector, where $i$ is the number of photons detected:
 
-$$\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\rangle\langle n|$$
+$$\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\rangle\langle n|.$$
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1820,7 +1820,7 @@ $$\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\ra
   $$\begin{aligned}
        p_{PNR}(\gamma, \eta) =\langle \psi | \Pi_{\text {PNR}} | \psi \rangle &= (1- \gamma^2) \sum_{\tilde{n}=0}^{\infty} \langle \tilde{n}_s \tilde{n}_i | \gamma^{\tilde{n}} \sum_{n=1}^{\infty}n(1-\eta)^{n-1} \eta|n\rangle\langle n| | n_s n_i \rangle \\
        \langle \psi | \Pi_{\text {PNR}} | \psi \rangle &= p_{PNR}\left(\gamma, \eta\right) =  \boxed{(1-\gamma^2) \sum_{n_s=0}^{\infty} \gamma^{2n_s} n_s(1-\eta)^{n_s-1}}\\
-       p_{PNR}\left(\gamma, \eta\right) &=  \boxed{\frac{\gamma ^2 (1 - \gamma ^2) \eta }{(\gamma ^2 (\eta -1)+1)^2}}
+       p_{PNR}\left(\gamma, \eta\right) &=  \boxed{\frac{\gamma ^2 (1 - \gamma ^2) \eta }{(\gamma ^2 (\eta -1)+1)^2}}.
    \end{aligned}$$
 
   }
@@ -1829,7 +1829,7 @@ $$\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\ra
 
   \textcolor{midnightblue}{\includegraphics{./chapter_07/figs/simplify_ppnr.PNG}}
 
-  \textcolor{darkred}{4 pts for $p_{PNR}\left(\gamma, \eta\right)$}
+  \textcolor{darkred}{4 pts for $p_{PNR}\left(\gamma, \eta\right)$.}
 
   \textcolor{midnightblue}{Second, derive the single photon fidelity, staring with the density matrix for the signal photon given a PNR herald event. Using (15) above for $\langle \psi | \Pi_{\text {PNR}} | \psi \rangle$ in the denominator helps simplify it significantly. }
 
@@ -1844,11 +1844,11 @@ $$\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\ra
 
   }
 
-  \textcolor{midnightblue}{4 pts for $F_{PNR}(\gamma, \eta)$}
+  \textcolor{midnightblue}{4 pts for $F_{PNR}(\gamma, \eta)$.}
 
   \textcolor{midnightblue}{For $\gamma$ near one, the SPDC is under strong pump power and is generating predominantly multi-pair states. A vanishing fraction of those states are single photon states that the PNR detector is able to distinguish and single-photon. Therefore, the PNR detector is signaling the generation of multi-pair states most of the time which should be discarded and do not contribute to $p_{PNR}$. For high efficiency $\eta$, only the vanishing single-pair creation rate contributes predominantly to $p_{PNR}$.}
 
-  \textcolor{darkred}{4 pts for similar explanation}
+  \textcolor{darkred}{4 pts for similar explanation.}
 \item
   (12 pts) Make a parametric plot for $0<\gamma<1$ with $F_{PNR}$ on the x-axis and $p_{PNR}$ on the y-axis. Plot the curve for a few different values of idler arm efficiency $0<\eta<1$. All curves should reach the same maximum herald probability. What is it?
 
@@ -1860,7 +1860,7 @@ $$\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\ra
 
   \end{center}
 
-  \textcolor{midnightblue}{ The the herald probability regardless of idler arm efficiency is 25\%. }
+  \textcolor{midnightblue}{ The herald probability regardless of idler arm efficiency is 25\%. }
 
   \textcolor{darkred}{ 4 points for the 25\% limit; 8 points for a few plots at different $\eta$ }
 \item
@@ -1882,7 +1882,7 @@ $$\hat{\Pi}_{PNR}(i)=\sum_{n=i}^{\infty}\binom{n}{i}(1-\eta)^{n-i} \eta^{i}|n\ra
 \hypertarget{software-tools-for-equipment-and-experiment-control}{%
 \section{Software tools for equipment and experiment control}\label{software-tools-for-equipment-and-experiment-control}}
 
-Much of my time during the phd was spent writing software. While the main product of a phd is papers and the underlying ideas of the experiments carried out, software was often used to rigorously encode these more semantic or ephemeral results. Sometimes, the efficacy of a certain excremental idea depends greatly on the simplicity and reliability of the software used to implement it. If the setup of an initially complex excremental arrangement -- for example the synchronization of intensity modulators and arbitrary waveform generator with a mode locked laser -- can be made significantly more simple through the use of software, then the idea becomes more practical and more likely to be adopted by other researchers.
+Much of my time during the phd was spent writing software. While the main product of a phd is papers and the underlying ideas of the experiments carried out, software was often used to rigorously encode these more semantic or ephemeral results. Sometimes, the efficacy of a certain expiremental idea depends greatly on the simplicity and reliability of the software used to implement it. If the setup of an initially complex expiremental arrangement --- for example the synchronization of intensity modulators and arbitrary waveform generator with a mode locked laser --- can be made significantly simpler through the use of software, then the idea becomes more practical and more likely to be adopted by other researchers.
 
 For these reasons I include introductions to the software tools on which I spent the most time and gained the most benefit. Perhaps these repositories provide insight that the thesis so far has not.
 
@@ -1896,7 +1896,7 @@ The Sequence Generator repository is for generating AWG sequences that are synch
 
 The most important feature of this codebase is the ability to determine compatible AWG sample rates and sequence lengths for a given laser repetition rate, while imposing certain requirements, like that the AWG sequence length must be a multiple of 128 samples. The script supports situations where a small integer number of laser pulses does not match in time with an integer number of AWG samples. The main requirement is that the time for the full AWG sequence to run must be an integer multiple of the laser repetition period, so that the AWG sequence can be repeated indefinitely without drifting out of sync with the laser.
 
-The sections of code that undergo this analysis are located in the functions \texttt{determine\_ppm\_properties} and \texttt{determine\_regular\_properties} for the PPM and QKD applications respectively.
+This analysis is performed in the functions \texttt{determine\_ppm\_properties} and \texttt{determine\_regular\_properties} for the PPM and QKD applications, respectively.
 
 \href{https://github.com/sansseriff/sequence_generator/tree/main}{Sequence Generator Repository}
 
@@ -1924,7 +1924,7 @@ This master repository contains submodules for all the repositories used for ana
 \hypertarget{entanglement-control-software}{%
 \subsection{Entanglement control software}\label{entanglement-control-software}}
 
-Based on an example file shipped with the swabian timetagger, this leverages the swabian python api for collecting entanglement data for the high-rate entanglement distribution system. It incorporates an innovative method for defining long running measurements based on a construct called \texttt{Actions}. \texttt{Actions} are objects that perform some operation at one stage in the script's main event loop (e.g.~change an interferometer voltage to a specific value), or over multiple event loop iterations (e.g.~integrate coincidences). Actions may also contain and run other actions, so that successively more complex measurements can be built from simple reusable components. This is done through an \texttt{evaluate} method that all \texttt{Action} methods share. The base class for all actions is located in \texttt{measurements/measurement\_management.py}. When a complex measurement is finished, a highly nested construct of actions may export it's internal data to a \texttt{.json} file. The high-rate experiment \href{https://github.com/sansseriff/highrate_origin}{analysis repositories} start with loading and analyzing these \texttt{.json} files.
+Based on an example file shipped with the swabian timetagger, this leverages the swabian python api for collecting entanglement data for the high-rate entanglement distribution system. It incorporates an innovative method for defining long running measurements based on a construct called \texttt{Actions}. \texttt{Actions} are objects that perform some operation at one stage in the script's main event loop (e.g., change an interferometer voltage to a specific value), or over multiple event loop iterations (e.g., integrate coincidences). Actions may also contain and run other actions, so that successively more complex measurements can be built from simple reusable components. This is done through an \texttt{evaluate} method that all \texttt{Action} methods share. The base class for all actions is located in \texttt{measurements/measurement\_management.py}. When a complex measurement is finished, a highly nested construct of actions may export its internal data to a \texttt{.json} file. The high-rate experiment \href{https://github.com/sansseriff/highrate_origin}{analysis repositories} start with loading and analyzing these \texttt{.json} files.
 
 \href{https://github.com/sansseriff/swabian_entanglement_gui}{Entanglement control software repository}
 
