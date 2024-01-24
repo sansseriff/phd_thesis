@@ -79,7 +79,7 @@ $$
 
 $$
 \begin{align}
-C_{Acc} = \frac{1}{R}(1 - \delta) S_A S_B \left(\delta \left(1-\eta _A\right)+\delta \left(1-\eta _B\right)+1-\delta\right)
+C_{Acc} = \frac{1}{R}(1 - \delta) S_A S_B \left(\delta \left(1-\eta _A\right)+\delta \left(1-\eta _B\right)+1-\delta\right).
 \end{align}
 $$
 
@@ -95,5 +95,7 @@ In this work we primarily study the capability of 8 DWDM channel pairs, with som
     \caption{a) and b) include data from main text Figure 3, and extrapolate it to higher $\mu$. It is notable that $C_I$ and $SRK$ reach their maximum values for only marginally higher pump powers than those used for our measurements. c) Spectrum of entangled photon pairs out of the SPDC, measured with an Anritsu MS9740B spectrum analyzer in High Dynamic Range mode. As the signal was near the instrument noise floor, many repeated spectrum measurements were point-averaged.}
     \label{fig:scan_extrapolate}
 \end{figure} -->
+
+
 
 ![**Rates with extrapolated mean photon number** a) and b) include data from <span class="html">[system:2](./section_04_system_results.md#fig:shg_scan)</span><span class="latex">Fig. \ref{fig:shg_scan}</span>, and extrapolate it to higher $\mu$. It is notable that $C_I$ and $SRK$ reach their maximum values for only marginally higher pump powers than those used for our measurements. c) Spectrum of entangled photon pairs out of the SPDC, measured with an Anritsu MS9740B spectrum analyzer in High Dynamic Range mode. As the signal was near the instrument noise floor, many repeated spectrum measurements were point-averaged.](./figs/scan_extrapolate_light.svg){#fig:scan_extrapolate short-caption='Rates with extrapolated mean photon number' width=100% path="chapter_05"}
