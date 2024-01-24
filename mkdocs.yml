@@ -153,6 +153,8 @@ nav:
     # - Cheat Sheet: chapter_08/section_08_cheat_sheet.md
   - "A3: Interferometer Imbalance Analysis":
     - removed_chapter_09/index.md
+  - "A4: Future Directions":
+    - future_directions/index.md
   # - "A4: Extra [DELETE]":
   #   - Cheat Sheet: extra/section_01_cheat_sheet.md
 

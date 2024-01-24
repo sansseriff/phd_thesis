@@ -105,7 +105,7 @@ $$
 
 $$
 \begin{align}
-C_{Acc} = \frac{1}{R}(1 - \delta) S_A S_B \left(\delta \left(1-\eta _A\right)+\delta \left(1-\eta _B\right)+1-\delta\right)
+C_{Acc} = \frac{1}{R}(1 - \delta) S_A S_B \left(\delta \left(1-\eta _A\right)+\delta \left(1-\eta _B\right)+1-\delta\right).
 \end{align}
 $$
 

@@ -42,9 +42,13 @@ rm -r ./pandoc_site/chapter_01/* || true \
 && cp -R ./src/frontmatter/. ./pandoc_site/frontmatter/ \
 && cp -R ./src/references.bib ./pandoc_site/ \
 && cp -R ./src/references_cleaned.bib ./pandoc_site/ \
-&& rm -r ./pandoc_site/removed_chapter_09/* \
+&& rm -R ./pandoc_site/removed_chapter_09/figs/ || true \
+&& rm -R ./pandoc_site/removed_chapter_09/code/ || true \
+&& rm -R ./pandoc_site/future_directions/figs/ || true \
 && cp -R ./src/removed_chapter_09/code/. ./pandoc_site/removed_chapter_09/code/ \
 && cp -R ./src/removed_chapter_09/figs/. ./pandoc_site/removed_chapter_09/figs/ \
+&& cp -R ./src/future_directions/figs/. ./pandoc_site/future_directions/figs/ \
+# && rm -r ./pandoc_site/future_directions/* \
 
 
 
@@ -181,6 +185,19 @@ find ./src/removed_chapter_09/ -iname "*.md" -type f -exec sh -c 'pandoc \
     rm "./pandoc_site/removed_chapter_09/$(basename ${0%.md}.md).bak"
 ' {} \;
 
+find ./src/future_directions/ -iname "*.md" -type f -exec sh -c 'pandoc \
+    --from markdown \
+    --to markdown \
+    -t markdown-smart \
+    --wrap=none \
+    --filter pandoc-crossref \
+    -M "crossrefYaml=./src/ref_formatting_site.yaml" \
+    --lua-filter=parse-html.lua \
+    "${0}" -o "./pandoc_site/future_directions/$(basename ${0%.md}.md)" &&
+    sed -i.bak "s.'\\\\\\\\~'.\\&\\#160;.g" "./pandoc_site/future_directions/$(basename ${0%.md}.md)"
+    rm "./pandoc_site/future_directions/$(basename ${0%.md}.md).bak"
+' {} \;
+
 find ./src/extra/ -iname "*.md" -type f -exec sh -c 'pandoc \
     --from markdown \
     --to markdown \
@@ -213,6 +230,8 @@ cat ./pandoc_site/chapter_01/section_00_title.md ./pandoc_site/chapter_01/sectio
 && rm ./pandoc_site/removed_chapter_09/section_00_title.md \
 && rm ./pandoc_site/removed_chapter_09/section_03_sams_work.md \
 && rm ./pandoc_site/removed_chapter_09/section_02_abstract.md \
+&& cat ./pandoc_site/future_directions/section_02_abstract.md ./pandoc_site/future_directions/section_03_future_directions.md > ./pandoc_site/future_directions/index.md \
+&& sed -i.bak 's/\.\.\//\.\//g' ./pandoc_site/future_directions/index.md \
 
 
 # && mv ./pandoc_site/chapter_05/section_02_abstract.md ./pandoc_site/chapter_05/index.md \
