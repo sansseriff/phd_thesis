@@ -33,7 +33,7 @@ ppm:
 	-o dist/manuscript.tex \
 	--wrap=preserve \
 	--default-image-extension=.pdf \
-	--filter ../pandoc-crossref \
+	--filter pandoc-crossref \
 	--natbib \
 	--bibliography=dist/references.bib \
 	--template=template.tex \
