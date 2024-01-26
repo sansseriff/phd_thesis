@@ -37,6 +37,8 @@ Overall, time-walk analysis based on the 2D histogram construction is straightfo
     \includegraphics[width=0.7\linewidth]{filter_comparison_light.pdf}
     \caption{Spectrums for a single DWDM channel and narroband filter, with the center wavelengths set to zero. The narroband filter is used at Bob with the 16-channel DWDM at Alice to measure coincidence rates in the main text Fig. 2b. For the 100~GHz spec. DWDM filters, 100~GHz refers to the filter spacing. The FWHM passband for each is about 82~GHz.}
 \end{figure} -->
+@fig:bandwidths shows the transmission spectra of one 100~GHz DWDM filter, and the tunable narroband filter used for the 16-channel source brightness study. 
+
 ![**DWDM and tunable narroband filter bandwidths** Spectrums for a single DWDM channel and narroband filter, with the center wavelengths set to zero. The narroband filter is used at Bob with the 16-channel DWDM at Alice to measure coincidence rates in <span class="html">Fig. [system:1](./section_04_system_results.md#fig:figure_2nd_1)b</span><span class="latex">Fig. \ref{fig:figure_2nd_1}b</span>. For the 100~GHz spec. DWDM filters, 100~GHz refers to the filter spacing. The FWHM passband for each is about 82~GHz.](./figs/filter_comparison_light.svg){#fig:bandwidths short-caption='DWDM and tunable narroband filter bandwidths' width=80% sticky="True" path="chapter_05"}
 
 ## Guard regions
