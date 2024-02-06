@@ -8,7 +8,7 @@ At this time there isn't a clear path towards extending PCA to situations where 
 
 We have shown that a photon number of few-photon optical pulses may be determined by measuring the slew rate or slope of the pulse -->
 
-We have shown that measurement of the slew rate or slope of SNSPD RF pulses may be useful for both photon number and arrival time discrimination. This is a fairly practical method that limited assumptions about the underlying modulation pattern of the optical signal. We show it allows for the measurement of pulse position modulation signals based on 10 and 20 Ghz clocks for which each optical pulse contains anywhere from 1 to 5 or more photons. 
+We have shown that measurement of the slew rate or slope of SNSPD RF pulses may be useful for both photon number and arrival time discrimination. This is a fairly practical method that limited assumptions about the underlying modulation pattern of the optical signal. We show it allows for the measurement of pulse position modulation signals based on 10 and 20 GHz clocks for which each optical pulse contains anywhere from 1 to 5 or more photons. 
 
 We also present a 2-dimensional Gaussian mixture model of the SNSPD response to the two trigger levels in an effort to model the available data as accurately and faithfully as possible. This may be used for photon number and arrival time discrimination as well. Assigning SNSPD detection events to photon number or PPM bins generalizes to assigning points in a 2-dimensional space to probability distributions built from Gaussian mixtures. We show the Gaussian mixture method moderately improves the accuracy of arrival time discrimination relative to the slope-based method. 
 

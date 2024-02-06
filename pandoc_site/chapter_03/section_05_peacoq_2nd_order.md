@@ -23,8 +23,8 @@ The 2nd order time-walk correction is a new technique that builds on the methods
 
 <figure markdown> 
     <a name='fig:order_2nd'></a> 
-    <img alt="fig:order_2nd" style="width: 100%; margin: auto;" src="../figs/SOM_Figure_order_2nd_v1_light.svg#only-light" >
-    <img alt="fig:order_2nd" style="width: 100%; margin: auto;" src="../figs/SOM_Figure_order_2nd_v1_dark.svg#only-dark" > 
+    <img alt="fig:order_2nd" style="width: 100%; margin: auto;" src="../figs/SOM_Figure_order_2nd_v1_light.png#only-light" >
+    <img alt="fig:order_2nd" style="width: 100%; margin: auto;" src="../figs/SOM_Figure_order_2nd_v1_dark.png#only-dark" > 
     <figcaption markdown> Figure 2: **PEACOQ 2D calibration parameterization & results** a) A diagram showing how RF pulse waveforms can interfere additively, and how $t'$ and $t''$ are parameterized. For illustrative purposes only. b) The result of 2nd order calibration, a grid of delay measurements indexed by $t'$ and $t''$. The blue/red slices and corresponding graphs show how the the effect of varying $t''$ for a given $t'$ is similar to varying $t'$ for a given $t''$.</figcaption>
     </figure>
 
