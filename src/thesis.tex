@@ -1893,7 +1893,7 @@ The Sequence Generator repository is for generating AWG sequences that are synch
 
 The most important feature of this codebase is the ability to determine compatible AWG sample rates and sequence lengths for a given laser repetition rate, while imposing certain requirements, like that the AWG sequence length must be a multiple of 128 samples. The script supports situations where a small integer number of laser pulses does not match in time with an integer number of AWG samples. The main requirement is that the time for the full AWG sequence to run must be an integer multiple of the laser repetition period, so that the AWG sequence can be repeated indefinitely without drifting out of sync with the laser.
 
-This analysis is performed in the functions \texttt{determine}-\texttt{\_ppm\_properties} and \texttt{determine\_regular\_properties} for the PPM and QKD applications, respectively.
+This analysis is performed in the functions \texttt{determine\_ppm\_properties} and \texttt{determine\_regular\_properties} for the PPM and QKD applications, respectively.
 
 \href{https://github.com/sansseriff/sequence_generator/tree/main}{Sequence Generator Repository}
 
