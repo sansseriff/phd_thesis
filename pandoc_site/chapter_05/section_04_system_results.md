@@ -58,7 +58,7 @@ Signals from the SNSPDs are directed to a free-running time tagger (Swabian) and
 
 <!-- #### Phase variation and guard regions -->
 
-The coincidence rate across Alice and Bob’s middle bins varies sinusoidally with respect to the combined phase relationship of the source and readout interferometers (see <span class="html">the [tomography section](./section_06_modelling_details.md#quantum-state-tomography) section<span><span class="latex">section \ref{quantum-state-tomography}<span>.)&#160;[@Inagaki2013; @Marcikic2002]. In Fig. [1](#fig:figure_2nd_1) c the coincidences shown are for any combination of early, middle, or late bins. For tomography and visibility measurements, coincidence detections across specific bin pairings are considered.
+The coincidence rate across Alice and Bob’s middle bins varies sinusoidally with respect to the combined phase relationship of the source and readout interferometers (see the [tomography section](./section_06_modelling_details.md#quantum-state-tomography) section.)&#160;[@Inagaki2013; @Marcikic2002]. In Fig. [1](#fig:figure_2nd_1) c the coincidences shown are for any combination of early, middle, or late bins. For tomography and visibility measurements, coincidence detections across specific bin pairings are considered.
 
 <figure markdown> 
     <a name='fig:shg_scan'></a> 
