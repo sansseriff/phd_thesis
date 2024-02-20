@@ -344,3 +344,43 @@ sup {
     background-color: var(--tooltip-bg);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
+
+
+/* for some reason the scrollbar wasn't hiding correctly. So I'm overriding that css */
+/* Sidebar scroll wrapper */
+.md-sidebar__scrollwrap {
+    scrollbar-color: transparent transparent;
+}
+
+/* Sidebar scroll wrapper on hover */
+.md-sidebar__scrollwrap:hover {
+    scrollbar-color: var(--md-accent-fg-color) transparent;
+}
+
+/* Webkit scrollbar */
+.md-sidebar__scrollwrap::-webkit-scrollbar {
+    width: 4px; /* replace with the equivalent rem value */
+    height: 4px; /* replace with the equivalent rem value */
+}
+
+/* Webkit scrollbar thumb */
+.md-sidebar__scrollwrap::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+/* Webkit scrollbar thumb on hover */
+.md-sidebar__scrollwrap::-webkit-scrollbar-thumb:hover {
+    background-color: var(--md-accent-fg-color);
+}
+
+/* Sidebar scroll wrapper on focus/hover */
+.md-sidebar__scrollwrap:focus-within,
+.md-sidebar__scrollwrap:hover {
+    scrollbar-color: var(--md-accent-fg-color) transparent;
+}
+
+/* Webkit scrollbar thumb on hover */
+.md-sidebar__scrollwrap:focus-within::-webkit-scrollbar-thumb:hover,
+.md-sidebar__scrollwrap:hover::-webkit-scrollbar-thumb:hover {
+    background-color: var(--md-accent-fg-color);
+}
