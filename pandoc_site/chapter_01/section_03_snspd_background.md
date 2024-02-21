@@ -32,4 +32,4 @@ Superconducting nanowire single-photon detectors (SNSPDs) have been employed in 
 
 In addition to these specific applications, SNSPDs have been extensively used in quantum key distribution and quantum communication experiments. Notably, they have been employed in demonstrating high-quality quantum teleportation&#160;[@Valivarthi2020] and will continue to be integral components in the development of advanced quantum networks&#160;[@Valivarthi2022].
 
-This brief overview highlights the wide range of applications that have utilized SNSPDs, showcasing their potential to advance various fields of science and technology. With ongoing advancements in SNSPD technology and further optimization, these detectors will continue to play a vital role in enabling groundbreaking research and innovation.
+This brief overview highlights the broad range of applications that have used SNSPDs, showcasing their potential to advance various fields of science and technology. With ongoing advancements in SNSPD technology and further optimization, these detectors will continue to play a vital role in enabling groundbreaking research and innovation.
