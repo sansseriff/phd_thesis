@@ -1,0 +1,129 @@
+\documentclass[12pt]{caltech_thesis}
+\usepackage[hyphens]{url}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{todonotes}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathpazo}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{csquotes}
+\usepackage{bibunits}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{longtable}
+\usepackage{xcolor}
+\usepackage{indentfirst} 
+\usepackage{upgreek}
+\definecolor{CaltechOrange}{HTML}{FF6C0C}
+\usepackage[hidelinks=true,
+            colorlinks=true, 
+            linkcolor=black,
+            urlcolor=CaltechOrange, 
+            linkbordercolor=white,
+            backref=false,
+            pagebackref=false,
+            hyperindex=false,
+            breaklinks=true,
+            bookmarks=false,
+            bookmarksopen=false,
+            ]{hyperref}
+\usepackage[
+            backend=biber,natbib,
+            % IMPORTANT: load a style suitable for your discipline
+            style=ieee
+        ]{biblatex}
+
+
+% added to conform with this issue: https://github.com/jgm/pandoc/issues/4384
+% with this, figure width can be changed with {width: 70%}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+
+\hypersetup{
+  colorlinks = true,
+  linkcolor = black
+}
+
+\makeatletter
+\let\@mycite\@cite
+\def\@cite#1#2{{\hypersetup{linkcolor=black!60!black}[{#1\if@tempswa , #2\fi}]}}
+\makeatother
+            
+\addbibresource{references.bib}
+\defaultbibliographystyle{plainnat}
+\renewcommand{\bibsection}{\section*{\refname}}
+\usepackage{memhfixc}
+\linespread{1.5}
+
+$if(csl-refs)$
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newenvironment{cslreferences}%
+  {$if(csl-hanging-indent)$\setlength{\parindent}{0pt}%
+  \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces$endif$}%
+  {\par}
+$endif$
+
+\begin{document}
+
+\title{$if(title)$$title$$else$Your Title Here$endif$}
+\author{$if(author)$$author$$else$Your Name Here$endif$}
+\degreeaward{$if(degree)$$degree$$else$Your Degree Title$endif$}                 
+\university{California Institute of Technology}    
+\address{Pasadena, California}                     
+\unilogo{caltech.png}                                 
+\copyyear{$if(copyyear)$$copyyear$$else$Year$endif$}  
+\defenddate{$if(defense)$$defense$$else$Defense Date$endif$}   
+$if(orcid)$       
+\orcid{$orcid$}
+$endif$
+
+$if(dedication)$
+\clearpage
+\begin{displayquote}
+$dedication$
+\end{displayquote}
+$endif$
+
+\rightsstatement{$if(rights_statement)$$rights_statement$$else$Select a rights statement$endif$}
+
+\maketitle[logo]
+
+$if(acknowledgements)$
+\begin{acknowledgements}   
+    \input{frontmatter/$acknowledgements$}
+\end{acknowledgements}
+$else$
+$endif$
+
+$if(abstract)$
+\begin{abstract}
+  \input{frontmatter/$abstract$} 
+\end{abstract}
+$endif$
+
+\extrachapter{Published Content and Contributions}
+$if(ownpubs)$
+\begin{publishedcontent}
+\input{frontmatter/$ownpubs$}
+\end{publishedcontent}
+$else$
+$endif$
+
+\tableofcontents
+\listoffigures
+\listoftables
+\printnomenclature
+\mainmatter
+
+$body$
+
+\printbibliography
+\end{document}
