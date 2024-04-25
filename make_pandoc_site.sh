@@ -168,7 +168,8 @@ find ./src/chapter_08/ -iname "*.md" -type f -exec sh -c 'pandoc \
     -M "crossrefYaml=./src/ref_formatting_site.yaml" \
     --lua-filter=parse-html.lua \
     "${0}" -o "./pandoc_site/chapter_08/$(basename ${0%.md}.md)" &&
-    sed -i.bak "s.'\\\\\\\\~'.\\&\\#160;.g" "./pandoc_site/chapter_08/$(basename ${0%.md}.md)"
+    sed -i.bak "s.'\\\\\\\\~'.\\&\\#160;.g" "./pandoc_site/chapter_08/$(basename ${0%.md}.md)" &&
+    sed -i.bak "s/&&&/\`\`\`/g" "./pandoc_site/chapter_08/$(basename ${0%.md}.md)" &&
     rm "./pandoc_site/chapter_08/$(basename ${0%.md}.md).bak"
 ' {} \;
 
