@@ -1,6 +1,6 @@
 ## SNSPhD
 
-The SNSPhD python package includes a number of utility functions and presets used for managing data and generating figures for this thesis. It is based on the `phd` package from [Griffin Chure](https://github.com/gchure/phd#phd-1). Notably, it includes the `vis.phd_style()` function for setting up nice looking matplotlib defaults in my personal style, and the `viz.save_light_dark_all()` function for saving light-mode svg, dark-mode svg, and pdf versions of a figure. The svgs are used to populate the [thesis website](https://snsphd.online), and the pdfs are used for the latex thesis itself. The `layout.bisect` function is also useful for making laying out subfigures in a straightforward way. 
+The SNSPhD python package includes a number of utility functions and presets used for managing data and generating figures for this thesis. It is based on the `phd` package from [Griffin Chure](https://github.com/gchure/phd#phd-1). Notably, it includes the `vis.phd_style()` function for setting up nice looking matplotlib defaults in my personal style, and the `viz.save_light_dark_all()` function for saving light-mode svg, dark-mode svg, and pdf versions of a figure. The svgs are used to populate the [thesis website](https://snsphd.online), and the pdfs are used for the latex thesis itself. The `layout.bisect` function is also useful for laying out subfigures in a straightforward way. 
 
 The package can be installed with:
 
