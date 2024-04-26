@@ -48,5 +48,5 @@ src/pandoc-crossref.1
 ignore/
 
 
-src/chapter_07/section_06_aph_hw_answers.md
+src/hw_answers/section_06_aph_hw_answers.md
 pandoc_site/chapter_07/section_06_aph_hw_answers.md
