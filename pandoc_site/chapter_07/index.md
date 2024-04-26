@@ -13,11 +13,13 @@ The second problem explores a potential use case of a photon number resolving SN
 
 <!-- if you don't use the {=html} syntax, then the inside of the div would be rendered in the latex document -->
 
+<!-- ```{=html}
 <button style="display: block; margin-left: auto; margin-right: auto" class="md-button md-button--primary">Toggle Visibility of Homework Solutions</button></td>
+``` -->
 
 <!-- This span is processed by  pandoc-latex-color so that the color of the pdf will change also. -->
 
-<span class=blue markdown>Contact [Andrew Mueller](mailto:andrewstermueller@gmail.com) with any questions about the homework or solution manual. The solutions to some sections specify finer-grained point values when there are multiple answers per section. As the grader, feel free to use these or not. </span>
+<!-- <span style="color:blue">Contact [Andrew Mueller](mailto:andrewstermueller@gmail.com) with any questions about the homework or solution manual. The solutions to some sections specify finer-grained point values when there are multiple answers per section. As the grader, feel free to use these or not. </span> -->
 
 ### 1. Free space coupling with low dark counts (50 points)
 
