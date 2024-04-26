@@ -1,0 +1,386 @@
+mjx-utext {
+    /* corrects a small error with font size for upgreek package */
+    font-size: 1.04em !important;
+    position: relative !important;
+    top: .025rem !important;
+}
+
+/* .arithmatex {
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+}
+
+mjx-container {
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+} */
+
+
+
+h1 {
+    display: none !important;
+}
+
+
+.bokeh {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bk-root .bk-Slider {
+    background-color: red !important;
+    width: 100% !important;
+}
+
+.noUi-connect {
+    background-color: red !important;
+    color: blue !important;
+}
+
+/* :root {
+    --md-primary-fg-color:        #43464f;
+    --md-primary-fg-color--light: #ECB7B7;
+    --md-primary-fg-color--dark:  #90030C;
+  } */
+
+:root,
+[data-md-color-scheme="slate"] {
+    --md-primary-fg-color: #886fed;
+    --md-default-bg-color: #24242d;
+    --md-primary-fg-color--light: #ffd06f;
+    --md-primary-fg-color--dark: #db9d21;
+    --md-accent-fg-color: #bdadff;
+    --pg-light-border: rgb(51, 51, 59);
+    --pg-border-color: rgb(57, 57, 67);
+    --pg-hero-color: #ffd06f;
+    --pg-purple: #af94de;
+    --pg-red: #ff6c6a;
+    --pg-orange: #e97b5a;
+    --pg-teal: #b6cdc3;
+    --pg-brown: #b6988c;
+    --pg-blue: #9ab0f7;
+    --pg-green: #72cd75;
+    --pg-blue-gray: #9ab2bc;
+    --md-footer-bg-color--dark: var(--md-default-bg-color);
+    --orange-bg: #6e4e22;
+    --tooltip-bg: #31313d;
+}
+
+:root,
+[data-md-color-scheme="default"] {
+    --md-primary-fg-color: #506696;
+    --md-default-bg-color: #f7f7fd;
+    --md-primary-fg-color--light: #ffd06f;
+    --md-primary-fg-color--dark: #db9d21;
+    --md-accent-fg-color: #2656bd;
+    --pg-light-border: rgb(237, 238, 245);
+    --pg-border-color: rgb(226, 228, 244);
+    --pg-hero-color: rgb(45, 45, 45);
+    --pg-purple: #603aa0;
+    --pg-red: #872b2a;
+    --pg-orange: #ac2f09;
+    --pg-teal: #9ebebb;
+    --pg-brown: #8d6e62;
+    --pg-blue: #2c3d7d;
+    --pg-green: #2e7e31;
+    --pg-blue-gray: #546d78;
+    --orange-bg: #ffc26c;
+    --tooltip-bg: #ffffff;
+}
+
+.blue {
+    color: var(--pg-blue);
+}
+
+.red {
+    color: var(--pg-red);
+}
+
+
+.md-typeset__scrollwrap {
+    margin: 0;
+}
+
+.md-typeset__table {
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.md-typeset table:not([class]) {
+    display: table;
+}
+
+.orange {
+    color: var(--pg-orange);
+    background-color: var(--orange-bg);
+    border-radius: 3px;
+    padding: 2.5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    /* most browsers need -webkit */
+}
+
+.md-nav__toggle:checked~.md-nav {
+    transition: none !important;
+}
+
+
+.md-nav__toggle~.md-nav {
+    transition: none !important;
+}
+
+.md-nav__toggle~.md-nav__content {
+    transition: none !important;
+}
+
+.md-nav {
+    transition: none !important;
+}
+
+
+.dark_img {
+    /* max-width: 80% !important;
+    max-height: 80% !important; */
+    /* box-shadow: 1px 1x 18px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 1px 1px 18px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 1px 1px 18px rgba(0, 0, 0, 0.05); */
+    /* filter: hue-rotate(0deg); */
+    filter: hue-rotate(180deg) sepia(49%) invert(.95) saturate(2.3);
+    display: block;
+    /* filter: invert(1); */
+    /* filter: hue-rotate(240deg);
+    filter: invert(1); */
+    border-radius: 7px;
+    /* border: solid #c7dfff 1.4px; */
+    border: solid #f0d7b1 1.4px;
+}
+
+.dark_img_achromatic {
+
+    filter: hue-rotate(184deg) sepia(16%) invert(.84) saturate(1.5);
+    display: block;
+}
+
+.light_img_achromatic {
+
+    display: block;
+    border-radius: 7px;
+    filter: hue-rotate(180deg) sepia(10%) hue-rotate(180deg) saturate(1.5);
+    /* box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.03);
+    -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.03);
+    -moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.03); */
+}
+
+.light_img {
+    /* max-width: 100% !important;
+    max-height: 100% !important; */
+    display: block;
+    /* filter: invert(1); */
+    /* border: solid #ffffff 1px;
+    filter: sepia(20%) invert(.03) hue-rotate(183deg) saturate(2.3); */
+    border-radius: 7px;
+
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.03);
+    -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.03);
+    -moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.03);
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+figure {
+    height: 100% !important;
+    width: 100% !important;
+    /* transition: transform .2s; */
+    background-color: var(--md-default-bg-color);
+}
+
+
+figcaption {
+    /* height: 100% !important;
+    width: 100% !important; */
+    text-align: left;
+    /* margin: 0; */
+    margin-top: 0.5rem !important;
+    max-width: none !important;
+    min-width: 18rem !important;
+    background-color: var(--pg-light-border);
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7rem;
+    border-radius: 0.3rem;
+    border: 1px solid var(--pg-border-color);
+    /* border-color: black !important; */
+    /* transition: transform .1s, font-size .03s .03s;  */
+}
+
+
+
+
+/* <div class="modal">
+  <div class="backdrop">
+    <div class="image-container">
+        <div class="direct-background">
+            <img class="modal-image">
+            <figcaption-modal></figcaption-modal>
+        </div>
+    </div>
+  </div>
+</div> */
+
+
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+}
+
+.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--md-default-bg-color);
+    opacity: 0.8;
+    z-index: -1;
+}
+
+/* Backdrop covering entire screen */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+}
+
+/* img {
+    position: relative;
+    max-height: 450px; 
+    width: 100%;
+} */
+
+/* Image container */
+.image-container {
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    max-height: 90%;
+    margin: auto;
+}
+
+/* Modal image */
+.modal img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+}
+
+/* directly behind image. slightly larger than image */
+.direct-background {
+    /* position: fixed;
+    top: 50%;
+    left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    justify-content: center;
+    /* width: calc(50% + 20px);
+    height: calc(50% + 20px); */
+    padding: 50px;
+    background-color: var(--md-default-bg-color);
+    opacity: 1;
+    z-index: -1;
+}
+
+.image-with-caption {
+    display: flex;
+}
+
+.figcaption-modal {
+    text-align: left;
+    /* margin: 0; */
+    /* max-width:none !important;
+    min-width: 18rem !important; */
+    background-color: var(--pg-light-border);
+    padding: 0.5rem 0.8rem;
+    font-size: 0.7rem;
+    border-radius: 0.3rem;
+    border: 1px solid var(--pg-border-color);
+    display: inline-block;
+    height: 100%;
+}
+
+/* .modal figcaption {
+    width: 18rem !important;
+} */
+
+
+.md-typeset .footnote-ref {
+    font-size: 1em !important;
+    font-weight: 400 !important;
+}
+
+sup {
+    font-size: inherit;
+    vertical-align: inherit;
+    margin-right: 0.1em;
+}
+
+.tippy-box[data-theme~='custom'] {
+    background-color: var(--tooltip-bg);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* for some reason the scrollbar wasn't hiding correctly. So I'm overriding that css */
+/* Sidebar scroll wrapper */
+.md-sidebar__scrollwrap {
+    scrollbar-color: transparent transparent;
+}
+
+/* Sidebar scroll wrapper on hover */
+.md-sidebar__scrollwrap:hover {
+    scrollbar-color: var(--md-accent-fg-color) transparent;
+}
+
+/* Webkit scrollbar */
+.md-sidebar__scrollwrap::-webkit-scrollbar {
+    width: 4px; /* replace with the equivalent rem value */
+    height: 4px; /* replace with the equivalent rem value */
+}
+
+/* Webkit scrollbar thumb */
+.md-sidebar__scrollwrap::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+/* Webkit scrollbar thumb on hover */
+.md-sidebar__scrollwrap::-webkit-scrollbar-thumb:hover {
+    background-color: var(--md-accent-fg-color);
+}
+
+/* Sidebar scroll wrapper on focus/hover */
+.md-sidebar__scrollwrap:focus-within,
+.md-sidebar__scrollwrap:hover {
+    scrollbar-color: var(--md-accent-fg-color) transparent;
+}
+
+/* Webkit scrollbar thumb on hover */
+.md-sidebar__scrollwrap:focus-within::-webkit-scrollbar-thumb:hover,
+.md-sidebar__scrollwrap:hover::-webkit-scrollbar-thumb:hover {
+    background-color: var(--md-accent-fg-color);
+}
