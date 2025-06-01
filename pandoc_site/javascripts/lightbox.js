@@ -14,6 +14,12 @@
 //  </div>
 //</div>
 document$.subscribe(function () {
+  // Remove md-footer-meta div (one-off)
+  const footerMeta = document.querySelector('.md-footer-meta');
+  if (footerMeta) {
+    footerMeta.remove();
+  }
+
   const images = document.querySelectorAll('img[alt^="fig:"]');
 
 
