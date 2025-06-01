@@ -10,7 +10,7 @@ In this chapter, we demonstrate high rate Pulse Position Modulation (PPM) applic
 
 <!-- maybe hold off on ppm frame stuff till later... -->
 
-The Deep Space Optical Communicaiton (DSOC) project managed by the Jet Propulsion Laboratory (JPL) demonstrates optical communication using PPM with the Psyche spacecraft from distances of 0.06 to 2.7 Au [@Srinivasan2023GroundReceiver].
+The Deep Space Optical Communication (DSOC) project managed by the Jet Propulsion Laboratory (JPL) demonstrates optical communication using PPM with the Psyche spacecraft from distances of 0.06 to 2.7 Au [@Srinivasan2023GroundReceiver].
 
 For larger M, more data may be sent with a single optical pulse or given spacecraft power budget. This is quantified through the photon information efficiency $c_p = C/E$ where $C$ is the link capacity
 
@@ -20,7 +20,7 @@ $$
 
 and $E$ is the photon cost per optical pulse. DSOC relies on modulation of a CW seed laser to generate the communication signal on the spacecraft. This signal is then amplified by an Erbium Doped Fiber Amplifier (EDFA) which dominates the power budget of the spacecraft optical transmission system. Therefore, power consumption scales with the number of optical pulses sent.
 
-The DSOC project uses PPM with maximum M values of at least 5, meaning 5 bits of data are sent using 32 time slots per frame. M values as high as 19 have been demonstrated in the lab&#160;[@essiambre2023record], but the number of time bins needed per frame scales exponentially with the number of bits transmitted per pulse. Therefore, for a given fixed clock rate and time bin duration, the PPM data rate decreases dramatically for higher M values.
+The DSOC project uses PPM with maximum M values of at least 5, meaning 5 bits of data are sent using 32 time slots per frame. M values as high as 19 have been demonstrated in the lab&#160;[@essiambre2023record]. The number of time bins needed per frame scales exponentially with the number of bits transmitted per pulse; therefore, for a given fixed clock rate and time bin duration, the PPM data rate decreases dramatically for higher M values.
 
 <!-- PPM can achieve higher photon information efficiency than coherent detection techniques [@Dolinar2011Photon] for which the need to measure phase of the incoming optical signal limits minimum transmission power.  -->
 
@@ -34,7 +34,7 @@ The rate increase is possible due to recent advancements in Niobium Nitride SNSP
     <a name='fig:intro'></a> 
     <img alt="fig:intro" style="width: 100%; margin: auto;" src="../figs/fig_intro_2_light.png#only-light" >
     <img alt="fig:intro" style="width: 100%; margin: auto;" src="../figs/fig_intro_2_dark.png#only-dark" > 
-    <figcaption markdown> Figure 1: **PPM modulation and experiment setup** a) Diagram of the expiremental setup. WG: wave generator, CD: clock divider board, AWG: Arbitrary Waveform Generator, MLL: Mode Locked Laser (Pritel UAC), IM: Intensity Modulator, BC: Bias Controller, FSC: Free Space Coupling System, DCA: DC Coupled Cryo-amp b) How bits are transmitted in M=16 PPM modulation. An optical pulse is transmitted with a clock-referenced integer delay which encodes 4 bits of data. c) Scope trace of the RF pulse produced by the differential-readout tapered SNSPD. Fig. [2](#fig:waveform) zooms in on the rising edge outlined in red here.</figcaption>
+    <figcaption markdown> Figure 1: **PPM modulation and experiment setup** a) Diagram of the experimental setup. WG: wave generator, CD: clock divider board, AWG: Arbitrary Waveform Generator, MLL: Mode Locked Laser (Pritel UAC), IM: Intensity Modulator, BC: Bias Controller, FSC: Free Space Coupling System, DCA: DC Coupled Cryo-amp b) How bits are transmitted in M=16 PPM modulation. An optical pulse is transmitted with a clock-referenced integer delay which encodes 4 bits of data. c) Scope trace of the RF pulse produced by the differential-readout tapered SNSPD. Fig. [2](#fig:waveform) zooms in on the rising edge outlined in red here.</figcaption>
     </figure>
 
 However, these detectors exhibit a photon number dependent response that affects the time-correlated measurements needed for high-rate PPM. This behavior, shown in Fig. [2](#fig:waveform) also gives the detector photon number resolution (PNR) — a property that is desirable in certain applications including quantum communication and quantum computing. The SNSPD generates RF pulses with greater amplitude and slew rate when detecting optical pulses with multiple photons. Photon number effects are especially evident in this lower jitter variety of SNSPD due to the use of impedance matching tapers which more efficiently couple energy out of the nanowire and into the readout circuit. With high resolution time tagging equipment, photon number dependent effects have even been observed in SNSPDs not necessarily designed to exhibit it [@schapeler2023superconducting; @sauer2023resolving] like those without tapers [@Cahall2017SlewRatePNR]. Therefore it is increasingly likely that future research involving low-jitter SNSPDs and multiphoton pulsed sources will have to explicitly manage the PNR response for accurate time-correlated measurements – whether the effect it is desired or not.
@@ -50,9 +50,9 @@ For the tapered differential detectors, the PNR response affects timing of fixed
 
 ### Development of a modulation source
 
-We produce our PPM signal signal by carving a 1550&#160;nm high rate mode locked laser with lithium niobate modulators. Each mode locked laser pulse has duration on the order of 0.5&#160;ps. By modulating a mode-locked laser, the optical pulses do not incur timing jitter from the limited slew rate of the modulators or the RF signal that drives them. Two modulators are used in series to achieve the high extinction ratio needed to successively block up to 2047 laser pulses in a row.
+We produce our PPM signal by carving a 1550&#160;nm high rate mode locked laser with lithium niobate modulators. Each mode locked laser pulse has duration on the order of 0.5&#160;ps. By modulating a mode-locked laser, the optical pulses do not incur timing jitter from the limited slew rate of the modulators or the RF signal that drives them. Two modulators are used in series to achieve the high extinction ratio needed to successively block up to 2047 laser pulses in a row.
 
-We do two PPM demonstrations, with the source mode locked laser operating at 10.75 and 20 GHz. THe 10.75 GHz demonstration uses a M value of 10, thereby making frames with 1024 time slots of 93 ps width each. The 20 GHz demonstration uses M=11, giving 2048 time slots per frame of 50 ps width. Each frame ends with a dead time of approximately 150 ns to allow the SNSPD to fully recover before the next frame.
+We do two PPM demonstrations, with the source mode locked laser operating at 10.75 and 20 GHz. The 10.75 GHz demonstration uses a M value of 10, thereby making frames with 1024 time slots of 93 ps width each. The 20 GHz demonstration uses M=11, giving 2048 time slots per frame of 50 ps width. Each frame ends with a dead time of approximately 150 ns to allow the SNSPD to fully recover before the next frame.
 
 <!-- Therefore, we chose to carve pulses from a mode-locked laser. This approach allows for extremely short pulses in time, with the modulators responsible for sufficiently reducing any surrounding unwanted pulses. The temporal width of the modulator pulse response must be extremely short and able to modulate from 'off' to 'on' within a time frame of the order of the 50 ps bin width. -->
 

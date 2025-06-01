@@ -77,7 +77,7 @@ ppm-produce-md:
 	
 ref-update:
 	cd src && \
-	python clean_references.py
+	uv run python clean_references.py
 
 # tex:
 # 	cd src && \
@@ -106,7 +106,7 @@ ref-update:
 # mac version
 tex:
 	cd src && \
-	python clean_references.py && \
+	uv run python clean_references.py && \
 	pandoc metadata.yaml \
 	chapter*/*.md \
 	ref_heading.md \
@@ -130,7 +130,7 @@ tex:
 
 md_test:
 	cd src/ && \
-	python clean_references.py && \
+	uv run python clean_references.py && \
 	sh make_pandoc.sh
 
 overleaf:
@@ -175,15 +175,15 @@ overleaf-clean:
 
 mkdocs:
 	cd src && \
-	python clean_references.py && \
-	python give_figures_path_info.py && \
+	uv run python clean_references.py && \
+	uv run python give_figures_path_info.py && \
 	cd .. && \
 	sh make_pandoc_site.sh
 
 mkdocs_serve:
-	mkdocs serve
+	uv run mkdocs serve
 
-serve: mkdocs mkdocs_serve
+serve: uv run mkdocs mkdocs_serve
 
 
 # html:	

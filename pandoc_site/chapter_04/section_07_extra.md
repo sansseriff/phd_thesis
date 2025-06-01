@@ -16,7 +16,7 @@ The shape or boundary of the GMM-defined probability distributions is a curve ma
     <a name='fig:ica_pnr'></a> 
     <img alt="fig:ica_pnr" style="width: 100%; margin: auto;" src="../figs/ICA_component_analysis_light.svg#only-light" >
     <img alt="fig:ica_pnr" style="width: 100%; margin: auto;" src="../figs/ICA_component_analysis_dark.svg#only-dark" > 
-    <figcaption markdown> Figure 1: **Photon number discrimination from independent component analysis** Source data with axes defined from ICA. Projecting along the purple line (perpendicular to the larger black vector) produces a distribution of high Gaussianity. Whereas projecting along the red line (smaller vector) produces a distribution with high non-Gaussianity. b) Whitened feature space and it’s projection (c) on the x-axis.</figcaption>
+    <figcaption markdown> Figure 1: **Photon number discrimination from independent component analysis** Source data with axes defined from ICA. Projecting along the purple line (perpendicular to the larger black vector) produces a distribution of high Gaussianity. Whereas projecting along the red line (smaller vector) produces a distribution with high non-Gaussianity. b) Whitened feature space and its projection (c) on the x-axis.</figcaption>
     </figure>
 
 We observe that the photon groupings may be most separable in a whitened feature space based on non-orthogonal vectors in the original feature space. For this reason, we use independent component analysis (ICA) instead of principal component analysis (PCA).
@@ -27,8 +27,8 @@ Identifying photon number based on the ICA projection is likely just as effectiv
 
 **Todo**
 *This will be the first place in the thesis that I introduce the use of my software based phase locked loop (PLL). The software PLL has been useful in several later projects. I will either fully explain the PLL here, or I will only introduce and motivate it here. And a full description will go in an appendix. *
-1. For sending many PPM symbols, I needed a synchronization clock that was (A) always running, and (B) extremely low jitter. 
-2. Sending an output from the AWG to the Swabian timetagger in another room resulted in a less-than-ideal clock source. The signal was low amplitude, and triggering on it's rising edge did not make for a very low jitter clock signal. 
-3. I had some sense that that should be a way of 'averaging' past clock cycles in some way to cancel jitter. After some research and failed tests toward developing my own averaging method, I learned a software based Phase Locked Loop is just what I needed. 
-4. Initial version was adapted from a Matlab code on the Phase Locked Loop wikipedia page. That code was written for a sampled sign wave, but I adapted to take in just one data point per period. For our non-coherent and time-resolved types of measurements with SNSPDs, we typically only have clocks of this type. Where the clock is expressed by some type of optical or RF pulse that arrives on a regular period. 
+1. For sending many PPM symbols, I needed a synchronization clock that was (A) always running, and (B) extremely low jitter.
+2. Sending an output from the AWG to the Swabian timetagger in another room resulted in a less-than-ideal clock source. The signal was low amplitude, and triggering on it's rising edge did not make for a very low jitter clock signal.
+3. I had some sense that that should be a way of 'averaging' past clock cycles in some way to cancel jitter. After some research and failed tests toward developing my own averaging method, I learned a software based Phase Locked Loop is just what I needed.
+4. Initial version was adapted from a Matlab code on the Phase Locked Loop wikipedia page. That code was written for a sampled sign wave, but I adapted to take in just one data point per period. For our non-coherent and time-resolved types of measurements with SNSPDs, we typically only have clocks of this type. Where the clock is expressed by some type of optical or RF pulse that arrives on a regular period.
 5. More recently Rahaf Youssef and I have worked on updating our software PLL tools so that its easier to understand and reason about, and easier to lock to a given signal.  -->

@@ -24,43 +24,47 @@ document$.subscribe(function () {
     const imageContainer = image.parentNode
 
     imageContainer.addEventListener('mouseenter', (event) => {
-      const firstImage = event.target.querySelector('img');
-      timerId = setTimeout(() => {
-        const img = document.createElement('img');
-        console.log('added')
-        img.id = 'overlay'
-        img.src = '/javascripts/zoom-white.svg';
-        img.style.position = 'absolute';
-        img.style.top = `${firstImage.offsetTop + Math.round(0.5 * firstImage.offsetHeight)}px`;
-        img.style.left = `${firstImage.offsetLeft + Math.round(0.5 * firstImage.offsetWidth)}px`;
-        img.style.width = "250px";
-        img.style.height = "250px";
-        img.style.opacity = '0';
-        img.style.transform = 'translate(-50%, -50%)';
-        img.style.transition = 'opacity 0.5s';
-        img.style.pointerEvents = 'none'; // make the img element click-through
-        img.style.mixBlendMode = "difference";
-        img.style.zIndex = "0";
-        // imageContainer.appendChild(img);
-        imageContainer.insertBefore(img, imageContainer.firstChild);
-        setTimeout(() => {
-          img.style.opacity = '0.06';
-        }, 10);
+  timerId = setTimeout(() => {
+    const img = document.createElement('img');
+    console.log('added')
+    img.id = 'overlay'
+    img.src = '/javascripts/zoom-white.svg';
+    img.style.position = 'fixed';
+    
+    // Use imageContainer positioning instead of trying to find the specific image
+    const rect = imageContainer.getBoundingClientRect();
+    img.style.top = `${rect.top + Math.round(0.5 * rect.height)}px`;
+    img.style.left = `${rect.left + Math.round(0.5 * rect.width)}px`;
+    
+    img.style.width = "250px";
+    img.style.height = "250px";
+    img.style.opacity = '0';
+    img.style.transform = 'translate(-50%, -50%)';
+    img.style.transition = 'opacity 0.5s';
+    img.style.pointerEvents = 'none';
+    img.style.mixBlendMode = "difference";
+    img.style.zIndex = "0";
+    
+    document.body.appendChild(img);
+    
+    setTimeout(() => {
+      img.style.opacity = '0.06';
+    }, 10);
 
-        img.addEventListener('mouseenter', (event) => {
-          clearTimeout(timerId);
-          event.stopPropagation();
-        });
-      }, 400);
-    });
-
-    imageContainer.addEventListener('mouseleave', () => {
+    img.addEventListener('mouseenter', (event) => {
       clearTimeout(timerId);
-      const newNode = imageContainer.querySelector('#overlay');
-      if (newNode) {
-        imageContainer.removeChild(newNode);
-      }
+      event.stopPropagation();
     });
+  }, 400);
+});
+
+imageContainer.addEventListener('mouseleave', () => {
+  clearTimeout(timerId);
+  const newNode = document.body.querySelector('#overlay'); // Changed selector
+  if (newNode) {
+    document.body.removeChild(newNode); // Changed from imageContainer
+  }
+});
 
 
 
@@ -110,19 +114,52 @@ document$.subscribe(function () {
 
       // Check the aspect ratio of the image
       const aspectRatio = modalImage.naturalWidth / modalImage.naturalHeight;
-      console.log(aspectRatio)
+      const windowAspectRatio = window.innerWidth / window.innerHeight;
+      
+      // Calculate available space (accounting for margins/padding)
+      const availableWidth = window.innerWidth * 0.9; // 90% of window width
+      const availableHeight = window.innerHeight * 0.9; // 90% of window height
+      
+      // Estimate caption height (approximate based on layout)
+      const estimatedCaptionHeight = window.innerWidth <= 1300 ? 100 : 150;
+      const availableImageHeight = availableHeight - estimatedCaptionHeight;
+      
+      console.log(aspectRatio, windowAspectRatio);
+      
       if (aspectRatio > 1.6 || window.innerWidth <= 1300) {
         imageWithCaption.style.flexDirection = 'column';
         figcaption.style.marginTop = '1rem';
         figcaption.style.width = "50rem";
         if (window.innerWidth <= 1300) {
           figcaption.style.width = "100%";
-          
+        }
+        
+        // For column layout, check if image height would exceed available space
+        const maxImageWidth = Math.min(availableWidth, modalImage.naturalWidth);
+        const scaledImageHeight = maxImageWidth / aspectRatio;
+        
+        if (scaledImageHeight > availableImageHeight) {
+          // Constrain by height instead
+          modalImage.style.maxHeight = `${availableImageHeight}px`;
+          modalImage.style.maxWidth = 'none';
+          modalImage.style.width = 'auto';
         }
       } else {
         imageWithCaption.style.flexDirection = 'row-reverse';
         figcaption.style.marginRight = '2rem';
         figcaption.style.width = '22rem';
+        
+        // For row layout, account for caption width
+        const availableImageWidth = availableWidth - 350; // ~22rem + margins
+        const maxImageWidth = Math.min(availableImageWidth, modalImage.naturalWidth);
+        const scaledImageHeight = maxImageWidth / aspectRatio;
+        
+        if (scaledImageHeight > availableHeight) {
+          // Constrain by height
+          modalImage.style.maxHeight = `${availableHeight}px`;
+          modalImage.style.maxWidth = 'none';
+          modalImage.style.width = 'auto';
+        }
       }
 
       document.body.appendChild(modal);

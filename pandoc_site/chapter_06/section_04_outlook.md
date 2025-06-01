@@ -1,6 +1,10 @@
 ## Outlook
 
-To recapitulate the insights derived from the previous chapters, three principal points stand out: 1. With proper mounting and thermalisation techniques, the use of free space optical components inside a cryostat is not prohibitively challenging. 2. Time walk and PNR correction will likely be necessary for high count rate photon number resolving SNSPDs 3. The new capabilities, as discussed, should be incorporated into a design that does not necessitate substantial complication or discrete calibration endeavors. The key is to develop software supportive of in-situ calibration and event-corruption management.
+To recapitulate the insights derived from the previous chapters, three principal points stand out:
+
+1.  With proper mounting and thermalisation techniques, the use of free space optical components inside a cryostat is not prohibitively challenging.
+2.  Time walk and PNR correction will likely be necessary for high count rate photon number resolving SNSPDs.
+3.  The new capabilities, as discussed, should be incorporated into a design that does not necessitate substantial complication or discrete calibration endeavors. The key is to develop software supportive of in-situ calibration and event-corruption management.
 
 Our findings can be leveraged in the development of future high-rate heralded SPDC sources. In this context, we see a certain design for such a source, as shown in Fig. [1](#fig:final_setup), to be particularly promising.
 

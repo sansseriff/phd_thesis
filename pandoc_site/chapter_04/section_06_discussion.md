@@ -2,9 +2,9 @@
 
 <!-- you need a conceptual understanding of what a given data grouping means.
 
-Mutliple other groups have demonstrated the use of principle component analysis for photon number descrimination with SNSPDs. It's been shown it is handy for observing photon number when optical pulses always arrive at the same time with respect to a clock. 
+Mutliple other groups have demonstrated the use of principle component analysis for photon number descrimination with SNSPDs. It's been shown it is handy for observing photon number when optical pulses always arrive at the same time with respect to a clock.
 
-At this time there isn't a clear path towards extending PCA to situations where photon arrival time and photon number are a priori unknown. 
+At this time there isn't a clear path towards extending PCA to situations where photon arrival time and photon number are a priori unknown.
 
 We have shown that a photon number of few-photon optical pulses may be determined by measuring the slew rate or slope of the pulse -->
 

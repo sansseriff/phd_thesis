@@ -2,7 +2,7 @@
 
 The Performance Enhanced Array for Counting Optical Quanta (PEACOQ) is a new fiber-coupled SNSPD design that achieves high count rate by spreading the photon flux across a parallel array of short niobium nitride nanowires. Each wire may achieve count rates as high as 50 MCounts/s, so the 32-wire array as a whole can handle photon rates in excess of 1 GCounts/s. The PEACOQ is described in detail in Reference [@Craiciu23].
 
-From early tests of the PEACOQ, it became evident that jitter increased dramatically at high single wire count rates. One of the overarching goals the the PEACOQ project was to demonstrate near-100&#160;ps jitter at 1 GCount/s. Therefore, we investigated the possibility of applying time walk correction techniques to this detector. This began with collecting a calibration dataset like that discussed in the [mode locked laser calibration section](section_04_method.md#mode-locked-laser-calibration).
+From early tests of the PEACOQ, it became evident that jitter increased dramatically at high single wire count rates. One of the overarching goals of the PEACOQ project was to demonstrate near-100&#160;ps jitter at 1 GCount/s. Therefore, we investigated the possibility of applying time walk correction techniques to this detector. This began with collecting a calibration dataset like that discussed in the [mode locked laser calibration section](section_04_method.md#mode-locked-laser-calibration).
 
 A 1-GHz repetition rate 1550 nm mode locked laser was used (Pritel UOC) for calibration. The 1&#160;GHz repetition rate was chosen so that uncorrected jitter even at the highest count rates (approaching 400 ps at the FW1%M), was smaller than the laser period. Then, each time tag may be matched to the timing of the original optical pulse. A dataset with a count rate of 20 MCounts/s was used for calibration. At this rate, there is a good balance of statistics available for $t'$ ranging between 5 and 150 ns.
 
@@ -15,7 +15,7 @@ The calibration process for the PEACOQ showed that high-rate pulse distortions a
     <figcaption markdown> Figure 1: **PEACOQ RF pulse and calibration curve** a) The RF pulse of one of the PEACOQ nanowires. The effect of an impedance mismatch reflection is visible at 25&#160;ns. b) The delay vs $t'$ curve for wire 1 of the PEACOQ. The peak at 25&#160;ns lines up in time with the RF reflection visible in (a), and works to correct for the time-walk delays it causes.</figcaption>
     </figure>
 
-As before with the meandered SNSPD, there is no requirement that the calibration only be used in an application that is based on the same repetition rate of 1 Ghz. As interpolation between points on the delay vs.&#160;$t'$ vs lookup curve is possible, delay corrections for arbitrary $t'$ measurements may be found.
+As before with the meandered SNSPD, there is no requirement that the calibration only be used in an application that is based on the same repetition rate of 1 Ghz. As interpolation between points on the delay vs.&#160;$t'$ lookup curve is possible, delay corrections for arbitrary $t'$ measurements may be found.
 
 #### Second order calibration
 
@@ -74,7 +74,7 @@ Fig. [6](#fig:simulation_results) a shows simulated full-array jitter response 
     <figcaption markdown> Figure 6: **Simulated full PEACOQ array jitter performance with time-walk correction** Each simulated jitter histogram (2D corrected, 1D corrected, or uncorrected) is a weighted sum of 32 response functions for the 32 wires, each with count rate representative of a certain wire in the array ( Fig. [5](#fig:matching) ).</figcaption>
     </figure>
 
-<!-- The codebase supporting our findings with the 1st and 2nd order correction is 
+<!-- The codebase supporting our findings with the 1st and 2nd order correction is
 available at [SNSPD-time-walk-and-jitter-correction](https://github.com/sansseriff/SNSPD-time-walk-and-jitter-correction). -->
 
 <!-- <span class="bokeh" path="../code/test_1"></span> -->
