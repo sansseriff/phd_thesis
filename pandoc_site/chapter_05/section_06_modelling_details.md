@@ -95,7 +95,7 @@ This entanglement source is potentially useful for future quantum communication 
 We follow an analysis for co-linear quasi-phase matching inside a waveguide-packaged SPDC crystal [@Davis2022; @ZielnickiKwiat2018SPDCmodel]. The joint spectral intensity $|f(\omega_s, \omega_i)|^2$ is modeled as a product of phase matching and pump envelope intensities \|$\psi_{\mathrm{ph}}\left(\omega_s, \omega_i\right)|^2$ and $|\psi_p\left(\omega_s, \omega_i\right)|^2$, where $\omega_s$ and $\omega_i$ are the frequencies of the signal and idler modes, respectively. The phase matching envelope intensity takes the form:
 
 $$
-\left|\psi\_{\mathrm{ph}}\left(\omega_s, \omega_i\right)\right|^2=\operatorname{sinc}^2\left(\frac{\Delta k L}{2}\right),\;\;\;\;\;\; \Delta k=2 \pi\left(\frac{n\left(\lambda_p\right)}{\lambda_p}-\frac{n\left(\lambda_s\right)}{\lambda_s}-\frac{n\left(\lambda_i\right)}{\lambda_i}-\Gamma\right)
+\left|\psi_{\mathrm{ph}}\left(\omega_s, \omega_i\right)\right|^2=\operatorname{sinc}^2\left(\frac{\Delta k L}{2}\right),\;\;\;\;\;\; \Delta k=2 \pi\left(\frac{n\left(\lambda_p\right)}{\lambda_p}-\frac{n\left(\lambda_s\right)}{\lambda_s}-\frac{n\left(\lambda_i\right)}{\lambda_i}-\Gamma\right)
 $$
 
 where $L$ is the length of the crystal, $\Delta k$ is a wave-vector mismatch term, and $n_{p(s)(i)}$ is the refractive index of the crystal at the wavelengths of pump $\lambda_p$, signal $\lambda_s$ and idler $\lambda_i$. $\Gamma = 1/\Lambda$ where $\Lambda$ is the poling period of the crystal. The refractive indices $n(\{\lambda_p, \lambda_s, \lambda_i\})$ are computed from an MgO-doped PPLN Sellmeier equation [@Gayer2008]. In the expression for $\Delta K$, $\lambda_p$ is the function of $\lambda_s$ and $\lambda_i$ that imposes energy conservation: $1/\lambda_p = 1/\lambda_s + 1/\lambda_i$.
@@ -114,7 +114,7 @@ The JSI model is fitted to the 8x8 DWDM data from Fig. [system:1](./section_04_s
 
 $$
 \begin{align}
-C_{u,v} = \int_{s}\int\_{i}T_u(\lambda_s)T_v(\lambda_i)|f(\omega_s, \omega_i)|^2 d\lambda_s d\lambda_i \label{eq:c_uv}
+    C_{u,v} = \int_{s}\int_{i}T_u(\lambda_s)T_v(\lambda_i)|f(\omega_s, \omega_i)|^2 d\lambda_s d\lambda_i \label{eq:c_uv}
 \end{align}
 \tag{2}$$
 
@@ -165,7 +165,7 @@ It is common in the literature to calculate signal and idler arm efficiencies wi
 
 $$
 \begin{align}
-\eta_{s(i)}=\frac{C_{s i}}{S\_{i(s)}} \label{eq:regular_eff}
+\eta_{s(i)}=\frac{C_{s i}}{S_{i(s)}} \label{eq:regular_eff}
 \end{align}
 \tag{3}$$
 
@@ -175,7 +175,7 @@ where $\eta_{s(i)}$ is the coupling efficiency of the signal (idler) arm, $C_{s 
 
 $$
 \begin{align}
-\mu=\frac{S_s S_i}{C_{s i} R}. \label{eq:colorless}
+    \mu=\frac{S_s S_i}{C_{s i} R}. \label{eq:colorless}
 \end{align}
 \tag{4}$$
 
@@ -187,7 +187,7 @@ We propose a definition of $\mu$ similar to the form of Eq. [2](#eq:c_uv):
 
 $$
 \begin{align}
-\mu_{u,v} = \frac{1}{R}\int_{s}\int\_{i}W_u(\lambda_s)W_v(\lambda_i)|f(\omega_s, \omega_i)|^2 d\lambda_s d\lambda_i \label{eq:newmu}
+    \mu_{u,v} = \frac{1}{R}\int_{s}\int_{i}W_u(\lambda_s)W_v(\lambda_i)|f(\omega_s, \omega_i)|^2 d\lambda_s d\lambda_i \label{eq:newmu}
 \end{align}
 \tag{5}$$
 
@@ -202,8 +202,8 @@ As Eq. [4](#eq:colorless) is problematic for the narrowband filtering regime, a
 <a name='eq:new_eff'></a>
 
 $$
-\begin{align}
-\delta_{i(s)} = \frac{C_{is}}{\eta_{i(s)}S_{s(i)}}. \label{eq:new_eff}
+\begin{align} 
+    \delta_{i(s)} = \frac{C_{is}}{\eta_{i(s)}S_{s(i)}}. \label{eq:new_eff}
 \end{align}
 \tag{6}$$
 
@@ -219,7 +219,7 @@ We see Eq. [6](#eq:new_eff) is a modified form of Eq. [3](#eq:regular_eff) tha
 
 $$
 \begin{align}
-\mu = \frac{\delta S_s S_i }{R C_{is}} \label{new_mu}
+    \mu = \frac{\delta S_s S_i }{R C_{is}} \label{new_mu}
 \end{align}
 \tag{7}$$
 
@@ -259,8 +259,8 @@ Fig. [system:2](./section_04_system_results.md#fig:shg_scan) also shows a lower 
 
 $$
 \begin{align}
-C_{SKR} &= C_{AB} E*S \\
-C_{SKR} &= q C\_{AB}[1-f(\mathcal{E}) H_2(\mathcal{E})-H_2(\mathcal{E})]
+C_{SKR} &= C_{AB} E_S \\
+C_{SKR} &= q C_{AB}[1-f(\mathcal{E}) H_2(\mathcal{E})-H_2(\mathcal{E})]
 \end{align}
 $$
 
