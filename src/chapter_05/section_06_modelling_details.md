@@ -138,7 +138,7 @@ The JSI model is fitted to the 8x8 DWDM data from <span class="html"> Fig. [syst
 
 $$
 \begin{align}
-C*{u,v} = \int*{s}\int\_{i}T_u(\lambda_s)T_v(\lambda_i)|f(\omega_s, \omega_i)|^2 d\lambda_s d\lambda_i \label{eq:c_uv}
+C_{u,v} = \int_{s}\int\_{i}T_u(\lambda_s)T_v(\lambda_i)|f(\omega_s, \omega_i)|^2 d\lambda_s d\lambda_i \label{eq:c_uv}
 \end{align}
 $$
 {#eq:c_uv}
@@ -173,7 +173,7 @@ It is common in the literature to calculate signal and idler arm efficiencies wi
 
 $$
 \begin{align}
-\eta*{s(i)}=\frac{C*{s i}}{S\_{i(s)}} \label{eq:regular_eff}
+\eta_{s(i)}=\frac{C_{s i}}{S\_{i(s)}} \label{eq:regular_eff}
 \end{align}
 $$
 {#eq:regular_eff}
@@ -183,7 +183,7 @@ where $\eta_{s(i)}$ is the coupling efficiency of the signal (idler) arm, $C_{s 
 
 $$
 \begin{align}
-\mu=\frac{S*s S_i}{C*{s i} R}. \label{eq:colorless}
+\mu=\frac{S_s S_i}{C_{s i} R}. \label{eq:colorless}
 \end{align}
 $$
 {#eq:colorless}
@@ -194,7 +194,7 @@ We propose a definition of $\mu$ similar to the form of @eq:c_uv:
 
 $$
 \begin{align}
-\mu*{u,v} = \frac{1}{R}\int*{s}\int\_{i}W_u(\lambda_s)W_v(\lambda_i)|f(\omega_s, \omega_i)|^2 d\lambda_s d\lambda_i \label{eq:newmu}
+\mu_{u,v} = \frac{1}{R}\int_{s}\int\_{i}W_u(\lambda_s)W_v(\lambda_i)|f(\omega_s, \omega_i)|^2 d\lambda_s d\lambda_i \label{eq:newmu}
 \end{align}
 $$
 {#eq:newmu}
@@ -210,7 +210,7 @@ As @eq:colorless is problematic for the narrowband filtering regime, a conversio
 
 $$
 \begin{align}
-\delta*{i(s)} = \frac{C*{is}}{\eta*{i(s)}S*{s(i)}}. \label{eq:new_eff}
+\delta_{i(s)} = \frac{C_{is}}{\eta_{i(s)}S_{s(i)}}. \label{eq:new_eff}
 \end{align}
 $$
 {#eq:new_eff}
@@ -221,12 +221,12 @@ $$\delta = 0.393 \pm 0.012$$
 
 This is averaged from 8 $\delta_i$ and 8 $\delta_s$ values, for the 8 DWDM channel pairs along the main diagonal of the JSI.
 
-We see @eq:new_eff is a modified form of @eq:regular_eff that includes $\delta$. With $R \mu \eta*{s(i)}=S*{s(i)}$ again, we can define a new expression for $\mu$ using singles $S*{s(i)}$ and coincidence $C_{is}$ rates.
+We see @eq:new_eff is a modified form of @eq:regular_eff that includes $\delta$. With $R \mu \eta_{s(i)}=S_{s(i)}$ again, we can define a new expression for $\mu$ using singles $S_{s(i)}$ and coincidence $C_{is}$ rates.
 
 
 $$
 \begin{align}
-\mu = \frac{\delta S*s S_i }{R C*{is}} \label{new_mu}
+\mu = \frac{\delta S_s S_i }{R C_{is}} \label{new_mu}
 \end{align}
 $$
 {#eq:new_mu}
@@ -251,14 +251,14 @@ $$E_N = \mathrm{log_2}||\rho^{A}|| \quad\quad\quad I_{A\rightarrow B} = H\left(\
 
 where $||\rho^{T_A}||$ is the trace norm of the partial transpose of $\rho$, the calculated bipartite density matrix. $H$ is the base-2 von Neumann entropy [@Vidal2002negativity; @Devetak2004coherent].
 
-The entanglement rate of the experiment in ebits/s is the coincidence rate $C_{AB}$ times $E_D$. We therefore plot $C_{AB}E_N = C_N$ and $C_{AB}E_I = C_I$ in <span class="html">Fig. [system:2](./section_04_system_results.md#fig:shg_scan) </span><span class="latex">Fig. \ref{fig:shg_scan}</span>, as the upper and lower bounds on entangled bit rate $C*{AB}E_D = C_D$. Multiple integrations are performed at each phase and power setting, so that multiple density matrices and multiple measures of coherent information and log-negativity may be derived. The averages and standard deviations of these sets of measurements are used to define the values and error bars for <span class="html">Fig. [system:2](./section_04_system_results.md#fig:shg_scan) </span><span class="latex">Fig. \ref{fig:shg_scan}</span> and <span class="html">Fig. [system:3](./section_04_system_results.md#fig:channel_data) </span><span class="latex">Fig. \ref{fig:channel_data}</span>.
+The entanglement rate of the experiment in ebits/s is the coincidence rate $C_{AB}$ times $E_D$. We therefore plot $C_{AB}E_N = C_N$ and $C_{AB}E_I = C_I$ in <span class="html">Fig. [system:2](./section_04_system_results.md#fig:shg_scan) </span><span class="latex">Fig. \ref{fig:shg_scan}</span>, as the upper and lower bounds on entangled bit rate $C_{AB}E_D = C_D$. Multiple integrations are performed at each phase and power setting, so that multiple density matrices and multiple measures of coherent information and log-negativity may be derived. The averages and standard deviations of these sets of measurements are used to define the values and error bars for <span class="html">Fig. [system:2](./section_04_system_results.md#fig:shg_scan) </span><span class="latex">Fig. \ref{fig:shg_scan}</span> and <span class="html">Fig. [system:3](./section_04_system_results.md#fig:channel_data) </span><span class="latex">Fig. \ref{fig:channel_data}</span>.
 
 <span class="html">Fig. [system:2](./section_04_system_results.md#fig:shg_scan) </span><span class="latex">Fig. \ref{fig:shg_scan}</span> also shows a lower bound on secret key rate (SKR) given reasonable assumptions for a slightly different implementation of the entanglement source. This is calculated with a key generation rate formula [@ma2007quantum]:
 
 $$
 \begin{align}
-C*{SKR} &= C*{AB} E*S \\
-C*{SKR} &= q C\_{AB}[1-f(\mathcal{E}) H_2(\mathcal{E})-H_2(\mathcal{E})]
+C_{SKR} &= C_{AB} E*S \\
+C_{SKR} &= q C\_{AB}[1-f(\mathcal{E}) H_2(\mathcal{E})-H_2(\mathcal{E})]
 \end{align}
 $$
 
