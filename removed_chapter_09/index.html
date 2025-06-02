@@ -1,0 +1,2026 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../chapter_08/section_05_data_analysis_visualization/">
+      
+      
+        <link rel="next" href="../future_directions/">
+      
+      
+      <link rel="icon" href="../site_images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+    
+    
+<title>SNSPDs for Fun and Profit</title>
+
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/tippy.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale-subtle.css" />
+<link rel="stylesheet" href="https://unpkg.com/tippy.js@6/themes/translucent.css" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#impact-of-experimental-imperfections-on-entanglement-visibility" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SNSPhD" class="md-header__button md-logo" aria-label="SNSPhD" data-md-component="logo">
+      
+  <img src="../site_images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SNSPhD
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Index
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/sansseriff/phd_thesis" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sansseriff/phd_thesis
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SNSPhD" class="md-nav__button md-logo" aria-label="SNSPhD" data-md-component="logo">
+      
+  <img src="../site_images/logo.svg" alt="logo">
+
+    </a>
+    SNSPhD
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/sansseriff/phd_thesis" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sansseriff/phd_thesis
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../published/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Published
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../chapter_01/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Ch. 1: Introduction
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Ch. 1: Introduction
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_01/section_03_snspd_background/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SNSPD background
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_01/section_04_dtsnspd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Differential SNSPD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_01/section_05_structure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Structure of this thesis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../chapter_02/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Ch. 2: Low Dark Count Rate SNSPD
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Ch. 2: Low Dark Count Rate SNSPD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_02/section_03_introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_02/section_04_design_and_use/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design & Use
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_02/section_05_model_and_results/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model & Results
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../chapter_03/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Ch. 3: Time Walk Correction
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Ch. 3: Time Walk Correction
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_03/section_03_introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_03/section_04_method/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Method
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_03/section_05_peacoq_2nd_order/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PEACOQ and 2D-Correction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_03/section_06_extra/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Extra
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_03/section_07_conclusion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../chapter_04/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Ch. 4: PPM & Photon Resolution
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Ch. 4: PPM & Photon Resolution
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_04/section_03_introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_04/section_04_method/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Method
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_04/section_05_results/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Results
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_04/section_06_discussion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Discussion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_04/section_07_extra/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Extra
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../chapter_05/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Ch. 5: High Rate Entanglement
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Ch. 5: High Rate Entanglement
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_05/section_03_introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_05/section_04_system_results/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System & Results
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_05/section_05_discussion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Discussion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_05/section_06_modelling_details/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modelling Details
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_05/section_07_experiment_details/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Experiment Details
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../chapter_06/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Ch. 6: Conclusion
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Ch. 6: Conclusion
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_06/section_03_summary_and_reflection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Summary & Reflection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_06/section_04_outlook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Outlook
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../chapter_07/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    A1: Aph 138 Homework
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            A1: Aph 138 Homework
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../chapter_08/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    A2: Software Tools
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            A2: Software Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_08/section_04_experiment_control/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Experiment Control Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_08/section_05_data_analysis_visualization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visualization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
+  
+  <span class="md-ellipsis">
+    A3: Interferometer Imbalance Analysis
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            A3: Interferometer Imbalance Analysis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../future_directions/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    A4: Future Directions
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            A4: Future Directions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#impact-of-experimental-imperfections-on-entanglement-visibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Impact of experimental imperfections on entanglement visibility
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Impact of experimental imperfections on entanglement visibility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-interferometer-imperfections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Source Interferometer Imperfections
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measurement-interferometer-imperfections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Measurement Interferometer Imperfections
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiphoton-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiphoton Effects
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Index</h1>
+
+<!-- ## Aph 138b Homework Assignment -->
+
+<p>Note: the following section is primarily written by Samantha Davis, the second author of the paper <a href="https://arxiv.org/abs/2310.01804">High-rate multiplexed entanglement source based on time-bin qubits for advanced quantum networks</a>. <strong>It is not a part of the main thesis</strong> and does not appear in the thesis <code>.pdf</code>, as it is not primarily my work. However, it is included here for convenience and completeness.</p>
+<h2 id="impact-of-experimental-imperfections-on-entanglement-visibility">Impact of experimental imperfections on entanglement visibility</h2>
+<p>The experiment employs three Michaelson interferometers with a path-length delay of 80 ps: one at the source to generate the early and late time-bins, and one prior to each detector to control the measurement basis. To determine the effect of interferometric imperfections on the entanglement visibility, we model the interferometers as equivalent Mach-Zehnder interferometers as shown in Fig. <a href="#fig:interf_model">1</a>. Imperfections in the interferometer are captured by the transmittance <span class="arithmatex">\(t\)</span> of the beamsplitter and internal path (mirror) efficiencies <span class="arithmatex">\(|\alpha|^2\)</span> and <span class="arithmatex">\(|\beta|^2\)</span>. An ideal Michaelson interferometer has <span class="arithmatex">\(t = 1/\sqrt{2}\)</span> and <span class="arithmatex">\(|\alpha|^2 = |\beta|^2 = 1\)</span>.</p>
+<!-- \begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{interf_model.pdf}
+    \caption{Model for Michaelson interferometers employed in the experiment. The interfomerter contains a beamsplitter with transmittance $t$ and two mirrors with efficiencies $\alpha$ and $\beta$.}
+    \label{fig:interf_model}
+\end{figure} -->
+
+<figure>
+<p><a name='fig:interf_model'></a> 
+    <img alt="fig:interf_model" src="figs/interf_model.png" /> 
+    <figcaption markdown> Figure 1: <strong>Michaelson interferometer model</strong> Model for Michaelson interferometers employed in the experiment. The interfomerter contains a beamsplitter with transmittance <span class="arithmatex">\(t\)</span> and two mirrors with efficiencies <span class="arithmatex">\(\alpha\)</span> and <span class="arithmatex">\(\beta\)</span>.</figcaption>
+    </p>
+</figure>
+<h3 id="source-interferometer-imperfections">Source Interferometer Imperfections</h3>
+<p>In the experiment, pulses of coherent light from a mode-locked laser (<abbr title="Mode Locked Laser">MLL</abbr>) are injected into the input of the source interferometer. A field <span class="arithmatex">\(\hat{E}\)</span> at the input of the source interferometer transforms as</p>
+<p><a name='eq:source_field_transform'></a></p>
+<div class="arithmatex">\[
+\begin{align}
+    \hat{E}_{\text{in}}  \rightarrow rt \alpha e^{i\varphi} \hat{E}_{E,1} +  r^2 \alpha e^{i\varphi}\hat{E}_{E,2} + rt\beta \hat{E}_{L,1} + t^2\beta \hat{E}_{L,2} + ir\sqrt{1-|\alpha|^2}\hat{E}_{\text{vac}_1} +it\sqrt{1-|\beta|^2}\hat{E}_{\text{vac}_2} \label{eq:source_field_transform}
+\end{align}
+\tag{1}\]</div>
+<p>where the early and late temporal modes are denoted by subscripts “E” and “L”, the input and output modes are denoted by subscripts “in”, “1” and “2”, and <span class="arithmatex">\(r = i\sqrt{1-|t|^2}\)</span>. Due to imperfect path efficiencies, part of the light leaks into the vacuum field mode <span class="arithmatex">\(\hat{E}_{\text{vac}}\)</span>, which corresponds to the last term in Eq. <a href="#eq:source_field_transform">1</a>. It follows that the power of the early and late output pulses in terms of the power of the input pulse are</p>
+<p><a name='eq:powers'></a></p>
+<div class="arithmatex">\[
+\begin{align}
+    &amp;P_{E,1} = |r|^2|t|^2|\alpha|^2 P_{in},&amp;P_{E,2} = |r|^4 |\alpha|^2 P_{in} \label{eq:powers}\\
+    &amp;P_{L,1} = |r|^2|t|^2|\beta|^2 P_{in} ,&amp;P_{L,2} = |t|^4 |\beta|^2 P_{in}.\nonumber 
+\end{align}
+\tag{2}\]</div>
+<p>%The splitting ratio <span class="arithmatex">\(|t|^2\)</span> and internal path efficiencies <span class="arithmatex">\(|\alpha|^2\)</span> and <span class="arithmatex">\(|\beta|^2\)</span> can be solved from ( Eq. <a href="#eq:powers">2</a> ).</p>
+<p>To generate the entangled photon pairs, one of the output ports of the source interferometer is up-converted by second harmonic generation (SHG) then down-converted via spontaneous parametric down conversion (<abbr title="Spontaneous Parametric Down Conversion">SPDC</abbr>), resulting in two-mode squeezed vacuum states (TMSVs) in early and late temporal modes with mean photon numbers <span class="arithmatex">\(\mu_E\)</span> and <span class="arithmatex">\(\mu_L\)</span>, respectively. The ratio of <span class="arithmatex">\(\mu_E\)</span> to <span class="arithmatex">\(\mu_L\)</span> depends on which output port of the source interferometer is used. Note that the definition of <span class="arithmatex">\(\mu\)</span> used in the main text is per source laser period or per experiment cycle (4.09 GHz). Therefore <span class="arithmatex">\(\mu\)</span> from the main text is equal to <span class="arithmatex">\(\mu_E + \mu_L\)</span>. The output power of SHG (<span class="arithmatex">\(P_{SHG}\)</span>) as a function of the SHG pump power (<span class="arithmatex">\(P_p\)</span>) is <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>,</p>
+<div class="arithmatex">\[
+\begin{align}
+    P_{SHG} = P_{p}\tanh^2{\sqrt{\eta_{SHG}P_{p}}} \approx \eta_{SHG}P_{p}^2
+\end{align}
+\]</div>
+<p>where <span class="arithmatex">\(\eta_{SHG}\)</span> is the conversion efficiency of the SHG crystal. After <abbr title="Spontaneous Parametric Down Conversion">SPDC</abbr>, the squeezing parameter (<span class="arithmatex">\(\xi\)</span>) of the TMSVs in terms of the <abbr title="Spontaneous Parametric Down Conversion">SPDC</abbr> pump power (<span class="arithmatex">\(P_{SHG}\)</span>) is <span class="arithmatex">\(\xi = \lambda \sqrt{P_{SHG}} \approx \lambda \sqrt{\eta_{SHG}}P_p\)</span>, where <span class="arithmatex">\(\lambda\)</span> is proportional to the <abbr title="Spontaneous Parametric Down Conversion">SPDC</abbr> crystal length and nonlinear interaction strength <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. The mean photon number in terms of the squeezing parameter is <span class="arithmatex">\(\mu = \sinh^2{\xi}\approx \xi^2\)</span>. Therefore, the mean photon numbers of the TMSVs as a function of the output pulses of the source interferometer are,</p>
+<div class="arithmatex">\[
+\begin{align}
+    &amp;\mu_E \approx \lambda^2 \eta_{SHG} P_{E,i}^2 &amp;\mu_L\approx \lambda^2 \eta_{SHG} P_{L,i}^2
+\end{align}
+\]</div>
+<p>where <span class="arithmatex">\(i = 1(2)\)</span> corresponds to output port 1(2) of the source interferometer.</p>
+<p>If output port 1 is used, <span class="arithmatex">\(<span class="arithmatex">\(\mu_E/\mu_L \approx P_{E,1}^2/P_{L,1}^2 = |\alpha|^4/|\beta|^4,\)</span>\)</span> whereas if output port 2 is used, <span class="arithmatex">\(<span class="arithmatex">\(\mu_E/\mu_L \approx P_{E,2}^2/P_{L,2}^2 = |r|^8|\alpha|^4/|t|^8|\beta|^4.\)</span>\)</span> When output port 1 of the source interferometer is used, if the internal path efficiencies of the source interferometer are different, there is an imbalance in the early and late mean photon numbers. When output port 2 is used, the effect of the imbalance in the internal path efficiencies on the ratio of early and late mean photon numbers can be compensated by imperfect transmittance: <span class="arithmatex">\(\mu_E/\mu_L = 1\)</span> when <span class="arithmatex">\(|t|^2/|r|^2 = |\alpha|/|\beta|\)</span>.</p>
+<h3 id="measurement-interferometer-imperfections">Measurement Interferometer Imperfections</h3>
+<!-- \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{ent_visib_model.pdf}
+    \caption{Setup for theoretical model of entanglement visibility experiment}
+    \label{fig:ent_visib_model}
+\end{figure} -->
+
+<figure>
+<p><a name='fig:ent_visib_model'></a> 
+    <img alt="fig:ent_visib_model" src="figs/ent_visib_model.png" /> 
+    <figcaption markdown> Figure 2: <strong>Entanglement visibility model</strong> Setup for theoretical model of entanglement visibility experiment</figcaption>
+    </p>
+</figure>
+<p>Imperfections in the measurement interferometers limit the entanglement visibility of the experiment. As described in the previous section, early and late TMSVs are generated by pumping the <abbr title="Spontaneous Parametric Down Conversion">SPDC</abbr> with early and late pulses. Each half of each TMSV is sent to a measurement interferometer (see Fig. <a href="#fig:ent_visib_model">2</a>). Let <span class="arithmatex">\(\ket{\xi}\)</span> denote the TMSV state,</p>
+<div class="arithmatex">\[
+\begin{align}
+    \ket{\xi} = \sum_{n=0}^{\infty}(-1)^n \sqrt{\frac{\mu^n}{(1+\mu)^{n+1}}}\ket{n_A,n_B}
+\end{align}
+\]</div>
+<p>where <span class="arithmatex">\(\ket{n_A,n_B}\)</span> denotes the state with <span class="arithmatex">\(n_A\)</span> photons at the input of interferometer A and <span class="arithmatex">\(n_B\)</span> photons at the input port of interferometer B. %As in the previous section, <span class="arithmatex">\(\mu = \sinh^2{\xi}\)</span> is the mean photon number where <span class="arithmatex">\(\xi\)</span> is the squeezing parameter. We model the input state to the measurement interferometers as a product state of TMSV in early and late temporal modes, to lowest order in <span class="arithmatex">\(\mu_E\)</span> and <span class="arithmatex">\(\mu_L\)</span>:</p>
+<p><a name='eq:input_state'></a></p>
+<div class="arithmatex">\[
+\begin{align}
+    \ket{\Psi_{in}} =&amp; \ket{\xi}_E\otimes \ket{\xi}_L \nonumber \\
+    = &amp;\left(\frac{1}{\sqrt{1+\mu_E}}\ket{0,0}_E -\sqrt{\frac{\mu_E}{(1+\mu_E)^2}}\ket{1,1}_E +\cdots\right)
+    \otimes \left(\frac{1}{\sqrt{1+\mu_L}}\ket{0,0}_L -\sqrt{\frac{\mu_L}{(1+\mu_L)^2}}\ket{1,1}_L +\cdots\right)\nonumber\\
+    \approx&amp; \sqrt{1-(\mu_E +\mu_L)}\ket{0,0}_E \ket{0,0}_L -\sqrt{\mu_E}\ket{1,1}_E  \ket{0,0}_L  -\sqrt{\mu_L}\ket{0,0}_E  \ket{1,1}_L\label{eq:input_state}
+\end{align}
+\tag{3}\]</div>
+<p>We can express Eq. <a href="#eq:input_state">3</a> in terms of the creation operators <span class="arithmatex">\(\hat{a}^\dagger\)</span> and <span class="arithmatex">\(\hat{b}^\dagger\)</span> of the field modes at the inputs of interferometers A and B, respectively:</p>
+<p><a name='eq:input_state_fields'></a></p>
+<div class="arithmatex">\[
+\begin{align}
+    \ket{\Psi_{in}} =\Big(\sqrt{1-(\mu_E+\mu_L)}-\sqrt{\mu_E} \hat{a}_{E}^{\dagger}\hat{b}_{E}^{\dagger} - \sqrt{\mu_L} \hat{a}_{L}^{\dagger}\hat{b}_{L}^{\dagger} \Big)\ket{0,0}_E\ket{0,0}_L \label{eq:input_state_fields}
+\end{align}
+\tag{4}\]</div>
+<p>Since the measurement interferometers are also Michaelson interferometers, the transformation relations are,</p>
+<p><a name='eq:aE_transform'></a></p>
+<div class="arithmatex">\[
+\begin{align}
+    &amp;\hat{a}_{E} \mapsto r_At_A \alpha e^{i\varphi} \hat{a}_{E,1} + r_A^2 \alpha e^{i\varphi}\hat{a}_{E,2} + r_At_A\beta \hat{a}_{L,1} + t_A^2\beta \hat{a}_{L,2}+c_A\hat{a}_{\text{vac}_1}+d_A\hat{a}_{\text{vac}_2},\label{eq:aE_transform} 
+\end{align}
+\tag{5}\]</div>
+<p><a name='eq:bE_transform'></a></p>
+<div class="arithmatex">\[
+\begin{align}
+    &amp;\hat{b}_{E}  \mapsto r_Bt_B \gamma e^{i\varphi} \hat{b}_{E,1} + r_B^2 \gamma e^{i\varphi}\hat{b}_{E,2} + r_Bt_B\delta \hat{b}_{L,1} + t_B^2\delta \hat{b}_{L,2}+c_B\hat{b}_{\text{vac}_1}+d_B\hat{b}_{\text{vac}_2},\label{eq:bE_transform}
+\end{align}
+\tag{6}\]</div>
+<p><a name='eq:aL_transform'></a></p>
+<div class="arithmatex">\[
+\begin{align}
+    &amp;\hat{a}_{L} \mapsto  r_A t_A \alpha e^{i\varphi} \hat{a}_{L,1}  + r_A^2 \alpha e^{i\varphi}\hat{a}_{L,2} + r_A t_A\beta \hat{a}_{L^\prime,1}+ t_A^2\beta \hat{a}_{L^\prime,2}+c_A\hat{a}_{\text{vac}_1}+d_A\hat{a}_{\text{vac}_2},\label{eq:aL_transform}
+\end{align}
+\tag{7}\]</div>
+<p><a name='eq:bL_transform'></a></p>
+<div class="arithmatex">\[
+\begin{align}
+    &amp;\hat{b}_{L}  \mapsto r_B t_B \gamma e^{i\varphi} \hat{b}_{L,1} + r_B^2 \gamma e^{i\varphi}\hat{b}_{L,2}  + r_B t_B\delta \hat{b}_{L^\prime,1}+ t_B^2\delta \hat{b}_{L^\prime,2}+c_B\hat{b}_{\text{vac}_1}+d_B\hat{b}_{\text{vac}_2},\label{eq:bL_transform}
+\end{align}
+\tag{8}\]</div>
+<div class="arithmatex">\[
+\begin{align}
+    &amp;c_A =ir_A\sqrt{1-|\alpha|^2}, \quad d_A=it_A\sqrt{1-|\beta|^2},\quad
+    c_B =ir_B\sqrt{1-|\delta|^2},\quad\ d_B = it_B\sqrt{1-|\gamma|^2},\nonumber
+\end{align}
+\]</div>
+<p>where <span class="arithmatex">\(L^\prime\)</span> denotes the temporal mode obtained by sending a photon in the late (<span class="arithmatex">\(L\)</span>) mode through the long arm of an interferometer, and <span class="arithmatex">\(\hat{a}_{\text{vac}_i}\)</span>, <span class="arithmatex">\(\hat{b}_{\text{vac}_i}\)</span> correspond to vacuum modes. To find the state at the output of the interferometers, we combine Eq. <a href="#eq:input_state_fields">4</a> with Eq. <a href="#eq:aE_transform">5</a> - Eq. <a href="#eq:bL_transform">8</a>, and consider only terms relevant to post-selection on coincidences of the middle bins (L) of different interferometer outputs, to lowest order in <span class="arithmatex">\(\mu_E\)</span>, <span class="arithmatex">\(\mu_L\)</span>,</p>
+<p><a name='eq:output_state'></a></p>
+<div class="arithmatex">\[
+\begin{align}
+    \ket{\Psi_{\text{out}}}= %&amp;\sqrt{1-(\mu_E+\mu_L)}\ket{0,0;0,0}_E\ket{0,0;0,0}_L\ket{0,0;0,0}_{L^\prime} \\
+    \cdots&amp;+r_A^*t_A r_B^*t_B\Big(\beta \delta\sqrt{\mu_E}+\alpha \gamma \sqrt{\mu_L} e^{-2i\varphi}  \Big)\ket{0,0;0,0}_E\ket{1,0;1,0}_L\ket{0,0;0,0}_{L^\prime}\label{eq: output_state}\\
+    &amp;+r_A^*t_A\Big(t_B^2  \beta\delta \sqrt{\mu_E} + (r_B^*)^2  \alpha \gamma \sqrt{\mu_L} e^{-2i\varphi}\Big)\ket{0,0;0,0}_E\ket{1,0;0,1}_L\ket{0,0;0,0}_{L^\prime} \nonumber\\
+    &amp;+r_B^*t_B\Big(t_A^2\beta \delta\sqrt{\mu_E}  +(r_A^*)^2 \alpha \gamma  \sqrt{\mu_L} e^{-2i\varphi}\Big)\ket{0,0;0,0}_E\ket{0,1;1,0}_L\ket{0,0;0,0}_{L^\prime} \nonumber\\
+    &amp;+\Big(t_A^2 t_B^2\beta \delta\sqrt{\mu_E} + (r_A^*)^2 (r_B^*)^2 \alpha \gamma \sqrt{\mu_L} e^{-2i\varphi}\Big)\ket{0,0;0,0}_E\ket{0,1;0,1}_L\ket{0,0;0,0}_{L^\prime} + \cdots \nonumber 
+\end{align}
+\tag{9}\]</div>
+<p>where <span class="arithmatex">\(\ket{n_{A,1},n_{A_2};n_{B_1}, n_{B,2}}\)</span> denotes the state with <span class="arithmatex">\(n_{A,1}\)</span> photons at output 1 of interferometer A, <span class="arithmatex">\(n_{A,2}\)</span> photons at output 2 of interferometer A, <span class="arithmatex">\(n_{B,1}\)</span> photons at output 1 of interferometer B, and <span class="arithmatex">\(n_{B,2}\)</span> photons at output 2 of interferometer B. We define the following parameters to simplify notation:</p>
+<div class="arithmatex">\[
+\begin{align}
+    x \equiv \frac{\mu_E}{\mu_L},\quad\quad\quad
+    \kappa_A \equiv \frac{|\beta|^2}{|\alpha|^2}, \quad\quad\quad \kappa_B \equiv \frac{|\gamma|^2}{|\delta|^2},\quad\quad\quad \epsilon_A = \frac{|t_A|^2}{|r_A|^2}, \quad\quad\quad \epsilon_B \equiv \frac{|t_B|^2}{|r_B|^2}.
+\end{align}
+\]</div>
+<p>From Eq. <a href="#eq:output_state">9</a> , it follows that the coincidence probabilities for each combination of output ports are proportional to,</p>
+<div class="arithmatex">\[
+\begin{align}
+    &amp;C_{A_1, B_1}(\varphi) \propto \sqrt{\frac{\kappa_B}{\kappa_A}}+\sqrt{\frac{\kappa_A}{\kappa_B}}x+2\sqrt{x}\cos{2\varphi},\\
+    &amp;C_{A_1, B_2}(\varphi) \propto \frac{1}{\epsilon_B}\sqrt{\frac{\kappa_B}{\kappa_A}}+\epsilon_B\sqrt{\frac{\kappa_A}{\kappa_B}}x+2\sqrt{x}\cos{2\varphi},\\
+    &amp;C_{A_2, B_1}(\varphi) \propto \frac{1}{\epsilon_A}\sqrt{\frac{\kappa_B}{\kappa_A}}+\epsilon_A\sqrt{\frac{\kappa_A}{\kappa_B}}x+2\sqrt{x}\cos{2\varphi},\\
+    &amp;C_{A_2, B_2}(\varphi) \propto  \frac{1}{\epsilon_A\epsilon_B}\sqrt{\frac{\kappa_B}{\kappa_A}}+\epsilon_A\epsilon_B\sqrt{\frac{\kappa_A}{\kappa_B}}x+2\sqrt{x}\cos{2\varphi},
+\end{align}
+\]</div>
+<p>where the phase factors in the reflectivities <span class="arithmatex">\(r_A, r_B\)</span> are absorbed into the definition of <span class="arithmatex">\(\varphi\)</span>. Therefore, the entanglement visibilities, <span class="arithmatex">\(V = \frac{\text{max}(C(\varphi))-\text{min}(C(\varphi))}{\text{max}(C(\varphi))+\text{min}(C(\varphi))}\)</span>, for each combination of output ports are:</p>
+<p><a name='eq:FA1B1'></a></p>
+<div class="arithmatex">\[
+\begin{align}
+    &amp;V_{A_1, B_1} = \frac{2\sqrt{x}}{\sqrt{\frac{\kappa_B}{\kappa_A}}+\sqrt{\frac{\kappa_A}{\kappa_B}}x}, \label{eq:FA1B1}
+\end{align}
+\tag{10}\]</div>
+<p><a name='eq:FA1B2'></a></p>
+<div class="arithmatex">\[
+\begin{align}
+    &amp;V_{A_1, B_2} = \frac{2\sqrt{x}}{\frac{1}{\epsilon_B}\sqrt{\frac{\kappa_B}{\kappa_A}}+\epsilon_B\sqrt{\frac{\kappa_A}{\kappa_B}}x},\label{eq:FA1B2}
+\end{align}
+\tag{11}\]</div>
+<p><a name='eq:FA2B1'></a></p>
+<div class="arithmatex">\[
+\begin{align}
+    &amp;V_{A_2, B_1} =  \frac{2\sqrt{x}}{ \frac{1}{\epsilon_A}\sqrt{\frac{\kappa_B}{\kappa_A}}+\epsilon_A\sqrt{\frac{\kappa_A}{\kappa_B}}x},\label{eq:FA2B1}
+\end{align}
+\tag{12}\]</div>
+<p><a name='eq:FA2B2'></a></p>
+<div class="arithmatex">\[
+\begin{align}
+    &amp;V_{A_2, B_2} = \frac{2\sqrt{x}}{\frac{1}{\epsilon_A\epsilon_B}\sqrt{\frac{\kappa_B}{\kappa_A}}+\epsilon_A\epsilon_B\sqrt{\frac{\kappa_A}{\kappa_B}}x}.\label{eq:FA2B2}
+\end{align}
+\tag{13}\]</div>
+<p>Unity visibility is achievable for each combination of output ports: <span class="arithmatex">\(V_{A_1, B_1} = 1\)</span> when <span class="arithmatex">\(x = \kappa_B/\kappa_A\)</span>, <span class="arithmatex">\(V_{A_1, B_2} = 1\)</span> when <span class="arithmatex">\(x = \kappa_B/(\kappa_A\epsilon_B^2)\)</span>, <span class="arithmatex">\(V_{A_2, B_1} = 1\)</span> when <span class="arithmatex">\(x = \kappa_B/(\kappa_A\epsilon_A^2)\)</span>, and <span class="arithmatex">\(V_{A_2, B_2} = 1\)</span> when <span class="arithmatex">\(x = \kappa_B/(\kappa_A\epsilon_A^2\epsilon_B^2)\)</span>. Therefore, the effect of imbalances in the source and measurement interferometers is to shift the optimal ratio of early to late mean photon numbers. Imbalances in the measurement interferometers can be compensated by imbalances in the source interferometer in order to obtain unity visibility. Moreover, in the single photon limit, the visibility is insensitive to the absolute path efficiencies in the experiment. The visibility depends only on the ratio of path efficiencies between the measurement interferometers ( <span class="arithmatex">\(\kappa_A/\kappa_B\)</span> ). The entanglement visibilities for each combination of output ports as a function of <span class="arithmatex">\(x=\mu_E/\mu_L\)</span> for various ratios of interferometric path efficiencies are shown in Fig. <a href="#fig:ent_fid_single_photon">3</a>.</p>
+<!-- \begin{figure}[H]
+    \includegraphics[width = \textwidth]{ent_fid_single_photon_fixed_kappa.pdf}
+    \caption{Entanglement visibility as function of $\mu_E/\mu_L$ for fixed $\kappa_B/\kappa_A = 1$ and  $ \epsilon_A = \epsilon_B = 90/10$ (red), $75/25$ (blue), $50/50$ (green), $25/75$ (purple).}
+    \label{fig:ent_fid_single_photon}
+\end{figure} -->
+
+<figure>
+<p><a name='fig:ent_fid_single_photon'></a> 
+    <img alt="fig:ent_fid_single_photon" src="figs/ent_fid_single_photon_fixed_kappa.png" /> 
+    <figcaption markdown> Figure 3: <strong>Visibility versus <span class="arithmatex">\(\mu_E/\mu_L\)</span></strong> Entanglement visibility as function of <span class="arithmatex">\(\mu_E/\mu_L\)</span> for fixed <span class="arithmatex">\(\kappa_B/\kappa_A = 1\)</span> and <span class="arithmatex">\(\epsilon_A = \epsilon_B = 90/10\)</span> (red), <span class="arithmatex">\(75/25\)</span> (blue), <span class="arithmatex">\(50/50\)</span> (green), <span class="arithmatex">\(25/75\)</span> (purple).</figcaption>
+    </p>
+</figure>
+<h3 id="multiphoton-effects">Multiphoton Effects</h3>
+<!-- \begin{figure}[h!]
+    \centering
+    \includegraphics[width = \textwidth]{model_setup.pdf}
+    \caption{Setup for phase space modeling of entanglement visibility experiment}
+    \label{fig:model_setup}
+\end{figure} -->
+
+<figure>
+<p><a name='fig:model_setup'></a> 
+    <img alt="fig:model_setup" src="figs/model_setup.png" /> 
+    <figcaption markdown> Figure 4: <strong>Entanglement visibility phase space modelling</strong> Setup for phase space modeling of entanglement visibility experiment</figcaption>
+    </p>
+</figure>
+<p>Calculating the entanglement visibility to higher order photon number contributions quickly becomes intractable with the Fock space approach in section B. To study the effect of multiphoton events on the entanglement visibility, we model the experiment using phase space methods based on a characteristic function formalism <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup><sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>. The model setup is shown in Fig. <a href="#fig:model_setup">4</a>. As in the Fock space approach, the input state is modeled as a product state of TMSV in early and late temporal modes, with mean photon numbers <span class="arithmatex">\(\mu_E\)</span> and <span class="arithmatex">\(\mu_L\)</span>, respectively. The measurement interferometers are modeled as beamsplitters in the temporal domain that mix the early and late input modes with transmittances <span class="arithmatex">\(\tau_A\)</span> and <span class="arithmatex">\(\tau_B\)</span>, which absorb the interferometric path efficiencies and spatial beamsplitter transmittances. Since the input state is modeled as a Gaussian state, and the measurement interferometers are modeled as Gaussian operations, we can find the symplectic transformation that maps the characteristic function of the input state to that of the state prior to detection.</p>
+<p>Following Ref. <sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup>, the characteristic function for an <span class="arithmatex">\(N\)</span>-mode bosonic state is</p>
+<div class="arithmatex">\[
+\begin{align}
+    \chi(\xi)=\text{Tr}\left[\hat{\rho}\exp(-i(\hat{x}_1,\hat{p}_1,\hat{x}_2,\hat{p}_2,\cdots\hat{x}_N,\hat{p}_N) \xi)\right]
+\end{align}
+\]</div>
+<p>where <span class="arithmatex">\(\xi\in \mathbb{R}^{2N}\)</span>, <span class="arithmatex">\(\rho\)</span> is the density matrix, and <span class="arithmatex">\(\hat{x}_i = \frac{1}{\sqrt{2}}(\hat{a}_i^\dagger+\hat{a}_i)\)</span> and <span class="arithmatex">\(\hat{p}_i=\frac{1}{\sqrt{2}}(\hat{a}_i^\dagger+\hat{a}_i)\)</span> are the quadrature operators for mode <span class="arithmatex">\(i\)</span> with annihilation operator <span class="arithmatex">\(\hat{a}_i\)</span>. A Gaussian state is a state whose characteristic function that takes a Gaussian form,</p>
+<div class="arithmatex">\[
+\begin{align}
+    \chi(\xi) = \exp(-\frac{1}{4}\xi^T\gamma \xi - id^T \xi),
+\end{align}
+\]</div>
+<p>which is fully characterized by the displacement vector <span class="arithmatex">\(d\)</span> and covariance matrix <span class="arithmatex">\(\gamma\)</span>, i.e. the first and second moments. For the TMSV state, the displacement vector is the null vector <span class="arithmatex">\(d =(0,0,0,0)\)</span> and the covariance matrix is given by</p>
+<div class="arithmatex">\[
+\begin{align}
+    \gamma_{TMSV}(\mu) = 
+    \begin{pmatrix}
+    \mathbf{A}&amp;\mathbf{B}\\
+    \mathbf{B}&amp;\mathbf{A}
+    \end{pmatrix}, \quad
+    \mathbf{A}=
+    \begin{pmatrix}
+        1+2\mu&amp;0\\
+        0&amp;1+2\mu
+    \end{pmatrix}, \quad
+    \mathbf{B}=\begin{pmatrix}
+        2\sqrt{\mu(\mu+1)}&amp;0\\
+        0&amp;-2\sqrt{\mu(\mu+1)}
+    \end{pmatrix}
+\end{align}
+\]</div>
+<p>where <span class="arithmatex">\(\gamma_{TMSV}(\mu)\)</span> is written in block matrix form. Therefore, the covariance matrix for the input state of our experiment is</p>
+<div class="arithmatex">\[
+\begin{align}
+    \gamma_{in}(\mu_E,\mu_L) = \gamma_{TMSV}(\mu_E)\oplus \gamma_{TMSV}(\mu_L)
+\end{align}
+\]</div>
+<p>The characteristic function of the input state is mapped to the characteristic function of the state prior to detection by a symplectic transformation,</p>
+<div class="arithmatex">\[
+\begin{align}
+    \chi_{in}(\xi) = \exp(-\frac{1}{4}\xi^T\gamma_{in} \xi)\mapsto \chi_{out}(\xi) = \exp(-\frac{1}{4}\xi^T S^T \gamma_{in}S \xi)
+\end{align}
+\]</div>
+<p>where <span class="arithmatex">\(S\)</span> is the Symplectic matrix of the interferometers. We construct <span class="arithmatex">\(S\)</span> from the Symplectic matrices of the phase shifter (<span class="arithmatex">\(S_{PS}\)</span>) and beamsplitter (<span class="arithmatex">\(S_{BS}\)</span>) <sup id="fnref2:4"><a class="footnote-ref" href="#fn:4">4</a></sup>,</p>
+<div class="arithmatex">\[
+\begin{align}
+    &amp;S_{PS}(\varphi) = \begin{pmatrix}
+        \cos{\varphi}&amp;\sin{\varphi}\\
+        -\sin{\varphi}&amp;\cos{\varphi}
+    \end{pmatrix},\\
+    &amp;S_{BS}(\tau) = 
+    \begin{pmatrix}
+    \mathbf{T}&amp;\mathbf{R}\\
+    \mathbf{R}&amp;\mathbf{T}
+    \end{pmatrix}, \quad
+    \mathbf{T}=\begin{pmatrix}
+        \tau&amp;0\\
+        0&amp;\tau
+    \end{pmatrix}, \quad \mathbf{R}=
+    \begin{pmatrix}
+    0&amp;-\sqrt{1-\tau^2}\\
+    \sqrt{1-\tau^2}&amp;0
+    \end{pmatrix}.
+\end{align}
+\]</div>
+<p>From the output characteristic function <span class="arithmatex">\(\chi_{\text{out}}\)</span>, we obtain the coincidence probabilities using Eq. (9) of Ref. <sup id="fnref3:3"><a class="footnote-ref" href="#fn:3">3</a></sup>,</p>
+<div class="arithmatex">\[
+\begin{align}
+    \text{Tr}\left[\hat{\rho}_{\text{out}}\hat{\Pi}\right] = \left(\frac{1}{2\pi}\right)^N \int {dx}^{2N}\chi_{\text{out}} (x) \chi_\Pi (-x)
+\end{align}
+\]</div>
+<p>where <span class="arithmatex">\(\hat{\rho}_{\text{out}}\)</span> is the state prior to detection with characteristic function <span class="arithmatex">\(\chi_{\text{out}}\)</span>, and <span class="arithmatex">\(\hat{\Pi}\)</span> is the measurement operator corresponding to coincidences between detectors from different interferometers. The measurement operators for a threshold detector, which distinguishes between a detection event (at least one photon) and no detection event (zero photons), are</p>
+<div class="arithmatex">\[
+\begin{align}
+    \hat{\Pi}_{\text{event}} = \hat{I}-\ket{0}\bra{0}, \quad  \hat{\Pi}_{\text{no event}} = \ket{0}\bra{0}
+\end{align}
+\]</div>
+<p>where <span class="arithmatex">\(\hat{I}\)</span> is the 2 by 2 identity matrix. The measurement operator for coincidences between e.g. detectors 1 and 4 are</p>
+<div class="arithmatex">\[
+\begin{align}
+    \hat{\Pi}_{1,4}=\hat{\Pi}_{\text{event},1}\otimes\hat{I}_2 \otimes \hat{I}_3 \otimes \hat{\Pi}_{\text{event},4}
+\end{align}
+\]</div>
+<p>where the subscripts denote the output modes labeled in Fig. <a href="#fig:model_setup">4</a>. We derive an analytical expression for the coincidence probability that encompasses all multiphoton contributions,</p>
+<div class="arithmatex">\[
+\begin{align}
+C(\varphi) =  \text{Tr}\left[\hat{\rho}_{\text{out}}\hat{\Pi}_{1,4}\right] &amp;= 1-\frac{1}{|f(\mu_E, \mu_L, \tau_A)|}-\frac{1}{|g(\mu_E, \mu_L, \tau_B)|}+\frac{1}{|h(\mu_E, \mu_L, \tau_A, \tau_B,\varphi)|},\\
+f(\mu_E, \mu_L, \tau_A) &amp;= 1+\mu_L+\tau_A(\mu_E - \mu_L),\\
+g(\mu_E, \mu_L, \tau_B) &amp;= 1+\mu_E+\tau_B(\mu_L - \mu_E),\\
+h(\mu_E, \mu_L, \tau_A, \tau_B) &amp;=1+\mu_E + \mu_L(1 + \mu_E)(1 -\tau_A) \\
+&amp;-\mu_E\tau_B(1 + \mu_L) +\tau_A\tau_B(\mu_E  + \mu_L +2\mu_E\mu_L) \nonumber\\
+&amp;- 2\sqrt{\mu_E\mu_L\tau_A(1+\mu_E)(1+\mu_L)(1-\tau_A)}\sqrt{\tau_B(1-\tau_B)}\cos{\varphi},\nonumber
+\end{align}
+\]</div>
+<p>where <span class="arithmatex">\(\varphi = \varphi_A-\varphi_B\)</span> is the relative phase between interferometers A and B. The different visibilities in each output port combination as a result of interferometric imbalances can be obtained by adjusting <span class="arithmatex">\(\tau\)</span> accordingly. To isolate the impact of multiphoton contributions to the visibility, we set <span class="arithmatex">\(\tau_A = \tau_B = \frac{1}{\sqrt{2}}\)</span>, and obtain the following expression for the entanglement visibility:</p>
+<p><a name='eq:fid_multiphoton'></a></p>
+<div class="arithmatex">\[
+\begin{align}
+    V(\mu_E, \mu_L) &amp;= \frac{C(0)-C(\pi)}{C(0)+C(\pi)}=\frac{2/\sqrt{G_{-}(\mu_E, \mu_L)}-2/\sqrt{G_{+}(\mu_E, \mu_L)}}{1-4/(2+\mu_E+\mu_L)+2/\sqrt{G_{-}(\mu_E, \mu_L)}+2/\sqrt{G_{+}(\mu_E, \mu_L)}}\label{eq:fid_multiphoton}
+\end{align}
+\tag{14}\]</div>
+<p>where</p>
+<div class="arithmatex">\[
+\begin{align}
+     G_{\pm}(\mu_E, \mu_L)&amp;=\mu_E^2(9+8\mu_L(2+\mu_L))\\
+     &amp;\pm(4+3\mu_L)\bigg(\pm4\pm3\mu_L+4\sqrt{\mu_E \mu_L (1+\mu_E)(1+\mu_L)}\bigg)\nonumber\\     &amp;+2\mu_E\bigg(12\pm6\sqrt{\mu_E\mu_L(1+\mu_E)(1+\mu_L)}\bigg)\nonumber\\
+     &amp;+2\mu_E\mu_L\Big(19+8\mu_L \pm 4\sqrt{\mu_E\mu_L (1+\mu_E)(1+\mu_L)}\Big). \nonumber
+ \end{align}
+\]</div>
+<p>By expanding Eq. <a href="#eq:fid_multiphoton">14</a> to first order in <span class="arithmatex">\(\mu_E\)</span> and <span class="arithmatex">\(\mu_L\)</span>,</p>
+<p><a name='eq:fid_first_order'></a></p>
+<div class="arithmatex">\[
+\begin{align}
+    V(\mu_E,\mu_L) = \frac{2\sqrt{\frac{\mu_E}{\mu_L}}}{1+\frac{\mu_E}{\mu_L}} - \frac{\mu_E}{\mu_L}\frac{\left(5(\frac{\mu_E}{\mu_L}+\frac{\mu_L}{\mu_E})+6\right)}{2(1+\frac{\mu_E}{\mu_L})^2}\sqrt{\mu_E\mu_L}+\cdots\label{eq:fid_first_order}
+\end{align}
+\tag{15}\]</div>
+<p>we see that the first term matches Eq. <a href="#eq:FA1B1">10</a> - Eq. <a href="#eq:FA2B2">13</a> for <span class="arithmatex">\(t_A = t_B = \frac{1}{\sqrt{2}}\)</span>, <span class="arithmatex">\(\beta/\alpha = \gamma/\delta = 1\)</span>. Moreover, for <span class="arithmatex">\(\mu_{eq} \equiv \mu_E = \mu_L\)</span>, Eq. <a href="#eq:fid_first_order">15</a> reduces to <span class="arithmatex">\(V(\mu_{eq}) = 1 - 2\mu_{eq}\)</span>.</p>
+<p>Thus, the upper bound on the visibility is set by the mean photon number, i.e. multiphoton effects. Entanglement visibilities of more than 90% are possible when <span class="arithmatex">\(0.39 &lt; \mu_E/\mu_L &lt; 2.55\)</span> and <span class="arithmatex">\(\mu_L &lt; 0.0.056\)</span>. The entanglement visibility <span class="arithmatex">\(V(\mu_E, \mu_L)\)</span> in Eq. <a href="#eq:fid_multiphoton">14</a> is plotted for various mean photon numbers in Fig. <a href="#fig:fid_multiphoton">5</a>.</p>
+<!-- 
+\begin{figure}[H]
+\centering
+    \begin{subfigure}{0.75\textwidth}
+        \centering
+        \includegraphics[width = \textwidth]{Fid_vs_mu_above_1.pdf}
+    \end{subfigure}
+    \bigskip
+    \begin{subfigure}{0.75\textwidth}
+        \centering
+        \includegraphics[width = \textwidth]{Fid_vs_mu_below_1.pdf}
+    \end{subfigure}
+    \caption{Entanglement visibility as a function of mean photon number for $\tau_A = \tau_B = 1/\sqrt{2}$.}
+    \label{fig:fid_multiphoton}
+\end{figure} -->
+
+<figure>
+<p><a name='fig:fid_multiphoton'></a> 
+    <img alt="fig:fid_multiphoton" src="figs/Fid_vs_mu_above_below.png" /> 
+    <figcaption markdown> Figure 5: <strong>Entanglement visibility vs photon number</strong> Entanglement visibility as a function of mean photon number for <span class="arithmatex">\(\tau_A = \tau_B = 1/\sqrt{2}\)</span>.</figcaption>
+    </p>
+</figure>
+<!-- Keep at end of the page! -->
+
+<script src="./code/section_06.js"></script>
+
+<!-- *[SNSPD]: Superconducting Nanowire Single Photon Detector
+*[SNSPDs]: Superconducting Nanowire Single Photon Detector -->
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Parameswaran, K. R., Kurz, J. R., Roussev, R. V., &amp; Fejer, M. M. (2002). &lt;b&gt;Observation of 99 percent pump depletion in single-pass second-harmonic generation in a periodically poled lithium niobate waveguide&lt;/b&gt;. &lt;i&gt;<em>Optics Letters</em>&lt;/i&gt;, &lt;i&gt;<em>27</em>&lt;/i&gt;(1), 43–45.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Kaiser, F., Fedrici, B., Zavatta, A., d’Auria, V., &amp; Tanzilli, S. (2016). &lt;b&gt;A fully guided-wave squeezing experiment for fiber quantum networks&lt;/b&gt;. &lt;i&gt;<em>Optica</em>&lt;/i&gt;, &lt;i&gt;<em>3</em>&lt;/i&gt;(4), 362–365.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>Davis, S. I., Mueller, A., Valivarthi, R., Lauk, N., Narvaez, L., Korzh, B., Beyer, A. D., et al. (2022). &lt;b&gt;Improved heralded single-photon source with a photon-number-resolving superconducting nanowire detector&lt;/b&gt;. &lt;i&gt;<em>Physical Review Applied</em>&lt;/i&gt;, &lt;i&gt;<em>18</em>&lt;/i&gt;, 064007. doi:<a href="https://doi.org/10.1103/PhysRevApplied.18.064007">10.1103/PhysRevApplied.18.064007</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Takeoka, M., Jin, R.-B., &amp; Sasaki, M. (2015). &lt;b&gt;Full analysis of multi-photon pair effects in spontaneous parametric down conversion based photonic quantum information processing&lt;/b&gt;. &lt;i&gt;<em>New Journal of Physics</em>&lt;/i&gt;, &lt;i&gt;<em>17</em>&lt;/i&gt;(4), 043030.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../chapter_08/section_05_data_analysis_visualization/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Visualization">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Visualization
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../future_directions/" class="md-footer__link md-footer__link--next" aria-label="Next: Index">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Index
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.tracking", "navigation.footer", "navigation.indexes", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../javascripts/wiki_hover.js"></script>
+      
+        <script src="../javascripts/fix_footnotes.js"></script>
+      
+        <script src="../javascripts/load_bokeh.js"></script>
+      
+        <script src="../javascripts/lightbox.js"></script>
+      
+    
+  </body>
+</html>

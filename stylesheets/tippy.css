@@ -1,0 +1,23 @@
+.tippy {
+    overflow: hidden !important;
+    height: 5%;
+    border-radius: 5px;
+}
+
+[data-md-color-scheme="default"] .tippy {
+    border: 1px solid #e6e6e6;
+}
+
+[data-md-color-scheme="slate"] .tippy {
+    border: 1px solid var(--md-default-fg-color--lightest);
+    /* border: 1px solid #e6e6e6; */
+}
+
+[data-theme~='translucent'] {
+    background-color: var(--md-default-bg-color) !important;
+    opacity: 0.95 !important;
+}
+
+[data-md-color-scheme="default"] .tippy-box * {
+    color: black;
+}

@@ -1,0 +1,1787 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../section_03_introduction/">
+      
+      
+        <link rel="next" href="../section_05_peacoq_2nd_order/">
+      
+      
+      <link rel="icon" href="../../site_images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+    
+    
+<title>SNSPDs for Fun and Profit</title>
+
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/tippy.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale-subtle.css" />
+<link rel="stylesheet" href="https://unpkg.com/tippy.js@6/themes/translucent.css" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#method-and-results" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="SNSPhD" class="md-header__button md-logo" aria-label="SNSPhD" data-md-component="logo">
+      
+  <img src="../../site_images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SNSPhD
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Method
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/sansseriff/phd_thesis" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sansseriff/phd_thesis
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SNSPhD" class="md-nav__button md-logo" aria-label="SNSPhD" data-md-component="logo">
+      
+  <img src="../../site_images/logo.svg" alt="logo">
+
+    </a>
+    SNSPhD
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/sansseriff/phd_thesis" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sansseriff/phd_thesis
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../published/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Published
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../chapter_01/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Ch. 1: Introduction
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Ch. 1: Introduction
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_03_snspd_background/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SNSPD background
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_04_dtsnspd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Differential SNSPD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_01/section_05_structure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Structure of this thesis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../chapter_02/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Ch. 2: Low Dark Count Rate SNSPD
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Ch. 2: Low Dark Count Rate SNSPD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_03_introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_04_design_and_use/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design & Use
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_02/section_05_model_and_results/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model & Results
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Ch. 3: Time Walk Correction
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Ch. 3: Time Walk Correction
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_03_introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Method
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Method
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#method-and-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method and results
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Method and results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detector-and-trigger-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detector and trigger level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mode-locked-laser-calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mode locked laser calibration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_05_peacoq_2nd_order/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PEACOQ and 2D-Correction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_06_extra/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Extra
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section_07_conclusion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../chapter_04/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Ch. 4: PPM & Photon Resolution
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Ch. 4: PPM & Photon Resolution
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_03_introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_04_method/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Method
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_05_results/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Results
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_06_discussion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Discussion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_04/section_07_extra/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Extra
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../chapter_05/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Ch. 5: High Rate Entanglement
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Ch. 5: High Rate Entanglement
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_03_introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_04_system_results/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System & Results
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_05_discussion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Discussion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_06_modelling_details/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modelling Details
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_05/section_07_experiment_details/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Experiment Details
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../chapter_06/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Ch. 6: Conclusion
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Ch. 6: Conclusion
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_03_summary_and_reflection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Summary & Reflection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_06/section_04_outlook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Outlook
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../chapter_07/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    A1: Aph 138 Homework
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            A1: Aph 138 Homework
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../chapter_08/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    A2: Software Tools
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            A2: Software Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_04_experiment_control/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Experiment Control Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_08/section_05_data_analysis_visualization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visualization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../removed_chapter_09/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    A3: Interferometer Imbalance Analysis
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            A3: Interferometer Imbalance Analysis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../future_directions/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    A4: Future Directions
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            A4: Future Directions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#method-and-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method and results
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Method and results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detector-and-trigger-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detector and trigger level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mode-locked-laser-calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mode locked laser calibration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Method</h1>
+
+<h2 id="method-and-results">Method and results</h2>
+<p>The measurements used for calibration and correction were acquired with a high rate mode locked laser (Pritel). The minimum repetition rate of this laser was too high to produce a calibration dataset for the Tungsten Silicide detector at highest count rate, given the constraints addressed in the main text. Therefore, the laser was set at a repetition rate of 10.75 GHz and modulated down to 537.5 MHz using two lithium niobate intensity modulators in series. Residual peaks from suppressed mode-locked laser pulses are not observed above the noise floor in the collected data, so their effect was not further considered. Clock jitter is minimized in post-processing with the help of a software-based Phase Locked Loop.</p>
+<figure>
+<p><a name='fig:jitterate_exp_setup'></a> 
+    <img alt="fig:jitterate_exp_setup" style="width: 90%; margin: auto;" src="../figs/supplemental_expirement_light.svg#only-light" >
+    <img alt="fig:jitterate_exp_setup" style="width: 90%; margin: auto;" src="../figs/supplemental_expirement_dark.svg#only-dark" > 
+    <figcaption markdown> Figure 1: <strong>Experimental Setup</strong> CLK: clock synchronization signal; <abbr title="Arbitrary Waveform Generator">AWG</abbr>: Arbitrary Waveform Generator (<em>Keysight</em>); <abbr title="Intensity Modulator">IM</abbr>: Intensity Modulator (<em>IXBlue</em>); TDC: Time to Digital Converter (<em>Swabian Instruments</em>). The extinction ratio of both modulators exceeds 30 dB.</figcaption>
+    </p>
+</figure>
+<h3 id="detector-and-trigger-level">Detector and trigger level</h3>
+<p>We study the pulse distortions observed in a fiber coupled single-pixel tungsten silicide (WSi) SNSPD with 380&#160;<span class="arithmatex">\(\mathrm{\upmu m^2}\)</span> active area and 160&#160;nm nanowire width. The detector is biased at 9.3&#160;<span class="arithmatex">\(\mathrm{\upmu A}\)</span>, roughly 90% of the switching current. The readout is handled by a cryogenic DC-coupled amplifier, mounted on the 40&#160;K-stage of the cryostat, which has 43&#160;dB of gain and a 3&#160;dB bandwidth of 700 MHz, followed by a 1&#160;GHz amplifier with 20&#160;dB of gain (<em>MiniCircuits ZFL-1000LN+</em>). The system reaches a <span class="arithmatex">\(3~\mathrm{dB}\)</span> maximum count rate (MCR) of <span class="arithmatex">\(15.6~\mathrm{MHz}\)</span>. The time constant of supercurrent recovery <span class="arithmatex">\(\tau_{bias} \approx 40~\mathrm{ns}\)</span> is significantly longer than the decay time constant of the <abbr title="Radio Frequency">RF</abbr> pulse <span class="arithmatex">\(\tau_{RF} \approx 5~\mathrm{ns}\)</span>, owing to our use of a low-frequency cut-on of <span class="arithmatex">\(\approx 80\)</span>&#160;MHz (-3&#160;dB point from the peak gain) in the DC-coupled amplifiers. For this detector, the calibration process primarily corrects for the lower bias current effects, rather than for any overlapping between <abbr title="Radio Frequency">RF</abbr> pulse waveforms (see <a href="../section_06_extra/#performance-regime-of-the-tungsten-silicide-detector">the section on the WSi detector performance regime</a>). Other detector types and readout systems may operate in a different regime.</p>
+<p>The jitter increase with count rate is highly dependent on trigger level. High rate distortions affect the timing measurements less if the threshold voltage is set just above the noise floor.</p>
+<p>But triggering on the pulse higher, where it achieves maximum slope, minimizes jitter at low-to-medium count rates. This level varies from 20% to 50% of pulse height depending on the detector. We found the minimum low-rate jitter at a trigger level of 50&#160;mV, about 40% of the pulse height. All further calibration and analysis is performed by triggering at this level in order to optimize jitter across all count rates.</p>
+<h3 id="mode-locked-laser-calibration">Mode locked laser calibration</h3>
+<p>To perform our calibration, we illuminated the SNSPD with an attenuated 537.5&#160;MHz mode locked laser with a mean photon number per pulse between <span class="arithmatex">\(5\mathrm{e}{-4}\)</span> and <span class="arithmatex">\(0.016\)</span>. The 1.86&#160;ns period of the pulse sequence is large enough that almost all SNSPD detections can be unambiguously matched with a preceding laser pulse — the period of the pulse train used must be greater than the worst detector jitter for this to succeed. The uncorrected jitter for the WSi detector varies from 50&#160;ps FWHM at low count rates, to about 350&#160;ps at high rates.</p>
+<figure>
+<p><a name='fig:jitterate_explain'></a> 
+    <img alt="fig:jitterate_explain" style="width: 70%; margin: auto;" src="../figs/jitterate_explain_light.svg#only-light" >
+    <img alt="fig:jitterate_explain" style="width: 70%; margin: auto;" src="../figs/jitterate_explain_dark.svg#only-dark" > 
+    <figcaption markdown> Figure 2: <strong>Calibration Method</strong> a) A qualitative diagram illustrating how inter-pulse timing measurements <span class="arithmatex">\(t'\)</span> and <span class="arithmatex">\(d\)</span> are extracted. A small fraction of laser pulses contain a photon due to the low mean photon number per pulse of the attenuated laser. Pairs of subsequent photon arrivals are separated by a time denoted by <span class="arithmatex">\(t' = n t_l\)</span>. b) Possible distributions of delay <span class="arithmatex">\(d\)</span> measurements for two different <span class="arithmatex">\(t'\)</span>. The median of these defines the extracted delay parameters <span class="arithmatex">\(\tilde{d}\)</span> which form the y-axis in the calibration curve illustrated in (c). The <span class="arithmatex">\(\tilde{d}\)</span> vs <span class="arithmatex">\(t^\prime\)</span> curve in (c) approaches zero for <span class="arithmatex">\(t^\prime\)</span> approaching infinity. Blue and green arrows with matching color and style denote the same measure in (a), (b), and (c).</figcaption>
+    </p>
+</figure>
+<p>We collect sorted time-tags and first consider adjacent pairs of SNSPD events as illustrated in Fig. <a href="#fig:jitterate_explain">2</a> a. The time between the two photons that produced these event pairs is defined as <span class="arithmatex">\(t^\prime\)</span>, which is an integer number of laser periods (<span class="arithmatex">\(t^\prime = n t*{l}\)</span>). Second, we derive the delay between the second event and its corresponding laser pulse, defined as <span class="arithmatex">\(d\)</span>. For each laser period spacing <span class="arithmatex">\(t^\prime\)</span>, we make a histogram of the second event delays and find the median (<span class="arithmatex">\(\tilde{d}\)</span>) and the FWHM (<span class="arithmatex">\(\Delta {d}\)</span>) of this distribution. For shorter separations <span class="arithmatex">\(t^\prime\)</span>, the distribution is expected to have larger delays and FWHM (Fig. <a href="#fig:jitterate_explain">2</a> b) due to the smaller pulse height of the second event. Finally, we use the median delay as a function of laser spacing (Fig. <a href="#fig:jitterate_explain">2</a> c) to form a curve <span class="arithmatex">\(\tilde{d}\)</span>-vs-<span class="arithmatex">\(t^\prime\)</span> for the added time-walk versus inter-arrival time.</p>
+<figure>
+<p><a name='fig:jitterate_results_1'></a> 
+    <img alt="fig:jitterate_results_1" style="width: 90%; margin: auto;" src="../figs/jitterate_data_ab_light.svg#only-light" >
+    <img alt="fig:jitterate_results_1" style="width: 90%; margin: auto;" src="../figs/jitterate_data_ab_dark.svg#only-dark" > 
+    <figcaption markdown> Figure 3: <strong>t-prime curve and correction effect</strong> (a) Delay and intrinsic jitter curves extracted from the 537.5 MHz pulsed light dataset. (b) Histogram of corrected (black) and uncorrected (dashed grey) time tags from a 2.15 GHz pulse train, corrected using a calibration curve developed with the 537.5 MHz dataset. The improvement affirms that the light modulation used for an application need not match the repetition rate of the calibration laser.</figcaption>
+    </p>
+</figure>
+<p>Fig. <a href="#fig:jitterate_results_1">3</a> a shows the <span class="arithmatex">\(\tilde{d}\)</span>-vs-<span class="arithmatex">\(t^\prime\)</span> and <span class="arithmatex">\(\Delta d\)</span>-vs-<span class="arithmatex">\(t^\prime\)</span> curves collected from our measurements of the WSi detector. The <span class="arithmatex">\(\tilde{d}\)</span>-vs-<span class="arithmatex">\(t^\prime\)</span> curve is the main result of the calibration process and is used as a lookup table in the correction method. <span class="arithmatex">\(\Delta d\)</span> is a measure of the more intrinsic jitter that the correction method cannot cancel out. While it is larger for small <span class="arithmatex">\(t^\prime\)</span> due to triggers on lower amplitude pulses, it notably stays at a nearly minimized value down to around <span class="arithmatex">\(t^\prime =\)</span> 50&#160;ns. <span class="arithmatex">\(\tilde{d}\)</span> grows more dramatically with decreasing <span class="arithmatex">\(t^\prime\)</span>, especially in the range from 50&#160; to 100&#160;ns. For count rates that do not exhibit many inter-pulse arrival times smaller than 50&#160;ns, a method for removing the time-walk effect’s contribution to jitter should bring entire system jitter back down to near the intrinsic limit implied by the <span class="arithmatex">\(\Delta d\)</span> curve.</p>
+<p>The correction method we implement involves subtracting off the distortion-induced delays a time-tag is expected to have based on the inter-pulse-time that precedes it. For each time tag <span class="arithmatex">\(t_n\)</span> in a set, the inter-pulse time is <span class="arithmatex">\(t_n - t_{n-1} = \Delta t\)</span>, where <span class="arithmatex">\(t_{n-1}\)</span> is the previous tag on the same channel. Using <span class="arithmatex">\(\Delta t\)</span> as an index, a corresponding delay correction <span class="arithmatex">\(\hat{d}\)</span> is found by interpolating the <span class="arithmatex">\(\tilde{d}\)</span>-vs-<span class="arithmatex">\(t^\prime\)</span> curve from the calibration. Given the density of points in the <span class="arithmatex">\(\tilde{d}\)</span>-vs-<span class="arithmatex">\(t^\prime\)</span> acquired here, a linear interpolation is sufficient. The correction may benefit from higher order interpolation if the <span class="arithmatex">\(\tilde{d}\)</span>-vs-<span class="arithmatex">\(t^\prime\)</span> curve is more sparse. This would be the case for calibrations built from a slower repetition rate pulsed light source. An assumption underlying the correction is that the interpolated value <span class="arithmatex">\(\hat{d}\)</span> is a good estimator of the true delay added to the current time-tag due to high count rate pulse distortions.</p>
+<p>With the interpolation operation expressed as a function <span class="arithmatex">\(D\)</span>, the correction is written as <span class="arithmatex">\(\overline{t}_n = t_n - D(\Delta t)\)</span>, where <span class="arithmatex">\(\overline{t}_n\)</span> is the corrected version of tag <span class="arithmatex">\(t_n\)</span>. Whether <span class="arithmatex">\(t_{n-1}\)</span> is itself corrected or uncorrected has negligible influence on the <span class="arithmatex">\(t_n\)</span> correction, as we assume <span class="arithmatex">\(d \ll \Delta t\)</span>. The data correction shown here was applied in post-processing. But since <span class="arithmatex">\(D\)</span> depends only on the current time tag and information available from earlier, the correction can be applied in real-time in an FPGA or computer used for time tagging.</p>
+<figure>
+<p><a name='fig:jitterate_results_2'></a> 
+    <img alt="fig:jitterate_results_2" style="width: 90%; margin: auto;" src="../figs/jitterate_data_c_light.svg#only-light" >
+    <img alt="fig:jitterate_results_2" style="width: 90%; margin: auto;" src="../figs/jitterate_data_c_dark.svg#only-dark" > 
+    <figcaption markdown> Figure 4: <strong>Jitters metrics across incident powers</strong> (a) Effect of the correction on measurements of system jitter over a range of rates approaching the maximum count rate. (b) Corrected (solid) and uncorrected (dashed) instrument response functions with color-matched arrows showing the location of the width-statistics plotted above in (a). The black vertical line in (a) is drawn at the count rate of this plot. Inset shows linear scaling. (c) Corrected (solid) and uncorrected (dashed) histogram analogous to (b), but at a higher count rate indicated by the grey line in (a).</figcaption>
+    </p>
+</figure>
+<p>The correction we perform using the <span class="arithmatex">\(\tilde{d}\)</span>-vs-<span class="arithmatex">\(t^\prime\)</span> curve in Fig. <a href="#fig:jitterate_results_1">3</a> a is applicable to a wide range of count rates and arbitrary modulation patterns; there is no requirement that applications match the repetition rate of the calibration laser. Fig. <a href="#fig:jitterate_results_1">3</a> b shows that the correction method, derived from the 537.5 MHz calibration data, significantly reduces jitter when applied to detections from a 2.15&#160;GHz pulse train. A similar jitter reduction can be demonstrated for repetition rates below 537.5&#160;MHz.</p>
+<p>To study the effectiveness of our correction method at different count rates, we apply it to data collected at different mean photon numbers per pulse, with the same 537.5 MHz pulse train. As shown in Fig. <a href="#fig:jitterate_results_2">4</a> c, the correction improves the FWHM at rates approaching the 3&#160;dB point, and improves FW10%M and FW1%M (full width at ten percent/one percent maximum) dramatically, even at count rates significantly below the 3 dB point, where detector efficiency is nearly maximized. This reduction is evident in Fig. <a href="#fig:jitterate_results_2">4</a> c, where the correction works to remove a time-walk induced tail in the instrument response function. The ratio of corrected FW1%M over uncorrected FW1%M reaches a minimum of 0.55 at a count rate of 11.5 MCounts/s. Therefore if an application sets its repetition rate or bin size based on the FW1%M metric, the repetition rate can be increased and the bin size decreased by up to 45% without any increase in event misattribution errors. These improvements are notable for applications including biomedical imaging&#160;<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>, quantum communication&#160;<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> and laser ranging&#160;<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup> that have stringent timing requirements over a large dynamic range.</p>
+<!-- *[SNSPD]: Superconducting Nanowire Single Photon Detector
+*[SNSPDs]: Superconducting Nanowire Single Photon Detector -->
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Sutin, J., Zimmerman, B., Tyulmankov, D., Tamborini, D., Wu, K. C., Selb, J., Gulinatti, A., et al. (2016). &lt;b&gt;Time-domain diffuse correlation spectroscopy&lt;/b&gt;. &lt;i&gt;<em>Optica</em>&lt;/i&gt;, &lt;i&gt;<em>3</em>&lt;/i&gt;(9), 1006–1013. doi:<a href="https://doi.org/10.1364/OPTICA.3.001006">10.1364/OPTICA.3.001006</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Bruschini, C., Homulle, H., Antolovic, I. M., Burri, S., &amp; Charbon, E. (2019). &lt;b&gt;Single-photon avalanche diode imagers in biophotonics: Review and outlook&lt;/b&gt;. &lt;i&gt;<em>Light: Science    &amp; Applications</em>&lt;/i&gt;, &lt;i&gt;<em>8</em>&lt;/i&gt;(1), 87. doi:<a href="https://doi.org/10.1038/s41377-019-0191-5">10.1038/s41377-019-0191-5</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>Hadfield, R. H. (2009). &lt;b&gt;<span class="nocase">Single-photon detectors for optical quantum information applications</span>&lt;/b&gt;. &lt;i&gt;<em>Nature Photonics</em>&lt;/i&gt;, &lt;i&gt;<em>3</em>&lt;/i&gt;(12), 696–705. doi:<a href="https://doi.org/10.1038/nphoton.2009.230">10.1038/nphoton.2009.230</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>McCarthy, A., Krichel, N. J., Gemmell, N. R., Ren, X., Tanner, M. G., Dorenbos, S. N., Zwiller, V., et al. (2013). &lt;b&gt;Kilometer-range, high resolution depth imaging via 1560 nm wavelength single-photon detection&lt;/b&gt;. &lt;i&gt;<em>Optics Express</em>&lt;/i&gt;, &lt;i&gt;<em>21</em>&lt;/i&gt;(7), 8904–8915. doi:<a href="https://doi.org/10.1364/OE.21.008904">10.1364/OE.21.008904</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../section_03_introduction/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Introduction
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../section_05_peacoq_2nd_order/" class="md-footer__link md-footer__link--next" aria-label="Next: PEACOQ and 2D-Correction">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                PEACOQ and 2D-Correction
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.tracking", "navigation.footer", "navigation.indexes", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/wiki_hover.js"></script>
+      
+        <script src="../../javascripts/fix_footnotes.js"></script>
+      
+        <script src="../../javascripts/load_bokeh.js"></script>
+      
+        <script src="../../javascripts/lightbox.js"></script>
+      
+    
+  </body>
+</html>
